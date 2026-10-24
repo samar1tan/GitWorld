@@ -1,0 +1,58 @@
+# Local collaboration material is not a publication candidate.
+.local/
+private/
+attachments/
+.chat-attachments/
+.codex/
+.DS_Store
+
+# Existing Chinese working documents remain local; publish reviewed English
+# documents in the appropriate public documentation directory instead.
+/docs/GitWorld_PRD.md
+/docs/GitWorld_Future_Directions.md
+/docs/GitWorld_UED_04_QA.md
+/docs/GitWorld_UED_Review_02.md
+/docs/GitWorld_UED_Review_03.md
+/docs/GitWorld_UED_Review_04.md
+/docs/GitWorld_UED_Review_05.md
+/docs/archive/
+/docs/research/GitWorld_Competitive_Analysis_2026-10-25.md
+/docs/research/notes/
+/docs/research/ued05-content-qa.md
+/docs/research/ued05-ui-qa.md
+/docs/research/evidence/
+/design/figma/
+
+# Reproducible outputs, dependencies, operational data and signing material.
+node_modules/
+dist/
+out/
+coverage/
+*.log
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+/runtime/
+/user-data/
+/crawl-cache/
+/raw-crawl/
+/release-artifacts/
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.keychain
+*.keychain-db
+*.mobileprovision
+
+# Do not ignore data/ wholesale: reviewed source data, schemas, migrations,
+# original licensed seed records and redistributable datasets are publishable.
