@@ -34,7 +34,7 @@ else await cp(path.join(directory, 'internal'), path.join(output, 'renderer'), {
 const serviceAdapter = await readFile(path.join(directory, 'src/service-adapter.ts'), 'utf8');
 const service = /SERVICE_IMPLEMENTED\s*=\s*true/.test(serviceAdapter);
 const project = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
-await writeFile(path.join(output, 'package.json'), JSON.stringify({ name: 'gitworld-desktop', productName: 'GitWorld', version: project.version, description: 'Local history workbench', main: 'main.cjs', license: 'Apache-2.0', author: 'GitWorld contributors', private: true }, null, 2));
+await writeFile(path.join(output, 'package.json'), JSON.stringify({ name: 'gitworld-desktop', productName: 'GitWorld', version: project.version, description: 'Local history workbench', homepage: 'https://github.com/samar1tan/GitWorld', main: 'main.cjs', license: 'Apache-2.0', author: 'GitWorld contributors', private: true }, null, 2));
 await cp(path.join(root, 'LICENSE'), path.join(output, 'LICENSE'));
 await cp(path.join(root, 'THIRD_PARTY_NOTICES.md'), path.join(output, 'THIRD_PARTY_NOTICES.md'));
 await cp(path.join(root, 'data/licenses'), path.join(output, 'data/licenses'), { recursive: true });

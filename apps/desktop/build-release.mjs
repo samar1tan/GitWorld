@@ -5,6 +5,7 @@ import { promisify } from 'node:util';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import path from 'node:path';
 import { captureAcceptedSource, dependencyTreeHash, CLEAN_INSTALL_FILE, SOURCE_REPOSITORY } from './release-provenance.mjs';
+import { desktopTarget } from './packaging-platform.mjs';
 
 const execute = promisify(execFile);
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -14,6 +15,7 @@ const runCommand = async (command, args, options) => {
 };
 
 export async function buildIsolatedRelease(root, { tag, run = runCommand, inspectSource = captureAcceptedSource, hashDependencies = dependencyTreeHash } = {}) {
+  desktopTarget();
   const accepted = await inspectSource(root, { tag });
   await mkdir(path.join(root, '.local'), { recursive: true });
   const job = await mkdtemp(path.join(root, '.local/release-build-'));
@@ -46,11 +48,11 @@ export async function buildIsolatedRelease(root, { tag, run = runCommand, inspec
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
   try {
-    if (process.platform !== 'darwin') throw new Error('RELEASE_BUILD_REQUIRES_MACOS');
+    const target = desktopTarget();
     const tagIndex = process.argv.indexOf('--tag');
     const result = await buildIsolatedRelease(root, { tag: tagIndex === -1 ? undefined : process.argv[tagIndex + 1] });
     console.log(`Local release candidate: ${result.output}`);
-    console.log('No upload or passing acceptance receipt was created. Install and review this exact DMG before release.');
+    console.log(`No upload or passing acceptance receipt was created. Review this exact ${target.experimental ? 'experimental Linux candidate' : 'DMG'} before release.`);
   } catch (error) {
     console.error(error instanceof Error && /^[A-Z][A-Z0-9_]+$/.test(error.message) ? error.message : 'ISOLATED_RELEASE_FAILED');
     process.exitCode = 1;

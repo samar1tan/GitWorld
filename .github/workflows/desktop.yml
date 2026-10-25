@@ -1,9 +1,9 @@
 name: Desktop checks
 on:
   push:
-    paths: ["apps/**", "packages/**", "data/**", "scripts/**", "site/**", "THIRD_PARTY_NOTICES.md", "package.json", "package-lock.json", "tsconfig.base.json", ".github/workflows/desktop.yml", ".github/workflows/pages.yml"]
+    paths: ["apps/**", "packages/**", "data/**", "scripts/**", "site/**", "THIRD_PARTY_NOTICES.md", "package.json", "package-lock.json", "tsconfig.base.json", ".github/workflows/**", "docs/desktop-distribution-prd.md"]
   pull_request:
-    paths: ["apps/**", "packages/**", "data/**", "scripts/**", "site/**", "THIRD_PARTY_NOTICES.md", "package.json", "package-lock.json", "tsconfig.base.json", ".github/workflows/desktop.yml", ".github/workflows/pages.yml"]
+    paths: ["apps/**", "packages/**", "data/**", "scripts/**", "site/**", "THIRD_PARTY_NOTICES.md", "package.json", "package-lock.json", "tsconfig.base.json", ".github/workflows/**", "docs/desktop-distribution-prd.md"]
   workflow_dispatch:
 permissions:
   contents: read
@@ -16,6 +16,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
@@ -30,6 +32,8 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
@@ -40,5 +44,59 @@ jobs:
         env:
           GITWORLD_REQUIRE_BUNDLED_GIT_TESTS: "1"
       - run: npm run desktop:smoke
-      - run: npm run desktop:package:internal
+      - run: node apps/desktop/package.mjs --internal
       - run: npm run desktop:smoke:packaged
+  macos-intel-runtime:
+    name: macOS Intel engineering checks
+    runs-on: macos-15-intel
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - name: Verify native Intel environment
+        run: node -e 'if (process.platform !== "darwin" || process.arch !== "x64") throw new Error("NATIVE_INTEL_RUNNER_REQUIRED")'
+      - run: npm ci
+      - run: npm run build
+      - name: Run tests with the native bundled Git required
+        run: npm test
+        env:
+          GITWORLD_REQUIRE_BUNDLED_GIT_TESTS: "1"
+      - run: npm run desktop:smoke
+      - run: node apps/desktop/package.mjs --internal
+      - run: npm run desktop:smoke:packaged
+  linux-runtime-experimental:
+    name: Ubuntu 22.04 x64 experimental engineering checks
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - name: Verify native Linux environment
+        run: node -e 'if (process.platform !== "linux" || process.arch !== "x64" || process.getuid() === 0) throw new Error("NATIVE_NONROOT_LINUX_X64_RUNNER_REQUIRED")'
+      - name: Install build and display dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y build-essential zlib1g-dev \
+            libgtk-3-0 libnss3 libgbm1 libxss1 libasound2 libatk-bridge2.0-0 \
+            libatspi2.0-0 libcups2 libdrm2 libxkbcommon0 xvfb xauth
+      - run: npm ci
+      - run: npm run build
+      - name: Run tests with the native bundled Git required
+        run: npm test
+        env:
+          GITWORLD_REQUIRE_BUNDLED_GIT_TESTS: "1"
+      - name: Run the sandboxed Electron smoke under Xvfb
+        run: xvfb-run -a --server-args="-screen 0 1600x1000x24" npm run desktop:smoke
+      - run: node apps/desktop/package.mjs --internal
+      - name: Run the sandboxed packaged application under Xvfb
+        run: xvfb-run -a --server-args="-screen 0 1600x1000x24" npm run desktop:smoke:packaged

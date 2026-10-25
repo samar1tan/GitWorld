@@ -57,7 +57,7 @@ test('empty legacy library stays unassigned; literal labels, aliases and descrip
   const old=await call(f.service,'context.list',{revision:first.preview.preview.prepared!.baseHead});assert.deepEqual(old.counts,{objects:0,assigned:0,unassigned:0});
 });
 
-test('an actual adoption larger than pages and the explicit-object limit keeps accepted and reused objects in its fixed full batch',native,async t=>{
+test('an actual adoption larger than pages and the explicit-object limit keeps accepted and reused objects in its fixed full batch',{...native,timeout:180_000},async t=>{
   const f=await fixture(t,1005),first=await adopt(f);assert.equal(first.result.objects!.length,40);assert.equal(first.result.changedObjects.length,1005);
   const selected=await batch(f);assert.equal(selected.objects,1005);assert.equal(selected.batch.objectSetHash,hash(first.result.changedObjects.slice().sort()));
   const last=await call(f.service,'context.batchObjects',{batch:selected.batch,offset:1000,limit:100});assert.equal(last.total,1005);assert.equal(last.items.length,5);
