@@ -8,7 +8,9 @@ export type KnowledgeMappingPreview = {
   prepared?: { id: string; fingerprintVersion: 2; baseHead: string };
   vocabulary?: KnowledgeVocabularySummary;
 };
-export type KnowledgeImportResult = { preview: KnowledgeMappingPreview; changedObjects: string[]; unchangedObjects: string[]; paths?: string[]; objects?: { id: string; labels: Record<string,string> }[]; totalObjects?: number; batch?: { schemaVersion: 1; inputObjectSetHash: string; acceptedObjectSetHash: string; sourceRefs: { sourceId: string; revision: string | null; contentHash: string }[] }; conflicts: { objectId: string; base: KnowledgeObjectBundle | null; local: KnowledgeObjectBundle | null; incoming: KnowledgeObjectBundle }[] };
+export type KnowledgeImportContinuation = { kind: 'wikipedia-mapping'; jobId: string };
+export type KnowledgeImportConflict = { objectId: string; base: KnowledgeObjectBundle | null; local: KnowledgeObjectBundle | null; incoming: KnowledgeObjectBundle; continuation?: KnowledgeImportContinuation };
+export type KnowledgeImportResult = { preview: KnowledgeMappingPreview; changedObjects: string[]; unchangedObjects: string[]; paths?: string[]; objects?: { id: string; labels: Record<string,string> }[]; totalObjects?: number; continuation?: KnowledgeImportContinuation; batch?: { schemaVersion: 1; inputObjectSetHash: string; acceptedObjectSetHash: string; sourceRefs: { sourceId: string; revision: string | null; contentHash: string }[] }; conflicts: KnowledgeImportConflict[] };
 /** Collection names are separate from original source titles and exact source identity. */
 export type KnowledgeSourcePresentation = { sourceId: string; revision: string | null; contentHash: string; labels: { en: string; 'zh-CN': string } };
 export type KnowledgeSourcePresentations = { schemaVersion: 1; kind: 'gitworld-source-presentations'; sources: KnowledgeSourcePresentation[] };

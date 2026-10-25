@@ -12,7 +12,7 @@ const hash = (text: string) => createHash('sha256').update(text).digest('hex');
 test('fixed military-authority correction retains source facts and separates qualified periods from ordinary office tenures', async () => {
   const manifestText = await fs.readFile(new URL('manifest.json', base), 'utf8');
   const { collection, manifest, fieldCatalog, supportingFiles, navigation } = await loadTrustedKnowledgeBundle({ manifestText, expectedManifestHash: hash(manifestText), readText: file => fs.readFile(new URL(file, base), 'utf8') });
-  assert.equal(manifest.id, 'east-asia-research-foundation-v8');
+  assert.equal(manifest.id, 'east-asia-research-foundation-v9');
   const ledger = supportingFiles.find(value => value.path === 'extensions/qualified-basis-reconciliation/reconciliation.json')!.value as {
     originalSources: { id: string; contentHash: string }[];
     removed: { assertionId: string; originalAssertionId: string; originalAssertionHash: string }[];
@@ -20,7 +20,7 @@ test('fixed military-authority correction retains source facts and separates qua
   };
   assert.equal(ledger.originalSources.length, 22); assert.equal(ledger.removed.length, 21); assert.equal(ledger.qualifiedAssertionIds.length, 8);
   for (const previous of ledger.originalSources) assert.equal(collection.sources.find(value => value.id === previous.id)!.contentHash, previous.contentHash);
-  const newSource = collection.sources.find(value => !ledger.originalSources.some(previous => previous.id === value.id))!;
+  const newSource = collection.sources.find(value => value.identity.provider === 'wikipedia-qualified-office-facts' && !ledger.originalSources.some(previous => previous.id === value.id))!;
   const displayName = navigation!.sourcePresentations!.find(value => value.sourceId === newSource.id)!;
   assert.equal(displayName.contentHash, newSource.contentHash); assert.equal(displayName.revision, newSource.revision);
   assert.ok(displayName.labels.en && displayName.labels['zh-CN']); assert.equal((newSource.record as any).manifest.articleTitle, 'List of shoguns');

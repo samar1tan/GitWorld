@@ -1,6 +1,6 @@
 # Source identity, role and chronology bindings
 
-Document v0.2 · 25 October 2026 · Module requirements; implementation and installed acceptance are separate
+Document v0.3 · 25 October 2026 · Module requirements; implementation and installed acceptance are separate
 
 ## User need
 
@@ -25,6 +25,16 @@ An explicit identity decision may also map a source-local entity value to a decl
 Role bindings must not assign a person's entire tenure to a role that applied only during part of it. A source's combined interval remains combined until there is separate dated evidence for a subdivision. Different institutions and parallel claims remain distinct. A source's first/last available row is a coverage boundary, not a foundation or collapse.
 
 Missing source objects, changed revisions, unknown assertion selections, incompatible target types, rejected source claims and conflicting rules remain actionable exceptions. A binding must not discard an original claim merely because it cannot be projected. No row is adopted as confirmed history by running the mapper.
+
+### Source-linked identity references in installed presets
+
+An object-valued preset claim must open a readable object at the same data revision. A source can link an alternate Wikipedia title while an existing person uses the destination title; substituting a label for a missing object does not repair that link. Audit every preset assertion value and qualifier separately, reporting unresolved main-value targets, provenance-only source-local identifiers, opaque labels and missing English/Simplified Chinese presentation. This audit does not automatically create people or political entities from provenance qualifiers or arbitrary user imports.
+
+For a narrowly approved reference repair, an explicit versioned plan pins the base bundle, original source ID/revision/hash, each original assertion and target object by hash, and the exact published redirect page ID/revision and destination identity. A redirect must be independently verified from the fixed revision's redirect instruction. Name similarity, current search results, a shared label or a non-redirect page are insufficient. The existing destination object and both display languages must already exist. Reject a changed or missing source, claim, redirect, target, ambiguous decision or conflicting prior output.
+
+The additive output supplies a typed source-identity reference at the source's original object ID, bilingual labels and a short explanation, and one explicit link to the existing person. It retains the original linked spelling independently of the canonical destination. The reference is a modern navigation/identity interpretation, with separate source facts, rights, rule/version and evidence for both the original table cell and fixed redirect. This first distributed repair requires compatible CC BY-SA 4.0 source rights; unknown or restricted source permissions cannot become allowed through the repair plan. It is not another historical person, a historical state, a tenure, a completed mission or an ancestry/influence assertion. Do not copy a person's historical claims into the reference or infer activity-context joins from it.
+
+Preserve all prior objects, assertions and source records exactly. Generate a new bundle identity and manifest into a separate directory; retain the old bundle revision and Git OIDs. New source titles, reference/type/field labels and explanations need English and Simplified Chinese presentation. The minimum regression opens the 702 sender and 894 counterpart through ordinary object reads, follows their explicit person links, verifies all preset main-value targets resolve, and tests rejected unrelated names, changed source/target/redirect pins, repeated application and unchanged original records. Static generation and service reads do not pass the installed C06 journey; a corrected installer needs its own native verification.
 
 ## Competing chronology
 

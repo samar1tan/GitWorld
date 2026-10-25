@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "kind": "modern-source-identity-reference-repair",
+  "mappingVersion": "published-source-reference-links-v1",
+  "baseManifestId": "east-asia-research-foundation-v8",
+  "baseManifestHash": "3ce3a5dbac92ef5a0a937bfdc9c61abdda4ba44bfb99192ceb68bd2ee94b0e0f",
+  "originalCollectionHash": "75d2cd505f06e34b1056ed96ae5dcad07f5548a2ee0f14273886ed62c5cb47f8",
+  "originalSourceHashes": [
+    {
+      "id": "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b",
+      "contentHash": "91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+    },
+    {
+      "id": "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef",
+      "contentHash": "87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+    },
+    {
+      "id": "wikipedia-en-facts:314092@f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab",
+      "contentHash": "f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab"
+    },
+    {
+      "id": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "contentHash": "0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e"
+    },
+    {
+      "id": "wikipedia-en-facts:17254923@e210f2fedf63e1b83f1ff17c3ba8ac23b674629b6e73133b7f44d460a722fd1f",
+      "contentHash": "e210f2fedf63e1b83f1ff17c3ba8ac23b674629b6e73133b7f44d460a722fd1f"
+    },
+    {
+      "id": "wikipedia-en-facts:17255213@fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514",
+      "contentHash": "fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514"
+    },
+    {
+      "id": "wikipedia-en-facts:1420574@12511a4f9a10aa42352aa5bcfbff8405d4d8635c748df4a6b9a6f80803df8427",
+      "contentHash": "12511a4f9a10aa42352aa5bcfbff8405d4d8635c748df4a6b9a6f80803df8427"
+    },
+    {
+      "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+      "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+    },
+    {
+      "id": "wikipedia-en-facts:47851611@050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78",
+      "contentHash": "050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78"
+    },
+    {
+      "id": "wikipedia-en-facts:530241@829732fb3734c8609735e3a680e8fa8d730d091e719b20d4ed7b18fee6529577",
+      "contentHash": "829732fb3734c8609735e3a680e8fa8d730d091e719b20d4ed7b18fee6529577"
+    },
+    {
+      "id": "wikipedia-en-facts:516942@87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca",
+      "contentHash": "87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca"
+    },
+    {
+      "id": "gitworld-binding:east-asia-source-roles@44d66c1941745121bad78783097a04bb06a364a8f369cd413973f2983d326cd7",
+      "contentHash": "44d66c1941745121bad78783097a04bb06a364a8f369cd413973f2983d326cd7"
+    },
+    {
+      "id": "gitworld-binding:east-asia-published-chronologies@a3e5e5ceb4c2c0019fad103992044875852181ed75cd182a50118d74a68a3655",
+      "contentHash": "a3e5e5ceb4c2c0019fad103992044875852181ed75cd182a50118d74a68a3655"
+    },
+    {
+      "id": "gitworld-content-labels:east-asia-preset-labels@38bfce7bba2c59dbc0e01b6121c47a8cecca175e36749fff0c97ef99deabbd1d",
+      "contentHash": "38bfce7bba2c59dbc0e01b6121c47a8cecca175e36749fff0c97ef99deabbd1d"
+    },
+    {
+      "id": "gitworld-activity-contexts:listed-activity-role-contexts@1eb845592345b3fbe0f5a08c41cee9b15a400a379e0b4ac3d1824063f2a5e597",
+      "contentHash": "1eb845592345b3fbe0f5a08c41cee9b15a400a379e0b4ac3d1824063f2a5e597"
+    },
+    {
+      "id": "wikipedia-qualified-office-facts:10736899@fead897088a3b1a08ae25de4d69103d5a48c59fa29e404377efed3564054dac5",
+      "contentHash": "fead897088a3b1a08ae25de4d69103d5a48c59fa29e404377efed3564054dac5"
+    },
+    {
+      "id": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "contentHash": "9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c"
+    },
+    {
+      "id": "gitworld-evidenced-fields:japan-normative-institutions-1947@439354d0bc11ffc2e7074d185ba16ac77204723514cba4302254fed91693c99c",
+      "contentHash": "439354d0bc11ffc2e7074d185ba16ac77204723514cba4302254fed91693c99c"
+    },
+    {
+      "id": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "contentHash": "ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea"
+    },
+    {
+      "id": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+      "contentHash": "98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3"
+    },
+    {
+      "id": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "contentHash": "4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651"
+    },
+    {
+      "id": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "contentHash": "4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8"
+    },
+    {
+      "id": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+      "contentHash": "048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d"
+    }
+  ],
+  "originalRecordsRetained": {
+    "objects": 1214,
+    "assertions": 4018,
+    "sources": 23
+  },
+  "referenceObjectIds": [
+    "wikipedia-en:Empress_Saimei",
+    "wikipedia-en:Emperor_Tang_Wenzong",
+    "wikipedia-en:Emperor_Tang_Zhaozong",
+    "wikipedia-en:Emperor_Kammu",
+    "wikipedia-en:Emperor_Mommu"
+  ],
+  "identityAssertionIds": [
+    "source-reference:18966d1adc9ac07987aae68ea87a62bcf0e29557",
+    "source-reference:1af472c7ed8244f3931363fda90b2c0000f0e9c2",
+    "source-reference:41783a52021775bc6a958ef1700e7814202e57d3",
+    "source-reference:bb669eaf657505444b7a82fbfec2a0ed46f72744",
+    "source-reference:148a69a78baad41d4ac8d826377bacf64d7ce340"
+  ],
+  "sourceId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+  "audit": {
+    "missingMainValueTargets": 0,
+    "missingProvenanceQualifierTargets": 98,
+    "provenanceQualifierProperties": [
+      "source:context-identity"
+    ],
+    "incompleteBilingualObjects": 0,
+    "opaqueObjectLabels": 0
+  },
+  "boundary": "Only explicitly pinned main-value links are repaired. Provenance-only source-local context identifiers are retained; no person or political entity is invented. Identity links are untimed modern interpretations, not historical events, activity completion, office tenures or ancestry. Installed acceptance remains separate."
+}

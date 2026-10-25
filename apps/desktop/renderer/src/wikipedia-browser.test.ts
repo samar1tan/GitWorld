@@ -153,6 +153,18 @@ test('adoption uses the prepared base and preview identity, then reports actual 
   assert.equal(f.adopted[0].interaction, 10); assert.equal(f.adopted[0].jobId, A); assert.deepEqual(f.observations.at(-1), { type: 'data-adopted', jobId: A, paths: ['objects/imported.json'], inputHash: f.latest()!.preview.inputHash });
 });
 
+for(const locale of ['en','zh-CN']as const)test(`conflict review keeps the saved mapping choices for an explicit new preview and complete adoption (${locale})`,async t=>{
+  const f=fixture(t,locale);let imports=0,attempts=0;
+  const browser=f.create({onResumeImport:()=>{imports++;}});await choose(browser);await submit(browser,'preview');const selection=structuredClone(f.latest()!.selection);let currentPreview=f.latest()!.preview;
+  const bundle={schemaVersion:1 as const,object:f.latest()!.sample.objects[0],assertions:f.latest()!.sample.assertions};
+  f.api.adopt=async params=>{f.calls.push({method:'adopt',params});return attempts++?{...f.result(),preview:currentPreview}:{...f.result(),changedObjects:[],unchangedObjects:[],objects:[],totalObjects:0,continuation:{kind:'wikipedia-mapping',jobId:A},conflicts:[{objectId:bundle.object.id,base:bundle,local:bundle,incoming:bundle}]};};
+  await click(browser,'adopt');assert.match(browser.content(),/data-wikipedia="imports"/);assert.doesNotMatch(browser.content(),/data-wikipedia="result"/);assert.equal(f.adopted.length,0);assert.equal(f.observations.some((value:any)=>value.type==='data-adopted'),false);
+  await click(browser,'imports');assert.equal(imports,1);browser.hide();await browser.open('saved');await click(browser,'edit-mapping');
+  f.api.preview=async params=>{f.calls.push({method:'preview',params});const value=preview(params);value.preview.prepared!.id='f'.repeat(64);currentPreview=value.preview;return value;};
+  await submit(browser,'preview');const fresh=f.calls.filter(value=>value.method==='preview').at(-1)!;assert.deepEqual(fresh.params.selection,selection);await click(browser,'adopt');
+  assert.equal(f.calls.filter(value=>value.method==='adopt').at(-1)!.params.previewId,'f'.repeat(64));assert.equal(f.adopted.length,1);assert.equal(f.observations.filter((value:any)=>value.type==='data-adopted').length,1);
+});
+
 test('actual Wikipedia preview and adoption observations bind Guide to the successful prepared input', async t => {
   const f = fixture(t), path = `objects/${'3'.repeat(64)}.json`;
   const guide = createOnboarding({ locale: () => 'en', context: () => ({ section: 'sources' }), render() {}, persist() {}, navigate() {} }); guide.hydrate(undefined);

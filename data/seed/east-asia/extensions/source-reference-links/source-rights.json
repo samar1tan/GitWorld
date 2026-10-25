@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "title": "Source-linked identity reference repair",
+  "status": "candidate-not-publication-approval",
+  "dataLicense": {
+    "id": "CC-BY-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "licenseScope": "Selected fixed-revision Wikipedia redirect identities, original source-reference objects, identity-link interpretations and English/Simplified Chinese presentation. Original source facts retain their own rights and attribution.",
+  "attribution": "Empress Saimei, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Empress%20Saimei&oldid=88649158; author history https://en.wikipedia.org/w/index.php?title=Empress%20Saimei&action=history. Emperor Tang Wenzong, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Wenzong&oldid=321946630; author history https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Wenzong&action=history. Emperor Tang Zhaozong, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Zhaozong&oldid=331386807; author history https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Zhaozong&action=history. Emperor Kammu, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Emperor%20Kammu&oldid=578326834; author history https://en.wikipedia.org/w/index.php?title=Emperor%20Kammu&action=history. Emperor Mommu, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Emperor%20Mommu&oldid=578327539; author history https://en.wikipedia.org/w/index.php?title=Emperor%20Mommu&action=history. Selected redirect identities only; article prose, images and full raw responses excluded. GitWorld added explicit unreviewed identity links and bilingual reference presentation; no historical date or relationship is inferred. No official endorsement.",
+  "sources": [
+    {
+      "pageId": "2481733",
+      "title": "Empress Saimei",
+      "revision": "88649158",
+      "contentHash": "09a54d4e3e90beb4abbeeb4566234fb02cd313261ab73ee44f97b29046d9d627",
+      "hashSemantics": "SHA-256 of the fixed revision redirect wikitext. Raw operational acquisition records are not distributed.",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=Empress%20Saimei&oldid=88649158",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Empress%20Saimei&action=history",
+      "destination": {
+        "pageId": "10421",
+        "title": "Empress Kōgyoku",
+        "revision": "1381532604"
+      },
+      "originalSource": {
+        "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+        "revision": "1373459286",
+        "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+      },
+      "originalAssertionId": "wikipedia-event-claim:3de81506041c2d107888868aa993a092"
+    },
+    {
+      "pageId": "24825088",
+      "title": "Emperor Tang Wenzong",
+      "revision": "321946630",
+      "contentHash": "ce898c9d577dcfc7b318beb26d53f164d0b7797de37bc3ae187d4f8972fb6b1c",
+      "hashSemantics": "SHA-256 of the fixed revision redirect wikitext. Raw operational acquisition records are not distributed.",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Wenzong&oldid=321946630",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Wenzong&action=history",
+      "destination": {
+        "pageId": "3083598",
+        "title": "Emperor Wenzong of Tang",
+        "revision": "1358760494"
+      },
+      "originalSource": {
+        "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+        "revision": "1373459286",
+        "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+      },
+      "originalAssertionId": "wikipedia-event-claim:94d60ce5d9621075c852bd3c17fd38c4"
+    },
+    {
+      "pageId": "25416145",
+      "title": "Emperor Tang Zhaozong",
+      "revision": "331386807",
+      "contentHash": "2253e30a88931765f3d8b1f8f52bfca931d4287529f797129baf79d16b6f3c2b",
+      "hashSemantics": "SHA-256 of the fixed revision redirect wikitext. Raw operational acquisition records are not distributed.",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Zhaozong&oldid=331386807",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Zhaozong&action=history",
+      "destination": {
+        "pageId": "2950973",
+        "title": "Emperor Zhaozong of Tang",
+        "revision": "1380774270"
+      },
+      "originalSource": {
+        "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+        "revision": "1373459286",
+        "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+      },
+      "originalAssertionId": "wikipedia-event-claim:2c6dcef5a484805e98de811ce5df659a"
+    },
+    {
+      "pageId": "40865795",
+      "title": "Emperor Kammu",
+      "revision": "578326834",
+      "contentHash": "15b57f374861e1326a4a9c6b21b58f47871bb40fe646ecc69a2f2eeef40a1064",
+      "hashSemantics": "SHA-256 of the fixed revision redirect wikitext. Raw operational acquisition records are not distributed.",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Kammu&oldid=578326834",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Kammu&action=history",
+      "destination": {
+        "pageId": "10126",
+        "title": "Emperor Kanmu",
+        "revision": "1359542926"
+      },
+      "originalSource": {
+        "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+        "revision": "1373459286",
+        "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+      },
+      "originalAssertionId": "wikipedia-event-claim:b0716ac0836bef7adbb9b879ed7c18a1"
+    },
+    {
+      "pageId": "40865841",
+      "title": "Emperor Mommu",
+      "revision": "578327539",
+      "contentHash": "5522672fb43a0be40ed14cb672dc976b5ce3145215ba5584a3ef2280cd9d1f41",
+      "hashSemantics": "SHA-256 of the fixed revision redirect wikitext. Raw operational acquisition records are not distributed.",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Mommu&oldid=578327539",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Mommu&action=history",
+      "destination": {
+        "pageId": "10428",
+        "title": "Emperor Monmu",
+        "revision": "1376957729"
+      },
+      "originalSource": {
+        "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+        "revision": "1373459286",
+        "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+      },
+      "originalAssertionId": "wikipedia-event-claim:b70ca49b14efb35cd55cbc800e12cd09"
+    }
+  ],
+  "permissionEvidence": {
+    "observedAt": "2026-10-25T14:41:55.635Z",
+    "url": "https://en.wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=rightsinfo&format=json&formatversion=2&maxlag=5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+    "licenseName": "Creative Commons Attribution-Share Alike 4.0",
+    "scope": "English Wikipedia selected redirect facts; preserve permanent revisions, author histories, attribution and the CC BY-SA 4.0 license. This observation does not grant rights in external linked works or article images."
+  },
+  "changes": [
+    "Added five explicit source-linked references while retaining every previous object, source, assertion, value, temporal scope and review state.",
+    "Retained source-listed alternative spellings separately; linked only destinations proven by fixed direct Wikipedia redirects.",
+    "Authored bilingual reference descriptions, vocabulary and derived-source presentation. No article biography, relationship or historical date was added."
+  ],
+  "excluded": "Article prose, images, HTML, complete API responses, raw operational crawls, private notes and user data.",
+  "adoptionSemantics": "The additive bundle initializes an empty library. Existing user libraries and old Git revisions are not rewritten or implicitly migrated.",
+  "historicalReview": "Every added link is an unreviewed modern identity interpretation. Source permission does not establish historical completeness, native acceptance or release approval."
+}

@@ -26,7 +26,7 @@ function fixture(t:{after(fn:()=>void):void}){
     async pending(){return pending?[{operationId:pending,kind:'membership',baseHead:HEAD,contextId:record?.definition.id??'context:generated-by-service',planId:'plan-service'}]:[];},
     async resume(input){calls.push({method:'resume',input});const value=receipts.get(input.operationId);if(!value)throw new ServiceFailure({code:'NOT_FOUND'});pending=null;return value;},
   };
-  const create=(flushDraft?:()=>Promise<void>)=>createContextWorkspace({locale:()=> 'en',render:()=>{renders++;},api,storage,flushDraft,onClose:()=>{},onChanged:result=>{changed.push(result);},onViewContext:id=>{views.push(id);}});
+  const create=(flushDraft?:()=>Promise<void>,locale:()=> 'en'|'zh-CN'=()=> 'en')=>createContextWorkspace({locale,render:()=>{renders++;},api,storage,flushDraft,onClose:()=>{},onChanged:result=>{changed.push(result);},onViewContext:id=>{views.push(id);}});
   return {api,storage,buffers,calls,create,views,changed,receipts,renders:()=>renders,stale:()=>{hash='d'.repeat(64);},pending:(id:string)=>{pending=id;}};
 }
 const input=(ui:ReturnType<typeof createContextWorkspace>,key:string,value:string)=>ui.input({dataset:{contextInput:key},value} as HTMLInputElement);
@@ -86,4 +86,40 @@ test('complete source pins are paged independently; failed and late pages do not
   f.api.batchSources=async request=>{f.calls.push({method:'batchSources',input:request});if(delayed)return gate.promise;if(fail)throw new ServiceFailure({code:'IO_ERROR'});return {batch:request.batch,items:pins.slice(request.offset??0,(request.offset??0)+10),total:31,offset:request.offset??0,limit:10};};
   const ui=f.create();await createContext(ui);await click(ui,'batch',{index:'0'});await click(ui,'source-pins');assert.match(ui.content(),/1–10 of 31/);assert.match(ui.content(),/source:0/);fail=true;await click(ui,'pins-page',{offset:'10'});assert.match(ui.content(),/1–10 of 31/);assert.match(ui.content(),/source:0/);fail=false;await click(ui,'retry');assert.match(ui.content(),/11–20 of 31/);
   delayed=true;const reading=click(ui,'pins-page',{offset:'20'});await click(ui,'mode-remove');gate.resolve({batch,items:pins.slice(20,30),total:31,offset:20,limit:10});await reading;assert.doesNotMatch(ui.content(),/source:20/);assert.equal(f.calls.filter(v=>v.method==='applyMembership').length,0);
+});
+
+for(const locale of ['en','zh-CN'] as const)test(`batch search and kind filters keep a complete selection through pages and editor restart (${locale})`,async t=>{
+  const f=fixture(t),whole={batchKey:SET,batch,labels:{en:HASH},providers:['wikipedia-en'],sourceRefs:[],sourceRefCount:37,objects:1004,directObjects:1004,relatedObjects:0,unresolvedObjects:0,status:'complete' as const};
+  const rows=[whole,...Array.from({length:22},(_,i)=>({...whole,batchKey:String(i),labels:{en:'Saved source '+i},batch:{kind:'saved-source' as const,selection:'source-claim-subjects' as const,revision:'working',sourceId:'source:'+i,sourceRevision:'r1',sourceHash:HASH,selectionHash:HASH,objectSetHash:SET},objects:1,directObjects:1}))];
+  f.api.batches=async request=>{f.calls.push({method:'batches',input:request});const items=request.text==='estuary'&&request.kind==='adopted-import'?[whole]:rows;return {revision:'working',head:HEAD,items:items.slice(request.offset??0,(request.offset??0)+(request.limit??10)),total:items.length,offset:request.offset??0,limit:request.limit??10};};
+  const ui=f.create(undefined,()=>locale);await createContext(ui);assert.doesNotMatch(ui.content(),new RegExp('<strong>'+HASH+'</strong>'));
+  input(ui,'batch-search','estuary');await ui.change({dataset:{contextInput:'batch-kind'},value:'adopted-import'} as HTMLSelectElement);await ui.submit({dataset:{contextForm:'batch-search'}} as HTMLFormElement);
+  const read=f.calls.filter(value=>value.method==='batches').at(-1)!.input;assert.equal(read.text,'estuary');assert.equal(read.kind,'adopted-import');assert.equal(read.offset,0);
+  assert.equal(validateServiceRequest({protocolVersion:1,requestId:'batch-filter',method:'context.batches',params:read}).ok,true);
+  await click(ui,'batch',{index:'0'});await click(ui,'preview');await click(ui,'members-page',{offset:'10'});
+  assert.equal(f.calls.filter(value=>value.method==='membershipPlan').at(-1)!.input.batch.objectSetHash,SET);assert.equal(f.calls.filter(value=>value.method==='plan').at(-1)!.input.offset,10);
+  await ui.prepareClose();ui.hide();const reopened=f.create(undefined,()=>locale);await reopened.resume();
+  const restored=f.calls.filter(value=>value.method==='batches').at(-1)!.input;assert.equal(restored.text,'estuary');assert.equal(restored.kind,'adopted-import');
+  await click(reopened,'preview');assert.equal(f.calls.filter(value=>value.method==='membershipPlan').at(-1)!.input.batch.objectSetHash,SET);
+  assert.equal(f.calls.some(value=>value.method==='applyMembership'),false);
+});
+
+test('failed or superseded batch reads keep the visible page, current filters and fixed selection',async t=>{
+  const f=fixture(t),ui=f.create();await createContext(ui);await click(ui,'batch',{index:'0'});
+  const original=f.api.batches,gate=later<any>();f.api.batches=async request=>{
+    f.calls.push({method:'batches-gated',input:request});if(request.text==='slow')return gate.promise;if(request.text==='failed')throw new ServiceFailure({code:'IO_ERROR'});
+    const value=await original(request);return {...value,items:value.items.map(item=>({...item,labels:{en:'Current readable batch'}}))};
+  };
+  input(ui,'batch-search','slow');const old=ui.submit({dataset:{contextForm:'batch-search'}} as HTMLFormElement);await Promise.resolve();
+  input(ui,'batch-search','current');await ui.submit({dataset:{contextForm:'batch-search'}} as HTMLFormElement);gate.resolve({revision:'working',head:HEAD,items:[],total:0,offset:0,limit:10});await old;
+  assert.match(ui.content(),/Current readable batch/);assert.doesNotMatch(ui.content(),/No material batches match/);
+  input(ui,'batch-search','failed');await ui.submit({dataset:{contextForm:'batch-search'}} as HTMLFormElement);assert.match(ui.content(),/Current readable batch/);assert.match(ui.content(),/Your input is kept/);
+  await click(ui,'preview');assert.deepEqual(f.calls.filter(value=>value.method==='membershipPlan').at(-1)!.input.batch,batch);
+});
+
+test('saving an explicitly entered Chinese name preserves that locale value while an English interface uses its English heading',async t=>{
+  const f=fixture(t),ui=f.create();await createContext(ui);await ui.change({dataset:{contextInput:'language'},value:'zh-CN'} as HTMLSelectElement);
+  input(ui,'name','古代地理来源观测');input(ui,'purpose','比较有日期的来源观测。');await save(ui);
+  const request=f.calls.filter(value=>value.method==='save').at(-1)!.input;assert.deepEqual(request.labels,{en:'A user-organized context','zh-CN':'古代地理来源观测'});
+  assert.equal(request.description['zh-CN'],'比较有日期的来源观测。');assert.match(ui.content(),/<h1>A user-organized context<\/h1>/);assert.match(ui.content(),/value="zh-CN" selected/);assert.match(ui.content(),/value="古代地理来源观测"/);
 });

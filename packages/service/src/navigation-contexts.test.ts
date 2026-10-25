@@ -81,6 +81,35 @@ test('saved-source selection distinguishes claim subjects and one-hop typed enti
   const bad=await api(f.service,'knowledge.query',{query:{contextIds:[ctx.contextId],unassigned:true}});assert.ok(!bad.ok&&bad.error.code==='INVALID_REQUEST');
 });
 
+test('batch discovery searches complete persisted source metadata before pagination and retains the full import after restart',native,async t=>{
+  const f=await fixture(t,38),value=artifact(38),original=value.collection.sources[0];
+  value.collection.sources=Array.from({length:37},(_,index)=>{
+    const record={manifest:index===36?{articleTitle:'Remote estuary ledger'}:{},row:index};
+    return {...original,id:index===0?original.id:`fixture:source:${String(index).padStart(3,'0')}`,identity:{provider:index===36?'estuary-archive':'snapshot-observer',externalId:hash({row:index})},record,contentHash:hash(record)};
+  });
+  value.collection.assertions=value.collection.assertions.map((claim,index)=>({...claim,sourceSnapshotId:value.collection.sources[index].id,evidence:[{sourceId:value.collection.sources[index].id,locator:'row '+index}]}));
+  value.vocabulary!.origin.evidence[0].sourceHash=value.collection.sources[0].contentHash;
+  await writeFile(f.selected,JSON.stringify(value));await adopt(f);
+  const status=await call(f.service,'repository.status',{}),first=await call(f.service,'context.batches',{limit:10});
+  assert.ok(first.total>10);assert.equal(first.items[0].batch.kind,'adopted-import');assert.equal(first.items[0].objects,38);
+  const matching=await call(f.service,'context.batches',{kind:'adopted-import',text:'remote ESTUARY',limit:1});
+  assert.equal(matching.total,1);assert.equal(matching.items[0].objects,38);assert.deepEqual(matching.items[0].batch,first.items[0].batch);
+  const sources=await call(f.service,'context.batches',{kind:'saved-source',text:'snapshot-observer',offset:10,limit:10});
+  assert.ok(sources.total>20);assert.equal(sources.items.length,10);assert.ok(sources.items.every(item=>item.batch.kind==='saved-source'));
+  assert.equal((await call(f.service,'context.batches',{kind:'adopted-import',text:'estuary-archive',limit:1})).total,1);
+  assert.equal((await call(f.service,'context.batches',{text:hash({row:0})})).total,0);
+  assert.deepEqual(await call(f.service,'repository.status',{}),status);
+  await rm(f.selected);await f.restart();
+  const restored=await call(f.service,'context.batches',{kind:'adopted-import',text:'Remote estuary ledger',limit:1});
+  assert.equal(restored.total,1);assert.deepEqual(restored.items[0].batch,matching.items[0].batch);assert.equal(restored.items[0].sourceRefCount,37);
+  const ctx=await context(f),prepared=await plan(f,ctx.contextId,restored.items[0]);
+  assert.deepEqual(prepared.counts,{selected:38,already:0,added:38,removed:0,unchanged:0});
+  const last=await call(f.service,'context.batchObjects',{batch:restored.items[0].batch,offset:30,limit:10});assert.equal(last.total,38);assert.equal(last.items.length,8);
+  await call(f.service,'context.applyMembership',{operationId:'assign-found-import',planId:prepared.planId,expectedPlanHash:prepared.planHash});
+  assert.equal((await call(f.service,'context.get',{contextId:ctx.contextId})).total,38);
+  const invalid=await api(f.service,'context.batches',{kind:'invented'} as never);assert.ok(!invalid.ok&&invalid.error.code==='INVALID_REQUEST');
+});
+
 test('stale definition, changed membership, changed full source set and changed HEAD reject the plan without partial classification',native,async t=>{
   const f=await fixture(t);await adopt(f);const ctx=await context(f),selected=await batch(f),a=await plan(f,ctx.contextId,selected);
   const renamed=await call(f.service,'context.save',{operationId:'rename-context',contextId:ctx.contextId,expectedHead:ctx.head,expectedContentHash:ctx.contentHash,labels:{en:'Changed purpose'}});

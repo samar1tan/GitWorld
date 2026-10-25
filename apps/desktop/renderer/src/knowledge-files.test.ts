@@ -119,3 +119,30 @@ test('an explicit existing-import barrier points to recovery without inventing a
   f.api.adopt = async () => { f.setPending([pendingItem('other-accepted-operation')]); throw new ServiceFailure({ code: 'REVIEW_REQUIRED', parameters: { reason: 'paired-import-pending' } }); };
   await click(files, 'adopt'); assert.match(files.content(), /Library → Sources → Imports and matches/); assert.match(files.content(), /other-accepted-operation/); assert.doesNotMatch(files.content(), /data-knowledge-file="check-result"/);
 });
+
+for(const locale of ['en','zh-CN']as const)test(`resumed conflict evidence cannot claim adoption or open empty object results (${locale})`,async t=>{
+  const f=fixture(t),bundle={schemaVersion:1 as const,object:{id:'fixture-object',identities:[],labels:{en:'Object','zh-CN':'对象'},descriptions:{},aliases:[],types:[]},assertions:[]};
+  const conflict={objectId:'fixture-object',base:bundle,local:bundle,incoming:bundle};
+  f.setPending([pendingItem('wiki-review')]);f.api.resume=async()=>{f.setPending([]);return {...f.result(),changedObjects:[],unchangedObjects:[],objects:[],totalObjects:0,conflicts:[conflict]};};f.api.conflicts=async()=>[conflict];
+  let opened=0;const observations:{type:string}[]=[];
+  const files=createKnowledgeFiles({locale:()=>locale,render(){},api:f.api,selectFile:async()=>{throw Error('No new file is needed for this accepted operation');},onAdopted:()=>{opened++;},onObserved:value=>observations.push(value)});
+  await files.open();await click(files,'resume',{operation:'wiki-review',preview:PREVIEW});await click(files,'results');
+  assert.equal(opened,0);assert.doesNotMatch(files.content(),/data-knowledge-file="results"/);assert.match(files.content(),/data-import-result="conflict-review"/);assert.ok(files.content().indexOf('data-import-result')<files.content().indexOf('knowledge-file-preview'));
+  assert.equal(observations.some(value=>value.type==='data-adopted'),false);assert.match(files.content(),/data-knowledge-file="resolve"/);
+});
+
+for(const locale of ['en','zh-CN']as const)for(const wikipedia of [false,true])test(`resolution continuation follows typed provenance, not generic file state (${locale}, ${wikipedia?'Wikipedia':'generic'})`,async t=>{
+  const f=fixture(t),bundle={schemaVersion:1 as const,object:{id:'fixture-object',identities:[],labels:{en:'Object','zh-CN':'对象'},descriptions:{},aliases:[],types:[]},assertions:[]};
+  let current:KnowledgeImportResult['conflicts']=[{objectId:'fixture-object',base:bundle,local:bundle,incoming:bundle,...(wikipedia?{continuation:{kind:'wikipedia-mapping' as const,jobId:'f'.repeat(64)}}:{})}];
+  const resolutions:unknown[]=[];f.api.conflicts=async()=>structuredClone(current);f.api.resolve=async value=>{resolutions.push(value);current=[];};
+  const files=createKnowledgeFiles({locale:()=>locale,render(){},api:f.api});await files.open();
+  assert.equal(files.content().includes('data-wikipedia-continuation'),wikipedia);await click(files,'resolve',{id:'fixture-object',choice:'local'});
+  assert.deepEqual(resolutions,[{objectId:'fixture-object',choice:'local',expectedHead:NEW}]);assert.equal((files.content().match(/data-wikipedia-continuation/g)??[]).length,wikipedia?1:0);
+  assert.equal(f.adoptions.length,0);assert.equal(f.resumes.length,0);assert.doesNotMatch(files.content(),/data-knowledge-file="results"/);
+  await files.open();assert.doesNotMatch(files.content(),/data-wikipedia-continuation/);
+});
+
+test('an accepted unchanged object still has a real result even when no object was changed',async t=>{
+  const f=fixture(t);f.setPending([pendingItem()]);f.api.resume=async()=>{f.setPending([]);return {...f.result(),changedObjects:[],unchangedObjects:['fixture-object']};};
+  const files=f.create();await files.open();await click(files,'resume',{operation:'accepted-operation',preview:PREVIEW});assert.match(files.content(),/data-knowledge-file="results"/);await click(files,'results');assert.equal(f.callbacks.length,2);
+});
