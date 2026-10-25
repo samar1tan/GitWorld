@@ -182,6 +182,7 @@ async function navigateGuide(section:OnboardingSection):Promise<boolean> {
   if(section==='paths')return closeTool();
   if(section==='sources')return openSources();
   if(section==='research'&&toolPanel==='knowledge'&&!guide.snapshot().investigation.research){await knowledgeBrowser.click({dataset:{knowledge:'research'}} as unknown as HTMLElement);return currentSection()==='research';}
+  if(section==='research'&&currentSection()==='paths'&&!guide.snapshot().investigation.research){await saveModelInvestigation();return currentSection()==='research';}
   return openTool(section);
 }
 async function focusGuide(target:OnboardingFocusTarget) {

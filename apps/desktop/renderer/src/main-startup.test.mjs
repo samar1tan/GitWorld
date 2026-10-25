@@ -8,6 +8,8 @@ import { build } from 'esbuild';
 import { validPackage } from '../../../../packages/storage/src/test-fixtures.ts';
 import { copy } from './copy.ts';
 import { workspaceCopy } from './workspace-copy.ts';
+import { createWorkbenchCommands } from '../../../../packages/service/src/workbench-commands.ts';
+import { onboardingProgress } from './onboarding.ts';
 
 // The complete entry runs with its real renderer. This small DOM host records
 // #app replacements; it does not simulate browser layout or installed acceptance.
@@ -35,19 +37,25 @@ const deferred = () => { let resolve; const promise = new Promise(done => { reso
 const tick = () => new Promise(setImmediate);
 async function until(check) { for (let turn = 0; turn < 100; turn++) { if (check()) return; await tick(); } assert.fail('The expected startup boundary was not reached.'); }
 const mainPath = fileURLToPath(new URL('./main.ts', import.meta.url));
-const hooks = '\nexport const __startupRegression={ready:()=>startupReady,transitioning:()=>transitioning,flush:()=>clientCache.flush()};';
+const hooks = '\nexport const __startupRegression={ready:()=>startupReady,transitioning:()=>transitioning,flush:()=>clientCache.flush(),guide,workbench:()=>workbench,research:researchWorkspace,enterScope};';
 const compiled = await build({ entryPoints: [mainPath], bundle: true, write: false, platform: 'node', format: 'esm', loader: { '.css': 'empty' }, logLevel: 'silent', plugins: [{ name: 'startup-observation', setup(builder) { builder.onLoad({ filter: /renderer\/src\/main\.ts$/ }, async () => ({ contents: await readFile(mainPath, 'utf8') + hooks, loader: 'ts', resolveDir: fileURLToPath(new URL('.', import.meta.url)) })); } }] });
 const compiledDirectory = await mkdtemp(path.join(os.tmpdir(), 'gitworld-startup-render-'));
 const compiledPath = path.join(compiledDirectory, 'main.bundle.mjs');
 await writeFile(compiledPath, compiled.outputFiles[0].text);
 after(() => rm(compiledDirectory, { recursive: true, force: true }));
 let instance = 0;
-async function fixture(t, locale) {
+async function fixture(t, locale, suppliedPackage = validPackage()) {
   const app = new Element(), body = new Element('body'), root = new Element('html');
   const info = deferred(), map = deferred(), preferences = deferred(), status = deferred();
   let mode = 'loaded', currentLocale = locale, progress, hostEvent, version = 0, statusCalls = 0;
-  const calls = [], data = validPackage(), oid = 'a'.repeat(40);
+  const calls = [], data = structuredClone(suppliedPackage), oid = 'a'.repeat(40);
   data.revision.id = data.history.id = oid;
+  const oldRecord = { schemaVersion: 1, id: 'unrelated-record', title: 'An unrelated saved investigation', scope: { query: '', timeWindow: null, objectIds: ['unrelated-object'], fieldIds: [] }, interpretation: 'Keep this existing record.', openQuestions: [], evidence: [], comparison: null, updatedAt: '2026-10-25T00:00:00Z' };
+  const research = new Map([[oldRecord.id, { record: oldRecord, contentHash: 'c'.repeat(64), repositoryRevision: null }]]);
+  const commands = createWorkbenchCommands(async method => {
+    if (method === 'model.read') return { datasetId: data.dataset.id, revision: oid, head: oid, package: structuredClone(data) };
+    throw new Error('Unexpected model-guide command operation ' + method);
+  });
   const storage = () => { const values = new Map(); return { getItem: key => values.get(key) ?? null, setItem: (key, value) => values.set(key, value), removeItem: key => values.delete(key), get length() { return values.size; }, key: index => [...values.keys()][index] }; };
   const settings = () => ({ schemaVersion: 1, version: 1, values: { general: { locale: currentLocale, zoomFactor: 1, startup: 'resume', reducedMotion: 'system' }, learning: { tipsEnabled: false }, contributor: { name: 'Technical fixture', email: 'fixture@example.invalid' } } });
   const bridge = {
@@ -64,6 +72,11 @@ async function fixture(t, locale) {
         case 'model.read': result = { datasetId: data.dataset.id, revision: oid, head: oid, package: structuredClone(data) }; break;
         case 'workspace.save': result = { ...input.params.workspace, version: ++version }; break;
         case 'repository.status': result = { head: oid, branch: 'main', stagedTree: 'b'.repeat(40), staged: [], unstaged: [], conflicts: [], revert: null }; break;
+        case 'command.execute': result = await commands.execute(input.params); break;
+        case 'research.list': result = [...research.values()].map(value => value.record); break;
+        case 'research.get': result = research.get(input.params.id); break;
+        case 'research.history': result = []; break;
+        case 'research.save': result = { record: structuredClone(input.params.record), contentHash: 'd'.repeat(64), repositoryRevision: null }; research.set(result.record.id, result); break;
         default: throw new Error(`Unexpected startup request: ${input.method}`);
       }
       return { protocolVersion: 1, requestId: input.requestId, ok: true, result };
@@ -89,12 +102,43 @@ async function fixture(t, locale) {
     for (const [key, descriptor] of previous) { if (descriptor) Object.defineProperty(globalThis, key, descriptor); else delete globalThis[key]; }
   });
   return {
-    app, root, calls, release, ready: () => module.__startupRegression.ready(),
+    app, root, calls, release, hooks: module.__startupRegression, research, ready: () => module.__startupRegression.ready(),
     async mapFirst() { map.resolve(new Response('<svg><path d="M0 0"/></svg>')); await tick(); },
     locale(value) { currentLocale = value; hostEvent({ type: 'changed', snapshot: settings() }); },
     progress(completed, total) { progress({ operationId: 'library-initialize', stage: 'writing', completed, total }); },
     async retry(next) { mode = next; const before = statusCalls, button = new Element('button'); button.dataset.app = 'reload'; for (const callback of app.listeners.get('click') ?? []) callback({ target: button, composedPath: () => [button, app, body] }); await until(() => statusCalls > before); await tick(); },
   };
+}
+
+for (const locale of ['en', 'zh-CN']) {
+  test(`the complete model Guide opens a related fixed investigation and completes only after its real save (${locale})`, async t => {
+    const data = JSON.parse(await readFile(new URL('../../../../data/seed/early-medieval.json', import.meta.url), 'utf8'));
+    const f = await fixture(t, locale, data); await f.release(); await f.mapFirst();
+    f.hooks.enterScope('east-asia');
+    await f.hooks.workbench().execute('git show japan-744');
+    await f.hooks.workbench().execute('git diff japan-744 japan-744');
+    assert.deepEqual(onboardingProgress(f.hooks.guide.snapshot()), [true, true, false, false, false], 'An unchanged comparison is not a completed investigation step.');
+    await f.hooks.workbench().execute('git diff japan-740 japan-744');
+    assert.deepEqual(onboardingProgress(f.hooks.guide.snapshot()), [true, true, true, false, false]);
+    assert.match(f.app.innerHTML, /data-evidence-version="japan-744" data-evidence-field="politics.capital"/);
+    const inspected = { matches: selector => selector === '.field-evidence', open: true, dataset: { evidenceVersion: 'japan-744', evidenceField: 'politics.capital' }, querySelector: () => ({}) };
+    for (const listener of f.app.listeners.get('toggle') ?? []) listener({ target: inspected });
+    assert.deepEqual(onboardingProgress(f.hooks.guide.snapshot()), [true, true, true, true, false]);
+    f.hooks.guide.open(); await f.hooks.guide.click({ dataset: { onboarding: 'next' } });
+    const form = f.hooks.research.content();
+    assert.match(form, /data-research-input="title" value=""/);
+    assert.match(form, /commit:japan-740/); assert.match(form, /commit:japan-744/);
+    assert.deepEqual(onboardingProgress(f.hooks.guide.snapshot()), [true, true, true, true, false]);
+    f.hooks.research.input({ dataset: { researchInput: 'title' }, value: 'Why does the court continue across the move to Naniwa?' });
+    f.hooks.research.input({ dataset: { researchInput: 'interpretation' }, value: 'The capital changes while the political organization retains its earlier source.' });
+    await f.hooks.research.save();
+    assert.deepEqual(onboardingProgress(f.hooks.guide.snapshot()), [true, true, true, true, true]);
+    const saved = f.calls.find(value => value.method === 'research.save').params.record;
+    assert.equal(saved.scope.model.datasetId, data.dataset.id); assert.equal(saved.evidence.length, 6);
+    assert.equal(saved.comparison.a.historicalRef, 'commit:japan-740'); assert.equal(saved.comparison.b.historicalRef, 'commit:japan-744');
+    assert.ok(saved.evidence.every(value => value.repositoryRevision === 'a'.repeat(40)));
+    assert.equal(f.research.get('unrelated-record').record.interpretation, 'Keep this existing record.');
+  });
 }
 function notEmpty(html) { for (const locale of ['en', 'zh-CN']) { assert.ok(!html.includes(copy(locale, 'noData')), 'An uninitialized library was rendered as empty.'); assert.ok(!html.includes(copy(locale, 'createData')), 'Import instructions appeared before the library was read.'); } }
 

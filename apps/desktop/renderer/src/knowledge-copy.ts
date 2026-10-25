@@ -90,7 +90,7 @@ const messages = {
     openSourceDocument: '打开来源文档', openSourceRecord: '打开来源记录', notRecorded: '未记录', noSourceLocators: '尚无主张定位信息。', sourceUnavailable: '来源信息暂不可用',
     fieldNames: '字段名称', fieldNameSource: '名称依据', fieldNamesVersioned: '名称来自所选资料版本。', fieldNamesLegacy: '名称来自此资料库的兼容目录，并未由所选资料版本固定。', fieldNamesUnavailable: '这个名称尚无目录来源记录。', fieldNamesMissing: '缺少当前界面语言的名称。', fieldNamesConflict: '目录提供的名称存在冲突。', catalogFingerprint: '兼容目录校验值',
     possible: '可能适用于这个时间', untimed: '未注明适用于这个时间', noSupportingAssertion: '尚无注明日期的主张支持这里的取值。',
-    fromTime: '始于', toTime: '止于', atTime: '在', calendar: '历法', precision: '精度', sourceText: '来源原文',
+    fromTime: '始于', toTime: '止于', atTime: '适用时间：', calendar: '历法', precision: '精度', sourceText: '来源原文',
     dirtyPin: '请先提交工作变化，再固定历史参照。', reviewChanges: '审阅变化',
     invalidYear: '请填写非零的整数历史年份。', invalidScope: '请检查年份先后和经纬范围。',
     unavailable: '本地服务暂不可用，恢复后可重试。', notFound: '这个对象在所选资料版本中不可用。',
