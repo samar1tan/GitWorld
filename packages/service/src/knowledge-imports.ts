@@ -3,20 +3,21 @@ import path from 'node:path';
 import { DatabaseSync } from 'node:sqlite';
 import { canonicalJson } from '../../domain/src/canonical.ts';
 import type { EditorialJson, EditorialRepository, EditorialWrite } from '../../contracts/src/editorial-types.ts';
-import type { KnowledgeFileImportRequest, KnowledgeFieldCatalog, KnowledgeImportContinuation, KnowledgeImportResult, KnowledgeMappingPreview } from '../../contracts/src/knowledge-workspace-types.ts';
+import type { KnowledgeFileImportRequest, KnowledgeFieldCatalog, KnowledgeImportContinuation, KnowledgeImportResult, KnowledgeMappingPreview, KnowledgeObjectBundle } from '../../contracts/src/knowledge-workspace-types.ts';
 import type { KnowledgeImportArtifact, KnowledgePendingImport, KnowledgeResumeImportRequest } from '../../contracts/src/knowledge-import-types.ts';
 import type { ServiceError } from '../../contracts/src/index.ts';
 import { parseKnowledgeImportArtifact, type KnowledgeFilePreview } from './knowledge-collection-files.ts';
 import { createKnowledgeStore } from './knowledge-store.ts';
 import { planKnowledgeVocabulary, vocabularyBaselinePath, vocabularyHash as hash, vocabularyPath, vocabularySummary, vocabularySourcePath } from './knowledge-vocabulary.ts';
 import { knowledgeCollectionFromTree } from './navigation-tree.ts';
+import { APPEND_OBJECT_MERGE_VERSION, appendKnowledgeBundle } from './knowledge-append.ts';
 
 const FILE='knowledge-imports.sqlite';
 export class KnowledgeImportFailure extends Error {readonly detail:ServiceError;constructor(detail:ServiceError){super(detail.code);this.detail=detail;}}
 const fail=(code:ServiceError['code'],reason?:string):never=>{throw new KnowledgeImportFailure({code,...(reason?{parameters:{reason}}:{})});};
-type Preview={artifact:KnowledgeImportArtifact;fileHash:string;head:string;catalogHash:string;guards:Record<string,string|null>;preview:KnowledgeMappingPreview};
+type Preview={artifact:KnowledgeImportArtifact;fileHash:string;head:string;catalogHash:string;guards:Record<string,string|null>;preview:KnowledgeMappingPreview;objectMergeVersion?:typeof APPEND_OBJECT_MERGE_VERSION};
 type ReviewReference={operationId:string;preparedHash:string};
-type Prepared={previewId:string;head:string;catalogPaths:string[];changes:EditorialWrite[];guards:Record<string,string|null>;result:KnowledgeImportResult;review?:'unreviewed'|'adopted';supersedes?:ReviewReference[];hash:string};
+type Prepared={previewId:string;head:string;catalogPaths:string[];changes:EditorialWrite[];guards:Record<string,string|null>;result:KnowledgeImportResult;review?:'unreviewed'|'adopted';supersedes?:ReviewReference[];objectMergeVersion?:typeof APPEND_OBJECT_MERGE_VERSION;appendBases?:Record<string,KnowledgeObjectBundle|null>;hash:string};
 const metadata=(files:Record<string,EditorialJson>)=>Object.fromEntries(Object.entries(files).filter(([name])=>name.startsWith('mappings/field-catalogs/')||name.startsWith('mappings/field-catalog-baselines/')));
 export function knowledgeArtifactHash(artifact:KnowledgeImportArtifact){return hash({...artifact,fingerprintVersion:2,collection:{...artifact.collection,assertions:artifact.collection.assertions.map(value=>({...value,review:'unreviewed'}))}});}
 const safePath=(name:string)=>/^(?:objects|sources)\/[a-f0-9]{64}\.json$/.test(name)||/^mappings\/(?:baseline-|conflict-)[a-f0-9]{64}\.json$/.test(name)||/^mappings\/field-catalog(?:s|-baselines)\/[a-f0-9]{64}\.json$/.test(name);
@@ -31,13 +32,33 @@ const reviewKey=(operationId:string,preparedHash:string)=>canonicalJson([operati
 const validContinuation=(value:KnowledgeImportContinuation)=>value?.kind==='wikipedia-mapping'&&typeof value.jobId==='string'&&/^[a-f0-9]{64}$/.test(value.jobId)&&Object.keys(value).length===2;
 function validatePreparedPreview(prepared:Prepared,selected:Preview){
   if(prepared.head!==selected.head||hash(prepared.result.preview)!==hash(selected.preview))return fail('VALIDATION_FAILED');
+  if(prepared.objectMergeVersion!==selected.objectMergeVersion)return fail('VALIDATION_FAILED');
+  if(prepared.objectMergeVersion===APPEND_OBJECT_MERGE_VERSION){
+    const bases=prepared.appendBases;
+    if(!bases||hash(Object.keys(bases).sort())!==hash(selected.artifact.collection.objects.map(value=>value.id).sort()))return fail('VALIDATION_FAILED');
+    for(const object of selected.artifact.collection.objects){const base=bases[object.id];if((base===null?null:hash(base))!==selected.guards[baselinePath(object.id)]||base!==null&&base.object.id!==object.id)return fail('VALIDATION_FAILED');}
+  }else if(prepared.appendBases!==undefined)return fail('VALIDATION_FAILED');
   if(prepared.result.continuation!==undefined&&(!validContinuation(prepared.result.continuation)||!prepared.result.conflicts.length))return fail('VALIDATION_FAILED');
   if(Object.entries(selected.guards).some(([name,digest])=>prepared.guards[name]!==digest))return fail('VALIDATION_FAILED');
   const catalogPaths=Object.entries(selected.guards).filter(([name,digest])=>digest!==null&&(name.startsWith('mappings/field-catalogs/')||name.startsWith('mappings/field-catalog-baselines/'))).map(([name])=>name).sort();
   if(hash([...prepared.catalogPaths].sort())!==hash(catalogPaths)||prepared.result.paths!==undefined&&hash(prepared.result.paths)!==hash(prepared.changes.map(value=>value.path)))return fail('VALIDATION_FAILED');
+  const bySubject=new Map<string,KnowledgeImportArtifact['collection']['assertions']>();
+  for(const assertion of selected.artifact.collection.assertions){const values=bySubject.get(assertion.subjectId)??[];values.push(assertion);bySubject.set(assertion.subjectId,values);}
   if(!prepared.result.conflicts.length){
     const accepted=[...prepared.result.changedObjects,...prepared.result.unchangedObjects].sort();
     if(new Set(accepted).size!==accepted.length||hash(accepted)!==hash(selected.artifact.collection.objects.map(value=>value.id).sort()))return fail('VALIDATION_FAILED');
+    if(prepared.objectMergeVersion===APPEND_OBJECT_MERGE_VERSION){
+      const candidates=new Map<string,KnowledgeObjectBundle>();
+      for(const object of selected.artifact.collection.objects){
+        const incoming:KnowledgeObjectBundle={schemaVersion:1,object,assertions:(bySubject.get(object.id)??[]).map(value=>({...value,review:prepared.review??value.review}))};
+        const expanded=appendKnowledgeBundle(prepared.appendBases![object.id],incoming).bundle;
+        candidates.set(objectPath(object.id),expanded);candidates.set(baselinePath(object.id),expanded);
+      }
+      const writes=new Map(prepared.changes.map(value=>[value.path,value.value]));
+      for(const id of prepared.result.changedObjects)for(const name of [objectPath(id),baselinePath(id)])if(!writes.has(name)||hash(writes.get(name))!==hash(candidates.get(name)))return fail('VALIDATION_FAILED');
+      for(const change of prepared.changes)if(change.path.startsWith('objects/')||change.path.startsWith('mappings/baseline-')){const expected=candidates.get(change.path);if(!expected||hash(expected)!==hash(change.value))return fail('VALIDATION_FAILED');}
+      if(prepared.changes.some(value=>value.path.startsWith('mappings/conflict-')))return fail('VALIDATION_FAILED');
+    }
     return;
   }
   if(prepared.result.changedObjects.length||prepared.result.unchangedObjects.length||prepared.result.objects?.length||prepared.result.totalObjects) return fail('VALIDATION_FAILED');
@@ -46,16 +67,12 @@ function validatePreparedPreview(prepared:Prepared,selected:Preview){
   const sources=new Map(selected.artifact.collection.sources.map(value=>[vocabularySourcePath(value.id),value]));
   const conflicts=new Map(prepared.result.conflicts.map(value=>[conflictPath(value.objectId),value]));
   const changes=new Map(prepared.changes.map(value=>[value.path,value.value]));
-  const bySubject=new Map<string,KnowledgeImportArtifact['collection']['assertions']>();
-  for(const assertion of selected.artifact.collection.assertions){const values=bySubject.get(assertion.subjectId)??[];values.push(assertion);bySubject.set(assertion.subjectId,values);}
   if(conflicts.size!==prepared.result.conflicts.length)return fail('VALIDATION_FAILED');
   for(const conflict of conflicts.values()){
     const object=objects.get(conflict.objectId),base=conflict.base,local=conflict.local;
     if(!object||!local||hash(local)!==selected.guards[objectPath(conflict.objectId)]||(base===null?null:hash(base))!==selected.guards[baselinePath(conflict.objectId)])return fail('VALIDATION_FAILED');
-    const assertions=new Map((base?.assertions??[]).map(value=>[value.id,value]));
-    for(const assertion of bySubject.get(object.id)??[])assertions.set(assertion.id,{...assertion,review:prepared.review??assertion.review});
-    const incoming={schemaVersion:1,object,assertions:[...assertions.values()].sort((a,b)=>a.id.localeCompare(b.id))};
-    if(hash(incoming)!==hash(conflict.incoming)||hash(local)===hash(incoming)||base!==null&&(hash(local)===hash(base)||hash(incoming)===hash(base)))return fail('VALIDATION_FAILED');
+    const expanded=appendKnowledgeBundle(base,{schemaVersion:1,object,assertions:(bySubject.get(object.id)??[]).map(assertion=>({...assertion,review:prepared.review??assertion.review}))},prepared.objectMergeVersion??1),incoming=expanded.bundle;
+    if(hash(incoming)!==hash(conflict.incoming)||hash(local)===hash(incoming)||!expanded.metadataConflict&&base!==null&&(hash(local)===hash(base)||hash(incoming)===hash(base)))return fail('VALIDATION_FAILED');
   }
   for(const change of prepared.changes){
     const expected=sources.get(change.path)??conflicts.get(change.path);
@@ -70,11 +87,13 @@ function reviewPaths(prepared:Prepared,selected:Preview){
 }
 function readPreview(id:string,text:string):Preview{
   if(text.length>64*1024*1024)return fail('VALIDATION_FAILED');const value=JSON.parse(text) as Preview;
+  if(!value||value.objectMergeVersion!==undefined&&value.objectMergeVersion!==APPEND_OBJECT_MERGE_VERSION)return fail('VALIDATION_FAILED');
   if(previewId(value)!==id||value.preview.prepared?.id!==id||value.preview.prepared.baseHead!==value.head||value.preview.prepared.fingerprintVersion!==2||value.preview.inputHash!==knowledgeArtifactHash(parseKnowledgeImportArtifact(JSON.stringify(value.artifact)))||!/^[a-f0-9]{40}$/.test(value.head)||!/^[a-f0-9]{64}$/.test(value.fileHash)||!/^[a-f0-9]{64}$/.test(value.catalogHash)||Object.entries(value.guards).some(([name,digest])=>!safePath(name)||digest!==null&&!/^[a-f0-9]{64}$/.test(digest)))return fail('VALIDATION_FAILED');
   return value;
 }
 function readPrepared(text:string):Prepared{
   if(text.length>128*1024*1024)return fail('VALIDATION_FAILED');const value=JSON.parse(text) as Prepared;
+  if(!value||value.objectMergeVersion!==undefined&&value.objectMergeVersion!==APPEND_OBJECT_MERGE_VERSION)return fail('VALIDATION_FAILED');
   if(!value||hash({...value,hash:''})!==value.hash||!/^[a-f0-9]{40}$/.test(value.head)||value.review!==undefined&&!['unreviewed','adopted'].includes(value.review)||!Array.isArray(value.catalogPaths)||!value.result||!Array.isArray(value.result.conflicts)||!Array.isArray(value.result.changedObjects)||!Array.isArray(value.result.unchangedObjects)||!Array.isArray(value.changes)||value.changes.length>40000||new Set(value.changes.map(change=>change.path)).size!==value.changes.length||value.changes.some(change=>!safePath(change.path)||Buffer.byteLength(canonicalJson(change.value))>16*1024*1024)||Object.entries(value.guards).some(([name,digest])=>!safePath(name)||digest!==null&&!/^[a-f0-9]{64}$/.test(digest)))return fail('VALIDATION_FAILED');
   if(value.supersedes!==undefined&&(!Array.isArray(value.supersedes)||value.supersedes.length>10000||value.result.conflicts.length||value.supersedes.some(ref=>!ref||typeof ref.operationId!=='string'||!ref.operationId||ref.operationId.length>200||typeof ref.preparedHash!=='string'||!/^[a-f0-9]{64}$/.test(ref.preparedHash)||Object.keys(ref).length!==2)||new Set(value.supersedes.map(ref=>ref.operationId)).size!==value.supersedes.length))return fail('VALIDATION_FAILED');
   return value;
@@ -126,7 +145,7 @@ export function createKnowledgeImports(repository:EditorialRepository,store:Retu
     for(const change of catalog.changes)names.add(change.path);
     const guards=Object.fromEntries([...names].map(name=>[name,snapshot.files[name]===undefined?null:hash(snapshot.files[name])]));
     const summary=store.previewCollection(artifact.collection,{issues:artifact.projection?.exceptions}).preview;
-    const value:Preview={artifact,fileHash:input.sha256,head:snapshot.head,catalogHash:hash(metadata(snapshot.files)),guards,preview:{...summary,inputHash,prepared:{id:'',fingerprintVersion:2,baseHead:snapshot.head},...(artifact.vocabulary?{vocabulary:vocabularySummary(artifact.vocabulary,catalog.conflicts)}:{})}};
+    const value:Preview={artifact,fileHash:input.sha256,head:snapshot.head,catalogHash:hash(metadata(snapshot.files)),guards,objectMergeVersion:APPEND_OBJECT_MERGE_VERSION,preview:{...summary,inputHash,prepared:{id:'',fingerprintVersion:2,baseHead:snapshot.head},...(artifact.vocabulary?{vocabulary:vocabularySummary(artifact.vocabulary,catalog.conflicts)}:{})}};
     const id=previewId(value);value.preview.prepared!.id=id;
     database.prepare('INSERT OR IGNORE INTO previews(id,body) VALUES(?,?)').run(id,canonicalJson(value));
     return structuredClone(lookup(id).preview);
@@ -141,6 +160,7 @@ export function createKnowledgeImports(repository:EditorialRepository,store:Retu
     if(row){prepared=readPrepared(row.prepared);const selected=lookup(prepared.previewId);if(prepared.previewId!==input.previewId||prepared.head!==input.expectedHead||selected.preview.inputHash!==input.expectedInputHash||hash(prepared.result.preview)!==hash(selected.preview))return fail('VALIDATION_FAILED');}
     else{
       if(!input.previewId)return fail('REVIEW_REQUIRED','paired-preview-required');const selected=lookup(input.previewId);
+      if(selected.objectMergeVersion!==APPEND_OBJECT_MERGE_VERSION)return fail('REVIEW_REQUIRED','import-preview-merge-version-changed');
       if(selected.head!==input.expectedHead||selected.preview.inputHash!==input.expectedInputHash)return fail('CONFLICT');
       const file=await read();if(file.sha256!==selected.fileHash||!file.artifact||knowledgeArtifactHash(file.artifact)!==input.expectedInputHash)return fail('CONFLICT','selected-file-changed');
       const snapshot=await repository.snapshot({from:'working',prefixes:['objects/','sources/','mappings/']});
@@ -157,7 +177,8 @@ export function createKnowledgeImports(repository:EditorialRepository,store:Retu
       const reviewing=plan.result.conflicts.length>0,changes=reviewing?plan.changes.filter(change=>change.path.startsWith('sources/')||change.path.startsWith('mappings/conflict-')):complete;
       const result:KnowledgeImportResult={...plan.result,...(reviewing?{changedObjects:[],unchangedObjects:[],objects:[],totalObjects:0,continuation:structuredClone(reviewContext!),...(plan.result.batch?{batch:{...plan.result.batch,acceptedObjectSetHash:hash([])}}:{})}:{}),preview:selected.preview,paths:changes.map(change=>change.path)};
       const supersedes=reviewing?[]:priorReviews(selected);
-      prepared={previewId:input.previewId,head:input.expectedHead,catalogPaths:Object.keys(metadata(snapshot.files)),changes,guards:{...selected.guards,...catalog.guards,...plan.guards},result,review:input.review,...(supersedes.length?{supersedes}:{}),hash:''};
+      const appendBases=Object.fromEntries(selected.artifact.collection.objects.map(object=>[object.id,(snapshot.files[baselinePath(object.id)]??null) as unknown as KnowledgeObjectBundle|null]));
+      prepared={previewId:input.previewId,head:input.expectedHead,catalogPaths:Object.keys(metadata(snapshot.files)),changes,guards:{...selected.guards,...catalog.guards,...plan.guards},result,review:input.review,objectMergeVersion:APPEND_OBJECT_MERGE_VERSION,appendBases,...(supersedes.length?{supersedes}:{}),hash:''};
       prepared.hash=hash(prepared);readPrepared(canonicalJson(prepared));checked(prepared);
       database.prepare('INSERT INTO operations(id,signature,prepared,result) VALUES(?,?,?,NULL)').run(input.operationId,signature,canonicalJson(prepared));await options.onFault?.('after-prepare');
     }
@@ -166,6 +187,7 @@ export function createKnowledgeImports(repository:EditorialRepository,store:Retu
   async function finish(prepared:Prepared,operationId:string):Promise<KnowledgeImportResult>{
     checked(prepared);
     const current=await repository.snapshot({from:'working',prefixes:['objects/','sources/','mappings/']});
+    if(prepared.objectMergeVersion===undefined)await checkLegacyPending(prepared,current);
     const matches=(change:EditorialWrite)=>hash(current.files[change.path]??null)===hash(change.value);
     if(!prepared.changes.every(matches)){
       if(current.head!==prepared.head)return fail('HEAD_CHANGED');
@@ -178,6 +200,27 @@ export function createKnowledgeImports(repository:EditorialRepository,store:Retu
       const after=await repository.snapshot({from:'working',paths:prepared.changes.map(change=>change.path)});if(prepared.changes.some(change=>hash(after.files[change.path]??null)!==hash(change.value)))return fail('CONTENT_CHANGED');
     }
     database.prepare('UPDATE operations SET result=? WHERE id=?').run(canonicalJson(prepared.result),operationId);await options.onFault?.('after-receipt');return structuredClone(prepared.result);
+  }
+  async function checkLegacyPending(prepared:Prepared,current:Awaited<ReturnType<EditorialRepository['snapshot']>>){
+    if(current.head!==prepared.head)return fail('HEAD_CHANGED');
+    const selected=lookup(prepared.previewId),names=selected.artifact.collection.objects.map(object=>baselinePath(object.id));
+    const bySubject=new Map<string,KnowledgeImportArtifact['collection']['assertions']>();
+    for(const assertion of selected.artifact.collection.assertions){const values=bySubject.get(assertion.subjectId)??[];values.push(assertion);bySubject.set(assertion.subjectId,values);}
+    const candidates=new Map<string,KnowledgeObjectBundle>();
+    let committed:Record<string,EditorialJson>|undefined;
+    for(const object of selected.artifact.collection.objects){
+      const name=baselinePath(object.id),expected=selected.guards[name];let base=(current.files[name]??null) as unknown as KnowledgeObjectBundle|null;
+      if((base===null?null:hash(base))!==expected){
+        committed??=(await repository.snapshot({from:prepared.head,paths:names})).files;
+        base=(committed[name]??null) as unknown as KnowledgeObjectBundle|null;
+        if((base===null?null:hash(base))!==expected)return fail('REVIEW_REQUIRED','legacy-import-merge-unverifiable');
+      }
+      const incoming:KnowledgeObjectBundle={schemaVersion:1,object,assertions:(bySubject.get(object.id)??[]).map(value=>({...value,review:prepared.review??value.review}))};
+      const legacy=appendKnowledgeBundle(base,incoming,1).bundle,expanded=appendKnowledgeBundle(base,incoming);
+      if(hash(legacy)!==hash(expanded.bundle)||expanded.metadataConflict&&prepared.result.changedObjects.includes(object.id))return fail('REVIEW_REQUIRED','legacy-import-merge-review-required');
+      candidates.set(objectPath(object.id),legacy);candidates.set(baselinePath(object.id),legacy);
+    }
+    for(const change of prepared.changes)if(change.path.startsWith('objects/')||change.path.startsWith('mappings/baseline-')){const candidate=candidates.get(change.path);if(!candidate||hash(candidate)!==hash(change.value))return fail('VALIDATION_FAILED');}
   }
   async function resume(input:KnowledgeResumeImportRequest):Promise<KnowledgeImportResult>{
     if(closed)return fail('SERVICE_UNAVAILABLE');

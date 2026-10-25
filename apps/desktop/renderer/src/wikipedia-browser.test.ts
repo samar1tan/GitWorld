@@ -44,6 +44,33 @@ const input = (browser: ReturnType<typeof createWikipediaBrowser>, key: string, 
 const submit = (browser: ReturnType<typeof createWikipediaBrowser>, form: string) => browser.submit({ dataset: { wikipediaForm: form } } as unknown as HTMLFormElement);
 async function choose(browser: ReturnType<typeof createWikipediaBrowser>) { await browser.open('saved'); await click(browser, 'job', { id: A }); change(browser, 'profile', 'office-tenures-v1'); await click(browser, 'table', { table: '0' }); change(browser, 'holder', '0', { table: '0' }); change(browser, 'start', '2', { table: '0' }); change(browser, 'end', '3', { table: '0' }); }
 
+for (const locale of ['en', 'zh-CN'] as const) {
+  test(`${locale}: changed object merge rules require a new saved-source preview without repeating acquisition`, async t => {
+    const f = fixture(t, locale), browser = f.create(); await choose(browser); await submit(browser, 'preview');
+    const selection = structuredClone(f.latest()!.selection), original = f.api.adopt;
+    f.api.adopt = async params => { f.calls.push({ method: 'adopt', params }); throw new ServiceFailure({ code: 'REVIEW_REQUIRED', parameters: { reason: 'import-preview-merge-version-changed' } }); };
+    await click(browser, 'adopt');
+    assert.match(browser.content(), locale === 'en' ? /merge rules changed/ : /合并规则已更新/);
+    assert.doesNotMatch(browser.content(), /data-wikipedia="check-result"|data-wikipedia="adopt"/);
+    await click(browser, 'check-result'); await click(browser, 'adopt'); assert.equal(f.calls.filter(value => value.method === 'adopt').length, 1);
+    await click(browser, 'retry'); assert.deepEqual(f.latest()!.selection, selection); assert.equal(f.calls.filter(value => value.method === 'preview').length, 2); assert.equal(f.calls.filter(value => value.method === 'collect').length, 0);
+    f.api.adopt = original; await click(browser, 'adopt'); assert.equal(f.adopted.length, 1);
+  });
+  test(`${locale}: unsafe legacy Wikipedia continuation retains the operation and stops blind retry`, async t => {
+    for (const reason of ['legacy-import-merge-review-required', 'legacy-import-merge-unverifiable']) {
+      const f = fixture(t, locale), browser = f.create(); await choose(browser); await submit(browser, 'preview');
+      let accepted = '';
+      f.api.adopt = async params => { accepted = params.operationId; f.calls.push({ method: 'adopt', params }); f.pending([{ operationId: accepted, previewId: params.previewId, baseHead: HEAD, counts: { objects: 2, assertions: 2, datedAssertions: 2, locatedObjects: 0 } }]); throw new ServiceFailure({ code: 'REVIEW_REQUIRED', parameters: { reason } }); };
+      await click(browser, 'adopt');
+      assert.match(browser.content(), locale === 'en' ? /backup.*before this unfinished import/ : /未完成导入.*之前.*完整资料库备份/);
+      assert.doesNotMatch(browser.content(), /data-wikipedia="check-result"|data-wikipedia="retry"|data-wikipedia="adopt"|data-wikipedia="cancel"/);
+      await click(browser, 'check-result'); await click(browser, 'adopt'); await click(browser, 'retry');
+      assert.equal(f.calls.filter(value => value.method === 'adopt').length, 1); assert.equal(f.calls.filter(value => value.method === 'resume').length, 0); assert.equal(f.adopted.length, 0);
+      assert.equal(f.imported(), 0); assert.ok(accepted); browser.hide();
+    }
+  });
+}
+
 test('page acquisition is explicit, cancellable and keeps an incomplete durable job instead of claiming a source exists', async t => {
   const f = fixture(t), gate = deferred<WikipediaJob>(), browser = f.create(); await browser.open('search'); input(browser, 'title', 'https://other.invalid'); await submit(browser, 'collect'); assert.equal(f.calls.filter(value => value.method === 'collect').length, 0);
   input(browser, 'title', 'A source page'); input(browser, 'revision', '77'); f.api.collect = async params => { f.calls.push({ method: 'collect', params }); return gate.promise; };

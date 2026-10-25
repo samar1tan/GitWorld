@@ -49,7 +49,7 @@ function fixture(t: { after(fn: () => unknown): void }) {
     async log() { return [...committed]; }, async branch() { return status(); }, async switch() { return status(); }, async checkout() { return status(); }, async revert() { return status(); }, async abortRevert() { return status(); },
   };
   const notified: EditorialCommit[] = [];
-  const create = (locale: 'en' | 'zh-CN' = 'en', label?: (id: string) => string, afterCommit?: (value: EditorialCommit) => Promise<void>) => createChangesWorkspace({ locale: () => locale, render: () => {}, api, storage, label, onClose: () => {}, onCommitted: async value => { notified.push(value); await afterCommit?.(value); } });
+  const create = (locale: 'en' | 'zh-CN' | (() => 'en' | 'zh-CN') = 'en', label?: (id: string) => string, afterCommit?: (value: EditorialCommit) => Promise<void>) => createChangesWorkspace({ locale: () => typeof locale === 'function' ? locale() : locale, render: () => {}, api, storage, label, onClose: () => {}, onCommitted: async value => { notified.push(value); await afterCommit?.(value); } });
   return { create, api, working, calls, committed, notified, status, storage, parent: () => parent, index: () => index, head: (value: string) => { head = value; } };
 }
 const click = (workspace: ReturnType<typeof createChangesWorkspace>, action: string, extra = {}) => workspace.click({ dataset: { changes: action, ...extra } } as unknown as HTMLElement);
@@ -63,6 +63,27 @@ test('a successful commit can prepare and leave its own workspace without awaiti
   await workspace.open();await api.stage({paths:[NOTE],expectedHead:status().head});await workspace.refresh();
   message(workspace,'Preserve the reviewed interpretation');await submit(workspace);
   assert.equal(committed.length,1);assert.equal(returned,true);assert.equal(status().staged.length,0);assert.deepEqual(await workspace.prepareClose(),{ready:true});
+});
+
+test('a completed commit changes language without repeating the write or replacing later input', async t => {
+  const { create, api, status, committed, calls, storage } = fixture(t);
+  let locale: 'en' | 'zh-CN' = 'en';
+  const workspace = create(() => locale); await workspace.open();
+  await api.stage({ paths: [NOTE], expectedHead: status().head }); await workspace.refresh();
+  message(workspace, 'Record the reviewed interpretation'); await submit(workspace);
+  assert.equal(committed.length, 1);
+  const english = workspace.content(), oid = committed[0].oid;
+  assert.ok(english.includes(changesCopy('en', 'committed', { oid: `${oid.slice(0, 12)}…` })));
+  workspace.openCommit(); message(workspace, 'A later, uncommitted reason');
+  const before = { calls: calls.length, status: status(), buffer: storage.getItem('gitworld-commit-input-v1') };
+  locale = 'zh-CN';
+  const chinese = workspace.content();
+  assert.ok(chinese.includes(changesCopy('zh-CN', 'committed', { oid: `${oid.slice(0, 12)}…` })));
+  assert.ok(!chinese.includes(changesCopy('en', 'committed', { oid: `${oid.slice(0, 12)}…` })));
+  assert.match(chinese, /A later, uncommitted reason/);
+  locale = 'en'; assert.ok(workspace.content().includes(changesCopy('en', 'committed', { oid: `${oid.slice(0, 12)}…` })));
+  assert.equal(calls.length, before.calls); assert.deepEqual(status(), before.status);
+  assert.equal(committed.length, 1); assert.equal(storage.getItem('gitworld-commit-input-v1'), before.buffer);
 });
 
 test('opening a large change set requests paged metadata and no full source differences', async t => {

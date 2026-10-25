@@ -1,4 +1,4 @@
-import { createHistoryEngine, type DataPackage, type HistoryLocale, type HistoryText, type ValidationIssue } from '@gitworld/domain';
+import { createHistoryEngine, isId, type DataPackage, type HistoryLocale, type HistoryText, type ValidationIssue } from '@gitworld/domain';
 import type { Draft, DraftSummary, DraftPreview, ImportPreview, LibrarySummary, RevisionSummary, SourceConfiguration, ModelWriteGuards } from '@gitworld/contracts';
 import { bridge, request, operationId, escapeHtml as esc, ServiceFailure } from './client';
 import { contentText, yearText } from './copy';
@@ -6,7 +6,7 @@ import { managerText, type ManagerKey } from './manager-copy';
 import './manager.css';
 
 type Kind = 'source'|'scope'|'process'|'event'|'place'|'branch'|'field'|'commit'|'relationship'|'tag'|'metadata';
-type Node = { type: 'text'|'number'|'bool'|'enum'|'ids'|'object'|'list'|'map'|'value'|'tuple'; label:ManagerKey; optional?:boolean; multiline?:boolean; choices?:string[]; fields?:Record<string,Node>; item?:Node; ref?:Kind; value?:unknown };
+type Node = { type: 'text'|'number'|'bool'|'enum'|'ids'|'object'|'list'|'map'|'value'|'tuple'; label:ManagerKey; optional?:boolean; multiline?:boolean; identifier?:boolean; choices?:string[]; fields?:Record<string,Node>; item?:Node; ref?:Kind; value?:unknown };
 const txt=(label:ManagerKey,optional=false,multiline=false):Node=>({type:'text',label,optional,multiline});
 const num=(label:ManagerKey):Node=>({type:'number',label});
 const ids=(label:ManagerKey,ref?:Kind):Node=>({type:'ids',label,ref});
@@ -29,7 +29,7 @@ const schemas:Record<Kind,Node>={
  event:obj('event',{id:txt('id'),title:localized('titleField'),summary:localized('summary'),commitIds:ids('commitIds','commit'),sourceIds:ids('sourceIds','source')}),
  place:obj('place',{id:txt('id'),name:localized('name'),scopeIds:ids('scopeIds','scope'),longitude:num('longitude'),latitude:num('latitude')}),
  branch:obj('branch',{id:txt('id'),name:localized('name'),description:localized('description'),scopeId:reference('scopeId','scope'),processId:reference('processId','process'),coverage,commitIds:ids('commitIds','commit'),forkCommitId:reference('forkCommitId','commit',true),color:txt('color',true)}),
- field:obj('field',{id:txt('id'),name:localized('name'),description:localized('description',true),group:txt('group'),valueType:choice('valueType',['concept','text','number','boolean','set']),applicableScopeIds:ids('applicableScopeIds','scope')}),
+ field:obj('field',{id:txt('id'),name:localized('name'),description:localized('description',true),group:{...txt('group'),identifier:true},valueType:choice('valueType',['concept','text','number','boolean','set']),applicableScopeIds:ids('applicableScopeIds','scope')}),
  commit:obj('commit',{id:txt('id'),branchId:reference('branchId','branch'),title:localized('titleField'),summary:localized('summary'),date,kind:choice('kind',['baseline','change','split','integration']),eventId:reference('eventId','event',true),sourceIds:ids('sourceIds','source'),evidence,lineage:list('lineage',obj('lineage',{parentId:reference('parentVersion','commit'),kind:choice('kind',['continuation','split','integration']),evidence})),changes:{type:'map',label:'changes',item:valueSchema},integration:obj('integration',{resolutions:{type:'map',label:'resolutions',item:resolution}},true),note:localized('note',true)}),
  relationship:obj('relationship',{id:txt('id'),kind:choice('kind',['influence','contact']),fromCommitId:reference('fromCommitId','commit'),toCommitId:reference('toCommitId','commit'),fieldIds:ids('fieldIds','field'),summary:localized('summary'),evidence}),
  tag:obj('tag',{id:txt('id'),name:localized('name'),commitId:reference('commitId','commit'),description:localized('description',true)}),
@@ -86,7 +86,14 @@ export function createManager(options:{locale:()=>HistoryLocale;package:()=>Data
   if(node.type==='enum')return `<label for="${id}">${label}<select ${attrs}>${optionsList(node,value??node.choices![0])}</select></label>`;
   const val=node.type==='ids'?(value??[]).join(', '):value??'';
   if(node.type==='ids'||node.multiline)return `<label for="${id}">${label}<textarea ${attrs} rows="${node.type==='ids'?2:3}">${esc(val)}</textarea></label>`;
-  return `<label for="${id}">${label}<input ${attrs} type="${node.type==='number'?'number':'text'}" ${node.type==='number'?'step="any"':''} ${node.ref?`list="manager-refs-${node.ref}"`:''} value="${esc(val)}" ${path==='object.id'&&selected?'readonly':''}></label>`;
+  return `<label for="${id}">${label}<input ${attrs} type="${node.type==='number'?'number':'text'}" ${node.type==='number'?'step="any"':''} ${node.ref?`list="manager-refs-${node.ref}"`:''} ${node.identifier?`data-manager-field-group maxlength="128" aria-describedby="${id}-hint ${id}-error"`:''} value="${esc(val)}" ${path==='object.id'&&selected?'readonly':''}>${node.identifier?`<small id="${id}-hint">${esc(m('groupHint'))}</small><small id="${id}-error" class="manager-error" data-manager-group-error role="alert" hidden></small>`:''}</label>`;
+ }
+ function validateGroup(form:HTMLFormElement,focus=false){
+  const input=form.querySelector<HTMLInputElement>('[data-manager-field-group]');if(!input)return true;
+  const valid=isId(input.value.trim()),notice=form.querySelector<HTMLElement>('[data-manager-group-error]');
+  input.setAttribute('aria-invalid',String(!valid));if(notice){notice.hidden=valid;notice.textContent=valid?'':m('invalidGroup');}
+  if(!valid){message=null;document.querySelector('.manager-message')?.remove();if(focus)input.focus();}
+  return valid;
  }
  function readNode(node:Node,value:any,path:string,f:FormData):any {
   const get=(p:string)=>String(f.get(p)??'').trim();
@@ -202,17 +209,17 @@ export function createManager(options:{locale:()=>HistoryLocale;package:()=>Data
    else if(action==='acquire'){activeOperation=operationId();progress='queued';render();imported=await request('source.acquire',{sourceId:target.dataset.id!,operationId:activeOperation});progress='complete';}
   });
  }
- async function submit(form:HTMLFormElement){const purpose=form.dataset.managerForm;if(!purpose||busy)return;const f=new FormData(form);let value:any;
+ async function submit(form:HTMLFormElement){const purpose=form.dataset.managerForm;if(!purpose||busy)return;if(purpose==='object'&&!validateGroup(form,true))return;const f=new FormData(form);let value:any;
   try{if(purpose==='object'){readingForSave=true;value=readNode(schemas[kind],editing,'object',f);editing=value;}}catch(e){error=m('invalid');let notice=form.querySelector<HTMLElement>('.manager-local-error');if(!notice){notice=document.createElement('p');notice.className='manager-local-error manager-error';notice.setAttribute('role','alert');form.prepend(notice);}notice.textContent=error;return;}finally{readingForSave=false;}
   await run(async()=>{
    if(purpose==='object')await saveObject(value);
    else if(purpose==='new-draft'){const [datasetId,revisionId]=String(f.get('release')).split('|');const pkg=await request('revision.get',{dataset:{datasetId,revisionId}});await clonePackage(pkg,String(f.get('revision')).trim());auxiliarySnapshots.delete('new-draft');}
    else if(purpose==='source-config'){configEditing={id:String(f.get('id')).trim(),adapter:'met-open-access-v1',enabled:f.has('enabled'),settings:{objectIds:String(f.get('objectIds')).trim()},rightsBasis:String(f.get('rightsBasis')).trim()};await request('source.save',{source:configEditing});auxiliarySnapshots.delete('source-config');await reload();message='sourceSaved';}
    else if(purpose==='snapshot'&&draft){snapshotCommitId=String(f.get('commitId'));snapshot=createHistoryEngine(draft.package.history).snapshot(snapshotCommitId);}
-   else if(purpose==='publish'&&draft){if(!reviewGuards||!preview||findings===null||findings.length||preview.issues.length)throw new Error(m('reviewRequired'));await request('draft.publish',{...reviewGuards!,draftId:draft.id,expectedVersion:draft.version,operationId:operationId(),review:{reviewer:String(f.get('reviewer')).trim(),reviewedAt:new Date().toISOString(),evidenceReviewed:f.has('evidence'),rightsReviewed:f.has('rights'),note:String(f.get('note')).trim()}});message='published';await reload();await options.onPublished();tab='library';draft=null;editing=null;resetReview();}
+   else if(purpose==='publish'&&draft){if(!reviewGuards||!preview||findings===null||findings.length||preview.issues.length)throw new Error(m('reviewRequired'));await request('draft.publish',{...reviewGuards!,draftId:draft.id,expectedVersion:draft.version,operationId:operationId(),review:{reviewer:String(f.get('reviewer')).trim(),reviewedAt:new Date().toISOString(),evidenceReviewed:f.has('evidence'),rightsReviewed:f.has('rights'),note:String(f.get('note')).trim()}});message='modelAddedToWorking';await reload();await options.onPublished();tab='library';draft=null;editing=null;resetReview();}
   });
  }
- async function change(target:HTMLSelectElement){if(target.name?.endsWith('.__enabled')||target.name?.endsWith('.status')){const form=target.closest<HTMLFormElement>('form[data-manager-form="object"]');if(form){try{editing=readNode(schemas[kind],editing,'object',new FormData(form));render();}catch(e){fail(e);render();}}}}
+ async function change(target:HTMLSelectElement|HTMLInputElement){if(target.dataset.managerFieldGroup!==undefined){const form=target.closest<HTMLFormElement>('form[data-manager-form="object"]');if(form)validateGroup(form);return;}if(target.name?.endsWith('.__enabled')||target.name?.endsWith('.status')){const form=target.closest<HTMLFormElement>('form[data-manager-form="object"]');if(form){try{editing=readNode(schemas[kind],editing,'object',new FormData(form));render();}catch(e){fail(e);render();}}}}
  async function open(){unsubscribe?.();unsubscribe=bridge().onProgress(p=>{if(p.operationId===activeOperation){progress=p.stage;render();}});tab='library';await run(reload);}
  async function close(){if(busy||!leaveEditor())return false;unsubscribe?.();unsubscribe=null;await options.onClose();return true;}
  return {open,render,click,submit,change,hasUnsavedChanges,close};

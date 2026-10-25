@@ -22,6 +22,7 @@ export function createCollectionBrowser(options: Options) {
   let provider: CollectionProvider = 'cliopatria', text = '', from = '', to = '', limit = '1000';
   let active: string | null = null, cancelling = false, progress: OperationProgress | null = null, unsubscribe: (() => void) | null = null;
   let preview: KnowledgeMappingPreview | null = null, previewHead: string | null = null, previewing = false, adopting = false, review = false, sequence = 0;
+  let errorReason: string | null = null, legacyHoldReason: string | null = null;
   let error: string | null = null, adoptedMessage: { changed: number; unchanged: number; conflicts: number } | null = null;
   let issuePage: CollectionIssuesPage | null = null, issuesOpen = false, issuesLoading = false, issuesError: string | null = null, issueSequence = 0, requestedOffset = 0, rebuilding = false;
   const t = (key: Exclude<CollectionCopyKey, 'download' | 'bytes' | 'records' | 'usable' | 'scope' | 'adoptedResult' | 'issuesRange' | 'issuesTotal' | 'legacyIssues' | 'aggregateExclusions'>) => copy(options.locale(), key);
@@ -33,10 +34,11 @@ export function createCollectionBrowser(options: Options) {
   const chosen = () => jobs.find(value => value.id === selected) ?? null;
   const observed = (event: SourceObservation) => { try { options.onObserved?.(event); } catch { /* Observers cannot invalidate saved source data. */ } };
   const code = (cause: unknown) => cause instanceof ServiceFailure ? cause.detail.code : 'IO_ERROR';
+  function fail(cause: unknown) { error = code(cause); errorReason = cause instanceof ServiceFailure && typeof cause.detail.parameters?.reason === 'string' ? cause.detail.parameters.reason : null; if (errorReason === 'legacy-import-merge-review-required' || errorReason === 'legacy-import-merge-unverifiable') legacyHoldReason = errorReason; }
   function errorHtml() {
-    if (!error) return '';
-    const message = error === 'INVALID_REQUEST' ? 'invalid' : error === 'RATE_LIMITED' ? 'rate' : error === 'NETWORK_FAILED' || error === 'HTTP_ERROR' ? 'network' : error === 'HEAD_CHANGED' || error === 'CONTENT_CHANGED' || error === 'CONFLICT' ? 'changed' : error === 'REVIEW_REQUIRED' ? 'conflict' : 'error';
-    return `<div class="source-notice error" role="alert"><p>${t(message)}</p><details><summary>${t('details')}</summary><code>${esc(error)}</code></details></div>`;
+    if (!error && !legacyHoldReason) return '';
+    const message = legacyHoldReason ? 'legacyMergeHeld' : errorReason === 'import-preview-merge-version-changed' ? 'mergePreviewChanged' : error === 'INVALID_REQUEST' ? 'invalid' : error === 'RATE_LIMITED' ? 'rate' : error === 'NETWORK_FAILED' || error === 'HTTP_ERROR' ? 'network' : error === 'HEAD_CHANGED' || error === 'CONTENT_CHANGED' || error === 'CONFLICT' ? 'changed' : error === 'REVIEW_REQUIRED' ? 'conflict' : 'error';
+    return `<div class="source-notice error" role="alert"><p>${t(message)}</p><details><summary>${t('details')}</summary><code>${esc(error ?? 'REVIEW_REQUIRED')}${errorReason || legacyHoldReason ? ` · ${esc(errorReason ?? legacyHoldReason)}` : ''}</code></details></div>`;
   }
   function progressText() {
     return cancelling ? t('cancelling') : rebuilding ? t('rebuildingIssues') : progress?.stage === 'normalizing' ? t('reading') : progress?.total ? copy(options.locale(), 'bytes', { completed: size(progress.completed ?? 0), total: size(progress.total) }) : t('acquiring');
@@ -49,14 +51,14 @@ export function createCollectionBrowser(options: Options) {
   async function loadJobs() { jobs = await request('collection.jobs', {}); }
   async function open(scope?:KnowledgeQuery) {
     if(scope&&!active){provider='cliopatria';text=scope.text??'';[from,to]=scope.time?.map(String)??['',''];}
-    visible = true; loading = true; error = null; redraw();
+    visible = true; loading = true; error = null; errorReason = null; redraw();
     if (!unsubscribe) unsubscribe = bridge().onProgress(value => { if (value.operationId === active) { progress = value; renderProgress(); } });
     try { const [available, acquired] = await Promise.all([request('collection.catalog', {}), request('collection.jobs', {})]); catalog = available; jobs = acquired; }
-    catch (cause) { error = code(cause); }
+    catch (cause) { fail(cause); }
     finally { loading = false; redraw(); }
   }
   async function selectJob(job: CollectionJob) {
-    const current = ++sequence; selected = job.id; preview = null; previewHead = null; review = false; adoptedMessage = null; error = null;
+    const current = ++sequence; selected = job.id; preview = null; previewHead = null; review = false; adoptedMessage = null; error = null; errorReason = null;
     issueSequence++; issuePage = null; issuesOpen = false; issuesLoading = false; issuesError = null; requestedOffset = 0;
     if (job.status !== 'complete') { error = job.failure?.code ?? null; redraw(); return; }
     previewing = true; redraw();
@@ -65,18 +67,18 @@ export function createCollectionBrowser(options: Options) {
       if (current !== sequence) return;
       preview = mapped; previewHead = status.head;
       if (mapped.objects) observed({ type: 'data-previewed', jobId: job.id });
-    } catch (cause) { if (current === sequence) error = code(cause); }
+    } catch (cause) { if (current === sequence) fail(cause); }
     finally { if (current === sequence) { previewing = false; redraw(); } }
   }
   async function acquire(query: CollectionQuery, source: CollectionProvider = provider, resumeJobId?: string) {
     if (active) return;
-    const id = operationId(); active = id; cancelling = false; progress = null; error = null; redraw();
+    const id = operationId(); active = id; cancelling = false; progress = null; error = null; errorReason = null; redraw();
     try {
       const job = await request('collection.acquire', { provider: source, query, operationId: id, ...(resumeJobId ? { resumeJobId } : {}) });
       jobs = [job, ...jobs.filter(value => value.id !== job.id)]; selected = job.id;
       if (job.status === 'complete' && job.records > 0) observed({ type: 'data-acquired', jobId: job.id });
       await selectJob(job);
-    } catch (cause) { error = code(cause); }
+    } catch (cause) { fail(cause); }
     finally { active = null; cancelling = false; progress = null; redraw(); }
   }
   function issuesHtml(job: CollectionJob) {
@@ -122,13 +124,13 @@ export function createCollectionBrowser(options: Options) {
   }
   function content() {
     const source = catalog.find(value => value.id === provider), job = chosen();
-    return `<section class="source-content collection-content"><h1>${t('title')}</h1>${loading ? `<p role="status">${t('loading')}</p>` : ''}<form class="collection-form" data-collection-form novalidate><label>${t('provider')}<select data-collection-input="provider" ${active ? 'disabled' : ''}>${catalog.map(value => `<option value="${value.id}" ${provider === value.id ? 'selected' : ''}>${esc(localized(value.title))}</option>`).join('')}</select></label>${source ? `<p class="source-muted">${esc(localized(source.description))}</p><p class="collection-download">${esc(copy(options.locale(), 'download', { size: size(source.downloadBytes), license: source.licenseId, revision: source.revision }))}</p>` : ''}<div class="collection-query"><label>${t('text')}<input data-collection-input="text" value="${esc(text)}" maxlength="200" ${active ? 'disabled' : ''}></label>${provider === 'cliopatria' ? `<label>${t('from')}<input type="number" data-collection-input="from" value="${esc(from)}" ${active ? 'disabled' : ''}></label><label>${t('to')}<input type="number" data-collection-input="to" value="${esc(to)}" ${active ? 'disabled' : ''}></label>` : ''}<label>${t('batch')}<input type="number" min="1" max="10000" data-collection-input="limit" value="${esc(limit)}" ${active ? 'disabled' : ''}></label><button class="source-button primary" type="submit" ${active || !source ? 'disabled' : ''}>${t('acquire')}</button></div><p class="source-muted">${t('coverage')}</p>${source ? `<p class="source-notice">${esc(localized(source.limitations))}</p>` : ''}</form>${errorHtml()}${active && !rebuilding ? `<div class="source-notice source-progress" role="status"><span data-collection-progress>${esc(progressText())}</span><progress data-collection-progress-bar></progress>${button('cancel', t(rebuilding ? 'cancelIssues' : 'cancel'), cancelling ? 'disabled' : '')}</div>` : ''}<div class="source-toolbar"><h2>${t('jobs')}</h2><span class="source-spacer"></span>${button('refresh', t('refresh'), active ? 'disabled' : '')}</div><div class="collection-layout"><aside class="collection-jobs">${jobs.length ? jobs.map(value => `<button type="button" class="source-material" data-collection="job" data-id="${value.id}" ${value.id === selected ? 'aria-current="true"' : ''}><strong>${esc(localized(catalog.find(item => item.id === value.provider)?.title ?? { en: value.provider }))}</strong><small>${t(value.status)} · ${format(value.records)}</small><small>${esc(value.query.text ?? '')}${value.query.years ? ` · ${value.query.years.join('–')}` : ''}</small></button>`).join('') : `<p class="source-empty">${t('noJobs')}</p>`}</aside><section class="collection-preview">${job ? `<h2>${t(job.status)}</h2><p>${esc(copy(options.locale(), 'records', { records: job.records, objects: job.objects, assertions: job.assertions }))}</p><p>${esc(copy(options.locale(), 'usable', { dated: job.datedAssertions, located: job.locatedObjects }))}</p>${job.source ? `<details><summary>${t('sourceRevision')}</summary><p>${esc(job.source.revision)}</p><code>${esc(job.source.contentHash)}</code><p><a href="${esc(job.source.url)}">${esc(job.source.url)}</a></p></details>` : ''}<p class="source-muted">${esc(copy(options.locale(), 'scope', { scanned: job.scanned, next: job.nextRecord ?? (job.status === 'complete' ? t('noNext') : '—') }))}</p>${job.truncated ? `<p class="source-notice">${t('truncated')}</p>` : ''}<div class="source-toolbar">${job.status !== 'complete' ? button('retry', t('retry'), active ? 'disabled' : '') : button('preview', t('preview'), previewing || active ? 'disabled' : '')}${job.nextRecord !== null ? button('next', t('next'), active ? 'disabled' : '') : ''}</div>${previewing ? `<p role="status">${t('previewing')}</p>` : preview ? `<p class="source-muted">${t('originalLanguage')}</p><h3>${t('sample')}</h3><ul>${preview.sample.map(value => `<li>${esc(value.labels[options.locale()] ?? value.labels.en ?? value.id)}</li>`).join('')}</ul>${issuesHtml(job)}${!preview.objects ? `<p class="source-empty">${t('empty')}</p>` : `<label class="collection-review">${t('review')}<select data-collection-input="review" ${adopting ? 'disabled' : ''}><option value="unreviewed" ${!review ? 'selected' : ''}>${t('unreviewed')}</option><option value="adopted" ${review ? 'selected' : ''}>${t('adopted')}</option></select></label><p class="source-muted">${t('reviewNote')}</p>${button('adopt', t(adopting ? 'adopting' : 'adopt'), adopting || active ? 'disabled' : '', true)}`}` : ''}${!preview && !previewing ? issuesHtml(job) : ''}${adoptedMessage ? `<p class="source-notice" role="status">${esc(copy(options.locale(), 'adoptedResult', adoptedMessage))}</p>` : ''}` : ''}</section></div></section>`;
+    return `<section class="source-content collection-content"><h1>${t('title')}</h1>${loading ? `<p role="status">${t('loading')}</p>` : ''}<form class="collection-form" data-collection-form novalidate><label>${t('provider')}<select data-collection-input="provider" ${active ? 'disabled' : ''}>${catalog.map(value => `<option value="${value.id}" ${provider === value.id ? 'selected' : ''}>${esc(localized(value.title))}</option>`).join('')}</select></label>${source ? `<p class="source-muted">${esc(localized(source.description))}</p><p class="collection-download">${esc(copy(options.locale(), 'download', { size: size(source.downloadBytes), license: source.licenseId, revision: source.revision }))}</p>` : ''}<div class="collection-query"><label>${t('text')}<input data-collection-input="text" value="${esc(text)}" maxlength="200" ${active ? 'disabled' : ''}></label>${provider === 'cliopatria' ? `<label>${t('from')}<input type="number" data-collection-input="from" value="${esc(from)}" ${active ? 'disabled' : ''}></label><label>${t('to')}<input type="number" data-collection-input="to" value="${esc(to)}" ${active ? 'disabled' : ''}></label>` : ''}<label>${t('batch')}<input type="number" min="1" max="10000" data-collection-input="limit" value="${esc(limit)}" ${active ? 'disabled' : ''}></label><button class="source-button primary" type="submit" ${active || !source ? 'disabled' : ''}>${t('acquire')}</button></div><p class="source-muted">${t('coverage')}</p>${source ? `<p class="source-notice">${esc(localized(source.limitations))}</p>` : ''}</form>${errorHtml()}${active && !rebuilding ? `<div class="source-notice source-progress" role="status"><span data-collection-progress>${esc(progressText())}</span><progress data-collection-progress-bar></progress>${button('cancel', t(rebuilding ? 'cancelIssues' : 'cancel'), cancelling ? 'disabled' : '')}</div>` : ''}<div class="source-toolbar"><h2>${t('jobs')}</h2><span class="source-spacer"></span>${button('refresh', t('refresh'), active ? 'disabled' : '')}</div><div class="collection-layout"><aside class="collection-jobs">${jobs.length ? jobs.map(value => `<button type="button" class="source-material" data-collection="job" data-id="${value.id}" ${value.id === selected ? 'aria-current="true"' : ''}><strong>${esc(localized(catalog.find(item => item.id === value.provider)?.title ?? { en: value.provider }))}</strong><small>${t(value.status)} · ${format(value.records)}</small><small>${esc(value.query.text ?? '')}${value.query.years ? ` · ${value.query.years.join('–')}` : ''}</small></button>`).join('') : `<p class="source-empty">${t('noJobs')}</p>`}</aside><section class="collection-preview">${job ? `<h2>${t(job.status)}</h2><p>${esc(copy(options.locale(), 'records', { records: job.records, objects: job.objects, assertions: job.assertions }))}</p><p>${esc(copy(options.locale(), 'usable', { dated: job.datedAssertions, located: job.locatedObjects }))}</p>${job.source ? `<details><summary>${t('sourceRevision')}</summary><p>${esc(job.source.revision)}</p><code>${esc(job.source.contentHash)}</code><p><a href="${esc(job.source.url)}">${esc(job.source.url)}</a></p></details>` : ''}<p class="source-muted">${esc(copy(options.locale(), 'scope', { scanned: job.scanned, next: job.nextRecord ?? (job.status === 'complete' ? t('noNext') : '—') }))}</p>${job.truncated ? `<p class="source-notice">${t('truncated')}</p>` : ''}<div class="source-toolbar">${job.status !== 'complete' ? button('retry', t('retry'), active ? 'disabled' : '') : button('preview', t('preview'), previewing || active || legacyHoldReason ? 'disabled' : '')}${job.nextRecord !== null ? button('next', t('next'), active ? 'disabled' : '') : ''}</div>${previewing ? `<p role="status">${t('previewing')}</p>` : preview ? `<p class="source-muted">${t('originalLanguage')}</p><h3>${t('sample')}</h3><ul>${preview.sample.map(value => `<li>${esc(value.labels[options.locale()] ?? value.labels.en ?? value.id)}</li>`).join('')}</ul>${issuesHtml(job)}${!preview.objects ? `<p class="source-empty">${t('empty')}</p>` : `<label class="collection-review">${t('review')}<select data-collection-input="review" ${adopting ? 'disabled' : ''}><option value="unreviewed" ${!review ? 'selected' : ''}>${t('unreviewed')}</option><option value="adopted" ${review ? 'selected' : ''}>${t('adopted')}</option></select></label><p class="source-muted">${t('reviewNote')}</p>${button('adopt', t(adopting ? 'adopting' : 'adopt'), adopting || active || legacyHoldReason ? 'disabled' : '', true)}`}` : ''}${!preview && !previewing ? issuesHtml(job) : ''}${adoptedMessage ? `<p class="source-notice" role="status">${esc(copy(options.locale(), 'adoptedResult', adoptedMessage))}</p>` : ''}` : ''}</section></div></section>`;
   }
   async function click(target: HTMLElement) {
     const action = target.dataset.collection, job = chosen();
     if (action === 'job') { const value = jobs.find(value => value.id === target.dataset.id); if (value) await selectJob(value); }
-    else if (action === 'refresh') { try { await loadJobs(); } catch (cause) { error = code(cause); } redraw(); }
-    else if (action === 'preview' && job) await selectJob(job);
+    else if (action === 'refresh') { try { await loadJobs(); } catch (cause) { fail(cause); } redraw(); }
+    else if (action === 'preview' && job && !legacyHoldReason) await selectJob(job);
     else if (action === 'issues-toggle') { issuesOpen = !issuesOpen; redrawIssues(); if (issuesOpen && !issuePage && !issuesLoading) await loadIssues(); }
     else if (action === 'issues-next' && !rebuilding && issuePage && issuePage.offset + issuePage.limit < issuePage.total) await loadIssues(issuePage.offset + issuePage.limit);
     else if (action === 'issues-previous' && !rebuilding && issuePage) await loadIssues(Math.max(0, issuePage.offset - issuePage.limit));
@@ -136,17 +138,17 @@ export function createCollectionBrowser(options: Options) {
     else if (action === 'issues-rebuild') await rebuildIssues();
     else if (action === 'retry' && job) await acquire(job.query, job.provider, job.id);
     else if (action === 'next' && job && job.nextRecord !== null) await acquire({ ...job.query, startRecord: job.nextRecord }, job.provider);
-    else if (action === 'cancel' && active) { cancelling = true; renderProgress(); try { await request('operation.cancel', { operationId: active }); } catch (cause) { error = code(cause); redraw(); } }
-    else if (action === 'adopt' && job && preview && previewHead) {
+    else if (action === 'cancel' && active) { cancelling = true; renderProgress(); try { await request('operation.cancel', { operationId: active }); } catch (cause) { fail(cause); redraw(); } }
+    else if (action === 'adopt' && job && preview && previewHead && !legacyHoldReason) {
       const interaction=options.navigationVersion?.(),selectedJob=job.id;
-      adopting = true; error = null; redraw();
+      adopting = true; error = null; errorReason = null; adoptedMessage = null; redraw();
       try { const result = await request('collection.adopt', { jobId: job.id, expectedHead: previewHead, expectedInputHash: preview.inputHash, review: review ? 'adopted' : 'unreviewed', operationId: operationId() }); if(selected===selectedJob)adoptedMessage = { changed: result.changedObjects.length, unchanged: result.unchangedObjects.length, conflicts: result.conflicts.length }; if (result.changedObjects.length || result.unchangedObjects.length) observed({ type: 'data-adopted', jobId: job.id, paths: result.paths ?? [] }); await options.onAdopted?.(result,job.id,interaction); }
-      catch (cause) { if(selected===selectedJob)error = code(cause); }
+      catch (cause) { if(selected===selectedJob) { fail(cause); if (['CONFLICT', 'HEAD_CHANGED', 'CONTENT_CHANGED'].includes(error ?? '') || errorReason === 'import-preview-merge-version-changed' || legacyHoldReason) { preview = null; previewHead = null; } } }
       finally { adopting = false; redraw(); }
     }
   }
-  async function submit() { const query = parseCollectionQuery(provider, { text, from, to, limit }); if (!query) { error = 'INVALID_REQUEST'; redraw(); return; } await acquire(query); }
+  async function submit() { const query = parseCollectionQuery(provider, { text, from, to, limit }); if (!query) { error = 'INVALID_REQUEST'; errorReason = null; redraw(); return; } await acquire(query); }
   function input(target: HTMLInputElement) { const key = target.dataset.collectionInput; if (key === 'text') text = target.value; else if (key === 'from') from = target.value; else if (key === 'to') to = target.value; else if (key === 'limit') limit = target.value; }
-  function change(target: HTMLSelectElement) { if (target.dataset.collectionInput === 'provider' && ['cliopatria', 'pleiades'].includes(target.value)) { provider = target.value as CollectionProvider; error = null; redraw(); } else if (target.dataset.collectionInput === 'review') review = target.value === 'adopted'; }
+  function change(target: HTMLSelectElement) { if (target.dataset.collectionInput === 'provider' && ['cliopatria', 'pleiades'].includes(target.value)) { provider = target.value as CollectionProvider; error = null; errorReason = null; redraw(); } else if (target.dataset.collectionInput === 'review') review = target.value === 'adopted'; }
   return { open, content, click, submit, input, change, hide: () => { visible = false; issueSequence++; issuesLoading = false; issuePage = null; issuesOpen = false; issuesError = null; } };
 }

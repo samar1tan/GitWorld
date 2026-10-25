@@ -9,6 +9,7 @@ import { createKnowledgeDisplayIndex } from './knowledge-display.ts';
 import { resolveKnowledgeVocabulary, vocabularySlots, vocabularySourcePath } from './knowledge-vocabulary.ts';
 import { knowledgeCollectionFromTree, readNavigationTree } from './navigation-tree.ts';
 import { SOURCE_PRESENTATIONS_PATH, readSourcePresentations } from './knowledge-source-presentations.ts';
+import { APPEND_OBJECT_MERGE_VERSION, appendKnowledgeBundle } from './knowledge-append.ts';
 
 const digest = (value: unknown) => createHash('sha256').update(canonicalJson(value)).digest('hex');
 const json = (value: unknown) => value as EditorialJson;
@@ -57,7 +58,7 @@ export function createKnowledgeStore(repository: EditorialRepository, options: {
     if (options.review) for (const assertion of collection.assertions) assertion.review = options.review;
     const index = createKnowledgeIndex(collection), stats = index.stats();
     // Review choice is local adoption state; it does not change the identity of the input preview.
-    const inputHash = digest({ objects: collection.objects, assertions: collection.assertions.map(value => ({ ...value, review: 'unreviewed' })), sources: collection.sources.map(value => ({ ...value, retrievedAt: '' })) });
+    const inputHash = digest({ objectMergeVersion: APPEND_OBJECT_MERGE_VERSION, objects: collection.objects, assertions: collection.assertions.map(value => ({ ...value, review: 'unreviewed' })), sources: collection.sources.map(value => ({ ...value, retrievedAt: '' })) });
     const preview: KnowledgeMappingPreview = { inputHash, objects: stats.objects, assertions: stats.assertions, datedAssertions: stats.datedAssertions, locatedObjects: stats.locatedObjects, issues: (options.issues ?? []).slice(0, 30), issueCount: options.issueCount ?? options.issues?.length ?? 0, sample: index.query({ limit: 12 }).objects, mappingVersions: (options.mappingVersions ?? [...new Set(collection.sources.map(value => value.adapterVersion))]).sort() };
     return { collection, preview };
   }
@@ -141,12 +142,10 @@ export function createKnowledgeStore(repository: EditorialRepository, options: {
         const path = objectPath(object.id), baseline = baselinePath(object.id);
         const local = await repository.read(path) as unknown as KnowledgeObjectBundle | null;
         const base = await repository.read(baseline) as unknown as KnowledgeObjectBundle | null;
+        let metadataConflict = false;
         if ('collection' in input && input.mode === 'append-observations') {
-          // A bounded batch is partial upstream coverage. Preserve earlier upstream frames,
-          // then compare the expanded candidate against local edits through the same baseline.
-          const assertions = new Map((base?.assertions ?? []).map(value => [value.id, value]));
-          for (const value of incoming.assertions) assertions.set(value.id, value);
-          incoming = { ...incoming, assertions: [...assertions.values()].sort((a, b) => a.id.localeCompare(b.id)) };
+          const expanded = appendKnowledgeBundle(base, incoming);
+          incoming = expanded.bundle; metadataConflict = expanded.metadataConflict;
         }
         if (local !== null && digest(local) === digest(incoming)) {
           // A prior write may have made the object durable before its baseline.
@@ -157,9 +156,11 @@ export function createKnowledgeStore(repository: EditorialRepository, options: {
           }
           result.unchangedObjects.push(object.id); navigation.set(object.id, local.object.labels); continue;
         }
-        if (local !== null && base !== null && digest(local) !== digest(base) && digest(incoming) !== digest(base) || local !== null && base === null) {
+        if (local !== null && (metadataConflict || base !== null && digest(local) !== digest(base) && digest(incoming) !== digest(base) || base === null)) {
           const conflict = { objectId: object.id, base, local, incoming }; result.conflicts.push(conflict);
-          changes.push({ path: conflictPath(object.id), value: json(conflict) }); continue;
+          const pending=conflictPath(object.id);
+          changes.push({ path: pending, value: json(conflict) });
+          guards[path]=digest(local);guards[baseline]=base===null?null:digest(base);guards[pending]=null;continue;
         }
         if (base !== null && digest(incoming) === digest(base)) { result.unchangedObjects.push(object.id); if (local !== null) navigation.set(object.id, local.object.labels); continue; }
         changes.push({ path, value: json(incoming) }, { path: baseline, value: json(incoming) });
