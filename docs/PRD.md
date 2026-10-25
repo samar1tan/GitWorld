@@ -178,7 +178,7 @@ Every module-level change and agent-conceived product feature iteration needs a 
 
 **P1:** broader geography/periods, richer geographic layers, semantic search, general-purpose note organization, more complex multi-base interaction, teaching-route export and richer scholarly-review workflows. The minimal question/evidence/comparison/revision record and local editorial audit are already P0.
 
-Retain design-system and Figma alignment as the implementation evolves. Do not treat a document update as evidence that design files or code are synchronized. Ship runnable code, installation and development instructions, data/schema contracts, source notes, test results, package evidence and explicit unverified items. No unused controls should advertise missing functionality.
+Retain design-system and Figma alignment as the implementation evolves. Figma synchronization is a follow-up and does not block the initial desktop release; installed interaction and layout still require verification. Do not treat a document update as evidence that design files or code are synchronized. Ship runnable code, installation and development instructions, data/schema contracts, source notes, test results, package evidence and explicit unverified items. No unused controls should advertise missing functionality.
 
 ### Final delivery artifacts
 
