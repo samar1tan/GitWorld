@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
-import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdtemp, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { DatabaseSync } from 'node:sqlite';
@@ -32,6 +32,48 @@ test('ordinary service acquires one fixed page and adopts a profile into true Gi
   const detail=await call(f.service,'knowledge.object',{objectId:scope.id});assert.equal(detail.display!.types['gitworld:source-tenure-scope']['zh-CN'],'来源年表分组');assert.ok(detail.sources.every(s=>s.rights.redistribution==='unknown'));assert.ok(detail.sources.every(s=>!('record'in s)));assert.equal(f.forbiddenReads(),0);
   await call(f.service,'repository.stage',{paths:adopted.paths!});const status=await call(f.service,'repository.status',{});await call(f.service,'repository.commit',{operationId:'commit-wikipedia',expectedHead:status.head,expectedTree:status.stagedTree,message:'Adopt a source-selected table'});
   const stale=await response(f.service,'wikipedia.adopt',{...p.adopt,operationId:'new-late-adoption'});assert.ok(!stale.ok&&stale.error.code==='HEAD_CHANGED');assert.deepEqual(await call(f.service,'wikipedia.adopt',p.adopt),adopted);
+});
+test('controlled HTTP 429 holds its original Retry-After deadline across restart and cancellation without duplicate adoption',native,async t=>{
+  for(const phase of ['metadata','parse']as const)await t.test(phase,async sub=>{
+    sub.mock.timers.enable({apis:['Date'],now:Date.UTC(2026,9,25)});
+    let requests=0;
+    const limited=()=>new Response('',{status:429,headers:{'Retry-After':'7'}});
+    const source=mock(phase==='metadata'?{metadata:()=>++requests===1?limited():Response.json({query:{pages:[{pageid:31,title:'A source-selected table',revisions:[{revid:77}]}]}})}:{parse:url=>++requests===1?limited():Response.json({parse:{pageid:31,revid:Number(url.searchParams.get('oldid')),title:'A source-selected table',text:html}})});
+    const f=await fixture(sub,source.fetcher),before=await call(f.service,'repository.status',{}),input={title:'A source-selected table',revision:77};
+    const first=await call(f.service,'wikipedia.collect',{...input,operationId:'controlled-429'}),fetches=source.calls.length;
+    const attempts=async()=>(await readdir(path.join(f.library,'wikipedia-workspace',first.id))).filter(name=>name.startsWith('attempt-')).sort();
+    const originalAttempts=await attempts();assert.equal(originalAttempts.length,1);
+    assert.equal(first.receipt.status,'partial');assert.deepEqual(first.receipt.issues,[{code:'RATE_LIMITED',retryable:true,status:429,retryAfterMs:7000}]);assert.equal(first.source,undefined);
+    assert.equal(fetches,phase==='metadata'?1:2);
+    const incomplete=await response(f.service,'wikipedia.inspect',{jobId:first.id});assert.ok(!incomplete.ok&&incomplete.error.code==='REVIEW_REQUIRED');
+    assert.deepEqual(await call(f.service,'repository.status',{}),before);assert.equal(await call(f.service,'clientState.load',{key:'onboarding'}),null);
+    const retry=(operationId:string)=>call(f.service,'wikipedia.collect',{...input,operationId,resumeJobId:first.id});
+    const cancelRetry=async(operationId:string)=>{
+      const pending=response(f.service,'wikipedia.collect',{...input,operationId,resumeJobId:first.id});
+      assert.equal((await call(f.service,'operation.cancel',{operationId})).cancelled,true);
+      const cancelled=await pending;assert.ok(cancelled.ok);assert.deepEqual(cancelled.result,first);
+      assert.equal(source.calls.length,fetches);assert.deepEqual(await attempts(),originalAttempts);
+    };
+    assert.deepEqual(await retry('too-soon-before-restart'),first);assert.equal(source.calls.length,fetches);
+    await cancelRetry('cancel-before-restart');
+    await f.restart();const recovered=await call(f.service,'wikipedia.jobs',{});assert.equal(recovered.total,1);assert.deepEqual(recovered.jobs[0],first);
+    sub.mock.timers.tick(6999);
+    assert.deepEqual(await retry('one-ms-before-deadline'),first);assert.equal(source.calls.length,fetches);assert.deepEqual(await attempts(),originalAttempts);
+    await cancelRetry('cancel-after-restart');
+    sub.mock.timers.tick(1);
+    const complete=await retry('resume-controlled-429');assert.equal(complete.id,first.id);assert.equal(complete.receipt.status,'complete');assert.equal(complete.source!.revision,'77');
+    assert.equal(source.calls.filter(url=>url.searchParams.get('action')==='query').length,phase==='metadata'?2:1);
+    assert.deepEqual(source.calls.filter(url=>url.searchParams.get('action')==='parse').map(url=>url.searchParams.get('oldid')),phase==='metadata'?['77']:['77','77']);
+    assert.deepEqual(await call(f.service,'repository.status',{}),before);assert.equal(await call(f.service,'clientState.load',{key:'onboarding'}),null);
+    assert.equal((await attempts()).length,2);
+    const inspection=await call(f.service,'wikipedia.inspect',{jobId:first.id});
+    const preview=await call(f.service,'wikipedia.preview',{jobId:first.id,sourceHash:complete.source!.contentHash,expectedHead:before.head,selection:{profileId:'office-tenures-v1',tables:[{tableIndex:0,headerHash:inspection.tables[0].headerHash,holderColumn:0,tenureColumn:1}]}});
+    const adopt={jobId:first.id,previewId:preview.preview.prepared!.id,expectedHead:preview.preview.prepared!.baseHead,expectedInputHash:preview.preview.inputHash,review:'unreviewed'as const,operationId:'adopt-after-controlled-429'};
+    const adopted=await call(f.service,'wikipedia.adopt',adopt),after=await call(f.service,'repository.status',{});assert.ok(after.unstaged.length>0);assert.equal(after.head,before.head);assert.equal(after.staged.length,0);
+    await f.restart(async()=>{throw Error('Controlled offline transport after adoption');});
+    assert.deepEqual(await retry('resume-controlled-429'),complete);assert.deepEqual(await call(f.service,'wikipedia.adopt',adopt),adopted);assert.deepEqual(await call(f.service,'repository.status',{}),after);
+    assert.equal((await call(f.service,'wikipedia.jobs',{})).total,1);assert.equal(source.calls.length,3);assert.equal((await attempts()).length,2);
+  });
 });
 test('source, headers, profile and HEAD cannot be exchanged under a prepared preview',native,async t=>{
   const source=mock({rights:true}),f=await fixture(t,source.fetcher),p=await f.prepare(),base={jobId:p.job.id,sourceHash:p.job.source!.contentHash,expectedHead:p.adopt.expectedHead,selection:p.selection};

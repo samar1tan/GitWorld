@@ -93,7 +93,10 @@ export async function createWikipediaWorkspace(options:{dataDirectory:string;rep
     const task=(async()=>{
       await directory(path.join(root,id),true);const requestPath=path.join(root,id,'request.json');let r=await read(requestPath,true) as Request|undefined;
       if(r){if(r.title!==title(input.title)||r.revision!==input.revision)fail('CONFLICT','different-wikipedia-request');}else{r={schemaVersion:1,id,title:title(input.title),...(input.revision===undefined?{}:{revision:input.revision}),createdAt:now()};await save(requestPath,r);}
-      if(await snapshot(id,r))return summary(id);
+      const previous=await summary(id);if(previous.source)return previous;
+      const retryAfterMs=previous.receipt.issues.reduce((delay,issue)=>issue.retryable&&typeof issue.retryAfterMs==='number'&&Number.isFinite(issue.retryAfterMs)&&issue.retryAfterMs>0?Math.max(delay,issue.retryAfterMs):delay,0);
+      // Replays retain the original attempt time; checking or cancelling cannot extend its backoff.
+      if(previous.receipt.status==='partial'&&retryAfterMs>0&&Date.parse(now())<Date.parse(previous.receipt.completedAt)+retryAfterMs)return previous;
       let pin=await resolved(id,r),issue:SourceIssue|undefined;
       if(signal?.aborted)issue={code:'CANCELLED',retryable:true};
       if(!issue&&!pin){const result=await acquireMetadata(r,signal);if(result.ok){await save(path.join(root,id,'resolved.json'),result.value);pin=result.value;}else issue=result.error;}

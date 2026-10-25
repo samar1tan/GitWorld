@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "gitworld-knowledge-bundle",
-  "id": "east-asia-research-foundation-v7",
+  "id": "east-asia-research-foundation-v8",
   "labels": {
     "en": "East Asia source collections",
     "zh-CN": "东亚来源集合"
@@ -34,8 +34,8 @@
     },
     {
       "path": "collections/wikipedia-en-facts-10736899-0302ea32-1.json",
-      "bytes": 1488739,
-      "sha256": "7184ee0ac844b61ac1372f67d27c84f2c24d02d699601edd81faa187232c2a53"
+      "bytes": 1365388,
+      "sha256": "276aabbaa7f57e680f3eeb0ba98d822c53a28b2f639bb6ca33b50d3b5b9e36b7"
     },
     {
       "path": "collections/wikipedia-en-facts-17254923-5808fb07-1.json",
@@ -111,6 +111,11 @@
       "path": "extensions/court-office-constitutional-observations/collection.json",
       "bytes": 187987,
       "sha256": "e6832e0796a4255afc3ebe0b9f2f294d4d0720a04311908ae5de19c3c5fdb272"
+    },
+    {
+      "path": "extensions/qualified-basis-reconciliation/collection.json",
+      "bytes": 44926,
+      "sha256": "07eb125edefa805a444f62e1f3c3835c4e9288d779988addc276c0c02170c4c9"
     }
   ],
   "fieldCatalog": {
@@ -120,14 +125,14 @@
   },
   "sourceRights": {
     "path": "source-rights.json",
-    "bytes": 21352,
-    "sha256": "ab83d858400c8bf4a6fe4871e8595357398db1b9260616aa2399d54a7d762cc1"
+    "bytes": 21727,
+    "sha256": "82288a7c7495f478b7c26cf96430b79e3b7f2bb65973ced7623e4772efcd791b"
   },
-  "collectionHash": "8b5b80a6b348524cb4821044edcbe821d76187c0b339b90f34f3f54e0276d387",
+  "collectionHash": "75d2cd505f06e34b1056ed96ae5dcad07f5548a2ee0f14273886ed62c5cb47f8",
   "counts": {
     "objects": 1214,
-    "assertions": 4031,
-    "sources": 22
+    "assertions": 4018,
+    "sources": 23
   },
   "sourceHashes": [
     {
@@ -217,6 +222,10 @@
     {
       "id": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
       "contentHash": "4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8"
+    },
+    {
+      "id": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+      "contentHash": "048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d"
     }
   ],
   "fieldCatalogOverlays": [
@@ -374,8 +383,8 @@
     },
     {
       "path": "navigation/source-rights.json",
-      "bytes": 695,
-      "sha256": "7e35b1e2ad2dceecbc0666453bd40e612f63019b80f5462e34c98fd5ab0a086b"
+      "bytes": 857,
+      "sha256": "00c7f6e567105ba299dec83530e0344cf5d61c4f5c3e17c6e045ff8a60f0908d"
     },
     {
       "path": "extensions/court-office-constitutional-observations/plan.json",
@@ -391,11 +400,26 @@
       "path": "extensions/court-office-constitutional-observations/import.json",
       "bytes": 219596,
       "sha256": "a925434a8780a6eae5036ec1e60156506e96370d9e00d11ea65b109c4f57fcb0"
+    },
+    {
+      "path": "extensions/qualified-basis-reconciliation/plan.json",
+      "bytes": 2317,
+      "sha256": "c2bd58d00c3c2c79c2f65418ae8c441ef859d191182f3bfe9b93293389194cbb"
+    },
+    {
+      "path": "extensions/qualified-basis-reconciliation/source-rights.json",
+      "bytes": 4268,
+      "sha256": "1ea9b6df348ac7b02165d8273281a547bf051e22adf1971d7427717c92616591"
+    },
+    {
+      "path": "extensions/qualified-basis-reconciliation/reconciliation.json",
+      "bytes": 25062,
+      "sha256": "e313c559d8c280d70cfc565ec5151467776996602ffc5f8644e9719f8308ee13"
     }
   ],
   "navigation": {
     "path": "navigation/bootstrap.json",
-    "bytes": 894819,
-    "sha256": "fc187320efb061200b93f0bc547511e4676b5f090d5399adeee8950113d62e0a"
+    "bytes": 895240,
+    "sha256": "6aab535e4ac5c610d8c9aff0d5fb9583cb1a4a288d78a23cf4e6ad92b2766223"
   }
 }

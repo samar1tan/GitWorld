@@ -68,3 +68,19 @@ test('explicit entity identity decisions preserve provisional values and retain 
   selected.rules[0].valueIdentities![0].sourceObjectId = 'not-selected';
   assert.ok(applySourceBindings(input, selected).issues.some(value => value.code === 'UNUSED_VALUE_IDENTITY'));
 });
+
+test('generic role bindings defer source-qualified authority while preserving raw claims and ordinary tenures', () => {
+  const input = fixture(), selected = plan(); selected.objects = [object('office', 'gitworld:office')];
+  selected.rules[0] = { ...selected.rules[0], targetSubjectId: 'office', targetType: 'gitworld:office', targetPropertyId: 'office:holder' };
+  input.assertions[0].qualifiers.push({ propertyId: 'source:tenure-text', value: { kind: 'text', value: '100 – de facto 110' } });
+  input.assertions[2].validTime!.end!.raw = 'de jure 130';
+  const before = structuredClone(input), result = applySourceBindings(input, selected);
+  assert.deepEqual(input, before); assert.deepEqual(result.collection.assertions.slice(0, input.assertions.length), before.assertions);
+  assert.deepEqual(result.issues.filter(value => value.code === 'AUTHORITY_BASIS_REQUIRED').map(value => value.assertionId), ['a1', 'a2']);
+  assert.deepEqual(result.collection.assertions.filter(value => value.subjectId === 'office').map(value => value.value), [{ kind: 'entity', objectId: 'Bea' }]);
+  const survey = plan(); survey.objects = [object('survey', 'gitworld:authority-survey')];
+  survey.rules[0] = { ...survey.rules[0], targetSubjectId: 'survey', targetType: 'gitworld:authority-survey', targetPropertyId: 'office:holder' };
+  assert.equal(applySourceBindings(fixture(), survey).issues.filter(value => value.code === 'AUTHORITY_BASIS_REQUIRED').length, 3);
+  selected.rules[0].targetPropertyId = 'office:listed-de-facto-authority';
+  assert.equal(applySourceBindings(input, selected).results[0].derivedAssertionIds.length, 3);
+});

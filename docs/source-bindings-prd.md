@@ -1,6 +1,6 @@
 # Source identity, role and chronology bindings
 
-Document v0.1 · 25 October 2026 · Module requirements; implementation and installed acceptance are separate
+Document v0.2 · 25 October 2026 · Module requirements; implementation and installed acceptance are separate
 
 ## User need
 
@@ -58,9 +58,13 @@ The profile pins the source snapshot, table index and complete headers, holder/s
 
 Keep de jure and de facto results in different fields. A source authority survey is not a formal shogunal institution: its context type and field labels must preserve that distinction. The mapper must not assign a military office to a person merely because a source places that person in a comparative table. Preserve each endpoint's original text, cell locator, authority label and date precision, the source revision/hash, and the assignment rule. New facts and interpretations remain unreviewed.
 
-Create a separately hashed facts source containing only the selected holder identity and endpoint cells, provenance, compatible rights and transformation notes. Exclude article HTML, portraits and prose. New source candidates and bilingual field vocabulary require independent review before replacing or extending the installed collection. Existing unqualified bindings remain visible for explicit reconciliation; an additive qualified-field candidate must not silently pretend it has rebuilt all earlier mappings.
+Create a separately hashed facts source containing only the selected holder identity and endpoint cells, provenance, compatible rights and transformation notes. Exclude article HTML, portraits and prose. New source candidates and bilingual field vocabulary require independent review before replacing or extending the installed collection.
 
-Acceptance includes a synthetic crossed-row table, shared endpoints, missing/ambiguous bases, repeated terms, an authority survey that remains a survey, exact source/header/hash mismatch rejection, and the fixed cached source. The Tokugawa test must resolve the source's qualified 1603–1605 formal interval and 1600–1616 de facto interval separately, without borrowing life dates. This is source-mapping evidence, not a claim that all political authority or C05 is complete.
+A role binding must defer an explicitly authority-qualified source tenure instead of projecting it to an unqualified `office:holder`. Recognize the basis in the source tenure/endpoint text or structured authority qualifier, never a display name or person ID. An explicitly declared authority survey likewise cannot become an unqualified officeholder list. Return a structured `AUTHORITY_BASIS_REQUIRED` exception and preserve the original source assertion. Ordinary unqualified office tenures retain their existing behavior. Qualified projection continues to group source holder cells, so the same rule handles Ashikaga and Tokugawa material without person-specific cases.
+
+For the installed collection, reconcile earlier interpreted bindings through an exact, hash-bound modern correction ledger. Preserve all original facts and source records, record the removed interpretation IDs and hashes, and retain dated qualified replacements with source-cell locators. Existing libraries and older Git revisions are not rewritten; the corrected bundle initializes an empty library. A new bundle revision, updated rights/change notes and manifest must describe the correction. Reconciliation does not turn unreviewed claims into reviewed history or pass the installed China/Japan case.
+
+Acceptance includes a synthetic crossed-row table, shared endpoints, missing/ambiguous bases, repeated terms, an authority survey that remains a survey, exact source/header/hash mismatch rejection, and the fixed cached source. The Tokugawa test must resolve the source's qualified 1603–1605 formal interval and 1600–1616 de facto interval separately, without borrowing life dates. Regression must inspect 1400, 1478, 1628, 1748 and 1839 so an extended de facto interval cannot create two unqualified officeholders; normal unqualified tenures and every original source record remain unchanged. This is source-mapping evidence, not a claim that all political authority or C05 is complete.
 
 ## Installed mapping boundary
 
