@@ -8,6 +8,8 @@ Status: implementation in progress, installed review pending. This module suppor
 
 A new user can identify the workbench's stable sections, choose a useful scope and complete an investigation through actual states, comparison and evidence. They can continue with their own acquired data. The interface explains the difference between historical change and modern data revisions where a decision depends on it.
 
+A cold start shows the existing local-library opening state and actual initialization progress until the initial library and workspace selection resolve. Early asset or locale updates must not present an uninitialized library as empty. A confirmed empty library retains its discovery/import actions; a failed read retains its error and retry rather than remaining in loading indefinitely.
+
 ## Scope
 
 - A concise, optional first-use invitation; no mandatory account, questionnaire, case selection or setup wizard.

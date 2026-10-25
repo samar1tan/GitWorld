@@ -91,6 +91,7 @@ const precisions: Record<string, Label> = {
 };
 const calendars: Record<string, Label> = {
   'source-unspecified': { en: 'Calendar unspecified', 'zh-CN': '来源未注明历法' },
+  'source-calendar-unspecified': { en: 'Calendar unspecified by source', 'zh-CN': '来源未注明历法' },
   'source-civil-year': { en: 'Source year numbering', 'zh-CN': '来源纪年' },
   'published-source-calendar-unspecified': { en: 'Calendar unspecified by source', 'zh-CN': '来源未注明历法' },
   'proleptic-gregorian-utc-observation': { en: 'Gregorian retrieval date (UTC)', 'zh-CN': '格里历获取日期（UTC）' },

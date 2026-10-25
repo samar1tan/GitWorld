@@ -622,6 +622,7 @@ async function saveModelInvestigation() {
   catch(cause){error=workspaceCopy(state.locale,cause instanceof Error&&cause.message==='UNCOMMITTED_MODEL'?'uncommittedModel':'selectState');render();}
 }
 function render() {
+  if(!startupReady){renderStartup();return;}
   if(transitioning||closePending)return;
   try {
   document.documentElement.lang=state.locale;

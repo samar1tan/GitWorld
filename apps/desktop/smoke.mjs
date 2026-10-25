@@ -1,4 +1,3 @@
-import { spawn } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
@@ -17,25 +16,20 @@ const paths = packagedPaths(path.join(root, '.local/releases'), target, receipt?
 const executable = packaged ? paths.executable : electron;
 if (packaged && (receipt.platform !== process.platform || receipt.arch !== process.arch || receipt.asarSha256 !== createHash('sha256').update(await readFile(paths.asar)).digest('hex'))) throw new Error('PACKAGED_RECEIPT_MISMATCH');
 if (!executable || !existsSync(executable)) throw new Error('No local packaged application found.');
+const { runSmokeProcess, evaluateSmokeProcess, SMOKE_DEADLINE_MS } = await import('./smoke-process.mjs');
 const sandbox = await mkdtemp(path.join(tmpdir(), 'gitworld-desktop-smoke-'));
 const env = { ...process.env, GITWORLD_SMOKE_USER_DATA: sandbox };
 delete env.ELECTRON_RUN_AS_NODE;
 delete env.NODE_OPTIONS;
-const child = spawn(executable, [...(packaged ? [] : [directory]), '--gitworld-smoke'], { env, stdio: ['ignore', 'pipe', 'pipe'] });
-let output = '', errors = '';
-child.stdout.on('data', data => { output += data; });
-child.stderr.on('data', data => { errors += data; });
-const timer = setTimeout(() => child.kill('SIGTERM'), 45_000);
-const code = await new Promise(resolve => { child.on('error', () => resolve(-1)); child.on('close', resolve); });
-clearTimeout(timer);
 try {
-  const line = output.split('\n').find(line => line.startsWith('GITWORLD_SMOKE_RESULT '));
-  if (!line) { const phase = errors.match(/GITWORLD_SMOKE_ERROR ([a-z-]+)/)?.[1]; console.error(`Desktop smoke failed (exit ${code}). ${phase ? `Application startup failed during ${phase}.` : 'No valid runtime receipt was produced.'}`); process.exitCode = 1; }
-  else {
-    const result = JSON.parse(line.slice('GITWORLD_SMOKE_RESULT '.length));
-    if (code !== 0 || !result.ok || result.packaged !== packaged) process.exitCode = 1;
-    console.log(JSON.stringify(result, null, 2));
-    await mkdir(path.join(root, '.local'), { recursive: true });
-    await writeFile(path.join(root, '.local', packaged ? 'desktop-packaged-smoke.json' : 'desktop-runtime-smoke.json'), JSON.stringify(result, null, 2));
+  const observed = await runSmokeProcess(executable, [...(packaged ? [] : [directory]), '--gitworld-smoke'], { env, deadlineMs: SMOKE_DEADLINE_MS });
+  const decision = evaluateSmokeProcess(observed, packaged), result = decision.record;
+  if (!decision.ok) {
+    process.exitCode = 1;
+    console.error(result.timedOut ? `Desktop smoke timed out (deadline ${result.deadlineMs} ms; elapsed ${Math.round(result.durationMs)} ms).` : `Desktop smoke failed (exit ${result.exitCode}). ${result.startupPhase ? `Application startup failed during ${result.startupPhase}.` : 'No valid successful runtime receipt was produced.'}`);
   }
+  console.log(JSON.stringify(result, null, 2));
+  await mkdir(path.join(root, '.local'), { recursive: true });
+  // A failed attempt replaces stale engineering output with an explicit failure, never child ok:true.
+  await writeFile(path.join(root, '.local', packaged ? 'desktop-packaged-smoke.json' : 'desktop-runtime-smoke.json'), JSON.stringify(result, null, 2));
 } finally { await rm(sandbox, { recursive: true, force: true }); }
