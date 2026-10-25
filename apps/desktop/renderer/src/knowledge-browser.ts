@@ -55,6 +55,7 @@ const STORAGE_KEY = 'gitworld-knowledge-view-v1';
 const projection = geoNaturalEarth1().fitExtent([[20, 20], [980, 500]], { type: 'Sphere' });
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value);
 const civil = (value: number) => Number.isSafeInteger(value) && value !== 0;
+type ViewReveal = false | 'focus' | 'scroll';
 const short = (value: string) => value.length > 14 ? `${value.slice(0, 12)}…` : value;
 const failure = (code: string): never => { throw { code }; };
 export const knowledgeMapPoint = (longitude: number, latitude: number): [number, number] | null => {
@@ -79,6 +80,7 @@ export function createKnowledgeBrowser(options: Options) {
   let openSequence=0,querySequence = 0, objectSequence = 0, stateSequence = 0, diffSequence = 0;
   const pinSequence={checkout:0,a:0,b:0};
   let mapBox = { x: 0, y: 0, width: 1000, height: 520 };
+  let scrollIdentity = '', scrollGeneration = 0;
   const labels = new Map<string, KnowledgeText>();
   const referenceLabels = new Map<string, KnowledgeText>();
   const storage = () => options.storage ?? localStorage;
@@ -97,6 +99,21 @@ export function createKnowledgeBrowser(options: Options) {
   const timeMetadataHtml = (value: KnowledgeTime) => `<div class="knowledge-meta">${t('precision')}: ${esc(knowledgeTimeLabel('precision', value.precision, options.locale()))} · ${t('calendar')}: ${esc(knowledgeTimeLabel('calendar', value.calendar, options.locale()))}</div>`;
   const button = (action: string, title: string, extra = '', primary = false) => `<button type="button" class="knowledge-button${primary ? ' primary' : ''}" data-knowledge="${action}" ${extra}>${esc(title)}</button>`;
   const redraw = () => { if (visible) options.render(); };
+  function scrollKey() {
+    const identity = JSON.stringify([view.queryRevision ?? 'working', view.query, view.view, view.selectedObjectId, view.objectRevision ?? 'working', view.view === 'compare' ? [view.a?.objectId, view.a?.revision, view.a?.year, view.b?.objectId, view.b?.revision, view.b?.year] : null]);
+    if (identity !== scrollIdentity) { scrollIdentity = identity; scrollGeneration++; }
+    return scrollGeneration;
+  }
+  function revealFlow(selector: '.knowledge-inspector' | '.knowledge-view-heading', mode: ViewReveal = 'focus') {
+    const shell = document.querySelector<HTMLElement>('.knowledge-shell'), region = shell?.querySelector<HTMLElement>(selector);
+    if (!mode || !visible || !shell || !region || typeof getComputedStyle !== 'function' || !['auto', 'scroll'].includes(getComputedStyle(shell).overflowY)) return;
+    if (mode === 'focus') {
+      const focus = region.querySelector<HTMLElement>('h1') ?? region;
+      focus.setAttribute('tabindex', '-1');
+      focus.focus({ preventScroll: true });
+    }
+    shell.scrollTop += region.getBoundingClientRect().top - shell.getBoundingClientRect().top;
+  }
   const observed = (event: KnowledgeBrowserObservation) => { try { options.onObserved?.(event); } catch { /* Observers cannot alter successful domain operations. */ } };
   function persist() {
     view.yearDraft = yearInput;
@@ -282,11 +299,12 @@ export function createKnowledgeBrowser(options: Options) {
     return `<aside class="knowledge-inspector"><h2>${t(inspectedProperty ? 'evidence' : 'details')}</h2>${options.onEdit ? `<div class="knowledge-state-actions">${button('edit-object',t('addAssertion'))}</div>` : ''}<p>${localizedHtml(context.object.labels, context.object.id)}</p>${displayEvidenceHtml(context.display?.objects[context.object.id]?.display[options.locale()])}<details class="knowledge-meta"><summary>${t('identifiers')}</summary><code>${esc(context.object.id)}</code>${inspectedProperty ? `<br><code>${esc(inspectedProperty)}</code>` : ''}${context.object.types.map(id => `<br><code>${esc(id)}</code>`).join('')}</details>${inspectedProperty ? `<h3>${esc(label(inspectedProperty))}</h3>${fieldNameEvidenceHtml(context, inspectedProperty)}${context.display?.notes.filter(note => note.ids.includes(inspectedProperty!)).map(note => `<p class="knowledge-meta">${esc(note[options.locale()])}</p>`).join('') ?? ''}${supporting.length ? supporting.map(value => assertionHtml(value, context)).join('') : `<p>${t('noSupportingAssertion')}</p>`}${other.length ? `<details class="knowledge-other-assertions"><summary>${esc(copy(options.locale(),'otherAssertions',{count:other.length}))}</summary>${other.map(value => assertionHtml(value, context)).join('')}</details>` : ''}` : `<p>${localizedHtml(context.object.descriptions)}</p><div class="knowledge-meta">${esc(copy(options.locale(), 'claims', { count: context.object.assertionCount }))} · ${esc(copy(options.locale(), 'datedClaims', { count: context.object.datedAssertionCount }))}</div>${unreviewed ? `<p class="knowledge-notice">${esc(copy(options.locale(), 'referencesUnreviewed', { count: unreviewed }))}</p>` : ''}${context.object.types.length ? `<h3>${t('types')}</h3>${context.object.types.map(id => `<button type="button" class="knowledge-type" data-knowledge="type" data-id="${esc(id)}" title="${esc(id)}">${esc(label(id, 'type'))}</button>`).join('')}` : ''}<h3>${t('sourceReferences')}</h3>${sourcesHtml(context)}${!context.object.coordinates.length ? `<p>${t('noLocation')}</p>` : ''}${!context.object.observedTimes.length ? `<p>${t('noDate')}</p>` : ''}`}</aside>`;
   }
   function content() {
-    if (!visible || openingView) return `<div class="knowledge-shell" aria-busy="true"><aside class="knowledge-scope"><h2>${t('scope')}</h2></aside><section class="knowledge-body"><div class="knowledge-context">${refSlot(t('checkout'), view.checkout, 'show-checkout')}${refSlot(t('endpointA'), view.a, 'show-a', 'clear-a')}${refSlot(t('endpointB'), view.b, 'show-b', 'clear-b')}</div><main class="knowledge-canvas"><p class="knowledge-empty" role="status">${t('loading')}</p></main></section></div>`;
+    const viewportKey = scrollKey();
+    if (!visible || openingView) return `<div class="knowledge-shell" data-knowledge-scroll-key="${viewportKey}" aria-busy="true"><aside class="knowledge-scope"><h2>${t('scope')}</h2></aside><section class="knowledge-body"><div class="knowledge-context">${refSlot(t('checkout'), view.checkout, 'show-checkout')}${refSlot(t('endpointA'), view.a, 'show-a', 'clear-a')}${refSlot(t('endpointB'), view.b, 'show-b', 'clear-b')}</div><main class="knowledge-canvas"><p class="knowledge-empty" role="status">${t('loading')}</p></main></section></div>`;
     const context = view.view === 'overview' ? null : view.view === 'map' ? detail : view.view === 'compare' ? inspectedSide === 'b' ? bDetail : aDetail : stateDetail ?? detail;
     const fixed = view.view === 'state' || view.view === 'observations' ? stateReference : null;
     const displayedRevision=fixed?.revision??context?.revision??view.queryRevision??'working';
-    return `<div class="knowledge-shell">${scopeHtml()}<section class="knowledge-body"><div class="knowledge-context">${refSlot(t('checkout'), view.checkout, 'show-checkout')}${refSlot(t('endpointA'), view.a, 'show-a', 'clear-a')}${refSlot(t('endpointB'), view.b, 'show-b', 'clear-b')}</div><nav class="knowledge-scope-crumb" aria-label="${t('scope')}">${button('all-material',t('allMaterial'))}${view.query.unassigned?`<span aria-current="page">› ${t('unassignedMaterial')}</span>`:view.query.contextIds?.length?`<span aria-current="page">› ${selectedContext?esc(text(selectedContext.definition.labels)):copy(options.locale(),'contextsCount',{count:view.query.contextIds.length})}</span>`:''}${view.view!=='overview'?button('back-scope',t('backScope')):''}</nav><header class="knowledge-view-heading">${view.objectTrail?.length ? button('back-related', t('returnObject')) : ''}<div><h1>${view.view === 'overview' ? t('coverageTitle') : view.view === 'compare' ? t('compare') : context ? localizedHtml(context.object.labels, context.object.id) : view.selectedObjectId ? localizedHtml(labels.get(view.selectedObjectId),stateReference?.label??t('objects')) : t('objects')}</h1><small>${view.view === 'compare' ? t('fixedStates') : displayedRevision!=='working'?`${t('revision')} · ${esc(short(displayedRevision))}`:`${t('working')}${repo ? ` · ${esc(short(repo.head))}` : ''}`}</small></div></header><nav class="knowledge-tabs" role="tablist" aria-label="${t('objects')}">${(['overview', 'map', 'observations', 'state', 'compare'] as const).map(mode => `<button type="button" role="tab" aria-selected="${view.view === mode}" data-knowledge="view" data-view="${mode}">${t(mode)}</button>`).join('')}</nav><div class="knowledge-content${context ? ' has-inspector' : ''}"><main class="knowledge-canvas">${errorHtml()}${committedNotice ? `<p class="knowledge-notice" role="status">${t('committedNotice')}</p>` : ''}${loadingObject ? `<p role="status">${t('loading')}</p>` : view.view === 'overview' ? overviewHtml() : view.view === 'map' ? mapHtml() : view.view === 'observations' ? observationsHtml() : view.view === 'state' ? stateHtml() : compareHtml()}</main>${context ? inspectorHtml() : ''}</div></section></div>`;
+    return `<div class="knowledge-shell" data-knowledge-scroll-key="${viewportKey}">${scopeHtml()}<section class="knowledge-body"><div class="knowledge-context">${refSlot(t('checkout'), view.checkout, 'show-checkout')}${refSlot(t('endpointA'), view.a, 'show-a', 'clear-a')}${refSlot(t('endpointB'), view.b, 'show-b', 'clear-b')}</div><nav class="knowledge-scope-crumb" aria-label="${t('scope')}">${button('all-material',t('allMaterial'))}${view.query.unassigned?`<span aria-current="page">› ${t('unassignedMaterial')}</span>`:view.query.contextIds?.length?`<span aria-current="page">› ${selectedContext?esc(text(selectedContext.definition.labels)):copy(options.locale(),'contextsCount',{count:view.query.contextIds.length})}</span>`:''}${view.view!=='overview'?button('back-scope',t('backScope')):''}</nav><header class="knowledge-view-heading">${view.objectTrail?.length ? button('back-related', t('returnObject')) : ''}<div><h1>${view.view === 'overview' ? t('coverageTitle') : view.view === 'compare' ? t('compare') : context ? localizedHtml(context.object.labels, context.object.id) : view.selectedObjectId ? localizedHtml(labels.get(view.selectedObjectId),stateReference?.label??t('objects')) : t('objects')}</h1><small>${view.view === 'compare' ? t('fixedStates') : displayedRevision!=='working'?`${t('revision')} · ${esc(short(displayedRevision))}`:`${t('working')}${repo ? ` · ${esc(short(repo.head))}` : ''}`}</small></div></header><nav class="knowledge-tabs" role="tablist" aria-label="${t('objects')}">${(['overview', 'map', 'observations', 'state', 'compare'] as const).map(mode => `<button type="button" role="tab" aria-selected="${view.view === mode}" data-knowledge="view" data-view="${mode}">${t(mode)}</button>`).join('')}</nav><div class="knowledge-content${context ? ' has-inspector' : ''}"><main class="knowledge-canvas">${errorHtml()}${committedNotice ? `<p class="knowledge-notice" role="status">${t('committedNotice')}</p>` : ''}${loadingObject ? `<p role="status">${t('loading')}</p>` : view.view === 'overview' ? overviewHtml() : view.view === 'map' ? mapHtml() : view.view === 'observations' ? observationsHtml() : view.view === 'state' ? stateHtml() : compareHtml()}</main>${context ? inspectorHtml() : ''}</div></section></div>`;
   }
   async function refreshRepository() { repo = await options.repositoryStatus(); return repo; }
   async function loadQuery(clearSelection = false) {
@@ -305,11 +323,11 @@ export function createKnowledgeBrowser(options: Options) {
     } catch (cause) { if (sequence === querySequence) showFailure(cause, () => loadQuery(clearSelection)); }
     finally { if (sequence === querySequence) { loading = false; redraw(); } }
   }
-  async function loadState(yearValue: number, reference: FixedKnowledgeState | null = stateReference) {
+  async function loadState(yearValue: number, reference: FixedKnowledgeState | null = stateReference, reveal: ViewReveal = false) {
     const objectId=reference?.objectId??view.selectedObjectId;
     if(!objectId||!civil(yearValue))return failure('INVALID_YEAR');
     const sequence=++stateSequence, inputBefore=yearInput, fixed=reference?{...reference,year:yearValue}:null;
-    loadingState=true;error=null;redraw();
+    loadingState=true;error=null;redraw();revealFlow('.knowledge-view-heading',reveal);
     try {
       const value=await options.api.state({state:{objectId,year:yearValue,includeUnreviewed:fixed?.includeUnreviewed??view.includeUnreviewed},revision:fixed?.revision??'working'});
       if(sequence!==stateSequence)return;
@@ -321,10 +339,10 @@ export function createKnowledgeBrowser(options: Options) {
     }catch(cause){if(sequence===stateSequence)showFailure(cause,()=>loadState(yearValue,reference));}
     finally{if(sequence===stateSequence){loadingState=false;redraw();}}
   }
-  async function selectObject(objectId: string, requestedYear?: number,revision=view.queryRevision??'working') {
+  async function selectObject(objectId: string, requestedYear?: number,revision=view.queryRevision??'working', reveal: ViewReveal = false) {
     const sequence = ++objectSequence; stateSequence++; loadingObject = true; loadingState = false;
     if (view.view === 'overview') view.view = 'observations';
-    view.objectRevision=revision;view.selectedObjectId = objectId; detail = null; stateDetail = null; state = null; history = null; stateReference = null; view.preview = null; inspectedProperty = null; committedNotice = false; error = null; redraw();
+    view.objectRevision=revision;view.selectedObjectId = objectId; detail = null; stateDetail = null; state = null; history = null; stateReference = null; view.preview = null; inspectedProperty = null; committedNotice = false; error = null; redraw();revealFlow('.knowledge-view-heading',reveal);
     try {
       const [objectDetail, historyResult] = await Promise.all([
         options.api.object({ objectId, revision }),
@@ -367,9 +385,9 @@ export function createKnowledgeBrowser(options: Options) {
     remember(objectDetail);
     return { objectId: objectDetail.object.id, year: yearValue, revision: status.head, label: text(objectDetail.object.labels, objectDetail.object.id),labels:structuredClone(objectDetail.object.labels), includeUnreviewed };
   }
-  async function showFixed(reference: FixedKnowledgeState) {
+  async function showFixed(reference: FixedKnowledgeState, reveal: ViewReveal = false) {
     const sequence = ++objectSequence; stateSequence++; loadingObject = true; loadingState=false; error = null; state = null; stateDetail = null; detail = null; history = null; inspectedProperty = null; committedNotice = false;
-    view.objectRevision=reference.revision;view.selectedObjectId = reference.objectId; view.year = reference.year; yearInput = String(reference.year); stateReference = structuredClone(reference); view.preview = structuredClone(reference); view.view = 'state'; redraw();
+    view.objectRevision=reference.revision;view.selectedObjectId = reference.objectId; view.year = reference.year; yearInput = String(reference.year); stateReference = structuredClone(reference); view.preview = structuredClone(reference); view.view = 'state'; redraw();revealFlow('.knowledge-view-heading',reveal);
     try {
       const [committed, value, historical, working] = await Promise.all([
         options.api.object({ objectId: reference.objectId, revision: reference.revision }),
@@ -390,14 +408,14 @@ export function createKnowledgeBrowser(options: Options) {
     if(sequence!==pinSequence[target]||!visible)return;
     view[target] = structuredClone(reference); persist();
     if(origin.object!==objectSequence||origin.state!==stateSequence||origin.diff!==diffSequence||origin.query!==querySequence||origin.view!==view.view){redraw();return;}
-    if (target === 'checkout') {const retainedYear=yearInput;await showFixed(reference);yearInput=retainedYear;persist();redraw();}
-    else if (view.a && view.b) { view.view = 'compare'; await loadDifference(); }
+    if (target === 'checkout') {const retainedYear=yearInput;await showFixed(reference,'scroll');yearInput=retainedYear;persist();redraw();}
+    else if (view.a && view.b) { view.view = 'compare'; await loadDifference('scroll'); }
     else redraw();
   }
-  async function loadDifference() {
+  async function loadDifference(reveal: ViewReveal = false) {
     if (!view.a || !view.b) { difference = null; return; }
     const sequence = ++diffSequence, a = structuredClone(view.a), b = structuredClone(view.b);
-    loadingDiff = true; difference = null; inspectedProperty = null; error = null; redraw();
+    loadingDiff = true; difference = null; inspectedProperty = null; error = null; redraw();revealFlow('.knowledge-view-heading',reveal);
     try {
       const [value, before, after] = await Promise.all([
         options.api.diff({ a: { state: { objectId: a.objectId, year: a.year, includeUnreviewed: a.includeUnreviewed }, revision: a.revision }, b: { state: { objectId: b.objectId, year: b.year, includeUnreviewed: b.includeUnreviewed }, revision: b.revision } }),
@@ -406,13 +424,13 @@ export function createKnowledgeBrowser(options: Options) {
       if (sequence !== diffSequence) return;
       difference = value; aDetail = before; bDetail = after; remember(before); remember(after); inspectedSide = 'a'; persist();
       if (JSON.stringify(a) !== JSON.stringify(b) && value.fields.some(field => field.kind === 'changed')) observed({ type: 'comparison', a, b });
-    } catch (cause) { if (sequence === diffSequence) showFailure(cause, loadDifference); }
+    } catch (cause) { if (sequence === diffSequence) showFailure(cause, () => loadDifference()); }
     finally { if (sequence === diffSequence) { loadingDiff = false; redraw(); } }
   }
   async function compareInterval(index: number) {
     const change = history?.changes[index]; if (!change) return;
     const base = await fixedCurrent();
-    view.a = { ...base, year: change.observedBetween[0] }; view.b = { ...base, year: change.observedBetween[1] }; view.view = 'compare'; persist(); await loadDifference();
+    view.a = { ...base, year: change.observedBetween[0] }; view.b = { ...base, year: change.observedBetween[1] }; view.view = 'compare'; persist(); await loadDifference('scroll');
   }
   function researchEvidence(context: KnowledgeObjectDetail, reference: FixedKnowledgeState, fields: KnowledgeStateField[], property?: string | null): PinnedResearchEvidence[] {
     const supportedIds = new Set(fields.filter(field => !property || field.propertyId === property).flatMap(field => [...field.assertionIds, ...field.possibleAssertionIds]));
@@ -445,7 +463,7 @@ export function createKnowledgeBrowser(options: Options) {
     }
     return { ...(contextIds.length?{contextIds:[...contextIds]}:unassigned?{unassigned:true}:{}), ...(queryText.trim() ? { text: queryText.trim() } : {}), ...(temporal.value ? { time: temporal.value } : {}), ...(geographic ? { bounds: geographic } : {}), ...(typeIds.length ? { typeIds: [...typeIds] } : {}),...(view.query.review?{review:[...view.query.review]}:{}), ...(view.query.objectIds?{objectIds:[...view.query.objectIds]}:{}), includeUndated, includeUnlocated, offset: 0, limit: 40 };
   }
-  async function open(savedState?: KnowledgeBrowserState) {
+  async function open(savedState?: KnowledgeBrowserState, reveal: ViewReveal = false) {
     const opening=++openSequence;visible = true;openingView=true;
     if (savedState) {result=null;navigation=null;selectedContext=null; view = parseKnowledgeBrowserState(JSON.stringify(savedState)) ?? initialKnowledgeBrowserState(); stateReference = view.preview ?? null; }
     else if (!result) { try { view = parseKnowledgeBrowserState(storage().getItem(STORAGE_KEY)) ?? initialKnowledgeBrowserState(); } catch { view = initialKnowledgeBrowserState(); } }
@@ -462,7 +480,7 @@ export function createKnowledgeBrowser(options: Options) {
       if(opening===openSequence&&visible){
         openingView=false;
         if(restoredObject&&view.selectedObjectId===restoredObject){yearInput=restoredDraft;persist();}
-        redraw();
+        redraw();revealFlow('.knowledge-view-heading',reveal);
       }
     }
   }
@@ -486,21 +504,21 @@ export function createKnowledgeBrowser(options: Options) {
         if (context) await options.onEdit?.({objectId:context.object.id,...(action==='correct-assertion'&&target.dataset.id?{assertionId:target.dataset.id}:{}),...(view.year!==null?{year:view.view==='compare'?(inspectedSide==='b'?view.b?.year:view.a?.year)??view.year:view.year}:{}),observedRevision:context.revision});
       }
       else if (action === 'related' && target.dataset.id) {
-        const objectId = target.dataset.id, revision = target.dataset.revision ?? 'working', yearValue = target.dataset.year ? Number(target.dataset.year) : undefined, sequence = objectSequence;
+        const objectId = target.dataset.id, revision = target.dataset.revision ?? 'working', yearValue = target.dataset.year ? Number(target.dataset.year) : undefined, sequence = objectSequence, active = document.activeElement;
         if (revision !== 'working' && !/^[a-f0-9]{40}$/.test(revision) || yearValue !== undefined && !civil(yearValue)) return failure('INVALID_REQUEST');
         await options.api.object({ objectId, revision });
         if (sequence !== objectSequence) return;
         const { objectTrail, ...previous } = structuredClone(view);
         view.objectTrail = [...objectTrail ?? [], previous].slice(-20);
         view.includeUnreviewed = target.dataset.unreviewed === 'true'; view.view = yearValue === undefined ? 'observations' : 'state';
-        await selectObject(objectId, yearValue, revision);
+        await selectObject(objectId, yearValue, revision, document.activeElement === active ? 'focus' : 'scroll');
       }
       else if (action === 'back-related' && view.objectTrail?.length) {
         const trail = [...view.objectTrail], previous = trail.pop()!;
-        await open({ ...previous, checkout: view.checkout, a: view.a, b: view.b, objectTrail: trail });
+        await open({ ...previous, checkout: view.checkout, a: view.a, b: view.b, objectTrail: trail }, 'scroll');
       }
-      else if ((action === 'object' || action === 'map-object') && target.dataset.id) await selectObject(target.dataset.id);
-      else if (action === 'view' && ['overview', 'map', 'observations', 'state', 'compare'].includes(target.dataset.view ?? '')) { view.view = target.dataset.view as KnowledgeBrowserView; persist(); if (view.view === 'compare' && view.a && view.b) await loadDifference(); else redraw(); }
+      else if ((action === 'object' || action === 'map-object') && target.dataset.id) await selectObject(target.dataset.id, undefined, view.queryRevision ?? 'working', 'focus');
+      else if (action === 'view' && ['overview', 'map', 'observations', 'state', 'compare'].includes(target.dataset.view ?? '')) { view.view = target.dataset.view as KnowledgeBrowserView; persist(); if (view.view === 'compare' && view.a && view.b) await loadDifference('focus'); else { redraw(); revealFlow('.knowledge-view-heading'); } }
       else if (action === 'refresh') { await refreshRepository(); await loadQuery(); if (view.selectedObjectId && !stateReference) await selectObject(view.selectedObjectId, view.year ?? undefined); }
       else if (action === 'previous' && result) { view.query.offset = Math.max(0, result.offset - result.limit); await loadQuery(); }
       else if (action === 'next' && result && result.offset + result.limit < result.total) { view.query.offset = result.offset + result.limit; await loadQuery(); }
@@ -513,17 +531,17 @@ export function createKnowledgeBrowser(options: Options) {
       else if (action === 'changes') await options.onOpenChanges();
       else if (action === 'retry' && retry) await retry();
       else if (action === 'checkout') await fix('checkout');
-      else if (action === 'show-working' && view.selectedObjectId) await selectObject(view.selectedObjectId, view.year ?? undefined);
+      else if (action === 'show-working' && view.selectedObjectId) await selectObject(view.selectedObjectId, view.year ?? undefined, view.queryRevision ?? 'working', 'focus');
       else if (action === 'set-a') await fix('a');
       else if (action === 'set-b') await fix('b');
-      else if (action === 'show-checkout' && view.checkout) await showFixed(view.checkout);
-      else if (action === 'show-a' && view.a) await showFixed(view.a);
-      else if (action === 'show-b' && view.b) await showFixed(view.b);
+      else if (action === 'show-checkout' && view.checkout) await showFixed(view.checkout, 'focus');
+      else if (action === 'show-a' && view.a) await showFixed(view.a, 'focus');
+      else if (action === 'show-b' && view.b) await showFixed(view.b, 'focus');
       else if (action === 'clear-a' || action === 'clear-b') { view[action === 'clear-a' ? 'a' : 'b'] = null; diffSequence++; difference = null; aDetail = null; bDetail = null; loadingDiff = false; persist(); redraw(); }
-      else if (action === 'observation' && target.dataset.year) { view.view = 'state'; await loadState(Number(target.dataset.year)); }
+      else if (action === 'observation' && target.dataset.year) { view.view = 'state'; await loadState(Number(target.dataset.year), stateReference, 'focus'); }
       else if (action === 'compare-interval' && target.dataset.index) await compareInterval(Number(target.dataset.index));
       else if (action === 'field' && target.dataset.property) {
-        inspectedProperty = target.dataset.property; inspectedSide = target.dataset.side === 'a' || target.dataset.side === 'b' ? target.dataset.side : 'preview'; redraw();
+        inspectedProperty = target.dataset.property; inspectedSide = target.dataset.side === 'a' || target.dataset.side === 'b' ? target.dataset.side : 'preview'; redraw(); revealFlow('.knowledge-inspector');
         const context = view.view === 'compare' ? inspectedSide === 'b' ? bDetail : aDetail : stateDetail ?? detail;
         const shownField=(view.view==='compare'?(inspectedSide==='b'?difference?.b:difference?.a):state)?.fields.find(value=>value.propertyId===inspectedProperty),shownIds=new Set([...(shownField?.assertionIds??[]),...(shownField?.possibleAssertionIds??[])]);
         const supporting = context?.assertions.filter(value => shownIds.has(value.id)&&value.evidence.some(evidence => context.sources.some(source => source.id === evidence.sourceId))) ?? [];
@@ -542,7 +560,7 @@ export function createKnowledgeBrowser(options: Options) {
   async function submit(form: HTMLFormElement) {
     try {
       if (form.dataset.knowledgeForm === 'scope') { view.query = parseScope();view.kindMode=kindMode;await loadQuery(true); }
-      else if (form.dataset.knowledgeForm === 'year') { if (!yearInput.trim() || !civil(Number(yearInput))) return failure('INVALID_YEAR'); view.view = 'state'; await loadState(Number(yearInput)); }
+      else if (form.dataset.knowledgeForm === 'year') { if (!yearInput.trim() || !civil(Number(yearInput))) return failure('INVALID_YEAR'); view.view = 'state'; await loadState(Number(yearInput), stateReference, 'focus'); }
     } catch (cause) { showFailure(cause); }
   }
   function input(target: HTMLInputElement) {
@@ -573,12 +591,12 @@ export function createKnowledgeBrowser(options: Options) {
     try {
       if(intent.type==='scope')await applyScope(intent.patch);
       else if (intent.type === 'search') { view.query = structuredClone(intent.query);view.kindMode=intent.query.typeIds?.length?'types':'all';delete view.scopeDraft;syncQueryInputs(); await loadQuery(true); }
-      else if(intent.type==='observations-version'){if(intent.revision!=='working'&&!/^[a-f0-9]{40}$/.test(intent.revision))return failure('INVALID_REQUEST');view.view='observations';view.includeUnreviewed=intent.includeUnreviewed;await selectObject(intent.objectId,undefined,intent.revision);}
-      else if (intent.type === 'show') { if(intent.includeUnreviewed!==undefined)view.includeUnreviewed=intent.includeUnreviewed;view.view = 'state'; await selectObject(intent.objectId, intent.year); }
-      else if (intent.type === 'checkout') { const reference = await committedReference(intent.objectId, intent.year); view.checkout = reference; persist(); await showFixed(reference); }
-      else if (intent.type === 'show-version') { if(!isFixedKnowledgeState(intent.reference))return failure('INVALID_REQUEST');view.checkout=structuredClone(intent.reference);persist();await showFixed(intent.reference); }
-      else if (intent.type === 'preview-version') { if(!isFixedKnowledgeState(intent.reference))return failure('INVALID_REQUEST'); await showFixed(intent.reference); }
-      else { if (!isFixedKnowledgeState(intent.a) || !isFixedKnowledgeState(intent.b)) return failure('INVALID_REQUEST'); view.a = structuredClone(intent.a); view.b = structuredClone(intent.b); view.view = 'compare'; persist(); await loadDifference(); }
+      else if(intent.type==='observations-version'){if(intent.revision!=='working'&&!/^[a-f0-9]{40}$/.test(intent.revision))return failure('INVALID_REQUEST');view.view='observations';view.includeUnreviewed=intent.includeUnreviewed;await selectObject(intent.objectId,undefined,intent.revision,'scroll');}
+      else if (intent.type === 'show') { if(intent.includeUnreviewed!==undefined)view.includeUnreviewed=intent.includeUnreviewed;view.view = 'state'; await selectObject(intent.objectId, intent.year, view.queryRevision ?? 'working', 'scroll'); }
+      else if (intent.type === 'checkout') { const reference = await committedReference(intent.objectId, intent.year); view.checkout = reference; persist(); await showFixed(reference, 'scroll'); }
+      else if (intent.type === 'show-version') { if(!isFixedKnowledgeState(intent.reference))return failure('INVALID_REQUEST');view.checkout=structuredClone(intent.reference);persist();await showFixed(intent.reference,'scroll'); }
+      else if (intent.type === 'preview-version') { if(!isFixedKnowledgeState(intent.reference))return failure('INVALID_REQUEST'); await showFixed(intent.reference,'scroll'); }
+      else { if (!isFixedKnowledgeState(intent.a) || !isFixedKnowledgeState(intent.b)) return failure('INVALID_REQUEST'); view.a = structuredClone(intent.a); view.b = structuredClone(intent.b); view.view = 'compare'; persist(); await loadDifference('scroll'); }
       return error ? { ok: false, code: error } : { ok: true };
     } catch (cause) { showFailure(cause); return { ok: false, code: error ?? 'IO_ERROR' }; }
   }

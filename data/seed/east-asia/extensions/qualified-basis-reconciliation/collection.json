@@ -1,0 +1,1292 @@
+{
+  "schemaVersion": 1,
+  "objects": [
+    {
+      "id": "wikipedia-en:Ashikaga_Yoshimitsu",
+      "labels": {
+        "en": "Ashikaga Yoshimitsu",
+        "zh-CN": "足利义满"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "identities": [
+        {
+          "provider": "declared-office-tenure-row",
+          "externalId": "wikipedia-en:Ashikaga_Yoshimitsu"
+        }
+      ],
+      "types": [
+        "gitworld:office-holder"
+      ]
+    },
+    {
+      "id": "wikipedia-en:Ashikaga_Yoshimochi",
+      "labels": {
+        "en": "Ashikaga Yoshimochi",
+        "zh-CN": "足利义持"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "identities": [
+        {
+          "provider": "declared-office-tenure-row",
+          "externalId": "wikipedia-en:Ashikaga_Yoshimochi"
+        }
+      ],
+      "types": [
+        "gitworld:office-holder"
+      ]
+    },
+    {
+      "id": "wikipedia-en:Ashikaga_Yoshimasa",
+      "labels": {
+        "en": "Ashikaga Yoshimasa",
+        "zh-CN": "足利义政"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "identities": [
+        {
+          "provider": "declared-office-tenure-row",
+          "externalId": "wikipedia-en:Ashikaga_Yoshimasa"
+        }
+      ],
+      "types": [
+        "gitworld:office-holder"
+      ]
+    },
+    {
+      "id": "wikipedia-en:Ashikaga_Yoshiharu",
+      "labels": {
+        "en": "Ashikaga Yoshiharu",
+        "zh-CN": "足利义晴"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "identities": [
+        {
+          "provider": "declared-office-tenure-row",
+          "externalId": "wikipedia-en:Ashikaga_Yoshiharu"
+        }
+      ],
+      "types": [
+        "gitworld:office-holder"
+      ]
+    },
+    {
+      "id": "history:office:ashikaga-shogun",
+      "identities": [
+        {
+          "provider": "gitworld-declared-historical-subject",
+          "externalId": "history:office:ashikaga-shogun"
+        }
+      ],
+      "labels": {
+        "en": "Ashikaga shogunal office",
+        "zh-CN": "足利幕府将军职"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:office"
+      ]
+    }
+  ],
+  "assertions": [
+    {
+      "id": "qualified-office:e9c06d72c6e32630a274a8da0794d1be16531da4",
+      "subjectId": "history:office:ashikaga-shogun",
+      "propertyId": "office:listed-de-jure-holder",
+      "value": {
+        "kind": "entity",
+        "objectId": "wikipedia-en:Ashikaga_Yoshimitsu"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "office:authority-basis",
+          "value": {
+            "kind": "text",
+            "value": "de-jure"
+          }
+        },
+        {
+          "propertyId": "qualified:source-holder-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:3:2"
+          }
+        },
+        {
+          "propertyId": "qualified:start-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:3:3"
+          }
+        },
+        {
+          "propertyId": "qualified:end-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:3:4"
+          }
+        },
+        {
+          "propertyId": "qualified:profile",
+          "value": {
+            "kind": "text",
+            "value": "qualified-authority-basis-reconciliation@1:ashikaga-qualified-office"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "locator": "$.facts[2]",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586"
+        },
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+          "locator": "table[3]; shared holder/start cells and authority-qualified endpoints",
+          "citation": "Pair only cells belonging to the same holder anchor and explicit authority basis. An extended de facto interval is not a second unqualified office tenure."
+        }
+      ],
+      "sourceSnapshotId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": 1369,
+          "latestYear": 1369,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "1369"
+        },
+        "end": {
+          "earliestYear": 1395,
+          "latestYear": 1395,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "de jure\n1395"
+        }
+      }
+    },
+    {
+      "id": "qualified-office:2bd272bf75f958195fe8332bc6b4efcf393890d5",
+      "subjectId": "history:office:ashikaga-shogun",
+      "propertyId": "office:listed-de-facto-authority",
+      "value": {
+        "kind": "entity",
+        "objectId": "wikipedia-en:Ashikaga_Yoshimitsu"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "office:authority-basis",
+          "value": {
+            "kind": "text",
+            "value": "de-facto"
+          }
+        },
+        {
+          "propertyId": "qualified:source-holder-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:3:2"
+          }
+        },
+        {
+          "propertyId": "qualified:start-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:3:3"
+          }
+        },
+        {
+          "propertyId": "qualified:end-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:4:4"
+          }
+        },
+        {
+          "propertyId": "qualified:profile",
+          "value": {
+            "kind": "text",
+            "value": "qualified-authority-basis-reconciliation@1:ashikaga-qualified-office"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "locator": "$.facts[2]",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586"
+        },
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+          "locator": "table[3]; shared holder/start cells and authority-qualified endpoints",
+          "citation": "Pair only cells belonging to the same holder anchor and explicit authority basis. An extended de facto interval is not a second unqualified office tenure."
+        }
+      ],
+      "sourceSnapshotId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": 1369,
+          "latestYear": 1369,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "1369"
+        },
+        "end": {
+          "earliestYear": 1408,
+          "latestYear": 1408,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "de facto\n1408"
+        }
+      }
+    },
+    {
+      "id": "qualified-office:057d7f355cd310f2b7a384dea88d311570ba4894",
+      "subjectId": "history:office:ashikaga-shogun",
+      "propertyId": "office:listed-de-jure-holder",
+      "value": {
+        "kind": "entity",
+        "objectId": "wikipedia-en:Ashikaga_Yoshimochi"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "office:authority-basis",
+          "value": {
+            "kind": "text",
+            "value": "de-jure"
+          }
+        },
+        {
+          "propertyId": "qualified:source-holder-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:5:2"
+          }
+        },
+        {
+          "propertyId": "qualified:start-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:5:3"
+          }
+        },
+        {
+          "propertyId": "qualified:end-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:5:4"
+          }
+        },
+        {
+          "propertyId": "qualified:profile",
+          "value": {
+            "kind": "text",
+            "value": "qualified-authority-basis-reconciliation@1:ashikaga-qualified-office"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "locator": "$.facts[3]",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586"
+        },
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+          "locator": "table[3]; shared holder/start cells and authority-qualified endpoints",
+          "citation": "Pair only cells belonging to the same holder anchor and explicit authority basis. An extended de facto interval is not a second unqualified office tenure."
+        }
+      ],
+      "sourceSnapshotId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": 1395,
+          "latestYear": 1395,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "1395"
+        },
+        "end": {
+          "earliestYear": 1423,
+          "latestYear": 1423,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "de jure\n1423"
+        }
+      }
+    },
+    {
+      "id": "qualified-office:8132320e8f3b2442ba8633fe2026c4280715eddf",
+      "subjectId": "history:office:ashikaga-shogun",
+      "propertyId": "office:listed-de-facto-authority",
+      "value": {
+        "kind": "entity",
+        "objectId": "wikipedia-en:Ashikaga_Yoshimochi"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "office:authority-basis",
+          "value": {
+            "kind": "text",
+            "value": "de-facto"
+          }
+        },
+        {
+          "propertyId": "qualified:source-holder-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:5:2"
+          }
+        },
+        {
+          "propertyId": "qualified:start-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:5:3"
+          }
+        },
+        {
+          "propertyId": "qualified:end-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:6:4"
+          }
+        },
+        {
+          "propertyId": "qualified:profile",
+          "value": {
+            "kind": "text",
+            "value": "qualified-authority-basis-reconciliation@1:ashikaga-qualified-office"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "locator": "$.facts[3]",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586"
+        },
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+          "locator": "table[3]; shared holder/start cells and authority-qualified endpoints",
+          "citation": "Pair only cells belonging to the same holder anchor and explicit authority basis. An extended de facto interval is not a second unqualified office tenure."
+        }
+      ],
+      "sourceSnapshotId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": 1395,
+          "latestYear": 1395,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "1395"
+        },
+        "end": {
+          "earliestYear": 1428,
+          "latestYear": 1428,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "de facto\n1428"
+        }
+      }
+    },
+    {
+      "id": "qualified-office:60acf91be42ae5da7ec0edb666fe9477d6d35419",
+      "subjectId": "history:office:ashikaga-shogun",
+      "propertyId": "office:listed-de-jure-holder",
+      "value": {
+        "kind": "entity",
+        "objectId": "wikipedia-en:Ashikaga_Yoshimasa"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "office:authority-basis",
+          "value": {
+            "kind": "text",
+            "value": "de-jure"
+          }
+        },
+        {
+          "propertyId": "qualified:source-holder-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:10:2"
+          }
+        },
+        {
+          "propertyId": "qualified:start-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:10:3"
+          }
+        },
+        {
+          "propertyId": "qualified:end-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:10:4"
+          }
+        },
+        {
+          "propertyId": "qualified:profile",
+          "value": {
+            "kind": "text",
+            "value": "qualified-authority-basis-reconciliation@1:ashikaga-qualified-office"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "locator": "$.facts[7]",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586"
+        },
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+          "locator": "table[3]; shared holder/start cells and authority-qualified endpoints",
+          "citation": "Pair only cells belonging to the same holder anchor and explicit authority basis. An extended de facto interval is not a second unqualified office tenure."
+        }
+      ],
+      "sourceSnapshotId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": 1449,
+          "latestYear": 1449,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "1449"
+        },
+        "end": {
+          "earliestYear": 1474,
+          "latestYear": 1474,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "de jure\n1474"
+        }
+      }
+    },
+    {
+      "id": "qualified-office:c38fea9b418d0b14d638273e43206525c90e9da9",
+      "subjectId": "history:office:ashikaga-shogun",
+      "propertyId": "office:listed-de-facto-authority",
+      "value": {
+        "kind": "entity",
+        "objectId": "wikipedia-en:Ashikaga_Yoshimasa"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "office:authority-basis",
+          "value": {
+            "kind": "text",
+            "value": "de-facto"
+          }
+        },
+        {
+          "propertyId": "qualified:source-holder-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:10:2"
+          }
+        },
+        {
+          "propertyId": "qualified:start-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:10:3"
+          }
+        },
+        {
+          "propertyId": "qualified:end-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:11:4"
+          }
+        },
+        {
+          "propertyId": "qualified:profile",
+          "value": {
+            "kind": "text",
+            "value": "qualified-authority-basis-reconciliation@1:ashikaga-qualified-office"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "locator": "$.facts[7]",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586"
+        },
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+          "locator": "table[3]; shared holder/start cells and authority-qualified endpoints",
+          "citation": "Pair only cells belonging to the same holder anchor and explicit authority basis. An extended de facto interval is not a second unqualified office tenure."
+        }
+      ],
+      "sourceSnapshotId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": 1449,
+          "latestYear": 1449,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "1449"
+        },
+        "end": {
+          "earliestYear": 1490,
+          "latestYear": 1490,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "de facto\n1490"
+        }
+      }
+    },
+    {
+      "id": "qualified-office:ca911b9677472a1b87f8ffd2784aa96f225675fc",
+      "subjectId": "history:office:ashikaga-shogun",
+      "propertyId": "office:listed-de-jure-holder",
+      "value": {
+        "kind": "entity",
+        "objectId": "wikipedia-en:Ashikaga_Yoshiharu"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "office:authority-basis",
+          "value": {
+            "kind": "text",
+            "value": "de-jure"
+          }
+        },
+        {
+          "propertyId": "qualified:source-holder-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:16:2"
+          }
+        },
+        {
+          "propertyId": "qualified:start-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:16:3"
+          }
+        },
+        {
+          "propertyId": "qualified:end-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:16:4"
+          }
+        },
+        {
+          "propertyId": "qualified:profile",
+          "value": {
+            "kind": "text",
+            "value": "qualified-authority-basis-reconciliation@1:ashikaga-qualified-office"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "locator": "$.facts[12]",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586"
+        },
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+          "locator": "table[3]; shared holder/start cells and authority-qualified endpoints",
+          "citation": "Pair only cells belonging to the same holder anchor and explicit authority basis. An extended de facto interval is not a second unqualified office tenure."
+        }
+      ],
+      "sourceSnapshotId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": 1522,
+          "latestYear": 1522,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "1522"
+        },
+        "end": {
+          "earliestYear": 1547,
+          "latestYear": 1547,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "de jure\n1547"
+        }
+      }
+    },
+    {
+      "id": "qualified-office:30a08bfe9e411f1bb19eab4ba6d64ed6a5248783",
+      "subjectId": "history:office:ashikaga-shogun",
+      "propertyId": "office:listed-de-facto-authority",
+      "value": {
+        "kind": "entity",
+        "objectId": "wikipedia-en:Ashikaga_Yoshiharu"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "office:authority-basis",
+          "value": {
+            "kind": "text",
+            "value": "de-facto"
+          }
+        },
+        {
+          "propertyId": "qualified:source-holder-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:16:2"
+          }
+        },
+        {
+          "propertyId": "qualified:start-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:16:3"
+          }
+        },
+        {
+          "propertyId": "qualified:end-cell",
+          "value": {
+            "kind": "text",
+            "value": "table:3;cell:17:4"
+          }
+        },
+        {
+          "propertyId": "qualified:profile",
+          "value": {
+            "kind": "text",
+            "value": "qualified-authority-basis-reconciliation@1:ashikaga-qualified-office"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "locator": "$.facts[12]",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586"
+        },
+        {
+          "sourceId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+          "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+          "locator": "table[3]; shared holder/start cells and authority-qualified endpoints",
+          "citation": "Pair only cells belonging to the same holder anchor and explicit authority basis. An extended de facto interval is not a second unqualified office tenure."
+        }
+      ],
+      "sourceSnapshotId": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": 1522,
+          "latestYear": 1522,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "1522"
+        },
+        "end": {
+          "earliestYear": 1550,
+          "latestYear": 1550,
+          "precision": "year",
+          "calendar": "published-source-calendar-unspecified",
+          "raw": "de facto\n1550"
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+      "identity": {
+        "provider": "wikipedia-qualified-office-facts",
+        "externalId": "10736899"
+      },
+      "revision": "1379817586",
+      "contentHash": "048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+      "retrievedAt": "2026-10-24T19:42:31.880Z",
+      "url": "https://en.wikipedia.org/wiki/List_of_shoguns",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+      "adapterVersion": "qualified-office-endpoints-v1",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of shoguns, English Wikipedia contributors. Permanent revision: https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&action=history. GitWorld selected holder identities and authority-qualified endpoint cells; matched explicit bases across rowspans; retained precision and unresolved endpoints; inferred no political succession or office from a person's name. Article HTML, images and prose are excluded. No official endorsement.",
+        "redistribution": "allowed"
+      },
+      "record": {
+        "schemaVersion": 1,
+        "mappingVersion": "qualified-office-endpoints-v1",
+        "manifest": {
+          "provider": "wikipedia-en",
+          "externalId": "10736899",
+          "revision": "1379817586",
+          "upstreamSnapshotHash": "d4130bf777cfc6a0fb267c1dc4fe2e4e1bdd645c43f67b787aa0e3953ef0b231",
+          "retrievedAt": "2026-10-24T19:42:31.880Z",
+          "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+          "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&action=history",
+          "articleTitle": "List of shoguns",
+          "licenseId": "CC-BY-SA-4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "List of shoguns, English Wikipedia contributors. Permanent revision: https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&action=history. GitWorld selected holder identities and authority-qualified endpoint cells; matched explicit bases across rowspans; retained precision and unresolved endpoints; inferred no political succession or office from a person's name. Article HTML, images and prose are excluded. No official endorsement.",
+          "changes": [
+            "Selected linked holder identity and endpoint text/locators; excluded article HTML, prose and images.",
+            "Grouped only the same source holder cell; paired explicit authority bases rather than physical rows.",
+            "Produced separate unreviewed fields; retained unknown or competing endpoints."
+          ]
+        },
+        "plan": {
+          "schemaVersion": 1,
+          "id": "qualified-authority-basis-reconciliation",
+          "revision": "1",
+          "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/source-bindings-prd.md",
+          "source": {
+            "provider": "wikipedia-en",
+            "externalId": "10736899",
+            "revision": "1379817586",
+            "upstreamSnapshotHash": "d4130bf777cfc6a0fb267c1dc4fe2e4e1bdd645c43f67b787aa0e3953ef0b231"
+          },
+          "tables": [
+            {
+              "id": "ashikaga-qualified-office",
+              "tableIndex": 3,
+              "expectedHeaders": [
+                "No.",
+                "Portrait",
+                "Name (Birth–Death)",
+                "Shogun from",
+                "Shogun until"
+              ],
+              "holderColumn": 2,
+              "startColumn": 3,
+              "endColumn": 4,
+              "contextId": "history:office:ashikaga-shogun",
+              "contextType": "gitworld:office",
+              "fields": {
+                "de-jure": {
+                  "propertyId": "office:listed-de-jure-holder",
+                  "labels": {
+                    "en": "Officeholder listed de jure",
+                    "zh-CN": "来源所列法理任职者"
+                  }
+                },
+                "de-facto": {
+                  "propertyId": "office:listed-de-facto-authority",
+                  "labels": {
+                    "en": "Authority listed de facto",
+                    "zh-CN": "来源所列实际权力持有者"
+                  }
+                }
+              }
+            }
+          ],
+          "evidence": [
+            {
+              "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+              "locator": "table[3]; shared holder/start cells and authority-qualified endpoints",
+              "citation": "Pair only cells belonging to the same holder anchor and explicit authority basis. An extended de facto interval is not a second unqualified office tenure."
+            }
+          ],
+          "reconciliation": {
+            "baseManifestHash": "13f791c8a88f16e26dbf947a60a3cf920cc72bf2255686847a158e5e9d47c6ab",
+            "bundleId": "east-asia-research-foundation-v8",
+            "expectedRemovedBindings": 21,
+            "selection": "Defer interpreted office:holder bindings whose original source has an explicit authority basis, and all unqualified office:holder bindings to a declared authority survey. Select by binding provenance, source revision and table/cell locators; never by holder name.",
+            "sourceLabels": {
+              "en": "Japanese military authority: qualified tenure correction",
+              "zh-CN": "日本武家权力：任期依据修正"
+            }
+          }
+        },
+        "facts": [
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Takauji",
+            "holder": {
+              "row": 1,
+              "column": 2,
+              "rowSpan": 1,
+              "text": "Ashikaga Takauji\n(1305–1358)",
+              "references": []
+            },
+            "endpoints": []
+          },
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Yoshiakira",
+            "holder": {
+              "row": 2,
+              "column": 2,
+              "rowSpan": 1,
+              "text": "Ashikaga Yoshiakira\n(1330–1367)",
+              "references": []
+            },
+            "endpoints": []
+          },
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Yoshimitsu",
+            "holder": {
+              "row": 3,
+              "column": 2,
+              "rowSpan": 2,
+              "text": "Ashikaga Yoshimitsu\n(1358–1408)",
+              "references": []
+            },
+            "endpoints": [
+              {
+                "row": 3,
+                "column": 4,
+                "rowSpan": 1,
+                "text": "de jure\n1395",
+                "references": [],
+                "side": "end",
+                "basis": "de-jure",
+                "assignment": "explicit-cell",
+                "time": {
+                  "earliestYear": 1395,
+                  "latestYear": 1395,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "de jure\n1395"
+                }
+              },
+              {
+                "row": 4,
+                "column": 4,
+                "rowSpan": 1,
+                "text": "de facto\n1408",
+                "references": [],
+                "side": "end",
+                "basis": "de-facto",
+                "assignment": "explicit-cell",
+                "time": {
+                  "earliestYear": 1408,
+                  "latestYear": 1408,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "de facto\n1408"
+                }
+              },
+              {
+                "row": 3,
+                "column": 3,
+                "rowSpan": 2,
+                "text": "1369",
+                "references": [],
+                "side": "start",
+                "basis": "de-jure",
+                "assignment": "shared-rowspan",
+                "time": {
+                  "earliestYear": 1369,
+                  "latestYear": 1369,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "1369"
+                }
+              },
+              {
+                "row": 3,
+                "column": 3,
+                "rowSpan": 2,
+                "text": "1369",
+                "references": [],
+                "side": "start",
+                "basis": "de-facto",
+                "assignment": "shared-rowspan",
+                "time": {
+                  "earliestYear": 1369,
+                  "latestYear": 1369,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "1369"
+                }
+              }
+            ]
+          },
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Yoshimochi",
+            "holder": {
+              "row": 5,
+              "column": 2,
+              "rowSpan": 2,
+              "text": "Ashikaga Yoshimochi\n(1386–1428)",
+              "references": []
+            },
+            "endpoints": [
+              {
+                "row": 5,
+                "column": 4,
+                "rowSpan": 1,
+                "text": "de jure\n1423",
+                "references": [],
+                "side": "end",
+                "basis": "de-jure",
+                "assignment": "explicit-cell",
+                "time": {
+                  "earliestYear": 1423,
+                  "latestYear": 1423,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "de jure\n1423"
+                }
+              },
+              {
+                "row": 6,
+                "column": 4,
+                "rowSpan": 1,
+                "text": "de facto\n1428",
+                "references": [],
+                "side": "end",
+                "basis": "de-facto",
+                "assignment": "explicit-cell",
+                "time": {
+                  "earliestYear": 1428,
+                  "latestYear": 1428,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "de facto\n1428"
+                }
+              },
+              {
+                "row": 5,
+                "column": 3,
+                "rowSpan": 2,
+                "text": "1395",
+                "references": [],
+                "side": "start",
+                "basis": "de-jure",
+                "assignment": "shared-rowspan",
+                "time": {
+                  "earliestYear": 1395,
+                  "latestYear": 1395,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "1395"
+                }
+              },
+              {
+                "row": 5,
+                "column": 3,
+                "rowSpan": 2,
+                "text": "1395",
+                "references": [],
+                "side": "start",
+                "basis": "de-facto",
+                "assignment": "shared-rowspan",
+                "time": {
+                  "earliestYear": 1395,
+                  "latestYear": 1395,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "1395"
+                }
+              }
+            ]
+          },
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Yoshikazu",
+            "holder": {
+              "row": 7,
+              "column": 2,
+              "rowSpan": 1,
+              "text": "Ashikaga Yoshikazu\n(1407–1425)",
+              "references": []
+            },
+            "endpoints": []
+          },
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Yoshinori",
+            "holder": {
+              "row": 8,
+              "column": 2,
+              "rowSpan": 1,
+              "text": "Ashikaga Yoshinori\n(1394–1441)",
+              "references": []
+            },
+            "endpoints": []
+          },
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Yoshikatsu",
+            "holder": {
+              "row": 9,
+              "column": 2,
+              "rowSpan": 1,
+              "text": "Ashikaga Yoshikatsu\n(1434–1443)",
+              "references": []
+            },
+            "endpoints": []
+          },
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Yoshimasa",
+            "holder": {
+              "row": 10,
+              "column": 2,
+              "rowSpan": 2,
+              "text": "Ashikaga Yoshimasa\n(1436–1490)",
+              "references": []
+            },
+            "endpoints": [
+              {
+                "row": 10,
+                "column": 4,
+                "rowSpan": 1,
+                "text": "de jure\n1474",
+                "references": [],
+                "side": "end",
+                "basis": "de-jure",
+                "assignment": "explicit-cell",
+                "time": {
+                  "earliestYear": 1474,
+                  "latestYear": 1474,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "de jure\n1474"
+                }
+              },
+              {
+                "row": 11,
+                "column": 4,
+                "rowSpan": 1,
+                "text": "de facto\n1490",
+                "references": [],
+                "side": "end",
+                "basis": "de-facto",
+                "assignment": "explicit-cell",
+                "time": {
+                  "earliestYear": 1490,
+                  "latestYear": 1490,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "de facto\n1490"
+                }
+              },
+              {
+                "row": 10,
+                "column": 3,
+                "rowSpan": 2,
+                "text": "1449",
+                "references": [],
+                "side": "start",
+                "basis": "de-jure",
+                "assignment": "shared-rowspan",
+                "time": {
+                  "earliestYear": 1449,
+                  "latestYear": 1449,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "1449"
+                }
+              },
+              {
+                "row": 10,
+                "column": 3,
+                "rowSpan": 2,
+                "text": "1449",
+                "references": [],
+                "side": "start",
+                "basis": "de-facto",
+                "assignment": "shared-rowspan",
+                "time": {
+                  "earliestYear": 1449,
+                  "latestYear": 1449,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "1449"
+                }
+              }
+            ]
+          },
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Yoshihisa",
+            "holder": {
+              "row": 12,
+              "column": 2,
+              "rowSpan": 1,
+              "text": "Ashikaga Yoshihisa\n(1465–1489)",
+              "references": []
+            },
+            "endpoints": []
+          },
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Yoshitane",
+            "holder": {
+              "row": 13,
+              "column": 2,
+              "rowSpan": 1,
+              "text": "Ashikaga Yoshitane\n(1466–1523)",
+              "references": []
+            },
+            "endpoints": []
+          },
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Yoshizumi",
+            "holder": {
+              "row": 14,
+              "column": 2,
+              "rowSpan": 1,
+              "text": "Ashikaga Yoshizumi\n(1481–1511)",
+              "references": []
+            },
+            "endpoints": []
+          },
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Yoshitane",
+            "holder": {
+              "row": 15,
+              "column": 2,
+              "rowSpan": 1,
+              "text": "Ashikaga Yoshitane\n(1466–1523)",
+              "references": []
+            },
+            "endpoints": []
+          },
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Yoshiharu",
+            "holder": {
+              "row": 16,
+              "column": 2,
+              "rowSpan": 2,
+              "text": "Ashikaga Yoshiharu\n(1511–1550)",
+              "references": []
+            },
+            "endpoints": [
+              {
+                "row": 16,
+                "column": 4,
+                "rowSpan": 1,
+                "text": "de jure\n1547",
+                "references": [],
+                "side": "end",
+                "basis": "de-jure",
+                "assignment": "explicit-cell",
+                "time": {
+                  "earliestYear": 1547,
+                  "latestYear": 1547,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "de jure\n1547"
+                }
+              },
+              {
+                "row": 17,
+                "column": 4,
+                "rowSpan": 1,
+                "text": "de facto\n1550",
+                "references": [],
+                "side": "end",
+                "basis": "de-facto",
+                "assignment": "explicit-cell",
+                "time": {
+                  "earliestYear": 1550,
+                  "latestYear": 1550,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "de facto\n1550"
+                }
+              },
+              {
+                "row": 16,
+                "column": 3,
+                "rowSpan": 2,
+                "text": "1522",
+                "references": [],
+                "side": "start",
+                "basis": "de-jure",
+                "assignment": "shared-rowspan",
+                "time": {
+                  "earliestYear": 1522,
+                  "latestYear": 1522,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "1522"
+                }
+              },
+              {
+                "row": 16,
+                "column": 3,
+                "rowSpan": 2,
+                "text": "1522",
+                "references": [],
+                "side": "start",
+                "basis": "de-facto",
+                "assignment": "shared-rowspan",
+                "time": {
+                  "earliestYear": 1522,
+                  "latestYear": 1522,
+                  "precision": "year",
+                  "calendar": "published-source-calendar-unspecified",
+                  "raw": "1522"
+                }
+              }
+            ]
+          },
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Yoshiteru",
+            "holder": {
+              "row": 18,
+              "column": 2,
+              "rowSpan": 1,
+              "text": "Ashikaga Yoshiteru\n(1536–1565)",
+              "references": []
+            },
+            "endpoints": []
+          },
+          {
+            "profileId": "ashikaga-qualified-office",
+            "table": 3,
+            "holderId": "wikipedia-en:Ashikaga_Yoshiaki",
+            "holder": {
+              "row": 20,
+              "column": 2,
+              "rowSpan": 2,
+              "text": "Ashikaga Yoshiaki\n(1537–1597)",
+              "references": []
+            },
+            "endpoints": []
+          }
+        ]
+      }
+    }
+  ]
+}

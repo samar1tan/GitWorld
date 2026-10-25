@@ -193,6 +193,8 @@ An internal build, draft PR, source push, tag alone or locally generated DMG is 
 
 ## 11. Acceptance matrix
 
+Apply the [acceptance evidence contract](acceptance/evidence.md): exact-installer user journeys and separately identified fault/protocol/compatibility regressions jointly establish the required results. Engineering evidence never substitutes for the standalone installed investigation.
+
 Every row records build/revision, environment, dataset release, actual steps and evidence. These are required outcomes, not current pass claims.
 
 | ID | Task | Pass condition |

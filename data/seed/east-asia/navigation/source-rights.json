@@ -2,7 +2,10 @@
   "schemaVersion": 1,
   "licenseId": "CC-BY-SA-4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-  "attribution": "GitWorld contributors: original source organization, navigation roles and English/Simplified Chinese presentation, including descriptive names for ten exact derived-source records. Preserve the selected source attributions and permanent revisions in the collection and extension rights records.",
+  "attribution": "GitWorld contributors: original source organization, navigation roles and English/Simplified Chinese presentation, including descriptive names for eleven exact derived-source records. Preserve the selected source attributions and permanent revisions in the collection and extension rights records.",
   "scope": "Navigation and source-presentation metadata only; original citation titles, historical claims, original source works and their rights remain unchanged.",
-  "historicalReview": "Membership and navigation roles do not approve historical claims."
+  "historicalReview": "Membership and navigation roles do not approve historical claims.",
+  "changes": [
+    "Added the snapshot-bound bilingual name of the authority-basis correction source; original titles and attributions remain available."
+  ]
 }

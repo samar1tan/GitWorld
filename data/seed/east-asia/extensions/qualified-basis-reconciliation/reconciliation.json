@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "kind": "modern-authority-binding-correction",
+  "baseManifestHash": "13f791c8a88f16e26dbf947a60a3cf920cc72bf2255686847a158e5e9d47c6ab",
+  "mappingVersion": "source-identity-role-bindings-v2",
+  "upstreamSource": {
+    "provider": "wikipedia-en",
+    "externalId": "10736899",
+    "revision": "1379817586",
+    "upstreamSnapshotHash": "d4130bf777cfc6a0fb267c1dc4fe2e4e1bdd645c43f67b787aa0e3953ef0b231"
+  },
+  "originalSources": [
+    {
+      "id": "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b",
+      "contentHash": "91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+    },
+    {
+      "id": "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef",
+      "contentHash": "87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+    },
+    {
+      "id": "wikipedia-en-facts:314092@f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab",
+      "contentHash": "f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab"
+    },
+    {
+      "id": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "contentHash": "0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e"
+    },
+    {
+      "id": "wikipedia-en-facts:17254923@e210f2fedf63e1b83f1ff17c3ba8ac23b674629b6e73133b7f44d460a722fd1f",
+      "contentHash": "e210f2fedf63e1b83f1ff17c3ba8ac23b674629b6e73133b7f44d460a722fd1f"
+    },
+    {
+      "id": "wikipedia-en-facts:17255213@fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514",
+      "contentHash": "fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514"
+    },
+    {
+      "id": "wikipedia-en-facts:1420574@12511a4f9a10aa42352aa5bcfbff8405d4d8635c748df4a6b9a6f80803df8427",
+      "contentHash": "12511a4f9a10aa42352aa5bcfbff8405d4d8635c748df4a6b9a6f80803df8427"
+    },
+    {
+      "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+      "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+    },
+    {
+      "id": "wikipedia-en-facts:47851611@050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78",
+      "contentHash": "050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78"
+    },
+    {
+      "id": "wikipedia-en-facts:530241@829732fb3734c8609735e3a680e8fa8d730d091e719b20d4ed7b18fee6529577",
+      "contentHash": "829732fb3734c8609735e3a680e8fa8d730d091e719b20d4ed7b18fee6529577"
+    },
+    {
+      "id": "wikipedia-en-facts:516942@87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca",
+      "contentHash": "87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca"
+    },
+    {
+      "id": "gitworld-binding:east-asia-source-roles@44d66c1941745121bad78783097a04bb06a364a8f369cd413973f2983d326cd7",
+      "contentHash": "44d66c1941745121bad78783097a04bb06a364a8f369cd413973f2983d326cd7"
+    },
+    {
+      "id": "gitworld-binding:east-asia-published-chronologies@a3e5e5ceb4c2c0019fad103992044875852181ed75cd182a50118d74a68a3655",
+      "contentHash": "a3e5e5ceb4c2c0019fad103992044875852181ed75cd182a50118d74a68a3655"
+    },
+    {
+      "id": "gitworld-content-labels:east-asia-preset-labels@38bfce7bba2c59dbc0e01b6121c47a8cecca175e36749fff0c97ef99deabbd1d",
+      "contentHash": "38bfce7bba2c59dbc0e01b6121c47a8cecca175e36749fff0c97ef99deabbd1d"
+    },
+    {
+      "id": "gitworld-activity-contexts:listed-activity-role-contexts@1eb845592345b3fbe0f5a08c41cee9b15a400a379e0b4ac3d1824063f2a5e597",
+      "contentHash": "1eb845592345b3fbe0f5a08c41cee9b15a400a379e0b4ac3d1824063f2a5e597"
+    },
+    {
+      "id": "wikipedia-qualified-office-facts:10736899@fead897088a3b1a08ae25de4d69103d5a48c59fa29e404377efed3564054dac5",
+      "contentHash": "fead897088a3b1a08ae25de4d69103d5a48c59fa29e404377efed3564054dac5"
+    },
+    {
+      "id": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "contentHash": "9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c"
+    },
+    {
+      "id": "gitworld-evidenced-fields:japan-normative-institutions-1947@439354d0bc11ffc2e7074d185ba16ac77204723514cba4302254fed91693c99c",
+      "contentHash": "439354d0bc11ffc2e7074d185ba16ac77204723514cba4302254fed91693c99c"
+    },
+    {
+      "id": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "contentHash": "ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea"
+    },
+    {
+      "id": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+      "contentHash": "98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3"
+    },
+    {
+      "id": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "contentHash": "4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651"
+    },
+    {
+      "id": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "contentHash": "4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8"
+    }
+  ],
+  "removed": [
+    {
+      "assertionId": "source-binding:43b048168f4c0d8d044f1f1e91467031368b5f54",
+      "sha256": "0a4e03650cd26b1c4b5d9acf55adbb844d430b1703ae3f390cce334828f0f154",
+      "originalAssertionId": "office-projection:3186e128185841dc647dd1d339e21650",
+      "originalAssertionHash": "9ea78aedf0fc8f5c1b0266ae2b3c31197f2de67e1c07a4c19e9c3a0edfc57e07",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:4eddbfd2a89202560cc8c42f10f5bd83:history:office:ashikaga-shogun:role",
+      "locator": "table:3;row:3;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:23a175ca01fc86f85eee519fa5906b581d772afb",
+      "sha256": "875fcb2c9b7e67b84ef24dd42445095c2150e49c3c5d036f6a78e1bb6ed581c4",
+      "originalAssertionId": "office-projection:b2a749f48a1a611f470ba72750e9c3ef",
+      "originalAssertionHash": "b3355977cd15fb19b6b29882f158b409ca87a975a3d4853a97a34cad02805d8c",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:4eddbfd2a89202560cc8c42f10f5bd83:history:office:ashikaga-shogun:role",
+      "locator": "table:3;row:4;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:f0d18ee279f07000c600b83e12aa83b3cbf43a48",
+      "sha256": "6dd8d5a6e7f088da8b3bb90ddc2009d55e0cbef177d30a859cd43eb9294231a3",
+      "originalAssertionId": "office-projection:bf2da8ce68e8ebb745cc133ac1c19900",
+      "originalAssertionHash": "3a2286dd641217213298333ad69894aee9213fffd9967496307f1461d37a33e0",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:4eddbfd2a89202560cc8c42f10f5bd83:history:office:ashikaga-shogun:role",
+      "locator": "table:3;row:5;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:c62ec876609b57b03368aabf12a0a22214677341",
+      "sha256": "be3ff7f4b792d2ec7634f14a7b65bbbdf82cfcccf5decebb715393ec522b047c",
+      "originalAssertionId": "office-projection:b1ffafb87c176f96327016d51c6d54cd",
+      "originalAssertionHash": "6aa20644b1e5cb8f0233535057e9fe2cbab35002641c9b0bfb7bb0a6eb00351e",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:4eddbfd2a89202560cc8c42f10f5bd83:history:office:ashikaga-shogun:role",
+      "locator": "table:3;row:6;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:156d7aa334feded1fc65bd4865d44ff6f2784fae",
+      "sha256": "00034ddcf2aa5fc530ff2f70c81f84628351979713de9c139cf064e47addd547",
+      "originalAssertionId": "office-projection:82acd9f37bd23bed52da0f394c7abfcd",
+      "originalAssertionHash": "76ce113f0ce62078578486f884bd0ef533d950f84b4bef7f8ead9af015a721ac",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:4eddbfd2a89202560cc8c42f10f5bd83:history:office:ashikaga-shogun:role",
+      "locator": "table:3;row:10;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:85e77e2187117a9a5bec108f502dc76c1cbefa1f",
+      "sha256": "4e0e5120964ef38d1aa903f3feceeb4634eeecaa8c10d05aa6a203e0ba4a1b14",
+      "originalAssertionId": "office-projection:517ae326e1329fba666f32cb1beb5337",
+      "originalAssertionHash": "49e716f221029a07416e7538ab3e32f2ca22cd4b4134bdfe48064ccc7b8b3f63",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:4eddbfd2a89202560cc8c42f10f5bd83:history:office:ashikaga-shogun:role",
+      "locator": "table:3;row:11;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:4d0b3ab24f2650371ffea38f28b86af90300bea6",
+      "sha256": "01b7b50ecbaa77c30640af56e37f629d57484a48f4671ff77b875e8acee96b57",
+      "originalAssertionId": "office-projection:14ae181fa1c7e2c515c76a18a519de89",
+      "originalAssertionHash": "0098e559bcfc9eba9f7e56af052d7bdd237e948002e0c8ed7c2c8d2ada3f8666",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:4eddbfd2a89202560cc8c42f10f5bd83:history:office:ashikaga-shogun:role",
+      "locator": "table:3;row:16;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:1e1d3214be5d1501b11cd333311272e132677647",
+      "sha256": "df621abb0faa4ccd6036fff27ca24510569c5fcb9e1fecae0d3407210544ec13",
+      "originalAssertionId": "office-projection:1bf22bdf2615cf8362cfef9daccb00d5",
+      "originalAssertionHash": "b3092da6c1e7b0e506918af940686c83819a49a8367dd3831489e7557c11f827",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:4eddbfd2a89202560cc8c42f10f5bd83:history:office:ashikaga-shogun:role",
+      "locator": "table:3;row:17;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:af4fb3f00649268eb3f6fdb99b1c88573718a2bb",
+      "sha256": "d415dae57e132f53597d0dd21a9696e276ef8e8848fac8cc7a42634ccdb6f8a8",
+      "originalAssertionId": "office-projection:0d835c9e5ef7afb1f662adbf6281a7e5",
+      "originalAssertionHash": "61a7bb4a8365f3ba7120ccfd0359ade24e7849043fcb7b29cf14c78f3ad6e60a",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:e65c853f5e96b489300f0ad49766b461:history:office:azuchi-momoyama-authority:role",
+      "locator": "table:4;row:2;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:b0030d63baeae4475ff93eb8ba2700c16c4f518e",
+      "sha256": "71f5d53695f58b24faf192b6a55754f93a1ffcfe33b6d48f7924a252533b2a0f",
+      "originalAssertionId": "office-projection:bdddcbec7818c4243d5184e60ae215b3",
+      "originalAssertionHash": "a780a298281b2c77cfc59630a6ccb4b9e744a060ade869510d49519daf38c703",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:e65c853f5e96b489300f0ad49766b461:history:office:azuchi-momoyama-authority:role",
+      "locator": "table:4;row:3;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:be87892e71f7d12cd4272b39524be17e7b211746",
+      "sha256": "c8d6c1c299afb24741d9efa725b93eec0b638014a8d9a55800d241f846974594",
+      "originalAssertionId": "office-projection:5f2e8215f4bf502316d1a999279c3770",
+      "originalAssertionHash": "311dac039f3c4c3e37446675124d4ba2282fd3620e4d36d57c6bfb69f61fbdc4",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:e65c853f5e96b489300f0ad49766b461:history:office:azuchi-momoyama-authority:role",
+      "locator": "table:4;row:4;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:958135c3bbdd1af7deb1668506ed4aee0a21a37b",
+      "sha256": "16861e70f8eeffb0c5c0292010177170ca1505897c72e2791e6e5956b2872d8b",
+      "originalAssertionId": "office-projection:d2769abc60175414e2e1c031be5566e2",
+      "originalAssertionHash": "c10a5f22c3d66658b6c15d8511880e6b654984b9eea18fc87cb7f01faf8b7f6d",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:e65c853f5e96b489300f0ad49766b461:history:office:azuchi-momoyama-authority:role",
+      "locator": "table:4;row:6;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:643a4da0fde4a1035d4e37e78d89bd12a2d11f4c",
+      "sha256": "d97c103dfeacf57d55b86a3b97575fdbcd7071a57f59cdf80046ab7e9a2ac329",
+      "originalAssertionId": "office-projection:68ac64e2cc3a9f137d1965e5164ce514",
+      "originalAssertionHash": "f2ee3fd7531982e345de1d7aea3fb7981d4d8bb33698b1b1342634f61416e9f6",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:e65c853f5e96b489300f0ad49766b461:history:office:azuchi-momoyama-authority:role",
+      "locator": "table:4;row:7;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:7ea5a237917738071cffec18d895285ffa5c7c53",
+      "sha256": "035ec453ab326771b35050640ed243cb21dd25371ddda9fca108755dc3fba810",
+      "originalAssertionId": "office-projection:1fe00b33189eeed6f4b5f29e4f5c65d7",
+      "originalAssertionHash": "4ee0bf015e4df50d363e1a0d8a8ef5b769c3e0023bb7bac121a771c6d73d1fea",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:454c83f0ed74a3c8d75393df10e5a549:history:office:tokugawa-shogun:role",
+      "locator": "table:5;row:3;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:b6b8d0f4d37533a2a1e7c6814f191f8395b287bf",
+      "sha256": "de119f0b05e7aea0d04847be38548a804fc7a4ed74cb1426755dc82bc4f070ce",
+      "originalAssertionId": "office-projection:2bff0ec97ba5f27340e297d4fda6db1f",
+      "originalAssertionHash": "0f71ad52162b45479d1188d508398c71ba48927eeb412ce3a9747b7d162f875f",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:454c83f0ed74a3c8d75393df10e5a549:history:office:tokugawa-shogun:role",
+      "locator": "table:5;row:4;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:22008eb35101a49d408fb9a346f72467cc5c9c05",
+      "sha256": "730879febc1e8e00167b6a1b2c45ab887970bb8c8dccd66d5c7f3523cae28f3c",
+      "originalAssertionId": "office-projection:49e4eb55dc513a59bd35b8aa2a7cee2b",
+      "originalAssertionHash": "abbaea6bac4adf2daa499069a79466376ee83a545f4174e86ae27ca62bf641cb",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:454c83f0ed74a3c8d75393df10e5a549:history:office:tokugawa-shogun:role",
+      "locator": "table:5;row:10;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:261cb3b98ca39e0beb091e366c5685ed312c4f71",
+      "sha256": "4509d0c72e27f6df5c9451bdd41be4b8baa6ad7641c7237a839161666916d668",
+      "originalAssertionId": "office-projection:c1c1d1c686d670547cfac764334aadb0",
+      "originalAssertionHash": "aac4b9935a0e42c5a4b5b661872c97e36e0f0b9749dde8ea2d37bc295e3b0490",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:454c83f0ed74a3c8d75393df10e5a549:history:office:tokugawa-shogun:role",
+      "locator": "table:5;row:11;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:4337fb247cec53afc4faab36c6cc9748e3fcc6c6",
+      "sha256": "36c4a57b41227c9802f6a6447405270dac3a8c189ddb42d1f38b2fd3ea594f99",
+      "originalAssertionId": "office-projection:79cd7271963ca4d79d8d005ae5abd183",
+      "originalAssertionHash": "d7381e2ef63d658d6eb7617dff29da5091f6159cb4e40d58cf1447019e05d307",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:454c83f0ed74a3c8d75393df10e5a549:history:office:tokugawa-shogun:role",
+      "locator": "table:5;row:12;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:4feb4ff29eb06b1392f553a223a23bcc43055db4",
+      "sha256": "8e29c7991693247b626377ce94d6c0706e9437c787772764829dc8111f97be15",
+      "originalAssertionId": "office-projection:626e0764846fb3911b861f7495e5fb89",
+      "originalAssertionHash": "167e6bf65917c72546d1c6b30d88576d3354c1df25a4b3d0dd5017bd45d9e74e",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:454c83f0ed74a3c8d75393df10e5a549:history:office:tokugawa-shogun:role",
+      "locator": "table:5;row:13;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:5d2604e45414fa385b63f134e673b4ad14f2995e",
+      "sha256": "205b627272782959a6460aa6ed60032dce83e92be4ed68244c370007fde459df",
+      "originalAssertionId": "office-projection:0f9b55aae55599fa7b3c8c7a9a5866d5",
+      "originalAssertionHash": "aaee4b15199c4cf89adb1068073adf318444acd696648c422032d238cb6b6c78",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:454c83f0ed74a3c8d75393df10e5a549:history:office:tokugawa-shogun:role",
+      "locator": "table:5;row:15;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    },
+    {
+      "assertionId": "source-binding:4ff77d37bb98d52b8b712e1938b93a54c1d8ca0f",
+      "sha256": "33038a7b7c414ec1af028c8d77e07f927f7fc109631563c66efb31284b41c72e",
+      "originalAssertionId": "office-projection:6d0b945b0074bf74075d27c2d6b55ccf",
+      "originalAssertionHash": "b76164047de1c95a4d917f5bfb1745a10ccbe5c85ff924cb7f7c0b98597821c4",
+      "sourceSnapshotId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "binding": "east-asia-source-roles@1-unreviewed:japanese-shoguns:wikipedia-office-scope:454c83f0ed74a3c8d75393df10e5a549:history:office:tokugawa-shogun:role",
+      "locator": "table:5;row:16;name-column:2;tenure-column:3;end-column:4",
+      "reason": "AUTHORITY_BASIS_REQUIRED"
+    }
+  ],
+  "qualifiedAssertionIds": [
+    "qualified-office:e9c06d72c6e32630a274a8da0794d1be16531da4",
+    "qualified-office:2bd272bf75f958195fe8332bc6b4efcf393890d5",
+    "qualified-office:057d7f355cd310f2b7a384dea88d311570ba4894",
+    "qualified-office:8132320e8f3b2442ba8633fe2026c4280715eddf",
+    "qualified-office:60acf91be42ae5da7ec0edb666fe9477d6d35419",
+    "qualified-office:c38fea9b418d0b14d638273e43206525c90e9da9",
+    "qualified-office:ca911b9677472a1b87f8ffd2784aa96f225675fc",
+    "qualified-office:30a08bfe9e411f1bb19eab4ba6d64ed6a5248783"
+  ],
+  "projectionIssues": [
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "1:2",
+      "cell": "1:3"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "1:2",
+      "cell": "1:4"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "2:2",
+      "cell": "2:3"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "2:2",
+      "cell": "2:4"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "7:2",
+      "cell": "7:3"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "7:2",
+      "cell": "7:4"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "8:2",
+      "cell": "8:3"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "8:2",
+      "cell": "8:4"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "9:2",
+      "cell": "9:3"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "9:2",
+      "cell": "9:4"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "12:2",
+      "cell": "12:3"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "12:2",
+      "cell": "12:4"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "13:2",
+      "cell": "13:3"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "13:2",
+      "cell": "13:4"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "14:2",
+      "cell": "14:3"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "14:2",
+      "cell": "14:4"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "15:2",
+      "cell": "15:3"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "15:2",
+      "cell": "15:4"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "18:2",
+      "cell": "18:3"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "18:2",
+      "cell": "18:4"
+    },
+    {
+      "code": "HOLDER_NOT_FOUND",
+      "table": 3,
+      "holderCell": "19:2"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "20:2",
+      "cell": "20:3"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "20:2",
+      "cell": "20:4"
+    },
+    {
+      "code": "UNQUALIFIED_BASIS",
+      "table": 3,
+      "holderCell": "20:2",
+      "cell": "21:4"
+    }
+  ],
+  "retainedOriginalFacts": true,
+  "retainedOriginalSources": true,
+  "historicalReview": "Every retained and added claim remains unreviewed. This modern correction is not a historical event or installed acceptance."
+}

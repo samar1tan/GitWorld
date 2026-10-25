@@ -245,5 +245,13 @@
     "included": "Selected names, dates, role/participant facts, explicit unreviewed interpretation rules and independently identified display translations.",
     "excluded": "Raw article HTML, images, full article prose, operational API responses, original PDF/chart/OCR, caches, private notes and local paths."
   },
-  "historicalReview": "All assertions remain unreviewed. Source permission does not establish historical correctness, complete coverage or installed-app acceptance."
+  "historicalReview": "All assertions remain unreviewed. Source permission does not establish historical correctness, complete coverage or installed-app acceptance.",
+  "authorityBasisCorrection": {
+    "plan": "extensions/qualified-basis-reconciliation/plan.json",
+    "ledger": "extensions/qualified-basis-reconciliation/reconciliation.json",
+    "rights": "extensions/qualified-basis-reconciliation/source-rights.json",
+    "removedInterpretedBindings": 21,
+    "addedQualifiedClaims": 8,
+    "originalFactsAndSourcesUnchanged": true
+  }
 }

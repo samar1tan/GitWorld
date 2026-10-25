@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "title": "Authority-basis interpretation correction",
+  "status": "candidate-not-publication-approval",
+  "dataLicense": {
+    "id": "CC-BY-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "licenseScope": "Selected source-derived holder identities and endpoint facts, their unreviewed interpretation, original correction ledger and bilingual presentation. The software license does not replace these terms.",
+  "sources": [
+    {
+      "id": "wikipedia-qualified-office-facts:10736899@048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+      "identity": {
+        "provider": "wikipedia-qualified-office-facts",
+        "externalId": "10736899"
+      },
+      "revision": "1379817586",
+      "contentHash": "048d460ef147724db88374bb116f3166cc56363621c0a244915c56ab6ef3ca9d",
+      "retrievedAt": "2026-10-24T19:42:31.880Z",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of shoguns, English Wikipedia contributors. Permanent revision: https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&action=history. GitWorld selected holder identities and authority-qualified endpoint cells; matched explicit bases across rowspans; retained precision and unresolved endpoints; inferred no political succession or office from a person's name. Article HTML, images and prose are excluded. No official endorsement.",
+        "redistribution": "allowed"
+      },
+      "selectedFactsManifest": {
+        "provider": "wikipedia-en",
+        "externalId": "10736899",
+        "revision": "1379817586",
+        "upstreamSnapshotHash": "d4130bf777cfc6a0fb267c1dc4fe2e4e1bdd645c43f67b787aa0e3953ef0b231",
+        "retrievedAt": "2026-10-24T19:42:31.880Z",
+        "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+        "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&action=history",
+        "articleTitle": "List of shoguns",
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of shoguns, English Wikipedia contributors. Permanent revision: https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&action=history. GitWorld selected holder identities and authority-qualified endpoint cells; matched explicit bases across rowspans; retained precision and unresolved endpoints; inferred no political succession or office from a person's name. Article HTML, images and prose are excluded. No official endorsement.",
+        "changes": [
+          "Selected linked holder identity and endpoint text/locators; excluded article HTML, prose and images.",
+          "Grouped only the same source holder cell; paired explicit authority bases rather than physical rows.",
+          "Produced separate unreviewed fields; retained unknown or competing endpoints."
+        ]
+      }
+    }
+  ],
+  "changes": [
+    "Grouped the same fixed-source holder cell and paired endpoints by explicit authority basis for the Ashikaga table.",
+    "Removed only the hash-bound interpreted generic officeholder bindings in reconciliation.json; retained every original source assertion and source record.",
+    "Reused the existing English/Simplified Chinese qualified-field vocabulary and added an original snapshot-bound source display name."
+  ],
+  "excluded": "Article HTML, prose, portraits, raw API responses, caches and private preparation paths.",
+  "historicalReview": "All assertions remain unreviewed. Source permission and deterministic mapping do not establish historical completeness or installed acceptance.",
+  "adoptionSemantics": "The collection shard is additive. The removal ledger applies only when constructing this exact corrected seed from its pinned base; ordinary append-import does not delete existing user claims."
+}

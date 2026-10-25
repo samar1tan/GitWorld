@@ -1,0 +1,66 @@
+import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { canonicalJson } from '../packages/domain/src/canonical.ts';
+import { bindingRequiresQualifiedAuthority } from '../packages/ingestion/src/source-bindings.ts';
+import { projectQualifiedOfficeEndpoints } from '../packages/ingestion/src/qualified-office-projection.ts';
+import { combineKnowledgeCollections } from '../packages/ingestion/src/knowledge-mapping.ts';
+import { knowledgeCollectionFingerprint, loadTrustedKnowledgeBundle } from '../packages/service/src/trusted-bundled-knowledge.ts';
+
+const args = process.argv.slice(2), arg = key => { const i = args.indexOf(key); if (i < 0 || !args[i + 1]) throw Error(`Missing ${key}`); return args[i + 1]; };
+const base = path.resolve(arg('--base')), output = path.resolve(arg('--output')), snapshotFile = arg('--snapshot'), planFile = arg('--plan');
+assert.notEqual(base, output, 'Generate into a separate directory; review the candidate before adoption.');
+const text = value => `${JSON.stringify(value, null, 2)}\n`, hash = value => createHash('sha256').update(value).digest('hex');
+const read = file => fs.readFile(path.join(base, file), 'utf8'), manifestText = await read('manifest.json'), manifest = JSON.parse(manifestText), plan = JSON.parse(await fs.readFile(planFile, 'utf8'));
+assert.equal(hash(manifestText), plan.reconciliation.baseManifestHash);
+const { collection: original } = await loadTrustedKnowledgeBundle({ manifestText, expectedManifestHash: hash(manifestText), readText: read });
+const acquired = JSON.parse(await fs.readFile(snapshotFile, 'utf8')), snapshot = acquired.value ?? acquired;
+const projected = projectQualifiedOfficeEndpoints(original, snapshot, plan);
+const ids = new Set(projected.derivedAssertionIds), claims = projected.collection.assertions.filter(value => ids.has(value.id)), source = projected.collection.sources.find(value => value.id === projected.sourceId);
+assert.ok(claims.length && source);
+const byId = new Map(original.assertions.map(value => [value.id, value])), removed = [];
+for (const assertion of original.assertions) {
+  const qualifier = key => assertion.qualifiers.find(value => value.propertyId === key && value.value.kind === 'text')?.value.value;
+  const originalId = qualifier('binding:derived-from'), binding = qualifier('binding:rule');
+  if (!originalId || !binding) continue;
+  const origin = byId.get(originalId); assert.ok(origin, originalId);
+  const owner = original.sources.find(value => value.record?.rules?.some(rule => `${value.record.id}@${value.record.revision}:${rule.id}` === binding));
+  const rule = owner?.record.rules.find(rule => `${owner.record.id}@${owner.record.revision}:${rule.id}` === binding);
+  if (!rule || rule.targetSubjectId !== assertion.subjectId || !bindingRequiresQualifiedAuthority(origin, rule)) continue;
+  const originalSource = original.sources.find(value => value.id === origin.sourceSnapshotId);
+  assert.equal(rule.source.provider, originalSource?.identity.provider); assert.equal(originalSource?.record.manifest.provider, plan.source.provider);
+  assert.equal(rule.source.externalId, plan.source.externalId); assert.equal(rule.source.revision, plan.source.revision); assert.equal(originalSource.record.manifest.upstreamSnapshotHash, plan.source.upstreamSnapshotHash);
+  const locator = qualifier('source:table-locator'); assert.ok(locator && /^table:\d+;row:\d+;/.test(locator));
+  removed.push({ assertionId: assertion.id, sha256: hash(canonicalJson(assertion)), originalAssertionId: originalId, originalAssertionHash: hash(canonicalJson(origin)), sourceSnapshotId: assertion.sourceSnapshotId, binding, locator, reason: 'AUTHORITY_BASIS_REQUIRED' });
+}
+assert.equal(removed.length, plan.reconciliation.expectedRemovedBindings);
+const rejected = new Set(removed.map(value => value.assertionId)), objects = new Set(claims.flatMap(value => [value.subjectId, ...(value.value.kind === 'entity' ? [value.value.objectId] : [])]));
+const extension = { schemaVersion: 1, objects: original.objects.filter(value => objects.has(value.id)), assertions: claims, sources: [source] };
+const correctedBase = { ...original, assertions: original.assertions.filter(value => !rejected.has(value.id)) };
+const merged = combineKnowledgeCollections([correctedBase, extension]); assert.deepEqual(merged.conflicts, []);
+for (const previous of original.sources) assert.equal(canonicalJson(merged.collection.sources.find(value => value.id === previous.id)), canonicalJson(previous));
+for (const previous of correctedBase.assertions) assert.equal(canonicalJson(merged.collection.assertions.find(value => value.id === previous.id)), canonicalJson(previous));
+const prefix = 'extensions/qualified-basis-reconciliation';
+const ledger = { schemaVersion: 1, kind: 'modern-authority-binding-correction', baseManifestHash: hash(manifestText), mappingVersion: 'source-identity-role-bindings-v2', upstreamSource: plan.source, originalSources: manifest.sourceHashes, removed, qualifiedAssertionIds: claims.map(value => value.id), projectionIssues: projected.issues, retainedOriginalFacts: true, retainedOriginalSources: true, historicalReview: 'Every retained and added claim remains unreviewed. This modern correction is not a historical event or installed acceptance.' };
+const rights = { schemaVersion: 1, title: 'Authority-basis interpretation correction', status: 'candidate-not-publication-approval', dataLicense: { id: 'CC-BY-SA-4.0', url: 'https://creativecommons.org/licenses/by-sa/4.0/' }, licenseScope: 'Selected source-derived holder identities and endpoint facts, their unreviewed interpretation, original correction ledger and bilingual presentation. The software license does not replace these terms.', sources: [{ id: source.id, identity: source.identity, revision: source.revision, contentHash: source.contentHash, retrievedAt: source.retrievedAt, revisionUrl: source.revisionUrl, rights: source.rights, selectedFactsManifest: source.record.manifest }], changes: ['Grouped the same fixed-source holder cell and paired endpoints by explicit authority basis for the Ashikaga table.', 'Removed only the hash-bound interpreted generic officeholder bindings in reconciliation.json; retained every original source assertion and source record.', 'Reused the existing English/Simplified Chinese qualified-field vocabulary and added an original snapshot-bound source display name.'], excluded: 'Article HTML, prose, portraits, raw API responses, caches and private preparation paths.', historicalReview: 'All assertions remain unreviewed. Source permission and deterministic mapping do not establish historical completeness or installed acceptance.', adoptionSemantics: 'The collection shard is additive. The removal ledger applies only when constructing this exact corrected seed from its pinned base; ordinary append-import does not delete existing user claims.' };
+await fs.mkdir(output, { recursive: true });
+const entries = [...manifest.shards, manifest.fieldCatalog, manifest.sourceRights, ...manifest.fieldCatalogOverlays ?? [], ...manifest.supportingFiles ?? [], ...(manifest.navigation ? [manifest.navigation] : [])];
+for (const entry of entries) { const destination = path.join(output, entry.path); await fs.mkdir(path.dirname(destination), { recursive: true }); await fs.copyFile(path.join(base, entry.path), destination); }
+await fs.copyFile(path.join(base, 'README.md'), path.join(output, 'README.md'));
+const write = async (file, value) => { const body = text(value); await fs.mkdir(path.dirname(path.join(output, file)), { recursive: true }); await fs.writeFile(path.join(output, file), body); return { path: file, bytes: Buffer.byteLength(body), sha256: hash(body) }; };
+for (let i = 0; i < manifest.shards.length; i++) { const entry = manifest.shards[i], part = JSON.parse(await read(entry.path)), retained = part.assertions.filter(value => !rejected.has(value.id)); if (retained.length !== part.assertions.length) manifest.shards[i] = await write(entry.path, { ...part, assertions: retained }); }
+manifest.shards.push(await write(`${prefix}/collection.json`, extension));
+for (const [name, value] of Object.entries({ 'plan.json': plan, 'source-rights.json': rights, 'reconciliation.json': ledger })) manifest.supportingFiles.push(await write(`${prefix}/${name}`, value));
+const sourceRights = JSON.parse(await read(manifest.sourceRights.path)); sourceRights.authorityBasisCorrection = { plan: `${prefix}/plan.json`, ledger: `${prefix}/reconciliation.json`, rights: `${prefix}/source-rights.json`, removedInterpretedBindings: removed.length, addedQualifiedClaims: claims.length, originalFactsAndSourcesUnchanged: true };
+manifest.sourceRights = await write(manifest.sourceRights.path, sourceRights);
+const navigation = JSON.parse(await read(manifest.navigation.path)); navigation.sourcePresentations.push({ sourceId: source.id, revision: source.revision, contentHash: source.contentHash, labels: plan.reconciliation.sourceLabels });
+manifest.navigation = await write(manifest.navigation.path, navigation);
+const noticeEntry = manifest.supportingFiles.find(value => value.path === 'navigation/source-rights.json'), notice = JSON.parse(await read(noticeEntry.path));
+notice.attribution = notice.attribution.replace('ten exact', 'eleven exact'); notice.changes = ['Added the snapshot-bound bilingual name of the authority-basis correction source; original titles and attributions remain available.'];
+Object.assign(noticeEntry, await write(noticeEntry.path, notice));
+manifest.id = plan.reconciliation.bundleId; manifest.counts = Object.fromEntries(['objects', 'assertions', 'sources'].map(key => [key, merged.collection[key].length])); manifest.collectionHash = knowledgeCollectionFingerprint(merged.collection); manifest.sourceHashes = merged.collection.sources.map(value => ({ id: value.id, contentHash: value.contentHash }));
+await write('manifest.json', manifest);
+const resultText = await fs.readFile(path.join(output, 'manifest.json'), 'utf8');
+await loadTrustedKnowledgeBundle({ manifestText: resultText, expectedManifestHash: hash(resultText), readText: file => fs.readFile(path.join(output, file), 'utf8') });
+console.log(JSON.stringify({ manifestHash: hash(resultText), counts: manifest.counts, removed: removed.length, added: claims.length, sourceId: source.id, sourceHash: source.contentHash, projectionIssues: projected.issues, originalSourcesUnchanged: true, retainedAssertionsUnchanged: true }));

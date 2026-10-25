@@ -3,7 +3,7 @@ import { createKnowledgeIndex, type KnowledgeAssertion, type KnowledgeCollection
 import type { JsonValue } from './source-types.ts';
 import { canonicalSourceJson } from './wikidata.ts';
 
-export const SOURCE_BINDING_VERSION = 'source-identity-role-bindings-v1';
+export const SOURCE_BINDING_VERSION = 'source-identity-role-bindings-v2';
 export type BindingSourceIdentity = { provider: string; externalId: string; revision: string };
 export type BindingEvidence = { url: string; locator: string; citation?: string };
 export type SourceBindingRule = {
@@ -17,7 +17,7 @@ export type SourceBindingPlan = {
   rights: KnowledgeSource['rights']; objects: KnowledgeObject[]; rules: SourceBindingRule[];
 };
 export type SourceBindingIssue = {
-  code: 'SOURCE_NOT_FOUND' | 'SOURCE_REVISION_MISMATCH' | 'NO_MATCHING_ASSERTIONS' | 'UNKNOWN_ASSERTION_SELECTION' | 'REJECTED_SOURCE_CLAIM' | 'TARGET_NOT_FOUND' | 'TARGET_TYPE_MISMATCH' | 'OBJECT_CONFLICT' | 'ASSERTION_CONFLICT' | 'SOURCE_CONFLICT' | 'VALUE_IDENTITY_INVALID' | 'UNUSED_VALUE_IDENTITY';
+  code: 'SOURCE_NOT_FOUND' | 'SOURCE_REVISION_MISMATCH' | 'NO_MATCHING_ASSERTIONS' | 'UNKNOWN_ASSERTION_SELECTION' | 'REJECTED_SOURCE_CLAIM' | 'AUTHORITY_BASIS_REQUIRED' | 'TARGET_NOT_FOUND' | 'TARGET_TYPE_MISMATCH' | 'OBJECT_CONFLICT' | 'ASSERTION_CONFLICT' | 'SOURCE_CONFLICT' | 'VALUE_IDENTITY_INVALID' | 'UNUSED_VALUE_IDENTITY';
   ruleId?: string; objectId?: string; assertionId?: string; sourceId?: string;
 };
 export type SourceBindingResult = {
@@ -28,6 +28,15 @@ const digest = (value: string) => createHash('sha256').update(value).digest('hex
 const stable = (value: unknown) => canonicalSourceJson(JSON.parse(JSON.stringify(value)) as JsonValue);
 const nonempty = (value: unknown): value is string => typeof value === 'string' && value.trim().length > 0;
 const validEvidence = (value: BindingEvidence[]) => Array.isArray(value) && value.length > 0 && value.every(item => nonempty(item.url) && nonempty(item.locator));
+
+/** Source authority qualifications cannot disappear inside an interpreted officeholder field. */
+export function bindingRequiresQualifiedAuthority(original: KnowledgeAssertion, target: Pick<SourceBindingRule, 'targetPropertyId' | 'targetType'>): boolean {
+  if (target.targetPropertyId !== 'office:holder') return false;
+  if (target.targetType === 'gitworld:authority-survey') return true;
+  const sourceText = original.qualifiers.flatMap(item => item.propertyId === 'source:tenure-text' && item.value.kind === 'text' ? [item.value.value] : []);
+  for (const time of Object.values(original.validTime ?? {})) if (time && typeof time === 'object' && 'raw' in time && typeof time.raw === 'string') sourceText.push(time.raw);
+  return original.qualifiers.some(item => item.propertyId === 'office:authority-basis') || sourceText.some(value => /\bde[\s-]+(?:jure|facto)\b/i.test(value));
+}
 function validRule(value: SourceBindingRule): boolean {
   if (![value.id, value.propertyId, value.targetSubjectId, value.targetPropertyId, value.targetType, value.source.provider, value.source.externalId, value.source.revision].every(nonempty)) return false;
   if (!value.subjectId && !value.entityValueId || !['value', 'subject'].includes(value.direction) || !validEvidence(value.evidence)) return false;
@@ -82,6 +91,7 @@ export function applySourceBindings(input: KnowledgeCollection, plan: SourceBind
     const usedIdentities = new Set<string>();
     for (const original of selected) {
       if (original.review === 'rejected') { issues.push({ code: 'REJECTED_SOURCE_CLAIM', ruleId: rule.id, assertionId: original.id }); continue; }
+      if (bindingRequiresQualifiedAuthority(original, rule)) { issues.push({ code: 'AUTHORITY_BASIS_REQUIRED', ruleId: rule.id, assertionId: original.id }); continue; }
       const sourceValueId = rule.direction === 'subject' ? original.subjectId : original.value.kind === 'entity' ? original.value.objectId : undefined;
       const identity = rule.valueIdentities?.find(value => value.sourceObjectId === sourceValueId);
       if (identity) {

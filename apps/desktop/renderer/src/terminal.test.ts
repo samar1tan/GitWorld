@@ -22,7 +22,7 @@ function fixture(t:{after(fn:()=>unknown):void},execute:(request:WorkbenchComman
   const enter=(value:string,isComposing=false)=>{input.value=value;document.activeElement=input;listeners.get('input')!({target:input,isComposing});};
   const press=(key:string)=>{let prevented=false;listeners.get('keydown')!({target:input,key,preventDefault(){prevented=true;}});return prevented;};
   const click=(action:string,index=0)=>listeners.get('click')!({target:{closest:()=>({dataset:{terminal:action,index:String(index)}})}});
-  return{terminal,host,input,picker,submit,enter,press,effects,outputs,executions,errors,clickCommand(command:string){listeners.get('click')!({target:{closest:()=>({dataset:{terminal:'fill',command}})}});},focuses:()=>focuses,stored:()=>JSON.parse(buffers.get('gitworld-terminal-v1')!),leave(){version++;document.activeElement=external;},openResult(index=0){click('result',index);},reviewChanges(){click('changes');},changes:()=>changes};
+  return{terminal,host,input,picker,submit,enter,press,effects,outputs,executions,errors,compose(start:boolean){listeners.get(start?'compositionstart':'compositionend')!({target:input});},clickCommand(command:string){listeners.get('click')!({target:{closest:()=>({dataset:{terminal:'fill',command}})}});},focuses:()=>focuses,stored:()=>JSON.parse(buffers.get('gitworld-terminal-v1')!),leave(){version++;document.activeElement=external;},openResult(index=0){click('result',index);},reviewChanges(){click('changes');},changes:()=>changes};
 }
 test('a late command keeps the next draft and cannot navigate or refocus a newer investigation',async t=>{
   const response=deferred<WorkbenchCommandExecution>(),f=fixture(t,()=>response.promise);f.terminal.fill('git diff');f.submit();assert.equal(f.terminal.isBusy(),true);
@@ -106,6 +106,15 @@ test('input composition is retained without candidate requests or command-input 
   const markup=f.host.innerHTML;f.enter('history --object 唐',true);assert.equal(calls,0);assert.equal(f.stored().draft,'history --object 唐');
   f.enter('history --object 唐');response.resolve([{value:'history --object "tang" ',label:{en:'Tang'},kind:'ref'}]);await new Promise(setImmediate);
   assert.equal(calls,1);assert.equal(f.host.innerHTML,markup);assert.equal(f.picker.hidden,false);
+});
+
+test('a command response cannot clear a newly composing draft or submit it before composition ends',async t=>{
+  const response=deferred<WorkbenchCommandExecution>();let calls=0;const f=fixture(t,()=>{calls++;return response.promise;});
+  f.terminal.fill('git status');f.enter('git status');f.submit();assert.equal(calls,1);
+  f.compose(true);response.resolve(result);await new Promise(setImmediate);
+  assert.equal(f.stored().draft,'git status');f.submit();await new Promise(setImmediate);assert.equal(calls,1);
+  assert.equal(f.press('ArrowUp'),false);assert.equal(f.stored().draft,'git status');
+  f.compose(false);f.submit();await new Promise(setImmediate);assert.equal(calls,2);assert.equal(f.stored().draft,'');
 });
 
 
