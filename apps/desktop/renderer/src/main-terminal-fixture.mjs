@@ -51,7 +51,7 @@ export function createFocusApi(locale = 'en') {
       case 'knowledge.query': result = index.query(p.query); break;
       case 'knowledge.object': result = { object: index.object(p.objectId), assertions: collection.assertions, sources: collection.sources, revision: p.revision, working: p.revision === 'working' }; break;
       case 'knowledge.state': result = index.state(p.state); break;
-      case 'knowledge.history': result = index.history(p.objectId, p.includeUnreviewed); break;
+      case 'knowledge.history': result = index.history({ objectId: p.objectId, includeUnreviewed: p.includeUnreviewed }); break;
       case 'context.list': result = { items: [], total: 0, offset: 0, limit: 25, revision: p.revision, head: focusOid, counts: { objects: 1, assigned: 0, unassigned: 1 } }; break;
       case 'knowledge.editContext': result = { head: focusOid, objectHash: null, object: null, catalog: { schemaVersion: 1, kind: 'historical-field-display-labels', properties: [], types: [] }, sources: [] }; break;
       case 'command.complete': result = []; break;

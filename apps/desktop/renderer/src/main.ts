@@ -625,10 +625,27 @@ async function saveModelInvestigation() {
 function renderWorkspace(markup:string) {
   const workspace=terminalHost.parentElement;
   if(workspace?.parentElement===app&&workspace.classList.contains('workspace')){
+    const previous=workspace.querySelector<HTMLElement>('.knowledge-shell[data-knowledge-scroll-key]');
+    const scroll=previous?{key:previous.dataset.knowledgeScrollKey,top:previous.scrollTop,left:previous.scrollLeft}:null;
+    const title=previous?.querySelector<HTMLElement>('.knowledge-view-heading')?.querySelector<HTMLElement>('h1');
+    const focusedRegion=title===document.activeElement?'h1':previous?.querySelector('.knowledge-inspector')===document.activeElement?'.knowledge-inspector':null;
+    const anchor=focusedRegion?previous?.querySelector<HTMLElement>(focusedRegion):null;
+    const relativeTop=anchor&&previous?anchor.getBoundingClientRect().top-previous.getBoundingClientRect().top:null;
     const parsed=document.createElement('div');parsed.innerHTML=markup;
     const replacement=parsed.firstElementChild;
     if(replacement instanceof HTMLElement&&replaceChildrenAround(workspace,replacement,terminalHost)){
-      syncElementAttributes(workspace,replacement);return;
+      syncElementAttributes(workspace,replacement);
+      return ()=>{
+        const next=workspace.querySelector<HTMLElement>('.knowledge-shell[data-knowledge-scroll-key]');
+        if(next&&scroll&&next.dataset.knowledgeScrollKey===scroll.key){
+          next.scrollTop=scroll.top;next.scrollLeft=scroll.left;
+          const focused=focusedRegion?next.querySelector<HTMLElement>(focusedRegion):null;
+          if(focused){
+            if(relativeTop!==null)next.scrollTop+=focused.getBoundingClientRect().top-next.getBoundingClientRect().top-relativeTop;
+            focused.setAttribute('tabindex','-1');focused.focus({preventScroll:true});
+          }
+        }
+      };
     }
   }
   app.innerHTML=markup;
@@ -636,6 +653,7 @@ function renderWorkspace(markup:string) {
 function render() {
   if(!startupReady){renderStartup();return;}
   if(transitioning||closePending)return;
+  let restoreScroll:ReturnType<typeof renderWorkspace>;
   try {
   document.documentElement.lang=state.locale;
   if(managerOpen){manager.render();return;}
@@ -644,11 +662,11 @@ function render() {
     renderSettingsNotice();
     return;
   }
-  if(contextEditorOpen){renderWorkspace(`<div class="workspace tool-workspace context-editor-workspace">${titlebar()}${modeNavigation()}<div class="context-editor-layout"><aside class="sidebar">${resourceLinks(true)}</aside>${contextWorkspace.content()}</div></div>`);return;}
-  if(objectEditorOpen){renderWorkspace(`<div class="workspace tool-workspace object-workspace">${titlebar()}${modeNavigation()}<div class="object-editor-layout"><aside class="sidebar">${resourceLinks(true)}</aside>${objectEditor.content()}</div></div>`);return;}
+  if(contextEditorOpen){restoreScroll=renderWorkspace(`<div class="workspace tool-workspace context-editor-workspace">${titlebar()}${modeNavigation()}<div class="context-editor-layout"><aside class="sidebar">${resourceLinks(true)}</aside>${contextWorkspace.content()}</div></div>`);return;}
+  if(objectEditorOpen){restoreScroll=renderWorkspace(`<div class="workspace tool-workspace object-workspace">${titlebar()}${modeNavigation()}<div class="object-editor-layout"><aside class="sidebar">${resourceLinks(true)}</aside>${objectEditor.content()}</div></div>`);return;}
   if(sourceOpen||toolPanel!==null){
     const content=sourceOpen?sourceBrowser.content():toolPanel==='knowledge'?knowledgeBrowser.content():toolPanel==='research'?researchWorkspace.content():changesWorkspace.content();
-    renderWorkspace(`<div class="workspace source-workspace tool-workspace">${data?titlebar():''}${modeNavigation()}${error?`<div class="app-notice" role="alert">${esc(error)}${button('dismiss',t('dismiss'))}</div>`:''}${content}</div>`);
+    restoreScroll=renderWorkspace(`<div class="workspace source-workspace tool-workspace">${data?titlebar():''}${modeNavigation()}${error?`<div class="app-notice" role="alert">${esc(error)}${button('dismiss',t('dismiss'))}</div>`:''}${content}</div>`);
     return;
   }
   workbench?.beforeRender();
@@ -656,11 +674,11 @@ function render() {
   const current=scope(),process=data.catalog.processes.find(p=>p.id===state.view.processId);
   const roots=data.catalog.scopes.filter(s=>!s.parentId);
   const related=current?data.catalog.processes.filter(p=>p.scopeIds.includes(current.id)&&p.coverage[0]<=state.view.timeWindow[1]&&p.coverage[1]>=state.view.timeWindow[0]):[];
-  renderWorkspace(`<div class="workspace level-${state.view.level} panel-${state.view.panel}">${titlebar()}${modeNavigation()}${error?`<div class="app-notice" role="alert">${esc(error)}${button('dismiss',t('dismiss'))}</div>`:''}<nav class="navigation-bar" aria-label="${t('menu')}"><div class="breadcrumb-trail">${button('back',icon('back'),`class="navigation-back" aria-label="${t('back')}" ${!state.trail.length?'disabled':''}`)}${button('world',t('world'))}${current?`<span class="breadcrumb-divider" aria-hidden="true">/</span>${button('scope',esc(text(current.name)),`data-id="${esc(current.id)}"`)}`:''}${process?`<span class="breadcrumb-divider" aria-hidden="true">/</span><span class="breadcrumb-current" aria-current="page" title="${esc(text(process.name))}">${esc(text(process.name))}</span>`:''}</div>${state.view.level!=='world'||workbench.active()?button('world',`${icon('globe')}<span>${t('returnWorld')}</span>`,`class="return-world" aria-label="${t('returnWorld')}"`):''}</nav><div class="workspace-body"><aside class="sidebar"><div class="sidebar-label">${t('scope')}</div>${button('world',t('world'),`class="scope-nav ${!current?'active':''}"`)}${roots.map(s=>button('scope',esc(text(s.name)),`data-id="${esc(s.id)}" class="scope-nav ${s.id===current?.id?'active':''}"`)).join('')}${related.length?`<div class="sidebar-label">${t('processes')}</div>`:''}${related.map(p=>button('process',esc(text(p.name)),`data-id="${esc(p.id)}" class="scope-nav ${p.id===process?.id?'active':''}"`)).join('')}${workbench.sidebar()}<div class="sidebar-coverage">${t('coverage')}<strong>${coverageText(state.locale,'coverage',data.catalog.scopes.length,data.history.commits.length)}</strong></div></aside><main class="main-stage">${modelReferenceStrip()}${workbench.active()?workbench.tabs():''}${state.view.panel==='compare'&&modelComparison?renderModelComparison(modelComparison,state.locale):workbench.active()?workbench.content():overview()}${timeControls()}</main>${state.view.panel==='history'?workbench.inspector():''}</div><footer class="statusbar"><span>${workspaceCopy(state.locale,'modelPackage')} · ${esc(text(data.dataset.name))} · <code>${esc(data.revision.id==='working'?workspaceCopy(state.locale,'working'):data.revision.id.slice(0,8))}</code></span><span data-save-state>${t(saving?'saving':'saved')}</span></footer></div>`);
+  restoreScroll=renderWorkspace(`<div class="workspace level-${state.view.level} panel-${state.view.panel}">${titlebar()}${modeNavigation()}${error?`<div class="app-notice" role="alert">${esc(error)}${button('dismiss',t('dismiss'))}</div>`:''}<nav class="navigation-bar" aria-label="${t('menu')}"><div class="breadcrumb-trail">${button('back',icon('back'),`class="navigation-back" aria-label="${t('back')}" ${!state.trail.length?'disabled':''}`)}${button('world',t('world'))}${current?`<span class="breadcrumb-divider" aria-hidden="true">/</span>${button('scope',esc(text(current.name)),`data-id="${esc(current.id)}"`)}`:''}${process?`<span class="breadcrumb-divider" aria-hidden="true">/</span><span class="breadcrumb-current" aria-current="page" title="${esc(text(process.name))}">${esc(text(process.name))}</span>`:''}</div>${state.view.level!=='world'||workbench.active()?button('world',`${icon('globe')}<span>${t('returnWorld')}</span>`,`class="return-world" aria-label="${t('returnWorld')}"`):''}</nav><div class="workspace-body"><aside class="sidebar"><div class="sidebar-label">${t('scope')}</div>${button('world',t('world'),`class="scope-nav ${!current?'active':''}"`)}${roots.map(s=>button('scope',esc(text(s.name)),`data-id="${esc(s.id)}" class="scope-nav ${s.id===current?.id?'active':''}"`)).join('')}${related.length?`<div class="sidebar-label">${t('processes')}</div>`:''}${related.map(p=>button('process',esc(text(p.name)),`data-id="${esc(p.id)}" class="scope-nav ${p.id===process?.id?'active':''}"`)).join('')}${workbench.sidebar()}<div class="sidebar-coverage">${t('coverage')}<strong>${coverageText(state.locale,'coverage',data.catalog.scopes.length,data.history.commits.length)}</strong></div></aside><main class="main-stage">${modelReferenceStrip()}${workbench.active()?workbench.tabs():''}${state.view.panel==='compare'&&modelComparison?renderModelComparison(modelComparison,state.locale):workbench.active()?workbench.content():overview()}${timeControls()}</main>${state.view.panel==='history'?workbench.inspector():''}</div><footer class="statusbar"><span>${workspaceCopy(state.locale,'modelPackage')} · ${esc(text(data.dataset.name))} · <code>${esc(data.revision.id==='working'?workspaceCopy(state.locale,'working'):data.revision.id.slice(0,8))}</code></span><span data-save-state>${t(saving?'saving':'saved')}</span></footer></div>`);
   workbench.afterRender();
   updateSaveIndicator();
   alignMapPins();
-  } finally { if(!managerOpen&&!settingsOpen)decorateResources();if(clientReady&&!settingsOpen&&!managerOpen){const workspace=app.querySelector('.workspace');if(workspace&&terminalHost.parentElement!==workspace)workspace.append(terminalHost);terminal.render();}renderGuidance(); }
+  } finally { if(!managerOpen&&!settingsOpen)decorateResources();restoreScroll?.();if(clientReady&&!settingsOpen&&!managerOpen){const workspace=app.querySelector('.workspace');if(workspace&&terminalHost.parentElement!==workspace)workspace.append(terminalHost);terminal.render();}renderGuidance(); }
 }
 
 function renderSettingsNotice() {
