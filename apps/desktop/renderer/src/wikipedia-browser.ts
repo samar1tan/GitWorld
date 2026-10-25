@@ -46,6 +46,9 @@ export function createWikipediaBrowser(options: Options) {
   let unsubscribe: (() => void) | null = null, togglesBound = false;
   const t = (key: WikipediaPlainKey) => copy(options.locale(), key), number = (value: number) => new Intl.NumberFormat(options.locale()).format(value);
   const button = (action: string, label: string, extra = '', primary = false) => `<button type="button" class="source-button${primary ? ' primary' : ''}" data-wikipedia="${action}" ${extra}>${esc(label)}</button>`;
+  const heldOperations = new Set<string>();
+  const legacyMergeReason = (reason?: string) => reason === 'legacy-import-merge-review-required' || reason === 'legacy-import-merge-unverifiable';
+  const legacyHeld = () => pending.some(value => heldOperations.has(value.operationId)) || !!attempt && heldOperations.has(attempt.operationId);
   const busy = () => !!active || preparing;
   const blocked = () => !pendingKnown || !!pending.length || !!attempt;
   const draft = () => input.jobs.find(value => value.jobId === input.jobId) ?? null;
@@ -169,7 +172,7 @@ export function createWikipediaBrowser(options: Options) {
     if (!result.conflicts.length) { try { await options.onAdopted?.(result, selectedJob, interaction); } catch { if (input.jobId === selectedJob) fail('resultNavigation'); } }
   }
   async function adoptMapping(check = false) {
-    if (active || preparing || !mapping && !check) return;
+    if (active || preparing || !mapping && !check || check && attempt && heldOperations.has(attempt.operationId)) return;
     const interaction = options.navigationVersion?.(), selectedJob = check ? attempt?.jobId : mapping?.jobId, sequence = viewSequence, selected = mapping;
     if (!selectedJob) return;
     if (!check) { await loadPending(); if (!visible || sequence !== viewSequence || mapping !== selected || blocked()) { redraw(); return; } }
@@ -178,9 +181,10 @@ export function createWikipediaBrowser(options: Options) {
     try { const result = check ? await api.resume({ operationId: operation.operationId, previewId: operation.previewId }) : await api.adopt({ jobId: selectedJob, previewId: operation.previewId, expectedHead: selected!.preview.prepared!.baseHead, expectedInputHash: selected!.preview.inputHash, review, operationId: operation.operationId }); await complete(result, selectedJob, interaction); }
     catch (cause) {
       if (input.jobId === selectedJob) fail(cause);
-      if (!check && cause instanceof ServiceFailure && cause.detail.parameters?.reason === 'wikipedia-profile-version-changed') { attempt = null; mapping = null; if (input.jobId === selectedJob) retry = prepareMapping; }
+      if (!check && cause instanceof ServiceFailure && ['wikipedia-profile-version-changed', 'import-preview-merge-version-changed'].includes(String(cause.detail.parameters?.reason))) { attempt = null; mapping = null; if (input.jobId === selectedJob) retry = prepareMapping; }
       if (!check && cause instanceof ServiceFailure && cause.detail.code === 'HEAD_CHANGED' && input.jobId === selectedJob) retry = prepareMapping;
       if (cause instanceof ServiceFailure && (['HEAD_CHANGED', 'NOT_FOUND', 'INVALID_REQUEST'].includes(cause.detail.code) || ['paired-import-pending', 'incomplete-paired-import'].includes(String(cause.detail.parameters?.reason)))) { attempt = null; if (cause.detail.code === 'HEAD_CHANGED' || cause.detail.code === 'NOT_FOUND') mapping = null; }
+      if (cause instanceof ServiceFailure && legacyMergeReason(String(cause.detail.parameters?.reason))) { heldOperations.add(operation.operationId); if (input.jobId === selectedJob) mapping = null; }
       await loadPending();
     } finally { if (active?.id === operation.operationId) { active = null; unsubscribe?.(); unsubscribe = null; redraw(); if (visible && sequence === viewSequence && error) focusError(); } }
   }
@@ -188,15 +192,18 @@ export function createWikipediaBrowser(options: Options) {
   function issueMessage(code: string, retryAfterMs?: number) { if (code === 'RATE_LIMITED') return copy(options.locale(), 'rateError', { seconds: Math.max(1, Math.ceil((retryAfterMs ?? 5000) / 1000)) }); const key: Record<string, WikipediaPlainKey> = { NETWORK_FAILED: 'network', HTTP_ERROR: 'network', UPSTREAM_BUSY: 'sourceBusy', INVALID_RESPONSE: 'unreadable', RESPONSE_TOO_LARGE: 'tooLarge', RECORD_MISSING: 'pageMissing', CANCELLED: 'cancelled' }; return t(key[code] ?? 'genericError'); }
   function errorMessage() {
     if (!error) return '';
-    const reasons: Record<string, WikipediaPlainKey> = { 'wikipedia-source-incomplete': 'sourceIncomplete', 'wikipedia-source-changed': 'sourceChanged', 'wikipedia-headers-changed': 'sourceChanged', 'wikipedia-preview-changed': 'previewChanged', 'wikipedia-profile-version-changed': 'profileChanged', 'wikipedia-invalid-profile': 'profileInvalid', 'wikipedia-table-too-large': 'tooLarge', 'wikipedia-preview-budget': 'previewBudget', 'paired-import-pending': 'pending', 'incomplete-paired-import': 'pending' };
+    const reasons: Record<string, WikipediaPlainKey> = { 'wikipedia-source-incomplete': 'sourceIncomplete', 'wikipedia-source-changed': 'sourceChanged', 'wikipedia-headers-changed': 'sourceChanged', 'wikipedia-preview-changed': 'previewChanged', 'wikipedia-profile-version-changed': 'profileChanged', 'import-preview-merge-version-changed': 'mergePreviewChanged', 'legacy-import-merge-review-required': 'legacyMergeHeld', 'legacy-import-merge-unverifiable': 'legacyMergeHeld', 'wikipedia-invalid-profile': 'profileInvalid', 'wikipedia-table-too-large': 'tooLarge', 'wikipedia-preview-budget': 'previewBudget', 'paired-import-pending': 'pending', 'incomplete-paired-import': 'pending' };
     if (reasons[error.reason ?? '']) return t(reasons[error.reason!]);
     const local = new Set<WikipediaPlainKey>(['profileRequired', 'tableRequired', 'columnsRequired', 'distinctColumns', 'rowInvalid', 'titleInvalid', 'revisionInvalid', 'tableLimit', 'columnLimit', 'sourceChanged', 'resultNavigation']);
     if (local.has(error.code as WikipediaPlainKey)) return t(error.code as WikipediaPlainKey);
     return error.code === 'HEAD_CHANGED' ? t('headChanged') : error.code === 'SERVICE_UNAVAILABLE' ? t('unavailable') : error.code === 'RECORD_MISSING' ? t('pageMissing') : t('genericError');
   }
-  function errorHtml() { return `${draftFailed ? `<div class="source-notice error wikipedia-error" role="alert" tabindex="-1">${t('draftFailed')}${button('cache', t('retry'))}</div>` : ''}${error ? `<div class="source-notice error wikipedia-error" role="alert" tabindex="-1"><p>${esc(errorMessage())}</p><details><summary>${t('errorCode')}</summary><code>${esc(error.code)}${error.reason ? ` · ${esc(error.reason)}` : ''}</code></details>${vocabularyConflicts.length ? vocabularyConflictHtml(options.locale(), vocabularyConflicts, vocabularyConflicts.length) : ''}${retry ? button('retry', t(error.code === 'HEAD_CHANGED' || error.reason === 'wikipedia-profile-version-changed' ? 'preview' : 'retry'), busy() ? 'disabled' : '') : ''}</div>` : ''}`; }
+  function errorHtml() { return `${draftFailed ? `<div class="source-notice error wikipedia-error" role="alert" tabindex="-1">${t('draftFailed')}${button('cache', t('retry'))}</div>` : ''}${error ? `<div class="source-notice error wikipedia-error" role="alert" tabindex="-1"><p>${esc(errorMessage())}</p><details><summary>${t('errorCode')}</summary><code>${esc(error.code)}${error.reason ? ` · ${esc(error.reason)}` : ''}</code></details>${vocabularyConflicts.length ? vocabularyConflictHtml(options.locale(), vocabularyConflicts, vocabularyConflicts.length) : ''}${retry && !legacyHeld() ? button('retry', t(error.code === 'HEAD_CHANGED' || ['wikipedia-profile-version-changed', 'import-preview-merge-version-changed'].includes(error.reason ?? '') ? 'preview' : 'retry'), busy() ? 'disabled' : '') : ''}</div>` : ''}`; }
   function progressHtml() { return active ? `<div class="source-notice source-progress" role="status"><span data-wikipedia-progress>${esc(progressText())}</span>${active.kind === 'collect' ? button('cancel', t(cancelling ? 'cancelling' : 'cancel'), cancelling ? 'disabled' : '') : ''}</div>` : ''; }
-  function pendingHtml() { return `${pendingFailed ? `<div class="source-notice error"><p>${t('pendingFailed')}</p>${button('pending', t('retry'), active ? 'disabled' : '')}</div>` : ''}${pending.length || attempt ? `<div class="source-notice"><p>${t(pending.length ? 'pending' : 'uncertain')}</p>${options.onResumeImport && pending.length ? button('imports', t('openImports')) : attempt ? button('check-result', t('checkResult'), active ? 'disabled' : '') : ''}</div>` : ''}`; }
+  function pendingHtml() {
+    const held = legacyHeld(), notice = held ? legacyMergeReason(error?.reason) ? '' : `<p>${t('legacyMergeHeld')}</p>` : `<p>${t(pending.length ? 'pending' : 'uncertain')}</p>`;
+    return `${pendingFailed ? `<div class="source-notice error"><p>${t('pendingFailed')}</p>${button('pending', t('retry'), active ? 'disabled' : '')}</div>` : ''}${pending.length || attempt ? `<div class="source-notice">${notice}${options.onResumeImport && pending.length ? button('imports', t('openImports')) : attempt && !held ? button('check-result', t('checkResult'), active ? 'disabled' : '') : ''}</div>` : ''}`;
+  }
   function sourceHtml() {
     if (!job?.source) return '';
     const value = job.source, rights = value.rights;

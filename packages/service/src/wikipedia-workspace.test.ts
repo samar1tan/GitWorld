@@ -12,7 +12,8 @@ import { validateWikipediaWorkspaceDirectory } from './wikipedia-workspace.ts';
 import { mapWikipediaProfile, wikipediaHash as hash } from '../../ingestion/src/wikipedia-profiles.ts';
 import { canonicalJson } from '../../domain/src/canonical.ts';
 import { createEditorialRepository } from '../../storage/src/editorial.ts';
-import { createKnowledgeStore } from './knowledge-store.ts';
+import { createKnowledgeStore, knowledgeCollectionSeedFiles } from './knowledge-store.ts';
+import type { KnowledgeCollection } from '../../domain/src/knowledge.ts';
 import { createKnowledgeImports } from './knowledge-imports.ts';
 import { previewKnowledgeCollectionFile } from './knowledge-collection-files.ts';
 
@@ -22,7 +23,13 @@ let sequence=0;
 async function response<M extends ServiceMethod>(service:Awaited<ReturnType<typeof createLocalService>>,method:M,params:ServiceMethods[M]['params']){return service.dispatch({protocolVersion:1,requestId:'wikipedia-'+(++sequence),method,params}as ServiceRequest);}
 async function call<M extends ServiceMethod>(service:Awaited<ReturnType<typeof createLocalService>>,method:M,params:ServiceMethods[M]['params']):Promise<ServiceMethods[M]['result']>{const result=await response(service,method,params);assert.ok(result.ok,JSON.stringify(result));return result.result as ServiceMethods[M]['result'];}
 function mock(options:{rights?:boolean;parse?:(url:URL)=>Response;metadata?:(url:URL)=>Response}={}){const calls:URL[]=[];const fetcher:typeof fetch=async(input,init)=>{const url=new URL(String(input));calls.push(url);assert.equal(url.origin,'https://en.wikipedia.org');assert.equal(url.pathname,'/w/api.php');assert.equal(init?.redirect,'error');if(url.searchParams.get('action')==='query')return options.metadata?.(url)??Response.json({query:{...(options.rights?{rightsinfo:{url:'https://creativecommons.org/licenses/by-sa/4.0/'}}:{}),pages:[{pageid:31,title:'A source-selected table',revisions:[{revid:77}]}]}});return options.parse?.(url)??Response.json({parse:{pageid:31,title:'A source-selected table',revid:Number(url.searchParams.get('oldid')),text:html}});};return{fetcher,calls};}
-async function fixture(t:{after(fn:()=>unknown):void},fetcher:typeof fetch,files?:Map<string,string>){const directory=await mkdtemp(path.join(tmpdir(),'gitworld-wikipedia-service-')),library=path.join(directory,'library');let available=true,forbiddenReads=0;const options={dataDirectory:library,...git,sourceFetch:fetcher,resolveFileToken(token:string,purpose:string){const file=files?.get(token);if(file&&(purpose==='backup'||purpose==='restore'))return file;forbiddenReads++;throw Error('Wikipedia workflow has no selected file token');}};let service=await createLocalService(options);t.after(async()=>{await service.close();await rm(directory,{recursive:true,force:true});});return{directory,library,get service(){return service;},forbiddenReads:()=>forbiddenReads,async restart(sourceFetch:typeof fetch=fetcher){await service.close();service=await createLocalService({...options,sourceFetch});return service;},async prepare(){const job=await call(service,'wikipedia.collect',{title:'A source-selected table',operationId:'source-job'});assert.equal(job.receipt.status,'complete');const inspection=await call(service,'wikipedia.inspect',{jobId:job.id});const status=await call(service,'repository.status',{}),selection:WikipediaMappingSelection={profileId:'office-tenures-v1',tables:[{tableIndex:0,headerHash:inspection.tables[0].headerHash,holderColumn:0,tenureColumn:1}]};const preview=await call(service,'wikipedia.preview',{jobId:job.id,sourceHash:job.source!.contentHash,expectedHead:status.head,selection});const adopt={jobId:job.id,previewId:preview.preview.prepared!.id,expectedHead:preview.preview.prepared!.baseHead,expectedInputHash:preview.preview.inputHash,review:'unreviewed'as const,operationId:'adopt-wikipedia'};return{job,inspection,preview,adopt,selection};}};}
+function sharedPersonSeed(name='Recorded A'):KnowledgeCollection{
+  const id='wikipedia-en:Recorded_A',sourceId='fixture:prior-source';
+  return{schemaVersion:1,objects:[{id,identities:[{provider:'declared-office-tenure-row',externalId:id}],labels:{en:name,ja:'既存の名前','zh-CN':'既有译名'},descriptions:{'zh-CN':'既有说明'},aliases:[{en:'Prior spelling'}],types:['gitworld:office-holder']}],
+    assertions:[{id:'fixture:prior-claim',subjectId:id,propertyId:'fixture:prior-note',value:{kind:'text',value:'Existing source observation'},qualifiers:[],sourceSnapshotId:sourceId,evidence:[{sourceId,locator:'old row'}],review:'unreviewed'}],
+    sources:[{id:sourceId,identity:{provider:'fixture',externalId:'prior'},revision:'1',contentHash:hash('prior'),retrievedAt:'2026-10-26T00:00:00Z',url:'https://example.invalid/prior',adapterVersion:'fixture',rights:{redistribution:'unknown'}}]};
+}
+async function fixture(t:{after(fn:()=>unknown):void},fetcher:typeof fetch,files?:Map<string,string>,seed?:KnowledgeCollection){const directory=await mkdtemp(path.join(tmpdir(),'gitworld-wikipedia-service-')),library=path.join(directory,'library');let available=true,forbiddenReads=0;const options={dataDirectory:library,...git,sourceFetch:fetcher,resolveFileToken(token:string,purpose:string){const file=files?.get(token);if(file&&(purpose==='backup'||purpose==='restore'))return file;forbiddenReads++;throw Error('Wikipedia workflow has no selected file token');}};if(seed){const seeded=await createEditorialRepository({dataDirectory:library,...git});try{await seeded.initialize(knowledgeCollectionSeedFiles(seed));}finally{await seeded.close();}}let service=await createLocalService(options);t.after(async()=>{await service.close();await rm(directory,{recursive:true,force:true});});return{directory,library,get service(){return service;},forbiddenReads:()=>forbiddenReads,async restart(sourceFetch:typeof fetch=fetcher){await service.close();service=await createLocalService({...options,sourceFetch});return service;},async prepare(){const job=await call(service,'wikipedia.collect',{title:'A source-selected table',operationId:'source-job'});assert.equal(job.receipt.status,'complete');const inspection=await call(service,'wikipedia.inspect',{jobId:job.id});const status=await call(service,'repository.status',{}),selection:WikipediaMappingSelection={profileId:'office-tenures-v1',tables:[{tableIndex:0,headerHash:inspection.tables[0].headerHash,holderColumn:0,tenureColumn:1}]};const preview=await call(service,'wikipedia.preview',{jobId:job.id,sourceHash:job.source!.contentHash,expectedHead:status.head,selection});const adopt={jobId:job.id,previewId:preview.preview.prepared!.id,expectedHead:preview.preview.prepared!.baseHead,expectedInputHash:preview.preview.inputHash,review:'unreviewed'as const,operationId:'adopt-wikipedia'};return{job,inspection,preview,adopt,selection};}};}
 test('ordinary service acquires one fixed page and adopts a profile into true Git, state, vocabulary and source evidence',native,async t=>{
   const source=mock(),f=await fixture(t,source.fetcher),p=await f.prepare();assert.equal(source.calls.length,2);assert.equal(source.calls[1].searchParams.get('oldid'),'77');
   assert.deepEqual(await call(f.service,'wikipedia.collect',{title:'A source-selected table',operationId:'source-job'}),p.job);assert.equal(source.calls.length,2);assert.equal((await call(f.service,'wikipedia.jobs',{})).jobs.length,1);
@@ -32,6 +39,48 @@ test('ordinary service acquires one fixed page and adopts a profile into true Gi
   const detail=await call(f.service,'knowledge.object',{objectId:scope.id});assert.equal(detail.display!.types['gitworld:source-tenure-scope']['zh-CN'],'来源年表分组');assert.ok(detail.sources.every(s=>s.rights.redistribution==='unknown'));assert.ok(detail.sources.every(s=>!('record'in s)));assert.equal(f.forbiddenReads(),0);
   await call(f.service,'repository.stage',{paths:adopted.paths!});const status=await call(f.service,'repository.status',{});await call(f.service,'repository.commit',{operationId:'commit-wikipedia',expectedHead:status.head,expectedTree:status.stagedTree,message:'Adopt a source-selected table'});
   const stale=await response(f.service,'wikipedia.adopt',{...p.adopt,operationId:'new-late-adoption'});assert.ok(!stale.ok&&stale.error.code==='HEAD_CHANGED');assert.deepEqual(await call(f.service,'wikipedia.adopt',p.adopt),adopted);
+});
+test('an English Wikipedia table enriches a seeded multilingual shared person without deleting its names, roles or old claims',native,async t=>{
+  const seed=sharedPersonSeed(),{id,labels}=seed.objects[0];
+  const source=mock(),f=await fixture(t,source.fetcher,undefined,seed),before=(await call(f.service,'repository.status',{})).head,p=await f.prepare();
+  const result=await call(f.service,'wikipedia.adopt',p.adopt);assert.deepEqual(result.conflicts,[]);
+  const detail=await call(f.service,'knowledge.object',{objectId:id});
+  assert.deepEqual(detail.object.labels,labels);assert.deepEqual(detail.object.descriptions,seed.objects[0].descriptions);
+  assert.deepEqual(detail.object.aliases,seed.objects[0].aliases);assert.deepEqual(detail.object.identities,seed.objects[0].identities);
+  assert.deepEqual(new Set(detail.object.types),new Set(['gitworld:office-holder','gitworld:source-listed-holder']));
+  assert.ok(detail.assertions.some(value=>value.id==='fixture:prior-claim'));assert.ok(detail.assertions.some(value=>value.propertyId==='office:held-position'));
+  assert.equal((await call(f.service,'knowledge.query',{query:{text:labels['zh-CN'],includeUndated:true,includeUnlocated:true}})).total,1);
+  const diff=await call(f.service,'repository.diff',{mode:'working',paths:['objects/'+hash(id)+'.json']});
+  assert.deepEqual((diff.entries[0].before as any).object.labels,labels);assert.deepEqual((diff.entries[0].after as any).object.labels,labels);
+  await call(f.service,'repository.stage',{paths:result.paths!});const frozen=await call(f.service,'repository.status',{});
+  const context=await call(f.service,'knowledge.editContext',{objectId:id}),claim=context.object!.assertions.find(value=>value.propertyId==='office:held-position')!;
+  await call(f.service,'knowledge.saveEdit',{operationId:'local-C',objectId:id,assertionId:claim.id,expectedHead:context.head,expectedObjectHash:context.objectHash,change:{mode:'correct',propertyId:claim.propertyId,evidence:{sourceId:claim.sourceSnapshotId,locator:'Review the selected source term'},review:'unreviewed',reason:'Keep the new source claim separately reviewable'}});
+  const later=await call(f.service,'knowledge.object',{objectId:id});
+  const committed=await call(f.service,'repository.commit',{operationId:'commit-B-with-shared-person',expectedHead:frozen.head,expectedTree:frozen.stagedTree,message:'Add another source without removing existing names'});
+  assert.ok((await call(f.service,'repository.status',{})).unstaged.some(value=>value.path==='objects/'+hash(id)+'.json'));
+  assert.deepEqual((await call(f.service,'knowledge.object',{objectId:id,revision:committed.oid})).assertions,detail.assertions);
+  assert.deepEqual((await call(f.service,'knowledge.object',{objectId:id,revision:before})).assertions,seed.assertions);
+  await f.restart(async()=>{throw Error('No network during restart or replay');});
+  assert.deepEqual((await call(f.service,'knowledge.object',{objectId:id})).object.labels,labels);
+  assert.deepEqual((await call(f.service,'knowledge.object',{objectId:id})).assertions,later.assertions);
+  assert.deepEqual(await call(f.service,'wikipedia.adopt',p.adopt),result);
+  assert.deepEqual((await call(f.service,'knowledge.object',{objectId:id})).assertions,later.assertions);
+});
+test('a genuinely different primary name uses the existing paired review and resolution without discarding other locales',native,async t=>{
+  const seed=sharedPersonSeed('Existing canonical name'),id=seed.objects[0].id,f=await fixture(t,mock().fetcher,undefined,seed),p=await f.prepare();
+  const report=await call(f.service,'wikipedia.adopt',p.adopt);assert.equal(report.conflicts.length,1);
+  assert.deepEqual(report.conflicts[0].base,report.conflicts[0].local);
+  assert.equal(report.conflicts[0].incoming.object.labels.en,'Recorded A');assert.equal(report.conflicts[0].incoming.object.labels['zh-CN'],seed.objects[0].labels['zh-CN']);
+  assert.equal((await call(f.service,'knowledge.object',{objectId:id})).object.labels.en,'Existing canonical name');
+  await call(f.service,'knowledge.resolve',{objectId:id,choice:'incoming',expectedHead:p.adopt.expectedHead});
+  assert.ok((await call(f.service,'repository.stagePlan',{paths:['objects/'+hash(id)+'.json']})).incomplete?.length);
+  const preview=await call(f.service,'wikipedia.preview',{jobId:p.job.id,sourceHash:p.job.source!.contentHash,expectedHead:p.adopt.expectedHead,selection:p.selection});
+  const accepted=await call(f.service,'wikipedia.adopt',{...p.adopt,operationId:'adopt-reviewed-name',previewId:preview.preview.prepared!.id,expectedInputHash:preview.preview.inputHash});
+  assert.deepEqual(accepted.conflicts,[]);assert.equal((await call(f.service,'repository.stagePlan',{paths:accepted.paths!})).incomplete,undefined);
+  await f.restart(async()=>{throw Error('Use the saved review after restart');});
+  const saved=await call(f.service,'knowledge.object',{objectId:id});assert.equal(saved.object.labels.en,'Recorded A');assert.equal(saved.object.labels['zh-CN'],seed.objects[0].labels['zh-CN']);
+  assert.deepEqual(new Set(saved.object.types),new Set(['gitworld:office-holder','gitworld:source-listed-holder']));
+  assert.deepEqual(await call(f.service,'wikipedia.adopt',p.adopt),report);
 });
 test('Wikipedia paired updates retain visible three-way conflicts, resolve explicitly and re-preview the complete mapping before staging',native,async t=>{
   for(const choice of ['local','incoming']as const)await t.test(choice,async sub=>{

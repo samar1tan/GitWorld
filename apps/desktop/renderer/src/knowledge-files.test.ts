@@ -22,7 +22,7 @@ function fixture(t: { after(fn: () => void): void }) {
     async preview() { return structuredClone(value); }, async adopt(input) { adoptions.push(input); return result(); }, async pending() { return structuredClone(pending); }, async resume(input) { resumes.push(input); pending = []; return result(); },
     async status() { statuses++; return { head: NEW, branch: 'main', stagedTree: '3'.repeat(40), staged: [], unstaged: [], conflicts: [], revert: null }; }, async conflicts() { return []; }, async object() { throw new Error('unexpected object'); }, async resolve() {},
   };
-  const create = () => createKnowledgeFiles({ locale: () => 'en', render() {}, api, selectFile: async () => { selections++; return { fileToken: 'host-token' }; }, navigationVersion: () => epoch, onAdopted: (_result, jobId, interaction) => { callbacks.push({ jobId, interaction }); } });
+  const create = (locale: 'en' | 'zh-CN' = 'en') => createKnowledgeFiles({ locale: () => locale, render() {}, api, selectFile: async () => { selections++; return { fileToken: 'host-token' }; }, navigationVersion: () => epoch, onAdopted: (_result, jobId, interaction) => { callbacks.push({ jobId, interaction }); } });
   return { api, create, result, adoptions, resumes, callbacks, progressText, statuses: () => statuses, selections: () => selections, preview: () => value, setPreview: (next: KnowledgeFilePreviewResult) => { value = next; }, pending: () => pending, setPending: (next: KnowledgePendingImport[]) => { pending = next; }, epoch: (next: number) => { epoch = next; } };
 }
 
@@ -48,6 +48,31 @@ test('paired adoption uses the immutable preview base and id, never a newer inde
   assert.equal(f.statuses(), 0); assert.equal(f.adoptions[0].expectedHead, OLD); assert.equal(f.adoptions[0].previewId, PREVIEW); assert.equal(f.adoptions[0].expectedInputHash, f.preview().preview.inputHash); assert.equal(f.adoptions[0].review, 'unreviewed');
   assert.equal(f.callbacks[0].interaction, 10); assert.match(files.content(), /records are in working changes/);
 });
+
+for (const locale of ['en', 'zh-CN'] as const) {
+  test(`${locale}: a merge-version change invalidates only the unaccepted file preview`, async t => {
+    const f = fixture(t), files = f.create(locale), adopt = f.api.adopt; await files.open(); await click(files, 'choose');
+    f.api.adopt = async params => { f.adoptions.push(params); throw new ServiceFailure({ code: 'REVIEW_REQUIRED', parameters: { reason: 'import-preview-merge-version-changed' } }); };
+    await click(files, 'adopt'); assert.match(files.content(), locale === 'en' ? /merge rules changed/ : /合并规则已更新/);
+    assert.doesNotMatch(files.content(), /data-knowledge-file="adopt"|data-knowledge-file="check-result"/);
+    await click(files, 'adopt'); assert.equal(f.adoptions.length, 1);
+    const next = filePreview(); next.preview.prepared!.id = 'e'.repeat(64); f.setPreview(next);
+    await click(files, 'preview'); f.api.adopt = adopt; await click(files, 'adopt');
+    assert.equal(f.selections(), 1); assert.equal(f.adoptions.length, 2); assert.equal(f.adoptions[1].previewId, 'e'.repeat(64)); assert.equal(f.callbacks.length, 1);
+  });
+  test(`${locale}: unsafe old pending files stay readable without a repeated Resume or new Apply`, async t => {
+    for (const reason of ['legacy-import-merge-review-required', 'legacy-import-merge-unverifiable']) {
+      const f = fixture(t), files = f.create(locale); f.setPending([pendingItem()]); await files.open();
+      f.api.resume = async params => { f.resumes.push(params); throw new ServiceFailure({ code: 'REVIEW_REQUIRED', parameters: { reason } }); };
+      await click(files, 'resume', { operation: 'accepted-operation', preview: PREVIEW });
+      assert.match(files.content(), locale === 'en' ? /backup.*before this unfinished import/ : /未完成导入.*之前.*完整资料库备份/);
+      assert.match(files.content(), /accepted-operation/); assert.doesNotMatch(files.content(), /data-knowledge-file="resume"|data-knowledge-file="check-result"|data-knowledge-file="adopt"/);
+      await click(files, 'pending'); await click(files, 'resume', { operation: 'accepted-operation', preview: PREVIEW }); await click(files, 'check-result'); await click(files, 'adopt');
+      assert.equal(f.resumes.length, 1); assert.equal(f.adoptions.length, 0); assert.equal(f.selections(), 0); assert.equal(f.callbacks.length, 0); assert.equal(f.pending().length, 1);
+      assert.doesNotMatch(files.content(), /data-knowledge-file-progress/); files.hide();
+    }
+  });
+}
 
 test('ordinary collection-only preview retains its existing status and token path', async t => {
   const f = fixture(t), plain = f.preview(); delete plain.preview.prepared; delete plain.preview.vocabulary; f.setPreview(plain);

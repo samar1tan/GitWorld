@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createCollectionBrowser } from './collection-browser.ts';
+import { ServiceFailure } from './client.ts';
 import type { CollectionIssueAggregate, CollectionIssuesPage, CollectionJob } from '../../../../packages/contracts/src/collection-types.ts';
 
 const idA = 'a'.repeat(64), idB = 'b'.repeat(64);
@@ -15,6 +16,7 @@ function fixture(t: { after(fn: () => unknown): void }, locale: 'en' | 'zh-CN' =
   const transport = {
     issues: async (params: { jobId: string; offset: number; limit: number }) => page(params.jobId, params.offset),
     rebuild: async (params: { jobId: string }) => page(params.jobId, 0),
+    adopt: async (_params: unknown) => ({ changedObjects: ['object'], unchangedObjects: [], conflicts: [], paths: [] }),
   };
   Object.defineProperty(globalThis, 'document', { configurable: true, value: { querySelector: () => null } });
   Object.defineProperty(globalThis, 'window', { configurable: true, value: { gitworld: {
@@ -22,14 +24,31 @@ function fixture(t: { after(fn: () => unknown): void }, locale: 'en' | 'zh-CN' =
     request: async (input: { method: string; params: any; requestId: string }) => {
       calls.push({ method: input.method, params: input.params });
       try {
-        const result = input.method === 'collection.catalog' ? [{ id: 'cliopatria', title: { en: 'Source fixture' }, description: { en: 'Fixture' }, limitations: { en: 'Fixture' }, revision: 'v1', downloadBytes: 1, licenseId: 'CC0', licenseUrl: 'https://example.invalid', filters: ['text', 'years'] }] : input.method === 'collection.jobs' ? [job(idA), job(idB)] : input.method === 'collection.preview' ? { inputHash: 'input-hash', objects: 252, assertions: 4276, sample: [{ id: 'object', labels: { en: 'Object fixture' } }], issues: [], issueCount: 564 } : input.method === 'repository.status' ? { head: '1'.repeat(40) } : input.method === 'collection.issues' ? await transport.issues(input.params) : input.method === 'collection.rebuildIssues' ? await transport.rebuild(input.params) : input.method === 'collection.adopt' ? { changedObjects: ['object'], unchangedObjects: [], conflicts: [], paths: [] } : undefined;
+        const result = input.method === 'collection.catalog' ? [{ id: 'cliopatria', title: { en: 'Source fixture' }, description: { en: 'Fixture' }, limitations: { en: 'Fixture' }, revision: 'v1', downloadBytes: 1, licenseId: 'CC0', licenseUrl: 'https://example.invalid', filters: ['text', 'years'] }] : input.method === 'collection.jobs' ? [job(idA), job(idB)] : input.method === 'collection.preview' ? { inputHash: 'input-hash', objects: 252, assertions: 4276, sample: [{ id: 'object', labels: { en: 'Object fixture' } }], issues: [], issueCount: 564 } : input.method === 'repository.status' ? { head: '1'.repeat(40) } : input.method === 'collection.issues' ? await transport.issues(input.params) : input.method === 'collection.rebuildIssues' ? await transport.rebuild(input.params) : input.method === 'collection.adopt' ? await transport.adopt(input.params) : undefined;
         return { protocolVersion: 1, requestId: input.requestId, ok: true, result };
-      } catch (cause) { return { protocolVersion: 1, requestId: input.requestId, ok: false, error: { code: cause instanceof Error ? cause.message : 'IO_ERROR' } }; }
+      } catch (cause) { return { protocolVersion: 1, requestId: input.requestId, ok: false, error: cause instanceof ServiceFailure ? cause.detail : { code: cause instanceof Error ? cause.message : 'IO_ERROR' } }; }
     },
   } } });
   const browser = createCollectionBrowser({ locale: () => locale, render: () => {}, onAdopted: (_result, jobId) => { adopted.push(jobId); } });
   const click = (action: string, id?: string) => browser.click({ dataset: { collection: action, ...(id ? { id } : {}) } } as unknown as HTMLElement);
   return { browser, click, calls, transport, adopted };
+}
+
+for (const locale of ['en', 'zh-CN'] as const) {
+  test(`${locale}: an invalidated collection preview cannot be applied until a fresh preview succeeds`, async t => {
+    const f = fixture(t, locale); await f.browser.open(); await f.click('job', idA);
+    const adopt = f.transport.adopt; f.transport.adopt = async () => { throw new ServiceFailure({ code: 'CONFLICT' }); };
+    await f.click('adopt'); assert.doesNotMatch(f.browser.content(), /data-collection="adopt"/);
+    await f.click('adopt'); assert.equal(f.calls.filter(value => value.method === 'collection.adopt').length, 1);
+    assert.match(f.browser.content(), /data-collection="preview"/); await f.click('preview'); f.transport.adopt = adopt; await f.click('adopt');
+    assert.equal(f.calls.filter(value => value.method === 'collection.preview').length, 2); assert.equal(f.adopted.length, 1); assert.equal(f.calls.filter(value => value.method === 'collection.acquire').length, 0);
+  });
+  test(`${locale}: a typed unsafe-import reason is not presented as an ordinary collection conflict`, async t => {
+    const f = fixture(t, locale); await f.browser.open(); await f.click('job', idA);
+    f.transport.adopt = async () => { throw new ServiceFailure({ code: 'REVIEW_REQUIRED', parameters: { reason: 'legacy-import-merge-review-required' } }); };
+    await f.click('adopt'); assert.match(f.browser.content(), locale === 'en' ? /backup.*before this unfinished import/ : /未完成导入.*之前.*完整资料库备份/);
+    await f.click('preview'); await f.click('adopt'); assert.equal(f.calls.filter(value => value.method === 'collection.adopt').length, 1); assert.equal(f.adopted.length, 0);
+  });
 }
 
 test('the full mapping report reaches the last page without resetting the preview or claim review choice', async t => {
