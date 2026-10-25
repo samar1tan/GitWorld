@@ -369,7 +369,16 @@ export function createWorkbenchCommands(invoke: Invoke) {
         const owned = boundContext({ kind: 'model', modelId, revision }, context, contextTarget);
         const completed = completeCommand(engine, tail.replace(/\bCHECKED\b/g, 'HEAD'), owned).map(item => ({ ...item, value: prefix + item.value.replace(/^git /, '').replace(/\bHEAD\b/g, 'CHECKED').replace(/(^|\s)commit:/g, '$1state:') }));
         const ref = tail.match(/^(show|checkout|diff|log|blame|trace)\s+(.*\s)?([^\s]*)$/);
-        if (ref) for (const alias of [...(owned.head ? ['CHECKED'] : []), ...(owned.comparison ? ['A','B'] : [])]) if (alias.startsWith(ref[3])) completed.unshift({ value: prefix + ref[1] + ' ' + (ref[2] ?? '') + alias, label: label(alias), kind: 'ref' });
+        const args = words.slice(count + 1), position = args.length - (/\s$/.test(input) ? 0 : 1);
+        let references = 0, referencePosition = true;
+        for (let index = 0; index < position && referencePosition; index++) {
+          if (words[count] === 'blame' && args[index] === '--field') referencePosition = ++index < position && !args[index].startsWith('-');
+          else if (words[count] === 'log' && args[index] === '--graph') continue;
+          else if (args[index].startsWith('-')) referencePosition = false;
+          else references += words[count] === 'diff' && args[index].includes('..') ? 2 : 1;
+        }
+        referencePosition &&= references < (words[count] === 'diff' ? 2 : 1);
+        if (ref && referencePosition) for (const alias of [...(owned.head ? ['CHECKED'] : []), ...(owned.comparison ? ['A','B'] : [])]) if (alias.startsWith(ref[3])) completed.unshift({ value: prefix + ref[1] + ' ' + (ref[2] ?? '') + alias, label: label(alias), kind: 'ref' });
         return completed.filter((item, index) => completed.findIndex(other => other.value === item.value) === index).slice(0, 40);
       }
     }

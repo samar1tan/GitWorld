@@ -114,6 +114,41 @@ test('explicit global history GUI/text operations preserve targets, observations
   const branches = await call(service, 'command.execute', { input: { command: 'git branch' } }); assert.ok(branches.ok && branches.output.kind === 'repository-branches' && branches.output.branches.some(value => value.name === 'investigation' && value.current));
 });
 
+test('model field completion keeps historical aliases in version arguments rather than field values', native, async t => {
+  const { service } = await setup(t), before = await call(service, 'repository.status', {});
+  const target = { kind: 'model' as const, modelId: 'test-world', revision: before.head! }, context = { head: 'old', comparison: ['old', 'new'] as [string, string] };
+  const prefix = `history --model "test-world" --revision ${target.revision} `;
+  const complete = (suffix: string) => call(service, 'command.complete', { input: prefix + suffix, contextTarget: target, context });
+  for (const suffix of ['blame state:new --field ', 'blame state:new --field cap', 'blame --field ', 'blame --field cap']) {
+    const values = await complete(suffix);
+    assert.ok(values.length, suffix);
+    assert.ok(values.every(value => value.kind === 'field'), JSON.stringify(values));
+    assert.ok(values.some(value => value.value === prefix + suffix.replace(/[^ ]*$/, '') + 'capital'));
+    const chosen = await call(service, 'command.execute', { input: { command: values[0].value }, contextTarget: target, context });
+    assert.ok(chosen.ok && chosen.output.kind === 'model' && chosen.output.execution.output.kind === 'blame');
+    assert.equal(chosen.output.execution.output.field.fieldId, 'capital');
+  }
+  for (const fragment of ['A', 'B', 'CHECKED', 'missing']) for (const order of ['blame state:new --field ', 'blame --field ']) assert.deepEqual(await complete(order + fragment), []);
+  for (const suffix of ['show ', 'checkout ', 'log ', 'log --graph ', 'trace ', 'blame ', 'blame --field capital ', 'diff ', 'diff state:old ']) {
+    const values = await complete(suffix);
+    for (const alias of ['CHECKED', 'A', 'B']) assert.ok(values.some(value => value.kind === 'ref' && value.value === prefix + suffix + alias), suffix + alias);
+  }
+  for (const suffix of ['blame --field capital ', 'log --graph ']) {
+    const chosen = (await complete(suffix)).find(value => value.value === prefix + suffix + 'B')!;
+    const result = await call(service, 'command.execute', { input: { command: chosen.value }, contextTarget: target, context });
+    assert.ok(result.ok && result.output.kind === 'model');
+    assert.equal(result.output.execution.intent.type, suffix.startsWith('blame') ? 'blame' : 'log');
+  }
+  for (const [range, a, b, mode] of [['A..B', 'old', 'new', 'endpoints'], ['A...B', 'old', 'new', 'merge-base'], ['B..A', 'new', 'old', 'endpoints']] as const) {
+    const result = await call(service, 'command.execute', { input: { command: prefix + 'diff ' + range }, contextTarget: target, context });
+    assert.ok(result.ok && result.output.kind === 'model' && result.output.execution.output.kind === 'diff');
+    const diff = result.output.execution.output.diff;
+    assert.equal(diff.a.commitId, a); assert.equal(diff.b.commitId, b); assert.equal(diff.query!.mode, mode);
+    assert.equal(diff.a.datasetVersion, target.revision); assert.equal(diff.b.datasetVersion, target.revision);
+  }
+  assert.deepEqual(await call(service, 'repository.status', {}), before);
+});
+
 test('working-only import stays a draft until valid publication; Git workspace pins survive another revision and restart', native, async t => {
   const { service, open, directory, files } = await setup(t), initial = await call(service, 'repository.status', {});
   const data = validPackage(); data.dataset.id = data.history.datasetId = 'imported-world'; data.revision.id = data.history.id = 'imported-package';
