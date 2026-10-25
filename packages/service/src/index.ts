@@ -13,6 +13,7 @@ import { createEditorialRepository, EditorialFailure } from '../../storage/src/e
 import type { EditorialJson, EditorialRepository } from '../../contracts/src/editorial-types.ts';
 import { createResearchStore, validResearchRecord } from './research-store.ts';
 import { createKnowledgeStore, knowledgeCollectionSeedFiles } from './knowledge-store.ts';
+import { brokenKnowledgeReferencePaths } from './knowledge-staging.ts';
 import { createKnowledgeEditor, KnowledgeEditorFailure } from './knowledge-editor.ts';
 import { loadTrustedKnowledgeBundle } from './trusted-bundled-knowledge.ts';
 import { readSelectedKnowledgeCollectionFile } from './knowledge-collection-files.ts';
@@ -28,6 +29,7 @@ import { loadLegacyFieldCatalog, planKnowledgeVocabulary, resolveKnowledgeVocabu
 import { createWikipediaWorkspace, validateWikipediaWorkspaceDirectory, WikipediaWorkspaceFailure } from './wikipedia-workspace.ts';
 import { createNavigationContexts, NavigationFailure, validateNavigationDirectory, type NavigationImportReceipt } from './navigation-contexts.ts';
 import { navigationBootstrapSeedFiles, navigationChangeSummary, navigationDependencies } from './navigation-tree.ts';
+import { expandKnowledgeDiffReferences } from './knowledge-diff-display.ts';
 
 export type LocalServiceOptions = {
   dataDirectory: string;
@@ -149,8 +151,9 @@ export async function createLocalService(options: LocalServiceOptions): Promise<
   const navigationStore=()=>navigation??failure(editorialFailure);
   const invalidateContent = () => { knowledge?.invalidate(); summaries?.invalidate(); engines.clear(); };
   async function stageDependencies(paths:string[]) {
-    const [knowledgePlan,working,staged]=await Promise.all([knowledgeStore().dependencies(paths),editing().snapshot({from:'working',prefixes:['objects/','sources/','navigation/']}),editing().snapshot({from:'staged',prefixes:['objects/','sources/','navigation/']})]);
+    const [working,staged]=await Promise.all([editing().snapshot({from:'working',prefixes:['objects/','sources/','mappings/','navigation/']}),editing().snapshot({from:'staged',prefixes:['objects/','sources/','mappings/','navigation/']})]);
     const contextPlan=navigationDependencies(working.files,staged.files,paths);
+    const knowledgePlan=await knowledgeStore().dependencies([...new Set([...paths,...contextPlan.required])],{working,staged});
     return{selected:paths,required:[...new Set([...knowledgePlan.required,...contextPlan.required])],missing:[...new Set([...knowledgePlan.missing,...contextPlan.missing])]};
   }
 
@@ -296,11 +299,12 @@ export async function createLocalService(options: LocalServiceOptions): Promise<
         const offset = request.params.offset ?? 0, limit = request.params.limit ?? 25, page = selected.slice(offset, offset + limit);
         if (!page.length) return { status, entries: [], total: selected.length, offset, limit };
         const names = [...new Set(page.flatMap(change => [change.path,...(change.path.startsWith('navigation/')?[change.path.split('/').slice(0,3).join('/')+'/definition.json']:[])]))], staged = `tree:${status.stagedTree}`;
-        const [before, after] = await Promise.all([
-          repo.snapshot({ from: request.params.mode === 'staged' ? status.head : staged, paths: names }),
-          repo.snapshot({ from: request.params.mode === 'staged' ? staged : 'working', paths: names }),
+        const beforeRevision = request.params.mode === 'staged' ? status.head : staged, afterRevision = request.params.mode === 'staged' ? staged : 'working';
+        const [initialBefore, initialAfter] = await Promise.all([
+          repo.snapshot({ from: beforeRevision, paths: names }), repo.snapshot({ from: afterRevision, paths: names }),
         ]);
-        return { status, entries: page.map(change => {const left=before.files[change.path]??null,right=after.files[change.path]??null,navigation=navigationChangeSummary(change.path,left,right,after.files[change.path.split('/').slice(0,3).join('/')+'/definition.json']??before.files[change.path.split('/').slice(0,3).join('/')+'/definition.json']);return{...change,before:left,after:right,...(navigation?{navigation}:{})};}), total: selected.length, offset, limit };
+        const { before, after, referenceLabels } = await expandKnowledgeDiffReferences(repo, { before: initialBefore, after: initialAfter, paths: names, beforeRevision, afterRevision });
+        return { status, entries: page.map(change => {const left=before.files[change.path]??null,right=after.files[change.path]??null,navigation=navigationChangeSummary(change.path,left,right,after.files[change.path.split('/').slice(0,3).join('/')+'/definition.json']??before.files[change.path.split('/').slice(0,3).join('/')+'/definition.json']);return{...change,before:left,after:right,...(navigation?{navigation}:{}),...(change.path.startsWith('objects/')&&referenceLabels?{referenceLabels}:{})};}), total: selected.length, offset, limit };
       }
       case 'repository.stagePlan': {const incomplete=[...importStore().pendingPaths(),...navigationStore().pendingPaths()].filter(path=>request.params.paths.includes(path));if(incomplete.length)return{selected:request.params.paths,required:[],missing:[],incomplete};return stageDependencies(request.params.paths);}
       case 'repository.stage': {
@@ -310,15 +314,40 @@ export async function createLocalService(options: LocalServiceOptions): Promise<
         if (plan.required.length || plan.missing.length) throw new ServiceFailure({ code: 'REVIEW_REQUIRED', issues: [...plan.required, ...plan.missing].map(path => ({ code: 'DANGLING_REFERENCE', path, parameters: { reason: 'stage-dependency' } })) });
         const value = await editing().stage(request.params.paths.map(path => ({ path }))); summaries?.invalidate(); return value;
       }
-      case 'repository.unstage': { const value = await editing().unstage(request.params.paths); summaries?.invalidate(); return value; }
+      case 'repository.unstage': {
+        const repo = editing(), paths = request.params.paths.filter(name => name.startsWith('objects/') || name.startsWith('sources/'));
+        if (!paths.length) { const value = await repo.unstage(request.params.paths); summaries?.invalidate(); return value; }
+        const status = await repo.status();
+        const [frozen, head] = await Promise.all([
+          repo.snapshot({ from: `tree:${status.stagedTree}`, prefixes: ['objects/', 'sources/'] }),
+          repo.snapshot({ from: status.head, paths }),
+        ]);
+        const candidate = { ...frozen.files };
+        for (const name of paths) if (head.files[name] === undefined) delete candidate[name]; else candidate[name] = head.files[name];
+        const missing = brokenKnowledgeReferencePaths(frozen.files, candidate);
+        if (missing.length) throw new ServiceFailure({ code: 'REVIEW_REQUIRED', issues: missing.map(path => ({ code: 'DANGLING_REFERENCE', path, parameters: { reason: 'stage-dependency' } })) });
+        const current = await repo.status();
+        if (current.head !== status.head) return failure('HEAD_CHANGED');
+        if (current.stagedTree !== status.stagedTree) return failure('STAGE_CHANGED');
+        const value = await repo.unstage(request.params.paths); summaries?.invalidate(); return value;
+      }
       case 'repository.commit': {
         const repo = editing();
         // Validate the exact frozen staged objects, never the live working forms.
         const status = await repo.status(), staged = `tree:${status.stagedTree}`;
         if(importStore().pendingPaths().some(path=>status.staged.some(change=>change.path===path)))throw new ServiceFailure({code:'REVIEW_REQUIRED',parameters:{reason:'incomplete-paired-import'}});
         if (request.params.expectedTree !== undefined && request.params.expectedTree !== status.stagedTree) return failure('STAGE_CHANGED');
-        try { await knowledgeStore().read(staged);const frozen=await repo.snapshot({from:staged,prefixes:['sources/','mappings/field-catalogs/','mappings/field-catalog-baselines/']});if(resolveKnowledgeVocabulary(frozen.files).conflicts.length)return failure('REVIEW_REQUIRED'); }
-        catch { return failure('VALIDATION_FAILED'); }
+        try {
+          await knowledgeStore().read(staged);
+          const [headObjects, frozen] = await Promise.all([
+            repo.list({ from: status.head, prefix: 'objects/' }),
+            repo.snapshot({ from: staged, prefixes: ['objects/','sources/','mappings/field-catalogs/','mappings/field-catalog-baselines/'] }),
+          ]);
+          if (resolveKnowledgeVocabulary(frozen.files).conflicts.length) return failure('REVIEW_REQUIRED');
+          const missing = brokenKnowledgeReferencePaths({}, frozen.files, new Set(headObjects));
+          if (missing.length) throw new ServiceFailure({ code: 'REVIEW_REQUIRED', issues: missing.map(path => ({ code: 'DANGLING_REFERENCE', path, parameters: { reason: 'stage-dependency' } })) });
+        }
+        catch (error) { if (error instanceof ServiceFailure) throw error; return failure('VALIDATION_FAILED'); }
         const conflicts = await knowledgeStore().conflicts();
         const conflictedObjects = new Set(conflicts.map(value => `objects/${createHash('sha256').update(canonicalJson(value.objectId)).digest('hex')}.json`));
         if (status.staged.some(value => value.path.startsWith('mappings/conflict-') || conflictedObjects.has(value.path))) return failure('REVIEW_REQUIRED');

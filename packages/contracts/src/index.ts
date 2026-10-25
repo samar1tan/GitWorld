@@ -38,7 +38,8 @@ export type SourceMaterialSummary = { identity: ExternalRecordIdentity; label: S
 export type SourceJob = { id: string; receipt: AcquisitionReceipt; pending: ExternalRecordIdentity[]; materials: SourceMaterialSummary[]; labelIssues: SourceIssue[] };
 export type SourceJobList = { jobs: SourceJob[]; issues: { jobId: string; code: 'CHECKPOINT_INVALID' }[] };
 export type SourceRecordDetail = { snapshot: SourceRecordSnapshot; labels: Record<string, SourceLabel> };
-export type RepositoryDiff = { status: EditorialStatus; entries: { path: string; kind: string; before: EditorialJson | null; after: EditorialJson | null; navigation?: NavigationChangeSummary }[]; total: number; offset: number; limit: number };
+export type RepositoryDiffReferenceLabels = Record<string, Record<string, string>>;
+export type RepositoryDiff = { status: EditorialStatus; entries: { path: string; kind: string; before: EditorialJson | null; after: EditorialJson | null; navigation?: NavigationChangeSummary; referenceLabels?: { before: RepositoryDiffReferenceLabels; after: RepositoryDiffReferenceLabels } }[]; total: number; offset: number; limit: number };
 
 /** File tokens are issued by the trusted host after native file selection, never raw renderer paths. */
 export type ServiceMethods = NavigationServiceMethods & {
