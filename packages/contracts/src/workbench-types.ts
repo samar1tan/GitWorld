@@ -79,7 +79,16 @@ export type WorkbenchCommandOutput =
   | { kind: 'object-state'; target: ObjectCommandTarget; state: KnowledgeState }
   | { kind: 'object-history'; target: ObjectCommandTarget; history: KnowledgeHistory }
   | { kind: 'object-diff'; a: ObjectStateReference; b: ObjectStateReference; diff: KnowledgeStateDiff };
-export type WorkbenchCommandError = ServiceError & { subject?: string; candidates?: string[]; replacement?: string };
+export type WorkbenchRecoveryAction =
+  | { kind: 'model-state'; candidate: string; reference: ModelHistoricalReference; command: string }
+  | { kind: 'model-endpoints'; a: ModelHistoricalReference; b: ModelHistoricalReference; command: string }
+  | { kind: 'command'; command: string };
+export type WorkbenchCommandError = ServiceError & {
+  subject?: string;
+  /** Candidate refs and replacement syntax are explanatory, never implicitly executable. */
+  candidates?: string[]; replacement?: string;
+  recoveryActions?: WorkbenchRecoveryAction[];
+};
 export type WorkbenchCommandExecution =
   | { ok: true; command: string; output: WorkbenchCommandOutput; effect: WorkbenchCommandEffect }
   | { ok: false; command: string; error: WorkbenchCommandError; effect: { type: 'none' } };

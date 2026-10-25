@@ -1,9 +1,9 @@
 import type { HistoryLocale, CommandCompletion, HistoryText } from '@gitworld/domain';
-import type { WorkbenchCommandExecution, WorkbenchCommandRequest, EditorialStatus } from '@gitworld/contracts';
+import type { WorkbenchCommandExecution, WorkbenchCommandRequest, EditorialStatus, WorkbenchRecoveryAction } from '@gitworld/contracts';
 import { escapeHtml as esc } from './client.ts';
 import { contextCopy } from './context-copy.ts';
 import { knowledgeLocalizedText } from './knowledge-labels.ts';
-import { terminalCopy as copy } from './terminal-copy.ts';
+import { terminalCopy as copy, type TerminalPlainCopyKey } from './terminal-copy.ts';
 
 type Options = {
   host: HTMLElement; locale:()=>HistoryLocale;
@@ -23,7 +23,7 @@ const quote=(value:string)=>JSON.stringify(value);
 export function createTerminal(options:Options) {
   let expanded=false,draft='',history:string[]=[],historyIndex=0,busy=false,entries:Entry[]=[],completions:CommandCompletion[]=[];
   let completionIndex=-1,completionSequence=0,completing=false,loaded=false;
-  const t=(name:Parameters<typeof copy>[1])=>copy(options.locale(),name);
+  const t=(name:TerminalPlainCopyKey)=>copy(options.locale(),name);
   const text=(value:HistoryText)=>value[options.locale()]??value.en;
   const short=(value:string)=>value.slice(0,8);
   const button=(action:string,label:string,extra='')=>`<button type="button" data-terminal="${action}" ${extra}>${esc(label)}</button>`;
@@ -31,7 +31,11 @@ export function createTerminal(options:Options) {
   function persist(){try{options.storage?.setItem(key,JSON.stringify({schemaVersion:1,expanded,draft,history:history.slice(-100)}));}catch{/* The host exposes persistence failure separately. */}}
   function hydrate(){if(loaded)return;loaded=true;try{const saved=JSON.parse(options.storage?.getItem(key)??'null');if(saved?.schemaVersion===1){expanded=saved.expanded===true;draft=typeof saved.draft==='string'?saved.draft.slice(0,4096):'';history=Array.isArray(saved.history)?saved.history.filter((v:unknown):v is string=>typeof v==='string'&&v.length<=4096).slice(-100):[];historyIndex=history.length;}}catch{/* Invalid recovery text does not execute a command. */}}
   function output(result:WorkbenchCommandExecution):string {
-    if(!result.ok)return `<div class="terminal-error"><strong>${t('error')}</strong> <code>${esc(result.error.code)}</code>${result.error.subject?`<p>${esc(result.error.subject)}</p>`:''}${result.error.replacement?fill(result.error.replacement):''}${result.error.candidates?.map(value=>fill(value)).join('')??''}</div>`;
+    if(!result.ok){
+      const error=result.error,actions=error.recoveryActions??[],explanation=error.code==='AMBIGUOUS_REF'?t('ambiguousRef'):error.code==='MULTIPLE_COMMON_BASES'?t('multipleBases'):error.code==='NO_COMMON_BASE'?t('noBase'):error.code==='COMMAND_MIGRATED'&&error.replacement==='CHECKED'?t('checkedMigration'):'';
+      const actionLabel=(action:WorkbenchRecoveryAction)=>action.kind==='model-state'?copy(options.locale(),'inspectCandidate',{ref:action.reference.ref}):action.kind==='model-endpoints'?t('compareEndpoints'):action.command;
+      return `<div class="terminal-error"><strong>${t('error')}</strong> <code>${esc(error.code)}</code>${error.subject?`<p>${esc(error.subject)}</p>`:''}${explanation?`<p>${esc(explanation)}</p>`:''}<div class="terminal-recovery-actions">${actions.map(action=>fill(action.command,actionLabel(action))).join('')}</div>${error.candidates?.length?`<details><summary>${t('candidates')} · ${error.candidates.length}</summary>${error.candidates.map(value=>`<p><code>${esc(value)}</code></p>`).join('')}</details>`:''}${error.replacement&&!actions.some(action=>action.command===error.replacement)?`<details><summary>${t('syntax')}</summary><code>${esc(error.replacement)}</code></details>`:''}</div>`;
+    }
     const value=result.output;
     if(value.kind==='help')return `<div class="terminal-help">${value.commands.map(command=>fill(command)).join('')}</div>`;
     if(value.kind==='repository-status')return `<p>${t('branch')}: ${esc(value.status.branch??'—')} · ${t('revision')}: <code>${esc(short(value.status.head))}</code> · ${t('working')}: ${value.status.unstaged.length} · ${t('staged')}: ${value.status.staged.length}</p>${button('changes',t('changes'))}`;

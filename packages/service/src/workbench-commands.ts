@@ -1,7 +1,7 @@
 import { compareHistorySnapshots, completeCommand, createHistoryEngine, executeIntent, parseCommand, parseYear, yearRef } from '../../domain/src/index.ts';
 import type { CommandIntent, HistoryContext, HistoryDiff, HistoryEngine } from '../../domain/src/index.ts';
 import { validateServiceRequest } from '../../contracts/src/index.ts';
-import type { HistoricalCommandTarget, ModelCommandTarget, ModelComparisonIntent, ModelHistoricalReference, ObjectCommandTarget, ObjectHistoryIntent, ObjectStateReference, RepositoryCommandIntent, ServiceMethod, ServiceMethods, WorkbenchCommandError, WorkbenchCommandExecution, WorkbenchCommandIntent, WorkbenchCommandOutput, WorkbenchCommandRequest, WorkbenchCompletion } from '../../contracts/src/index.ts';
+import type { HistoricalCommandTarget, ModelCommandTarget, ModelComparisonIntent, ModelHistoricalReference, ObjectCommandTarget, ObjectHistoryIntent, ObjectStateReference, RepositoryCommandIntent, ServiceMethod, ServiceMethods, WorkbenchCommandError, WorkbenchCommandExecution, WorkbenchCommandIntent, WorkbenchCommandOutput, WorkbenchCommandRequest, WorkbenchCompletion, WorkbenchRecoveryAction } from '../../contracts/src/index.ts';
 import { executeScopeCommand, parseScopeCommand, scopeCommandText, SCOPE_HELP } from './scope-commands.ts';
 
 type Invoke = <M extends ServiceMethod>(method: M, params: ServiceMethods[M]['params']) => Promise<ServiceMethods[M]['result']>;
@@ -209,12 +209,43 @@ export function readOnlyWorkbenchCommand(request: WorkbenchCommandRequest): bool
   return !('intent' in parsed) || parsed.intent.family === 'history' || ['status','diff','log'].includes(parsed.intent.intent.type) || parsed.intent.intent.type === 'branch' && !parsed.intent.intent.name;
 }
 
+function modelRecovery(error: WorkbenchCommandError, engine: HistoryEngine, target: ModelCommandTarget, endpoints?: [ModelHistoricalReference, ModelHistoricalReference]): WorkbenchCommandError {
+  const recoveryActions: WorkbenchRecoveryAction[] = [];
+  if (error.code === 'AMBIGUOUS_REF') for (const candidate of error.candidates ?? []) {
+    const resolved = engine.resolve(candidate);
+    if (!resolved.ok) continue;
+    const reference = { ...target, ref: `state:${resolved.value.commitId}` };
+    const command = commandFor({ family: 'history', target, intent: { type: 'show', ref: reference.ref }, context: { head: null } });
+    recoveryActions.push({ kind: 'model-state', candidate, reference, command });
+  }
+  if (endpoints && ['NO_COMMON_BASE', 'MULTIPLE_COMMON_BASES'].includes(error.code)) {
+    const [a, b] = endpoints;
+    const command = commandFor({ family: 'history', target: { kind: 'model', modelId: a.modelId, revision: a.revision }, intent: { type: 'compare', a, b, mode: 'endpoints' }, context: { head: null } });
+    recoveryActions.push({ kind: 'model-endpoints', a, b, command });
+  }
+  return recoveryActions.length ? { ...error, recoveryActions } : error;
+}
+
+const pinnedModelRef = (ref: string, commitId: string) => ['CHECKED', 'A', 'B'].includes(ref) ? `state:${commitId}` : ref;
+
+function resolvedEndpoints(engine: HistoryEngine, target: ModelCommandTarget, intent: Extract<CommandIntent, { type: 'diff' }>, context: HistoryContext): [ModelHistoricalReference, ModelHistoricalReference] | undefined {
+  const a = engine.resolve(aliasRef(intent.a, context), context), b = engine.resolve(aliasRef(intent.b, context), context);
+  return a.ok && b.ok ? [{ ...target, ref: pinnedModelRef(intent.a, a.value.commitId) }, { ...target, ref: pinnedModelRef(intent.b, b.value.commitId) }] : undefined;
+}
+
+function completeReplacement(error: WorkbenchCommandError): WorkbenchCommandError {
+  if (!error.replacement || error.recoveryActions?.length) return error;
+  const parsed = parseWorkbenchCommand(error.replacement);
+  if ('error' in parsed || 'intent' in parsed && (parsed.intent.family !== 'git' || !['status', 'diff', 'log'].includes(parsed.intent.intent.type))) return error;
+  return { ...error, recoveryActions: [{ kind: 'command', command: error.replacement }] };
+}
+
 /** GUI intents and terminal input converge before any domain/repository operation. */
 export function createWorkbenchCommands(invoke: Invoke) {
   async function execute(request: WorkbenchCommandRequest): Promise<WorkbenchCommandExecution> {
     const parsed: Parsed = 'intent' in request.input ? checked({ intent: request.input.intent }) : parseWorkbenchCommand(request.input.command, request.context, request.contextTarget);
     const command = 'command' in request.input ? request.input.command : commandFor(request.input.intent);
-    const failure = (error: WorkbenchCommandError): WorkbenchCommandExecution => ({ ok: false, command, error, effect: { type: 'none' } });
+    const failure = (error: WorkbenchCommandError): WorkbenchCommandExecution => ({ ok: false, command, error: completeReplacement(error), effect: { type: 'none' } });
     const success = (output: WorkbenchCommandOutput, effect: Extract<WorkbenchCommandExecution, { ok: true }>['effect'] = { type: 'none' }): WorkbenchCommandExecution => ({ ok: true, command, output, effect });
     if ('error' in parsed) return failure(parsed.error);
     if ('help' in parsed) return success({ kind: 'help', commands: HELP });
@@ -253,11 +284,12 @@ export function createWorkbenchCommands(invoke: Invoke) {
         const [left, right] = await Promise.all([invoke('model.read', { datasetId: intent.a.modelId, revision: intent.a.revision }), invoke('model.read', { datasetId: intent.b.modelId, revision: intent.b.revision })]);
         const engines: HistoryEngine[] = [left,right].map(model => { const history = structuredClone(model.package.history); history.id = model.revision; return createHistoryEngine(history); });
         const a = engines[0].resolve(aliasRef(intent.a.ref, context), context), b = engines[1].resolve(aliasRef(intent.b.ref, context), context);
-        if (!a.ok) return failure(a.error); if (!b.ok) return failure(b.error);
+        if (!a.ok) return failure(modelRecovery(a.error, engines[0], { kind: 'model', modelId: intent.a.modelId, revision: intent.a.revision }));
+        if (!b.ok) return failure(modelRecovery(b.error, engines[1], { kind: 'model', modelId: intent.b.modelId, revision: intent.b.revision }));
         let diff: HistoryDiff;
         if (sameRevision) {
           const executed = executeIntent(engines[0], { type: 'diff', a: aliasRef(intent.a.ref, context), b: aliasRef(intent.b.ref, context), ...(intent.mode ? { mode: intent.mode } : {}) }, context);
-          if (!executed.ok) return failure(executed.error);
+          if (!executed.ok) return failure(modelRecovery(executed.error, engines[0], target, [{ ...intent.a, ref: pinnedModelRef(intent.a.ref, a.value.commitId) }, { ...intent.b, ref: pinnedModelRef(intent.b.ref, b.value.commitId) }]));
           if (executed.output.kind !== 'diff') return failure({ code: 'INVALID_ARGUMENT' }); diff = executed.output.diff;
         } else {
           const before = engines[0].snapshot(a.value.commitId), after = engines[1].snapshot(b.value.commitId);
@@ -280,7 +312,7 @@ export function createWorkbenchCommands(invoke: Invoke) {
       const unset = refs.find(ref => (ref === 'A' || ref === 'B') && !context.comparison?.[ref === 'A' ? 0 : 1]);
       if (unset) return failure({ code: 'UNKNOWN_REF', subject: unset });
       const result = executeIntent(engine, mapRefs(intent, ref => aliasRef(ref, context)), context);
-      if (!result.ok) return failure(result.error);
+      if (!result.ok) return failure(modelRecovery(result.error, engine, target, intent.type === 'diff' ? resolvedEndpoints(engine, target, intent, context) : undefined));
       result.command = command;
       if (result.output.kind === 'help') result.output.commands = result.output.commands.map(value => value.replace(/^git /, `history --model ${quote(target.modelId)} --revision ${target.revision} `).replace(/\bHEAD\b/g, 'CHECKED'));
       return success({ kind: 'model', target, execution: result }, { type: 'model', target, effect: result.effect });

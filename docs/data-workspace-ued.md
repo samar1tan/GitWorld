@@ -155,9 +155,15 @@ The parser does not infer command meaning from the selected panel. Historical qu
 
 Rate limits retain completed work and offer a retry time. Partial results state their actual boundary. Repeated import reports unchanged matches. Upstream/local conflicts show base, incoming and local values. Missing evidence identifies the specific object/field and offers correction, deferral or retaining material. Failed commits preserve work and retry safely. An upstream removed statement is a reviewable change, not automatic deletion of historical knowledge.
 
+### Historical command recovery
+
+A failed command remains in the existing terminal log. Show its concise error meaning and retain candidate refs or migration syntax in a secondary disclosure. Those raw strings are information, never an executable control. Render only typed, complete recovery actions as buttons: **Inspect state / 查看状态** identifies an exact candidate; **Compare endpoints / 比较端点** keeps the original A→B and each model/OID. The full generated command remains inspectable with the action. A multi-base or no-base error offers endpoint comparison, not a base-choice button. Cross-revision B ambiguity offers inspection of that B snapshot. Bare aliases such as `CHECKED`, target placeholders and unsupported syntax do not become fill buttons.
+
+Clicking an action replaces only the recoverable command draft and focuses it. It must not query, navigate, change checkout/A/B or advance data HEAD. Run executes that complete bounded command through the same service/parser as freely typed input. Failures retain the investigation and permit correction or retry. Verify click→parser/execution, both locales, a newer open model than the failed command, A/B at different OIDs, and failure/no-action states; do not substitute a handwritten recovery for testing the actual action.
+
 ## Design delivery and review
 
-The next editable Figma iteration needs six main frames: exploration gap, source search, acquisition preview, reconciliation, Changes/commit and the resulting historical graph. Include source-update conflict, restart recovery and direct state editing. Both locales cover the complete main journey.
+The current workbench design, editable Figma inventory and evidence boundaries are maintained in [UED.md](UED.md); synchronize affected designs while preserving the complete bilingual data journey and conflict, restart, recovery and direct-edit checks above.
 
 A design prototype must identify its simulated data. Production acceptance uses real sources and persistence; fixed mock results cannot establish working ingestion. Review whether a newcomer can start without internal IDs, locate adopted material, understand what a commit will change and verify the result in exploration. Complete both structural editability and rendered interaction checks before claiming Figma synchronization.
 
