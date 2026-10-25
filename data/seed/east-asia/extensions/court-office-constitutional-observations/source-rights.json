@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "classification": "selected-factual-field-adaptation",
+  "licenseId": "CC-BY-SA-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "English Wikipedia contributors, included fixed editions and actual author-history links. GitWorld selects factual fields and authors typed connections, dated text observations and English/Simplified Chinese presentation under CC-BY-SA-4.0. Raw HTML, source paragraphs, anchor labels and images are excluded. No endorsement or historical approval.",
+  "sources": [
+    {
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "356763"
+      },
+      "revision": "1376607470",
+      "contentHash": "cdeca9f020a7054bcee263944b9878533c604ccc9531ce117b3998138d95e683",
+      "url": "https://en.wikipedia.org/wiki/Nanboku-ch%C5%8D_period",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&action=history",
+      "retrievedAt": "2026-10-25T02:52:35.952Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Nanboku-chō period, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470; author history: https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "573784"
+      },
+      "revision": "1380720045",
+      "contentHash": "6f2d4a7d5fa307789206a625281f537fe888a77ad2fc6cc341da41cd03acf2b2",
+      "url": "https://en.wikipedia.org/wiki/Cabinet_of_Japan",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Cabinet%20of%20Japan&oldid=1380720045",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Cabinet%20of%20Japan&action=history",
+      "retrievedAt": "2026-10-25T02:52:38.719Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Cabinet of Japan, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Cabinet%20of%20Japan&oldid=1380720045; author history: https://en.wikipedia.org/w/index.php?title=Cabinet%20of%20Japan&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "24833"
+      },
+      "revision": "1381481198",
+      "contentHash": "a478855deb43b356d7f7ee8eec5606f1d5e814240af9f5fa5fa59323f907fb47",
+      "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Japan",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&action=history",
+      "retrievedAt": "2026-10-25T02:55:11.309Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Prime Minister of Japan, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198; author history: https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "875723"
+      },
+      "revision": "1381716772",
+      "contentHash": "c100607a3fef8c103cada444f5e7cd469f93809cd526642e6533ee2ed7a37d95",
+      "url": "https://en.wikipedia.org/wiki/1954_Constitution_of_China",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=1954%20Constitution%20of%20China&oldid=1381716772",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=1954%20Constitution%20of%20China&action=history",
+      "retrievedAt": "2026-10-25T02:53:01.760Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "1954 Constitution of China, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=1954%20Constitution%20of%20China&oldid=1381716772; author history: https://en.wikipedia.org/w/index.php?title=1954%20Constitution%20of%20China&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "875733"
+      },
+      "revision": "1381716802",
+      "contentHash": "d55ea541b7e53e76321e6b5845870aa24f506bbfa373815dfab28aadae66b1a4",
+      "url": "https://en.wikipedia.org/wiki/1975_Constitution_of_China",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=1975%20Constitution%20of%20China&oldid=1381716802",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=1975%20Constitution%20of%20China&action=history",
+      "retrievedAt": "2026-10-25T02:53:04.017Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "1975 Constitution of China, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=1975%20Constitution%20of%20China&oldid=1381716802; author history: https://en.wikipedia.org/w/index.php?title=1975%20Constitution%20of%20China&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "875757"
+      },
+      "revision": "1381716847",
+      "contentHash": "2d5178b304680dc5b0c99c2b979cbaaf4ac23af99da8c1cc116b4eb75b8a82b1",
+      "url": "https://en.wikipedia.org/wiki/1978_Constitution_of_China",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=1978%20Constitution%20of%20China&oldid=1381716847",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=1978%20Constitution%20of%20China&action=history",
+      "retrievedAt": "2026-10-25T02:53:05.969Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "1978 Constitution of China, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=1978%20Constitution%20of%20China&oldid=1381716847; author history: https://en.wikipedia.org/w/index.php?title=1978%20Constitution%20of%20China&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "163574"
+      },
+      "revision": "1381706343",
+      "contentHash": "b51991ddbe15f3b91a929f798dea742c0109f1dc49f12ae99ac6528854ca383c",
+      "url": "https://en.wikipedia.org/wiki/Constitution_of_China",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&action=history",
+      "retrievedAt": "2026-10-25T02:53:10.981Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Constitution of China, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343; author history: https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      }
+    }
+  ],
+  "derivedSource": {
+    "id": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+    "contentHash": "4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8"
+  },
+  "retainedBaseSubjects": {
+    "manifestHash": "804ce424ef2a9e0eccca12b4f55808499889fc66a4c9d94df116d9360781e911",
+    "url": "https://github.com/samar1tan/GitWorld/tree/main/data/seed/east-asia",
+    "attribution": "GitWorld contributors, existing source-bound historical subject definitions and bilingual presentation. Reused objects have canonical JSON identical to the pinned base; no original claim or review is rewritten.",
+    "licenseId": "CC-BY-SA-4.0",
+    "subjects": [
+      {
+        "id": "history:court:japan-southern",
+        "objectHash": "b1bfb93e0d0d0fd9c22b207f2ed9819e485c7c1e9350d55eecdb9990904778ba"
+      },
+      {
+        "id": "history:court:japan-northern",
+        "objectHash": "4e4d9032b7c77d35f140261b28dba7c97feda9421e355b13fbb5d79bba742f93"
+      },
+      {
+        "id": "history:office:daijo-daijin-1871",
+        "objectHash": "97a9d3150d6d8ef1812e84ab74f22720d74ccc59dfc222f029559f4dda4322f5"
+      },
+      {
+        "id": "history:office:japan-prime-minister",
+        "objectHash": "0e0f0a2d2a3bf60120ba209f69ad1ddc44ec85a5a400992d0d5d0d13d953eb13"
+      },
+      {
+        "id": "history:office:prc-state-chairman-1954",
+        "objectHash": "c068cf5a61c4903bc9fb6c737f95a6cc3c5e9f56ebee4503014c9dc92e3df97b"
+      },
+      {
+        "id": "history:office:prc-president-1982",
+        "objectHash": "28f92418387f833394a101f34473cfc8f1b7d33445131ec1e0ad2ffb6eea9b9a"
+      }
+    ]
+  },
+  "retained": "Selected dates, field/header hashes, structural locators, reference anchors, link URLs, literal comparison alignment and original typed/bilingual interpretation.",
+  "excluded": "Raw HTML, source paragraphs, anchor labels, images and upstream works quoted or linked by the articles.",
+  "historicalReview": "Every assertion is unreviewed. This is not a publication, native acceptance or independent legal-text audit."
+}

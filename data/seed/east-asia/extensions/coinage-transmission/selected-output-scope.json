@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "kind": "gitworld-selected-output-rights-scope",
+  "id": "wado-708-two-facts-and-original-presentation",
+  "revision": "1-distribution-record",
+  "status": "selected-output-distribution-record",
+  "preparedAt": "2026-10-25T02:06:17.107Z",
+  "normalizationStage": "Ordinary source normalization remains unknown. This distinct distribution classification covers only the exact retained factual references and independently authored payload below.",
+  "prePromotionSourceRecordHash": "865260d5efeb7aac5ea1c3df6fa25c05805e6854d126ef21e4e1acfd43ff0577",
+  "normalizationRights": {
+    "licenseId": "CC-BY-SA-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "unknown",
+    "attribution": "GitWorld independently structured the identified 708 issue/model and earlier-mintage facts from the Bank of Japan Currency Museum and authored bilingual interpretation/display metadata. The acquired museum work remains unknown; no museum paragraph, anchor label, image or HTML is included. This pending selected-output candidate is not a redistribution approval or museum endorsement."
+  },
+  "sourceProfilesHash": "569d09b2c97d1b80a18b8b2c55588b2ccca4fdf14f1d9ba5f211d5873adf492a",
+  "authoredPayloadHash": "eb33a2e7aeb4fff07fb3650af1fc0581abc169b1cc0c12a024acd44df5fb4137",
+  "distributionRights": {
+    "licenseId": "CC-BY-SA-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "attribution": "Selected factual references: Currency Museum, Bank of Japan, Historical events and currencies in use: Ancient Times, https://www.imes.boj.or.jp/cm/english/history/content/index.html, retrieved 25 October 2026, pinned ETag and source hash in this record. GitWorld independently structured these two factual references and authored the typed interpretation and English/Simplified Chinese display under CC BY-SA 4.0. That license covers GitWorld original contributions, not exclusive ownership of bare facts or the museum text, images, HTML, translations, compilation, trademarks or endorsement. The acquired work and ordinary normalization remain unknown for redistribution."
+  },
+  "retainedSourceFields": [
+    "facts.key",
+    "facts.profileId",
+    "facts.factId",
+    "facts.locator",
+    "facts.textHash",
+    "facts.links.href",
+    "facts.links.locator",
+    "facts.links.textHash",
+    "facts.referenceAnchors",
+    "short functional selectors",
+    "source identity/revision/hash and citation headers"
+  ],
+  "excludedSourceExpression": [
+    "facts.text",
+    "facts.links.text",
+    "museum paragraphs or their translation",
+    "source HTML or layout",
+    "images",
+    "overall museum page compilation"
+  ],
+  "originalPresentation": "The authoredPayloadHash binds five original objects, fifteen typed statements and their original English/Simplified Chinese interpretation and field vocabulary. Bare historical names, dates and factual relationships are not claimed as exclusive works.",
+  "assessment": "A bounded artifact-specific inference from the retained factual metadata and independent modeling, not BOJ or IMES permission, a guarantee of legal certainty, or an automatic consequence of deleting text.",
+  "policyEvidence": [
+    {
+      "id": "boj-main-site-exclusion",
+      "url": "https://www.boj.or.jp/en/about/copyright.htm",
+      "clause": "Opening scope paragraph excludes linked websites, including IMES, from the main-site reproduction conditions.",
+      "checkedAt": "2026-10-25",
+      "use": "Negative scope evidence; main-site conditions do not license the museum work."
+    },
+    {
+      "id": "imes-source-work-copyright",
+      "url": "https://www.imes.boj.or.jp/en/imesnotice_r.html",
+      "clause": "Copyright paragraphs 1–3 protect site works, allow credited quotations and require permission for copying or reproduction.",
+      "checkedAt": "2026-10-25",
+      "use": "No general reproduction license is established. This selected output excludes the acquired work and does not rely on the quotation provision to republish paragraphs."
+    },
+    {
+      "id": "bunka-noncreative-facts-and-compilations",
+      "url": "https://www.bunka.go.jp/english/policy/copyright/system/",
+      "clause": "Works conditions 1–3 distinguish data and ideas from creative expression; the following compilation paragraph protects creative selection or arrangement.",
+      "checkedAt": "2026-10-25",
+      "use": "Artifact-specific assessment limited to the two exact factual records and independently authored payload. The museum narrative, translation, images and overall selection/arrangement are excluded."
+    },
+    {
+      "id": "cc-original-contribution-scope",
+      "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en",
+      "clause": "Sections 2 and 3 delimit licensor authority, endorsement, attribution and ShareAlike conditions.",
+      "checkedAt": "2026-10-25",
+      "use": "CC BY-SA 4.0 applies to GitWorld original contributions only; bare factual references and excluded source works are not relicensed by this statement."
+    }
+  ],
+  "sourceScopes": [
+    {
+      "profileId": "boj-ancient-currency",
+      "identity": {
+        "provider": "official-document-html",
+        "externalId": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+      },
+      "sourceRevision": "\"23f89159-8c67-5e79516aaf800\"",
+      "sourceContentHash": "c55e8e02371a6617b4761a7bab910f7e684ca597c143f578f2cfa6c1f78b9f30",
+      "sourceUrl": "https://www.imes.boj.or.jp/cm/english/history/content/index.html",
+      "retrievedAt": "2026-10-25T01:34:22.703Z",
+      "sourceTitle": "Historical events and currencies in use: Ancient Times",
+      "sourceLanguage": "en",
+      "creatorOrEditionCredit": "Currency Museum, Bank of Japan",
+      "sourceWorkRights": {
+        "redistribution": "unknown",
+        "attribution": "Bank of Japan Currency Museum, Historical events and currencies in use. Local acquisition only; source expression, images and HTML are excluded from the projected selected-fact candidate. No redistribution decision for this acquired work."
+      },
+      "selectedFactIds": [
+        "708-issue-and-model",
+        "earlier-mintage"
+      ],
+      "factRecordHashes": [
+        {
+          "factId": "708-issue-and-model",
+          "sha256": "2de1511379e0f41dc85a09909aed477583fc8bdbc10723b357b67decbf20650f",
+          "locator": "$.html;p[document-index=42]",
+          "textHash": "bee17eea6f2b0b85e1cd176db6d38bc2e4ee53b363bd89e3b0820d7f0ae606f7"
+        },
+        {
+          "factId": "earlier-mintage",
+          "sha256": "be315f5818e83639c0602bf250e47386c98734114e8276c62ffbcd7596d403d3",
+          "locator": "$.html;p[document-index=36]",
+          "textHash": "299ebe5f9e2a62188efb179b05e28e320ba2ce7b2c313c123156aa4ce0f36644"
+        }
+      ],
+      "selectedOutput": "Two selected factual references and original typed/bilingual interpretation only. No field paragraph or anchor label is retained.",
+      "policyIds": [
+        "boj-main-site-exclusion",
+        "imes-source-work-copyright",
+        "bunka-noncreative-facts-and-compilations",
+        "cc-original-contribution-scope"
+      ],
+      "notice": "Attribute the Currency Museum and preserve its exact source identity, ETag, acquisition date and hash. The source work remains unknown; this scope licenses only original GitWorld contributions and does not assert endorsement.",
+      "boundary": "This scope does not cover another fact, paragraph, translation, image, compilation or changed authored payload."
+    }
+  ],
+  "publicationState": "This record classifies the exact selected output only. It neither licenses source works nor changes historical review, publication authorization, installer validation or runtime behavior."
+}

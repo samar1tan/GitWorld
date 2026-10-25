@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "kind": "historical-field-display-labels",
+  "properties": [],
+  "types": [
+    {
+      "id": "gitworld:source-tenure-scope",
+      "labels": {
+        "en": "Source table grouping",
+        "zh-CN": "来源年表分组"
+      }
+    }
+  ],
+  "values": [],
+  "semanticNotes": [
+    {
+      "ids": [
+        "gitworld:source-tenure-scope"
+      ],
+      "en": "This grouping follows the source table. It does not establish an office, polity or territory.",
+      "zh-CN": "分组沿用来源年表的组织方式，不据此确认真实官职、政权或疆域。"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "kind": "historical-field-display-labels",
+  "properties": [
+    {
+      "id": "projection:rule-id",
+      "labels": {
+        "en": "Mapping rule",
+        "zh-CN": "映射规则"
+      }
+    },
+    {
+      "id": "projection:source-fact",
+      "labels": {
+        "en": "Source field",
+        "zh-CN": "来源字段"
+      }
+    },
+    {
+      "id": "transformation:incorporating-polity",
+      "labels": {
+        "en": "Incorporating polity",
+        "zh-CN": "实施整合的政权"
+      }
+    },
+    {
+      "id": "transformation:incorporated-polity",
+      "labels": {
+        "en": "Incorporated polity",
+        "zh-CN": "被整合的政权"
+      }
+    },
+    {
+      "id": "transformation:stated-outcome",
+      "labels": {
+        "en": "Documented political outcome",
+        "zh-CN": "来源明确记载的政治结果"
+      }
+    },
+    {
+      "id": "relation:integration-event",
+      "labels": {
+        "en": "Political integration",
+        "zh-CN": "政治整合"
+      }
+    },
+    {
+      "id": "transformation:campaign-start",
+      "labels": {
+        "en": "Campaign start as recorded",
+        "zh-CN": "来源所载战役起点"
+      }
+    },
+    {
+      "id": "transformation:campaign-end",
+      "labels": {
+        "en": "Campaign conclusion as recorded",
+        "zh-CN": "来源所载战役终点"
+      }
+    },
+    {
+      "id": "transformation:participant-role",
+      "labels": {
+        "en": "Role in the integration",
+        "zh-CN": "在整合中的角色"
+      }
+    },
+    {
+      "id": "transformation:identity-scope",
+      "labels": {
+        "en": "Participant identity scope",
+        "zh-CN": "参与政权的身份范围"
+      }
+    }
+  ],
+  "types": [
+    {
+      "id": "gitworld:political-integration",
+      "labels": {
+        "en": "Political integration",
+        "zh-CN": "政治整合"
+      }
+    }
+  ],
+  "values": [
+    {
+      "propertyId": "transformation:stated-outcome",
+      "value": "political-incorporation",
+      "labels": {
+        "en": "Political incorporation stated by source",
+        "zh-CN": "来源明确记载的政治整合"
+      }
+    },
+    {
+      "propertyId": "transformation:participant-role",
+      "value": "incorporating",
+      "labels": {
+        "en": "Incorporating polity",
+        "zh-CN": "实施整合的政权"
+      }
+    },
+    {
+      "propertyId": "transformation:participant-role",
+      "value": "incorporated",
+      "labels": {
+        "en": "Incorporated polity",
+        "zh-CN": "被整合的政权"
+      }
+    },
+    {
+      "propertyId": "transformation:identity-scope",
+      "value": "western-jin-phase",
+      "labels": {
+        "en": "Jin in the source-defined Western Jin phase",
+        "zh-CN": "来源所界定的西晋阶段"
+      }
+    }
+  ],
+  "semanticNotes": [
+    {
+      "ids": [
+        "transformation:stated-outcome",
+        "relation:integration-event"
+      ],
+      "en": "An explicitly sourced political outcome; it neither asserts modern territorial borders nor creates Git ancestry. Event links are dated to the event, not extended indefinitely.",
+      "zh-CN": "有明确来源的政治结果，不据此断言现代领土边界或创建 Git 继承关系。事件关系只适用于事件时间，不无限延长。"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <title>GitWorld application icon</title>
+  <desc>Three linked version nodes over a blue globe on a graphite tile. Original GitWorld artwork, Apache-2.0.</desc>
+  <defs>
+    <linearGradient id="tile" x1="192" y1="96" x2="800" y2="944" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#29323e"/>
+      <stop offset="1" stop-color="#121922"/>
+    </linearGradient>
+    <linearGradient id="world" x1="264" y1="288" x2="776" y2="756" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#93bcff"/>
+      <stop offset="1" stop-color="#4e8ce8"/>
+    </linearGradient>
+  </defs>
+  <rect x="64" y="64" width="896" height="896" rx="208" fill="url(#tile)"/>
+  <rect x="65" y="65" width="894" height="894" rx="207" fill="none" stroke="#77899f" stroke-opacity=".22" stroke-width="2"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M512 218C700 369 700 655 512 806M227 446C387 388 637 388 797 446M235 614C394 670 630 670 789 614" stroke="#5479a6" stroke-width="18"/>
+    <circle cx="512" cy="512" r="294" stroke="url(#world)" stroke-width="28"/>
+    <path d="M388 674V358M388 578C388 500 646 538 646 410" stroke="#18212d" stroke-width="72" stroke-linejoin="round"/>
+    <path d="M388 674V358M388 578C388 500 646 538 646 410" stroke="#f0f5fc" stroke-width="34" stroke-linejoin="round"/>
+  </g>
+  <g stroke="#18212d" stroke-width="18">
+    <circle cx="388" cy="358" r="52" fill="#f0f5fc"/>
+    <circle cx="646" cy="410" r="52" fill="#f0f5fc"/>
+    <circle cx="388" cy="674" r="52" fill="#80aff7"/>
+  </g>
+</svg>

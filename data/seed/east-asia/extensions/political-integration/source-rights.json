@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "status": "local-candidate-pending-independent-review",
+  "title": "political-integration source and transformation rights",
+  "licenseScope": "Candidate interpretation/display labels and source-selected facts are separate from raw source works; rights marked unknown remain unresolved.",
+  "sources": [
+    {
+      "id": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "identity": {
+        "provider": "gitworld-evidenced-fields",
+        "externalId": "explicit-jin-wu-integration"
+      },
+      "revision": "2-candidate-source-text-separation",
+      "contentHash": "9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "allowed",
+        "attribution": "GitWorld selected and interpreted the explicitly identified source fields, retained exact source versions/hashes and separately identified bilingual modeling labels. Source-derived content remains CC-BY-SA-4.0; no official endorsement."
+      },
+      "profileCitations": [
+        {
+          "id": "jin-wu-integration",
+          "title": "Conquest of Wu by Jin",
+          "language": "en",
+          "creator": "English Wikipedia contributors",
+          "rightsEvidence": [
+            "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+            "https://creativecommons.org/licenses/by-sa/4.0/"
+          ],
+          "rightsNote": "Selected fixed-revision facts remain CC-BY-SA-4.0; article prose, images and HTML are excluded. Exact revision and author history accompany the source."
+        },
+        {
+          "id": "jin-context",
+          "title": "Jin dynasty (266–420)",
+          "language": "en",
+          "creator": "English Wikipedia contributors",
+          "rightsEvidence": [
+            "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+            "https://creativecommons.org/licenses/by-sa/4.0/"
+          ],
+          "rightsNote": "Selected fixed-revision facts remain CC-BY-SA-4.0; article prose, images and HTML are excluded. Exact revision and author history accompany the source."
+        }
+      ],
+      "inputSourceVersions": [
+        {
+          "identity": {
+            "provider": "wikipedia-en",
+            "externalId": "15051666"
+          },
+          "revision": "1379420937",
+          "contentHash": "aa14fab85b067c8dbc16c775520a1b72f2de6e5e5a22b70760702ff8976c83e3",
+          "url": "https://en.wikipedia.org/wiki/Conquest_of_Wu_by_Jin",
+          "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937",
+          "retrievedAt": "2026-10-24T22:52:57.204Z",
+          "rights": {
+            "licenseId": "CC-BY-SA-4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "attribution": "Conquest of Wu by Jin, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937; author history: https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+            "redistribution": "allowed"
+          }
+        },
+        {
+          "identity": {
+            "provider": "wikipedia-en",
+            "externalId": "55020"
+          },
+          "revision": "1359294647",
+          "contentHash": "4a52801e3f93d2774f2a0bafdbe88cc1a5756bfbf88c87199bd25962baafbd8f",
+          "url": "https://en.wikipedia.org/wiki/Jin_dynasty_(266%E2%80%93420)",
+          "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647",
+          "retrievedAt": "2026-10-24T22:52:58.645Z",
+          "rights": {
+            "licenseId": "CC-BY-SA-4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "attribution": "Jin dynasty (266–420), English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647; author history: https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+            "redistribution": "allowed"
+          }
+        }
+      ]
+    }
+  ],
+  "retainedExpressionPolicy": "includeText false or omitted excludes field text and all anchor labels, including short legal-article identifiers. Link href, field-relative locator and normalized anchor-text SHA-256 remain. includeText true requires allowed source permission. No implicit short-label allowlist.",
+  "rawSourceRights": "Original snapshot permissions are unchanged. Removing source expression does not automatically approve the selected factual record or original interpretation; those payload rights require independent exact review.",
+  "boundary": {
+    "included": "Selected source fields where explicitly allowed, short structural selectors, fact/anchor text hashes and locators, link URLs, identities, typed unreviewed statements and bilingual original interpretation labels.",
+    "excluded": "Raw HTML, full article paragraphs/legal articles, unapproved anchor-label text, scans/PDFs, images, metadata dumps, caches, private notes and local paths."
+  },
+  "historicalReview": "Unreviewed; source rights and unit tests do not pass C04/C05 or installed acceptance."
+}

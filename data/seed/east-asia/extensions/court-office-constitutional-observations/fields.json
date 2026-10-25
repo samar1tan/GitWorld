@@ -1,0 +1,326 @@
+{
+  "schemaVersion": 1,
+  "kind": "historical-field-display-labels",
+  "properties": [
+    {
+      "id": "transformation:source-date",
+      "labels": {
+        "en": "Date reported by source",
+        "zh-CN": "来源所载日期"
+      }
+    },
+    {
+      "id": "transformation:mechanism",
+      "labels": {
+        "en": "Form of political change",
+        "zh-CN": "政治转变方式"
+      }
+    },
+    {
+      "id": "settlement:conceding-claim",
+      "labels": {
+        "en": "Conceding imperial claim",
+        "zh-CN": "让出的皇位主张"
+      }
+    },
+    {
+      "id": "settlement:receiving-claim",
+      "labels": {
+        "en": "Receiving imperial claim",
+        "zh-CN": "接受的皇位主张"
+      }
+    },
+    {
+      "id": "settlement:undertaking",
+      "labels": {
+        "en": "Settlement undertaking",
+        "zh-CN": "和议承诺"
+      }
+    },
+    {
+      "id": "settlement:reported-breach-year",
+      "labels": {
+        "en": "Reported breach year",
+        "zh-CN": "来源记载的违约年份"
+      }
+    },
+    {
+      "id": "settlement:participant-role",
+      "labels": {
+        "en": "Settlement role",
+        "zh-CN": "和议中的角色"
+      }
+    },
+    {
+      "id": "relation:political-settlement",
+      "labels": {
+        "en": "Related settlement",
+        "zh-CN": "相关和议"
+      }
+    },
+    {
+      "id": "institution:replaced-office",
+      "labels": {
+        "en": "Replaced office",
+        "zh-CN": "被替代的官职"
+      }
+    },
+    {
+      "id": "institution:established-office",
+      "labels": {
+        "en": "Established office",
+        "zh-CN": "新设官职"
+      }
+    },
+    {
+      "id": "institution:cabinet-formation-date",
+      "labels": {
+        "en": "Co-dated Cabinet formation",
+        "zh-CN": "同日内阁形成日期"
+      }
+    },
+    {
+      "id": "institution:change-role",
+      "labels": {
+        "en": "Role in the institutional change",
+        "zh-CN": "制度变更中的角色"
+      }
+    },
+    {
+      "id": "relation:institutional-change",
+      "labels": {
+        "en": "Related institutional change",
+        "zh-CN": "相关制度变更"
+      }
+    },
+    {
+      "id": "institution:abolished-office",
+      "labels": {
+        "en": "Explicitly abolished office",
+        "zh-CN": "明确废除的官职"
+      }
+    },
+    {
+      "id": "institution:restored-office",
+      "labels": {
+        "en": "Explicitly restored office",
+        "zh-CN": "明确恢复的官职"
+      }
+    },
+    {
+      "id": "constitution:adoption-observation-date",
+      "labels": {
+        "en": "Text adoption date",
+        "zh-CN": "文本通过日期"
+      }
+    },
+    {
+      "id": "constitution:source-listed-head-of-state-provision",
+      "labels": {
+        "en": "Head of state listed by the source",
+        "zh-CN": "来源表中的国家元首"
+      }
+    },
+    {
+      "id": "constitution:premier-nominator",
+      "labels": {
+        "en": "Premier nomination authority",
+        "zh-CN": "总理提名机关"
+      }
+    },
+    {
+      "id": "constitution:observation-basis",
+      "labels": {
+        "en": "Observation basis",
+        "zh-CN": "观察依据"
+      }
+    },
+    {
+      "id": "projection:rule-id",
+      "labels": {
+        "en": "Mapping rule",
+        "zh-CN": "映射规则"
+      }
+    },
+    {
+      "id": "projection:source-fact",
+      "labels": {
+        "en": "Source field",
+        "zh-CN": "来源字段"
+      }
+    }
+  ],
+  "types": [
+    {
+      "id": "gitworld:political-settlement",
+      "labels": {
+        "en": "Political settlement",
+        "zh-CN": "政治和议"
+      }
+    },
+    {
+      "id": "gitworld:institutional-change",
+      "labels": {
+        "en": "Institutional change",
+        "zh-CN": "制度变化"
+      }
+    },
+    {
+      "id": "gitworld:legal-instrument",
+      "labels": {
+        "en": "Legal instrument",
+        "zh-CN": "法律文件"
+      }
+    },
+    {
+      "id": "gitworld:court",
+      "labels": {
+        "en": "Court",
+        "zh-CN": "朝廷"
+      }
+    },
+    {
+      "id": "gitworld:office",
+      "labels": {
+        "en": "Office",
+        "zh-CN": "官职"
+      }
+    }
+  ],
+  "values": [
+    {
+      "propertyId": "transformation:mechanism",
+      "value": "negotiated-settlement",
+      "labels": {
+        "en": "Negotiated settlement",
+        "zh-CN": "协商和议"
+      }
+    },
+    {
+      "propertyId": "settlement:undertaking",
+      "value": "alternating-succession-promised",
+      "labels": {
+        "en": "Alternating succession promised",
+        "zh-CN": "承诺交替继承"
+      }
+    },
+    {
+      "propertyId": "settlement:participant-role",
+      "value": "conceding",
+      "labels": {
+        "en": "Conceding claim",
+        "zh-CN": "让出主张的一方"
+      }
+    },
+    {
+      "propertyId": "settlement:participant-role",
+      "value": "receiving",
+      "labels": {
+        "en": "Receiving claim",
+        "zh-CN": "接受主张的一方"
+      }
+    },
+    {
+      "propertyId": "institution:change-role",
+      "value": "replaced-office",
+      "labels": {
+        "en": "Replaced office",
+        "zh-CN": "被替代官职"
+      }
+    },
+    {
+      "propertyId": "institution:change-role",
+      "value": "established-office",
+      "labels": {
+        "en": "Established office",
+        "zh-CN": "新设官职"
+      }
+    },
+    {
+      "propertyId": "institution:change-role",
+      "value": "abolished-office",
+      "labels": {
+        "en": "Abolished office",
+        "zh-CN": "被废除官职"
+      }
+    },
+    {
+      "propertyId": "institution:change-role",
+      "value": "restored-office",
+      "labels": {
+        "en": "Restored office",
+        "zh-CN": "被恢复官职"
+      }
+    },
+    {
+      "propertyId": "constitution:source-listed-head-of-state-provision",
+      "value": "state-president",
+      "labels": {
+        "en": "State President",
+        "zh-CN": "国家主席"
+      }
+    },
+    {
+      "propertyId": "constitution:source-listed-head-of-state-provision",
+      "value": "none-listed",
+      "labels": {
+        "en": "No head of state listed",
+        "zh-CN": "来源表未列元首"
+      }
+    },
+    {
+      "propertyId": "constitution:premier-nominator",
+      "value": "state-president",
+      "labels": {
+        "en": "State President",
+        "zh-CN": "国家主席"
+      }
+    },
+    {
+      "propertyId": "constitution:premier-nominator",
+      "value": "ccp-central-committee",
+      "labels": {
+        "en": "CCP Central Committee",
+        "zh-CN": "中共中央委员会"
+      }
+    },
+    {
+      "propertyId": "constitution:observation-basis",
+      "value": "text-at-source-stated-adoption",
+      "labels": {
+        "en": "Text at its reported adoption date",
+        "zh-CN": "来源所述通过日的文本观察"
+      }
+    }
+  ],
+  "semanticNotes": [
+    {
+      "ids": [
+        "settlement:conceding-claim",
+        "settlement:receiving-claim",
+        "settlement:undertaking",
+        "relation:political-settlement"
+      ],
+      "en": "A source-described settlement between imperial claims. The undertaking is a promise, not evidence of later fulfillment, a legitimacy judgment, state merger or Git ancestry.",
+      "zh-CN": "来源记载的皇位主张之间的和议。和议条款是当时的承诺，不证明后来履行，不代表合法性裁判、国家合并或 Git 继承。"
+    },
+    {
+      "ids": [
+        "institution:replaced-office",
+        "institution:established-office",
+        "institution:cabinet-formation-date"
+      ],
+      "en": "The source explicitly reports an office replacement and a Cabinet formed on the same date. This does not backdate the later Cabinet constitutional-role object or establish institutional continuity.",
+      "zh-CN": "来源明确记载官职替代及同日内阁形成，不据此回推后来的内阁宪制角色，也不据此确认机构连续性。"
+    },
+    {
+      "ids": [
+        "constitution:source-listed-head-of-state-provision",
+        "constitution:premier-nominator",
+        "constitution:observation-basis"
+      ],
+      "en": "Dated observations of the source’s constitutional-text comparison. None means that its “Head of state” row lists none; it is not an independent legal-text audit, absence of all state representation, enforcement timing or effective power. Explicit abolition/restoration use separate evidence.",
+      "zh-CN": "对来源宪制文本比较的有日期观察。“未列”仅表示其“国家元首”行明确列为无，不是独立法条审校，也不表示没有任何国家代表、已经确定施行时间或实际权力。废除与恢复另有明确证据。"
+    }
+  ]
+}

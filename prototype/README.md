@@ -10,7 +10,7 @@ Use **Node.js 24** and npm. From the repository root:
 
 ```sh
 cd prototype
-npm ci
+npm ci --legacy-peer-deps
 npm run dev
 ```
 

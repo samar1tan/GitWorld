@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "id": "listed-activity-role-contexts",
+  "revision": "1-candidate",
+  "preparedAt": "2026-10-24T22:34:52.143Z",
+  "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/source-bindings-prd.md",
+  "rights": {
+    "licenseId": "CC-BY-SA-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "attribution": "Source-derived activity and role facts: the English Wikipedia contributors identified by the included permanent revisions and author-history links. GitWorld joined source-listed persons to separately dated roles at year resolution, retained original assertions and source scopes, and supplied bilingual field labels. This interpretation does not establish participation, a completed journey, influence or ancestry; no official endorsement."
+  },
+  "activitySources": [
+    {
+      "provider": "wikipedia-en-facts",
+      "externalId": "24703277",
+      "revision": "1373459286",
+      "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+    }
+  ],
+  "membershipSources": [
+    {
+      "provider": "wikipedia-en-facts",
+      "externalId": "66142",
+      "revision": "1381475509",
+      "contentHash": "91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+    },
+    {
+      "provider": "wikipedia-en-facts",
+      "externalId": "224374",
+      "revision": "1380772779",
+      "contentHash": "87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+    }
+  ],
+  "rules": [
+    {
+      "id": "sender-context",
+      "activityPropertyId": "contact:listed-sender",
+      "roleLabels": {
+        "en": "Sender listed in source",
+        "zh-CN": "来源所列派遣者"
+      },
+      "targetPropertyId": "contact:listed-sender-context",
+      "targetLabels": {
+        "en": "Recorded context of the listed sender",
+        "zh-CN": "所列派遣者的任职上下文"
+      },
+      "inversePropertyId": "contact:activity-listing-as-sender-context",
+      "inverseLabels": {
+        "en": "Activity listing with a sender in this context",
+        "zh-CN": "派遣者与本对象相关的活动列名"
+      }
+    },
+    {
+      "id": "counterpart-context",
+      "activityPropertyId": "contact:listed-counterpart",
+      "roleLabels": {
+        "en": "Counterpart listed in source",
+        "zh-CN": "来源所列对方人物"
+      },
+      "targetPropertyId": "contact:listed-counterpart-context",
+      "targetLabels": {
+        "en": "Recorded context of the listed counterpart",
+        "zh-CN": "所列对方人物的任职上下文"
+      },
+      "inversePropertyId": "contact:activity-listing-as-counterpart-context",
+      "inverseLabels": {
+        "en": "Activity listing with a counterpart in this context",
+        "zh-CN": "对方人物与本对象相关的活动列名"
+      }
+    }
+  ],
+  "membershipProperties": [
+    "office:holder",
+    "polity:ruler",
+    "court:monarch"
+  ],
+  "contextSelector": {
+    "types": [
+      "gitworld:polity",
+      "gitworld:office",
+      "gitworld:court"
+    ],
+    "identityProviders": [
+      "gitworld-declared-historical-subject"
+    ]
+  },
+  "inputReviews": [
+    "unreviewed",
+    "adopted"
+  ],
+  "statusProperties": [
+    "event:listed-status"
+  ],
+  "statusLabels": [
+    {
+      "value": "cancelled",
+      "labels": {
+        "en": "Cancelled in source",
+        "zh-CN": "来源记为取消"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/source-bindings-prd.md",
+      "locator": "Activity contexts from recorded roles",
+      "citation": "Join the same stable person identity in a source listing and a separately recorded role. Retain both source assertions and their compatible year overlap; do not infer a completed encounter or transmission."
+    }
+  ]
+}

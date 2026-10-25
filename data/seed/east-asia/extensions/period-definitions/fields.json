@@ -1,0 +1,174 @@
+{
+  "schemaVersion": 1,
+  "kind": "historical-field-display-labels",
+  "properties": [
+    {
+      "id": "period:definition-start",
+      "labels": {
+        "en": "Definition start",
+        "zh-CN": "定义的起点"
+      }
+    },
+    {
+      "id": "period:definition-end",
+      "labels": {
+        "en": "Definition end",
+        "zh-CN": "定义的终点"
+      }
+    },
+    {
+      "id": "period:definition-label",
+      "labels": {
+        "en": "Source definition label",
+        "zh-CN": "来源中的时期名称"
+      }
+    },
+    {
+      "id": "period:chronology-basis",
+      "labels": {
+        "en": "Date interpretation",
+        "zh-CN": "纪年解释"
+      }
+    },
+    {
+      "id": "period:temporal-semantics",
+      "labels": {
+        "en": "Temporal meaning",
+        "zh-CN": "时间含义"
+      }
+    },
+    {
+      "id": "projection:rule-id",
+      "labels": {
+        "en": "Mapping rule",
+        "zh-CN": "映射规则"
+      }
+    },
+    {
+      "id": "projection:source-fact",
+      "labels": {
+        "en": "Source field",
+        "zh-CN": "来源字段"
+      }
+    }
+  ],
+  "types": [
+    {
+      "id": "gitworld:period-definition",
+      "labels": {
+        "en": "Period definition",
+        "zh-CN": "时期定义"
+      }
+    }
+  ],
+  "values": [
+    {
+      "propertyId": "period:chronology-basis",
+      "value": "article-overview",
+      "labels": {
+        "en": "Article overview range",
+        "zh-CN": "条目概览范围"
+      }
+    },
+    {
+      "propertyId": "period:chronology-basis",
+      "value": "conventional-range",
+      "labels": {
+        "en": "Conventional range in the source",
+        "zh-CN": "来源中的传统范围"
+      }
+    },
+    {
+      "propertyId": "period:chronology-basis",
+      "value": "earlier-tenth-century",
+      "labels": {
+        "en": "Alternative tenth-century BCE start",
+        "zh-CN": "公元前十世纪起点方案"
+      }
+    },
+    {
+      "propertyId": "period:chronology-basis",
+      "value": "earlier-ninth-eighth-century",
+      "labels": {
+        "en": "Alternative ninth–eighth-century BCE start",
+        "zh-CN": "公元前九至八世纪起点方案"
+      }
+    },
+    {
+      "propertyId": "period:chronology-basis",
+      "value": "infobox-range",
+      "labels": {
+        "en": "Infobox date range",
+        "zh-CN": "信息框日期范围"
+      }
+    },
+    {
+      "propertyId": "period:temporal-semantics",
+      "value": "published-period-definition-not-polity-lifespan",
+      "labels": {
+        "en": "Published period definition; no polity lifespan",
+        "zh-CN": "来源的时期定义；不表示政权存续"
+      }
+    },
+    {
+      "propertyId": "period:definition-label",
+      "value": "Jōmon period",
+      "labels": {
+        "en": "Jōmon period",
+        "zh-CN": "绳文时代"
+      }
+    },
+    {
+      "propertyId": "period:definition-label",
+      "value": "Yayoi period",
+      "labels": {
+        "en": "Yayoi period",
+        "zh-CN": "弥生时代"
+      }
+    },
+    {
+      "propertyId": "period:definition-label",
+      "value": "Kofun period",
+      "labels": {
+        "en": "Kofun period",
+        "zh-CN": "古坟时代"
+      }
+    },
+    {
+      "propertyId": "period:definition-label",
+      "value": "Yangshao culture",
+      "labels": {
+        "en": "Yangshao culture",
+        "zh-CN": "仰韶文化"
+      }
+    },
+    {
+      "propertyId": "period:definition-label",
+      "value": "Longshan culture",
+      "labels": {
+        "en": "Longshan culture",
+        "zh-CN": "龙山文化"
+      }
+    },
+    {
+      "propertyId": "period:definition-label",
+      "value": "Liangzhu culture",
+      "labels": {
+        "en": "Liangzhu culture",
+        "zh-CN": "良渚文化"
+      }
+    }
+  ],
+  "semanticNotes": [
+    {
+      "ids": [
+        "gitworld:period-definition",
+        "period:definition-label",
+        "period:definition-start",
+        "period:definition-end"
+      ],
+      "en": "A source-specific archaeological period definition. Its dates classify source material; they do not define a polity, ancestry, continuous population or civilization origin. Approximate and competing chronologies remain possible.",
+      "zh-CN": "特定来源对考古时期的定义。日期用于组织来源材料，不表示政权、继承、人口连续性或文明起源。近似日期及竞争纪年保持为可能适用。"
+    }
+  ]
+}

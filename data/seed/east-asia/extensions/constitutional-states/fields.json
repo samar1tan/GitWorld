@@ -1,0 +1,234 @@
+{
+  "schemaVersion": 1,
+  "kind": "historical-field-display-labels",
+  "properties": [
+    {
+      "id": "projection:rule-id",
+      "labels": {
+        "en": "Mapping rule",
+        "zh-CN": "映射规则"
+      }
+    },
+    {
+      "id": "projection:source-fact",
+      "labels": {
+        "en": "Source field",
+        "zh-CN": "来源字段"
+      }
+    },
+    {
+      "id": "institution:legal-framework",
+      "labels": {
+        "en": "Constitutional framework",
+        "zh-CN": "宪制依据"
+      }
+    },
+    {
+      "id": "institution:constitutional-role",
+      "labels": {
+        "en": "Role defined by the constitution",
+        "zh-CN": "宪法规定的地位"
+      }
+    },
+    {
+      "id": "institution:government-powers",
+      "labels": {
+        "en": "Government powers under the constitution",
+        "zh-CN": "宪法规定的政府权能"
+      }
+    },
+    {
+      "id": "institution:acts-basis",
+      "labels": {
+        "en": "Rule for acts in matters of state",
+        "zh-CN": "国事行为的依据"
+      }
+    },
+    {
+      "id": "institution:acts-approved-by",
+      "labels": {
+        "en": "Advice and approval for state acts",
+        "zh-CN": "国事行为的建议与批准"
+      }
+    },
+    {
+      "id": "institution:prime-minister-designated-by",
+      "labels": {
+        "en": "Designates the prime minister to be appointed",
+        "zh-CN": "指定由天皇任命的首相"
+      }
+    },
+    {
+      "id": "institution:executive-authority",
+      "labels": {
+        "en": "Executive power vested by the constitution",
+        "zh-CN": "宪法授予的行政权"
+      }
+    },
+    {
+      "id": "institution:sole-law-making-organ",
+      "labels": {
+        "en": "Sole law-making organ under the constitution",
+        "zh-CN": "宪法规定的唯一立法机关"
+      }
+    },
+    {
+      "id": "institution:interpretation-scope",
+      "labels": {
+        "en": "Scope of this institutional claim",
+        "zh-CN": "机构主张的适用含义"
+      }
+    },
+    {
+      "id": "temporal:boundary-rule",
+      "labels": {
+        "en": "Temporal interpretation rule",
+        "zh-CN": "时间解释规则"
+      }
+    },
+    {
+      "id": "temporal:original-boundary",
+      "labels": {
+        "en": "Original enforcement boundary",
+        "zh-CN": "来源施行界限"
+      }
+    },
+    {
+      "id": "temporal:evidence-limit",
+      "labels": {
+        "en": "Evidence coverage limit",
+        "zh-CN": "证据覆盖上限"
+      }
+    },
+    {
+      "id": "institution-change:subject",
+      "labels": {
+        "en": "Institution affected",
+        "zh-CN": "发生变化的机构"
+      }
+    },
+    {
+      "id": "institution-change:prior-framework",
+      "labels": {
+        "en": "Earlier constitutional framework",
+        "zh-CN": "此前宪制依据"
+      }
+    },
+    {
+      "id": "institution-change:resulting-framework",
+      "labels": {
+        "en": "Resulting constitutional framework",
+        "zh-CN": "此后宪制依据"
+      }
+    },
+    {
+      "id": "law:promulgation-date",
+      "labels": {
+        "en": "Promulgation",
+        "zh-CN": "公布"
+      }
+    },
+    {
+      "id": "law:effective-date",
+      "labels": {
+        "en": "Enforcement",
+        "zh-CN": "施行"
+      }
+    }
+  ],
+  "types": [
+    {
+      "id": "gitworld:legal-instrument",
+      "labels": {
+        "en": "Legal instrument",
+        "zh-CN": "法律文件"
+      }
+    },
+    {
+      "id": "gitworld:institutional-change",
+      "labels": {
+        "en": "Institutional change",
+        "zh-CN": "制度变化"
+      }
+    },
+    {
+      "id": "gitworld:institution",
+      "labels": {
+        "en": "Institution",
+        "zh-CN": "机构"
+      }
+    }
+  ],
+  "values": [
+    {
+      "propertyId": "institution:constitutional-role",
+      "value": "constitutional-head-with-sovereignty",
+      "labels": {
+        "en": "Head of the Empire exercising constitutional sovereignty",
+        "zh-CN": "依宪法行使统治权的帝国元首"
+      }
+    },
+    {
+      "propertyId": "institution:constitutional-role",
+      "value": "state-and-unity-symbol",
+      "labels": {
+        "en": "Symbol of the state and the unity of the people",
+        "zh-CN": "国家和国民整体的象征"
+      }
+    },
+    {
+      "propertyId": "institution:acts-basis",
+      "value": "ministerial-countersignature",
+      "labels": {
+        "en": "Countersignature of a Minister of State for the specified instruments",
+        "zh-CN": "所列国家文书须由国务大臣副署"
+      }
+    },
+    {
+      "propertyId": "institution:acts-basis",
+      "value": "cabinet-advice-and-approval",
+      "labels": {
+        "en": "Cabinet advice and approval for acts in matters of state",
+        "zh-CN": "国事行为须经内阁建议与批准"
+      }
+    },
+    {
+      "propertyId": "institution:interpretation-scope",
+      "value": "constitutional-text",
+      "labels": {
+        "en": "Normative constitutional rules; effective political power is a separate question",
+        "zh-CN": "宪法文本规定；实际政治权力是另一问题"
+      }
+    },
+    {
+      "propertyId": "temporal:boundary-rule",
+      "value": "day-before-explicit-revision-enforcement",
+      "labels": {
+        "en": "Inclusive end computed as the day before the explicit constitutional enforcement boundary",
+        "zh-CN": "依据明确的宪法施行界限，将前一天作为此前适用段的含末端点"
+      }
+    },
+    {
+      "propertyId": "temporal:boundary-rule",
+      "value": "unchanged-text-through-dated-report",
+      "labels": {
+        "en": "Unamended text through the dated report; the evidence limit is not a repeal",
+        "zh-CN": "文本未修订至报告时点；证据上限不表示废止"
+      }
+    }
+  ],
+  "semanticNotes": [
+    {
+      "ids": [
+        "institution:legal-framework",
+        "institution:constitutional-role",
+        "institution:government-powers",
+        "institution:acts-basis",
+        "institution:executive-authority",
+        "institution:sole-law-making-organ"
+      ],
+      "en": "These are constitutional text interpretations, not claims about effective political power. Annual queries can contain both sub-year regimes; this does not assert simultaneity. The later text is bounded by a February 2006 continuity report, not by a repeal in 2006.",
+      "zh-CN": "这些是宪法文本的建模解释，不等于实际政治权力。年度查询可能包含年内先后两段制度，不表示二者同时适用。较晚文本仅依据报告获得截至2006年2月的连续性证据，不表示该年废止。"
+    }
+  ]
+}

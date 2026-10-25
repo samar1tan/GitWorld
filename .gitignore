@@ -5,6 +5,7 @@ attachments/
 .chat-attachments/
 .codex/
 .DS_Store
+/prototype/.npmrc
 
 # Existing Chinese working documents remain local; publish reviewed English
 # documents in the appropriate public documentation directory instead.

@@ -1,0 +1,32 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
+import { mkdtemp, rm } from 'node:fs/promises';
+import path from 'node:path';
+import { tmpdir } from 'node:os';
+import { fileURLToPath } from 'node:url';
+import { createEditorialRepository, EditorialFailure } from './editorial.ts';
+
+const binary = process.env.GITWORLD_TEST_GIT ?? fileURLToPath(new URL('../../../.local/bundled-git/runtime/bin/git', import.meta.url));
+const native = { skip: !existsSync(binary) && 'Build the pinned bundled Git before testing commit identity.' };
+test('a pending commit keeps its captured author after the configured identity changes', native, async t => {
+  const directory = await mkdtemp(path.join(tmpdir(), 'gitworld-identity-'));
+  const first = { name: '研究者 A', email: 'a@gitworld.invalid' }, second = { name: '研究者 B', email: 'b@gitworld.invalid' };
+  let interrupt = true;
+  const repository = await createEditorialRepository({ dataDirectory: directory, gitExecutable: binary, identity: first, onFault: point => { if (point === 'before-ref' && interrupt) { interrupt = false; throw new Error('Synthetic interruption after a prepared commit'); } } });
+  t.after(async () => { await repository.close(); await rm(directory, { recursive: true, force: true }); });
+  await repository.initialize({ 'research/one.json': { title: 'A' } });
+  await repository.write([{ path: 'research/one.json', value: { title: 'B' } }]);
+  const staged = await repository.stage([{ path: 'research/one.json' }]);
+  const input = { operationId: 'pending-author', expectedHead: staged.head, expectedTree: staged.stagedTree, message: 'Record the prepared selection' };
+  await assert.rejects(repository.commit(input), /Synthetic interruption/);
+  await repository.setIdentity(second);
+  const recovered = await repository.commit(input); assert.deepEqual(recovered.author, first);
+  await repository.write([{ path: 'research/one.json', value: { title: 'C' } }]);
+  const later = await repository.stage([{ path: 'research/one.json' }]);
+  assert.deepEqual((await repository.commit({ operationId: 'new-author', expectedHead: later.head, expectedTree: later.stagedTree, message: 'Record a new selection' })).author, second);
+  assert.deepEqual((await repository.commit(input)).author, first);
+  const originalHead = (await repository.status()).head;
+  await assert.rejects(repository.setIdentity({ name: 'Injected', email: 'bad\r\ncommitter@local.invalid' }), error => error instanceof EditorialFailure && error.code === 'INVALID_REQUEST');
+  assert.equal((await repository.status()).head, originalHead);
+});

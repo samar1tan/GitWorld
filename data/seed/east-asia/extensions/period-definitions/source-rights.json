@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "classification": "selected-factual-date-adaptation",
+  "licenseId": "CC-BY-SA-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "attribution": "English Wikipedia contributors, included fixed editions and author-history links. GitWorld selects date facts and authors typed period definitions, range normalization and English/Simplified Chinese presentation under CC-BY-SA-4.0. Raw HTML, source paragraphs, images and link labels are excluded. No source endorsement.",
+  "sources": [
+    {
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "47870676"
+      },
+      "revision": "1380542509",
+      "contentHash": "6a7314556b9f3bef155af7387373f06c88db9664eb1188145ce3b3698ce41ea6",
+      "url": "https://en.wikipedia.org/wiki/J%C5%8Dmon_period",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=J%C5%8Dmon%20period&oldid=1380542509",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=J%C5%8Dmon%20period&action=history",
+      "retrievedAt": "2026-10-25T02:47:44.663Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Jōmon period, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=J%C5%8Dmon%20period&oldid=1380542509; author history: https://en.wikipedia.org/w/index.php?title=J%C5%8Dmon%20period&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "166289"
+      },
+      "revision": "1379321741",
+      "contentHash": "7953ccc5f57e4b31e305d4baff76f0f84854ce8d589feddc2a97092572860377",
+      "url": "https://en.wikipedia.org/wiki/Yayoi_period",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&action=history",
+      "retrievedAt": "2026-10-25T02:47:45.921Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Yayoi period, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741; author history: https://en.wikipedia.org/w/index.php?title=Yayoi%20period&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "166431"
+      },
+      "revision": "1378867155",
+      "contentHash": "973c906ba3f69ed424567aee2ca3cda6f55224a556978ba2c3ae9b33a26906ee",
+      "url": "https://en.wikipedia.org/wiki/Kofun_period",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Kofun%20period&oldid=1378867155",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Kofun%20period&action=history",
+      "retrievedAt": "2026-10-25T02:47:47.460Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Kofun period, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Kofun%20period&oldid=1378867155; author history: https://en.wikipedia.org/w/index.php?title=Kofun%20period&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "1060314"
+      },
+      "revision": "1379047029",
+      "contentHash": "7d7a51a09cdf248c17ea5b0a4891110bb2fcb6ad5be5d2bcebe53ef897cd554f",
+      "url": "https://en.wikipedia.org/wiki/Yangshao_culture",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Yangshao%20culture&oldid=1379047029",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Yangshao%20culture&action=history",
+      "retrievedAt": "2026-10-25T02:47:49.662Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Yangshao culture, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Yangshao%20culture&oldid=1379047029; author history: https://en.wikipedia.org/w/index.php?title=Yangshao%20culture&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "1060368"
+      },
+      "revision": "1360689710",
+      "contentHash": "2c61902752100ea95074282b1c53548f9f354d26e115fde61fca798c56ec3c03",
+      "url": "https://en.wikipedia.org/wiki/Longshan_culture",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Longshan%20culture&oldid=1360689710",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Longshan%20culture&action=history",
+      "retrievedAt": "2026-10-25T02:47:51.722Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Longshan culture, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Longshan%20culture&oldid=1360689710; author history: https://en.wikipedia.org/w/index.php?title=Longshan%20culture&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "526037"
+      },
+      "revision": "1375049632",
+      "contentHash": "a54d2b37ab97c383b8b127a04a482ff20c5133fcd62a7b764db81d68588fcd74",
+      "url": "https://en.wikipedia.org/wiki/Liangzhu_culture",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Liangzhu%20culture&oldid=1375049632",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Liangzhu%20culture&action=history",
+      "retrievedAt": "2026-10-25T02:47:52.987Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Liangzhu culture, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Liangzhu%20culture&oldid=1375049632; author history: https://en.wikipedia.org/w/index.php?title=Liangzhu%20culture&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      }
+    }
+  ],
+  "derivedSource": {
+    "id": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+    "contentHash": "4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651"
+  },
+  "retained": "Selected date values, text hashes, selectors, locators, reference anchors, link URLs, temporal rules and original typed/bilingual presentation.",
+  "excluded": "Raw HTML, article paragraphs, anchor labels, images and upstream works linked by the articles.",
+  "historicalReview": "All assertions are unreviewed; no publication or installed-acceptance conclusion."
+}

@@ -1,0 +1,2046 @@
+{
+  "schemaVersion": 1,
+  "id": "japan-normative-institutions-1947",
+  "revision": "2-candidate-source-text-separation",
+  "preparedAt": "2026-10-24T23:14:12.835Z",
+  "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/historical-transformations-prd.md",
+  "rights": {
+    "licenseId": "CC-BY-SA-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "unknown",
+    "attribution": "GitWorld independently modeled selected legal facts and supplied identified English/Simplified Chinese presentation. Sources: National Diet Library (including Ito Miyoji and Government Printing Bureau English editions), MEXT, and Sayuri Umeda / Law Library of Congress, February 2006. Exact URLs, article locators, hashes and rights evidence remain in the profiles. Raw legal text, source prose, images and PDFs are excluded. Official-page translation rights remain pending independent review; no official endorsement."
+  },
+  "profiles": [
+    {
+      "id": "empire-constitution",
+      "identity": {
+        "provider": "official-document-html",
+        "externalId": "https://www.ndl.go.jp/constitution/e/etc/c02.html"
+      },
+      "revision": "W/\"462714a3f748bf70e559eac2e6888000\"",
+      "contentHash": "c3db7c8d2d10c5dbda3e019a5506def8ecbadc018cd336f8ca86610f1b90746b",
+      "citation": {
+        "title": "The Constitution of the Empire of Japan",
+        "language": "en",
+        "creator": "Ito Miyoji, English translation; National Diet Library, publisher",
+        "rightsEvidence": [
+          "https://www.ndl.go.jp/sitepolicy/terms",
+          "https://www.ndl.go.jp/en/use/reproduction"
+        ],
+        "rightsNote": "Local factual interpretation only. PDL1.0 has third-party exceptions; the exact translated text needs independent review. No full legal article, paragraph or anchor-label text is retained in the projected facts; only structural selectors, URLs, locators and text hashes remain."
+      },
+      "facts": [
+        {
+          "id": "article-4",
+          "selector": {
+            "kind": "element",
+            "tag": "li",
+            "startsWith": "Article 4."
+          },
+          "textHash": "91f62401d84017ec272eb67258e7a0dd399af6111bfa5d20c99d64b3b5093631"
+        },
+        {
+          "id": "article-5",
+          "selector": {
+            "kind": "element",
+            "tag": "li",
+            "startsWith": "Article 5."
+          },
+          "textHash": "d21fa38c679d01fb24a61f8907d99cfab86f98b3ff0b719f21d2d787da98f80f"
+        },
+        {
+          "id": "article-55",
+          "selector": {
+            "kind": "element",
+            "tag": "li",
+            "startsWith": "Article 55."
+          },
+          "textHash": "d5e81578660a10de2662ec3e4d238e59fd1f90ccbf6dea1349dba51ed31cdc1c"
+        }
+      ]
+    },
+    {
+      "id": "postwar-constitution",
+      "identity": {
+        "provider": "official-document-html",
+        "externalId": "https://www.ndl.go.jp/constitution/e/etc/c01.html"
+      },
+      "revision": "W/\"e54f96294aae1cf7644e808bfc83bdc5\"",
+      "contentHash": "e65215aaab184a4917a4b7d5fe029e5b0c298e4719f923986242b7b370254a07",
+      "citation": {
+        "title": "The Constitution of Japan",
+        "language": "en",
+        "creator": "English edition based on Government Printing Bureau; National Diet Library, publisher",
+        "rightsEvidence": [
+          "https://www.ndl.go.jp/sitepolicy/terms",
+          "https://www.ndl.go.jp/en/use/reproduction"
+        ],
+        "rightsNote": "Local factual interpretation only. PDL1.0 has third-party exceptions; the exact translated text needs independent review. No full legal article, paragraph or anchor-label text is retained in the projected facts; only structural selectors, URLs, locators and text hashes remain."
+      },
+      "facts": [
+        {
+          "id": "article-1",
+          "selector": {
+            "kind": "element",
+            "tag": "li",
+            "startsWith": "Article 1."
+          },
+          "textHash": "117564da81f57d19933a495fc04b1c426cf67c39d57c99115d94b6c8c8099bfe"
+        },
+        {
+          "id": "article-3",
+          "selector": {
+            "kind": "element",
+            "tag": "li",
+            "startsWith": "Article 3."
+          },
+          "textHash": "9d9a819680f8b63e76e9469a7d40bca365f2ee3f25b5ba58cc5a0a7fefe537bc"
+        },
+        {
+          "id": "article-4",
+          "selector": {
+            "kind": "element",
+            "tag": "li",
+            "startsWith": "Article 4."
+          },
+          "textHash": "504260e8a9776710e8749eb2d478725bfd9054bcab18d263173c94a553943a96"
+        },
+        {
+          "id": "article-6",
+          "selector": {
+            "kind": "element",
+            "tag": "li",
+            "startsWith": "Article 6."
+          },
+          "textHash": "76430f57b45dea4a1e58de98bf47fc38e98d945dcc049a4ea951732e1d32452f"
+        },
+        {
+          "id": "article-41",
+          "selector": {
+            "kind": "element",
+            "tag": "li",
+            "startsWith": "Article 41."
+          },
+          "textHash": "49f6ac53e670e450244852a5bfa0d1863398a1a407a7cdd8775ba99b3795ffc5"
+        },
+        {
+          "id": "article-65",
+          "selector": {
+            "kind": "element",
+            "tag": "li",
+            "startsWith": "Article 65."
+          },
+          "textHash": "ba2cc8ecd75409a117919d62d227ad20fb9253992a8c1c3843c50942f8ea3712"
+        },
+        {
+          "id": "promulgation",
+          "selector": {
+            "kind": "element",
+            "tag": "p",
+            "id": "gyomei"
+          },
+          "textHash": "cb7d0008ac7ef2030888acfa133668ed8bcce1cc795de56432ddef5ccd373c9e"
+        }
+      ]
+    },
+    {
+      "id": "constitution-enforcement",
+      "identity": {
+        "provider": "official-document-html",
+        "externalId": "https://www.ndl.go.jp/constitution/e/outline/05outline.html"
+      },
+      "revision": "W/\"ef3bd66112a7f1cebda5b654968e8bc9\"",
+      "contentHash": "65165d93a73d9e1a0118e8df6e06ddcc09dad57cc1447ce61cb6769da03a9ea4",
+      "citation": {
+        "title": "Part 5 Enactment of the Constitution of Japan",
+        "language": "en",
+        "creator": "National Diet Library",
+        "rightsEvidence": [
+          "https://www.ndl.go.jp/sitepolicy/terms",
+          "https://www.ndl.go.jp/en/use/reproduction"
+        ],
+        "rightsNote": "Local factual interpretation only. PDL1.0 has third-party exceptions; the exact translated text needs independent review. No full legal article, paragraph or anchor-label text is retained in the projected facts; only structural selectors, URLs, locators and text hashes remain."
+      },
+      "facts": [
+        {
+          "id": "enforcement",
+          "selector": {
+            "kind": "element",
+            "tag": "p",
+            "startsWith": "On May 3, 1947,"
+          },
+          "textHash": "2fb09abc6477c6172cd2021978ab8e7c68950a2246f44642af5cd2d88538f8da"
+        }
+      ]
+    },
+    {
+      "id": "constitution-glossary",
+      "identity": {
+        "provider": "official-document-html",
+        "externalId": "https://www.ndl.go.jp/constitution/e/etc/glossary.html"
+      },
+      "revision": "W/\"63c5cd462545f6894ceed743f546f62c\"",
+      "contentHash": "f37e5734f5d307a91e3e829dde63b9d5fe2dcaf2aea653255bd334057fa12128",
+      "citation": {
+        "title": "Glossary and Abbreviations",
+        "language": "en",
+        "creator": "National Diet Library",
+        "rightsEvidence": [
+          "https://www.ndl.go.jp/sitepolicy/terms",
+          "https://www.ndl.go.jp/en/use/reproduction"
+        ],
+        "rightsNote": "Local factual interpretation only. PDL1.0 has third-party exceptions; the exact translated text needs independent review. No full legal article, paragraph or anchor-label text is retained in the projected facts; only structural selectors, URLs, locators and text hashes remain."
+      },
+      "facts": [
+        {
+          "id": "unchanged-meiji",
+          "selector": {
+            "kind": "element",
+            "tag": "p",
+            "startsWith": "The procedure to revise the Constitution,"
+          },
+          "textHash": "d0f9a0688e2a039890ced091b08fe11b5f984ca9209b935ac6ec0de7b9d9cde9"
+        }
+      ]
+    },
+    {
+      "id": "empire-enforcement",
+      "identity": {
+        "provider": "official-document-html",
+        "externalId": "https://www.mext.go.jp/b_menu/hakusho/html/others/detail/1317324.htm"
+      },
+      "revision": "\"1c22-5f6c744020f24\"",
+      "contentHash": "8c0766cd64c2db4a5246338036edf7881b8fd061f15b5de0dc4098bd3849e28d",
+      "citation": {
+        "title": "(1) The Promulgation of the Meiji Constitution and Educatron",
+        "language": "en",
+        "creator": "Ministry of Education, Culture, Sports, Science and Technology, Japan",
+        "rightsEvidence": [
+          "https://www.mext.go.jp/b_menu/1351168.htm",
+          "https://www.mext.go.jp/en/other/title01/detail01/sdetail01/1375300.htm"
+        ],
+        "rightsNote": "Research citation for promulgation/enforcement facts. Current Japanese terms adopt PDL1.0 with content exceptions; applicability to this historical whitepaper text is not independently approved. No full source paragraph is distributed."
+      },
+      "facts": [
+        {
+          "id": "enforcement",
+          "selector": {
+            "kind": "element",
+            "tag": "p",
+            "startsWith": "After the Imperial Rescript on the 1890 Opening"
+          },
+          "textHash": "aa4a4ab29ff6dc7a92258987128bb005ea829b5598ec1a12c72f2765ec05d21a"
+        }
+      ]
+    },
+    {
+      "id": "loc-continuity",
+      "identity": {
+        "provider": "loc-legal-report",
+        "externalId": "2019669658"
+      },
+      "revision": "f8e8e86ee92874dfabab75a7906c07cb56ef1b5365018066f27e4fea74e5cc24",
+      "contentHash": "7268293a51f9741ebc214056b89c942cb79b7a9d599cf62f037069029912dc33",
+      "citation": {
+        "title": "Japan: Article 9 of the Constitution",
+        "language": "en",
+        "creator": "Sayuri Umeda; Law Library of Congress, Global Legal Research Directorate",
+        "rightsEvidence": [
+          "https://www.loc.gov/item/2019669658/#rights-and-access"
+        ],
+        "rightsNote": "LOC explicitly provides its government-authored report content for worldwide use under CC0. No third-party quotation or image is selected. PDF page 31 is printed page 29; February 2006 is the report date, not an upload or retrieval date."
+      },
+      "facts": [
+        {
+          "id": "unchanged-postwar",
+          "selector": {
+            "kind": "page-passage",
+            "page": 31,
+            "start": "present Constitution of Japan was enacted",
+            "end": "amended."
+          },
+          "textHash": "068cf51e5a869e5cb0031ea307fba44440ff41f377745cd300a67d04c433a4a9"
+        },
+        {
+          "id": "publication-date",
+          "selector": {
+            "kind": "page-passage",
+            "page": 1,
+            "start": "February",
+            "end": "2006"
+          },
+          "textHash": "3010627405833e12273d73c6ad52846b20cef353ae275e35f5dbb2d89fb877af"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "history:law:empire-japan-constitution-1889",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:law:empire-japan-constitution-1889"
+        }
+      ],
+      "types": [
+        "gitworld:legal-instrument"
+      ],
+      "labels": {
+        "en": "Constitution of the Empire of Japan",
+        "zh-CN": "大日本帝国宪法"
+      },
+      "descriptions": {
+        "en": "Promulgated in 1889 and enforced in 1890; Articles 4, 5 and 55 define the Emperor’s role and ministerial responsibilities.",
+        "zh-CN": "1889年公布、1890年施行；第4、5及55条规定天皇职权与国务大臣的职责。"
+      },
+      "aliases": []
+    },
+    {
+      "id": "history:law:japan-constitution-1946",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:law:japan-constitution-1946"
+        }
+      ],
+      "types": [
+        "gitworld:legal-instrument"
+      ],
+      "labels": {
+        "en": "Constitution of Japan",
+        "zh-CN": "日本国宪法"
+      },
+      "descriptions": {
+        "en": "Promulgated in 1946 and enforced on 3 May 1947; it defines the Emperor’s symbolic role and vests executive power in the Cabinet.",
+        "zh-CN": "1946年公布，1947年5月3日施行；规定天皇的象征地位，并将行政权赋予内阁。"
+      },
+      "aliases": []
+    },
+    {
+      "id": "history:event:japan-constitution-enforcement-1947",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:event:japan-constitution-enforcement-1947"
+        }
+      ],
+      "types": [
+        "gitworld:institutional-change"
+      ],
+      "labels": {
+        "en": "Enforcement of the Constitution of Japan",
+        "zh-CN": "日本国宪法施行"
+      },
+      "descriptions": {
+        "en": "The constitutional rules took effect on 3 May 1947, following promulgation on 3 November 1946.",
+        "zh-CN": "宪法于1946年11月3日公布，至1947年5月3日施行。"
+      },
+      "aliases": []
+    },
+    {
+      "id": "history:institution:japan-cabinet-constitutional-role",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:institution:japan-cabinet-constitutional-role"
+        }
+      ],
+      "types": [
+        "gitworld:institution"
+      ],
+      "labels": {
+        "en": "Cabinet of Japan: constitutional role",
+        "zh-CN": "日本内阁：宪法规定的职权"
+      },
+      "descriptions": {
+        "en": "Article 65 vests executive power in the Cabinet; Article 3 requires its advice and approval for the Emperor’s acts in matters of state.",
+        "zh-CN": "第65条规定行政权属于内阁；第3条规定天皇的国事行为须经内阁建议与批准。"
+      },
+      "aliases": []
+    },
+    {
+      "id": "history:institution:japan-national-diet-constitutional-role",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:institution:japan-national-diet-constitutional-role"
+        }
+      ],
+      "types": [
+        "gitworld:institution"
+      ],
+      "labels": {
+        "en": "National Diet of Japan: constitutional role",
+        "zh-CN": "日本国会：宪法规定的职权"
+      },
+      "descriptions": {
+        "en": "Article 41 defines the Diet’s law-making status; Article 6 provides for the Emperor to appoint the prime minister designated by the Diet.",
+        "zh-CN": "第41条规定国会的立法地位；第6条规定首相由国会指定、天皇任命。"
+      },
+      "aliases": []
+    }
+  ],
+  "statements": [
+    {
+      "id": "before-framework",
+      "subjectId": "history:office:japanese-imperial-throne",
+      "propertyId": "institution:legal-framework",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:law:empire-japan-constitution-1889"
+      },
+      "factKeys": [
+        "empire-constitution:article-4"
+      ],
+      "validTime": {
+        "start": {
+          "earliestYear": 1890,
+          "latestYear": 1890,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 11,
+          "day": 29,
+          "raw": "November 29, 1890"
+        },
+        "end": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 2
+        }
+      },
+      "timeFactKeys": [
+        "empire-enforcement:enforcement",
+        "constitution-glossary:unchanged-meiji",
+        "constitution-enforcement:enforcement"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited articles as normative constitutional rules. Preserve the enforcement evidence and explicit revision boundary; do not infer actual power or a new institution from the holder list.",
+        "zh-CN": "将所引条文解释为宪法文本规定；保留施行依据及明确修订界限，不从任职表推断实际权力或新机构。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        },
+        {
+          "propertyId": "temporal:boundary-rule",
+          "value": {
+            "kind": "text",
+            "value": "day-before-explicit-revision-enforcement"
+          }
+        },
+        {
+          "propertyId": "temporal:original-boundary",
+          "value": {
+            "kind": "time",
+            "value": {
+              "earliestYear": 1947,
+              "latestYear": 1947,
+              "precision": "day",
+              "calendar": "gregorian-civil",
+              "month": 5,
+              "day": 3,
+              "raw": "May 3, 1947"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "before-role",
+      "subjectId": "history:office:japanese-imperial-throne",
+      "propertyId": "institution:constitutional-role",
+      "value": {
+        "kind": "text",
+        "value": "constitutional-head-with-sovereignty"
+      },
+      "factKeys": [
+        "empire-constitution:article-4"
+      ],
+      "validTime": {
+        "start": {
+          "earliestYear": 1890,
+          "latestYear": 1890,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 11,
+          "day": 29,
+          "raw": "November 29, 1890"
+        },
+        "end": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 2
+        }
+      },
+      "timeFactKeys": [
+        "empire-enforcement:enforcement",
+        "constitution-glossary:unchanged-meiji",
+        "constitution-enforcement:enforcement"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited articles as normative constitutional rules. Preserve the enforcement evidence and explicit revision boundary; do not infer actual power or a new institution from the holder list.",
+        "zh-CN": "将所引条文解释为宪法文本规定；保留施行依据及明确修订界限，不从任职表推断实际权力或新机构。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        },
+        {
+          "propertyId": "temporal:boundary-rule",
+          "value": {
+            "kind": "text",
+            "value": "day-before-explicit-revision-enforcement"
+          }
+        },
+        {
+          "propertyId": "temporal:original-boundary",
+          "value": {
+            "kind": "time",
+            "value": {
+              "earliestYear": 1947,
+              "latestYear": 1947,
+              "precision": "day",
+              "calendar": "gregorian-civil",
+              "month": 5,
+              "day": 3,
+              "raw": "May 3, 1947"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "before-powers",
+      "subjectId": "history:office:japanese-imperial-throne",
+      "propertyId": "institution:government-powers",
+      "value": {
+        "kind": "boolean",
+        "value": true
+      },
+      "factKeys": [
+        "empire-constitution:article-4",
+        "empire-constitution:article-5"
+      ],
+      "validTime": {
+        "start": {
+          "earliestYear": 1890,
+          "latestYear": 1890,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 11,
+          "day": 29,
+          "raw": "November 29, 1890"
+        },
+        "end": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 2
+        }
+      },
+      "timeFactKeys": [
+        "empire-enforcement:enforcement",
+        "constitution-glossary:unchanged-meiji",
+        "constitution-enforcement:enforcement"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited articles as normative constitutional rules. Preserve the enforcement evidence and explicit revision boundary; do not infer actual power or a new institution from the holder list.",
+        "zh-CN": "将所引条文解释为宪法文本规定；保留施行依据及明确修订界限，不从任职表推断实际权力或新机构。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        },
+        {
+          "propertyId": "temporal:boundary-rule",
+          "value": {
+            "kind": "text",
+            "value": "day-before-explicit-revision-enforcement"
+          }
+        },
+        {
+          "propertyId": "temporal:original-boundary",
+          "value": {
+            "kind": "time",
+            "value": {
+              "earliestYear": 1947,
+              "latestYear": 1947,
+              "precision": "day",
+              "calendar": "gregorian-civil",
+              "month": 5,
+              "day": 3,
+              "raw": "May 3, 1947"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "before-acts",
+      "subjectId": "history:office:japanese-imperial-throne",
+      "propertyId": "institution:acts-basis",
+      "value": {
+        "kind": "text",
+        "value": "ministerial-countersignature"
+      },
+      "factKeys": [
+        "empire-constitution:article-55"
+      ],
+      "validTime": {
+        "start": {
+          "earliestYear": 1890,
+          "latestYear": 1890,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 11,
+          "day": 29,
+          "raw": "November 29, 1890"
+        },
+        "end": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 2
+        }
+      },
+      "timeFactKeys": [
+        "empire-enforcement:enforcement",
+        "constitution-glossary:unchanged-meiji",
+        "constitution-enforcement:enforcement"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited articles as normative constitutional rules. Preserve the enforcement evidence and explicit revision boundary; do not infer actual power or a new institution from the holder list.",
+        "zh-CN": "将所引条文解释为宪法文本规定；保留施行依据及明确修订界限，不从任职表推断实际权力或新机构。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        },
+        {
+          "propertyId": "temporal:boundary-rule",
+          "value": {
+            "kind": "text",
+            "value": "day-before-explicit-revision-enforcement"
+          }
+        },
+        {
+          "propertyId": "temporal:original-boundary",
+          "value": {
+            "kind": "time",
+            "value": {
+              "earliestYear": 1947,
+              "latestYear": 1947,
+              "precision": "day",
+              "calendar": "gregorian-civil",
+              "month": 5,
+              "day": 3,
+              "raw": "May 3, 1947"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "after-framework",
+      "subjectId": "history:office:japanese-imperial-throne",
+      "propertyId": "institution:legal-framework",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:law:japan-constitution-1946"
+      },
+      "factKeys": [
+        "postwar-constitution:article-1"
+      ],
+      "validTime": {
+        "start": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 3,
+          "raw": "May 3, 1947"
+        },
+        "end": {
+          "earliestYear": 2006,
+          "latestYear": 2006,
+          "precision": "month",
+          "calendar": "gregorian-civil",
+          "month": 2,
+          "raw": "February 2006"
+        }
+      },
+      "timeFactKeys": [
+        "constitution-enforcement:enforcement",
+        "loc-continuity:unchanged-postwar",
+        "loc-continuity:publication-date"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited postwar articles as normative rules. The February 2006 report explicitly records no amendment; its date bounds evidence, not the legal life of the constitution.",
+        "zh-CN": "将战后宪法条文解释为规范性规则；2006年2月报告明确记载此前未修订，其日期限定证据而非宪法存续。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        },
+        {
+          "propertyId": "temporal:boundary-rule",
+          "value": {
+            "kind": "text",
+            "value": "unchanged-text-through-dated-report"
+          }
+        },
+        {
+          "propertyId": "temporal:evidence-limit",
+          "value": {
+            "kind": "time",
+            "value": {
+              "earliestYear": 2006,
+              "latestYear": 2006,
+              "precision": "month",
+              "calendar": "gregorian-civil",
+              "month": 2,
+              "raw": "February 2006"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "after-role",
+      "subjectId": "history:office:japanese-imperial-throne",
+      "propertyId": "institution:constitutional-role",
+      "value": {
+        "kind": "text",
+        "value": "state-and-unity-symbol"
+      },
+      "factKeys": [
+        "postwar-constitution:article-1"
+      ],
+      "validTime": {
+        "start": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 3,
+          "raw": "May 3, 1947"
+        },
+        "end": {
+          "earliestYear": 2006,
+          "latestYear": 2006,
+          "precision": "month",
+          "calendar": "gregorian-civil",
+          "month": 2,
+          "raw": "February 2006"
+        }
+      },
+      "timeFactKeys": [
+        "constitution-enforcement:enforcement",
+        "loc-continuity:unchanged-postwar",
+        "loc-continuity:publication-date"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited postwar articles as normative rules. The February 2006 report explicitly records no amendment; its date bounds evidence, not the legal life of the constitution.",
+        "zh-CN": "将战后宪法条文解释为规范性规则；2006年2月报告明确记载此前未修订，其日期限定证据而非宪法存续。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        },
+        {
+          "propertyId": "temporal:boundary-rule",
+          "value": {
+            "kind": "text",
+            "value": "unchanged-text-through-dated-report"
+          }
+        },
+        {
+          "propertyId": "temporal:evidence-limit",
+          "value": {
+            "kind": "time",
+            "value": {
+              "earliestYear": 2006,
+              "latestYear": 2006,
+              "precision": "month",
+              "calendar": "gregorian-civil",
+              "month": 2,
+              "raw": "February 2006"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "after-powers",
+      "subjectId": "history:office:japanese-imperial-throne",
+      "propertyId": "institution:government-powers",
+      "value": {
+        "kind": "boolean",
+        "value": false
+      },
+      "factKeys": [
+        "postwar-constitution:article-4"
+      ],
+      "validTime": {
+        "start": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 3,
+          "raw": "May 3, 1947"
+        },
+        "end": {
+          "earliestYear": 2006,
+          "latestYear": 2006,
+          "precision": "month",
+          "calendar": "gregorian-civil",
+          "month": 2,
+          "raw": "February 2006"
+        }
+      },
+      "timeFactKeys": [
+        "constitution-enforcement:enforcement",
+        "loc-continuity:unchanged-postwar",
+        "loc-continuity:publication-date"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited postwar articles as normative rules. The February 2006 report explicitly records no amendment; its date bounds evidence, not the legal life of the constitution.",
+        "zh-CN": "将战后宪法条文解释为规范性规则；2006年2月报告明确记载此前未修订，其日期限定证据而非宪法存续。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        },
+        {
+          "propertyId": "temporal:boundary-rule",
+          "value": {
+            "kind": "text",
+            "value": "unchanged-text-through-dated-report"
+          }
+        },
+        {
+          "propertyId": "temporal:evidence-limit",
+          "value": {
+            "kind": "time",
+            "value": {
+              "earliestYear": 2006,
+              "latestYear": 2006,
+              "precision": "month",
+              "calendar": "gregorian-civil",
+              "month": 2,
+              "raw": "February 2006"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "after-acts",
+      "subjectId": "history:office:japanese-imperial-throne",
+      "propertyId": "institution:acts-basis",
+      "value": {
+        "kind": "text",
+        "value": "cabinet-advice-and-approval"
+      },
+      "factKeys": [
+        "postwar-constitution:article-3"
+      ],
+      "validTime": {
+        "start": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 3,
+          "raw": "May 3, 1947"
+        },
+        "end": {
+          "earliestYear": 2006,
+          "latestYear": 2006,
+          "precision": "month",
+          "calendar": "gregorian-civil",
+          "month": 2,
+          "raw": "February 2006"
+        }
+      },
+      "timeFactKeys": [
+        "constitution-enforcement:enforcement",
+        "loc-continuity:unchanged-postwar",
+        "loc-continuity:publication-date"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited postwar articles as normative rules. The February 2006 report explicitly records no amendment; its date bounds evidence, not the legal life of the constitution.",
+        "zh-CN": "将战后宪法条文解释为规范性规则；2006年2月报告明确记载此前未修订，其日期限定证据而非宪法存续。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        },
+        {
+          "propertyId": "temporal:boundary-rule",
+          "value": {
+            "kind": "text",
+            "value": "unchanged-text-through-dated-report"
+          }
+        },
+        {
+          "propertyId": "temporal:evidence-limit",
+          "value": {
+            "kind": "time",
+            "value": {
+              "earliestYear": 2006,
+              "latestYear": 2006,
+              "precision": "month",
+              "calendar": "gregorian-civil",
+              "month": 2,
+              "raw": "February 2006"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "after-cabinet-link",
+      "subjectId": "history:office:japanese-imperial-throne",
+      "propertyId": "institution:acts-approved-by",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:institution:japan-cabinet-constitutional-role"
+      },
+      "factKeys": [
+        "postwar-constitution:article-3"
+      ],
+      "validTime": {
+        "start": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 3,
+          "raw": "May 3, 1947"
+        },
+        "end": {
+          "earliestYear": 2006,
+          "latestYear": 2006,
+          "precision": "month",
+          "calendar": "gregorian-civil",
+          "month": 2,
+          "raw": "February 2006"
+        }
+      },
+      "timeFactKeys": [
+        "constitution-enforcement:enforcement",
+        "loc-continuity:unchanged-postwar",
+        "loc-continuity:publication-date"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited postwar articles as normative rules. The February 2006 report explicitly records no amendment; its date bounds evidence, not the legal life of the constitution.",
+        "zh-CN": "将战后宪法条文解释为规范性规则；2006年2月报告明确记载此前未修订，其日期限定证据而非宪法存续。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        },
+        {
+          "propertyId": "temporal:boundary-rule",
+          "value": {
+            "kind": "text",
+            "value": "unchanged-text-through-dated-report"
+          }
+        },
+        {
+          "propertyId": "temporal:evidence-limit",
+          "value": {
+            "kind": "time",
+            "value": {
+              "earliestYear": 2006,
+              "latestYear": 2006,
+              "precision": "month",
+              "calendar": "gregorian-civil",
+              "month": 2,
+              "raw": "February 2006"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "after-diet-link",
+      "subjectId": "history:office:japanese-imperial-throne",
+      "propertyId": "institution:prime-minister-designated-by",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:institution:japan-national-diet-constitutional-role"
+      },
+      "factKeys": [
+        "postwar-constitution:article-6"
+      ],
+      "validTime": {
+        "start": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 3,
+          "raw": "May 3, 1947"
+        },
+        "end": {
+          "earliestYear": 2006,
+          "latestYear": 2006,
+          "precision": "month",
+          "calendar": "gregorian-civil",
+          "month": 2,
+          "raw": "February 2006"
+        }
+      },
+      "timeFactKeys": [
+        "constitution-enforcement:enforcement",
+        "loc-continuity:unchanged-postwar",
+        "loc-continuity:publication-date"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited postwar articles as normative rules. The February 2006 report explicitly records no amendment; its date bounds evidence, not the legal life of the constitution.",
+        "zh-CN": "将战后宪法条文解释为规范性规则；2006年2月报告明确记载此前未修订，其日期限定证据而非宪法存续。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        },
+        {
+          "propertyId": "temporal:boundary-rule",
+          "value": {
+            "kind": "text",
+            "value": "unchanged-text-through-dated-report"
+          }
+        },
+        {
+          "propertyId": "temporal:evidence-limit",
+          "value": {
+            "kind": "time",
+            "value": {
+              "earliestYear": 2006,
+              "latestYear": 2006,
+              "precision": "month",
+              "calendar": "gregorian-civil",
+              "month": 2,
+              "raw": "February 2006"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "cabinet-executive",
+      "subjectId": "history:institution:japan-cabinet-constitutional-role",
+      "propertyId": "institution:executive-authority",
+      "value": {
+        "kind": "boolean",
+        "value": true
+      },
+      "factKeys": [
+        "postwar-constitution:article-65"
+      ],
+      "validTime": {
+        "start": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 3,
+          "raw": "May 3, 1947"
+        },
+        "end": {
+          "earliestYear": 2006,
+          "latestYear": 2006,
+          "precision": "month",
+          "calendar": "gregorian-civil",
+          "month": 2,
+          "raw": "February 2006"
+        }
+      },
+      "timeFactKeys": [
+        "constitution-enforcement:enforcement",
+        "loc-continuity:unchanged-postwar",
+        "loc-continuity:publication-date"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited postwar articles as normative rules. The February 2006 report explicitly records no amendment; its date bounds evidence, not the legal life of the constitution.",
+        "zh-CN": "将战后宪法条文解释为规范性规则；2006年2月报告明确记载此前未修订，其日期限定证据而非宪法存续。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        },
+        {
+          "propertyId": "temporal:boundary-rule",
+          "value": {
+            "kind": "text",
+            "value": "unchanged-text-through-dated-report"
+          }
+        },
+        {
+          "propertyId": "temporal:evidence-limit",
+          "value": {
+            "kind": "time",
+            "value": {
+              "earliestYear": 2006,
+              "latestYear": 2006,
+              "precision": "month",
+              "calendar": "gregorian-civil",
+              "month": 2,
+              "raw": "February 2006"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "diet-law-making",
+      "subjectId": "history:institution:japan-national-diet-constitutional-role",
+      "propertyId": "institution:sole-law-making-organ",
+      "value": {
+        "kind": "boolean",
+        "value": true
+      },
+      "factKeys": [
+        "postwar-constitution:article-41"
+      ],
+      "validTime": {
+        "start": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 3,
+          "raw": "May 3, 1947"
+        },
+        "end": {
+          "earliestYear": 2006,
+          "latestYear": 2006,
+          "precision": "month",
+          "calendar": "gregorian-civil",
+          "month": 2,
+          "raw": "February 2006"
+        }
+      },
+      "timeFactKeys": [
+        "constitution-enforcement:enforcement",
+        "loc-continuity:unchanged-postwar",
+        "loc-continuity:publication-date"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited postwar articles as normative rules. The February 2006 report explicitly records no amendment; its date bounds evidence, not the legal life of the constitution.",
+        "zh-CN": "将战后宪法条文解释为规范性规则；2006年2月报告明确记载此前未修订，其日期限定证据而非宪法存续。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        },
+        {
+          "propertyId": "temporal:boundary-rule",
+          "value": {
+            "kind": "text",
+            "value": "unchanged-text-through-dated-report"
+          }
+        },
+        {
+          "propertyId": "temporal:evidence-limit",
+          "value": {
+            "kind": "time",
+            "value": {
+              "earliestYear": 2006,
+              "latestYear": 2006,
+              "precision": "month",
+              "calendar": "gregorian-civil",
+              "month": 2,
+              "raw": "February 2006"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "change-subject",
+      "subjectId": "history:event:japan-constitution-enforcement-1947",
+      "propertyId": "institution-change:subject",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:office:japanese-imperial-throne"
+      },
+      "factKeys": [
+        "constitution-enforcement:enforcement",
+        "constitution-glossary:unchanged-meiji"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 3,
+          "raw": "May 3, 1947"
+        }
+      },
+      "timeFactKeys": [
+        "constitution-enforcement:enforcement"
+      ],
+      "interpretation": {
+        "en": "A dated enforcement of a constitutional revision, not a change of emperor or an invented national origin.",
+        "zh-CN": "有日期依据的宪法修订施行事件，不是天皇更替或虚构的国家起源。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        }
+      ]
+    },
+    {
+      "id": "change-prior",
+      "subjectId": "history:event:japan-constitution-enforcement-1947",
+      "propertyId": "institution-change:prior-framework",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:law:empire-japan-constitution-1889"
+      },
+      "factKeys": [
+        "constitution-enforcement:enforcement",
+        "constitution-glossary:unchanged-meiji"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 3,
+          "raw": "May 3, 1947"
+        }
+      },
+      "timeFactKeys": [
+        "constitution-enforcement:enforcement"
+      ],
+      "interpretation": {
+        "en": "A dated enforcement of a constitutional revision, not a change of emperor or an invented national origin.",
+        "zh-CN": "有日期依据的宪法修订施行事件，不是天皇更替或虚构的国家起源。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        }
+      ]
+    },
+    {
+      "id": "change-resulting",
+      "subjectId": "history:event:japan-constitution-enforcement-1947",
+      "propertyId": "institution-change:resulting-framework",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:law:japan-constitution-1946"
+      },
+      "factKeys": [
+        "constitution-enforcement:enforcement",
+        "constitution-glossary:unchanged-meiji"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 3,
+          "raw": "May 3, 1947"
+        }
+      },
+      "timeFactKeys": [
+        "constitution-enforcement:enforcement"
+      ],
+      "interpretation": {
+        "en": "A dated enforcement of a constitutional revision, not a change of emperor or an invented national origin.",
+        "zh-CN": "有日期依据的宪法修订施行事件，不是天皇更替或虚构的国家起源。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:interpretation-scope",
+          "value": {
+            "kind": "text",
+            "value": "constitutional-text"
+          }
+        }
+      ]
+    },
+    {
+      "id": "earlier-promulgation",
+      "subjectId": "history:law:empire-japan-constitution-1889",
+      "propertyId": "law:promulgation-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 1889,
+          "latestYear": 1889,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 2,
+          "day": 11,
+          "raw": "February 11, 1889"
+        }
+      },
+      "factKeys": [
+        "empire-enforcement:enforcement"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited articles as normative constitutional rules. Preserve the enforcement evidence and explicit revision boundary; do not infer actual power or a new institution from the holder list.",
+        "zh-CN": "将所引条文解释为宪法文本规定；保留施行依据及明确修订界限，不从任职表推断实际权力或新机构。"
+      },
+      "qualifiers": []
+    },
+    {
+      "id": "earlier-enforcement",
+      "subjectId": "history:law:empire-japan-constitution-1889",
+      "propertyId": "law:effective-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 1890,
+          "latestYear": 1890,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 11,
+          "day": 29,
+          "raw": "November 29, 1890"
+        }
+      },
+      "factKeys": [
+        "empire-enforcement:enforcement"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited articles as normative constitutional rules. Preserve the enforcement evidence and explicit revision boundary; do not infer actual power or a new institution from the holder list.",
+        "zh-CN": "将所引条文解释为宪法文本规定；保留施行依据及明确修订界限，不从任职表推断实际权力或新机构。"
+      },
+      "qualifiers": []
+    },
+    {
+      "id": "later-promulgation",
+      "subjectId": "history:law:japan-constitution-1946",
+      "propertyId": "law:promulgation-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 1946,
+          "latestYear": 1946,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 11,
+          "day": 3,
+          "raw": "November 3, 1946"
+        }
+      },
+      "factKeys": [
+        "postwar-constitution:promulgation"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited postwar articles as normative rules. The February 2006 report explicitly records no amendment; its date bounds evidence, not the legal life of the constitution.",
+        "zh-CN": "将战后宪法条文解释为规范性规则；2006年2月报告明确记载此前未修订，其日期限定证据而非宪法存续。"
+      },
+      "qualifiers": []
+    },
+    {
+      "id": "later-enforcement",
+      "subjectId": "history:law:japan-constitution-1946",
+      "propertyId": "law:effective-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 1947,
+          "latestYear": 1947,
+          "precision": "day",
+          "calendar": "gregorian-civil",
+          "month": 5,
+          "day": 3,
+          "raw": "May 3, 1947"
+        }
+      },
+      "factKeys": [
+        "constitution-enforcement:enforcement"
+      ],
+      "interpretation": {
+        "en": "Interpret the cited postwar articles as normative rules. The February 2006 report explicitly records no amendment; its date bounds evidence, not the legal life of the constitution.",
+        "zh-CN": "将战后宪法条文解释为规范性规则；2006年2月报告明确记载此前未修订，其日期限定证据而非宪法存续。"
+      },
+      "qualifiers": []
+    }
+  ],
+  "fieldCatalog": {
+    "schemaVersion": 1,
+    "kind": "historical-field-display-labels",
+    "properties": [
+      {
+        "id": "projection:rule-id",
+        "labels": {
+          "en": "Mapping rule",
+          "zh-CN": "映射规则"
+        }
+      },
+      {
+        "id": "projection:source-fact",
+        "labels": {
+          "en": "Source field",
+          "zh-CN": "来源字段"
+        }
+      },
+      {
+        "id": "institution:legal-framework",
+        "labels": {
+          "en": "Constitutional framework",
+          "zh-CN": "宪制依据"
+        }
+      },
+      {
+        "id": "institution:constitutional-role",
+        "labels": {
+          "en": "Role defined by the constitution",
+          "zh-CN": "宪法规定的地位"
+        }
+      },
+      {
+        "id": "institution:government-powers",
+        "labels": {
+          "en": "Government powers under the constitution",
+          "zh-CN": "宪法规定的政府权能"
+        }
+      },
+      {
+        "id": "institution:acts-basis",
+        "labels": {
+          "en": "Rule for acts in matters of state",
+          "zh-CN": "国事行为的依据"
+        }
+      },
+      {
+        "id": "institution:acts-approved-by",
+        "labels": {
+          "en": "Advice and approval for state acts",
+          "zh-CN": "国事行为的建议与批准"
+        }
+      },
+      {
+        "id": "institution:prime-minister-designated-by",
+        "labels": {
+          "en": "Designates the prime minister to be appointed",
+          "zh-CN": "指定由天皇任命的首相"
+        }
+      },
+      {
+        "id": "institution:executive-authority",
+        "labels": {
+          "en": "Executive power vested by the constitution",
+          "zh-CN": "宪法授予的行政权"
+        }
+      },
+      {
+        "id": "institution:sole-law-making-organ",
+        "labels": {
+          "en": "Sole law-making organ under the constitution",
+          "zh-CN": "宪法规定的唯一立法机关"
+        }
+      },
+      {
+        "id": "institution:interpretation-scope",
+        "labels": {
+          "en": "Scope of this institutional claim",
+          "zh-CN": "机构主张的适用含义"
+        }
+      },
+      {
+        "id": "temporal:boundary-rule",
+        "labels": {
+          "en": "Temporal interpretation rule",
+          "zh-CN": "时间解释规则"
+        }
+      },
+      {
+        "id": "temporal:original-boundary",
+        "labels": {
+          "en": "Original enforcement boundary",
+          "zh-CN": "来源施行界限"
+        }
+      },
+      {
+        "id": "temporal:evidence-limit",
+        "labels": {
+          "en": "Evidence coverage limit",
+          "zh-CN": "证据覆盖上限"
+        }
+      },
+      {
+        "id": "institution-change:subject",
+        "labels": {
+          "en": "Institution affected",
+          "zh-CN": "发生变化的机构"
+        }
+      },
+      {
+        "id": "institution-change:prior-framework",
+        "labels": {
+          "en": "Earlier constitutional framework",
+          "zh-CN": "此前宪制依据"
+        }
+      },
+      {
+        "id": "institution-change:resulting-framework",
+        "labels": {
+          "en": "Resulting constitutional framework",
+          "zh-CN": "此后宪制依据"
+        }
+      },
+      {
+        "id": "law:promulgation-date",
+        "labels": {
+          "en": "Promulgation",
+          "zh-CN": "公布"
+        }
+      },
+      {
+        "id": "law:effective-date",
+        "labels": {
+          "en": "Enforcement",
+          "zh-CN": "施行"
+        }
+      }
+    ],
+    "types": [
+      {
+        "id": "gitworld:legal-instrument",
+        "labels": {
+          "en": "Legal instrument",
+          "zh-CN": "法律文件"
+        }
+      },
+      {
+        "id": "gitworld:institutional-change",
+        "labels": {
+          "en": "Institutional change",
+          "zh-CN": "制度变化"
+        }
+      },
+      {
+        "id": "gitworld:institution",
+        "labels": {
+          "en": "Institution",
+          "zh-CN": "机构"
+        }
+      }
+    ],
+    "values": [
+      {
+        "propertyId": "institution:constitutional-role",
+        "value": "constitutional-head-with-sovereignty",
+        "labels": {
+          "en": "Head of the Empire exercising constitutional sovereignty",
+          "zh-CN": "依宪法行使统治权的帝国元首"
+        }
+      },
+      {
+        "propertyId": "institution:constitutional-role",
+        "value": "state-and-unity-symbol",
+        "labels": {
+          "en": "Symbol of the state and the unity of the people",
+          "zh-CN": "国家和国民整体的象征"
+        }
+      },
+      {
+        "propertyId": "institution:acts-basis",
+        "value": "ministerial-countersignature",
+        "labels": {
+          "en": "Countersignature of a Minister of State for the specified instruments",
+          "zh-CN": "所列国家文书须由国务大臣副署"
+        }
+      },
+      {
+        "propertyId": "institution:acts-basis",
+        "value": "cabinet-advice-and-approval",
+        "labels": {
+          "en": "Cabinet advice and approval for acts in matters of state",
+          "zh-CN": "国事行为须经内阁建议与批准"
+        }
+      },
+      {
+        "propertyId": "institution:interpretation-scope",
+        "value": "constitutional-text",
+        "labels": {
+          "en": "Normative constitutional rules; effective political power is a separate question",
+          "zh-CN": "宪法文本规定；实际政治权力是另一问题"
+        }
+      },
+      {
+        "propertyId": "temporal:boundary-rule",
+        "value": "day-before-explicit-revision-enforcement",
+        "labels": {
+          "en": "Inclusive end computed as the day before the explicit constitutional enforcement boundary",
+          "zh-CN": "依据明确的宪法施行界限，将前一天作为此前适用段的含末端点"
+        }
+      },
+      {
+        "propertyId": "temporal:boundary-rule",
+        "value": "unchanged-text-through-dated-report",
+        "labels": {
+          "en": "Unamended text through the dated report; the evidence limit is not a repeal",
+          "zh-CN": "文本未修订至报告时点；证据上限不表示废止"
+        }
+      }
+    ],
+    "semanticNotes": [
+      {
+        "ids": [
+          "institution:legal-framework",
+          "institution:constitutional-role",
+          "institution:government-powers",
+          "institution:acts-basis",
+          "institution:executive-authority",
+          "institution:sole-law-making-organ"
+        ],
+        "en": "These are constitutional text interpretations, not claims about effective political power. Annual queries can contain both sub-year regimes; this does not assert simultaneity. The later text is bounded by a February 2006 continuity report, not by a repeal in 2006.",
+        "zh-CN": "这些是宪法文本的建模解释，不等于实际政治权力。年度查询可能包含年内先后两段制度，不表示二者同时适用。较晚文本仅依据报告获得截至2006年2月的连续性证据，不表示该年废止。"
+      }
+    ]
+  },
+  "selectedOutputRights": {
+    "schemaVersion": 1,
+    "kind": "gitworld-selected-output-rights-scope",
+    "id": "japan-normative-institutions-selected-output",
+    "revision": "1-candidate",
+    "status": "owner-prepared-candidate-pending-independent-exact-review",
+    "preparedAt": "2026-10-24T23:20:51.538Z",
+    "normalizationStage": "Conservative source normalization remains unknown. This separate curator distribution candidate applies only to the exact retained factual record and original interpretation below.",
+    "prePromotionSourceRecordHash": "db92e8c2e753e27fac463e81a4c10f78bf9a0dd196727d6159b035d01ab3c23c",
+    "normalizationRights": {
+      "licenseId": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution": "unknown",
+      "attribution": "GitWorld independently modeled selected legal facts and supplied identified English/Simplified Chinese presentation. Sources: National Diet Library (including Ito Miyoji and Government Printing Bureau English editions), MEXT, and Sayuri Umeda / Law Library of Congress, February 2006. Exact URLs, article locators, hashes and rights evidence remain in the profiles. Raw legal text, source prose, images and PDFs are excluded. Official-page translation rights remain pending independent review; no official endorsement."
+    },
+    "sourceProfilesHash": "af162642f6c29e9c674860f50ea29dd5c029bdca1bf40281bb10b9d10a76fc50",
+    "authoredPayloadHash": "3423a9d49799fe31d3a8309c4a45cfcfaef8f1593923154ab9d657deb00d5cef",
+    "distributionRights": {
+      "licenseId": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution": "allowed",
+      "attribution": "GitWorld selected date and article-reference facts and independently modeled constitutional rules in English and Simplified Chinese, citing the fixed National Diet Library and MEXT pages and Sayuri Umeda / Law Library of Congress, Japan: Article 9 of the Constitution, February 2006. The English source editions are credited to Ito Miyoji and the Government Printing Bureau for research provenance. Original interpretations are not quotations, an official translation, or government-endorsed content. Selected NDL-authored factual observations are attributed under PDL1.0 / compatible CC BY 4.0. This CC BY-SA 4.0 statement applies to the original GitWorld model/presentation and compatible adapted covered content, not exclusive ownership of bare legal facts or a license to unknown source translations, whitepaper prose, formatting, images or PDFs."
+    },
+    "retainedSourceFields": [
+      "facts.key",
+      "facts.profileId",
+      "facts.factId",
+      "facts.locator",
+      "facts.textHash",
+      "facts.links.href",
+      "facts.links.locator",
+      "facts.links.textHash",
+      "facts.referenceAnchors",
+      "short structural selectors",
+      "source identity/revision/hash and citation headers"
+    ],
+    "excludedSourceExpression": [
+      "facts.text",
+      "facts.links.text",
+      "complete English legal sentences",
+      "whitepaper/glossary paragraphs",
+      "article/website HTML or layout",
+      "images/scans/PDF pages",
+      "third-party quotation or artwork"
+    ],
+    "originalPresentation": "The authoredPayloadHash binds the exact objects, typed statements, interpretation notes and bilingual field vocabulary. Those are independently authored modeling expressions; factual values and statutory identifiers are not claimed as exclusive works.",
+    "policyEvidence": [
+      {
+        "id": "jp-statutes",
+        "url": "https://laws.e-gov.go.jp/law/345AC0000000048",
+        "retrievedUrl": "https://laws.e-gov.go.jp/api/1/lawdata/345AC0000000048",
+        "clause": "Copyright Act Article 13 items (i) and (iv); Article 2(1)(i)",
+        "checkedAt": "2026-10-24T23:14:43.737Z"
+      },
+      {
+        "id": "ndl-site",
+        "url": "https://www.ndl.go.jp/sitepolicy/terms",
+        "clause": "Content use introduction; Important Information sections 1 and 2",
+        "checkedAt": "2026-10-24T23:14:43.737Z"
+      },
+      {
+        "id": "ndl-reuse",
+        "url": "https://www.ndl.go.jp/en/use/reproduction",
+        "clause": "Sections 1(1), 2 and 2.2",
+        "checkedAt": "2026-10-24T23:14:43.737Z"
+      },
+      {
+        "id": "pdl10",
+        "url": "https://www.digital.go.jp/resources/open_data/public_data_license_v1.0",
+        "clause": "1.1(1)-(2), 1.2, 1.4 and 1.7(3); opening paragraph on numerical/simple data",
+        "checkedAt": "2026-10-24T23:14:43.737Z"
+      },
+      {
+        "id": "mext-site",
+        "url": "https://www.mext.go.jp/b_menu/1351168.htm",
+        "clause": "Section 1 opening paragraph; 1)(a)-(b), 2)(a)-(d), 3), 6)(a)-(b)",
+        "checkedAt": "2026-10-24T23:14:43.737Z"
+      },
+      {
+        "id": "mext-exceptions",
+        "url": "https://www.mext.go.jp/en/other/title01/detail01/sdetail01/1375300.htm",
+        "clause": "Examples of Third-Party rights: MEXT White Paper; warning about pre-March-2014 or undated content; Content where other terms apply",
+        "checkedAt": "2026-10-24T23:14:43.737Z"
+      },
+      {
+        "id": "us-facts",
+        "url": "https://www.copyright.gov/help/faq/faq-protect.html",
+        "clause": "What Does Copyright Protect?; Names/titles/short phrases",
+        "checkedAt": "2026-10-24T23:14:43.737Z"
+      },
+      {
+        "id": "loc-law-reports",
+        "url": "https://www.loc.gov/collections/publications-of-the-law-library-of-congress/about-this-collection/rights-and-access/",
+        "itemUrl": "https://www.loc.gov/item/2019669658/#rights-and-access",
+        "clause": "Rights and Access: U.S. Government-authored reports available worldwide under CC0 1.0; third-party material excluded",
+        "checkedAt": "2026-10-24T23:14:43.737Z",
+        "accessEvidence": "Official collection-rights indexed text was read in this policy check; direct collection/item opens returned HTTP 403. No successful direct item fetch is claimed for that check."
+      }
+    ],
+    "sourceScopes": [
+      {
+        "profileId": "empire-constitution",
+        "identity": {
+          "provider": "official-document-html",
+          "externalId": "https://www.ndl.go.jp/constitution/e/etc/c02.html"
+        },
+        "sourceRevision": "W/\"462714a3f748bf70e559eac2e6888000\"",
+        "sourceContentHash": "c3db7c8d2d10c5dbda3e019a5506def8ecbadc018cd336f8ca86610f1b90746b",
+        "sourceUrl": "https://www.ndl.go.jp/constitution/e/etc/c02.html",
+        "retrievedAt": "2026-10-24T22:52:59.037Z",
+        "sourceTitle": "The Constitution of the Empire of Japan",
+        "sourceLanguage": "en",
+        "creatorOrEditionCredit": "Ito Miyoji, English translation; National Diet Library, publisher",
+        "sourceWorkRights": {
+          "redistribution": "unknown",
+          "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+        },
+        "selectedFactIds": [
+          "article-4",
+          "article-5",
+          "article-55"
+        ],
+        "factRecordHashes": [
+          {
+            "factId": "article-4",
+            "sha256": "71c8ad8d7584ec5c70efa45f3fdc6a83e1054d9c653d75d7e9b59c6715fc1327"
+          },
+          {
+            "factId": "article-5",
+            "sha256": "c8ca122cf282671672bc93d4f4862f12b26627bb02b2aced6a672c19780dfa4d"
+          },
+          {
+            "factId": "article-55",
+            "sha256": "547ef430b91fdf7554f168a547506948d78c8712e04461a61734b8eb0cb14d7b"
+          }
+        ],
+        "selectedOutput": "Article identities, fact hashes/locators and original bilingual structured descriptions of legal rules. No English legal sentence retained.",
+        "policyIds": [
+          "jp-statutes",
+          "ndl-site",
+          "ndl-reuse",
+          "us-facts"
+        ],
+        "notice": "Credit the named English translation for research provenance, retain its separate raw unknown status, and label GitWorld prose as original interpretation rather than quotation or a new translation of that prose.",
+        "boundary": "Only the listed factual/identifier records and independently authored model/presentation are proposed for distribution. No retained field or anchor text is included. Raw source-work rights remain as recorded above."
+      },
+      {
+        "profileId": "postwar-constitution",
+        "identity": {
+          "provider": "official-document-html",
+          "externalId": "https://www.ndl.go.jp/constitution/e/etc/c01.html"
+        },
+        "sourceRevision": "W/\"e54f96294aae1cf7644e808bfc83bdc5\"",
+        "sourceContentHash": "e65215aaab184a4917a4b7d5fe029e5b0c298e4719f923986242b7b370254a07",
+        "sourceUrl": "https://www.ndl.go.jp/constitution/e/etc/c01.html",
+        "retrievedAt": "2026-10-24T22:52:59.208Z",
+        "sourceTitle": "The Constitution of Japan",
+        "sourceLanguage": "en",
+        "creatorOrEditionCredit": "English edition based on Government Printing Bureau; National Diet Library, publisher",
+        "sourceWorkRights": {
+          "redistribution": "unknown",
+          "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+        },
+        "selectedFactIds": [
+          "article-1",
+          "article-3",
+          "article-4",
+          "article-6",
+          "article-41",
+          "article-65",
+          "promulgation"
+        ],
+        "factRecordHashes": [
+          {
+            "factId": "article-1",
+            "sha256": "5e0367269738ebb0de0d5f835d4a477b5903f24bb291291191d9e7b68850f050"
+          },
+          {
+            "factId": "article-3",
+            "sha256": "0da31698be732cb15b8f58d6102174bb9e5793177a80351efa262db53ff26ba5"
+          },
+          {
+            "factId": "article-4",
+            "sha256": "1770bf4857fa0b0c99bd065aba62463783a95664d82b05079204e5926734b028"
+          },
+          {
+            "factId": "article-6",
+            "sha256": "cd81170543b7af813fdd7226b63712f4bd793d5abb6e3fab80165dd9a4cb3528"
+          },
+          {
+            "factId": "article-41",
+            "sha256": "c9b73073a8af361347b44c99aa0984a96423e48672aad952da3c809c6f06c86b"
+          },
+          {
+            "factId": "article-65",
+            "sha256": "d74f5ab226092952569fccfa8d236b163fcce96481dd59d7fce4d62ea29d0738"
+          },
+          {
+            "factId": "promulgation",
+            "sha256": "270cd79f1b50ddab8a4aa2e356b40d8211e39addb5d26560910d90e2cd61a22b"
+          }
+        ],
+        "selectedOutput": "Legal role facts, article identities and promulgation date; independently written EN/zh-CN labels. No Government Printing Bureau English sentence retained.",
+        "policyIds": [
+          "jp-statutes",
+          "ndl-site",
+          "ndl-reuse",
+          "us-facts"
+        ],
+        "notice": "Retain the source edition credit; do not use this scope to approve all English text or NDL formatting.",
+        "boundary": "Only the listed factual/identifier records and independently authored model/presentation are proposed for distribution. No retained field or anchor text is included. Raw source-work rights remain as recorded above."
+      },
+      {
+        "profileId": "constitution-enforcement",
+        "identity": {
+          "provider": "official-document-html",
+          "externalId": "https://www.ndl.go.jp/constitution/e/outline/05outline.html"
+        },
+        "sourceRevision": "W/\"ef3bd66112a7f1cebda5b654968e8bc9\"",
+        "sourceContentHash": "65165d93a73d9e1a0118e8df6e06ddcc09dad57cc1447ce61cb6769da03a9ea4",
+        "sourceUrl": "https://www.ndl.go.jp/constitution/e/outline/05outline.html",
+        "retrievedAt": "2026-10-24T22:52:59.390Z",
+        "sourceTitle": "Part 5 Enactment of the Constitution of Japan",
+        "sourceLanguage": "en",
+        "creatorOrEditionCredit": "National Diet Library",
+        "sourceWorkRights": {
+          "redistribution": "unknown",
+          "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+        },
+        "selectedFactIds": [
+          "enforcement"
+        ],
+        "factRecordHashes": [
+          {
+            "factId": "enforcement",
+            "sha256": "4d926fea86b4241da2215d777d59ffcb65e88b48f03fb4a945974ceb13f3caec"
+          }
+        ],
+        "selectedOutput": "3 May 1947 date fact, hash/locator and original explanation only.",
+        "policyIds": [
+          "ndl-site",
+          "pdl10",
+          "us-facts"
+        ],
+        "notice": "National Diet Library source URL, PDL1.0 URL and GitWorld selected/normalized/independently interpreted statement; no endorsement.",
+        "boundary": "Only the listed factual/identifier records and independently authored model/presentation are proposed for distribution. No retained field or anchor text is included. Raw source-work rights remain as recorded above."
+      },
+      {
+        "profileId": "constitution-glossary",
+        "identity": {
+          "provider": "official-document-html",
+          "externalId": "https://www.ndl.go.jp/constitution/e/etc/glossary.html"
+        },
+        "sourceRevision": "W/\"63c5cd462545f6894ceed743f546f62c\"",
+        "sourceContentHash": "f37e5734f5d307a91e3e829dde63b9d5fe2dcaf2aea653255bd334057fa12128",
+        "sourceUrl": "https://www.ndl.go.jp/constitution/e/etc/glossary.html",
+        "retrievedAt": "2026-10-24T22:52:59.568Z",
+        "sourceTitle": "Glossary and Abbreviations",
+        "sourceLanguage": "en",
+        "creatorOrEditionCredit": "National Diet Library",
+        "sourceWorkRights": {
+          "redistribution": "unknown",
+          "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+        },
+        "selectedFactIds": [
+          "unchanged-meiji"
+        ],
+        "factRecordHashes": [
+          {
+            "factId": "unchanged-meiji",
+            "sha256": "e747914f1174f88dd2fc37f052f6ca95986e4222de8ff5623176ee30244ea961"
+          }
+        ],
+        "selectedOutput": "Historical factual continuity observation and Article 73 identity/hash/locator only. No glossary paragraph copied.",
+        "policyIds": [
+          "ndl-site",
+          "pdl10",
+          "us-facts"
+        ],
+        "notice": "Credit NDL and transformation. Keep Article 73 as an identifier or hash-bound link, not a legal-prose fragment.",
+        "boundary": "Only the listed factual/identifier records and independently authored model/presentation are proposed for distribution. No retained field or anchor text is included. Raw source-work rights remain as recorded above."
+      },
+      {
+        "profileId": "empire-enforcement",
+        "identity": {
+          "provider": "official-document-html",
+          "externalId": "https://www.mext.go.jp/b_menu/hakusho/html/others/detail/1317324.htm"
+        },
+        "sourceRevision": "\"1c22-5f6c744020f24\"",
+        "sourceContentHash": "8c0766cd64c2db4a5246338036edf7881b8fd061f15b5de0dc4098bd3849e28d",
+        "sourceUrl": "https://www.mext.go.jp/b_menu/hakusho/html/others/detail/1317324.htm",
+        "retrievedAt": "2026-10-24T22:53:00.688Z",
+        "sourceTitle": "(1) The Promulgation of the Meiji Constitution and Educatron",
+        "sourceLanguage": "en",
+        "creatorOrEditionCredit": "Ministry of Education, Culture, Sports, Science and Technology, Japan",
+        "sourceWorkRights": {
+          "redistribution": "unknown",
+          "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+        },
+        "selectedFactIds": [
+          "enforcement"
+        ],
+        "factRecordHashes": [
+          {
+            "factId": "enforcement",
+            "sha256": "ec57f187c9454d8aae25aa1d220c64780861a1195fcad08bccb84b0aadb93f43"
+          }
+        ],
+        "selectedOutput": "11 February 1889 promulgation and 29 November 1890 enforcement dates, short structural selector/hash/locator and original explanation only.",
+        "policyIds": [
+          "mext-site",
+          "mext-exceptions",
+          "us-facts"
+        ],
+        "notice": "MEXT source URL/title and retrieval date; explain that GitWorld selected bare dates and wrote its own bilingual description, excluding the whitepaper narrative.",
+        "boundary": "Only the listed factual/identifier records and independently authored model/presentation are proposed for distribution. No retained field or anchor text is included. Raw source-work rights remain as recorded above."
+      },
+      {
+        "profileId": "loc-continuity",
+        "identity": {
+          "provider": "loc-legal-report",
+          "externalId": "2019669658"
+        },
+        "sourceRevision": "f8e8e86ee92874dfabab75a7906c07cb56ef1b5365018066f27e4fea74e5cc24",
+        "sourceContentHash": "7268293a51f9741ebc214056b89c942cb79b7a9d599cf62f037069029912dc33",
+        "sourceUrl": "https://www.loc.gov/item/2019669658/",
+        "revisionUrl": "https://tile.loc.gov/storage-services/service/ll/llglrd/2019669658/2019669658.pdf",
+        "retrievedAt": "2026-10-24T22:53:25.266Z",
+        "sourceTitle": "Japan: Article 9 of the Constitution",
+        "sourceLanguage": "en",
+        "creatorOrEditionCredit": "Sayuri Umeda; Law Library of Congress, Global Legal Research Directorate",
+        "sourceWorkRights": {
+          "licenseId": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attribution": "Sayuri Umeda, Law Library of Congress, Japan: Article 9 of the Constitution, February 2006.",
+          "redistribution": "allowed"
+        },
+        "selectedFactIds": [
+          "unchanged-postwar",
+          "publication-date"
+        ],
+        "factRecordHashes": [
+          {
+            "factId": "unchanged-postwar",
+            "sha256": "35ddedc033d019c881a35fc44d448733ce56b7548851317a9e5401713583b4fd"
+          },
+          {
+            "factId": "publication-date",
+            "sha256": "e0974c60f5adbcacf37e3c1452e25131b5727dfd69e9b853a3c8bd7c44780506"
+          }
+        ],
+        "selectedOutput": "No-amendment observation bounded by February 2006, with report identity, PDF hash, extraction version and page locator. No third-party quotation/image.",
+        "policyIds": [
+          "loc-law-reports"
+        ],
+        "notice": "Sayuri Umeda; Law Library of Congress, Japan: Article 9 of the Constitution, February 2006. Cite collection rights and the exact item/PDF.",
+        "boundary": "Only the listed factual/identifier records and independently authored model/presentation are proposed for distribution. No retained field or anchor text is included. Raw source-work rights remain as recorded above."
+      }
+    ],
+    "publicationState": "This is an owner-prepared scope for exact candidate review, not reviewer approval, publication authorization, an installer review, or a runtime license inference."
+  }
+}

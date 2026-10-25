@@ -1,0 +1,38 @@
+import type { HistoryLocale } from '@gitworld/domain';
+import type { KnowledgeVocabularyConflict, KnowledgeVocabularySummary } from '../../../../packages/contracts/src/knowledge-import-types.ts';
+import { escapeHtml as esc } from './client.ts';
+import { knowledgeFilesCopy as copy, type KnowledgeFilesPlainKey } from './knowledge-files-copy.ts';
+
+export const CATALOG_PAGE_SIZE = 20;
+export type VocabularyReviewState = { kind: 'properties' | 'types' | 'values'; page: number; missingPage: number; conflictPage: number; evidencePage: number; catalogOpen: boolean; originOpen: boolean; missingOpen: boolean; conflictsOpen: boolean };
+export const initialVocabularyReview = (): VocabularyReviewState => ({ kind: 'properties', page: 0, missingPage: 0, conflictPage: 0, evidencePage: 0, catalogOpen: false, originOpen: false, missingOpen: false, conflictsOpen: false });
+const button = (action: string, title: string, extra = '') => `<button type="button" class="source-button" data-knowledge-file="${action}" ${extra}>${esc(title)}</button>`;
+export function knowledgeFileLink(url: string, title: string): string {
+  try { if (new URL(url).protocol === 'https:') return `<a href="${esc(url)}">${esc(title)}</a>`; } catch { /* Source metadata is still readable when its URL is unavailable. */ }
+  return esc(title);
+}
+function pager(locale: HistoryLocale, total: number, page: number, target: string) {
+  if (total <= CATALOG_PAGE_SIZE) return '';
+  const from = page * CATALOG_PAGE_SIZE;
+  return `<div class="knowledge-file-pagination"><span>${esc(copy(locale, 'countRange', { from: from + 1, to: Math.min(total, from + CATALOG_PAGE_SIZE), total }))}</span><div>${button('catalog-page', copy(locale, 'previous'), `data-target="${target}" data-page="${page - 1}" ${page === 0 ? 'disabled' : ''}`)}${button('catalog-page', copy(locale, 'next'), `data-target="${target}" data-page="${page + 1}" ${from + CATALOG_PAGE_SIZE >= total ? 'disabled' : ''}`)}</div></div>`;
+}
+export function vocabularyConflictHtml(locale: HistoryLocale, values: KnowledgeVocabularyConflict[], total: number, page = 0) {
+  const rows = values.slice(page * CATALOG_PAGE_SIZE, (page + 1) * CATALOG_PAGE_SIZE);
+  return `${values.length < total ? `<p class="source-muted">${esc(copy(locale, 'suppliedRange', { shown: values.length, total }))}</p>` : ''}<table class="knowledge-catalog-table"><thead><tr><th>${copy(locale, 'identifier')}</th><th>${copy(locale, 'local')}</th><th>${copy(locale, 'incoming')}</th></tr></thead><tbody>${rows.map(value => `<tr><td><code>${esc(value.key)}</code><small>${esc(value.language)}</small></td><td>${esc(value.local)}</td><td>${esc(value.incoming)}</td></tr>`).join('')}</tbody></table>${pager(locale, values.length, page, 'conflictPage')}`;
+}
+export function vocabularyReviewHtml(value: KnowledgeVocabularySummary, locale: HistoryLocale, state: VocabularyReviewState, previewKey: string): string {
+  const t = (key: KnowledgeFilesPlainKey) => copy(locale, key);
+  const rows = state.kind === 'values' ? (value.catalog.values ?? []).map(item => ({ key: `${item.propertyId} · ${item.value}`, labels: item.labels })) : value.catalog[state.kind].map(item => ({ key: item.id, labels: item.labels }));
+  const displayed = rows.slice(state.page * CATALOG_PAGE_SIZE, (state.page + 1) * CATALOG_PAGE_SIZE), origin = value.origin;
+  const name = (labels: Record<string, string>, language: string) => labels[language]?.trim() ? `<span lang="${language}">${esc(labels[language])}</span>` : `<span class="knowledge-catalog-missing">${t('missingName')}</span>`;
+  const field = (label: string, body: string) => `<dt>${esc(label)}</dt><dd>${body}</dd>`;
+  const evidence = origin.evidence.slice(state.evidencePage * CATALOG_PAGE_SIZE, (state.evidencePage + 1) * CATALOG_PAGE_SIZE);
+  return `<details class="knowledge-file-catalog" data-file-disclosure="catalogOpen" data-preview-key="${esc(previewKey)}" ${state.catalogOpen ? 'open' : ''}><summary><strong>${t('catalog')}</strong><span>${esc(copy(locale, 'catalogCounts', value))}</span></summary>
+    <div class="knowledge-file-catalog-summary">${value.missingCount ? `<span>${esc(copy(locale, 'missingCount', { count: value.missingCount }))}</span>` : ''}${value.conflictCount ? `<span class="knowledge-catalog-missing">${esc(copy(locale, 'conflictCount', { count: value.conflictCount }))}</span>` : ''}</div>
+    <nav class="knowledge-catalog-tabs" aria-label="${t('catalog')}">${(['properties', 'types', 'values'] as const).map(kind => button('catalog-kind', t(kind), `data-kind="${kind}" aria-pressed="${state.kind === kind}"`)).join('')}</nav>
+    ${displayed.length ? `<table class="knowledge-catalog-table"><thead><tr><th>${t('identifier')}</th><th>${t('english')}</th><th>${t('chinese')}</th></tr></thead><tbody>${displayed.map(item => `<tr><td><details><summary>${t('identifier')}</summary><code>${esc(item.key)}</code></details></td><td>${name(item.labels, 'en')}</td><td>${name(item.labels, 'zh-CN')}</td></tr>`).join('')}</tbody></table>` : `<p class="source-muted">${t('catalogEmpty')}</p>`}${pager(locale, rows.length, state.page, 'page')}
+    ${value.missingCount ? `<details data-file-disclosure="missingOpen" data-preview-key="${esc(previewKey)}" ${state.missingOpen ? 'open' : ''}><summary>${esc(copy(locale, 'missingCount', { count: value.missingCount }))}</summary>${value.missing.length < value.missingCount ? `<p>${esc(copy(locale, 'suppliedRange', { shown: value.missing.length, total: value.missingCount }))}</p>` : ''}<ul>${value.missing.slice(state.missingPage * CATALOG_PAGE_SIZE, (state.missingPage + 1) * CATALOG_PAGE_SIZE).map(item => `<li><code>${esc(item.key)}</code> · ${esc(item.language)}</li>`).join('')}</ul>${pager(locale, value.missing.length, state.missingPage, 'missingPage')}</details>` : ''}
+    ${value.conflictCount ? `<details data-file-disclosure="conflictsOpen" data-preview-key="${esc(previewKey)}" ${state.conflictsOpen ? 'open' : ''}><summary>${esc(copy(locale, 'conflictCount', { count: value.conflictCount }))}</summary><p>${t('catalogConflict')}</p>${vocabularyConflictHtml(locale, value.conflicts, value.conflictCount, state.conflictPage)}</details>` : ''}
+    <details data-file-disclosure="originOpen" data-preview-key="${esc(previewKey)}" ${state.originOpen ? 'open' : ''}><summary>${t('origin')}</summary><dl class="knowledge-file-origin">${field(t('catalogIdentity'), `<code>${esc(value.id)}</code>`)}${field(t('revision'), `<code>${esc(value.revision)}</code>`)}${field(t('provider'), esc(origin.identity.provider))}${field(t('externalId'), `<code>${esc(origin.identity.externalId)}</code>`)}${field(t('sourceUrl'), knowledgeFileLink(origin.url, origin.url))}${field(t('retrieved'), esc(origin.retrievedAt))}${field(t('rights'), t(origin.rights.redistribution === 'allowed' ? 'rightsAllowed' : origin.rights.redistribution === 'restricted' ? 'rightsRestricted' : 'rightsUnknown'))}${origin.rights.licenseId ? field(t('license'), origin.rights.licenseUrl ? knowledgeFileLink(origin.rights.licenseUrl, origin.rights.licenseId) : esc(origin.rights.licenseId)) : ''}${origin.rights.attribution ? field(t('attribution'), esc(origin.rights.attribution)) : ''}</dl><h4>${t('sourceEvidence')}</h4>${!origin.evidence.length ? `<p class="source-muted">${t('noCatalogEvidence')}</p>` : ''}${evidence.map(item => `<dl class="knowledge-file-origin">${field(t('sourceId'), `<code>${esc(item.sourceId)}</code>`)}${field(t('sourceHash'), `<code>${esc(item.sourceHash)}</code>`)}${field(t('locator'), `<code>${esc(item.locator)}</code>`)}</dl>`).join('')}${pager(locale, origin.evidence.length, state.evidencePage, 'evidencePage')}</details>
+  </details>`;
+}

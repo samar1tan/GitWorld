@@ -1,0 +1,30 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
+import { mkdtemp, rm } from 'node:fs/promises';
+import path from 'node:path';
+import { tmpdir } from 'node:os';
+import { fileURLToPath } from 'node:url';
+import { createEditorialRepository } from './editorial.ts';
+import { EDITORIAL_MAX_PATHS } from '../../contracts/src/editorial-types.ts';
+
+const root = fileURLToPath(new URL('../../../', import.meta.url)), binary = process.env.GITWORLD_TEST_GIT ?? path.join(root, '.local/bundled-git/runtime/bin/git');
+test('bulk unstage accepts the shared path budget and preserves working C and unselected frozen content', { skip: !existsSync(binary) && 'Build the pinned bundled Git runtime.' }, async t => {
+  const directory = await mkdtemp(path.join(tmpdir(), 'gitworld-unstage-')), repository = await createEditorialRepository({ dataDirectory: directory, gitExecutable: binary, gitExecPath: path.resolve(binary, '../../libexec/git-core') });
+  t.after(async () => { await repository.close(); await rm(directory, { recursive: true, force: true }); });
+  const initial = await repository.initialize({ 'models/existing.json': { value: 'A' }, 'models/deleted.json': { value: 'A' } });
+  const names = Array.from({ length: 20_001 }, (_, index) => `models/new-${index}.json`);
+  await repository.stage([...names.map(path => ({ path, value: { frozen: 'B' } })), { path: 'models/existing.json', value: { value: 'B' } }, { path: 'models/deleted.json', value: null }, { path: 'models/retained.json', value: { retained: true } }]);
+  await repository.write([{ path: 'models/existing.json', value: { value: 'C' } }]);
+  const result = await repository.unstage([...names, 'models/existing.json', 'models/deleted.json']);
+  assert.equal(result.head, initial.head); assert.deepEqual(result.staged.map(value => value.path), ['models/retained.json']);
+  assert.deepEqual(await repository.read('models/existing.json', { from: 'staged' }), { value: 'A' });
+  assert.deepEqual(await repository.read('models/existing.json'), { value: 'C' });
+  assert.deepEqual(await repository.read('models/deleted.json', { from: 'staged' }), { value: 'A' });
+  assert.equal(await repository.read(names[0], { from: 'staged' }), null);
+  const tree = result.stagedTree;
+  await assert.rejects(repository.unstage(['models/existing.json','../invalid.json']), { message: 'INVALID_PATH' });
+  await assert.rejects(repository.unstage(['models/existing.json','models/existing.json']), { message: 'INVALID_REQUEST' });
+  await assert.rejects(repository.unstage(Array.from({ length: EDITORIAL_MAX_PATHS + 1 }, (_, index) => `models/excess-${index}.json`)), { message: 'INVALID_REQUEST' });
+  assert.equal((await repository.status()).stagedTree, tree);
+});

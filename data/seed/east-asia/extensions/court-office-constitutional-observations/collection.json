@@ -1,0 +1,4656 @@
+{
+  "schemaVersion": 1,
+  "objects": [
+    {
+      "id": "history:court:japan-southern",
+      "identities": [
+        {
+          "provider": "gitworld-declared-historical-subject",
+          "externalId": "history:court:japan-southern"
+        }
+      ],
+      "labels": {
+        "en": "Southern Court imperial claims",
+        "zh-CN": "南朝天皇主张"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:court"
+      ]
+    },
+    {
+      "id": "history:court:japan-northern",
+      "identities": [
+        {
+          "provider": "gitworld-declared-historical-subject",
+          "externalId": "history:court:japan-northern"
+        }
+      ],
+      "labels": {
+        "en": "Northern Court imperial claims",
+        "zh-CN": "北朝天皇主张"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:court"
+      ]
+    },
+    {
+      "id": "history:office:daijo-daijin-1871",
+      "identities": [
+        {
+          "provider": "gitworld-declared-historical-subject",
+          "externalId": "history:office:daijo-daijin-1871"
+        }
+      ],
+      "labels": {
+        "en": "Daijō-daijin in the 1871–1885 survey",
+        "zh-CN": "1871–1885年太政大臣"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:office"
+      ]
+    },
+    {
+      "id": "history:office:japan-prime-minister",
+      "identities": [
+        {
+          "provider": "gitworld-declared-historical-subject",
+          "externalId": "history:office:japan-prime-minister"
+        }
+      ],
+      "labels": {
+        "en": "Prime Minister of Japan",
+        "zh-CN": "日本内阁总理大臣"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:office"
+      ]
+    },
+    {
+      "id": "history:office:prc-state-chairman-1954",
+      "identities": [
+        {
+          "provider": "gitworld-declared-historical-subject",
+          "externalId": "history:office:prc-state-chairman-1954"
+        }
+      ],
+      "labels": {
+        "en": "State chairman under the 1954 Constitution",
+        "zh-CN": "1954年宪制下的国家主席"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:office"
+      ]
+    },
+    {
+      "id": "history:office:prc-president-1982",
+      "identities": [
+        {
+          "provider": "gitworld-declared-historical-subject",
+          "externalId": "history:office:prc-president-1982"
+        }
+      ],
+      "labels": {
+        "en": "President under the 1982 Constitution",
+        "zh-CN": "1982年宪制下的国家主席"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:office"
+      ]
+    },
+    {
+      "id": "history:event:japan-court-settlement-1392",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:event:japan-court-settlement-1392"
+        }
+      ],
+      "labels": {
+        "en": "Settlement of Japan’s imperial claims in 1392",
+        "zh-CN": "1392年日本南北朝和议"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:political-settlement"
+      ]
+    },
+    {
+      "id": "history:event:japan-office-replacement-1885",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:event:japan-office-replacement-1885"
+        }
+      ],
+      "labels": {
+        "en": "Daijō-daijin replaced by the prime-minister office in 1885",
+        "zh-CN": "1885年日本首相官职替代太政大臣"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:institutional-change"
+      ]
+    },
+    {
+      "id": "history:legal-instrument:prc-constitution-1954",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:legal-instrument:prc-constitution-1954"
+        }
+      ],
+      "labels": {
+        "en": "1954 Constitution of the People’s Republic of China",
+        "zh-CN": "中华人民共和国1954年宪法"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:legal-instrument"
+      ]
+    },
+    {
+      "id": "history:legal-instrument:prc-constitution-1975",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:legal-instrument:prc-constitution-1975"
+        }
+      ],
+      "labels": {
+        "en": "1975 Constitution of the People’s Republic of China",
+        "zh-CN": "中华人民共和国1975年宪法"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:legal-instrument"
+      ]
+    },
+    {
+      "id": "history:legal-instrument:prc-constitution-1978",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:legal-instrument:prc-constitution-1978"
+        }
+      ],
+      "labels": {
+        "en": "1978 Constitution of the People’s Republic of China",
+        "zh-CN": "中华人民共和国1978年宪法"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:legal-instrument"
+      ]
+    },
+    {
+      "id": "history:legal-instrument:prc-constitution-1982",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:legal-instrument:prc-constitution-1982"
+        }
+      ],
+      "labels": {
+        "en": "1982 Constitution of the People’s Republic of China",
+        "zh-CN": "中华人民共和国1982年宪法"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:legal-instrument"
+      ]
+    }
+  ],
+  "assertions": [
+    {
+      "id": "evidenced-field:d6fbb2dc8ffb2e91265bf16e45485ce3944e2cc5",
+      "subjectId": "history:event:japan-court-settlement-1392",
+      "propertyId": "transformation:source-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 1392,
+          "latestYear": 1392,
+          "precision": "year",
+          "calendar": "source-unspecified",
+          "raw": "1392"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:settlement-date"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "nanbokucho:settlement-overview"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "nanbokucho:agreement-and-breach"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[0];$.text;p[document-index=148]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[1];$.text;p[document-index=646]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1392,
+          "latestYear": 1392,
+          "precision": "year",
+          "calendar": "source-unspecified",
+          "raw": "1392"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:a39d90bb5cf1b08d6c3393232bddd03cbb0ed503",
+      "subjectId": "history:event:japan-court-settlement-1392",
+      "propertyId": "settlement:conceding-claim",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:court:japan-southern"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:settlement-conceding"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "nanbokucho:settlement-overview"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "nanbokucho:agreement-and-breach"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[0];$.text;p[document-index=148]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[1];$.text;p[document-index=646]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1392,
+          "latestYear": 1392,
+          "precision": "year",
+          "calendar": "source-unspecified",
+          "raw": "1392"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:1e4b057eb288de13ee4f0f63a2f103fd57dbcb97",
+      "subjectId": "history:event:japan-court-settlement-1392",
+      "propertyId": "settlement:receiving-claim",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:court:japan-northern"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:settlement-receiving"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "nanbokucho:settlement-overview"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "nanbokucho:agreement-and-breach"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[0];$.text;p[document-index=148]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[1];$.text;p[document-index=646]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1392,
+          "latestYear": 1392,
+          "precision": "year",
+          "calendar": "source-unspecified",
+          "raw": "1392"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:41ed74d73c0884cd4cd1f9b7d4c7e058ffd33e5d",
+      "subjectId": "history:event:japan-court-settlement-1392",
+      "propertyId": "transformation:mechanism",
+      "value": {
+        "kind": "text",
+        "value": "negotiated-settlement"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:settlement-mechanism"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "nanbokucho:settlement-overview"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "nanbokucho:agreement-and-breach"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[0];$.text;p[document-index=148]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[1];$.text;p[document-index=646]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1392,
+          "latestYear": 1392,
+          "precision": "year",
+          "calendar": "source-unspecified",
+          "raw": "1392"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:ff1787e3060ee91c1a9dc88467d3991b59807546",
+      "subjectId": "history:event:japan-court-settlement-1392",
+      "propertyId": "settlement:undertaking",
+      "value": {
+        "kind": "text",
+        "value": "alternating-succession-promised"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "settlement:reported-breach-year",
+          "value": {
+            "kind": "time",
+            "value": {
+              "earliestYear": 1412,
+              "latestYear": 1412,
+              "precision": "year",
+              "calendar": "source-unspecified",
+              "raw": "1412"
+            }
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:settlement-undertaking"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "nanbokucho:settlement-overview"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "nanbokucho:agreement-and-breach"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[0];$.text;p[document-index=148]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[1];$.text;p[document-index=646]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1392,
+          "latestYear": 1392,
+          "precision": "year",
+          "calendar": "source-unspecified",
+          "raw": "1392"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:9978ce90df7c4f9110d224c151c1f240446e6e34",
+      "subjectId": "history:court:japan-southern",
+      "propertyId": "relation:political-settlement",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:japan-court-settlement-1392"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "settlement:participant-role",
+          "value": {
+            "kind": "text",
+            "value": "conceding"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:court-to-settlement-conceding"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "nanbokucho:settlement-overview"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "nanbokucho:agreement-and-breach"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[0];$.text;p[document-index=148]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[1];$.text;p[document-index=646]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1392,
+          "latestYear": 1392,
+          "precision": "year",
+          "calendar": "source-unspecified",
+          "raw": "1392"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:2c637108acd36770fd44aec5b394fac21e84f41c",
+      "subjectId": "history:court:japan-northern",
+      "propertyId": "relation:political-settlement",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:japan-court-settlement-1392"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "settlement:participant-role",
+          "value": {
+            "kind": "text",
+            "value": "receiving"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:court-to-settlement-receiving"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "nanbokucho:settlement-overview"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "nanbokucho:agreement-and-breach"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[0];$.text;p[document-index=148]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[1];$.text;p[document-index=646]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1392,
+          "latestYear": 1392,
+          "precision": "year",
+          "calendar": "source-unspecified",
+          "raw": "1392"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:aca667dba0473a1e73867deeff36a8d5d959f780",
+      "subjectId": "history:event:japan-office-replacement-1885",
+      "propertyId": "transformation:source-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 1885,
+          "latestYear": 1885,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "22 December 1885; 140 years ago (1885-12-22)",
+          "month": 12,
+          "day": 22
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:replacement-date"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prime-minister-japan:formation"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prime-minister-japan:office-replacement"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[16].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[4];$.text;p[document-index=887]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1885,
+          "latestYear": 1885,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "22 December 1885; 140 years ago (1885-12-22)",
+          "month": 12,
+          "day": 22
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:7e5590d018cd1b8e5d54fb80ed59704201bd94d6",
+      "subjectId": "history:event:japan-office-replacement-1885",
+      "propertyId": "institution:replaced-office",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:office:daijo-daijin-1871"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:replaced-office"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prime-minister-japan:formation"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prime-minister-japan:office-replacement"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[16].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[4];$.text;p[document-index=887]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1885,
+          "latestYear": 1885,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "22 December 1885; 140 years ago (1885-12-22)",
+          "month": 12,
+          "day": 22
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:11550d069d93a3d7b7a941ea204f39d9a7e79bb0",
+      "subjectId": "history:event:japan-office-replacement-1885",
+      "propertyId": "institution:established-office",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:office:japan-prime-minister"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:established-office"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prime-minister-japan:formation"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prime-minister-japan:office-replacement"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[16].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[4];$.text;p[document-index=887]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1885,
+          "latestYear": 1885,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "22 December 1885; 140 years ago (1885-12-22)",
+          "month": 12,
+          "day": 22
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:2fb2a729005b0dbe3c5707c35cd8cc9408eb7d77",
+      "subjectId": "history:event:japan-office-replacement-1885",
+      "propertyId": "institution:cabinet-formation-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 1885,
+          "latestYear": 1885,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "22 December 1885; 140 years ago (1885-12-22)",
+          "month": 12,
+          "day": 22
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:co-dated-cabinet-formation"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "cabinet-japan:formation"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prime-minister-japan:formation"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[2];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Cabinet%20of%20Japan&oldid=1380720045"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[16].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1885,
+          "latestYear": 1885,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "22 December 1885; 140 years ago (1885-12-22)",
+          "month": 12,
+          "day": 22
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:1df1c4113439f0c61695a2a2e560746bdfd8c2fe",
+      "subjectId": "history:office:daijo-daijin-1871",
+      "propertyId": "relation:institutional-change",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:japan-office-replacement-1885"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:change-role",
+          "value": {
+            "kind": "text",
+            "value": "replaced-office"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:office-to-replacement-replaced-office"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prime-minister-japan:formation"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prime-minister-japan:office-replacement"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[16].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[4];$.text;p[document-index=887]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1885,
+          "latestYear": 1885,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "22 December 1885; 140 years ago (1885-12-22)",
+          "month": 12,
+          "day": 22
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:42cf50b759a9d60de6c08981739c465a25402ade",
+      "subjectId": "history:office:japan-prime-minister",
+      "propertyId": "relation:institutional-change",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:japan-office-replacement-1885"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:change-role",
+          "value": {
+            "kind": "text",
+            "value": "established-office"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:office-to-replacement-established-office"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prime-minister-japan:formation"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prime-minister-japan:office-replacement"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[16].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[4];$.text;p[document-index=887]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1885,
+          "latestYear": 1885,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "22 December 1885; 140 years ago (1885-12-22)",
+          "month": 12,
+          "day": 22
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:cf9db9af2815c61b16cf622ee727207feabe9ccd",
+      "subjectId": "history:legal-instrument:prc-constitution-1954",
+      "propertyId": "constitution:adoption-observation-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 1954,
+          "latestYear": 1954,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "20 September 1954",
+          "month": 9,
+          "day": 20
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "constitution:observation-basis",
+          "value": {
+            "kind": "text",
+            "value": "text-at-source-stated-adoption"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:adoption-date-1954"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1954:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[5];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=1954%20Constitution%20of%20China&oldid=1381716772"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1954,
+          "latestYear": 1954,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "20 September 1954",
+          "month": 9,
+          "day": 20
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:50ae0235492eadd4de8007286a3cbd5fbd70e868",
+      "subjectId": "history:legal-instrument:prc-constitution-1954",
+      "propertyId": "constitution:source-listed-head-of-state-provision",
+      "value": {
+        "kind": "text",
+        "value": "state-president"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "constitution:observation-basis",
+          "value": {
+            "kind": "text",
+            "value": "text-at-source-stated-adoption"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:listed-head-of-state-1954"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:presidency-comparison"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:comparison-headers"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1954:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[11];$.text;tr[document-index=2027]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[10];$.text;tr[document-index=1998]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[5];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=1954%20Constitution%20of%20China&oldid=1381716772"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1954,
+          "latestYear": 1954,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "20 September 1954",
+          "month": 9,
+          "day": 20
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:f31366a106763d0f09d76364cb9a8ad22e6bbc72",
+      "subjectId": "history:legal-instrument:prc-constitution-1954",
+      "propertyId": "constitution:premier-nominator",
+      "value": {
+        "kind": "text",
+        "value": "state-president"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "constitution:observation-basis",
+          "value": {
+            "kind": "text",
+            "value": "text-at-source-stated-adoption"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:premier-nomination-1954"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:nomination-comparison"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:comparison-headers"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1954:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[12];$.text;tr[document-index=2047]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[10];$.text;tr[document-index=1998]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[5];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=1954%20Constitution%20of%20China&oldid=1381716772"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1954,
+          "latestYear": 1954,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "20 September 1954",
+          "month": 9,
+          "day": 20
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:83f52d471e9131f864ee65f783c0d3abbc7a30f2",
+      "subjectId": "history:legal-instrument:prc-constitution-1975",
+      "propertyId": "constitution:adoption-observation-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 1975,
+          "latestYear": 1975,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "17 January 1975 (1975-01-17)",
+          "month": 1,
+          "day": 17
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "constitution:observation-basis",
+          "value": {
+            "kind": "text",
+            "value": "text-at-source-stated-adoption"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:adoption-date-1975"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1975:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[6];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=1975%20Constitution%20of%20China&oldid=1381716802"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1975,
+          "latestYear": 1975,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "17 January 1975 (1975-01-17)",
+          "month": 1,
+          "day": 17
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:1b3c1c810d4879da959f4f2a62580dfd53d26631",
+      "subjectId": "history:legal-instrument:prc-constitution-1975",
+      "propertyId": "constitution:source-listed-head-of-state-provision",
+      "value": {
+        "kind": "text",
+        "value": "none-listed"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "constitution:observation-basis",
+          "value": {
+            "kind": "text",
+            "value": "text-at-source-stated-adoption"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:listed-head-of-state-1975"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:presidency-comparison"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:comparison-headers"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1975:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[11];$.text;tr[document-index=2027]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[10];$.text;tr[document-index=1998]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[6];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=1975%20Constitution%20of%20China&oldid=1381716802"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1975,
+          "latestYear": 1975,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "17 January 1975 (1975-01-17)",
+          "month": 1,
+          "day": 17
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:347b635dabdc8867b1b5ec1c770a886146cbc619",
+      "subjectId": "history:legal-instrument:prc-constitution-1975",
+      "propertyId": "constitution:premier-nominator",
+      "value": {
+        "kind": "text",
+        "value": "ccp-central-committee"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "constitution:observation-basis",
+          "value": {
+            "kind": "text",
+            "value": "text-at-source-stated-adoption"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:premier-nomination-1975"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:nomination-comparison"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:comparison-headers"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1975:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[12];$.text;tr[document-index=2047]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[10];$.text;tr[document-index=1998]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[6];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=1975%20Constitution%20of%20China&oldid=1381716802"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1975,
+          "latestYear": 1975,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "17 January 1975 (1975-01-17)",
+          "month": 1,
+          "day": 17
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:b9fcaa52669931ef6d37ee8d37a7cb6dddc6228d",
+      "subjectId": "history:legal-instrument:prc-constitution-1978",
+      "propertyId": "constitution:adoption-observation-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 1978,
+          "latestYear": 1978,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "5 March 1978 (1978-03-05)",
+          "month": 3,
+          "day": 5
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "constitution:observation-basis",
+          "value": {
+            "kind": "text",
+            "value": "text-at-source-stated-adoption"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:adoption-date-1978"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1978:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[8];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=1978%20Constitution%20of%20China&oldid=1381716847"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1978,
+          "latestYear": 1978,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "5 March 1978 (1978-03-05)",
+          "month": 3,
+          "day": 5
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:4e8b9bd06e44add05a340a176e216d2b5d9b74e9",
+      "subjectId": "history:legal-instrument:prc-constitution-1978",
+      "propertyId": "constitution:source-listed-head-of-state-provision",
+      "value": {
+        "kind": "text",
+        "value": "none-listed"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "constitution:observation-basis",
+          "value": {
+            "kind": "text",
+            "value": "text-at-source-stated-adoption"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:listed-head-of-state-1978"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:presidency-comparison"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:comparison-headers"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1978:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[11];$.text;tr[document-index=2027]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[10];$.text;tr[document-index=1998]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[8];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=1978%20Constitution%20of%20China&oldid=1381716847"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1978,
+          "latestYear": 1978,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "5 March 1978 (1978-03-05)",
+          "month": 3,
+          "day": 5
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:8502290fc70a4a69c2b6b301dafb2461bc81504d",
+      "subjectId": "history:legal-instrument:prc-constitution-1978",
+      "propertyId": "constitution:premier-nominator",
+      "value": {
+        "kind": "text",
+        "value": "ccp-central-committee"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "constitution:observation-basis",
+          "value": {
+            "kind": "text",
+            "value": "text-at-source-stated-adoption"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:premier-nomination-1978"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:nomination-comparison"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:comparison-headers"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1978:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[12];$.text;tr[document-index=2047]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[10];$.text;tr[document-index=1998]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[8];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=1978%20Constitution%20of%20China&oldid=1381716847"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1978,
+          "latestYear": 1978,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "5 March 1978 (1978-03-05)",
+          "month": 3,
+          "day": 5
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:d58006de3d8367284287fbe323e005ef605a964d",
+      "subjectId": "history:legal-instrument:prc-constitution-1982",
+      "propertyId": "constitution:adoption-observation-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 1982,
+          "latestYear": 1982,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "4 December 1982",
+          "month": 12,
+          "day": 4
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "constitution:observation-basis",
+          "value": {
+            "kind": "text",
+            "value": "text-at-source-stated-adoption"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:adoption-date-1982"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[9];$.text;table.infobox[0].tr[5].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1982,
+          "latestYear": 1982,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "4 December 1982",
+          "month": 12,
+          "day": 4
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:4764be710e0e504538ee151d8f2104a86c3f3c20",
+      "subjectId": "history:legal-instrument:prc-constitution-1982",
+      "propertyId": "constitution:source-listed-head-of-state-provision",
+      "value": {
+        "kind": "text",
+        "value": "state-president"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "constitution:observation-basis",
+          "value": {
+            "kind": "text",
+            "value": "text-at-source-stated-adoption"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:listed-head-of-state-1982"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:presidency-comparison"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:comparison-headers"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[11];$.text;tr[document-index=2027]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[10];$.text;tr[document-index=1998]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[9];$.text;table.infobox[0].tr[5].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1982,
+          "latestYear": 1982,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "4 December 1982",
+          "month": 12,
+          "day": 4
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:a4841da553c5fe3b4f0ab06b8d5e6d1b9e202269",
+      "subjectId": "history:legal-instrument:prc-constitution-1982",
+      "propertyId": "constitution:premier-nominator",
+      "value": {
+        "kind": "text",
+        "value": "state-president"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "constitution:observation-basis",
+          "value": {
+            "kind": "text",
+            "value": "text-at-source-stated-adoption"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:premier-nomination-1982"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:nomination-comparison"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:comparison-headers"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[12];$.text;tr[document-index=2047]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[10];$.text;tr[document-index=1998]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[9];$.text;table.infobox[0].tr[5].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1982,
+          "latestYear": 1982,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "4 December 1982",
+          "month": 12,
+          "day": 4
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:d58324f8c47bac714245e7fe0ef2aae311be41d1",
+      "subjectId": "history:legal-instrument:prc-constitution-1975",
+      "propertyId": "institution:abolished-office",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:office:prc-state-chairman-1954"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:explicit-change-1975"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1975:explicit-abolition"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1975:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[7];$.text;p[document-index=1430]",
+          "url": "https://en.wikipedia.org/w/index.php?title=1975%20Constitution%20of%20China&oldid=1381716802"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[6];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=1975%20Constitution%20of%20China&oldid=1381716802"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1975,
+          "latestYear": 1975,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "17 January 1975 (1975-01-17)",
+          "month": 1,
+          "day": 17
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:1535b2ae2e40e82cd91cd65631bdccd2c2006db2",
+      "subjectId": "history:office:prc-state-chairman-1954",
+      "propertyId": "relation:institutional-change",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:legal-instrument:prc-constitution-1975"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:change-role",
+          "value": {
+            "kind": "text",
+            "value": "abolished-office"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:office-to-text-1975"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1975:explicit-abolition"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1975:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[7];$.text;p[document-index=1430]",
+          "url": "https://en.wikipedia.org/w/index.php?title=1975%20Constitution%20of%20China&oldid=1381716802"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[6];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=1975%20Constitution%20of%20China&oldid=1381716802"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1975,
+          "latestYear": 1975,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "17 January 1975 (1975-01-17)",
+          "month": 1,
+          "day": 17
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:d9a472cbdfc35ea09b4ff57d781695e7065a228d",
+      "subjectId": "history:legal-instrument:prc-constitution-1982",
+      "propertyId": "institution:restored-office",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:office:prc-president-1982"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:explicit-change-1982"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:explicit-restoration"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[13];$.text;li[document-index=1949]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[9];$.text;table.infobox[0].tr[5].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1982,
+          "latestYear": 1982,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "4 December 1982",
+          "month": 12,
+          "day": 4
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:1e4b9bfae3bbc9fc8ee5f8842fb22d68211d2d62",
+      "subjectId": "history:office:prc-president-1982",
+      "propertyId": "relation:institutional-change",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:legal-instrument:prc-constitution-1982"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "institution:change-role",
+          "value": {
+            "kind": "text",
+            "value": "restored-office"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "court-office-and-constitutional-text-observations@1:office-to-text-1982"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:explicit-restoration"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "prc-constitution-1982:ratification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[13];$.text;li[document-index=1949]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+          "locator": "$.facts[9];$.text;table.infobox[0].tr[5].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 1982,
+          "latestYear": 1982,
+          "precision": "day",
+          "calendar": "source-unspecified",
+          "raw": "4 December 1982",
+          "month": 12,
+          "day": 4
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "identity": {
+        "provider": "gitworld-evidenced-fields",
+        "externalId": "court-office-and-constitutional-text-observations"
+      },
+      "revision": "1",
+      "contentHash": "4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "retrievedAt": "2026-10-25T03:09:41.643Z",
+      "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/historical-transformations-prd.md",
+      "adapterVersion": "evidenced-published-fields-v2",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "allowed",
+        "attribution": "English Wikipedia contributors, included fixed editions and actual author-history links. GitWorld selects factual fields and authors typed connections, dated text observations and English/Simplified Chinese presentation under CC-BY-SA-4.0. Raw HTML, source paragraphs, anchor labels and images are excluded. No endorsement or historical approval."
+      },
+      "record": {
+        "schemaVersion": 1,
+        "mappingVersion": "evidenced-published-fields-v2",
+        "plan": {
+          "schemaVersion": 1,
+          "id": "court-office-and-constitutional-text-observations",
+          "revision": "1",
+          "preparedAt": "2026-10-25T03:09:41.643Z",
+          "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/historical-transformations-prd.md",
+          "rights": {
+            "licenseId": "CC-BY-SA-4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "redistribution": "allowed",
+            "attribution": "English Wikipedia contributors, included fixed editions and actual author-history links. GitWorld selects factual fields and authors typed connections, dated text observations and English/Simplified Chinese presentation under CC-BY-SA-4.0. Raw HTML, source paragraphs, anchor labels and images are excluded. No endorsement or historical approval."
+          },
+          "profiles": [
+            {
+              "id": "nanbokucho",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "356763"
+              },
+              "revision": "1376607470",
+              "contentHash": "cdeca9f020a7054bcee263944b9878533c604ccc9531ce117b3998138d95e683",
+              "citation": {
+                "title": "Nanboku-chō period",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected factual fields and original bilingual interpretation are adapted under CC-BY-SA-4.0 with fixed editions, source hashes and author history. Raw article HTML, paragraphs, anchor labels, linked works and images are excluded."
+              },
+              "facts": [
+                {
+                  "id": "settlement-overview",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "p",
+                    "startsWith": "The Nanboku-chō period"
+                  },
+                  "textHash": "93a820f79e36860a6abb76e5700b39cfa648eba2974df91d631d8100aee18d80"
+                },
+                {
+                  "id": "agreement-and-breach",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "p",
+                    "startsWith": "As the Shogun tightened his control"
+                  },
+                  "textHash": "f0c6cdfb666058317cb6f6f90779f2be713a2475174ec899611fd80ec3241f7a"
+                }
+              ]
+            },
+            {
+              "id": "cabinet-japan",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "573784"
+              },
+              "revision": "1380720045",
+              "contentHash": "6f2d4a7d5fa307789206a625281f537fe888a77ad2fc6cc341da41cd03acf2b2",
+              "citation": {
+                "title": "Cabinet of Japan",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected factual fields and original bilingual interpretation are adapted under CC-BY-SA-4.0 with fixed editions, source hashes and author history. Raw article HTML, paragraphs, anchor labels, linked works and images are excluded."
+              },
+              "facts": [
+                {
+                  "id": "formation",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Formed"
+                  },
+                  "textHash": "81a389c50c79975f1a6b889eebe1f39cc9e6b010fb2e45d5a4dbedece20122be"
+                }
+              ]
+            },
+            {
+              "id": "prime-minister-japan",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "24833"
+              },
+              "revision": "1381481198",
+              "contentHash": "a478855deb43b356d7f7ee8eec5606f1d5e814240af9f5fa5fa59323f907fb47",
+              "citation": {
+                "title": "Prime Minister of Japan",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected factual fields and original bilingual interpretation are adapted under CC-BY-SA-4.0 with fixed editions, source hashes and author history. Raw article HTML, paragraphs, anchor labels, linked works and images are excluded."
+              },
+              "facts": [
+                {
+                  "id": "formation",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Formation"
+                  },
+                  "textHash": "81a389c50c79975f1a6b889eebe1f39cc9e6b010fb2e45d5a4dbedece20122be"
+                },
+                {
+                  "id": "office-replacement",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "p",
+                    "contains": "The office was replaced with the office of prime minister on 22 December 1885"
+                  },
+                  "textHash": "bdf59c5893ea24c4d1c5523968e6eb498ac3088231d4d2ee51a712e49460778b"
+                }
+              ]
+            },
+            {
+              "id": "prc-constitution-1954",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "875723"
+              },
+              "revision": "1381716772",
+              "contentHash": "c100607a3fef8c103cada444f5e7cd469f93809cd526642e6533ee2ed7a37d95",
+              "citation": {
+                "title": "1954 Constitution of China",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected factual fields and original bilingual interpretation are adapted under CC-BY-SA-4.0 with fixed editions, source hashes and author history. Raw article HTML, paragraphs, anchor labels, linked works and images are excluded."
+              },
+              "facts": [
+                {
+                  "id": "ratification",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Ratified"
+                  },
+                  "textHash": "6c380e77d55709511a5c540163a5fdd1ba2489d0da0e81890ca9217b59528ae6"
+                }
+              ]
+            },
+            {
+              "id": "prc-constitution-1975",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "875733"
+              },
+              "revision": "1381716802",
+              "contentHash": "d55ea541b7e53e76321e6b5845870aa24f506bbfa373815dfab28aadae66b1a4",
+              "citation": {
+                "title": "1975 Constitution of China",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected factual fields and original bilingual interpretation are adapted under CC-BY-SA-4.0 with fixed editions, source hashes and author history. Raw article HTML, paragraphs, anchor labels, linked works and images are excluded."
+              },
+              "facts": [
+                {
+                  "id": "ratification",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Ratified"
+                  },
+                  "textHash": "85278f540fdb230ab2e2f871383eb2486ca2cf5ec14652514cdeb37940909be9"
+                },
+                {
+                  "id": "explicit-abolition",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "p",
+                    "startsWith": "The 1975 Constitution of the People"
+                  },
+                  "textHash": "ea1ffd94dae7b384e3d93723f0029af8ebe567a23fed83f324e0ecd1a13586ac"
+                }
+              ]
+            },
+            {
+              "id": "prc-constitution-1978",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "875757"
+              },
+              "revision": "1381716847",
+              "contentHash": "2d5178b304680dc5b0c99c2b979cbaaf4ac23af99da8c1cc116b4eb75b8a82b1",
+              "citation": {
+                "title": "1978 Constitution of China",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected factual fields and original bilingual interpretation are adapted under CC-BY-SA-4.0 with fixed editions, source hashes and author history. Raw article HTML, paragraphs, anchor labels, linked works and images are excluded."
+              },
+              "facts": [
+                {
+                  "id": "ratification",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Ratified"
+                  },
+                  "textHash": "75f062348f54d9e53c190c378d072fb6ea001e533dd2c101139df0c7a73a1736"
+                }
+              ]
+            },
+            {
+              "id": "prc-constitution-1982",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "163574"
+              },
+              "revision": "1381706343",
+              "contentHash": "b51991ddbe15f3b91a929f798dea742c0109f1dc49f12ae99ac6528854ca383c",
+              "citation": {
+                "title": "Constitution of China",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected factual fields and original bilingual interpretation are adapted under CC-BY-SA-4.0 with fixed editions, source hashes and author history. Raw article HTML, paragraphs, anchor labels, linked works and images are excluded."
+              },
+              "facts": [
+                {
+                  "id": "ratification",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Ratified"
+                  },
+                  "textHash": "3b7096766416e13a13331fa4707109793657f53121eef98ab9e885a603931d48"
+                },
+                {
+                  "id": "comparison-headers",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "tr",
+                    "startsWith": "Characteristic"
+                  },
+                  "textHash": "72b9d1fe00c8f6ae0ff1bb17ffcd29e612aa13a2aee622e5a923a5825041c62f"
+                },
+                {
+                  "id": "presidency-comparison",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "tr",
+                    "startsWith": "Head of state",
+                    "contains": "Chairman of the Central"
+                  },
+                  "textHash": "2dc172b30e2c8ba9f69df5a93278c62b26d379e004b6fdc5febeaebf4073f841"
+                },
+                {
+                  "id": "nomination-comparison",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "tr",
+                    "startsWith": "Nomination of head of government"
+                  },
+                  "textHash": "0adc05fd24fbeb9cd2eeb61fc4a9910881725d4f7cda21c7179924d075dceeb5"
+                },
+                {
+                  "id": "explicit-restoration",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "li",
+                    "startsWith": "The positions of President and Vice President"
+                  },
+                  "textHash": "121354a63a63cd67fead0bd15ea2ccdebfdf661397ebe0e00e5c681804f70b73"
+                }
+              ]
+            }
+          ],
+          "objects": [
+            {
+              "id": "history:event:japan-court-settlement-1392",
+              "identities": [
+                {
+                  "provider": "gitworld-declared-evidenced-subject",
+                  "externalId": "history:event:japan-court-settlement-1392"
+                }
+              ],
+              "labels": {
+                "en": "Settlement of Japan’s imperial claims in 1392",
+                "zh-CN": "1392年日本南北朝和议"
+              },
+              "descriptions": {},
+              "aliases": [],
+              "types": [
+                "gitworld:political-settlement"
+              ]
+            },
+            {
+              "id": "history:event:japan-office-replacement-1885",
+              "identities": [
+                {
+                  "provider": "gitworld-declared-evidenced-subject",
+                  "externalId": "history:event:japan-office-replacement-1885"
+                }
+              ],
+              "labels": {
+                "en": "Daijō-daijin replaced by the prime-minister office in 1885",
+                "zh-CN": "1885年日本首相官职替代太政大臣"
+              },
+              "descriptions": {},
+              "aliases": [],
+              "types": [
+                "gitworld:institutional-change"
+              ]
+            },
+            {
+              "id": "history:legal-instrument:prc-constitution-1954",
+              "identities": [
+                {
+                  "provider": "gitworld-declared-evidenced-subject",
+                  "externalId": "history:legal-instrument:prc-constitution-1954"
+                }
+              ],
+              "labels": {
+                "en": "1954 Constitution of the People’s Republic of China",
+                "zh-CN": "中华人民共和国1954年宪法"
+              },
+              "descriptions": {},
+              "aliases": [],
+              "types": [
+                "gitworld:legal-instrument"
+              ]
+            },
+            {
+              "id": "history:legal-instrument:prc-constitution-1975",
+              "identities": [
+                {
+                  "provider": "gitworld-declared-evidenced-subject",
+                  "externalId": "history:legal-instrument:prc-constitution-1975"
+                }
+              ],
+              "labels": {
+                "en": "1975 Constitution of the People’s Republic of China",
+                "zh-CN": "中华人民共和国1975年宪法"
+              },
+              "descriptions": {},
+              "aliases": [],
+              "types": [
+                "gitworld:legal-instrument"
+              ]
+            },
+            {
+              "id": "history:legal-instrument:prc-constitution-1978",
+              "identities": [
+                {
+                  "provider": "gitworld-declared-evidenced-subject",
+                  "externalId": "history:legal-instrument:prc-constitution-1978"
+                }
+              ],
+              "labels": {
+                "en": "1978 Constitution of the People’s Republic of China",
+                "zh-CN": "中华人民共和国1978年宪法"
+              },
+              "descriptions": {},
+              "aliases": [],
+              "types": [
+                "gitworld:legal-instrument"
+              ]
+            },
+            {
+              "id": "history:legal-instrument:prc-constitution-1982",
+              "identities": [
+                {
+                  "provider": "gitworld-declared-evidenced-subject",
+                  "externalId": "history:legal-instrument:prc-constitution-1982"
+                }
+              ],
+              "labels": {
+                "en": "1982 Constitution of the People’s Republic of China",
+                "zh-CN": "中华人民共和国1982年宪法"
+              },
+              "descriptions": {},
+              "aliases": [],
+              "types": [
+                "gitworld:legal-instrument"
+              ]
+            }
+          ],
+          "statements": [
+            {
+              "id": "settlement-date",
+              "subjectId": "history:event:japan-court-settlement-1392",
+              "propertyId": "transformation:source-date",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 1392,
+                  "latestYear": 1392,
+                  "precision": "year",
+                  "calendar": "source-unspecified",
+                  "raw": "1392"
+                }
+              },
+              "factKeys": [
+                "nanbokucho:settlement-overview",
+                "nanbokucho:agreement-and-breach"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1392,
+                  "latestYear": 1392,
+                  "precision": "year",
+                  "calendar": "source-unspecified",
+                  "raw": "1392"
+                }
+              },
+              "timeFactKeys": [
+                "nanbokucho:settlement-overview",
+                "nanbokucho:agreement-and-breach"
+              ],
+              "interpretation": {
+                "en": "Bind the source-described 1392 concession and agreement to the two existing imperial-claim contexts. No state merger, universal end of later claims or retrospective legitimacy judgment is asserted.",
+                "zh-CN": "将来源记载的1392年让步与和议对应到两个既有皇位主张，不表示国家合并、后来一切主张终结或追溯合法性裁判。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "settlement-conceding",
+              "subjectId": "history:event:japan-court-settlement-1392",
+              "propertyId": "settlement:conceding-claim",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:court:japan-southern"
+              },
+              "factKeys": [
+                "nanbokucho:settlement-overview",
+                "nanbokucho:agreement-and-breach"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1392,
+                  "latestYear": 1392,
+                  "precision": "year",
+                  "calendar": "source-unspecified",
+                  "raw": "1392"
+                }
+              },
+              "timeFactKeys": [
+                "nanbokucho:settlement-overview",
+                "nanbokucho:agreement-and-breach"
+              ],
+              "interpretation": {
+                "en": "Bind the source-described 1392 concession and agreement to the two existing imperial-claim contexts. No state merger, universal end of later claims or retrospective legitimacy judgment is asserted.",
+                "zh-CN": "将来源记载的1392年让步与和议对应到两个既有皇位主张，不表示国家合并、后来一切主张终结或追溯合法性裁判。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "settlement-receiving",
+              "subjectId": "history:event:japan-court-settlement-1392",
+              "propertyId": "settlement:receiving-claim",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:court:japan-northern"
+              },
+              "factKeys": [
+                "nanbokucho:settlement-overview",
+                "nanbokucho:agreement-and-breach"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1392,
+                  "latestYear": 1392,
+                  "precision": "year",
+                  "calendar": "source-unspecified",
+                  "raw": "1392"
+                }
+              },
+              "timeFactKeys": [
+                "nanbokucho:settlement-overview",
+                "nanbokucho:agreement-and-breach"
+              ],
+              "interpretation": {
+                "en": "Bind the source-described 1392 concession and agreement to the two existing imperial-claim contexts. No state merger, universal end of later claims or retrospective legitimacy judgment is asserted.",
+                "zh-CN": "将来源记载的1392年让步与和议对应到两个既有皇位主张，不表示国家合并、后来一切主张终结或追溯合法性裁判。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "settlement-mechanism",
+              "subjectId": "history:event:japan-court-settlement-1392",
+              "propertyId": "transformation:mechanism",
+              "value": {
+                "kind": "text",
+                "value": "negotiated-settlement"
+              },
+              "factKeys": [
+                "nanbokucho:settlement-overview",
+                "nanbokucho:agreement-and-breach"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1392,
+                  "latestYear": 1392,
+                  "precision": "year",
+                  "calendar": "source-unspecified",
+                  "raw": "1392"
+                }
+              },
+              "timeFactKeys": [
+                "nanbokucho:settlement-overview",
+                "nanbokucho:agreement-and-breach"
+              ],
+              "interpretation": {
+                "en": "Bind the source-described 1392 concession and agreement to the two existing imperial-claim contexts. No state merger, universal end of later claims or retrospective legitimacy judgment is asserted.",
+                "zh-CN": "将来源记载的1392年让步与和议对应到两个既有皇位主张，不表示国家合并、后来一切主张终结或追溯合法性裁判。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "settlement-undertaking",
+              "subjectId": "history:event:japan-court-settlement-1392",
+              "propertyId": "settlement:undertaking",
+              "value": {
+                "kind": "text",
+                "value": "alternating-succession-promised"
+              },
+              "factKeys": [
+                "nanbokucho:settlement-overview",
+                "nanbokucho:agreement-and-breach"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1392,
+                  "latestYear": 1392,
+                  "precision": "year",
+                  "calendar": "source-unspecified",
+                  "raw": "1392"
+                }
+              },
+              "timeFactKeys": [
+                "nanbokucho:settlement-overview",
+                "nanbokucho:agreement-and-breach"
+              ],
+              "interpretation": {
+                "en": "Retain the promise and the source’s separately reported 1412 breach; do not assert that alternating succession was fulfilled.",
+                "zh-CN": "保留交替继承承诺及来源另记的1412年违约，不断言承诺已经履行。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "settlement:reported-breach-year",
+                  "value": {
+                    "kind": "time",
+                    "value": {
+                      "earliestYear": 1412,
+                      "latestYear": 1412,
+                      "precision": "year",
+                      "calendar": "source-unspecified",
+                      "raw": "1412"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "court-to-settlement-conceding",
+              "subjectId": "history:court:japan-southern",
+              "propertyId": "relation:political-settlement",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:event:japan-court-settlement-1392"
+              },
+              "factKeys": [
+                "nanbokucho:settlement-overview",
+                "nanbokucho:agreement-and-breach"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1392,
+                  "latestYear": 1392,
+                  "precision": "year",
+                  "calendar": "source-unspecified",
+                  "raw": "1392"
+                }
+              },
+              "timeFactKeys": [
+                "nanbokucho:settlement-overview",
+                "nanbokucho:agreement-and-breach"
+              ],
+              "interpretation": {
+                "en": "Bind the source-described 1392 concession and agreement to the two existing imperial-claim contexts. No state merger, universal end of later claims or retrospective legitimacy judgment is asserted.",
+                "zh-CN": "将来源记载的1392年让步与和议对应到两个既有皇位主张，不表示国家合并、后来一切主张终结或追溯合法性裁判。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "settlement:participant-role",
+                  "value": {
+                    "kind": "text",
+                    "value": "conceding"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "court-to-settlement-receiving",
+              "subjectId": "history:court:japan-northern",
+              "propertyId": "relation:political-settlement",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:event:japan-court-settlement-1392"
+              },
+              "factKeys": [
+                "nanbokucho:settlement-overview",
+                "nanbokucho:agreement-and-breach"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1392,
+                  "latestYear": 1392,
+                  "precision": "year",
+                  "calendar": "source-unspecified",
+                  "raw": "1392"
+                }
+              },
+              "timeFactKeys": [
+                "nanbokucho:settlement-overview",
+                "nanbokucho:agreement-and-breach"
+              ],
+              "interpretation": {
+                "en": "Bind the source-described 1392 concession and agreement to the two existing imperial-claim contexts. No state merger, universal end of later claims or retrospective legitimacy judgment is asserted.",
+                "zh-CN": "将来源记载的1392年让步与和议对应到两个既有皇位主张，不表示国家合并、后来一切主张终结或追溯合法性裁判。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "settlement:participant-role",
+                  "value": {
+                    "kind": "text",
+                    "value": "receiving"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "replacement-date",
+              "subjectId": "history:event:japan-office-replacement-1885",
+              "propertyId": "transformation:source-date",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 1885,
+                  "latestYear": 1885,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "22 December 1885; 140 years ago (1885-12-22)",
+                  "month": 12,
+                  "day": 22
+                }
+              },
+              "factKeys": [
+                "prime-minister-japan:formation",
+                "prime-minister-japan:office-replacement"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1885,
+                  "latestYear": 1885,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "22 December 1885; 140 years ago (1885-12-22)",
+                  "month": 12,
+                  "day": 22
+                }
+              },
+              "timeFactKeys": [
+                "prime-minister-japan:formation",
+                "prime-minister-japan:office-replacement"
+              ],
+              "interpretation": {
+                "en": "Use the source’s explicit 1885 office replacement, bounded to the declared Meiji-era Daijō-daijin context and the separate prime-minister office. No later powers or continuous Cabinet identity are copied.",
+                "zh-CN": "采用来源明确记载的1885年官职替代，限定于所声明的明治时期太政大臣背景与独立的内阁总理大臣官职，不复制后来职权或推定内阁连续身份。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "replaced-office",
+              "subjectId": "history:event:japan-office-replacement-1885",
+              "propertyId": "institution:replaced-office",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:office:daijo-daijin-1871"
+              },
+              "factKeys": [
+                "prime-minister-japan:formation",
+                "prime-minister-japan:office-replacement"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1885,
+                  "latestYear": 1885,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "22 December 1885; 140 years ago (1885-12-22)",
+                  "month": 12,
+                  "day": 22
+                }
+              },
+              "timeFactKeys": [
+                "prime-minister-japan:formation",
+                "prime-minister-japan:office-replacement"
+              ],
+              "interpretation": {
+                "en": "Use the source’s explicit 1885 office replacement, bounded to the declared Meiji-era Daijō-daijin context and the separate prime-minister office. No later powers or continuous Cabinet identity are copied.",
+                "zh-CN": "采用来源明确记载的1885年官职替代，限定于所声明的明治时期太政大臣背景与独立的内阁总理大臣官职，不复制后来职权或推定内阁连续身份。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "established-office",
+              "subjectId": "history:event:japan-office-replacement-1885",
+              "propertyId": "institution:established-office",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:office:japan-prime-minister"
+              },
+              "factKeys": [
+                "prime-minister-japan:formation",
+                "prime-minister-japan:office-replacement"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1885,
+                  "latestYear": 1885,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "22 December 1885; 140 years ago (1885-12-22)",
+                  "month": 12,
+                  "day": 22
+                }
+              },
+              "timeFactKeys": [
+                "prime-minister-japan:formation",
+                "prime-minister-japan:office-replacement"
+              ],
+              "interpretation": {
+                "en": "Use the source’s explicit 1885 office replacement, bounded to the declared Meiji-era Daijō-daijin context and the separate prime-minister office. No later powers or continuous Cabinet identity are copied.",
+                "zh-CN": "采用来源明确记载的1885年官职替代，限定于所声明的明治时期太政大臣背景与独立的内阁总理大臣官职，不复制后来职权或推定内阁连续身份。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "co-dated-cabinet-formation",
+              "subjectId": "history:event:japan-office-replacement-1885",
+              "propertyId": "institution:cabinet-formation-date",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 1885,
+                  "latestYear": 1885,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "22 December 1885; 140 years ago (1885-12-22)",
+                  "month": 12,
+                  "day": 22
+                }
+              },
+              "factKeys": [
+                "cabinet-japan:formation",
+                "prime-minister-japan:formation"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1885,
+                  "latestYear": 1885,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "22 December 1885; 140 years ago (1885-12-22)",
+                  "month": 12,
+                  "day": 22
+                }
+              },
+              "timeFactKeys": [
+                "cabinet-japan:formation",
+                "prime-minister-japan:formation"
+              ],
+              "interpretation": {
+                "en": "Retain the separately sourced Cabinet formation on the same date as context for this event; it does not identify the later constitutional-role object as an 1885 institution.",
+                "zh-CN": "将另有来源的同日内阁形成事实保留为事件背景，不据此把后来的宪制角色对象认定为1885年的机构。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "office-to-replacement-replaced-office",
+              "subjectId": "history:office:daijo-daijin-1871",
+              "propertyId": "relation:institutional-change",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:event:japan-office-replacement-1885"
+              },
+              "factKeys": [
+                "prime-minister-japan:formation",
+                "prime-minister-japan:office-replacement"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1885,
+                  "latestYear": 1885,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "22 December 1885; 140 years ago (1885-12-22)",
+                  "month": 12,
+                  "day": 22
+                }
+              },
+              "timeFactKeys": [
+                "prime-minister-japan:formation",
+                "prime-minister-japan:office-replacement"
+              ],
+              "interpretation": {
+                "en": "Use the source’s explicit 1885 office replacement, bounded to the declared Meiji-era Daijō-daijin context and the separate prime-minister office. No later powers or continuous Cabinet identity are copied.",
+                "zh-CN": "采用来源明确记载的1885年官职替代，限定于所声明的明治时期太政大臣背景与独立的内阁总理大臣官职，不复制后来职权或推定内阁连续身份。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "institution:change-role",
+                  "value": {
+                    "kind": "text",
+                    "value": "replaced-office"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "office-to-replacement-established-office",
+              "subjectId": "history:office:japan-prime-minister",
+              "propertyId": "relation:institutional-change",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:event:japan-office-replacement-1885"
+              },
+              "factKeys": [
+                "prime-minister-japan:formation",
+                "prime-minister-japan:office-replacement"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1885,
+                  "latestYear": 1885,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "22 December 1885; 140 years ago (1885-12-22)",
+                  "month": 12,
+                  "day": 22
+                }
+              },
+              "timeFactKeys": [
+                "prime-minister-japan:formation",
+                "prime-minister-japan:office-replacement"
+              ],
+              "interpretation": {
+                "en": "Use the source’s explicit 1885 office replacement, bounded to the declared Meiji-era Daijō-daijin context and the separate prime-minister office. No later powers or continuous Cabinet identity are copied.",
+                "zh-CN": "采用来源明确记载的1885年官职替代，限定于所声明的明治时期太政大臣背景与独立的内阁总理大臣官职，不复制后来职权或推定内阁连续身份。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "institution:change-role",
+                  "value": {
+                    "kind": "text",
+                    "value": "established-office"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "adoption-date-1954",
+              "subjectId": "history:legal-instrument:prc-constitution-1954",
+              "propertyId": "constitution:adoption-observation-date",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 1954,
+                  "latestYear": 1954,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "20 September 1954",
+                  "month": 9,
+                  "day": 20
+                }
+              },
+              "factKeys": [
+                "prc-constitution-1954:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1954,
+                  "latestYear": 1954,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "20 September 1954",
+                  "month": 9,
+                  "day": 20
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1954:ratification"
+              ],
+              "interpretation": {
+                "en": "Observe the source’s classification of this constitutional text at its reported adoption date. This does not assert enforcement, continuous applicability or effective power.",
+                "zh-CN": "观察来源对该宪制文本在所述通过日的分类，不断言施行时间、连续适用或实际权力。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "constitution:observation-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "text-at-source-stated-adoption"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "listed-head-of-state-1954",
+              "subjectId": "history:legal-instrument:prc-constitution-1954",
+              "propertyId": "constitution:source-listed-head-of-state-provision",
+              "value": {
+                "kind": "text",
+                "value": "state-president"
+              },
+              "factKeys": [
+                "prc-constitution-1982:presidency-comparison",
+                "prc-constitution-1982:comparison-headers",
+                "prc-constitution-1954:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1954,
+                  "latestYear": 1954,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "20 September 1954",
+                  "month": 9,
+                  "day": 20
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1954:ratification"
+              ],
+              "interpretation": {
+                "en": "Report the comparison table’s explicit entry under “Head of state”. None is a source listing, not an independent conclusion that every form of presidency or state representation was absent.",
+                "zh-CN": "记录比较表“国家元首”行的明确值。“未列”是来源表的分类，不是独立断言所有主席职位或国家代表形式均不存在。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "constitution:observation-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "text-at-source-stated-adoption"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "premier-nomination-1954",
+              "subjectId": "history:legal-instrument:prc-constitution-1954",
+              "propertyId": "constitution:premier-nominator",
+              "value": {
+                "kind": "text",
+                "value": "state-president"
+              },
+              "factKeys": [
+                "prc-constitution-1982:nomination-comparison",
+                "prc-constitution-1982:comparison-headers",
+                "prc-constitution-1954:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1954,
+                  "latestYear": 1954,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "20 September 1954",
+                  "month": 9,
+                  "day": 20
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1954:ratification"
+              ],
+              "interpretation": {
+                "en": "Retain the source-listed premier nomination authority separately from the head-of-state listing and from any holder’s practical power.",
+                "zh-CN": "将来源所列总理提名机关与元首分类及任职者实际权力分开保留。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "constitution:observation-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "text-at-source-stated-adoption"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "adoption-date-1975",
+              "subjectId": "history:legal-instrument:prc-constitution-1975",
+              "propertyId": "constitution:adoption-observation-date",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 1975,
+                  "latestYear": 1975,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "17 January 1975 (1975-01-17)",
+                  "month": 1,
+                  "day": 17
+                }
+              },
+              "factKeys": [
+                "prc-constitution-1975:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1975,
+                  "latestYear": 1975,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "17 January 1975 (1975-01-17)",
+                  "month": 1,
+                  "day": 17
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1975:ratification"
+              ],
+              "interpretation": {
+                "en": "Observe the source’s classification of this constitutional text at its reported adoption date. This does not assert enforcement, continuous applicability or effective power.",
+                "zh-CN": "观察来源对该宪制文本在所述通过日的分类，不断言施行时间、连续适用或实际权力。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "constitution:observation-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "text-at-source-stated-adoption"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "listed-head-of-state-1975",
+              "subjectId": "history:legal-instrument:prc-constitution-1975",
+              "propertyId": "constitution:source-listed-head-of-state-provision",
+              "value": {
+                "kind": "text",
+                "value": "none-listed"
+              },
+              "factKeys": [
+                "prc-constitution-1982:presidency-comparison",
+                "prc-constitution-1982:comparison-headers",
+                "prc-constitution-1975:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1975,
+                  "latestYear": 1975,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "17 January 1975 (1975-01-17)",
+                  "month": 1,
+                  "day": 17
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1975:ratification"
+              ],
+              "interpretation": {
+                "en": "Report the comparison table’s explicit entry under “Head of state”. None is a source listing, not an independent conclusion that every form of presidency or state representation was absent.",
+                "zh-CN": "记录比较表“国家元首”行的明确值。“未列”是来源表的分类，不是独立断言所有主席职位或国家代表形式均不存在。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "constitution:observation-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "text-at-source-stated-adoption"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "premier-nomination-1975",
+              "subjectId": "history:legal-instrument:prc-constitution-1975",
+              "propertyId": "constitution:premier-nominator",
+              "value": {
+                "kind": "text",
+                "value": "ccp-central-committee"
+              },
+              "factKeys": [
+                "prc-constitution-1982:nomination-comparison",
+                "prc-constitution-1982:comparison-headers",
+                "prc-constitution-1975:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1975,
+                  "latestYear": 1975,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "17 January 1975 (1975-01-17)",
+                  "month": 1,
+                  "day": 17
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1975:ratification"
+              ],
+              "interpretation": {
+                "en": "Retain the source-listed premier nomination authority separately from the head-of-state listing and from any holder’s practical power.",
+                "zh-CN": "将来源所列总理提名机关与元首分类及任职者实际权力分开保留。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "constitution:observation-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "text-at-source-stated-adoption"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "adoption-date-1978",
+              "subjectId": "history:legal-instrument:prc-constitution-1978",
+              "propertyId": "constitution:adoption-observation-date",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 1978,
+                  "latestYear": 1978,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "5 March 1978 (1978-03-05)",
+                  "month": 3,
+                  "day": 5
+                }
+              },
+              "factKeys": [
+                "prc-constitution-1978:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1978,
+                  "latestYear": 1978,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "5 March 1978 (1978-03-05)",
+                  "month": 3,
+                  "day": 5
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1978:ratification"
+              ],
+              "interpretation": {
+                "en": "Observe the source’s classification of this constitutional text at its reported adoption date. This does not assert enforcement, continuous applicability or effective power.",
+                "zh-CN": "观察来源对该宪制文本在所述通过日的分类，不断言施行时间、连续适用或实际权力。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "constitution:observation-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "text-at-source-stated-adoption"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "listed-head-of-state-1978",
+              "subjectId": "history:legal-instrument:prc-constitution-1978",
+              "propertyId": "constitution:source-listed-head-of-state-provision",
+              "value": {
+                "kind": "text",
+                "value": "none-listed"
+              },
+              "factKeys": [
+                "prc-constitution-1982:presidency-comparison",
+                "prc-constitution-1982:comparison-headers",
+                "prc-constitution-1978:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1978,
+                  "latestYear": 1978,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "5 March 1978 (1978-03-05)",
+                  "month": 3,
+                  "day": 5
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1978:ratification"
+              ],
+              "interpretation": {
+                "en": "Report the comparison table’s explicit entry under “Head of state”. None is a source listing, not an independent conclusion that every form of presidency or state representation was absent.",
+                "zh-CN": "记录比较表“国家元首”行的明确值。“未列”是来源表的分类，不是独立断言所有主席职位或国家代表形式均不存在。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "constitution:observation-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "text-at-source-stated-adoption"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "premier-nomination-1978",
+              "subjectId": "history:legal-instrument:prc-constitution-1978",
+              "propertyId": "constitution:premier-nominator",
+              "value": {
+                "kind": "text",
+                "value": "ccp-central-committee"
+              },
+              "factKeys": [
+                "prc-constitution-1982:nomination-comparison",
+                "prc-constitution-1982:comparison-headers",
+                "prc-constitution-1978:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1978,
+                  "latestYear": 1978,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "5 March 1978 (1978-03-05)",
+                  "month": 3,
+                  "day": 5
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1978:ratification"
+              ],
+              "interpretation": {
+                "en": "Retain the source-listed premier nomination authority separately from the head-of-state listing and from any holder’s practical power.",
+                "zh-CN": "将来源所列总理提名机关与元首分类及任职者实际权力分开保留。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "constitution:observation-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "text-at-source-stated-adoption"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "adoption-date-1982",
+              "subjectId": "history:legal-instrument:prc-constitution-1982",
+              "propertyId": "constitution:adoption-observation-date",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 1982,
+                  "latestYear": 1982,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "4 December 1982",
+                  "month": 12,
+                  "day": 4
+                }
+              },
+              "factKeys": [
+                "prc-constitution-1982:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1982,
+                  "latestYear": 1982,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "4 December 1982",
+                  "month": 12,
+                  "day": 4
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1982:ratification"
+              ],
+              "interpretation": {
+                "en": "Observe the source’s classification of this constitutional text at its reported adoption date. This does not assert enforcement, continuous applicability or effective power.",
+                "zh-CN": "观察来源对该宪制文本在所述通过日的分类，不断言施行时间、连续适用或实际权力。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "constitution:observation-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "text-at-source-stated-adoption"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "listed-head-of-state-1982",
+              "subjectId": "history:legal-instrument:prc-constitution-1982",
+              "propertyId": "constitution:source-listed-head-of-state-provision",
+              "value": {
+                "kind": "text",
+                "value": "state-president"
+              },
+              "factKeys": [
+                "prc-constitution-1982:presidency-comparison",
+                "prc-constitution-1982:comparison-headers",
+                "prc-constitution-1982:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1982,
+                  "latestYear": 1982,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "4 December 1982",
+                  "month": 12,
+                  "day": 4
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1982:ratification"
+              ],
+              "interpretation": {
+                "en": "Report the comparison table’s explicit entry under “Head of state”. None is a source listing, not an independent conclusion that every form of presidency or state representation was absent.",
+                "zh-CN": "记录比较表“国家元首”行的明确值。“未列”是来源表的分类，不是独立断言所有主席职位或国家代表形式均不存在。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "constitution:observation-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "text-at-source-stated-adoption"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "premier-nomination-1982",
+              "subjectId": "history:legal-instrument:prc-constitution-1982",
+              "propertyId": "constitution:premier-nominator",
+              "value": {
+                "kind": "text",
+                "value": "state-president"
+              },
+              "factKeys": [
+                "prc-constitution-1982:nomination-comparison",
+                "prc-constitution-1982:comparison-headers",
+                "prc-constitution-1982:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1982,
+                  "latestYear": 1982,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "4 December 1982",
+                  "month": 12,
+                  "day": 4
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1982:ratification"
+              ],
+              "interpretation": {
+                "en": "Retain the source-listed premier nomination authority separately from the head-of-state listing and from any holder’s practical power.",
+                "zh-CN": "将来源所列总理提名机关与元首分类及任职者实际权力分开保留。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "constitution:observation-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "text-at-source-stated-adoption"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "explicit-change-1975",
+              "subjectId": "history:legal-instrument:prc-constitution-1975",
+              "propertyId": "institution:abolished-office",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:office:prc-state-chairman-1954"
+              },
+              "factKeys": [
+                "prc-constitution-1975:explicit-abolition",
+                "prc-constitution-1975:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1975,
+                  "latestYear": 1975,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "17 January 1975 (1975-01-17)",
+                  "month": 1,
+                  "day": 17
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1975:ratification"
+              ],
+              "interpretation": {
+                "en": "Use only the explicit abolition sentence to connect this text observation to the existing 1954 office. A table entry, list gap or missing holder is not the evidence.",
+                "zh-CN": "仅用明确废除语句把文本观察连接到既有1954年官职，证据不是表格空值、名单缺口或任职者缺失。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "office-to-text-1975",
+              "subjectId": "history:office:prc-state-chairman-1954",
+              "propertyId": "relation:institutional-change",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:legal-instrument:prc-constitution-1975"
+              },
+              "factKeys": [
+                "prc-constitution-1975:explicit-abolition",
+                "prc-constitution-1975:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1975,
+                  "latestYear": 1975,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "17 January 1975 (1975-01-17)",
+                  "month": 1,
+                  "day": 17
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1975:ratification"
+              ],
+              "interpretation": {
+                "en": "Use only the explicit abolition sentence to connect this text observation to the existing 1954 office. A table entry, list gap or missing holder is not the evidence.",
+                "zh-CN": "仅用明确废除语句把文本观察连接到既有1954年官职，证据不是表格空值、名单缺口或任职者缺失。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "institution:change-role",
+                  "value": {
+                    "kind": "text",
+                    "value": "abolished-office"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "explicit-change-1982",
+              "subjectId": "history:legal-instrument:prc-constitution-1982",
+              "propertyId": "institution:restored-office",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:office:prc-president-1982"
+              },
+              "factKeys": [
+                "prc-constitution-1982:explicit-restoration",
+                "prc-constitution-1982:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1982,
+                  "latestYear": 1982,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "4 December 1982",
+                  "month": 12,
+                  "day": 4
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1982:ratification"
+              ],
+              "interpretation": {
+                "en": "Use the explicit restoration statement for the separate 1982 office. Its identity is not merged with the earlier 1954 office, and no unchanged powers through 2026 are inferred.",
+                "zh-CN": "用明确恢复语句对应独立的1982年官职，不与1954年官职合并身份，也不推定职权不变延续至2026年。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "office-to-text-1982",
+              "subjectId": "history:office:prc-president-1982",
+              "propertyId": "relation:institutional-change",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:legal-instrument:prc-constitution-1982"
+              },
+              "factKeys": [
+                "prc-constitution-1982:explicit-restoration",
+                "prc-constitution-1982:ratification"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 1982,
+                  "latestYear": 1982,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "4 December 1982",
+                  "month": 12,
+                  "day": 4
+                }
+              },
+              "timeFactKeys": [
+                "prc-constitution-1982:ratification"
+              ],
+              "interpretation": {
+                "en": "Use the explicit restoration statement for the separate 1982 office. Its identity is not merged with the earlier 1954 office, and no unchanged powers through 2026 are inferred.",
+                "zh-CN": "用明确恢复语句对应独立的1982年官职，不与1954年官职合并身份，也不推定职权不变延续至2026年。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "institution:change-role",
+                  "value": {
+                    "kind": "text",
+                    "value": "restored-office"
+                  }
+                }
+              ]
+            }
+          ],
+          "fieldCatalog": {
+            "schemaVersion": 1,
+            "kind": "historical-field-display-labels",
+            "properties": [
+              {
+                "id": "transformation:source-date",
+                "labels": {
+                  "en": "Date reported by source",
+                  "zh-CN": "来源所载日期"
+                }
+              },
+              {
+                "id": "transformation:mechanism",
+                "labels": {
+                  "en": "Form of political change",
+                  "zh-CN": "政治转变方式"
+                }
+              },
+              {
+                "id": "settlement:conceding-claim",
+                "labels": {
+                  "en": "Conceding imperial claim",
+                  "zh-CN": "让出的皇位主张"
+                }
+              },
+              {
+                "id": "settlement:receiving-claim",
+                "labels": {
+                  "en": "Receiving imperial claim",
+                  "zh-CN": "接受的皇位主张"
+                }
+              },
+              {
+                "id": "settlement:undertaking",
+                "labels": {
+                  "en": "Settlement undertaking",
+                  "zh-CN": "和议承诺"
+                }
+              },
+              {
+                "id": "settlement:reported-breach-year",
+                "labels": {
+                  "en": "Reported breach year",
+                  "zh-CN": "来源记载的违约年份"
+                }
+              },
+              {
+                "id": "settlement:participant-role",
+                "labels": {
+                  "en": "Settlement role",
+                  "zh-CN": "和议中的角色"
+                }
+              },
+              {
+                "id": "relation:political-settlement",
+                "labels": {
+                  "en": "Related settlement",
+                  "zh-CN": "相关和议"
+                }
+              },
+              {
+                "id": "institution:replaced-office",
+                "labels": {
+                  "en": "Replaced office",
+                  "zh-CN": "被替代的官职"
+                }
+              },
+              {
+                "id": "institution:established-office",
+                "labels": {
+                  "en": "Established office",
+                  "zh-CN": "新设官职"
+                }
+              },
+              {
+                "id": "institution:cabinet-formation-date",
+                "labels": {
+                  "en": "Co-dated Cabinet formation",
+                  "zh-CN": "同日内阁形成日期"
+                }
+              },
+              {
+                "id": "institution:change-role",
+                "labels": {
+                  "en": "Role in the institutional change",
+                  "zh-CN": "制度变更中的角色"
+                }
+              },
+              {
+                "id": "relation:institutional-change",
+                "labels": {
+                  "en": "Related institutional change",
+                  "zh-CN": "相关制度变更"
+                }
+              },
+              {
+                "id": "institution:abolished-office",
+                "labels": {
+                  "en": "Explicitly abolished office",
+                  "zh-CN": "明确废除的官职"
+                }
+              },
+              {
+                "id": "institution:restored-office",
+                "labels": {
+                  "en": "Explicitly restored office",
+                  "zh-CN": "明确恢复的官职"
+                }
+              },
+              {
+                "id": "constitution:adoption-observation-date",
+                "labels": {
+                  "en": "Text adoption date",
+                  "zh-CN": "文本通过日期"
+                }
+              },
+              {
+                "id": "constitution:source-listed-head-of-state-provision",
+                "labels": {
+                  "en": "Head of state listed by the source",
+                  "zh-CN": "来源表中的国家元首"
+                }
+              },
+              {
+                "id": "constitution:premier-nominator",
+                "labels": {
+                  "en": "Premier nomination authority",
+                  "zh-CN": "总理提名机关"
+                }
+              },
+              {
+                "id": "constitution:observation-basis",
+                "labels": {
+                  "en": "Observation basis",
+                  "zh-CN": "观察依据"
+                }
+              },
+              {
+                "id": "projection:rule-id",
+                "labels": {
+                  "en": "Mapping rule",
+                  "zh-CN": "映射规则"
+                }
+              },
+              {
+                "id": "projection:source-fact",
+                "labels": {
+                  "en": "Source field",
+                  "zh-CN": "来源字段"
+                }
+              }
+            ],
+            "types": [
+              {
+                "id": "gitworld:political-settlement",
+                "labels": {
+                  "en": "Political settlement",
+                  "zh-CN": "政治和议"
+                }
+              },
+              {
+                "id": "gitworld:institutional-change",
+                "labels": {
+                  "en": "Institutional change",
+                  "zh-CN": "制度变化"
+                }
+              },
+              {
+                "id": "gitworld:legal-instrument",
+                "labels": {
+                  "en": "Legal instrument",
+                  "zh-CN": "法律文件"
+                }
+              },
+              {
+                "id": "gitworld:court",
+                "labels": {
+                  "en": "Court",
+                  "zh-CN": "朝廷"
+                }
+              },
+              {
+                "id": "gitworld:office",
+                "labels": {
+                  "en": "Office",
+                  "zh-CN": "官职"
+                }
+              }
+            ],
+            "values": [
+              {
+                "propertyId": "transformation:mechanism",
+                "value": "negotiated-settlement",
+                "labels": {
+                  "en": "Negotiated settlement",
+                  "zh-CN": "协商和议"
+                }
+              },
+              {
+                "propertyId": "settlement:undertaking",
+                "value": "alternating-succession-promised",
+                "labels": {
+                  "en": "Alternating succession promised",
+                  "zh-CN": "承诺交替继承"
+                }
+              },
+              {
+                "propertyId": "settlement:participant-role",
+                "value": "conceding",
+                "labels": {
+                  "en": "Conceding claim",
+                  "zh-CN": "让出主张的一方"
+                }
+              },
+              {
+                "propertyId": "settlement:participant-role",
+                "value": "receiving",
+                "labels": {
+                  "en": "Receiving claim",
+                  "zh-CN": "接受主张的一方"
+                }
+              },
+              {
+                "propertyId": "institution:change-role",
+                "value": "replaced-office",
+                "labels": {
+                  "en": "Replaced office",
+                  "zh-CN": "被替代官职"
+                }
+              },
+              {
+                "propertyId": "institution:change-role",
+                "value": "established-office",
+                "labels": {
+                  "en": "Established office",
+                  "zh-CN": "新设官职"
+                }
+              },
+              {
+                "propertyId": "institution:change-role",
+                "value": "abolished-office",
+                "labels": {
+                  "en": "Abolished office",
+                  "zh-CN": "被废除官职"
+                }
+              },
+              {
+                "propertyId": "institution:change-role",
+                "value": "restored-office",
+                "labels": {
+                  "en": "Restored office",
+                  "zh-CN": "被恢复官职"
+                }
+              },
+              {
+                "propertyId": "constitution:source-listed-head-of-state-provision",
+                "value": "state-president",
+                "labels": {
+                  "en": "State President",
+                  "zh-CN": "国家主席"
+                }
+              },
+              {
+                "propertyId": "constitution:source-listed-head-of-state-provision",
+                "value": "none-listed",
+                "labels": {
+                  "en": "No head of state listed",
+                  "zh-CN": "来源表未列元首"
+                }
+              },
+              {
+                "propertyId": "constitution:premier-nominator",
+                "value": "state-president",
+                "labels": {
+                  "en": "State President",
+                  "zh-CN": "国家主席"
+                }
+              },
+              {
+                "propertyId": "constitution:premier-nominator",
+                "value": "ccp-central-committee",
+                "labels": {
+                  "en": "CCP Central Committee",
+                  "zh-CN": "中共中央委员会"
+                }
+              },
+              {
+                "propertyId": "constitution:observation-basis",
+                "value": "text-at-source-stated-adoption",
+                "labels": {
+                  "en": "Text at its reported adoption date",
+                  "zh-CN": "来源所述通过日的文本观察"
+                }
+              }
+            ],
+            "semanticNotes": [
+              {
+                "ids": [
+                  "settlement:conceding-claim",
+                  "settlement:receiving-claim",
+                  "settlement:undertaking",
+                  "relation:political-settlement"
+                ],
+                "en": "A source-described settlement between imperial claims. The undertaking is a promise, not evidence of later fulfillment, a legitimacy judgment, state merger or Git ancestry.",
+                "zh-CN": "来源记载的皇位主张之间的和议。和议条款是当时的承诺，不证明后来履行，不代表合法性裁判、国家合并或 Git 继承。"
+              },
+              {
+                "ids": [
+                  "institution:replaced-office",
+                  "institution:established-office",
+                  "institution:cabinet-formation-date"
+                ],
+                "en": "The source explicitly reports an office replacement and a Cabinet formed on the same date. This does not backdate the later Cabinet constitutional-role object or establish institutional continuity.",
+                "zh-CN": "来源明确记载官职替代及同日内阁形成，不据此回推后来的内阁宪制角色，也不据此确认机构连续性。"
+              },
+              {
+                "ids": [
+                  "constitution:source-listed-head-of-state-provision",
+                  "constitution:premier-nominator",
+                  "constitution:observation-basis"
+                ],
+                "en": "Dated observations of the source’s constitutional-text comparison. None means that its “Head of state” row lists none; it is not an independent legal-text audit, absence of all state representation, enforcement timing or effective power. Explicit abolition/restoration use separate evidence.",
+                "zh-CN": "对来源宪制文本比较的有日期观察。“未列”仅表示其“国家元首”行明确列为无，不是独立法条审校，也不表示没有任何国家代表、已经确定施行时间或实际权力。废除与恢复另有明确证据。"
+              }
+            ]
+          },
+          "temporalRules": {
+            "version": "dated-source-observations-v1",
+            "calendar": "source-unspecified",
+            "policy": "Event/adoption dates supply point observations only. No enforcement or continuous legal applicability is inferred. A source period date is not an event duration.",
+            "captures": [
+              {
+                "factKey": "nanbokucho:agreement-and-breach",
+                "rule": "explicit-event-year-and-later-breach-qualification",
+                "sourceFragment": "In 1392 Ashikaga",
+                "normalized": {
+                  "earliestYear": 1392,
+                  "latestYear": 1392,
+                  "precision": "year",
+                  "calendar": "source-unspecified",
+                  "raw": "1392"
+                },
+                "reportedBreach": {
+                  "earliestYear": 1412,
+                  "latestYear": 1412,
+                  "precision": "year",
+                  "calendar": "source-unspecified",
+                  "raw": "1412"
+                }
+              },
+              {
+                "factKey": "prime-minister-japan:formation",
+                "rule": "leading-English-day-month-year-before-relative-display-or-duplicate-ISO",
+                "sourceFragment": "22 December 1885",
+                "normalized": {
+                  "earliestYear": 1885,
+                  "latestYear": 1885,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "22 December 1885; 140 years ago (1885-12-22)",
+                  "month": 12,
+                  "day": 22
+                }
+              },
+              {
+                "factKey": "cabinet-japan:formation",
+                "rule": "leading-English-day-month-year-before-relative-display-or-duplicate-ISO",
+                "sourceFragment": "22 December 1885",
+                "normalized": {
+                  "earliestYear": 1885,
+                  "latestYear": 1885,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "22 December 1885; 140 years ago (1885-12-22)",
+                  "month": 12,
+                  "day": 22
+                }
+              },
+              {
+                "factKey": "prc-constitution-1954:ratification",
+                "rule": "leading-English-day-month-year-before-relative-display-or-duplicate-ISO",
+                "sourceFragment": "20 September 1954",
+                "normalized": {
+                  "earliestYear": 1954,
+                  "latestYear": 1954,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "20 September 1954",
+                  "month": 9,
+                  "day": 20
+                }
+              },
+              {
+                "factKey": "prc-constitution-1975:ratification",
+                "rule": "leading-English-day-month-year-before-relative-display-or-duplicate-ISO",
+                "sourceFragment": "17 January 1975",
+                "normalized": {
+                  "earliestYear": 1975,
+                  "latestYear": 1975,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "17 January 1975 (1975-01-17)",
+                  "month": 1,
+                  "day": 17
+                }
+              },
+              {
+                "factKey": "prc-constitution-1978:ratification",
+                "rule": "leading-English-day-month-year-before-relative-display-or-duplicate-ISO",
+                "sourceFragment": "5 March 1978",
+                "normalized": {
+                  "earliestYear": 1978,
+                  "latestYear": 1978,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "5 March 1978 (1978-03-05)",
+                  "month": 3,
+                  "day": 5
+                }
+              },
+              {
+                "factKey": "prc-constitution-1982:ratification",
+                "rule": "leading-English-day-month-year-before-relative-display-or-duplicate-ISO",
+                "sourceFragment": "4 December 1982",
+                "normalized": {
+                  "earliestYear": 1982,
+                  "latestYear": 1982,
+                  "precision": "day",
+                  "calendar": "source-unspecified",
+                  "raw": "4 December 1982",
+                  "month": 12,
+                  "day": 4
+                }
+              }
+            ]
+          },
+          "existingObjectBindings": [
+            {
+              "role": "southern",
+              "id": "history:court:japan-southern",
+              "objectHash": "b1bfb93e0d0d0fd9c22b207f2ed9819e485c7c1e9350d55eecdb9990904778ba",
+              "baseManifestHash": "804ce424ef2a9e0eccca12b4f55808499889fc66a4c9d94df116d9360781e911",
+              "boundary": "Exact existing declared subject; no name merge or copied holder fields."
+            },
+            {
+              "role": "northern",
+              "id": "history:court:japan-northern",
+              "objectHash": "4e4d9032b7c77d35f140261b28dba7c97feda9421e355b13fbb5d79bba742f93",
+              "baseManifestHash": "804ce424ef2a9e0eccca12b4f55808499889fc66a4c9d94df116d9360781e911",
+              "boundary": "Exact existing declared subject; no name merge or copied holder fields."
+            },
+            {
+              "role": "daijo",
+              "id": "history:office:daijo-daijin-1871",
+              "objectHash": "97a9d3150d6d8ef1812e84ab74f22720d74ccc59dfc222f029559f4dda4322f5",
+              "baseManifestHash": "804ce424ef2a9e0eccca12b4f55808499889fc66a4c9d94df116d9360781e911",
+              "boundary": "Exact existing declared subject; no name merge or copied holder fields."
+            },
+            {
+              "role": "pm",
+              "id": "history:office:japan-prime-minister",
+              "objectHash": "0e0f0a2d2a3bf60120ba209f69ad1ddc44ec85a5a400992d0d5d0d13d953eb13",
+              "baseManifestHash": "804ce424ef2a9e0eccca12b4f55808499889fc66a4c9d94df116d9360781e911",
+              "boundary": "Exact existing declared subject; no name merge or copied holder fields."
+            },
+            {
+              "role": "oldPresident",
+              "id": "history:office:prc-state-chairman-1954",
+              "objectHash": "c068cf5a61c4903bc9fb6c737f95a6cc3c5e9f56ebee4503014c9dc92e3df97b",
+              "baseManifestHash": "804ce424ef2a9e0eccca12b4f55808499889fc66a4c9d94df116d9360781e911",
+              "boundary": "Exact existing declared subject; no name merge or copied holder fields."
+            },
+            {
+              "role": "newPresident",
+              "id": "history:office:prc-president-1982",
+              "objectHash": "28f92418387f833394a101f34473cfc8f1b7d33445131ec1e0ad2ffb6eea9b9a",
+              "baseManifestHash": "804ce424ef2a9e0eccca12b4f55808499889fc66a4c9d94df116d9360781e911",
+              "boundary": "Exact existing declared subject; no name merge or copied holder fields."
+            }
+          ],
+          "comparisonAlignment": {
+            "sourceProfile": "prc-constitution-1982",
+            "sourceHash": "b51991ddbe15f3b91a929f798dea742c0109f1dc49f12ae99ac6528854ca383c",
+            "headerHash": "961d3d707088783cafee70e644a1e2fc92c7bed654d6cabfb93d8493814b1b84",
+            "headers": [
+              "Characteristic",
+              "Common Program",
+              "1954",
+              "1975",
+              "1978",
+              "1982 (original text and first to fourth amendments)",
+              "Current"
+            ],
+            "selectedRows": [
+              {
+                "sourceRow": 6,
+                "logicalValues": [
+                  "Head of state",
+                  "Chairman of the Central People's Government",
+                  "State President",
+                  "None",
+                  "None",
+                  "State President",
+                  "State President"
+                ],
+                "cells": [
+                  {
+                    "column": 0,
+                    "colSpan": 1,
+                    "rowSpan": 1,
+                    "sourceTextHash": "8b4134f17a63e52d1b2e99329f9fbbf185049f549c90fb82b3f9a6e9759359ae"
+                  },
+                  {
+                    "column": 1,
+                    "colSpan": 1,
+                    "rowSpan": 1,
+                    "sourceTextHash": "0a47f598cfa618259071710ff4c3bde84ab3fa16979eabcbd591a5c02fafbe40"
+                  },
+                  {
+                    "column": 2,
+                    "colSpan": 1,
+                    "rowSpan": 1,
+                    "sourceTextHash": "d458e2a496f0cb2cc7928393545f140f502da2d4700da2c122fcc58865839ace"
+                  },
+                  {
+                    "column": 3,
+                    "colSpan": 2,
+                    "rowSpan": 1,
+                    "sourceTextHash": "dc937b59892604f5a86ac96936cd7ff09e25f18ae6b758e8014a24c7fa039e91"
+                  },
+                  {
+                    "column": 5,
+                    "colSpan": 2,
+                    "rowSpan": 1,
+                    "sourceTextHash": "d458e2a496f0cb2cc7928393545f140f502da2d4700da2c122fcc58865839ace"
+                  }
+                ]
+              },
+              {
+                "sourceRow": 10,
+                "logicalValues": [
+                  "Nomination of head of government",
+                  "Central People's Government Council",
+                  "State President",
+                  "CCP Central Committee",
+                  "CCP Central Committee",
+                  "State President",
+                  "State President"
+                ],
+                "cells": [
+                  {
+                    "column": 0,
+                    "colSpan": 1,
+                    "rowSpan": 1,
+                    "sourceTextHash": "e5cecf6d5c6dba939b5c996ab14c1c23322fe37f6fceff5a1872511b70f96cd3"
+                  },
+                  {
+                    "column": 1,
+                    "colSpan": 1,
+                    "rowSpan": 1,
+                    "sourceTextHash": "d6a8c3459a0fb74d2f14ae6d1006d8507a4dc13189f8de4a7d658666520c0727"
+                  },
+                  {
+                    "column": 2,
+                    "colSpan": 1,
+                    "rowSpan": 1,
+                    "sourceTextHash": "d458e2a496f0cb2cc7928393545f140f502da2d4700da2c122fcc58865839ace"
+                  },
+                  {
+                    "column": 3,
+                    "colSpan": 2,
+                    "rowSpan": 1,
+                    "sourceTextHash": "cb1be1700ecee7bcffbd7239638d9c85f345dda86163198d13e28c8b762d0674"
+                  },
+                  {
+                    "column": 5,
+                    "colSpan": 2,
+                    "rowSpan": 1,
+                    "sourceTextHash": "d458e2a496f0cb2cc7928393545f140f502da2d4700da2c122fcc58865839ace"
+                  }
+                ]
+              }
+            ],
+            "meaning": "Literal source table classification, not an independent audit of the original legal texts or effective power."
+          }
+        },
+        "inputSources": [
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "356763"
+            },
+            "revision": "1376607470",
+            "contentHash": "cdeca9f020a7054bcee263944b9878533c604ccc9531ce117b3998138d95e683",
+            "url": "https://en.wikipedia.org/wiki/Nanboku-ch%C5%8D_period",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470",
+            "retrievedAt": "2026-10-25T02:52:35.952Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Nanboku-chō period, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&oldid=1376607470; author history: https://en.wikipedia.org/w/index.php?title=Nanboku-ch%C5%8D%20period&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          },
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "573784"
+            },
+            "revision": "1380720045",
+            "contentHash": "6f2d4a7d5fa307789206a625281f537fe888a77ad2fc6cc341da41cd03acf2b2",
+            "url": "https://en.wikipedia.org/wiki/Cabinet_of_Japan",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Cabinet%20of%20Japan&oldid=1380720045",
+            "retrievedAt": "2026-10-25T02:52:38.719Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Cabinet of Japan, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Cabinet%20of%20Japan&oldid=1380720045; author history: https://en.wikipedia.org/w/index.php?title=Cabinet%20of%20Japan&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          },
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "24833"
+            },
+            "revision": "1381481198",
+            "contentHash": "a478855deb43b356d7f7ee8eec5606f1d5e814240af9f5fa5fa59323f907fb47",
+            "url": "https://en.wikipedia.org/wiki/Prime_Minister_of_Japan",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198",
+            "retrievedAt": "2026-10-25T02:55:11.309Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Prime Minister of Japan, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&oldid=1381481198; author history: https://en.wikipedia.org/w/index.php?title=Prime%20Minister%20of%20Japan&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          },
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "875723"
+            },
+            "revision": "1381716772",
+            "contentHash": "c100607a3fef8c103cada444f5e7cd469f93809cd526642e6533ee2ed7a37d95",
+            "url": "https://en.wikipedia.org/wiki/1954_Constitution_of_China",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=1954%20Constitution%20of%20China&oldid=1381716772",
+            "retrievedAt": "2026-10-25T02:53:01.760Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "1954 Constitution of China, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=1954%20Constitution%20of%20China&oldid=1381716772; author history: https://en.wikipedia.org/w/index.php?title=1954%20Constitution%20of%20China&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          },
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "875733"
+            },
+            "revision": "1381716802",
+            "contentHash": "d55ea541b7e53e76321e6b5845870aa24f506bbfa373815dfab28aadae66b1a4",
+            "url": "https://en.wikipedia.org/wiki/1975_Constitution_of_China",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=1975%20Constitution%20of%20China&oldid=1381716802",
+            "retrievedAt": "2026-10-25T02:53:04.017Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "1975 Constitution of China, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=1975%20Constitution%20of%20China&oldid=1381716802; author history: https://en.wikipedia.org/w/index.php?title=1975%20Constitution%20of%20China&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          },
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "875757"
+            },
+            "revision": "1381716847",
+            "contentHash": "2d5178b304680dc5b0c99c2b979cbaaf4ac23af99da8c1cc116b4eb75b8a82b1",
+            "url": "https://en.wikipedia.org/wiki/1978_Constitution_of_China",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=1978%20Constitution%20of%20China&oldid=1381716847",
+            "retrievedAt": "2026-10-25T02:53:05.969Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "1978 Constitution of China, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=1978%20Constitution%20of%20China&oldid=1381716847; author history: https://en.wikipedia.org/w/index.php?title=1978%20Constitution%20of%20China&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          },
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "163574"
+            },
+            "revision": "1381706343",
+            "contentHash": "b51991ddbe15f3b91a929f798dea742c0109f1dc49f12ae99ac6528854ca383c",
+            "url": "https://en.wikipedia.org/wiki/Constitution_of_China",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343",
+            "retrievedAt": "2026-10-25T02:53:10.981Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Constitution of China, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&oldid=1381706343; author history: https://en.wikipedia.org/w/index.php?title=Constitution%20of%20China&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          }
+        ],
+        "facts": [
+          {
+            "key": "nanbokucho:settlement-overview",
+            "profileId": "nanbokucho",
+            "factId": "settlement-overview",
+            "locator": "$.text;p[document-index=148]",
+            "textHash": "93a820f79e36860a6abb76e5700b39cfa648eba2974df91d631d8100aee18d80",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Japanese_history",
+                "locator": "$.text;p[document-index=148];a[eligible-link-index=0]",
+                "textHash": "767516aa2392346132140e225e1a150bccdc70ef3b147cc49780425291e117dd"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Ashikaga_shogunate",
+                "locator": "$.text;p[document-index=148];a[eligible-link-index=1]",
+                "textHash": "835401067f4af44533f8a6a3e0ad8ec9d71c352ecb6299b0460890c2a8c98373"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Chrysanthemum_Throne",
+                "locator": "$.text;p[document-index=148];a[eligible-link-index=2]",
+                "textHash": "bd9b0a5300e921ebc7099bb528ccf2c0a8908c3f4b4da38da35d230e4288093a"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Southern_Court",
+                "locator": "$.text;p[document-index=148];a[eligible-link-index=3]",
+                "textHash": "fb139566d16a850d28a5b7a67b5ebc63f53ba9d3dfd356e5cdd08e3aeee1ead4"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Northern_Court",
+                "locator": "$.text;p[document-index=148];a[eligible-link-index=4]",
+                "textHash": "aa4d4ffe710c0d26cb4327f537a4c6165dac01c469df7a8e6277d3ab08e9a9cc"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Imperial_Regalia_of_Japan",
+                "locator": "$.text;p[document-index=148];a[eligible-link-index=5]",
+                "textHash": "919a54f4f255c59b92507caeae134141845e5f95146864164350fee2a62df2e3"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Emperor_Meiji",
+                "locator": "$.text;p[document-index=148];a[eligible-link-index=6]",
+                "textHash": "23ba7ee3264425f1b55f3eb364d189bf577209140631b538c38b9eff19739185"
+              }
+            ],
+            "referenceAnchors": [
+              "#cite_note-concise-1"
+            ]
+          },
+          {
+            "key": "nanbokucho:agreement-and-breach",
+            "profileId": "nanbokucho",
+            "factId": "agreement-and-breach",
+            "locator": "$.text;p[document-index=646]",
+            "textHash": "f0c6cdfb666058317cb6f6f90779f2be713a2475174ec899611fd80ec3241f7a",
+            "links": [],
+            "referenceAnchors": [
+              "#cite_note-62"
+            ]
+          },
+          {
+            "key": "cabinet-japan:formation",
+            "profileId": "cabinet-japan",
+            "factId": "formation",
+            "locator": "$.text;table.infobox[0].tr[4].cell[1]",
+            "textHash": "81a389c50c79975f1a6b889eebe1f39cc9e6b010fb2e45d5a4dbedece20122be",
+            "links": [],
+            "referenceAnchors": []
+          },
+          {
+            "key": "prime-minister-japan:formation",
+            "profileId": "prime-minister-japan",
+            "factId": "formation",
+            "locator": "$.text;table.infobox[0].tr[16].cell[1]",
+            "textHash": "81a389c50c79975f1a6b889eebe1f39cc9e6b010fb2e45d5a4dbedece20122be",
+            "links": [],
+            "referenceAnchors": []
+          },
+          {
+            "key": "prime-minister-japan:office-replacement",
+            "profileId": "prime-minister-japan",
+            "factId": "office-replacement",
+            "locator": "$.text;p[document-index=887]",
+            "textHash": "bdf59c5893ea24c4d1c5523968e6eb498ac3088231d4d2ee51a712e49460778b",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Meiji_Constitution",
+                "locator": "$.text;p[document-index=887];a[eligible-link-index=0]",
+                "textHash": "c980e40c670268e767525e2f54e6404b14efd68cdf13f772f30c280de0924495"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Constitution",
+                "locator": "$.text;p[document-index=887];a[eligible-link-index=1]",
+                "textHash": "eb9a7650cd532b61ca9fec0cf82924c7ba7390bfc898e2d45bc067967b989cc5"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Y%C5%8Dr%C5%8D_Code",
+                "locator": "$.text;p[document-index=887];a[eligible-link-index=2]",
+                "textHash": "a1f22cbeb76b65b41028ff22dec1a8babf6c8c1d85b965b87fc76fab5bb5c31d"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Daij%C5%8D-daijin",
+                "locator": "$.text;p[document-index=887];a[eligible-link-index=3]",
+                "textHash": "14f6c78abc976b8a8d4f959b86455deaa047e3595b6dd4e8c1c1bed48bee8b7e"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Daij%C5%8D-kan",
+                "locator": "$.text;p[document-index=887];a[eligible-link-index=4]",
+                "textHash": "cfa911bdb98f634b5b12519dbc0c79ace2c91aca562b3738ad2403318175efe5"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Heian_period",
+                "locator": "$.text;p[document-index=887];a[eligible-link-index=5]",
+                "textHash": "6bed00ffca9d7f89699c7d6aab3a76f16deac0e81571f2f1559b70a3411d4d92"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/It%C5%8D_Hirobumi",
+                "locator": "$.text;p[document-index=887];a[eligible-link-index=6]",
+                "textHash": "7d063883660470082f9d0686f1d93bf0a3b707c723970cb61cd55ac2fb2b6b70"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Cabinet_of_Japan",
+                "locator": "$.text;p[document-index=887];a[eligible-link-index=7]",
+                "textHash": "4295f6e42f3f27d5fb5250bd9accb2c9a2ce104dfb7b5a7a0725de0438b08ed5"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Members_of_parliament",
+                "locator": "$.text;p[document-index=887];a[eligible-link-index=8]",
+                "textHash": "93191ff208c9e9304b35d3ac9c33c1e5ca4aeffe1619f524321b341decd2eae6"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Constitution_of_Japan",
+                "locator": "$.text;p[document-index=887];a[eligible-link-index=9]",
+                "textHash": "500870efdddd3f66d8fd975dae2527c8755cd6e38c3dee4cfbc05450fbb178d3"
+              }
+            ],
+            "referenceAnchors": []
+          },
+          {
+            "key": "prc-constitution-1954:ratification",
+            "profileId": "prc-constitution-1954",
+            "factId": "ratification",
+            "locator": "$.text;table.infobox[0].tr[3].cell[1]",
+            "textHash": "6c380e77d55709511a5c540163a5fdd1ba2489d0da0e81890ca9217b59528ae6",
+            "links": [],
+            "referenceAnchors": []
+          },
+          {
+            "key": "prc-constitution-1975:ratification",
+            "profileId": "prc-constitution-1975",
+            "factId": "ratification",
+            "locator": "$.text;table.infobox[0].tr[3].cell[1]",
+            "textHash": "85278f540fdb230ab2e2f871383eb2486ca2cf5ec14652514cdeb37940909be9",
+            "links": [],
+            "referenceAnchors": []
+          },
+          {
+            "key": "prc-constitution-1975:explicit-abolition",
+            "profileId": "prc-constitution-1975",
+            "factId": "explicit-abolition",
+            "locator": "$.text;p[document-index=1430]",
+            "textHash": "ea1ffd94dae7b384e3d93723f0029af8ebe567a23fed83f324e0ecd1a13586ac",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Communist_state_constitution",
+                "locator": "$.text;p[document-index=1430];a[eligible-link-index=0]",
+                "textHash": "6c1545d4cf8356af4af4adacacc7f71c23c873ae9e740234412948c3f8b5b98a"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/4th_National_People%27s_Congress",
+                "locator": "$.text;p[document-index=1430];a[eligible-link-index=1]",
+                "textHash": "ce891ac7ac20fef02b29161ce99c1bc606b64e1be6a6f87c589a04f3cb7c7cd3"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/President_of_China",
+                "locator": "$.text;p[document-index=1430];a[eligible-link-index=2]",
+                "textHash": "312e825d985aa4f087ccb401a5b3607ee34f817339abe12a02b1cadb697b616f"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Vice_President_of_China",
+                "locator": "$.text;p[document-index=1430];a[eligible-link-index=3]",
+                "textHash": "55fb6aaad16ed0bf71dcc4b353156dcbd0ce4659475270af954ece514367ba88"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Abolition_of_the_presidency_in_China",
+                "locator": "$.text;p[document-index=1430];a[eligible-link-index=4]",
+                "textHash": "8b4a88acc07bba37a68e4d80bc17a3c95a8f2aa592fe2bff488bcbafa6c7af57"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Purge",
+                "locator": "$.text;p[document-index=1430];a[eligible-link-index=5]",
+                "textHash": "c1a4373e1006096b0e1c0dcc8e2bc05f8063e3520cc0502a7292627b14bb9061"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Liu_Shaoqi",
+                "locator": "$.text;p[document-index=1430];a[eligible-link-index=6]",
+                "textHash": "0d47202acee8dacc1252fd093d369807fb7573e6d6a09396e0b42fd2cef0ed80"
+              }
+            ],
+            "referenceAnchors": []
+          },
+          {
+            "key": "prc-constitution-1978:ratification",
+            "profileId": "prc-constitution-1978",
+            "factId": "ratification",
+            "locator": "$.text;table.infobox[0].tr[3].cell[1]",
+            "textHash": "75f062348f54d9e53c190c378d072fb6ea001e533dd2c101139df0c7a73a1736",
+            "links": [],
+            "referenceAnchors": []
+          },
+          {
+            "key": "prc-constitution-1982:ratification",
+            "profileId": "prc-constitution-1982",
+            "factId": "ratification",
+            "locator": "$.text;table.infobox[0].tr[5].cell[1]",
+            "textHash": "3b7096766416e13a13331fa4707109793657f53121eef98ab9e885a603931d48",
+            "links": [],
+            "referenceAnchors": []
+          },
+          {
+            "key": "prc-constitution-1982:comparison-headers",
+            "profileId": "prc-constitution-1982",
+            "factId": "comparison-headers",
+            "locator": "$.text;tr[document-index=1998]",
+            "textHash": "72b9d1fe00c8f6ae0ff1bb17ffcd29e612aa13a2aee622e5a923a5825041c62f",
+            "links": [],
+            "referenceAnchors": []
+          },
+          {
+            "key": "prc-constitution-1982:presidency-comparison",
+            "profileId": "prc-constitution-1982",
+            "factId": "presidency-comparison",
+            "locator": "$.text;tr[document-index=2027]",
+            "textHash": "2dc172b30e2c8ba9f69df5a93278c62b26d379e004b6fdc5febeaebf4073f841",
+            "links": [],
+            "referenceAnchors": [
+              "#cite_note-46"
+            ]
+          },
+          {
+            "key": "prc-constitution-1982:nomination-comparison",
+            "profileId": "prc-constitution-1982",
+            "factId": "nomination-comparison",
+            "locator": "$.text;tr[document-index=2047]",
+            "textHash": "0adc05fd24fbeb9cd2eeb61fc4a9910881725d4f7cda21c7179924d075dceeb5",
+            "links": [],
+            "referenceAnchors": [
+              "#cite_note-49"
+            ]
+          },
+          {
+            "key": "prc-constitution-1982:explicit-restoration",
+            "profileId": "prc-constitution-1982",
+            "factId": "explicit-restoration",
+            "locator": "$.text;li[document-index=1949]",
+            "textHash": "121354a63a63cd67fead0bd15ea2ccdebfdf661397ebe0e00e5c681804f70b73",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/National_Defense_Commission_(China)",
+                "locator": "$.text;li[document-index=1949];a[eligible-link-index=0]",
+                "textHash": "59197081d1ffae36ef9dd1c0cc22469523ae646e38fc6a949360ad58253f6ee6"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Central_Military_Commission_(China)",
+                "locator": "$.text;li[document-index=1949];a[eligible-link-index=1]",
+                "textHash": "cf87040d04c7d75e1e5496ac6019f007a2f06b43d0bbc01b0892c3747d22bdd0"
+              }
+            ],
+            "referenceAnchors": [
+              "#cite_note-ksn-30",
+              "#cite_note-auto1-29"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

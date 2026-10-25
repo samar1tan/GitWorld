@@ -1,0 +1,552 @@
+{
+  "schemaVersion": 1,
+  "status": "local-candidate-pending-independent-review",
+  "title": "constitutional-states source and transformation rights",
+  "licenseScope": "CC BY-SA 4.0 applies only to the exact original GitWorld model/presentation and compatible adapted covered content identified by the selected-output candidate scope. Bare statutory facts are not claimed as exclusive works. Raw acquired source translations, whitepaper prose, HTML/layout and third-party works retain their separate permissions.",
+  "sources": [
+    {
+      "id": "gitworld-evidenced-fields:japan-normative-institutions-1947@439354d0bc11ffc2e7074d185ba16ac77204723514cba4302254fed91693c99c",
+      "identity": {
+        "provider": "gitworld-evidenced-fields",
+        "externalId": "japan-normative-institutions-1947"
+      },
+      "revision": "2-candidate-source-text-separation",
+      "contentHash": "439354d0bc11ffc2e7074d185ba16ac77204723514cba4302254fed91693c99c",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "allowed",
+        "attribution": "GitWorld selected date and article-reference facts and independently modeled constitutional rules in English and Simplified Chinese, citing the fixed National Diet Library and MEXT pages and Sayuri Umeda / Law Library of Congress, Japan: Article 9 of the Constitution, February 2006. The English source editions are credited to Ito Miyoji and the Government Printing Bureau for research provenance. Original interpretations are not quotations, an official translation, or government-endorsed content. Selected NDL-authored factual observations are attributed under PDL1.0 / compatible CC BY 4.0. This CC BY-SA 4.0 statement applies to the original GitWorld model/presentation and compatible adapted covered content, not exclusive ownership of bare legal facts or a license to unknown source translations, whitepaper prose, formatting, images or PDFs."
+      },
+      "profileCitations": [
+        {
+          "id": "empire-constitution",
+          "title": "The Constitution of the Empire of Japan",
+          "language": "en",
+          "creator": "Ito Miyoji, English translation; National Diet Library, publisher",
+          "rightsEvidence": [
+            "https://www.ndl.go.jp/sitepolicy/terms",
+            "https://www.ndl.go.jp/en/use/reproduction"
+          ],
+          "rightsNote": "Local factual interpretation only. PDL1.0 has third-party exceptions; the exact translated text needs independent review. No full legal article, paragraph or anchor-label text is retained in the projected facts; only structural selectors, URLs, locators and text hashes remain."
+        },
+        {
+          "id": "postwar-constitution",
+          "title": "The Constitution of Japan",
+          "language": "en",
+          "creator": "English edition based on Government Printing Bureau; National Diet Library, publisher",
+          "rightsEvidence": [
+            "https://www.ndl.go.jp/sitepolicy/terms",
+            "https://www.ndl.go.jp/en/use/reproduction"
+          ],
+          "rightsNote": "Local factual interpretation only. PDL1.0 has third-party exceptions; the exact translated text needs independent review. No full legal article, paragraph or anchor-label text is retained in the projected facts; only structural selectors, URLs, locators and text hashes remain."
+        },
+        {
+          "id": "constitution-enforcement",
+          "title": "Part 5 Enactment of the Constitution of Japan",
+          "language": "en",
+          "creator": "National Diet Library",
+          "rightsEvidence": [
+            "https://www.ndl.go.jp/sitepolicy/terms",
+            "https://www.ndl.go.jp/en/use/reproduction"
+          ],
+          "rightsNote": "Local factual interpretation only. PDL1.0 has third-party exceptions; the exact translated text needs independent review. No full legal article, paragraph or anchor-label text is retained in the projected facts; only structural selectors, URLs, locators and text hashes remain."
+        },
+        {
+          "id": "constitution-glossary",
+          "title": "Glossary and Abbreviations",
+          "language": "en",
+          "creator": "National Diet Library",
+          "rightsEvidence": [
+            "https://www.ndl.go.jp/sitepolicy/terms",
+            "https://www.ndl.go.jp/en/use/reproduction"
+          ],
+          "rightsNote": "Local factual interpretation only. PDL1.0 has third-party exceptions; the exact translated text needs independent review. No full legal article, paragraph or anchor-label text is retained in the projected facts; only structural selectors, URLs, locators and text hashes remain."
+        },
+        {
+          "id": "empire-enforcement",
+          "title": "(1) The Promulgation of the Meiji Constitution and Educatron",
+          "language": "en",
+          "creator": "Ministry of Education, Culture, Sports, Science and Technology, Japan",
+          "rightsEvidence": [
+            "https://www.mext.go.jp/b_menu/1351168.htm",
+            "https://www.mext.go.jp/en/other/title01/detail01/sdetail01/1375300.htm"
+          ],
+          "rightsNote": "Research citation for promulgation/enforcement facts. Current Japanese terms adopt PDL1.0 with content exceptions; applicability to this historical whitepaper text is not independently approved. No full source paragraph is distributed."
+        },
+        {
+          "id": "loc-continuity",
+          "title": "Japan: Article 9 of the Constitution",
+          "language": "en",
+          "creator": "Sayuri Umeda; Law Library of Congress, Global Legal Research Directorate",
+          "rightsEvidence": [
+            "https://www.loc.gov/item/2019669658/#rights-and-access"
+          ],
+          "rightsNote": "LOC explicitly provides its government-authored report content for worldwide use under CC0. No third-party quotation or image is selected. PDF page 31 is printed page 29; February 2006 is the report date, not an upload or retrieval date."
+        }
+      ],
+      "inputSourceVersions": [
+        {
+          "identity": {
+            "provider": "official-document-html",
+            "externalId": "https://www.ndl.go.jp/constitution/e/etc/c02.html"
+          },
+          "revision": "W/\"462714a3f748bf70e559eac2e6888000\"",
+          "contentHash": "c3db7c8d2d10c5dbda3e019a5506def8ecbadc018cd336f8ca86610f1b90746b",
+          "url": "https://www.ndl.go.jp/constitution/e/etc/c02.html",
+          "retrievedAt": "2026-10-24T22:52:59.037Z",
+          "rights": {
+            "redistribution": "unknown",
+            "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+          }
+        },
+        {
+          "identity": {
+            "provider": "official-document-html",
+            "externalId": "https://www.ndl.go.jp/constitution/e/etc/c01.html"
+          },
+          "revision": "W/\"e54f96294aae1cf7644e808bfc83bdc5\"",
+          "contentHash": "e65215aaab184a4917a4b7d5fe029e5b0c298e4719f923986242b7b370254a07",
+          "url": "https://www.ndl.go.jp/constitution/e/etc/c01.html",
+          "retrievedAt": "2026-10-24T22:52:59.208Z",
+          "rights": {
+            "redistribution": "unknown",
+            "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+          }
+        },
+        {
+          "identity": {
+            "provider": "official-document-html",
+            "externalId": "https://www.ndl.go.jp/constitution/e/outline/05outline.html"
+          },
+          "revision": "W/\"ef3bd66112a7f1cebda5b654968e8bc9\"",
+          "contentHash": "65165d93a73d9e1a0118e8df6e06ddcc09dad57cc1447ce61cb6769da03a9ea4",
+          "url": "https://www.ndl.go.jp/constitution/e/outline/05outline.html",
+          "retrievedAt": "2026-10-24T22:52:59.390Z",
+          "rights": {
+            "redistribution": "unknown",
+            "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+          }
+        },
+        {
+          "identity": {
+            "provider": "official-document-html",
+            "externalId": "https://www.ndl.go.jp/constitution/e/etc/glossary.html"
+          },
+          "revision": "W/\"63c5cd462545f6894ceed743f546f62c\"",
+          "contentHash": "f37e5734f5d307a91e3e829dde63b9d5fe2dcaf2aea653255bd334057fa12128",
+          "url": "https://www.ndl.go.jp/constitution/e/etc/glossary.html",
+          "retrievedAt": "2026-10-24T22:52:59.568Z",
+          "rights": {
+            "redistribution": "unknown",
+            "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+          }
+        },
+        {
+          "identity": {
+            "provider": "official-document-html",
+            "externalId": "https://www.mext.go.jp/b_menu/hakusho/html/others/detail/1317324.htm"
+          },
+          "revision": "\"1c22-5f6c744020f24\"",
+          "contentHash": "8c0766cd64c2db4a5246338036edf7881b8fd061f15b5de0dc4098bd3849e28d",
+          "url": "https://www.mext.go.jp/b_menu/hakusho/html/others/detail/1317324.htm",
+          "retrievedAt": "2026-10-24T22:53:00.688Z",
+          "rights": {
+            "redistribution": "unknown",
+            "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+          }
+        },
+        {
+          "identity": {
+            "provider": "loc-legal-report",
+            "externalId": "2019669658"
+          },
+          "revision": "f8e8e86ee92874dfabab75a7906c07cb56ef1b5365018066f27e4fea74e5cc24",
+          "contentHash": "7268293a51f9741ebc214056b89c942cb79b7a9d599cf62f037069029912dc33",
+          "url": "https://www.loc.gov/item/2019669658/",
+          "revisionUrl": "https://tile.loc.gov/storage-services/service/ll/llglrd/2019669658/2019669658.pdf",
+          "retrievedAt": "2026-10-24T22:53:25.266Z",
+          "rights": {
+            "licenseId": "CC0-1.0",
+            "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+            "attribution": "Sayuri Umeda, Law Library of Congress, Japan: Article 9 of the Constitution, February 2006.",
+            "redistribution": "allowed"
+          }
+        }
+      ]
+    }
+  ],
+  "retainedExpressionPolicy": "includeText false or omitted excludes field text and all anchor labels, including short legal-article identifiers. Link href, field-relative locator and normalized anchor-text SHA-256 remain. includeText true requires allowed source permission. No implicit short-label allowlist.",
+  "rawSourceRights": "Original snapshot permissions are unchanged. Removing source expression does not automatically approve the selected factual record or original interpretation; those payload rights require independent exact review.",
+  "boundary": {
+    "included": "Selected source fields where explicitly allowed, short structural selectors, fact/anchor text hashes and locators, link URLs, identities, typed unreviewed statements and bilingual original interpretation labels.",
+    "excluded": "Raw HTML, full article paragraphs/legal articles, unapproved anchor-label text, scans/PDFs, images, metadata dumps, caches, private notes and local paths."
+  },
+  "historicalReview": "Unreviewed; source rights and unit tests do not pass C04/C05 or installed acceptance.",
+  "selectedOutputRightsCandidate": {
+    "schemaVersion": 1,
+    "kind": "gitworld-selected-output-rights-scope",
+    "id": "japan-normative-institutions-selected-output",
+    "revision": "1-candidate",
+    "status": "owner-prepared-candidate-pending-independent-exact-review",
+    "preparedAt": "2026-10-24T23:20:51.538Z",
+    "normalizationStage": "Conservative source normalization remains unknown. This separate curator distribution candidate applies only to the exact retained factual record and original interpretation below.",
+    "prePromotionSourceRecordHash": "db92e8c2e753e27fac463e81a4c10f78bf9a0dd196727d6159b035d01ab3c23c",
+    "normalizationRights": {
+      "licenseId": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution": "unknown",
+      "attribution": "GitWorld independently modeled selected legal facts and supplied identified English/Simplified Chinese presentation. Sources: National Diet Library (including Ito Miyoji and Government Printing Bureau English editions), MEXT, and Sayuri Umeda / Law Library of Congress, February 2006. Exact URLs, article locators, hashes and rights evidence remain in the profiles. Raw legal text, source prose, images and PDFs are excluded. Official-page translation rights remain pending independent review; no official endorsement."
+    },
+    "sourceProfilesHash": "af162642f6c29e9c674860f50ea29dd5c029bdca1bf40281bb10b9d10a76fc50",
+    "authoredPayloadHash": "3423a9d49799fe31d3a8309c4a45cfcfaef8f1593923154ab9d657deb00d5cef",
+    "distributionRights": {
+      "licenseId": "CC-BY-SA-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "redistribution": "allowed",
+      "attribution": "GitWorld selected date and article-reference facts and independently modeled constitutional rules in English and Simplified Chinese, citing the fixed National Diet Library and MEXT pages and Sayuri Umeda / Law Library of Congress, Japan: Article 9 of the Constitution, February 2006. The English source editions are credited to Ito Miyoji and the Government Printing Bureau for research provenance. Original interpretations are not quotations, an official translation, or government-endorsed content. Selected NDL-authored factual observations are attributed under PDL1.0 / compatible CC BY 4.0. This CC BY-SA 4.0 statement applies to the original GitWorld model/presentation and compatible adapted covered content, not exclusive ownership of bare legal facts or a license to unknown source translations, whitepaper prose, formatting, images or PDFs."
+    },
+    "retainedSourceFields": [
+      "facts.key",
+      "facts.profileId",
+      "facts.factId",
+      "facts.locator",
+      "facts.textHash",
+      "facts.links.href",
+      "facts.links.locator",
+      "facts.links.textHash",
+      "facts.referenceAnchors",
+      "short structural selectors",
+      "source identity/revision/hash and citation headers"
+    ],
+    "excludedSourceExpression": [
+      "facts.text",
+      "facts.links.text",
+      "complete English legal sentences",
+      "whitepaper/glossary paragraphs",
+      "article/website HTML or layout",
+      "images/scans/PDF pages",
+      "third-party quotation or artwork"
+    ],
+    "originalPresentation": "The authoredPayloadHash binds the exact objects, typed statements, interpretation notes and bilingual field vocabulary. Those are independently authored modeling expressions; factual values and statutory identifiers are not claimed as exclusive works.",
+    "policyEvidence": [
+      {
+        "id": "jp-statutes",
+        "url": "https://laws.e-gov.go.jp/law/345AC0000000048",
+        "retrievedUrl": "https://laws.e-gov.go.jp/api/1/lawdata/345AC0000000048",
+        "clause": "Copyright Act Article 13 items (i) and (iv); Article 2(1)(i)",
+        "checkedAt": "2026-10-24T23:14:43.737Z"
+      },
+      {
+        "id": "ndl-site",
+        "url": "https://www.ndl.go.jp/sitepolicy/terms",
+        "clause": "Content use introduction; Important Information sections 1 and 2",
+        "checkedAt": "2026-10-24T23:14:43.737Z"
+      },
+      {
+        "id": "ndl-reuse",
+        "url": "https://www.ndl.go.jp/en/use/reproduction",
+        "clause": "Sections 1(1), 2 and 2.2",
+        "checkedAt": "2026-10-24T23:14:43.737Z"
+      },
+      {
+        "id": "pdl10",
+        "url": "https://www.digital.go.jp/resources/open_data/public_data_license_v1.0",
+        "clause": "1.1(1)-(2), 1.2, 1.4 and 1.7(3); opening paragraph on numerical/simple data",
+        "checkedAt": "2026-10-24T23:14:43.737Z"
+      },
+      {
+        "id": "mext-site",
+        "url": "https://www.mext.go.jp/b_menu/1351168.htm",
+        "clause": "Section 1 opening paragraph; 1)(a)-(b), 2)(a)-(d), 3), 6)(a)-(b)",
+        "checkedAt": "2026-10-24T23:14:43.737Z"
+      },
+      {
+        "id": "mext-exceptions",
+        "url": "https://www.mext.go.jp/en/other/title01/detail01/sdetail01/1375300.htm",
+        "clause": "Examples of Third-Party rights: MEXT White Paper; warning about pre-March-2014 or undated content; Content where other terms apply",
+        "checkedAt": "2026-10-24T23:14:43.737Z"
+      },
+      {
+        "id": "us-facts",
+        "url": "https://www.copyright.gov/help/faq/faq-protect.html",
+        "clause": "What Does Copyright Protect?; Names/titles/short phrases",
+        "checkedAt": "2026-10-24T23:14:43.737Z"
+      },
+      {
+        "id": "loc-law-reports",
+        "url": "https://www.loc.gov/collections/publications-of-the-law-library-of-congress/about-this-collection/rights-and-access/",
+        "itemUrl": "https://www.loc.gov/item/2019669658/#rights-and-access",
+        "clause": "Rights and Access: U.S. Government-authored reports available worldwide under CC0 1.0; third-party material excluded",
+        "checkedAt": "2026-10-24T23:14:43.737Z",
+        "accessEvidence": "Official collection-rights indexed text was read in this policy check; direct collection/item opens returned HTTP 403. No successful direct item fetch is claimed for that check."
+      }
+    ],
+    "sourceScopes": [
+      {
+        "profileId": "empire-constitution",
+        "identity": {
+          "provider": "official-document-html",
+          "externalId": "https://www.ndl.go.jp/constitution/e/etc/c02.html"
+        },
+        "sourceRevision": "W/\"462714a3f748bf70e559eac2e6888000\"",
+        "sourceContentHash": "c3db7c8d2d10c5dbda3e019a5506def8ecbadc018cd336f8ca86610f1b90746b",
+        "sourceUrl": "https://www.ndl.go.jp/constitution/e/etc/c02.html",
+        "retrievedAt": "2026-10-24T22:52:59.037Z",
+        "sourceTitle": "The Constitution of the Empire of Japan",
+        "sourceLanguage": "en",
+        "creatorOrEditionCredit": "Ito Miyoji, English translation; National Diet Library, publisher",
+        "sourceWorkRights": {
+          "redistribution": "unknown",
+          "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+        },
+        "selectedFactIds": [
+          "article-4",
+          "article-5",
+          "article-55"
+        ],
+        "factRecordHashes": [
+          {
+            "factId": "article-4",
+            "sha256": "71c8ad8d7584ec5c70efa45f3fdc6a83e1054d9c653d75d7e9b59c6715fc1327"
+          },
+          {
+            "factId": "article-5",
+            "sha256": "c8ca122cf282671672bc93d4f4862f12b26627bb02b2aced6a672c19780dfa4d"
+          },
+          {
+            "factId": "article-55",
+            "sha256": "547ef430b91fdf7554f168a547506948d78c8712e04461a61734b8eb0cb14d7b"
+          }
+        ],
+        "selectedOutput": "Article identities, fact hashes/locators and original bilingual structured descriptions of legal rules. No English legal sentence retained.",
+        "policyIds": [
+          "jp-statutes",
+          "ndl-site",
+          "ndl-reuse",
+          "us-facts"
+        ],
+        "notice": "Credit the named English translation for research provenance, retain its separate raw unknown status, and label GitWorld prose as original interpretation rather than quotation or a new translation of that prose.",
+        "boundary": "Only the listed factual/identifier records and independently authored model/presentation are proposed for distribution. No retained field or anchor text is included. Raw source-work rights remain as recorded above."
+      },
+      {
+        "profileId": "postwar-constitution",
+        "identity": {
+          "provider": "official-document-html",
+          "externalId": "https://www.ndl.go.jp/constitution/e/etc/c01.html"
+        },
+        "sourceRevision": "W/\"e54f96294aae1cf7644e808bfc83bdc5\"",
+        "sourceContentHash": "e65215aaab184a4917a4b7d5fe029e5b0c298e4719f923986242b7b370254a07",
+        "sourceUrl": "https://www.ndl.go.jp/constitution/e/etc/c01.html",
+        "retrievedAt": "2026-10-24T22:52:59.208Z",
+        "sourceTitle": "The Constitution of Japan",
+        "sourceLanguage": "en",
+        "creatorOrEditionCredit": "English edition based on Government Printing Bureau; National Diet Library, publisher",
+        "sourceWorkRights": {
+          "redistribution": "unknown",
+          "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+        },
+        "selectedFactIds": [
+          "article-1",
+          "article-3",
+          "article-4",
+          "article-6",
+          "article-41",
+          "article-65",
+          "promulgation"
+        ],
+        "factRecordHashes": [
+          {
+            "factId": "article-1",
+            "sha256": "5e0367269738ebb0de0d5f835d4a477b5903f24bb291291191d9e7b68850f050"
+          },
+          {
+            "factId": "article-3",
+            "sha256": "0da31698be732cb15b8f58d6102174bb9e5793177a80351efa262db53ff26ba5"
+          },
+          {
+            "factId": "article-4",
+            "sha256": "1770bf4857fa0b0c99bd065aba62463783a95664d82b05079204e5926734b028"
+          },
+          {
+            "factId": "article-6",
+            "sha256": "cd81170543b7af813fdd7226b63712f4bd793d5abb6e3fab80165dd9a4cb3528"
+          },
+          {
+            "factId": "article-41",
+            "sha256": "c9b73073a8af361347b44c99aa0984a96423e48672aad952da3c809c6f06c86b"
+          },
+          {
+            "factId": "article-65",
+            "sha256": "d74f5ab226092952569fccfa8d236b163fcce96481dd59d7fce4d62ea29d0738"
+          },
+          {
+            "factId": "promulgation",
+            "sha256": "270cd79f1b50ddab8a4aa2e356b40d8211e39addb5d26560910d90e2cd61a22b"
+          }
+        ],
+        "selectedOutput": "Legal role facts, article identities and promulgation date; independently written EN/zh-CN labels. No Government Printing Bureau English sentence retained.",
+        "policyIds": [
+          "jp-statutes",
+          "ndl-site",
+          "ndl-reuse",
+          "us-facts"
+        ],
+        "notice": "Retain the source edition credit; do not use this scope to approve all English text or NDL formatting.",
+        "boundary": "Only the listed factual/identifier records and independently authored model/presentation are proposed for distribution. No retained field or anchor text is included. Raw source-work rights remain as recorded above."
+      },
+      {
+        "profileId": "constitution-enforcement",
+        "identity": {
+          "provider": "official-document-html",
+          "externalId": "https://www.ndl.go.jp/constitution/e/outline/05outline.html"
+        },
+        "sourceRevision": "W/\"ef3bd66112a7f1cebda5b654968e8bc9\"",
+        "sourceContentHash": "65165d93a73d9e1a0118e8df6e06ddcc09dad57cc1447ce61cb6769da03a9ea4",
+        "sourceUrl": "https://www.ndl.go.jp/constitution/e/outline/05outline.html",
+        "retrievedAt": "2026-10-24T22:52:59.390Z",
+        "sourceTitle": "Part 5 Enactment of the Constitution of Japan",
+        "sourceLanguage": "en",
+        "creatorOrEditionCredit": "National Diet Library",
+        "sourceWorkRights": {
+          "redistribution": "unknown",
+          "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+        },
+        "selectedFactIds": [
+          "enforcement"
+        ],
+        "factRecordHashes": [
+          {
+            "factId": "enforcement",
+            "sha256": "4d926fea86b4241da2215d777d59ffcb65e88b48f03fb4a945974ceb13f3caec"
+          }
+        ],
+        "selectedOutput": "3 May 1947 date fact, hash/locator and original explanation only.",
+        "policyIds": [
+          "ndl-site",
+          "pdl10",
+          "us-facts"
+        ],
+        "notice": "National Diet Library source URL, PDL1.0 URL and GitWorld selected/normalized/independently interpreted statement; no endorsement.",
+        "boundary": "Only the listed factual/identifier records and independently authored model/presentation are proposed for distribution. No retained field or anchor text is included. Raw source-work rights remain as recorded above."
+      },
+      {
+        "profileId": "constitution-glossary",
+        "identity": {
+          "provider": "official-document-html",
+          "externalId": "https://www.ndl.go.jp/constitution/e/etc/glossary.html"
+        },
+        "sourceRevision": "W/\"63c5cd462545f6894ceed743f546f62c\"",
+        "sourceContentHash": "f37e5734f5d307a91e3e829dde63b9d5fe2dcaf2aea653255bd334057fa12128",
+        "sourceUrl": "https://www.ndl.go.jp/constitution/e/etc/glossary.html",
+        "retrievedAt": "2026-10-24T22:52:59.568Z",
+        "sourceTitle": "Glossary and Abbreviations",
+        "sourceLanguage": "en",
+        "creatorOrEditionCredit": "National Diet Library",
+        "sourceWorkRights": {
+          "redistribution": "unknown",
+          "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+        },
+        "selectedFactIds": [
+          "unchanged-meiji"
+        ],
+        "factRecordHashes": [
+          {
+            "factId": "unchanged-meiji",
+            "sha256": "e747914f1174f88dd2fc37f052f6ca95986e4222de8ff5623176ee30244ea961"
+          }
+        ],
+        "selectedOutput": "Historical factual continuity observation and Article 73 identity/hash/locator only. No glossary paragraph copied.",
+        "policyIds": [
+          "ndl-site",
+          "pdl10",
+          "us-facts"
+        ],
+        "notice": "Credit NDL and transformation. Keep Article 73 as an identifier or hash-bound link, not a legal-prose fragment.",
+        "boundary": "Only the listed factual/identifier records and independently authored model/presentation are proposed for distribution. No retained field or anchor text is included. Raw source-work rights remain as recorded above."
+      },
+      {
+        "profileId": "empire-enforcement",
+        "identity": {
+          "provider": "official-document-html",
+          "externalId": "https://www.mext.go.jp/b_menu/hakusho/html/others/detail/1317324.htm"
+        },
+        "sourceRevision": "\"1c22-5f6c744020f24\"",
+        "sourceContentHash": "8c0766cd64c2db4a5246338036edf7881b8fd061f15b5de0dc4098bd3849e28d",
+        "sourceUrl": "https://www.mext.go.jp/b_menu/hakusho/html/others/detail/1317324.htm",
+        "retrievedAt": "2026-10-24T22:53:00.688Z",
+        "sourceTitle": "(1) The Promulgation of the Meiji Constitution and Educatron",
+        "sourceLanguage": "en",
+        "creatorOrEditionCredit": "Ministry of Education, Culture, Sports, Science and Technology, Japan",
+        "sourceWorkRights": {
+          "redistribution": "unknown",
+          "attribution": "Official-page acquisition for local research. Exact content and third-party exceptions require independent rights review before redistribution."
+        },
+        "selectedFactIds": [
+          "enforcement"
+        ],
+        "factRecordHashes": [
+          {
+            "factId": "enforcement",
+            "sha256": "ec57f187c9454d8aae25aa1d220c64780861a1195fcad08bccb84b0aadb93f43"
+          }
+        ],
+        "selectedOutput": "11 February 1889 promulgation and 29 November 1890 enforcement dates, short structural selector/hash/locator and original explanation only.",
+        "policyIds": [
+          "mext-site",
+          "mext-exceptions",
+          "us-facts"
+        ],
+        "notice": "MEXT source URL/title and retrieval date; explain that GitWorld selected bare dates and wrote its own bilingual description, excluding the whitepaper narrative.",
+        "boundary": "Only the listed factual/identifier records and independently authored model/presentation are proposed for distribution. No retained field or anchor text is included. Raw source-work rights remain as recorded above."
+      },
+      {
+        "profileId": "loc-continuity",
+        "identity": {
+          "provider": "loc-legal-report",
+          "externalId": "2019669658"
+        },
+        "sourceRevision": "f8e8e86ee92874dfabab75a7906c07cb56ef1b5365018066f27e4fea74e5cc24",
+        "sourceContentHash": "7268293a51f9741ebc214056b89c942cb79b7a9d599cf62f037069029912dc33",
+        "sourceUrl": "https://www.loc.gov/item/2019669658/",
+        "revisionUrl": "https://tile.loc.gov/storage-services/service/ll/llglrd/2019669658/2019669658.pdf",
+        "retrievedAt": "2026-10-24T22:53:25.266Z",
+        "sourceTitle": "Japan: Article 9 of the Constitution",
+        "sourceLanguage": "en",
+        "creatorOrEditionCredit": "Sayuri Umeda; Law Library of Congress, Global Legal Research Directorate",
+        "sourceWorkRights": {
+          "licenseId": "CC0-1.0",
+          "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "attribution": "Sayuri Umeda, Law Library of Congress, Japan: Article 9 of the Constitution, February 2006.",
+          "redistribution": "allowed"
+        },
+        "selectedFactIds": [
+          "unchanged-postwar",
+          "publication-date"
+        ],
+        "factRecordHashes": [
+          {
+            "factId": "unchanged-postwar",
+            "sha256": "35ddedc033d019c881a35fc44d448733ce56b7548851317a9e5401713583b4fd"
+          },
+          {
+            "factId": "publication-date",
+            "sha256": "e0974c60f5adbcacf37e3c1452e25131b5727dfd69e9b853a3c8bd7c44780506"
+          }
+        ],
+        "selectedOutput": "No-amendment observation bounded by February 2006, with report identity, PDF hash, extraction version and page locator. No third-party quotation/image.",
+        "policyIds": [
+          "loc-law-reports"
+        ],
+        "notice": "Sayuri Umeda; Law Library of Congress, Japan: Article 9 of the Constitution, February 2006. Cite collection rights and the exact item/PDF.",
+        "boundary": "Only the listed factual/identifier records and independently authored model/presentation are proposed for distribution. No retained field or anchor text is included. Raw source-work rights remain as recorded above."
+      }
+    ],
+    "publicationState": "This is an owner-prepared scope for exact candidate review, not reviewer approval, publication authorization, an installer review, or a runtime license inference."
+  },
+  "normalizationAndDistribution": {
+    "normalization": "unknown, unchanged",
+    "distributionCandidate": "allowed only for the exact selected-output scope; independent exact review pending",
+    "runtimeInference": false
+  }
+}

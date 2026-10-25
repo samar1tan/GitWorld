@@ -2,6 +2,8 @@
 
 Date: 25 October 2026. Scope: the first desktop development loop and historical data operations. This is a product assessment, not a claim of historical consensus, market exclusivity, or completed implementation.
 
+The later [data-workspace requirements](../data-workspace-prd.md) and [data model](../data-model.md) supersede this assessment's initial separate-manager publication workflow. Acquisition, independent assertions, object states, query views and an editorial Git repository must form a self-sufficient installed application. Codex-assisted data preparation, fixed examples and developer scripts cannot establish that ordinary users can complete the journey.
+
 ## Decision
 
 Build a local desktop history workbench with a usable content-management loop. The combination of historical states, ancestry, comparison, evidence, and adaptable commands is worth testing. Its value must be demonstrated through investigations that users can carry out, including investigations over newly entered data. A polished, permanently fixed sample does not satisfy that objective.
@@ -54,7 +56,7 @@ This was a bounded source review on the date above. No exhaustive competitor inv
 
 ## Data loop and tradeoffs
 
-The local loop is: **enter or import → validate → preview state and release diff → publish atomically → explore the new release → correct through another draft → export and restore**. Historical event time stays distinct from editorial modification time. A workspace pins a dataset release; publishing new data does not change its resolved comparison endpoints.
+The required local loop is: **discover or author → inspect source claims and mappings → working changes → frozen staging → commit → explore → correct or refresh → export and restore**. Public distribution is a separate evidence and rights decision. Historical event time stays distinct from editorial modification time. Fixed historical references retain their repository revision; a new commit does not silently change comparison endpoints.
 
 SQLite is the default local store because structured queries and transaction publication fit this loop. The choice is practical, not a claim that a native Git store is impossible. Atomic publication still requires implementation tests: database transaction guarantees do not automatically validate application code. [SQLite atomic commit](https://www.sqlite.org/atomiccommit.html)
 

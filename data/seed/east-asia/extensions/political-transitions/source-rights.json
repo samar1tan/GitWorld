@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "status": "content-distribution-record",
+  "title": "Selected facts for the 263/266/280 political comparison",
+  "selectedOutputDecision": "This record classifies the identified selected facts and original modeling under their source-specific terms; it does not change source-work permissions or historical review.",
+  "sources": [
+    {
+      "id": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "identity": {
+        "provider": "gitworld-evidenced-fields",
+        "externalId": "explicit-jin-wu-integration"
+      },
+      "revision": "2-candidate-source-text-separation",
+      "contentHash": "9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "allowed",
+        "attribution": "GitWorld selected and interpreted the explicitly identified source fields, retained exact source versions/hashes and separately identified bilingual modeling labels. Source-derived content remains CC-BY-SA-4.0; no official endorsement."
+      }
+    },
+    {
+      "id": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "identity": {
+        "provider": "gitworld-evidenced-fields",
+        "externalId": "three-kingdoms-evidenced-political-transitions"
+      },
+      "revision": "1-local-evidenced-candidate",
+      "contentHash": "ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "allowed",
+        "attribution": "GitWorld selected the identified source facts and authored the bilingual modeling and display metadata. Wikipedia-derived material remains CC-BY-SA-4.0 with fixed editions and author history. Raw source works, images and full prose are excluded; no source endorsement."
+      }
+    }
+  ],
+  "inputSources": [
+    {
+      "profileId": "wei-shu-conquest",
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "15108068"
+      },
+      "revision": "1373985551",
+      "contentHash": "1f7d674fb7e84ad3596bf329f6e45074f02940ba88aeb0976f94dd9e6edcb196",
+      "url": "https://en.wikipedia.org/wiki/Conquest_of_Shu_by_Wei",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551",
+      "retrievedAt": "2026-10-25T01:34:21.445Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Conquest of Shu by Wei, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551; author history: https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      },
+      "citation": {
+        "title": "Conquest of Shu by Wei",
+        "language": "en",
+        "creator": "English Wikipedia contributors",
+        "rightsEvidence": [
+          "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "https://creativecommons.org/licenses/by-sa/4.0/"
+        ],
+        "rightsNote": "Selected facts and independently authored bilingual interpretation remain CC-BY-SA-4.0. Exact revision, source hash and author history are retained; no article prose, HTML or image is retained."
+      },
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&action=history"
+    },
+    {
+      "profileId": "jin-context",
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "55020"
+      },
+      "revision": "1359294647",
+      "contentHash": "4a52801e3f93d2774f2a0bafdbe88cc1a5756bfbf88c87199bd25962baafbd8f",
+      "url": "https://en.wikipedia.org/wiki/Jin_dynasty_(266%E2%80%93420)",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647",
+      "retrievedAt": "2026-10-24T22:52:58.645Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Jin dynasty (266–420), English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647; author history: https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      },
+      "citation": {
+        "title": "Jin dynasty (266–420)",
+        "language": "en",
+        "creator": "English Wikipedia contributors",
+        "rightsEvidence": [
+          "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "https://creativecommons.org/licenses/by-sa/4.0/"
+        ],
+        "rightsNote": "Selected facts and independently authored bilingual interpretation remain CC-BY-SA-4.0. Exact revision, source hash and author history are retained; no article prose, HTML or image is retained."
+      },
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&action=history"
+    },
+    {
+      "profileId": "jin-wu-integration",
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "15051666"
+      },
+      "revision": "1379420937",
+      "contentHash": "aa14fab85b067c8dbc16c775520a1b72f2de6e5e5a22b70760702ff8976c83e3",
+      "url": "https://en.wikipedia.org/wiki/Conquest_of_Wu_by_Jin",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937",
+      "retrievedAt": "2026-10-24T22:52:57.204Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Conquest of Wu by Jin, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937; author history: https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+        "redistribution": "allowed"
+      },
+      "citation": {
+        "title": "Conquest of Wu by Jin",
+        "language": "en",
+        "creator": "English Wikipedia contributors",
+        "rightsEvidence": [
+          "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "https://creativecommons.org/licenses/by-sa/4.0/"
+        ],
+        "rightsNote": "Selected facts and independently authored bilingual interpretation remain CC-BY-SA-4.0. Exact revision, source hash and author history are retained; no article prose, HTML or image is retained."
+      },
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&action=history"
+    }
+  ],
+  "boundary": {
+    "included": "Typed unreviewed facts, exact identities/editions/source hashes, short structural selectors, selected-field/link-text hashes, link URLs, temporal interpretation and original bilingual display.",
+    "excluded": "Raw HTML, article/museum paragraphs, anchor prose, images, metadata dumps, caches, private notes and source archive paths."
+  },
+  "rawSourceRights": "Original source permissions remain unchanged; includeText false does not upgrade unknown rights.",
+  "historicalReview": "Historical assertions retain their recorded unreviewed status. Distribution classification does not establish historical accuracy or broaden temporal evidence."
+}

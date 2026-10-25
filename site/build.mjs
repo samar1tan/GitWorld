@@ -1,0 +1,12 @@
+import {cp, mkdir, readFile, writeFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+import {validateRelease} from './release-validation.mjs';
+const directory=path.dirname(fileURLToPath(import.meta.url)), root=path.resolve(directory,'..'), output=path.join(directory,'dist');
+const release=validateRelease(JSON.parse(await readFile(path.join(directory,'release.json'),'utf8')));
+await mkdir(path.join(output,'assets'),{recursive:true});
+for(const file of ['index.html','style.css','main.js','locales.mjs','release-validation.mjs']) await cp(path.join(directory,file),path.join(output,file));
+await writeFile(path.join(output,'release.json'),JSON.stringify(release,null,2));
+for(const weight of [400,600]) await cp(path.join(root,`node_modules/@fontsource/inter/files/inter-latin-${weight}-normal.woff2`),path.join(output,`assets/inter-latin-${weight}-normal.woff2`));
+await cp(path.join(root,'data/licenses/Inter-OFL-1.1.txt'),path.join(output,'assets/Inter-OFL-1.1.txt'));
+console.log(release?'Project site built with release metadata; deployment still requires the online receipt verifier.':'Project site built without a download control; no verified release is configured.');

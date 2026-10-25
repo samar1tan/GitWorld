@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "kind": "historical-field-display-labels",
+  "properties": [
+    {
+      "id": "authority:listed-de-jure-holder",
+      "labels": {
+        "en": "Authority listed de jure in source",
+        "zh-CN": "来源所列法理权力持有者"
+      }
+    },
+    {
+      "id": "authority:listed-de-facto-holder",
+      "labels": {
+        "en": "Authority listed de facto in source",
+        "zh-CN": "来源所列实际权力持有者"
+      }
+    },
+    {
+      "id": "office:listed-de-jure-holder",
+      "labels": {
+        "en": "Officeholder listed de jure",
+        "zh-CN": "来源所列法理任职者"
+      }
+    },
+    {
+      "id": "office:listed-de-facto-authority",
+      "labels": {
+        "en": "Authority listed de facto",
+        "zh-CN": "来源所列实际权力持有者"
+      }
+    },
+    {
+      "id": "office:authority-basis",
+      "labels": {
+        "en": "Basis of authority",
+        "zh-CN": "权力依据"
+      }
+    },
+    {
+      "id": "qualified:source-holder-cell",
+      "labels": {
+        "en": "Source holder cell",
+        "zh-CN": "来源任职者单元格"
+      }
+    },
+    {
+      "id": "qualified:start-cell",
+      "labels": {
+        "en": "Source start cell",
+        "zh-CN": "来源起点单元格"
+      }
+    },
+    {
+      "id": "qualified:end-cell",
+      "labels": {
+        "en": "Source end cell",
+        "zh-CN": "来源终点单元格"
+      }
+    },
+    {
+      "id": "qualified:profile",
+      "labels": {
+        "en": "Endpoint mapping profile",
+        "zh-CN": "端点映射规则"
+      }
+    }
+  ],
+  "types": [],
+  "values": [
+    {
+      "propertyId": "office:authority-basis",
+      "value": "de-jure",
+      "labels": {
+        "en": "De jure",
+        "zh-CN": "法理职衔"
+      }
+    },
+    {
+      "propertyId": "office:authority-basis",
+      "value": "de-facto",
+      "labels": {
+        "en": "De facto",
+        "zh-CN": "实际行使职权"
+      }
+    }
+  ],
+  "semanticNotes": [
+    {
+      "ids": [
+        "authority:listed-de-jure-holder",
+        "authority:listed-de-facto-holder",
+        "office:listed-de-jure-holder",
+        "office:listed-de-facto-authority"
+      ],
+      "en": "These fields preserve the source’s authority classification. They do not establish an institution’s lifetime or political ancestry.",
+      "zh-CN": "这些字段保留来源的权力分类，不据此确定机构存续期或政治继承关系。"
+    }
+  ]
+}

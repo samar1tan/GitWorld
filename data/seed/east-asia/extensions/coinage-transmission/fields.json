@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "kind": "historical-field-display-labels",
+  "properties": [
+    {
+      "id": "projection:rule-id",
+      "labels": {
+        "en": "Mapping rule",
+        "zh-CN": "映射规则"
+      }
+    },
+    {
+      "id": "projection:source-fact",
+      "labels": {
+        "en": "Source field",
+        "zh-CN": "来源字段"
+      }
+    },
+    {
+      "id": "coinage:issued-type",
+      "labels": {
+        "en": "Issued coin type",
+        "zh-CN": "所发行的钱币类型"
+      }
+    },
+    {
+      "id": "coinage:issuer",
+      "labels": {
+        "en": "Issuing authority",
+        "zh-CN": "发行机构"
+      }
+    },
+    {
+      "id": "transmission:source-model",
+      "labels": {
+        "en": "Documented model",
+        "zh-CN": "来源明确记载的范式"
+      }
+    },
+    {
+      "id": "transmission:recipient",
+      "labels": {
+        "en": "Recipient",
+        "zh-CN": "接收方"
+      }
+    },
+    {
+      "id": "transmission:model-context-polity",
+      "labels": {
+        "en": "Political setting of the model",
+        "zh-CN": "钱币范式所属政权"
+      }
+    },
+    {
+      "id": "relation:transmission-event",
+      "labels": {
+        "en": "Transmission and recipient change",
+        "zh-CN": "传播与接收方变化"
+      }
+    },
+    {
+      "id": "transmission:documented-change",
+      "labels": {
+        "en": "Documented change",
+        "zh-CN": "来源明确记载的变化"
+      }
+    },
+    {
+      "id": "transmission:role",
+      "labels": {
+        "en": "Role in the transmission",
+        "zh-CN": "传播关系中的角色"
+      }
+    },
+    {
+      "id": "transmission:claim-scope",
+      "labels": {
+        "en": "Meaning of this transmission claim",
+        "zh-CN": "此传播主张的含义"
+      }
+    },
+    {
+      "id": "source:identity-scope",
+      "labels": {
+        "en": "Scope of the source identity",
+        "zh-CN": "来源身份的范围"
+      }
+    },
+    {
+      "id": "coinage:production-attestation",
+      "labels": {
+        "en": "Evidence of minting",
+        "zh-CN": "铸币证据"
+      }
+    },
+    {
+      "id": "coinage:earlier-mintage-evidence",
+      "labels": {
+        "en": "Earlier mintage evidence",
+        "zh-CN": "更早铸币的证据"
+      }
+    },
+    {
+      "id": "evidence:discovery-year",
+      "labels": {
+        "en": "Reported archaeological discovery year",
+        "zh-CN": "来源记载的考古发现年份"
+      }
+    }
+  ],
+  "types": [
+    {
+      "id": "gitworld:coin-type",
+      "labels": {
+        "en": "Coin type",
+        "zh-CN": "钱币类型"
+      }
+    },
+    {
+      "id": "gitworld:source-described-authority",
+      "labels": {
+        "en": "Source-described authority",
+        "zh-CN": "来源记载的执政机构"
+      }
+    },
+    {
+      "id": "gitworld:coinage-issue",
+      "labels": {
+        "en": "Coin issue",
+        "zh-CN": "铸币发行"
+      }
+    },
+    {
+      "id": "gitworld:documented-transmission",
+      "labels": {
+        "en": "Documented transmission",
+        "zh-CN": "有据传播"
+      }
+    },
+    {
+      "id": "gitworld:polity",
+      "labels": {
+        "en": "Polity",
+        "zh-CN": "政治实体"
+      }
+    }
+  ],
+  "values": [
+    {
+      "propertyId": "transmission:documented-change",
+      "value": "modeled-coin-issue",
+      "labels": {
+        "en": "Issuance of a coin modeled on another type",
+        "zh-CN": "参照另一币型铸币发行"
+      }
+    },
+    {
+      "propertyId": "transmission:role",
+      "value": "recipient",
+      "labels": {
+        "en": "Recipient",
+        "zh-CN": "接收方"
+      }
+    },
+    {
+      "propertyId": "transmission:role",
+      "value": "produced-type",
+      "labels": {
+        "en": "Produced coin type",
+        "zh-CN": "所铸币型"
+      }
+    },
+    {
+      "propertyId": "transmission:role",
+      "value": "model",
+      "labels": {
+        "en": "Coin used as a model",
+        "zh-CN": "作为范式的钱币"
+      }
+    },
+    {
+      "propertyId": "transmission:role",
+      "value": "model-context",
+      "labels": {
+        "en": "Political setting of the model",
+        "zh-CN": "范式所属政权"
+      }
+    },
+    {
+      "propertyId": "transmission:claim-scope",
+      "value": "coin-model-and-issue-not-specific-carrier",
+      "labels": {
+        "en": "Coin model and issue; no specific carrier established",
+        "zh-CN": "钱币范式与发行；未确认具体传播者"
+      }
+    },
+    {
+      "propertyId": "source:identity-scope",
+      "value": "source-described-issuer-at-708",
+      "labels": {
+        "en": "Authority described for this 708 issue",
+        "zh-CN": "来源就708年发行所述的机构"
+      }
+    },
+    {
+      "propertyId": "coinage:production-attestation",
+      "value": "archaeologically-attested-mintage",
+      "labels": {
+        "en": "Minting supported by archaeological evidence",
+        "zh-CN": "有考古证据支持的铸造"
+      }
+    }
+  ],
+  "semanticNotes": [
+    {
+      "ids": [
+        "transmission:source-model",
+        "transmission:recipient",
+        "transmission:model-context-polity",
+        "relation:transmission-event"
+      ],
+      "en": "A source explicitly identifies a coin model and the recipient issue. This does not establish a named envoy, complete institutional copying, an active Tang government transfer or a Git parent.",
+      "zh-CN": "来源明确记载钱币范式与接收方的发行，但未确认具体使节、完整制度照搬、唐政府主动传授或 Git 继承关系。"
+    },
+    {
+      "ids": [
+        "coinage:issued-type",
+        "coinage:earlier-mintage-evidence",
+        "coinage:production-attestation"
+      ],
+      "en": "The 708 issue is a dated observation. Earlier production has a broad possible period and an unidentified issuer; neither creates a continuous before regime or makes 708 the first coinage in Japan.",
+      "zh-CN": "708年发行是一条有日期的观察。更早铸造仅有宽泛的可能时段，发行者未明；不据此构造连续的此前制度，也不把708年说成日本最早铸币。"
+    }
+  ]
+}

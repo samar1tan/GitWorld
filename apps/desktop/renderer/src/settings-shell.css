@@ -1,0 +1,10 @@
+.settings-workspace .settings-host { flex:1; min-height:0; overflow:auto; }
+.settings-workspace .settings-header { padding:15px 24px; }
+.settings-workspace .settings-header h1 { font-size:18px; }
+.titlebar-action[aria-current="page"] { background:#293b53; border-color:#4f76a7; color:#eef4fc; }
+.bundled-notices { box-sizing:border-box; width:min(900px,calc(100vw - 48px)); max-height:calc(100dvh - 48px); background:#1c222b; color:#dae1ec; border:1px solid #65748b; border-radius:6px; padding:22px; }
+.bundled-notices::backdrop { background:#0009; }
+.bundled-notices h2 { font-size:18px; margin:0 0 18px; }
+.bundled-notices pre { max-height:60vh; overflow:auto; white-space:pre-wrap; overflow-wrap:anywhere; font:12px/1.6 var(--mono); }
+.bundled-notices button { float:right; padding:7px 14px; border:1px solid #59759b; border-radius:3px; background:#294b76; color:#eef5ff; }
+:root[data-reduced-motion="reduce"] *, :root[data-reduced-motion="reduce"] *::before, :root[data-reduced-motion="reduce"] *::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }

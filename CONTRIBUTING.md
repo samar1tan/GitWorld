@@ -14,14 +14,18 @@ Historical contributions must identify sources, explain modeling choices and unc
 
 ## Validation
 
-For the current prototype:
+For the active desktop source, run from the repository root:
 
 ```sh
-npm --prefix prototype ci
-npm --prefix prototype test
-npm --prefix prototype run build
+npm ci
+npm run typecheck
+npm test
+npm run build
+npm run desktop:smoke
 node --test scripts/publication-audit.test.mjs
 ```
+
+See the [desktop guide](apps/desktop/README.md) for isolated development profiles and actual-package checks. When changing the frozen browser prototype, also run its own `npm --prefix prototype test` and `npm --prefix prototype run build`.
 
 Add focused tests for meaningful behavior and failure recovery. Inspect UI changes in both languages at representative desktop sizes. Report the checks that actually ran, including platform and packaging limits. A passing build is not evidence that a desktop installer works. Follow the current package's documented commands as the implementation expands.
 
