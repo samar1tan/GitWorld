@@ -1,5 +1,5 @@
 import type { HistoryLocale } from '@gitworld/domain';
-import type { ClosePreparationResult, RepositoryDiff, ServiceMethods } from '@gitworld/contracts';
+import type { ClosePreparationResult, RepositoryDiff, RepositoryDiffReferenceLabels, ServiceMethods } from '@gitworld/contracts';
 import type { EditorialCommit, EditorialCommitInput, EditorialIdentity, EditorialJson, EditorialStatus } from '../../../../packages/contracts/src/editorial-types.ts';
 import { escapeHtml as esc, ServiceFailure } from './client.ts';
 import { changesCopy as copy, type ChangesCopyKey } from './changes-copy.ts';
@@ -120,19 +120,25 @@ export function createChangesWorkspace(options: Options) {
     const labels=object(value.labels)&&Object.values(value.labels).every(label=>typeof label==='string')?value.labels as Record<string,string>:undefined,selected=knowledgeLocalizedText(labels,options.locale(),fallback),english=options.locale()==='zh-CN'&&/^en(?:-|$)/i.test(selected.language??'');
     return `<div class="changes-value-block"><strong${selected.language?` lang="${esc(selected.language)}"`:''}>${t(side)} · ${esc(selected.text)}${english?`<span class="knowledge-language" title="${esc(knowledgeCopy(options.locale(),'englishSource'))}">EN</span>`:''}</strong>${typeof value.year === 'number' ? `<span>${esc(year(value.year))}</span>` : ''}${typeof value.historicalRef === 'string' ? `<small>${t('historicalRef')} · ${esc(value.historicalRef)}</small>` : ''}${typeof value.repositoryRevision === 'string' ? `<small>${t('dataRevision')} · <code title="${esc(value.repositoryRevision)}">${esc(SHORT(value.repositoryRevision))}</code></small>` : ''}</div>`;
   }
-  function valueHtml(value: EditorialJson | undefined, raw = false, context: ChangesCopyKey | null = null, depth = 0): string {
+  function referenceHtml(id: string, names: RepositoryDiffReferenceLabels | undefined): string {
+    const selected = knowledgeLocalizedText(names?.[id], options.locale(), id);
+    if (selected.text === id) return `<code>${esc(id)}</code>`;
+    const english = options.locale() === 'zh-CN' && /^en(?:-|$)/i.test(selected.language ?? '');
+    return `<span${selected.language ? ` lang="${esc(selected.language)}"` : ''}>${esc(selected.text)}${english ? `<span class="knowledge-language" title="${esc(knowledgeCopy(options.locale(), 'englishSource'))}">EN</span>` : ''}</span><details><summary>${t('referenceIdentifier')}</summary><code>${esc(id)}</code></details>`;
+  }
+  function valueHtml(value: EditorialJson | undefined, raw = false, context: ChangesCopyKey | null = null, depth = 0, references?: RepositoryDiffReferenceLabels): string {
     if (value === undefined) return `<span class="changes-muted">${t('notPresent')}</span>`;
     if (raw) return rawValue(value, t('sourceRecord'));
     if (value === null) return `<span class="changes-muted">${t(context === 'fixedComparison' ? 'noComparison' : 'notSet')}</span>`;
     if (typeof value === 'string') return context==='organizationDecision'&&['user-organization','source-profile'].includes(value)?t(value==='user-organization'?'userOrganization':'sourceProfile'):value ? esc(value) : `<span class="changes-muted">${t('notSet')}</span>`;
     if (typeof value === 'number') return esc(new Intl.NumberFormat(options.locale(), { maximumFractionDigits: 12 }).format(value));
     if (typeof value === 'boolean') return t(value ? 'yes' : 'no');
-    if (Array.isArray(value)) return value.length ? value.map(item => `<div class="changes-value-block">${valueHtml(item, false, null, depth + 1)}</div>`).join('') : `<span class="changes-muted">${t(context === 'evidence' ? 'noEvidence' : context === 'openQuestions' ? 'noOpenQuestions' : 'noneRecorded')}</span>`;
+    if (Array.isArray(value)) return value.length ? value.map(item => `<div class="changes-value-block">${valueHtml(item, false, null, depth + 1, references)}</div>`).join('') : `<span class="changes-muted">${t(context === 'evidence' ? 'noEvidence' : context === 'openQuestions' ? 'noOpenQuestions' : 'noneRecorded')}</span>`;
     if(context==='contextProfile')return rawValue(value,t('contextProfile'));
     if (context === 'scope') return scopeHtml(value);
     if (context === 'fixedComparison') return endpointHtml(value.a, 'endpointA') + endpointHtml(value.b, 'endpointB');
     if (value.kind === 'text' && typeof value.value === 'string') return esc(value.value);
-    if (value.kind === 'entity' && typeof value.objectId === 'string') return esc(idLabel(value.objectId));
+    if (value.kind === 'entity' && typeof value.objectId === 'string') return referenceHtml(value.objectId, references);
     if (value.kind === 'boolean' && typeof value.value === 'boolean') return t(value.value ? 'yes' : 'no');
     if (value.kind === 'unknown') return t('unknownValue');
     if (value.kind === 'absent') return t('absentValue');
@@ -148,7 +154,7 @@ export function createChangesWorkspace(options: Options) {
       ...(object(value.start) ? [[t('start'), valueHtml(value.start, false, null, depth + 1)] as [string, string]] : []),
       ...(object(value.end) ? [[t('end'), valueHtml(value.end, false, null, depth + 1)] as [string, string]] : []),
     ]);
-    if (typeof value.propertyId === 'string' && value.value !== undefined) return valueList([[idLabel(value.propertyId), valueHtml(value.value, false, null, depth + 1)]]);
+    if (typeof value.propertyId === 'string' && value.value !== undefined) return valueList([[idLabel(value.propertyId), valueHtml(value.value, false, null, depth + 1, references)]]);
     if (typeof value.title === 'string' || typeof value.sourceId === 'string') {
       const label = typeof value.title === 'string' ? value.title : idLabel(String(value.sourceId));
       return `<strong>${esc(label)}</strong>${typeof value.citation === 'string' ? `<span>${esc(value.citation)}</span>` : ''}${typeof value.locator === 'string' ? `<small>${t('locator')} · ${esc(value.locator)}</small>` : ''}${typeof value.repositoryRevision === 'string' ? `<small>${t('dataRevision')} · <code title="${esc(value.repositoryRevision)}">${esc(SHORT(value.repositoryRevision))}</code></small>` : ''}${object(value.sourceIdentity) ? `<small>${valueHtml(value.sourceIdentity, false, null, depth + 1)}</small>` : ''}`;
@@ -158,19 +164,19 @@ export function createChangesWorkspace(options: Options) {
     if (!fields.length) return `<span class="changes-muted">${t('noneRecorded')}</span>`;
     if (depth >= 2) return rawValue(value, t('structuredValue'));
     const labels: Record<string, string> = { title: t('title'), description: t('description'), locator: t('locator'), citation: t('citation'), repositoryRevision: t('dataRevision'), sourceRevision: t('sourceRevision'), precision: t('precision'), lowerBound: t('lowerBound'), upperBound: t('upperBound'), unit: t('unit') };
-    return valueList(fields.slice(0, 8).map(([key, item]) => [labels[key] ?? idLabel(key), valueHtml(item, key === 'raw' || key === 'record', null, depth + 1)])) + (fields.length > 8 ? rawValue(value) : '');
+    return valueList(fields.slice(0, 8).map(([key, item]) => [labels[key] ?? idLabel(key), valueHtml(item, key === 'raw' || key === 'record', null, depth + 1, references)])) + (fields.length > 8 ? rawValue(value) : '');
   }
   function fieldDetail(value: string) {
     if (!value) return '';
-    const known = value === 'geo:location' ? t('location') : value === 'geo:representative-location' ? t('representativeLocation') : value.startsWith('pleiades:attested-name:') ? `${t('attestedName')} · ${value.split(':').at(-1)}` : value === 'pleiades:coverage-start' ? t('coverageStart') : value === 'pleiades:coverage-end' ? t('coverageEnd') : options.label?.(value) ?? value;
+    const known = value === 'geo:location' ? t('location') : value === 'geo:representative-location' ? t('representativeLocation') : value.startsWith('pleiades:attested-name:') ? `${t('attestedName')} · ${value.split(':').at(-1)}` : value === 'pleiades:coverage-start' ? t('coverageStart') : value === 'pleiades:coverage-end' ? t('coverageEnd') : options.label?.(value) ?? knowledgeMetadataLabel(value, options.locale()) ?? value;
     return `<small>${esc(known)}</small>`;
   }
   function diffHtml() {
     if (loadingDiff) return `<p role="status">${t('loading')}</p>`;
     if (!activePath || !difference) return `<p class="changes-empty">${t('chooseItem')}</p>`;
-    const item = itemFor(activePath, activeMode), navigation=difference.navigation, rows = navigation?.kind==='context-membership'?[]:semanticChanges(difference.before, difference.after);
+    const item = itemFor(activePath, activeMode), navigation=difference.navigation, referenceLabels=difference.referenceLabels, rows = navigation?.kind==='context-membership'?[]:semanticChanges(difference.before, difference.after);
     const navigationHtml=navigation?.kind==='context-membership'?`<section class="changes-navigation-summary"><h3>${t('contextMembership')}</h3>${valueList([[t('membershipBefore'),count(navigation.before)],[t('membershipAfter'),count(navigation.after)],[t('membershipAdded'),count(navigation.added)],[t('membershipRemoved'),count(navigation.removed)],[t('membershipModified'),count(navigation.modified)]])}<details><summary>${t('membershipIdentifiers')} · ${count(navigation.totalObjects)}</summary>${navigation.objects.map(value=>`<p><code>${esc(value.objectId)}</code> · ${t(value.kind==='removed'?'deleted':value.kind)}</p>`).join('')}<small>${count(navigation.objects.length)} / ${count(navigation.totalObjects)}</small></details></section>`:'';
-    return `<section><header class="changes-diff-heading"><h2>${titleHtml(item)}</h2><p>${t(activeMode === 'staged' ? 'stagedBasis' : 'workingBasis')}</p>${status?.staged.some(change => change.path === activePath) && status.unstaged.some(change => change.path === activePath) ? `<p class="changes-notice">${t('alsoWorking')}</p>` : ''}<details><summary>${t('path')}</summary><code>${esc(activePath)}</code></details></header>${navigationHtml}${rows.length ? `<table class="changes-diff-table"><thead><tr><th>${t('field')}</th><th>${t('before')}</th><th>${t('after')}</th></tr></thead><tbody>${rows.slice(0, fieldLimit).map(row => `<tr><td>${row.label ? t(row.label as Exclude<ChangesCopyKey, 'select' | 'selectAll' | 'selected' | 'stagedCount' | 'workingCount' | 'commitCount' | 'range' | 'planSelected' | 'requiredCount' | 'commitSummary' | 'committed' | 'bce' | 'period' | 'scopeObjectCount' | 'scopeFieldCount'>) : ''}${fieldDetail(row.detail)}</td><td class="changes-diff-value">${valueHtml(row.before, row.raw, row.label)}</td><td class="changes-diff-value">${valueHtml(row.after, row.raw, row.label)}</td></tr>`).join('')}</tbody></table>${rows.length > fieldLimit ? `<div class="changes-toolbar">${button('more-fields', t('showMore'))}</div>` : ''}` : navigationHtml?'':`<p class="changes-empty">${t('noDifference')}</p>`}<details class="changes-muted"><summary>${t('raw')}</summary><div class="changes-diff-value"><h3>${t('before')}</h3><pre>${esc(JSON.stringify(difference.before, null, 2))}</pre><h3>${t('after')}</h3><pre>${esc(JSON.stringify(difference.after, null, 2))}</pre></div></details></section>`;
+    return `<section><header class="changes-diff-heading"><h2>${titleHtml(item)}</h2><p>${t(activeMode === 'staged' ? 'stagedBasis' : 'workingBasis')}</p>${status?.staged.some(change => change.path === activePath) && status.unstaged.some(change => change.path === activePath) ? `<p class="changes-notice">${t('alsoWorking')}</p>` : ''}<details><summary>${t('path')}</summary><code>${esc(activePath)}</code></details></header>${navigationHtml}${rows.length ? `<table class="changes-diff-table"><thead><tr><th>${t('field')}</th><th>${t('before')}</th><th>${t('after')}</th></tr></thead><tbody>${rows.slice(0, fieldLimit).map(row => `<tr><td>${row.label ? t(row.label as Exclude<ChangesCopyKey, 'select' | 'selectAll' | 'selected' | 'stagedCount' | 'workingCount' | 'commitCount' | 'range' | 'planSelected' | 'requiredCount' | 'commitSummary' | 'committed' | 'bce' | 'period' | 'scopeObjectCount' | 'scopeFieldCount'>) : ''}${fieldDetail(row.detail)}</td><td class="changes-diff-value">${valueHtml(row.before, row.raw, row.label, 0, referenceLabels?.before)}</td><td class="changes-diff-value">${valueHtml(row.after, row.raw, row.label, 0, referenceLabels?.after)}</td></tr>`).join('')}</tbody></table>${rows.length > fieldLimit ? `<div class="changes-toolbar">${button('more-fields', t('showMore'))}</div>` : ''}` : navigationHtml?'':`<p class="changes-empty">${t('noDifference')}</p>`}<details class="changes-muted"><summary>${t('raw')}</summary><div class="changes-diff-value"><h3>${t('before')}</h3><pre>${esc(JSON.stringify(difference.before, null, 2))}</pre><h3>${t('after')}</h3><pre>${esc(JSON.stringify(difference.after, null, 2))}</pre></div></details></section>`;
   }
   function planHtml() {
     if (!plan) return '';

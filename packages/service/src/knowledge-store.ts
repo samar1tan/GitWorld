@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto';
-import type { EditorialJson, EditorialRepository, EditorialWrite } from '../../contracts/src/editorial-types.ts';
+import type { EditorialJson, EditorialRepository, EditorialSnapshot, EditorialWrite } from '../../contracts/src/editorial-types.ts';
 import type { KnowledgeCollectionRead, KnowledgeFieldCatalog, KnowledgeImportResult, KnowledgeMappingPreview, KnowledgeObjectBundle, KnowledgeObjectDetail } from '../../contracts/src/knowledge-workspace-types.ts';
 import { createKnowledgeIndex, type KnowledgeCollection, type KnowledgeReview } from '../../domain/src/knowledge.ts';
 import { canonicalJson } from '../../domain/src/canonical.ts';
@@ -10,6 +10,8 @@ import { resolveKnowledgeVocabulary, vocabularySlots, vocabularySourcePath } fro
 import { knowledgeCollectionFromTree, readNavigationTree } from './navigation-tree.ts';
 import { SOURCE_PRESENTATIONS_PATH, readSourcePresentations } from './knowledge-source-presentations.ts';
 import { APPEND_OBJECT_MERGE_VERSION, appendKnowledgeBundle } from './knowledge-append.ts';
+import { EDITORIAL_MAX_PATHS } from '../../contracts/src/editorial-types.ts';
+import { brokenKnowledgeReferencePaths, knowledgeEntityReferences, knowledgeSourceReferences } from './knowledge-staging.ts';
 
 const digest = (value: unknown) => createHash('sha256').update(canonicalJson(value)).digest('hex');
 const json = (value: unknown) => value as EditorialJson;
@@ -89,17 +91,43 @@ export function createKnowledgeStore(repository: EditorialRepository, options: {
         return result;
       } } };
     },
-    async dependencies(paths: string[]) {
+    async dependencies(paths: string[], basis?: { working: EditorialSnapshot; staged: EditorialSnapshot }) {
       const selected = new Set(paths), required = new Set<string>(), missing = new Set<string>();
-      const workingFiles = (await repository.snapshot({ from: 'working', prefixes: ['objects/', 'sources/', 'mappings/'] })).files;
-      const stagedFiles = (await repository.snapshot({ from: 'staged', prefixes: ['sources/', 'mappings/'] })).files;
+      if (selected.size > EDITORIAL_MAX_PATHS) throw new Error('INVALID_REQUEST');
+      const [working, staged] = basis ? [basis.working, basis.staged] : await Promise.all([
+        repository.snapshot({ from: 'working', prefixes: ['objects/', 'sources/', 'mappings/'] }),
+        repository.snapshot({ from: 'staged', prefixes: ['objects/', 'sources/', 'mappings/'] }),
+      ]);
+      if (working.head !== staged.head) throw new Error('HEAD_CHANGED');
+      const workingFiles = working.files, stagedFiles = staged.files;
+      const headObjects = new Set(working.head ? await repository.list({ from: working.head, prefix: 'objects/' }) : []);
+      const closure = new Set(selected), queue = [...selected];
+      const dependency = (name: string) => {
+        if (closure.has(name)) return;
+        const current = workingFiles[name] ?? null, frozen = stagedFiles[name] ?? null;
+        if (name.startsWith('objects/')) {
+          // Existing frozen B is sufficient; an unrelated Working C is not a dependency.
+          if (frozen !== null) return;
+          // An explicit staged deletion must not be silently undone by dependency expansion.
+          if (headObjects.has(name)) { missing.add(name); return; }
+          if (current === null) return; // Genuine unresolved imported references remain readable.
+        } else if (current === null && frozen === null) { missing.add(name); return; }
+        else if (frozen !== null && (current === null || digest(current) === digest(frozen))) return;
+        required.add(name); closure.add(name); queue.push(name);
+        if (closure.size > EDITORIAL_MAX_PATHS) throw new Error('INVALID_REQUEST');
+      };
       const vocabulary=resolveKnowledgeVocabulary(workingFiles,options.fieldCatalog);
       const catalogProperties=new Map<string,Set<typeof vocabulary.catalogs[number]>>(),catalogTypes=new Map<string,Set<typeof vocabulary.catalogs[number]>>();
       for(const catalog of vocabulary.catalogs)for(const slot of vocabularySlots(catalog.vocabulary.catalog)){const index=slot.kind==='types'?catalogTypes:catalogProperties,values=index.get(slot.id)??new Set();values.add(catalog);index.set(slot.id,values);}
-      for (const path of paths) {
+      for (let index = 0; index < queue.length; index++) {
+        const path = queue[index];
+        if (path.startsWith('sources/')) for (const id of knowledgeSourceReferences(workingFiles[path])) dependency(sourcePath(id));
+        if(path.startsWith('mappings/field-catalogs/')){const catalog=vocabulary.catalogs.find(value=>value.path===path);if(catalog)for(const name of [catalog.sourcePath,catalog.baseline,...catalog.vocabulary.origin.evidence.map(pin=>vocabularySourcePath(pin.sourceId))])dependency(name);}
+        if(path===SOURCE_PRESENTATIONS_PATH)for(const entry of readSourcePresentations(workingFiles))dependency(sourcePath(entry.sourceId));
         if (!path.startsWith('objects/')) continue;
         const bundle = workingFiles[path] as unknown as KnowledgeObjectBundle | undefined;
         if (!bundle) continue;
+        for (const reference of knowledgeEntityReferences({ [path]: json(bundle) })) dependency(objectPath(reference.targetId));
         const dependencies = new Set(bundle.assertions.flatMap(value => [value.sourceSnapshotId, ...value.evidence.map(item => item.sourceId)]).map(sourcePath));
         const claimIds = new Set(bundle.assertions.flatMap(value => [value.id, ...value.qualifiers.filter(item => ['binding:derived-from','projection:derived-from'].includes(item.propertyId) && item.value.kind === 'text').map(item => item.value.kind === 'text' ? item.value.value : '')]));
         for (const [candidatePath, value] of Object.entries(workingFiles)) {
@@ -112,16 +140,12 @@ export function createKnowledgeStore(repository: EditorialRepository, options: {
         const propertyIds=new Set(bundle.assertions.flatMap(value=>[value.propertyId,...value.qualifiers.map(item=>item.propertyId)]));
         const usedCatalogs=new Set([...propertyIds].flatMap(id=>[...catalogProperties.get(id)??[]]).concat(bundle.object.types.flatMap(id=>[...catalogTypes.get(id)??[]])));
         for(const catalog of usedCatalogs){dependencies.add(catalog.path);dependencies.add(catalog.baseline);dependencies.add(catalog.sourcePath);for(const pin of catalog.vocabulary.origin.evidence)dependencies.add(vocabularySourcePath(pin.sourceId));}
-        for (const dependency of dependencies) {
-          if (selected.has(dependency)) continue;
-          const working = workingFiles[dependency] ?? null, staged = stagedFiles[dependency] ?? null;
-          if (working === null && staged === null) missing.add(dependency);
-          else if (staged === null || working !== null && digest(working) !== digest(staged)) required.add(dependency);
-        }
+        for (const name of dependencies) dependency(name);
       }
-      for(const path of paths)if(path.startsWith('mappings/field-catalogs/')){const catalog=vocabulary.catalogs.find(value=>value.path===path);if(catalog)for(const dependency of [catalog.sourcePath,catalog.baseline,...catalog.vocabulary.origin.evidence.map(pin=>vocabularySourcePath(pin.sourceId))]){if(selected.has(dependency))continue;const current=workingFiles[dependency]??null,staged=stagedFiles[dependency]??null;if(current===null&&staged===null)missing.add(dependency);else if(staged===null||current!==null&&digest(current)!==digest(staged))required.add(dependency);}}
-      if(selected.has(SOURCE_PRESENTATIONS_PATH))for(const entry of readSourcePresentations(workingFiles)){const dependency=sourcePath(entry.sourceId);if(selected.has(dependency))continue;const current=workingFiles[dependency],staged=stagedFiles[dependency];if(staged===undefined||digest(current)!==digest(staged))required.add(dependency);}
-      return { selected: [...selected], required: [...required], missing: [...missing] };
+      const candidate = { ...stagedFiles };
+      for (const name of closure) if (workingFiles[name] === undefined) delete candidate[name]; else candidate[name] = workingFiles[name];
+      for (const name of brokenKnowledgeReferencePaths(stagedFiles, candidate, headObjects)) missing.add(name);
+      return { selected: [...selected], required: [...required].sort(), missing: [...missing].sort() };
     },
     async planAdoption(input: AdoptInput) {
       const mapped = 'collection' in input ? describe(input.collection, { review: input.review, issues: input.issues }) : await map(input.snapshots, input.review);

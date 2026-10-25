@@ -246,6 +246,46 @@ test('semantic object differences include evidence, time and review instead of o
   assert.deepEqual(rows.map(value => value.label).sort(), ['assertionValue', 'evidence', 'review'].sort()); assert.ok(rows.every(value => value.detail === 'geo:location'));
 });
 
+test('entity and qualifier differences use their side-specific names in both locales without a current-cache lookup', async t => {
+  const f = fixture(t);
+  const bundle = (id: string): EditorialJson => ({ object: { id: 'subject', labels: { en: 'Subject', 'zh-CN': '对象' } }, assertions: [{ id: 'claim', propertyId: 'office:held-position', value: { kind: 'entity', objectId: id }, qualifiers: [{ propertyId: 'relation', value: { kind: 'entity', objectId: id } }] }] });
+  f.parent()[OBJECT] = bundle('old'); f.index()[OBJECT] = bundle('new'); f.working[OBJECT] = bundle('later-working');
+  const diff = f.api.diff;
+  f.api.diff = async params => {
+    const value = await diff(params);
+    for (const entry of value.entries) entry.referenceLabels = {
+      before: { old: { en: 'Original <office>', 'zh-CN': '原职务' }, new: { en: 'Wrong before name' } },
+      after: { new: { en: 'Frozen office B', 'zh-CN': '已暂存职务乙' }, old: { en: 'Wrong after name' } },
+    };
+    return value;
+  };
+  let locale: 'en' | 'zh-CN' = 'en';
+  const workspace = f.create(() => locale, id => ['old', 'new', 'later-working'].includes(id) ? 'Wrong current cache name' : id);
+  await workspace.open(); await click(workspace, 'mode', { mode: 'staged' }); await click(workspace, 'item', { path: OBJECT });
+  const english = workspace.content().match(/<table[\s\S]*?<\/table>/)![0];
+  assert.equal((english.match(/Original &lt;office&gt;/g) ?? []).length, 2);
+  assert.equal((english.match(/Frozen office B/g) ?? []).length, 2);
+  assert.doesNotMatch(english, /Wrong (?:current|before|after)|later-working|<office>/);
+  assert.match(english, /<summary>Object identifier<\/summary><code>new<\/code>/);
+  const calls = f.calls.length, status = f.status(); locale = 'zh-CN';
+  const chinese = workspace.content().match(/<table[\s\S]*?<\/table>/)![0];
+  assert.equal((chinese.match(/原职务/g) ?? []).length, 2); assert.equal((chinese.match(/已暂存职务乙/g) ?? []).length, 2);
+  assert.match(chinese, /<summary>对象标识<\/summary>/);
+  assert.equal(f.calls.length, calls); assert.deepEqual(f.status(), status);
+});
+
+test('an unresolved entity stays an identifier and an English-only snapshot name has an explicit Chinese fallback', async t => {
+  const f = fixture(t);
+  f.index()[OBJECT] = { object: { labels: { en: 'Subject' } }, assertions: [{ id: 'claim', propertyId: 'relation', value: { kind: 'entity', objectId: 'unresolved' } }] };
+  f.working[OBJECT] = { object: { labels: { en: 'Subject' } }, assertions: [{ id: 'claim', propertyId: 'relation', value: { kind: 'entity', objectId: 'named' } }] };
+  const diff = f.api.diff;
+  f.api.diff = async params => { const result = await diff(params); for (const entry of result.entries) entry.referenceLabels = { before: {}, after: { named: { en: 'Source office' } } }; return result; };
+  const workspace = f.create('zh-CN', id => id === 'unresolved' ? 'A misleading current name' : id); await workspace.open(OBJECT);
+  const table = workspace.content().match(/<table[\s\S]*?<\/table>/)![0];
+  assert.match(table, /<code>unresolved<\/code>/); assert.doesNotMatch(table, /A misleading current name/);
+  assert.match(table, /lang="en">Source office<span class="knowledge-language"/); assert.match(table, />EN<\/span>/);
+});
+
 test('count messages use complete singular and plural templates in both locales', () => {
   assert.equal(changesCopy('en', 'workingCount', { count: 1 }), '1 working item');
   assert.equal(changesCopy('en', 'workingCount', { count: 0 }), '0 working items');
