@@ -1,0 +1,15 @@
+{
+  "name": "@gitworld/desktop",
+  "version": "0.1.0-dev.1",
+  "private": true,
+  "type": "module",
+  "main": "dist/main.cjs",
+  "description": "GitWorld local history workbench",
+  "author": "GitWorld contributors",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@gitworld/contracts": "*",
+    "@gitworld/domain": "*",
+    "@gitworld/service": "*"
+  }
+}

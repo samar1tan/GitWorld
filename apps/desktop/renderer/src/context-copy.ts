@@ -1,0 +1,71 @@
+import type { HistoryLocale } from '@gitworld/domain';
+
+const messages = {
+  en: {
+    sourcePinCount:'Fixed source records: {count}',sourcePins:'Fixed source records',membershipBasis:'Membership basis',userOrganization:'User organization',sourceProfile:'Source profile',bundledBasis:'Bundled navigation metadata',member:'Member {number}',resumeEdit:'Resume context edit',directObject:'Direct selection',relatedObject:'Referenced object',newContext: 'New context', editContext: 'Edit context', membership: 'Organize material', close: 'Close',
+    name: 'Name', purpose: 'Purpose (optional)', language: 'Name language', create: 'Create context', save: 'Save definition',
+    draft: 'Unsaved context input', saved: 'Saved to working changes', organization: 'Membership records your organization decision; it does not approve historical claims.',
+    target: 'Research context', chooseContext: 'Choose a context', findContext: 'Find context', search: 'Search', newTarget: 'New context',
+    addMaterial: 'Add material', removeMaterial: 'Remove membership', batches: 'Complete material batches',
+    noBatches: 'No complete material batch is available. Finish an import or save source material first.',
+    noContexts: 'No research contexts yet.', unavailable: 'This batch cannot be used as a complete set.',
+    subjects: 'Objects with claims from this source', related: 'Claim subjects and explicitly referenced objects', adopted: 'Complete adopted import',
+    batchCounts: 'Objects: {objects} · Direct: {direct} · Referenced: {related}', unresolved: 'Unresolved objects: {count}',
+    completeSet: 'The whole fixed batch is used, independently of visible pages and exploration filters.',
+    preview: 'Preview membership', confirm: 'Confirm membership', plan: 'Membership preview',
+    planCounts: '{selected} selected · {already} already in context · {added} to add · {removed} to remove · {unchanged} unchanged',
+    rationale: 'Organization note (optional)', details: 'Batch and revision details', members: 'Objects in this plan',
+    previous: 'Previous', next: 'Next', page: '{from}–{to} of {total}', working: 'Working…', reviewChanges: 'Review changes', viewContext: 'View context',
+    completed: 'Membership saved. Your active investigation is unchanged.',
+    definitionsSaved: 'Context saved. Choose material to organize, or return to your investigation.',
+    nameRequired: 'Enter a context name.', targetRequired: 'Choose a context.', batchRequired: 'Choose a complete batch.',
+    refreshFailed:'The write succeeded, but the current library view could not be refreshed. Retry the refresh.',failed: 'This operation could not be completed. Your input is kept.', stale: 'The data or membership changed. Review a new preview before applying.',
+    pending: 'A context write is unfinished. Resume its original operation before changing navigation data.',
+    unknownResult: 'The result of this write is not confirmed. Check the original operation before trying another write.',
+    resume: 'Resume operation', check: 'Check save result', retry: 'Retry', imports: 'Open imports',
+    importPending: 'Finish the unfinished facts import in Library → Sources → Imports and matches before organizing it.',
+    inputFailed: 'The input recovery copy could not be saved. Retry before leaving.',
+    discard: 'Discard draft', discardTitle: 'Discard this context input?', discardBody: 'Saved definitions and memberships stay in working changes. Only this unsaved input is removed.',
+    keep: 'Keep editing', confirmDiscard: 'Discard input', replace: 'Another context draft is open.', replaceBody: 'Keep this draft, or discard its unsaved input and continue to the requested context.', continue: 'Discard and continue',
+    changedPaths: 'Repository paths changed: {count}', errorCode: 'Error details', missingObjects: 'Some objects in the fixed batch are unavailable.',
+    importConflicts: 'Resolve the import conflicts before assigning this batch.', incompleteResult: 'The original import result is incomplete.', originUnavailable: 'The original import result is unavailable.',
+    existingName: 'Definition', batchObjects: 'Review batch objects', noMembershipChanges: 'No membership changes are needed.',
+    pendingSave: 'Context definition write', pendingMembership: 'Context membership write',
+  },
+  'zh-CN': {
+    sourcePinCount:'固定来源记录：{count} 条',sourcePins:'固定来源记录',membershipBasis:'归属依据',userOrganization:'用户组织决定',sourceProfile:'来源规则',bundledBasis:'随附导航资料',member:'成员 {number}',resumeEdit:'继续背景编辑',directObject:'直接纳入',relatedObject:'引用对象',newContext: '新建背景', editContext: '编辑背景', membership: '组织资料', close: '关闭',
+    name: '名称', purpose: '用途（可选）', language: '名称语言', create: '创建背景', save: '保存定义',
+    draft: '尚未保存的背景输入', saved: '已保存到待提交变化', organization: '归属记录的是你的组织决定，不会审定历史主张。',
+    target: '研究背景', chooseContext: '选择背景', findContext: '查找背景', search: '查找', newTarget: '新建背景',
+    addMaterial: '归入资料', removeMaterial: '移除归属', batches: '完整资料批次',
+    noBatches: '尚无可用的完整资料批次。请先完成导入或保存来源资料。', noContexts: '尚无研究背景。', unavailable: '这个批次暂不能作为完整集合使用。',
+    subjects: '本来源提供主张的对象', related: '主张对象及明确引用的对象', adopted: '已采用的完整导入',
+    batchCounts: '{objects} 个对象 · {direct} 个直接对象 · {related} 个引用对象', unresolved: '{count} 个对象尚未明确',
+    completeSet: '采用整个固定批次，不受当前可见页或探索筛选影响。',
+    preview: '预览归属', confirm: '确认归属', plan: '归属预览',
+    planCounts: '所选 {selected} 个 · 已归入 {already} 个 · 新增 {added} 个 · 移除 {removed} 个 · 不变 {unchanged} 个',
+    rationale: '组织说明（可选）', details: '批次与版本详情', members: '计划中的对象',
+    previous: '上一页', next: '下一页', page: '{total} 个中的 {from}–{to}', working: '正在处理…', reviewChanges: '审阅待提交变化', viewContext: '查看背景',
+    completed: '归属已保存，当前调查范围保持不变。', definitionsSaved: '背景已保存。可以选择资料归入，也可以返回调查。',
+    nameRequired: '请填写背景名称。', targetRequired: '请选择背景。', batchRequired: '请选择完整批次。',
+    refreshFailed:'写入已完成，但未能刷新当前资料视图。可以重试刷新。',failed: '操作未完成，已保留输入。', stale: '资料或归属已改变，请重新预览后再确认。',
+    pending: '有一项背景写入尚未完成，请先恢复原操作，再修改导航资料。',
+    unknownResult: '尚未确认这次写入的结果，请先检查原操作，再尝试其他写入。',
+    resume: '恢复操作', check: '检查保存结果', retry: '重试', imports: '打开导入与匹配',
+    importPending: '请先到资料库 → 来源 → 导入与匹配，完成尚未结束的事实导入，再组织这批资料。',
+    inputFailed: '未能保存输入恢复副本，离开前请重试。',
+    discard: '放弃草稿', discardTitle: '放弃这些背景输入？', discardBody: '已保存的定义和归属仍留在待提交变化中，只清除这些未保存输入。',
+    keep: '继续编辑', confirmDiscard: '放弃输入', replace: '已有另一份背景草稿。', replaceBody: '可以保留当前草稿，或放弃未保存输入后继续打开所选背景。', continue: '放弃并继续',
+    changedPaths: '改变了 {count} 个仓库路径', errorCode: '错误详情', missingObjects: '固定批次中的部分对象不可用。',
+    importConflicts: '请先处理导入冲突，再归入这批资料。', incompleteResult: '原始导入结果不完整。', originUnavailable: '原始导入结果不可用。',
+    existingName: '背景定义', batchObjects: '查看批次对象', noMembershipChanges: '无需修改归属。',
+    pendingSave: '背景定义写入', pendingMembership: '背景归属写入',
+  },
+} as const;
+export type ContextCopyKey = keyof typeof messages.en;
+type Parameters = {sourcePinCount:{count:number};member:{number:number}; batchCounts: { objects: number; direct: number; related: number }; unresolved: { count: number }; planCounts: { selected: number; already: number; added: number; removed: number; unchanged: number }; page: { from: number; to: number; total: number }; changedPaths: { count: number } };
+export function contextCopy<K extends ContextCopyKey>(locale: HistoryLocale, key: K, ...args: K extends keyof Parameters ? [Parameters[K]] : []): string {
+  let message: string = messages[locale][key];
+  for (const [name, value] of Object.entries(args[0] ?? {})) message = message.replaceAll(`{${name}}`, typeof value === 'number' ? new Intl.NumberFormat(locale).format(value) : String(value));
+  return message;
+}

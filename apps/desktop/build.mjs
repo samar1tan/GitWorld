@@ -1,0 +1,62 @@
+import { build } from 'esbuild';
+import { build as buildRenderer } from 'vite';
+import { cp, mkdir, readFile, readdir, writeFile, rm } from 'node:fs/promises';
+import { existsSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { BUILD_PROVENANCE_FILE, captureReleaseSource, prepareBuildProvenance, verifyPreparedBuild } from './release-provenance.mjs';
+const directory = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(directory, '../..');
+const output = path.join(directory, 'dist');
+const releaseTag = process.env.GITWORLD_RELEASE_TAG;
+const source = releaseTag ? await captureReleaseSource(root, { tag: releaseTag }) : null;
+// Generated outputs are rebuilt from scratch; older assets cannot leak into a package.
+await rm(output, { recursive: true, force: true });
+await rm(path.join(root, BUILD_PROVENANCE_FILE), { force: true });
+await mkdir(output, { recursive: true });
+const iconBuild = spawnSync(process.execPath, [path.join(directory, 'build-icon.mjs')], { stdio: 'inherit' });
+if (iconBuild.status !== 0) throw new Error('APPLICATION_ICON_BUILD_FAILED');
+await mkdir(path.join(output, 'resources'), { recursive: true });
+await cp(path.join(root, '.local/desktop-icon/GitWorld.png'), path.join(output, 'resources/GitWorld.png'));
+await cp(path.join(directory, 'resources/icon.svg'), path.join(output, 'resources/icon.svg'));
+const gitBuild = spawnSync(process.execPath, [path.join(root, 'scripts/build-bundled-git.mjs')], { stdio: 'inherit' });
+if (gitBuild.status !== 0) throw new Error('BUNDLED_GIT_BUILD_FAILED');
+await cp(path.join(root, '.local/bundled-git/runtime'), path.join(output, 'git-runtime'), { recursive: true });
+await cp(path.join(root, '.local/bundled-git/corresponding-source'), path.join(output, 'git-corresponding-source'), { recursive: true });
+await cp(path.join(root, '.local/bundled-git/manifest.json'), path.join(output, 'git-runtime-manifest.json'));
+await build({ entryPoints: { main: path.join(directory, 'src/main.ts'), preload: path.join(directory, 'src/preload.ts'), utility: path.join(directory, 'src/utility.ts') }, outdir: output, outExtension: { '.js': '.cjs' }, bundle: true, platform: 'node', format: 'cjs', target: 'node24', external: ['electron'], sourcemap: false, logLevel: 'info' });
+const renderer = !process.argv.includes('--internal-shell') && existsSync(path.join(directory, 'renderer/index.html'));
+const marker = path.join(directory, 'renderer/build-ready.json');
+const rendererReady = renderer && existsSync(marker) && JSON.parse(await readFile(marker, 'utf8')).ready === true;
+if (renderer) await buildRenderer({ root: path.join(directory, 'renderer'), base: './', build: { outDir: path.join(output, 'renderer'), emptyOutDir: true }, configFile: false });
+else await cp(path.join(directory, 'internal'), path.join(output, 'renderer'), { recursive: true });
+const serviceAdapter = await readFile(path.join(directory, 'src/service-adapter.ts'), 'utf8');
+const service = /SERVICE_IMPLEMENTED\s*=\s*true/.test(serviceAdapter);
+const project = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'));
+await writeFile(path.join(output, 'package.json'), JSON.stringify({ name: 'gitworld-desktop', productName: 'GitWorld', version: project.version, description: 'Local history workbench', main: 'main.cjs', license: 'Apache-2.0', author: 'GitWorld contributors', private: true }, null, 2));
+await cp(path.join(root, 'LICENSE'), path.join(output, 'LICENSE'));
+await cp(path.join(root, 'THIRD_PARTY_NOTICES.md'), path.join(output, 'THIRD_PARTY_NOTICES.md'));
+await cp(path.join(root, 'data/licenses'), path.join(output, 'data/licenses'), { recursive: true });
+await cp(path.join(root, 'data/seed/early-medieval.json'), path.join(output, 'data/seed/early-medieval.json'), { recursive: true });
+const knowledgeSeedRoot=path.join(root,'data/seed/east-asia');
+const knowledgeManifest=JSON.parse(await readFile(path.join(knowledgeSeedRoot,'manifest.json'),'utf8'));
+const knowledgeFiles=['manifest.json','README.md',...knowledgeManifest.shards.map(value=>value.path),knowledgeManifest.fieldCatalog.path,knowledgeManifest.sourceRights.path,...(knowledgeManifest.navigation?[knowledgeManifest.navigation.path]:[]),...(knowledgeManifest.fieldCatalogOverlays??[]).map(value=>value.path),...(knowledgeManifest.supportingFiles??[]).map(value=>value.path)];
+for(const name of knowledgeFiles){if(!/^(?:[a-z0-9][a-z0-9._-]*\/)*[a-zA-Z0-9][a-zA-Z0-9._-]*$/.test(name)||name.split('/').includes('..'))throw new Error('INVALID_SEED_PATH');await mkdir(path.dirname(path.join(output,'data/seed/east-asia',name)),{recursive:true});await cp(path.join(knowledgeSeedRoot,name),path.join(output,'data/seed/east-asia',name));}
+const buildId = Date.now().toString();
+await writeFile(path.join(output, 'build-info.json'), JSON.stringify({ renderer, rendererReady, service, internal: !rendererReady || !service, distribution: source ? 'product' : 'internal', buildId, electron: project.devDependencies.electron, source }, null, 2));
+await writeFile(path.join(output, 'renderer/app-info.json'), JSON.stringify({ version: project.version, buildId }, null, 2));
+const noticePaths = ['LICENSE', 'THIRD_PARTY_NOTICES.md', 'data/seed/east-asia/README.md', 'data/seed/east-asia/source-rights.json',...(knowledgeManifest.supportingFiles??[]).map(value=>`data/seed/east-asia/${value.path}`), ...(await readdir(path.join(root, 'data/licenses'))).sort().map(name => `data/licenses/${name}`), 'node_modules/@fontsource/inter/LICENSE'];
+const noticeSections = await Promise.all(noticePaths.map(async name => `${name.replace('node_modules/@fontsource/inter/LICENSE', 'Inter font license')}\n\n${await readFile(path.join(root, name), 'utf8')}`));
+const gitLicenseDirectory = path.join(output, 'git-runtime/share/licenses/git');
+for (const name of (await readdir(gitLicenseDirectory)).sort()) noticeSections.push(`Bundled Git / ${name}\n\n${await readFile(path.join(gitLicenseDirectory, name), 'utf8')}`);
+await writeFile(path.join(output, 'renderer/notices.txt'), noticeSections.join('\n\n' + '='.repeat(72) + '\n\n'));
+const fontLicense = path.join(root, 'node_modules/@fontsource/inter/LICENSE');
+if (existsSync(fontLicense)) { await mkdir(path.join(output, 'licenses'), { recursive: true }); await cp(fontLicense, path.join(output, 'licenses/Inter-OFL.txt')); }
+if (source) {
+  await mkdir(path.join(root, '.local'), { recursive: true });
+  const prepared = await prepareBuildProvenance(root, output, source, buildId);
+  await verifyPreparedBuild(root, output, prepared, { tag: releaseTag });
+  await writeFile(path.join(root, BUILD_PROVENANCE_FILE), JSON.stringify(prepared, null, 2));
+}
+console.log(rendererReady && service ? 'Desktop workbench build complete.' : 'Internal integration shell built. Product packaging remains blocked until renderer and local service are connected and ready.');

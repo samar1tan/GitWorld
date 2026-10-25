@@ -1,0 +1,1309 @@
+{
+  "schemaVersion": 1,
+  "id": "three-kingdoms-evidenced-political-transitions",
+  "revision": "1-local-evidenced-candidate",
+  "preparedAt": "2026-10-25T01:38:16.974Z",
+  "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/historical-transformations-prd.md",
+  "rights": {
+    "licenseId": "CC-BY-SA-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "attribution": "GitWorld selected the identified source facts and authored the bilingual modeling and display metadata. Wikipedia-derived material remains CC-BY-SA-4.0 with fixed editions and author history. Raw source works, images and full prose are excluded; no source endorsement."
+  },
+  "profiles": [
+    {
+      "id": "wei-shu-conquest",
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "15108068"
+      },
+      "revision": "1373985551",
+      "contentHash": "1f7d674fb7e84ad3596bf329f6e45074f02940ba88aeb0976f94dd9e6edcb196",
+      "citation": {
+        "title": "Conquest of Shu by Wei",
+        "language": "en",
+        "creator": "English Wikipedia contributors",
+        "rightsEvidence": [
+          "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "https://creativecommons.org/licenses/by-sa/4.0/"
+        ],
+        "rightsNote": "Selected facts and independently authored bilingual interpretation remain CC-BY-SA-4.0. Exact revision, source hash and author history are retained; no article prose, HTML or image is retained."
+      },
+      "facts": [
+        {
+          "id": "date",
+          "selector": {
+            "kind": "table-field",
+            "tableClass": "infobox",
+            "tableIndex": 0,
+            "header": "Date"
+          },
+          "textHash": "8758d6ef29c73f637438582c7b5d49d760b278494cbe975716475ff0eb59beb0"
+        },
+        {
+          "id": "result",
+          "selector": {
+            "kind": "table-field",
+            "tableClass": "infobox",
+            "tableIndex": 0,
+            "header": "Result"
+          },
+          "textHash": "085892dbb643340790388ff360d95d71669b9793642a52a95f7a1baa64019eb1"
+        },
+        {
+          "id": "wei",
+          "selector": {
+            "kind": "section-cell",
+            "tableClass": "infobox",
+            "tableIndex": 0,
+            "heading": "Belligerents",
+            "rowOffset": 1,
+            "column": 0
+          },
+          "textHash": "b012cd726ff3fa69df73615db27bc9e4a2930c39ce08c33f69a13346b9c5f326"
+        },
+        {
+          "id": "shu",
+          "selector": {
+            "kind": "section-cell",
+            "tableClass": "infobox",
+            "tableIndex": 0,
+            "heading": "Belligerents",
+            "rowOffset": 1,
+            "column": 1
+          },
+          "textHash": "1c9f02dd65d96b0d51222917ada02ffb49338f51644bc0d996603db34442d1a8"
+        },
+        {
+          "id": "summary",
+          "selector": {
+            "kind": "element",
+            "tag": "p",
+            "startsWith": "The Conquest of Shu by Wei was"
+          },
+          "textHash": "6c90426b26e9aca1596265c283377839a869151aec6827f0b9244c3c999c843f"
+        }
+      ]
+    },
+    {
+      "id": "jin-context",
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "55020"
+      },
+      "revision": "1359294647",
+      "contentHash": "4a52801e3f93d2774f2a0bafdbe88cc1a5756bfbf88c87199bd25962baafbd8f",
+      "citation": {
+        "title": "Jin dynasty (266–420)",
+        "language": "en",
+        "creator": "English Wikipedia contributors",
+        "rightsEvidence": [
+          "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "https://creativecommons.org/licenses/by-sa/4.0/"
+        ],
+        "rightsNote": "Selected facts and independently authored bilingual interpretation remain CC-BY-SA-4.0. Exact revision, source hash and author history are retained; no article prose, HTML or image is retained."
+      },
+      "facts": [
+        {
+          "id": "western-phase",
+          "selector": {
+            "kind": "element",
+            "tag": "h3",
+            "id": "Western_Jin_(266–316)"
+          },
+          "textHash": "0954efd4a774f774373c45b4f1b00ca55c605b862fb6405d00cb49e8833386cc"
+        },
+        {
+          "id": "western-identity",
+          "selector": {
+            "kind": "element",
+            "tag": "p",
+            "startsWith": "There are two main divisions in the history of the dynasty."
+          },
+          "textHash": "9edf884e153e989870a82f4d09f90cf8725ca880a955121e538f69a0f219a8b5"
+        },
+        {
+          "id": "replacement",
+          "selector": {
+            "kind": "element",
+            "tag": "p",
+            "startsWith": "The Jin dynasty was founded by Sima Yan, who became known as Emperor Wu"
+          },
+          "textHash": "99fc9225729821133428c1c56583518091a894e37e9cfad907824e5c9f7c5706"
+        }
+      ]
+    },
+    {
+      "id": "jin-wu-integration",
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "15051666"
+      },
+      "revision": "1379420937",
+      "contentHash": "aa14fab85b067c8dbc16c775520a1b72f2de6e5e5a22b70760702ff8976c83e3",
+      "citation": {
+        "title": "Conquest of Wu by Jin",
+        "language": "en",
+        "creator": "English Wikipedia contributors",
+        "rightsEvidence": [
+          "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "https://creativecommons.org/licenses/by-sa/4.0/"
+        ],
+        "rightsNote": "Selected facts and independently authored bilingual interpretation remain CC-BY-SA-4.0. Exact revision, source hash and author history are retained; no article prose, HTML or image is retained."
+      },
+      "facts": [
+        {
+          "id": "date",
+          "selector": {
+            "kind": "table-field",
+            "tableClass": "infobox",
+            "tableIndex": 0,
+            "header": "Date"
+          },
+          "textHash": "38a83fc940dee6c86883c2b006fc72847ffebf1063fd80b900a5e5fc79f0298c"
+        },
+        {
+          "id": "result",
+          "selector": {
+            "kind": "table-field",
+            "tableClass": "infobox",
+            "tableIndex": 0,
+            "header": "Result"
+          },
+          "textHash": "d8a02a2d0770b429a3c9b3f5ae7418b8382404b7cbfb46047d01806d5ba0756f"
+        },
+        {
+          "id": "territorial-outcome",
+          "selector": {
+            "kind": "table-field",
+            "tableClass": "infobox",
+            "tableIndex": 0,
+            "header": "Territorial changes"
+          },
+          "textHash": "76d817b5569b2c65e66f429ea3ba8bc6efe1178af4ffa4678811b02c0cf02a7d"
+        },
+        {
+          "id": "jin",
+          "selector": {
+            "kind": "section-cell",
+            "tableClass": "infobox",
+            "tableIndex": 0,
+            "heading": "Belligerents",
+            "rowOffset": 1,
+            "column": 0
+          },
+          "textHash": "4649e5098fb61731f7107feb410c727d2824a58decb45aa9361befb832afa7e8"
+        },
+        {
+          "id": "wu",
+          "selector": {
+            "kind": "section-cell",
+            "tableClass": "infobox",
+            "tableIndex": 0,
+            "heading": "Belligerents",
+            "rowOffset": 1,
+            "column": 1
+          },
+          "textHash": "00c1e468e4e4b1d39812fd02c8c5a0cba81828a5682eced2a6ca1e50afe43e42"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "history:event:wei-conquest-of-shu-263",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:event:wei-conquest-of-shu-263"
+        }
+      ],
+      "types": [
+        "gitworld:political-transition"
+      ],
+      "labels": {
+        "en": "Wei conquest of Shu Han",
+        "zh-CN": "魏灭蜀汉"
+      },
+      "descriptions": {
+        "en": "Wei’s campaign ended Shu Han in 263; uncertain months are retained in the source date.",
+        "zh-CN": "魏于263年征服蜀汉；来源中的约略月份予以保留。"
+      },
+      "aliases": []
+    },
+    {
+      "id": "history:event:wei-jin-dynastic-replacement-266",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:event:wei-jin-dynastic-replacement-266"
+        }
+      ],
+      "types": [
+        "gitworld:political-transition"
+      ],
+      "labels": {
+        "en": "Replacement of Cao Wei by Western Jin",
+        "zh-CN": "曹魏与西晋的王朝更替"
+      },
+      "descriptions": {
+        "en": "The fixed source describes Cao Huan’s forced abdication and Sima Yan’s establishment of Jin in 266.",
+        "zh-CN": "固定来源记载曹奂被迫退位及司马炎于266年建立晋。"
+      },
+      "aliases": []
+    }
+  ],
+  "statements": [
+    {
+      "id": "263-outgoing",
+      "subjectId": "history:event:wei-conquest-of-shu-263",
+      "propertyId": "transformation:outgoing-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:shu-han"
+      },
+      "factKeys": [
+        "wei-shu-conquest:result",
+        "wei-shu-conquest:wei",
+        "wei-shu-conquest:shu",
+        "wei-shu-conquest:summary"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 263,
+          "latestYear": 263,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "263"
+        }
+      },
+      "timeFactKeys": [
+        "wei-shu-conquest:date"
+      ],
+      "interpretation": {
+        "en": "Bind the source-stated conquest and fall to the two named participants. All published month alternatives are in 263; these roles use year resolution and do not choose a day.",
+        "zh-CN": "将来源明确记载的征服、蜀汉终结与所列双方对应。备选月份均在263年；角色按年适用，不选择某日。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "263-incoming",
+      "subjectId": "history:event:wei-conquest-of-shu-263",
+      "propertyId": "transformation:incoming-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:cao-wei"
+      },
+      "factKeys": [
+        "wei-shu-conquest:result",
+        "wei-shu-conquest:wei",
+        "wei-shu-conquest:shu",
+        "wei-shu-conquest:summary"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 263,
+          "latestYear": 263,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "263"
+        }
+      },
+      "timeFactKeys": [
+        "wei-shu-conquest:date"
+      ],
+      "interpretation": {
+        "en": "Bind the source-stated conquest and fall to the two named participants. All published month alternatives are in 263; these roles use year resolution and do not choose a day.",
+        "zh-CN": "将来源明确记载的征服、蜀汉终结与所列双方对应。备选月份均在263年；角色按年适用，不选择某日。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "263-mechanism",
+      "subjectId": "history:event:wei-conquest-of-shu-263",
+      "propertyId": "transformation:mechanism",
+      "value": {
+        "kind": "text",
+        "value": "military-conquest"
+      },
+      "factKeys": [
+        "wei-shu-conquest:result",
+        "wei-shu-conquest:wei",
+        "wei-shu-conquest:shu",
+        "wei-shu-conquest:summary"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 263,
+          "latestYear": 263,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "263"
+        }
+      },
+      "timeFactKeys": [
+        "wei-shu-conquest:date"
+      ],
+      "interpretation": {
+        "en": "Bind the source-stated conquest and fall to the two named participants. All published month alternatives are in 263; these roles use year resolution and do not choose a day.",
+        "zh-CN": "将来源明确记载的征服、蜀汉终结与所列双方对应。备选月份均在263年；角色按年适用，不选择某日。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "263-outcome",
+      "subjectId": "history:event:wei-conquest-of-shu-263",
+      "propertyId": "transformation:stated-outcome",
+      "value": {
+        "kind": "text",
+        "value": "fall-of-conquered-polity"
+      },
+      "factKeys": [
+        "wei-shu-conquest:result",
+        "wei-shu-conquest:wei",
+        "wei-shu-conquest:shu",
+        "wei-shu-conquest:summary"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 263,
+          "latestYear": 263,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "263"
+        }
+      },
+      "timeFactKeys": [
+        "wei-shu-conquest:date"
+      ],
+      "interpretation": {
+        "en": "Bind the source-stated conquest and fall to the two named participants. All published month alternatives are in 263; these roles use year resolution and do not choose a day.",
+        "zh-CN": "将来源明确记载的征服、蜀汉终结与所列双方对应。备选月份均在263年；角色按年适用，不选择某日。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "263-source-date",
+      "subjectId": "history:event:wei-conquest-of-shu-263",
+      "propertyId": "transformation:source-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 263,
+          "latestYear": 263,
+          "precision": "interval",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. September or October – November or December 263"
+        }
+      },
+      "factKeys": [
+        "wei-shu-conquest:date"
+      ],
+      "interpretation": {
+        "en": "Bind the source-stated conquest and fall to the two named participants. All published month alternatives are in 263; these roles use year resolution and do not choose a day.",
+        "zh-CN": "将来源明确记载的征服、蜀汉终结与所列双方对应。备选月份均在263年；角色按年适用，不选择某日。"
+      },
+      "qualifiers": []
+    },
+    {
+      "id": "263-outgoing-link",
+      "subjectId": "history:polity:shu-han",
+      "propertyId": "relation:political-transition",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:wei-conquest-of-shu-263"
+      },
+      "factKeys": [
+        "wei-shu-conquest:result",
+        "wei-shu-conquest:wei",
+        "wei-shu-conquest:shu",
+        "wei-shu-conquest:summary"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 263,
+          "latestYear": 263,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "263"
+        }
+      },
+      "timeFactKeys": [
+        "wei-shu-conquest:date"
+      ],
+      "interpretation": {
+        "en": "Bind the source-stated conquest and fall to the two named participants. All published month alternatives are in 263; these roles use year resolution and do not choose a day.",
+        "zh-CN": "将来源明确记载的征服、蜀汉终结与所列双方对应。备选月份均在263年；角色按年适用，不选择某日。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:transition-role",
+          "value": {
+            "kind": "text",
+            "value": "outgoing"
+          }
+        },
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "263-incoming-link",
+      "subjectId": "history:polity:cao-wei",
+      "propertyId": "relation:political-transition",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:wei-conquest-of-shu-263"
+      },
+      "factKeys": [
+        "wei-shu-conquest:result",
+        "wei-shu-conquest:wei",
+        "wei-shu-conquest:shu",
+        "wei-shu-conquest:summary"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 263,
+          "latestYear": 263,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "263"
+        }
+      },
+      "timeFactKeys": [
+        "wei-shu-conquest:date"
+      ],
+      "interpretation": {
+        "en": "Bind the source-stated conquest and fall to the two named participants. All published month alternatives are in 263; these roles use year resolution and do not choose a day.",
+        "zh-CN": "将来源明确记载的征服、蜀汉终结与所列双方对应。备选月份均在263年；角色按年适用，不选择某日。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:transition-role",
+          "value": {
+            "kind": "text",
+            "value": "incoming"
+          }
+        },
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "266-outgoing",
+      "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+      "propertyId": "transformation:outgoing-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:cao-wei"
+      },
+      "factKeys": [
+        "jin-context:replacement",
+        "jin-context:western-identity",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 266,
+          "latestYear": 266,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "266"
+        }
+      },
+      "timeFactKeys": [
+        "jin-context:replacement",
+        "jin-context:western-identity"
+      ],
+      "interpretation": {
+        "en": "The source explicitly describes forced abdication and the foundation of Jin. Identify the Western Jin phase separately and compare at year resolution; do not infer a military conquest or convert the reported day.",
+        "zh-CN": "来源明确记载被迫退位与晋的建立，另以阶段证据对应西晋。按年比较，不推断军事征服，也不换算来源所载日期。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "266-incoming",
+      "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+      "propertyId": "transformation:incoming-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:western-jin"
+      },
+      "factKeys": [
+        "jin-context:replacement",
+        "jin-context:western-identity",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 266,
+          "latestYear": 266,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "266"
+        }
+      },
+      "timeFactKeys": [
+        "jin-context:replacement",
+        "jin-context:western-identity"
+      ],
+      "interpretation": {
+        "en": "The source explicitly describes forced abdication and the foundation of Jin. Identify the Western Jin phase separately and compare at year resolution; do not infer a military conquest or convert the reported day.",
+        "zh-CN": "来源明确记载被迫退位与晋的建立，另以阶段证据对应西晋。按年比较，不推断军事征服，也不换算来源所载日期。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "266-mechanism",
+      "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+      "propertyId": "transformation:mechanism",
+      "value": {
+        "kind": "text",
+        "value": "dynastic-replacement"
+      },
+      "factKeys": [
+        "jin-context:replacement",
+        "jin-context:western-identity",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 266,
+          "latestYear": 266,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "266"
+        }
+      },
+      "timeFactKeys": [
+        "jin-context:replacement",
+        "jin-context:western-identity"
+      ],
+      "interpretation": {
+        "en": "The source explicitly describes forced abdication and the foundation of Jin. Identify the Western Jin phase separately and compare at year resolution; do not infer a military conquest or convert the reported day.",
+        "zh-CN": "来源明确记载被迫退位与晋的建立，另以阶段证据对应西晋。按年比较，不推断军事征服，也不换算来源所载日期。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "266-outcome",
+      "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+      "propertyId": "transformation:stated-outcome",
+      "value": {
+        "kind": "text",
+        "value": "dynastic-replacement"
+      },
+      "factKeys": [
+        "jin-context:replacement",
+        "jin-context:western-identity",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 266,
+          "latestYear": 266,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "266"
+        }
+      },
+      "timeFactKeys": [
+        "jin-context:replacement",
+        "jin-context:western-identity"
+      ],
+      "interpretation": {
+        "en": "The source explicitly describes forced abdication and the foundation of Jin. Identify the Western Jin phase separately and compare at year resolution; do not infer a military conquest or convert the reported day.",
+        "zh-CN": "来源明确记载被迫退位与晋的建立，另以阶段证据对应西晋。按年比较，不推断军事征服，也不换算来源所载日期。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "266-source-date",
+      "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+      "propertyId": "transformation:source-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 266,
+          "latestYear": 266,
+          "month": 2,
+          "day": 4,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "4 February 266"
+        }
+      },
+      "factKeys": [
+        "jin-context:replacement",
+        "jin-context:western-identity"
+      ],
+      "interpretation": {
+        "en": "The source explicitly describes forced abdication and the foundation of Jin. Identify the Western Jin phase separately and compare at year resolution; do not infer a military conquest or convert the reported day.",
+        "zh-CN": "来源明确记载被迫退位与晋的建立，另以阶段证据对应西晋。按年比较，不推断军事征服，也不换算来源所载日期。"
+      },
+      "qualifiers": []
+    },
+    {
+      "id": "266-outgoing-link",
+      "subjectId": "history:polity:cao-wei",
+      "propertyId": "relation:political-transition",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:wei-jin-dynastic-replacement-266"
+      },
+      "factKeys": [
+        "jin-context:replacement",
+        "jin-context:western-identity",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 266,
+          "latestYear": 266,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "266"
+        }
+      },
+      "timeFactKeys": [
+        "jin-context:replacement",
+        "jin-context:western-identity"
+      ],
+      "interpretation": {
+        "en": "The source explicitly describes forced abdication and the foundation of Jin. Identify the Western Jin phase separately and compare at year resolution; do not infer a military conquest or convert the reported day.",
+        "zh-CN": "来源明确记载被迫退位与晋的建立，另以阶段证据对应西晋。按年比较，不推断军事征服，也不换算来源所载日期。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:transition-role",
+          "value": {
+            "kind": "text",
+            "value": "outgoing"
+          }
+        },
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "266-incoming-link",
+      "subjectId": "history:polity:western-jin",
+      "propertyId": "relation:political-transition",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:wei-jin-dynastic-replacement-266"
+      },
+      "factKeys": [
+        "jin-context:replacement",
+        "jin-context:western-identity",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 266,
+          "latestYear": 266,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "266"
+        }
+      },
+      "timeFactKeys": [
+        "jin-context:replacement",
+        "jin-context:western-identity"
+      ],
+      "interpretation": {
+        "en": "The source explicitly describes forced abdication and the foundation of Jin. Identify the Western Jin phase separately and compare at year resolution; do not infer a military conquest or convert the reported day.",
+        "zh-CN": "来源明确记载被迫退位与晋的建立，另以阶段证据对应西晋。按年比较，不推断军事征服，也不换算来源所载日期。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:transition-role",
+          "value": {
+            "kind": "text",
+            "value": "incoming"
+          }
+        },
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "280-outgoing",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:outgoing-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:eastern-wu"
+      },
+      "factKeys": [
+        "jin-wu-integration:result",
+        "jin-wu-integration:territorial-outcome",
+        "jin-wu-integration:jin",
+        "jin-wu-integration:wu",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "280"
+        }
+      },
+      "timeFactKeys": [
+        "jin-wu-integration:date"
+      ],
+      "interpretation": {
+        "en": "Use the existing evidenced 280 integration, adding only common comparison fields and participant links. This does not change the original event or its source assertions.",
+        "zh-CN": "沿用已有据的280年政治整合，仅增加共用比较字段与参与方关系，不改原事件或原来源主张。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "280-incoming",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:incoming-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:western-jin"
+      },
+      "factKeys": [
+        "jin-wu-integration:result",
+        "jin-wu-integration:territorial-outcome",
+        "jin-wu-integration:jin",
+        "jin-wu-integration:wu",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "280"
+        }
+      },
+      "timeFactKeys": [
+        "jin-wu-integration:date"
+      ],
+      "interpretation": {
+        "en": "Use the existing evidenced 280 integration, adding only common comparison fields and participant links. This does not change the original event or its source assertions.",
+        "zh-CN": "沿用已有据的280年政治整合，仅增加共用比较字段与参与方关系，不改原事件或原来源主张。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "280-mechanism",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:mechanism",
+      "value": {
+        "kind": "text",
+        "value": "military-conquest"
+      },
+      "factKeys": [
+        "jin-wu-integration:result",
+        "jin-wu-integration:territorial-outcome",
+        "jin-wu-integration:jin",
+        "jin-wu-integration:wu",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "280"
+        }
+      },
+      "timeFactKeys": [
+        "jin-wu-integration:date"
+      ],
+      "interpretation": {
+        "en": "Use the existing evidenced 280 integration, adding only common comparison fields and participant links. This does not change the original event or its source assertions.",
+        "zh-CN": "沿用已有据的280年政治整合，仅增加共用比较字段与参与方关系，不改原事件或原来源主张。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "280-source-date",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:source-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "month": 5,
+          "day": 1,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "1 May 280"
+        }
+      },
+      "factKeys": [
+        "jin-wu-integration:date"
+      ],
+      "interpretation": {
+        "en": "Use the existing evidenced 280 integration, adding only common comparison fields and participant links. This does not change the original event or its source assertions.",
+        "zh-CN": "沿用已有据的280年政治整合，仅增加共用比较字段与参与方关系，不改原事件或原来源主张。"
+      },
+      "qualifiers": []
+    },
+    {
+      "id": "280-outgoing-link",
+      "subjectId": "history:polity:eastern-wu",
+      "propertyId": "relation:political-transition",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:jin-incorporation-of-wu-280"
+      },
+      "factKeys": [
+        "jin-wu-integration:result",
+        "jin-wu-integration:territorial-outcome",
+        "jin-wu-integration:jin",
+        "jin-wu-integration:wu",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "280"
+        }
+      },
+      "timeFactKeys": [
+        "jin-wu-integration:date"
+      ],
+      "interpretation": {
+        "en": "Use the existing evidenced 280 integration, adding only common comparison fields and participant links. This does not change the original event or its source assertions.",
+        "zh-CN": "沿用已有据的280年政治整合，仅增加共用比较字段与参与方关系，不改原事件或原来源主张。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:transition-role",
+          "value": {
+            "kind": "text",
+            "value": "outgoing"
+          }
+        },
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    },
+    {
+      "id": "280-incoming-link",
+      "subjectId": "history:polity:western-jin",
+      "propertyId": "relation:political-transition",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:jin-incorporation-of-wu-280"
+      },
+      "factKeys": [
+        "jin-wu-integration:result",
+        "jin-wu-integration:territorial-outcome",
+        "jin-wu-integration:jin",
+        "jin-wu-integration:wu",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "280"
+        }
+      },
+      "timeFactKeys": [
+        "jin-wu-integration:date"
+      ],
+      "interpretation": {
+        "en": "Use the existing evidenced 280 integration, adding only common comparison fields and participant links. This does not change the original event or its source assertions.",
+        "zh-CN": "沿用已有据的280年政治整合，仅增加共用比较字段与参与方关系，不改原事件或原来源主张。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:transition-role",
+          "value": {
+            "kind": "text",
+            "value": "incoming"
+          }
+        },
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        }
+      ]
+    }
+  ],
+  "fieldCatalog": {
+    "schemaVersion": 1,
+    "kind": "historical-field-display-labels",
+    "properties": [
+      {
+        "id": "projection:rule-id",
+        "labels": {
+          "en": "Mapping rule",
+          "zh-CN": "映射规则"
+        }
+      },
+      {
+        "id": "projection:source-fact",
+        "labels": {
+          "en": "Source field",
+          "zh-CN": "来源字段"
+        }
+      },
+      {
+        "id": "transformation:outgoing-polity",
+        "labels": {
+          "en": "Displaced polity",
+          "zh-CN": "被取代的政权"
+        }
+      },
+      {
+        "id": "transformation:incoming-polity",
+        "labels": {
+          "en": "Incoming polity",
+          "zh-CN": "接替的政权"
+        }
+      },
+      {
+        "id": "transformation:mechanism",
+        "labels": {
+          "en": "Form of political change",
+          "zh-CN": "政治转变方式"
+        }
+      },
+      {
+        "id": "transformation:stated-outcome",
+        "labels": {
+          "en": "Documented political outcome",
+          "zh-CN": "来源明确记载的政治结果"
+        }
+      },
+      {
+        "id": "transformation:source-date",
+        "labels": {
+          "en": "Date reported by source",
+          "zh-CN": "来源所载日期"
+        }
+      },
+      {
+        "id": "relation:political-transition",
+        "labels": {
+          "en": "Political transition",
+          "zh-CN": "政治转变"
+        }
+      },
+      {
+        "id": "transformation:transition-role",
+        "labels": {
+          "en": "Role in the political transition",
+          "zh-CN": "政治转变中的角色"
+        }
+      },
+      {
+        "id": "temporal:resolution-policy",
+        "labels": {
+          "en": "Date resolution used here",
+          "zh-CN": "本次采用的日期粒度"
+        }
+      },
+      {
+        "id": "transformation:incorporating-polity",
+        "labels": {
+          "en": "Incorporating polity",
+          "zh-CN": "实施整合的政权"
+        }
+      },
+      {
+        "id": "transformation:identity-scope",
+        "labels": {
+          "en": "Participant identity scope",
+          "zh-CN": "参与政权的身份范围"
+        }
+      },
+      {
+        "id": "transformation:incorporated-polity",
+        "labels": {
+          "en": "Incorporated polity",
+          "zh-CN": "被整合的政权"
+        }
+      },
+      {
+        "id": "transformation:campaign-start",
+        "labels": {
+          "en": "Campaign start as recorded",
+          "zh-CN": "来源所载战役起点"
+        }
+      },
+      {
+        "id": "transformation:campaign-end",
+        "labels": {
+          "en": "Campaign conclusion as recorded",
+          "zh-CN": "来源所载战役终点"
+        }
+      },
+      {
+        "id": "relation:integration-event",
+        "labels": {
+          "en": "Political integration",
+          "zh-CN": "政治整合"
+        }
+      },
+      {
+        "id": "transformation:participant-role",
+        "labels": {
+          "en": "Role in the integration",
+          "zh-CN": "在整合中的角色"
+        }
+      }
+    ],
+    "types": [
+      {
+        "id": "gitworld:political-transition",
+        "labels": {
+          "en": "Political transition",
+          "zh-CN": "政治转变"
+        }
+      },
+      {
+        "id": "gitworld:political-integration",
+        "labels": {
+          "en": "Political integration",
+          "zh-CN": "政治整合"
+        }
+      },
+      {
+        "id": "gitworld:polity",
+        "labels": {
+          "en": "Polity",
+          "zh-CN": "政治实体"
+        }
+      }
+    ],
+    "values": [
+      {
+        "propertyId": "transformation:mechanism",
+        "value": "military-conquest",
+        "labels": {
+          "en": "Military conquest",
+          "zh-CN": "军事征服"
+        }
+      },
+      {
+        "propertyId": "transformation:mechanism",
+        "value": "dynastic-replacement",
+        "labels": {
+          "en": "Dynastic replacement",
+          "zh-CN": "王朝替换"
+        }
+      },
+      {
+        "propertyId": "transformation:stated-outcome",
+        "value": "fall-of-conquered-polity",
+        "labels": {
+          "en": "Fall of the conquered polity",
+          "zh-CN": "被征服政权终结"
+        }
+      },
+      {
+        "propertyId": "transformation:stated-outcome",
+        "value": "dynastic-replacement",
+        "labels": {
+          "en": "One dynasty replaces another",
+          "zh-CN": "王朝更替"
+        }
+      },
+      {
+        "propertyId": "transformation:transition-role",
+        "value": "incoming",
+        "labels": {
+          "en": "Incoming polity",
+          "zh-CN": "接替的政权"
+        }
+      },
+      {
+        "propertyId": "transformation:transition-role",
+        "value": "outgoing",
+        "labels": {
+          "en": "Displaced polity",
+          "zh-CN": "被取代的政权"
+        }
+      },
+      {
+        "propertyId": "temporal:resolution-policy",
+        "value": "source-year-not-converted-day",
+        "labels": {
+          "en": "Compare the source year without choosing a converted event day",
+          "zh-CN": "按来源年份比较，不选择换算后的事件日"
+        }
+      },
+      {
+        "propertyId": "transformation:identity-scope",
+        "value": "western-jin-phase",
+        "labels": {
+          "en": "Jin in the source-defined Western Jin phase",
+          "zh-CN": "来源所界定的西晋阶段"
+        }
+      },
+      {
+        "propertyId": "transformation:stated-outcome",
+        "value": "political-incorporation",
+        "labels": {
+          "en": "Political incorporation stated by source",
+          "zh-CN": "来源明确记载的政治整合"
+        }
+      },
+      {
+        "propertyId": "transformation:participant-role",
+        "value": "incorporating",
+        "labels": {
+          "en": "Incorporating polity",
+          "zh-CN": "实施整合的政权"
+        }
+      },
+      {
+        "propertyId": "transformation:participant-role",
+        "value": "incorporated",
+        "labels": {
+          "en": "Incorporated polity",
+          "zh-CN": "被整合的政权"
+        }
+      }
+    ],
+    "semanticNotes": [
+      {
+        "ids": [
+          "transformation:outgoing-polity",
+          "transformation:incoming-polity",
+          "transformation:mechanism",
+          "relation:political-transition"
+        ],
+        "en": "Participants and mechanisms come from explicit event evidence. A conquest and a dynastic replacement are different; neither relation creates Git ancestry or copies the participants’ fields.",
+        "zh-CN": "参与政权和转变方式均须有明确事件证据。征服与王朝替换含义不同；均不创建 Git 继承关系，也不复制参与政权的字段。"
+      }
+    ]
+  }
+}

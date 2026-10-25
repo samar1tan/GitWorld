@@ -1,0 +1,5 @@
+{
+  "name": "@gitworld/service", "version": "0.1.0", "private": true,
+  "type": "module", "exports": "./src/index.ts",
+  "dependencies": { "@gitworld/domain": "*", "@gitworld/contracts": "*", "@gitworld/storage": "*", "@gitworld/ingestion": "*" }
+}

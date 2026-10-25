@@ -1,0 +1,2209 @@
+{
+  "schemaVersion": 1,
+  "kind": "gitworld-editorial-taxonomy-correction",
+  "id": "source-tenure-scope-taxonomy",
+  "revision": "1",
+  "status": "editorial-classification-record",
+  "owner": "GitWorld contributors",
+  "preparedAt": "2026-10-25T00:27:14.501Z",
+  "editorialSemantics": "A modern object-classification correction, not a historical event, tenure assertion, newly adopted historical claim, or rewrite of source provenance.",
+  "baseline": {
+    "manifestSha256": "35901e0578517c157f6167f4bae0a19915a126bccb96067a47461285c9e3d340",
+    "collectionFingerprint": "2884760882b3a64c4558942723501f8eb197359a3046180673475bddd1e88a0d",
+    "counts": {
+      "objects": 1195,
+      "assertions": 3935,
+      "sources": 18
+    },
+    "files": [
+      {
+        "path": "manifest.json",
+        "bytes": 10023,
+        "sha256": "35901e0578517c157f6167f4bae0a19915a126bccb96067a47461285c9e3d340"
+      },
+      {
+        "path": "README.md",
+        "bytes": 6545,
+        "sha256": "22e1dc9d3b408131e241fa8de76541202d4871c0915dce4e0e28952f24c244b6"
+      },
+      {
+        "path": "fields.json",
+        "bytes": 21137,
+        "sha256": "96b220384e5e471bfda9fdbc4192f08d9a3485c7a6a3cb3354cbf9597f77c738"
+      },
+      {
+        "path": "source-rights.json",
+        "bytes": 21352,
+        "sha256": "ab83d858400c8bf4a6fe4871e8595357398db1b9260616aa2399d54a7d762cc1"
+      },
+      {
+        "path": "collections/catalog-1.json",
+        "bytes": 3750668,
+        "sha256": "ca92e8ff1c2cbfd0ad582b18a64e8faf8b616c842422146576afb33e67dd637c"
+      },
+      {
+        "path": "collections/wikipedia-en-facts-66142-81ba33a6-1.json",
+        "bytes": 8360345,
+        "sha256": "98d99ca2952ddce19daf245f03ed22910f6424de2b066c995e22fa3e35421110"
+      },
+      {
+        "path": "collections/wikipedia-en-facts-66142-81ba33a6-2.json",
+        "bytes": 3766888,
+        "sha256": "503bc30a5456e9d616e0898a34656119c0545a78c2feb07ea86be21949f8793c"
+      },
+      {
+        "path": "collections/wikipedia-en-facts-224374-19049344-1.json",
+        "bytes": 2537363,
+        "sha256": "6227b19d3d042f0aa8d72a4824fd4c4ea71d68e1380fd1213a2fca4c74b8a1ad"
+      },
+      {
+        "path": "collections/wikipedia-en-facts-314092-f8bec601-1.json",
+        "bytes": 1585048,
+        "sha256": "95bc64d6fea06618778613cc3356fb6d54d5866ab3a12120b97bb8c7d6052faa"
+      },
+      {
+        "path": "collections/wikipedia-en-facts-10736899-0302ea32-1.json",
+        "bytes": 1488661,
+        "sha256": "04a9cec21c3af49e30a596f79b56d567a5213353a1623fad63f680b2251c5dc0"
+      },
+      {
+        "path": "collections/wikipedia-en-facts-17254923-5808fb07-1.json",
+        "bytes": 828376,
+        "sha256": "bea3fcfe9fb798f5059d5fd3787f6356270c7a22f72907d3d3c8ec77b095a765"
+      },
+      {
+        "path": "collections/wikipedia-en-facts-17255213-8ded969e-1.json",
+        "bytes": 638493,
+        "sha256": "5934be216b3c1195fdf6b01d893d4b02f089cd13590aabfdb27753c08ba05a4b"
+      },
+      {
+        "path": "collections/wikipedia-en-facts-1420574-d45c68cf-1.json",
+        "bytes": 760240,
+        "sha256": "e97aeb5b541bcd508a074be0c82a36371437bb6c9c857cf87c692db8e54a56b8"
+      },
+      {
+        "path": "collections/wikipedia-en-facts-24703277-48a0f55b-1.json",
+        "bytes": 702706,
+        "sha256": "240cb488b656b7ecc4f14acc6603d4ccc9a0f5bc6593380e7d6b575badb7c721"
+      },
+      {
+        "path": "collections/wikipedia-en-facts-47851611-65cfb359-1.json",
+        "bytes": 694047,
+        "sha256": "5916c7e53fbdffef5e74273d7e0bd37d4af8a39dffe4159d87efa03a3aeafb5c"
+      },
+      {
+        "path": "collections/wikipedia-en-facts-530241-d26095ed-1.json",
+        "bytes": 442349,
+        "sha256": "315d515f8301ec60ccf29a85258e2c339f18a5118b2164f868b827484111c74f"
+      },
+      {
+        "path": "collections/wikipedia-en-facts-516942-96226ef4-1.json",
+        "bytes": 537968,
+        "sha256": "0cacaa5169076a38f82e5f254aae71c5bb22844f59b3817e76eed4481ad580bc"
+      },
+      {
+        "path": "extensions/activity-context/collection.json",
+        "bytes": 3622110,
+        "sha256": "6d05e9c6d5a5e9ddcc0666a495dbe9998741102a72e35991f4dab7ce7425aa94"
+      },
+      {
+        "path": "extensions/qualified-office/collection.json",
+        "bytes": 2050980,
+        "sha256": "c84d21a827078afabb14f08e8245da3c1381364f8ca7c8f2bca84847a12c572b"
+      },
+      {
+        "path": "extensions/activity-context/fields.json",
+        "bytes": 4450,
+        "sha256": "ce23e6e4b9f3f0d0bd95a69b92236187d0ff1ea630508e86beb106be86e9e98e"
+      },
+      {
+        "path": "extensions/qualified-office/fields.json",
+        "bytes": 2466,
+        "sha256": "7fc1fe709c153c3a83d0eb1add02482ff4e310f75ab53540b0235e2de239185b"
+      },
+      {
+        "path": "extensions/activity-context/source-rights.json",
+        "bytes": 17019,
+        "sha256": "44a141e96385816c1ee08ac6002ce67aab25c734ca571ed3fea58d20665d34e7"
+      },
+      {
+        "path": "extensions/activity-context/plan.json",
+        "bytes": 3833,
+        "sha256": "35fc50551262808bd381a0609bc68574d01bc65820efb954d01cd5abc0186723"
+      },
+      {
+        "path": "extensions/qualified-office/source-rights.json",
+        "bytes": 6522,
+        "sha256": "e187db8957fe8a9cf569a71e7278e2c7ab8cce399bc2e32cbb0b285d971c25b7"
+      },
+      {
+        "path": "extensions/qualified-office/plan.json",
+        "bytes": 2657,
+        "sha256": "4028b3c9360bbf1b6a79567f271eda46a16b4de1b441c46a6381a6f3fa3acbfb"
+      },
+      {
+        "path": "extensions/political-integration/collection.json",
+        "bytes": 54854,
+        "sha256": "cdcca2cae2ff96f8a3bf3472cf3332ba4b6c2ab1478e8e63e692b78b67231dd6"
+      },
+      {
+        "path": "extensions/political-integration/fields.json",
+        "bytes": 3305,
+        "sha256": "67dd6621c0a5ce896608f41ce40386d8bdb598703c89fc46cb66c27f4c9a965d"
+      },
+      {
+        "path": "extensions/political-integration/plan.json",
+        "bytes": 17130,
+        "sha256": "935e0bf9cbccb4e1cfa7e7a7ce22c5e5d4bd063c8c1f9fb22e0a0eb90c17f1ed"
+      },
+      {
+        "path": "extensions/political-integration/source-rights.json",
+        "bytes": 5589,
+        "sha256": "6e281b888a344be6bc498820bdfdfb072c584c110d6eb71f01e536b21a8821fb"
+      },
+      {
+        "path": "extensions/constitutional-states/collection.json",
+        "bytes": 171213,
+        "sha256": "bf9830bd474a5e455070bbdc4200625e92dccc2fc25347152b82a743e17d8d9b"
+      },
+      {
+        "path": "extensions/constitutional-states/fields.json",
+        "bytes": 6655,
+        "sha256": "05d16105eb574e07f04beb79b79c813c68460e71af80c4b7963eb0f48f9713e0"
+      },
+      {
+        "path": "extensions/constitutional-states/plan.json",
+        "bytes": 74931,
+        "sha256": "0641f79a9460be32738a98f31115c577a3ffe4cecce6304cba93d0ab0b945408"
+      },
+      {
+        "path": "extensions/constitutional-states/source-rights.json",
+        "bytes": 31160,
+        "sha256": "63deeffe2287a4e2cf0c745b7dafee0e6d37768ff0d2115444e06c5a3b94f4d5"
+      }
+    ]
+  },
+  "selector": {
+    "idPrefix": "wikipedia-office-scope:",
+    "identityProvider": "declared-office-tenure-row",
+    "expectedUniqueObjects": 98,
+    "expectedBeforeTypes": [
+      "gitworld:office"
+    ],
+    "afterTypes": [
+      "gitworld:source-tenure-scope"
+    ],
+    "nameMatching": false
+  },
+  "objectChanges": [
+    {
+      "objectId": "wikipedia-office-scope:35b4fb96c2d0c312180f34224ab720ae",
+      "beforeObjectHash": "66d3f694599d3c186e000113a3095838e328d40f9a39696e886415419ad0c6ab",
+      "afterObjectHash": "c737cb44474bd1b7de9f56995aa08f9d4935c6d09881d5d929ad1ff941da290f",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 17,
+      "originalInputClaimEvidenceHash": "933afc1b1ee10d2f8e68823a4544ee24101d9ed62726a244270e9eaa55e9d19b"
+    },
+    {
+      "objectId": "wikipedia-office-scope:fe960e3a7500f5a3f6cba2b68a3823dc",
+      "beforeObjectHash": "d4c4ac6c9bfca57560674d325396d3ed72e7e9df18dba0c0a1a2486bfa459c0c",
+      "afterObjectHash": "33335b3794b7ae92729922e5ea01f27915b7986c899a8b0dc6c3b31f0668917d",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 22,
+      "originalInputClaimEvidenceHash": "b44aad9cd3e7f7635772efaa7bc597ec8ac30199467d553e9f42a0afb92dcf22"
+    },
+    {
+      "objectId": "wikipedia-office-scope:fe8aa6b7ebe1f600103112423c69e4ef",
+      "beforeObjectHash": "f6a12a6bfc1054bcf2ca613cb64f115bc0b51cc3d329c0027af7886f5476a8c9",
+      "afterObjectHash": "6a02a86b81500429dd6a2206dbc980666fe265e60f343f9716d9949501531192",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 9,
+      "originalInputClaimEvidenceHash": "ee2f997a405d03b2c27f733381179b8b5365ba107fc73e4a62277ad80ba546ab"
+    },
+    {
+      "objectId": "wikipedia-office-scope:3eea962bd89aa3e0dc5675b86cefd067",
+      "beforeObjectHash": "4b185157a455d376fc86f40fc0645e183217ed46218544b2620708128ccc204b",
+      "afterObjectHash": "9a8fe205752f778ab2bc80771e777cd17189be3c12fc3406840fc5350c79ad11",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 12,
+      "originalInputClaimEvidenceHash": "b1ceedf66380f233923e7934bdbbbd449fee003694c5727951b1e801b0269089"
+    },
+    {
+      "objectId": "wikipedia-office-scope:41abaf7a79f75c4e1d94a0473bec3f17",
+      "beforeObjectHash": "90e0f3fd590874a541559c5745c55dcebebe85d318915e60fe7b33a8c0371c4b",
+      "afterObjectHash": "772f18db76465b450bd58e84a4c3b9207fb26f47498a367574957805a28878b2",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 25,
+      "originalInputClaimEvidenceHash": "41a456810b2e838d4ff29498d13de199f342f856c671ad7c9497286181034e5f"
+    },
+    {
+      "objectId": "wikipedia-office-scope:537d053b96841e7079ee2afb63faa1c9",
+      "beforeObjectHash": "8913be70aa65a986964e3416683dd4c15509a134dd33799585ca113c1dfdbae5",
+      "afterObjectHash": "45f17c72e8aa2a013f27be01c32331c253acc5fd4951db94a7e16f7f12f390fe",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 2,
+      "originalInputClaimEvidenceHash": "a6d64d07908276faa4fb474896baa9f28a5f7bfe45aa1c2d153932e28d019249"
+    },
+    {
+      "objectId": "wikipedia-office-scope:d6ecb3166f75600fe03a001e4c2ea55a",
+      "beforeObjectHash": "fd33706844a8cef8bd84ac90256dc99402c46f483d3c405f88e224a0adf5c251",
+      "afterObjectHash": "a985fdb07f2bdcccd9df4d264ed44561cf9350762c72ff8f301b25bb969a9834",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 15,
+      "originalInputClaimEvidenceHash": "8f4ae846db2ef86a0d5edb74fe810cb3c945bf40a8d541de083dc4458b9498c1"
+    },
+    {
+      "objectId": "wikipedia-office-scope:1d11c70970462b6334c8fe2c896e680c",
+      "beforeObjectHash": "b67ded46dc9e0462850b3517c6ffe18c61c3eeb3e1a115891d50e42fcc7239bb",
+      "afterObjectHash": "559ab927172cd153a87618aaa1fe5c2ff653408e543185514d4fcde09ea5b59c",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 1,
+      "originalInputClaimEvidenceHash": "19dac98ce445375a8950d2f25063030d65458880583ddc70994c43a41ad64b92"
+    },
+    {
+      "objectId": "wikipedia-office-scope:e82e73919986bb8f645091db6c3b2f43",
+      "beforeObjectHash": "1a64468973c094aeed7a5af929a978aeb005f8a1b398293ac2aeabbd4dd31e1d",
+      "afterObjectHash": "bbaecccf34c69f8cbb35b08f8d6b4adcfbf2f25db9ac0d07a9563f700e0b98a8",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 1,
+      "originalInputClaimEvidenceHash": "389a66d8804ef55d683d369d5a16dbeeb2ead9baa79af42a9696e75500d19a01"
+    },
+    {
+      "objectId": "wikipedia-office-scope:840155e522587cdbe5b956d5bce0fdb9",
+      "beforeObjectHash": "89d45ae5b26af78423635ddd875fb3b7fbe0a02c36b7ce9a9461f12da1677870",
+      "afterObjectHash": "27a89e88b3dd08c4cd780c3f92f7774d107688fde66a51dffc26e348b031cb91",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 14,
+      "originalInputClaimEvidenceHash": "597fd522916eb4603b6655bb4f2ab5b13fbab355ce1f458943bbf5d184327caa"
+    },
+    {
+      "objectId": "wikipedia-office-scope:221fae1b7eb488c56bbc97c812c83450",
+      "beforeObjectHash": "48e718240fb8bc9c797e37c4d01f9d69926968d7e13a639a9f42e3b5fd9176e1",
+      "afterObjectHash": "b640c66a82c7aab18f03fdefc2ce53382aed96b84058d126eb31b948b350207a",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 5,
+      "originalInputClaimEvidenceHash": "3f98f6deb4343bd7f2961b65e9b3e18ccc819ad8671d2dd54e178f45595cb0b4"
+    },
+    {
+      "objectId": "wikipedia-office-scope:e970864f65f957d0eea22e3ed74fc127",
+      "beforeObjectHash": "bfdde579b3e725ce6638246d9afa5399cc0b9be9fef8cf5e30993d0fab485a79",
+      "afterObjectHash": "c7732d9524ed9655410d1e1464ffe453ec24020b2cf2a753b7ac4e2991446103",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 2,
+      "originalInputClaimEvidenceHash": "61f5b1ea135afa4520c637a27c7019de2c571324847f5a0c42a58828c5622acf"
+    },
+    {
+      "objectId": "wikipedia-office-scope:16aeb32e60cb5655cf4dfba7d15d42f6",
+      "beforeObjectHash": "a82b57dde7e13fa71a0430f96028bbe45c30ba16dde33268a1fb15159dabfe07",
+      "afterObjectHash": "9fe8607aa71247af51aa2135f89bbd4af040da8c681d44dfcbdbb47e79049a34",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 4,
+      "originalInputClaimEvidenceHash": "39e4580bce0eedcc6a7e9fc5c8cb2bc14152070ecdaf5ef746148dfd7877e4a6"
+    },
+    {
+      "objectId": "wikipedia-office-scope:ffd1c922f8fa63f54b777ae88fc8aad8",
+      "beforeObjectHash": "14418c15fc4bdc7a872f96fc2c04ac6c51072f150d8afe51787c45d976b2f10c",
+      "afterObjectHash": "511468c3b39f8194762828fec49e41ef6a8b759e98ff90b0da56b92a874c871b",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 5,
+      "originalInputClaimEvidenceHash": "f5cad1afbe1c21f2ea21b8ecfbcac7573bf9bf04ef588bbfe04c546f0d807875"
+    },
+    {
+      "objectId": "wikipedia-office-scope:a000c849a73705ed42c3c8411067d784",
+      "beforeObjectHash": "e97c2e5fbc7dc820497c08914be3747d5ab79478e1c53894023bff01b9ca23f5",
+      "afterObjectHash": "eb72683227a72a1cfe441d646288706c4824a232da1a22fdc0373896157d0af2",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 11,
+      "originalInputClaimEvidenceHash": "f202aeda53dd59a0d94f4ff92e14b78d7d4cb0c967656dfa9f16233ae3aa6bae"
+    },
+    {
+      "objectId": "wikipedia-office-scope:aa02359f3e26c2af41c83dde88d73b01",
+      "beforeObjectHash": "4fa79fd7a42d0092f10a4a2c382f9bd619ca2da7506d33c4c6215226e0270edf",
+      "afterObjectHash": "0efe486fc85827f98f59ceb6e7df6eaa42d6918cc1365cf983215e7d1606a960",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 5,
+      "originalInputClaimEvidenceHash": "b6b7e0a3eec1b44213e601aa8024a09c891c2862aec76225cce966fde15463b0"
+    },
+    {
+      "objectId": "wikipedia-office-scope:c5d657dc09e1ca09cad589f4aae46280",
+      "beforeObjectHash": "fba5bfa1504b05c20d74325f51a51de43a12d6103559c407b9d1a9aa7a98abde",
+      "afterObjectHash": "dad016952288fc9dfea9182cffaa24fce06a379aac2eba5a837822d021b33c43",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 5,
+      "originalInputClaimEvidenceHash": "016c8a318753851e9c7b2dcb667fda38613fa52e37528ed18651156eefbca7b0"
+    },
+    {
+      "objectId": "wikipedia-office-scope:d06fa419935dbed57eee3e56da9fd7b3",
+      "beforeObjectHash": "b13a190e63221ce64b1c400f517927f8729a0e0884f45611b11700527f438f0a",
+      "afterObjectHash": "8a45f0d1ef07df1c1b611c49a025a951a743ec10bf3baa00aee00cf5acc791d6",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 7,
+      "originalInputClaimEvidenceHash": "045aefc29b25eb63ed6f5acdd4d95e4b20c6b8f3155be717b5dcef9e147ffb8b"
+    },
+    {
+      "objectId": "wikipedia-office-scope:882376171419a2ccd6314a6c97aed1a5",
+      "beforeObjectHash": "91017114a8b590390b9994186843cf0433be670292c0768dfe862d164eb9b29e",
+      "afterObjectHash": "8cc02cbff3fae16f6f9d2c4a45f70781958b34d47fd2ca90f87b46fc77198856",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 7,
+      "originalInputClaimEvidenceHash": "3daf7c19860a91afce6fec457abbb48d420f93410caea5147002bdbc0ab43a11"
+    },
+    {
+      "objectId": "wikipedia-office-scope:0988fe4aceb19bd57c375e0a44366d8c",
+      "beforeObjectHash": "1714fbee555dd966e978c4cee194a5e606a2bc94bd003c83a0bf2863f865607d",
+      "afterObjectHash": "4d447d968d30756223420b6b468609b74199483adb7c0336e75973883a7e5ad2",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "1ef4088f76a840951ba39729d86964018a8b66aa261dcd269a34ce6b345fe871"
+    },
+    {
+      "objectId": "wikipedia-office-scope:3620f1ced9ff4c9267e9d63a17777343",
+      "beforeObjectHash": "a44290ef44ba5197faaffdcad76d51e5402f6b88cbc386abf7a8aa9748787648",
+      "afterObjectHash": "caa6df13c49a1248f5bdab82853da5e58dd34cc545d3aef8d04392548077840f",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 6,
+      "originalInputClaimEvidenceHash": "f8c04b8edf5370b7ff28295e481a3b68299efb499f6c1865b3db244bc498dc3f"
+    },
+    {
+      "objectId": "wikipedia-office-scope:d8348f5f3cb81ed8948facbd5cbb1281",
+      "beforeObjectHash": "97edabae6df123fb772a4c592837714d081a5a2a158541a297bca193f4d5835c",
+      "afterObjectHash": "06f2299db43324c4fdda9aba4f859254707d7b853ff248d0aaffc4102570a0b6",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 4,
+      "originalInputClaimEvidenceHash": "9ed7e7c61317ece3b1913e9b4d0e85857944ab8d7c0b84c0eb042501771bcbe5"
+    },
+    {
+      "objectId": "wikipedia-office-scope:149df698fe6ad32c634da1035e463844",
+      "beforeObjectHash": "6c9a621b9c38d26aa59a5c083eefd232857af84d5ad84d535f7e5bbbfe765a8c",
+      "afterObjectHash": "5f14f1b20426ec596bef01c25a877dfd50c06a621a7eb8d9ffabd0110ed60a3b",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "76d13a575e508675b6e2cb2f9b149c5e6330c0c86bb0f64e95e3c55a492469e2"
+    },
+    {
+      "objectId": "wikipedia-office-scope:c5a7760ca0db13ca1c9b521cc2c79401",
+      "beforeObjectHash": "15c200577f8a0132cc5a9a4e84389dac5dbefbbbed972ada78cabb9b0f989315",
+      "afterObjectHash": "a4e917e9ed6e13c2c389c8b1f0df7bac31e01d92cff529d17c9a96e11459a7e0",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 4,
+      "originalInputClaimEvidenceHash": "49d8fe00a751ca0d2d6c3c47cce77d6f9854a77bd827cdb772b5648fa4e0bdee"
+    },
+    {
+      "objectId": "wikipedia-office-scope:7bf1335bcfd549a2cd52de498d7c95c0",
+      "beforeObjectHash": "8046141e00e85c37e3f095dc24ddc690550b0e664628b060fc39925f8d72c1ca",
+      "afterObjectHash": "9d823e5249d96d0f7bd035d192521df9a54b0bfb80bb98a55e820c0d9a690c4f",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 4,
+      "originalInputClaimEvidenceHash": "c84d64856093afe3f73ed798742d979450976548dc792570f45113d1555a846c"
+    },
+    {
+      "objectId": "wikipedia-office-scope:11b287243457698f42a7ccb026f848ac",
+      "beforeObjectHash": "a03eca12aa6bb3fec53a95faa945d76d16b8b54ff57af1f67f50dd3020b85be8",
+      "afterObjectHash": "4378720613dc6c96ac73533c4fa3edbf8efa5775dbb9b93bb28dbaad2205f24e",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "64c736e6b3b97f0b27476a0c42d7c1e817a550cbdd32808c2af87e7f176f93b8"
+    },
+    {
+      "objectId": "wikipedia-office-scope:ab76426eb9ea67e353e72fc85aaf0fb8",
+      "beforeObjectHash": "d8afb43c476df7548bfa6c7e5da82f6248c5f6cdae8af2580d27454910d6fcaf",
+      "afterObjectHash": "bb2bcfa5986ea6205e57b9c3a910186c4ba785b712606fd8d00f5449904f93da",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "92dba885600c0a21d30a305586d8f823fe031250e9a9835b0f476f5cc08a7053"
+    },
+    {
+      "objectId": "wikipedia-office-scope:a920918ff764a47a34fe215a814b84d3",
+      "beforeObjectHash": "5af4d848076b7a31940ba6b8df72a09c2f727ebfd90410be3e3e0468634d0b82",
+      "afterObjectHash": "537aa3b88598319b8d0ceda1e80b16b3fdec7f89a500fa915acb27e1e2bd06ee",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 2,
+      "originalInputClaimEvidenceHash": "422d380e9c34760d45ae6bc96c14d62daa7aab496972b90eb3ba2e4d52f6f8f8"
+    },
+    {
+      "objectId": "wikipedia-office-scope:9c8182cbf2a77c473da37176c1b97b07",
+      "beforeObjectHash": "d3847a13c95d57108207d99d1f0f2b33cf919fa3b96a46141ad465ddbb10c57a",
+      "afterObjectHash": "cdfb4271bfd2261e84de67b24e3aad73935dfcff1698c173b25c2f148061fd04",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "5d1de8f337ec9ae962f52c36bd86b586e19ae19522f7bedce4a334a7d1d3c195"
+    },
+    {
+      "objectId": "wikipedia-office-scope:28e9081a6e5c2f7488ff34866619edc5",
+      "beforeObjectHash": "9c02a3ad73b7d3dd09a42e02584f3b399ab31064420e9834f97a3f8b124053c2",
+      "afterObjectHash": "990e9f31d269afd6aa76f4d8e0b14a2d52954f18649636b2418237d92e92a90d",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "204c37019e2bb798ea8dc6d2e7f82bddfe168e59a2d06e0f45021c77fa81ad38"
+    },
+    {
+      "objectId": "wikipedia-office-scope:411e34f2e1eb13e824a566bb12675933",
+      "beforeObjectHash": "2db510cf5696379bc31029deb56af6f849bfff466ae9efcd847fc816fe625be7",
+      "afterObjectHash": "7e17a7e6c28c47f1ede19b441ce7565cf9e6faa5707d5bdce77e0e4d98c9d35a",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "70af20dc256538b8fa2c1cf677b9cbdd5cc74bf0acc8bee70dc649329face504"
+    },
+    {
+      "objectId": "wikipedia-office-scope:5f907b342dbba03e7fa02ec56dc4c285",
+      "beforeObjectHash": "b1eb2ff3f08a702b43a031f835a30717cb24c417f1d86e21dcfcf26c53585275",
+      "afterObjectHash": "2baf96856e4b8fba399aa4b1da745cfe3b5b302b524abc0486f6a75eee1a3923",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 15,
+      "originalInputClaimEvidenceHash": "231fcac30bb5a7845e84f744deda1715acde6fb600f9bbebbad283d7ae5ee601"
+    },
+    {
+      "objectId": "wikipedia-office-scope:563a7e40465cc6abe5aa5743913cad81",
+      "beforeObjectHash": "d3ee196dbbd933644f0598b752629ac32c135750f6003fd1682b93556d1dea72",
+      "afterObjectHash": "f5f4e5ca0465bd3f71bba577aab7a912aa2605eb2f031e292213e003c0a94387",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 1,
+      "originalInputClaimEvidenceHash": "c7f1b5a16177c88e4047d4f1b0f835db3d2e789aa3428eebe249e46ccc54b2e1"
+    },
+    {
+      "objectId": "wikipedia-office-scope:7c66eb5861f461d579b3d0a9780eab80",
+      "beforeObjectHash": "65d07f085103c257133ec68391917e514b26edb740ae6f3e3d3ce5c740558ba7",
+      "afterObjectHash": "952649d9cb24a1634e55fc76a62a9953e0caa07a9c851a5ffc9c701ee68c0643",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 6,
+      "originalInputClaimEvidenceHash": "7b0ccd674ad209a64b86223e076b22a177f3200f621c0b86b46698b16f46734c"
+    },
+    {
+      "objectId": "wikipedia-office-scope:fb7f5dc75afc7a35e8a31126f67f8fa1",
+      "beforeObjectHash": "00c6f9839f5e2f6145ff173c26d056051044a1cd4fe5dfc19c34982a407ff06f",
+      "afterObjectHash": "10150f1b34238a947a8c29fd3f82f1a372cab7fd206febf72a6adbfa5e0dea3f",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "fcda5b5d764df24ccd921cbc1ab29ea3e7b186f6988fc69038730aa363f23297"
+    },
+    {
+      "objectId": "wikipedia-office-scope:9f83303d978acaeabbc4a96af787db81",
+      "beforeObjectHash": "9b216c23d1107752dc71962e780dbda4dffc027de53f2c10be7450c97f7d8532",
+      "afterObjectHash": "04f314a1be85b826b5d5d65d66ac0cbb52138ca772a20eab35d0dedefa1ef554",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 5,
+      "originalInputClaimEvidenceHash": "2c13a5a80dfc22b96ecd2a7acd8f719de61fdb7dbca7e6a9c77f56134c370e7d"
+    },
+    {
+      "objectId": "wikipedia-office-scope:d473012b2c2bfc7bd57d3cf6d8f30f91",
+      "beforeObjectHash": "0e49f127dc3850b76b5548ea7dfc3a37224997cd5233e51bd78ad5c70753fabd",
+      "afterObjectHash": "68134897afd0eb5165d6028bd6b695f2f145f639b2258927ba6175e1d1149cdb",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 9,
+      "originalInputClaimEvidenceHash": "df33cfff3e2bdee30759692739dc51e574eed1229c2c6d08ceda32d166b0624c"
+    },
+    {
+      "objectId": "wikipedia-office-scope:b5c25753301c231eb592e768fede04d9",
+      "beforeObjectHash": "3d15b7466ca06d2b99f2df718d0a3e7d6a2cfe8e495b066070ec2485a921322f",
+      "afterObjectHash": "88f77154aaf4131ad0d13673dff2d9f2088d96125d8dee2066b1e0921fe67676",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 7,
+      "originalInputClaimEvidenceHash": "5dcf13b22ff696c0d0b1a68cc68b1d10e0d9c87f1d869da9b79d95ea004c1ca9"
+    },
+    {
+      "objectId": "wikipedia-office-scope:301d7aab773557fa8166396bbb2a2116",
+      "beforeObjectHash": "c2a778c0e7f5350b3c33a91a88851ac6b1f4058ad188407c9c4bb8101491ef3a",
+      "afterObjectHash": "dc47c2a42a774cf6e8da07d6e02a0add62d218a7933748ade2f41f82c8ea022e",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 6,
+      "originalInputClaimEvidenceHash": "6baff7d177a90f86ea4d2f74686f7d5108a0af9334e1da8b8c49e0d6b3bef453"
+    },
+    {
+      "objectId": "wikipedia-office-scope:03c2be8f56e5db26dc08bfaf6af3a6a9",
+      "beforeObjectHash": "2132750e560f70f58a55ec829540baa27059a4519b741ab5f9c54951bbb8d118",
+      "afterObjectHash": "cf81e343d3099f621669a145da120acc53bf68f59732fbc0ed5a0f928420303d",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "3eefcc2ac5521bbe9dbbf9533c835ca2870633bdbc0bd85bcf9dec8a31c24348"
+    },
+    {
+      "objectId": "wikipedia-office-scope:ea7890d2bc5a0489270f3f43c0436550",
+      "beforeObjectHash": "682119629fb6acd4e1b08f4f970cbb216529dbb02a708d4ff786090c03ceaa73",
+      "afterObjectHash": "0544ab81c034e0af5376ef0c129072d0f5fa9347050c927a8ae9b763c3b967e5",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 5,
+      "originalInputClaimEvidenceHash": "2f2e27007166ba3099910f841ce39edcea38031968b41e1632ee3b654753884c"
+    },
+    {
+      "objectId": "wikipedia-office-scope:cf6ae872f406f8140a60d2727ff3ce1a",
+      "beforeObjectHash": "57c2a1c71807160ad1e0bb8029e3aa136b642fc868075a3c0acd0a52b1944e03",
+      "afterObjectHash": "de1d9003928eaae64873d2603a9d29761347fc9d7cae0554597676e915fba860",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "94928d635de5704f0db6bc06f1ca946bd8b9e21a330f0e7aea168f342bbee68f"
+    },
+    {
+      "objectId": "wikipedia-office-scope:a67e9262c8716d3882730e47e2012a4a",
+      "beforeObjectHash": "390ff6f317fefa4a08ba3b7c358bb51c460ae768ca0810d820606ca4a5d17dea",
+      "afterObjectHash": "7f231abc23070975459be2de70193f366a9eb5d87bd715e1d0658f7e91e2ac2c",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 24,
+      "originalInputClaimEvidenceHash": "1c4a9afcdab9eab161d3ed1f71532ff6b314687bf3f5b525394a45751e2372e0"
+    },
+    {
+      "objectId": "wikipedia-office-scope:2cabd10967734a86f4c64ad43de70576",
+      "beforeObjectHash": "01032c5b83901979c5a9d3f280b513536227d4118dcfbfc3027ef0a2c50a77bf",
+      "afterObjectHash": "8256cc9d1147a140488e9ece39abb2931b048b1661815cfe086125f367087a2f",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 1,
+      "originalInputClaimEvidenceHash": "d6631ec2ba72ec939ab5b14756d54d8d5f15980afb794c920c59dd0434d368d3"
+    },
+    {
+      "objectId": "wikipedia-office-scope:34b470a798b8eed2487b3988b714cd95",
+      "beforeObjectHash": "a77ebb44d0a7bcf564780661fc92f51892436d6d5c30f4f48911a8d5879bdcdf",
+      "afterObjectHash": "6f1a55f2b4dc6258cb02a0e21043f0a8a9d185941ae4ff0227c18b7ef1b0f780",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "142c3a47a76bb5d75c457266c80bac047cde5e117ab3c96eca683892c04b36d0"
+    },
+    {
+      "objectId": "wikipedia-office-scope:8a5a30ed7bc930471cc77abd24e29508",
+      "beforeObjectHash": "08693c7cb477177310c7871e1a51dbaa4aaf30960b95cabd365b2fbe4e8d7465",
+      "afterObjectHash": "fd31c096db037fef379b67f688910439e6e8d8093ea27aaad2938af07fdbc6d3",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 4,
+      "originalInputClaimEvidenceHash": "f63cc5ad690a2548621d33650437413e0bb32ad4f29cca9e1bfa95ab6343cd68"
+    },
+    {
+      "objectId": "wikipedia-office-scope:fba0665d5645ec29a8494860ed00aa4e",
+      "beforeObjectHash": "cb2c242d051a96ae3d97b386700178542c13419cae3b5390a0aadc935a2e0ef1",
+      "afterObjectHash": "90506c237fef05e96ca076e54ba42e2d61ebe793795479cced01e232bb51b965",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 2,
+      "originalInputClaimEvidenceHash": "32d166d571036018eb198d975295bb91d5b816f307efbd1efdf3d46641598bc6"
+    },
+    {
+      "objectId": "wikipedia-office-scope:f1466878e1375dbaf297be14ff4dfc31",
+      "beforeObjectHash": "6cccc9d317db06ac02d6876a729bfbb3707142102c00b861e60be3603d92d722",
+      "afterObjectHash": "16b348ee085faeba2541f8fb47228e9981f334c178435fc5bdff3067e4f11cbc",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 2,
+      "originalInputClaimEvidenceHash": "dc70cfa2e261e4a1952580719eeae60511c89f16269794450c39edbaa78888e8"
+    },
+    {
+      "objectId": "wikipedia-office-scope:bdf42ab1f16ac804a6c5db1eae120407",
+      "beforeObjectHash": "b1b7000fcac4841a6c4ffaf7039bb76d14eec1b0943c5b95ca43ed3a1576b748",
+      "afterObjectHash": "5bdfaccd664bbb63cea77b77a3b493342110de80dbb2835e5e98e34017c77917",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "2bb6432a6e0f788746bb44730d2211b176d56168e3cce79027d058d522610395"
+    },
+    {
+      "objectId": "wikipedia-office-scope:bb69c11b5fa70aa13b3de776715b2206",
+      "beforeObjectHash": "a2511242583d26cdbbf7517cae2974d86852e21f9bba11f38619f1f45522a1dc",
+      "afterObjectHash": "6304c79b0074a0b79ec7dd94c95a5b5e2985350af57e1c8e4497985df32ec781",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 2,
+      "originalInputClaimEvidenceHash": "c55bd37131884a372ec8ff30edc284b027293a5413d40f0c69375254dd5227e7"
+    },
+    {
+      "objectId": "wikipedia-office-scope:8af0a294120a651184cf6022644f0769",
+      "beforeObjectHash": "628f416554585efa12e90a7259ad797305e731177b6c6c933357e36fb2f4b611",
+      "afterObjectHash": "c22fa3870e01a95b8047cc45fefbfa7e2b0f6f0e3d73d08d186c6e92edc1b4c8",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 4,
+      "originalInputClaimEvidenceHash": "f8614cbb055ec0c8896ae4c67b1b6d809e908bf99d9d9fc92ddc4c4aa2b6f718"
+    },
+    {
+      "objectId": "wikipedia-office-scope:0ccd3c488b982d41b686369b95e6cbb5",
+      "beforeObjectHash": "0a6d93ac73c70373f3d2594f87ebe7f450683395c2d2d9618c5a47a2381fb36a",
+      "afterObjectHash": "28ad8a504f88d6d7ce9ce146b8bfecff776839bb7c80d1fa81c784043a8c6a04",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 6,
+      "originalInputClaimEvidenceHash": "8d1c6dd77e285cf285f7d24a700c492369820e7f2f04077687549b998991646c"
+    },
+    {
+      "objectId": "wikipedia-office-scope:2c3433b42f1f5831156ce1b4523e0d18",
+      "beforeObjectHash": "d2577ece14d21750b5c0550364554c164ddf1830b7b431b92092a307f8c0b141",
+      "afterObjectHash": "64105103e5f5e7690ad2351c391a3d2ed1e07eca8755970050a658e3edfd8e56",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 5,
+      "originalInputClaimEvidenceHash": "8e40bd1125b24694fc52460eef074f4e99a92d47ca841777b97f9d0b0148e362"
+    },
+    {
+      "objectId": "wikipedia-office-scope:266f138036c6113f83dbdcf3c7f01ced",
+      "beforeObjectHash": "2f4eedffe4e003ec42494a41661cef5747610462a71a25ae57b2fc702f00a0d3",
+      "afterObjectHash": "991f4796f3d0215c8ef525729cbed359624f9c7ec22ea4e45663f5a17df6a7bb",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 6,
+      "originalInputClaimEvidenceHash": "02040d490ec5999dcfc355d1803a64748061c29a659cb85151e0ade8defb4e2f"
+    },
+    {
+      "objectId": "wikipedia-office-scope:3ab09cc61e5e7ad593b8901a526c212c",
+      "beforeObjectHash": "11a71f524aebfa6b108e95462c67fdff134c8ea3ae9fad0e6866f2c2fbc1a8dd",
+      "afterObjectHash": "47307456fbdd631b4ae2a54c0a7f997fade79c1647f5a2c560d7b4272b50d552",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 4,
+      "originalInputClaimEvidenceHash": "7814a63937b6adedf9026a087732337dd5a6ccbbb9e5b02c6057ef36e599f94a"
+    },
+    {
+      "objectId": "wikipedia-office-scope:e99705ff8b4c7a6dc39070913ffab1aa",
+      "beforeObjectHash": "0081f2967373b96752a7e43bc64d3ceb1657f13de2066ed9cc1349cf013e2e2d",
+      "afterObjectHash": "b4705981e71f72c4cb61249a7e9b178b4f098b1800084ddeefc13011984bd17a",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 5,
+      "originalInputClaimEvidenceHash": "e0375b8cabe84e7c9ccca9121e60831ed4576e829ec54a1dbfad961e2681495c"
+    },
+    {
+      "objectId": "wikipedia-office-scope:4ee495de485a3cde16c18e26d79a0284",
+      "beforeObjectHash": "55ea0bd8a1da92d3fdfd1cfef495a786621d4b72d39a4802342ece43c5ad1bae",
+      "afterObjectHash": "aa5fc5b31dc50e51d42f1f8e57bf8c19e4b3a64824d3613a8982fd3c64413014",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 2,
+      "originalInputClaimEvidenceHash": "8e6ce3c2817e2733ccc183943f2bc725f41caf20ffec23e04e915d9c0c132fbe"
+    },
+    {
+      "objectId": "wikipedia-office-scope:7ecda4cbf9a33e6118473de9b6b59126",
+      "beforeObjectHash": "23d70cd45eb54294f0df0895d635b661a10985b9dac656fb0d9cf1b716223a2d",
+      "afterObjectHash": "2e5fab672e871f55507f499a0e53e9a4daea45fa3b8abc528764768096faa7ec",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "018ba986656215080d77c0b0fc71b7adbf7156a454f2e10af91ccba847ac68ae"
+    },
+    {
+      "objectId": "wikipedia-office-scope:9152f467eb0b3add04ab9bff91ec13b1",
+      "beforeObjectHash": "45c752ed0419ca0348ae6025d3c6eb7831877d744bacdc0e04ddc2c5de48e874",
+      "afterObjectHash": "b8288c147a81b547155835616f62d02a4c1ec014bc8f3d4ac6a7b55bbe4c3174",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 4,
+      "originalInputClaimEvidenceHash": "ad26f4791f01a74267e899a619ada4e9be43242111b738b2656774261de3803d"
+    },
+    {
+      "objectId": "wikipedia-office-scope:0483cf641c5b95ac66ca9b3ba55bc7a1",
+      "beforeObjectHash": "78bba883ee9291eeab4334127acf2111e0099128417f90e6514e223f15fca848",
+      "afterObjectHash": "50a28ab30781e13e76dacfe8f4e88d95d28c4a5ac2786f14eb6e5ce14fba4cc1",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 9,
+      "originalInputClaimEvidenceHash": "e724657e7fbf27ed1aa1808372c19642659fe8c150cb043249c3756d8a3487e0"
+    },
+    {
+      "objectId": "wikipedia-office-scope:a4d16572feebbb56feedef4331eee566",
+      "beforeObjectHash": "f89a2aa479d6c4e5ef879e408701a3e22c45e6ecdab8aceb3384bc202c82a2e3",
+      "afterObjectHash": "84438cbac03b255f4950b7f04542d9c3c3f6c77e62bb6ed7f886834a63fbff53",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 10,
+      "originalInputClaimEvidenceHash": "4c2445e614a60b48be16e85a4895e403edfa49e3d74a39e30f3938dff39079df"
+    },
+    {
+      "objectId": "wikipedia-office-scope:63d94ef2cf126f4c0098e68bb3db1070",
+      "beforeObjectHash": "73a40a328088dd622583858692fdf511cc43889cfd76948df7777dc2ad809079",
+      "afterObjectHash": "a9e15b5b6bc31661f111f73de8c1095a8526a5aa10270a7022cc66a53dfee252",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 9,
+      "originalInputClaimEvidenceHash": "e177784fa7b742a682b95d053326a88c618843f161b24fbca8933970ef5d8522"
+    },
+    {
+      "objectId": "wikipedia-office-scope:42d45558f1890172215a531370ea5287",
+      "beforeObjectHash": "c8bd04285f379da02baf7a1ee7810a27b25055a38d10fd5f0ddd9b7e135c1604",
+      "afterObjectHash": "fdf41100744347117ece91848983bfa53ca9e3af3185fdf766ab53d7e1120978",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 10,
+      "originalInputClaimEvidenceHash": "7016d4926112844185e7c25c83979a889d8778cf1bba21af0367733826f1b1a8"
+    },
+    {
+      "objectId": "wikipedia-office-scope:36af5b7f911385b31d0325b91e8fa6b5",
+      "beforeObjectHash": "5b58ab531a8c2c8b2e2c2fa5bbe4a7ea3ad75806a0b6ac82d378b904326ac35a",
+      "afterObjectHash": "4d9e97cdc8f5c9b9122587c3e14f3970ef96377ba7631bda1a618208a8463dd3",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 10,
+      "originalInputClaimEvidenceHash": "a9c21c738d00db96df7600259970488ab74cc730970b01a882795513c69d43cd"
+    },
+    {
+      "objectId": "wikipedia-office-scope:820920a4e484266299ce3928f526d394",
+      "beforeObjectHash": "e320073d9ddf7e305f2fb30df6beb7c66ebeffe2e23148b14de1d58cbe14d791",
+      "afterObjectHash": "7ecf9b8fca10ccc130cf54f560c74e67d5d036892671aae6e1b6a6f143d78dd6",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 12,
+      "originalInputClaimEvidenceHash": "cc21e791cae051f794d75be755d2e3d802af974ce85d88f0ac2783a72f23f7d2"
+    },
+    {
+      "objectId": "wikipedia-office-scope:fb2ab8771d851522d9061a135733873a",
+      "beforeObjectHash": "de2e43203df5425d3fb6fbfa8144b2e9b8bec217ab62ecfbe6390dcd1a390780",
+      "afterObjectHash": "1a1eed8e7df367e90dc388f301652d4fa7dfdea08fcc35bb2cbf3a36edf81763",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 17,
+      "originalInputClaimEvidenceHash": "e810cc997b8b42c495dc090e6ac25f4bc363d7f0e2387570d636853085458132"
+    },
+    {
+      "objectId": "wikipedia-office-scope:93a7ddf48938fb51eae09dd2c9f8d5c4",
+      "beforeObjectHash": "24c5fa0a264b8275e5df45786f94f73019a0bb4f17e01c47191c0d60092fc573",
+      "afterObjectHash": "2352b488d90cd94ed9c80f7466bbb9ff39c61b289160749205281b2127b96c82",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 10,
+      "originalInputClaimEvidenceHash": "8ffc8dcec6ac624e5c438b5428879a75991f72c6111c5f0ad5970d72ace5f03c"
+    },
+    {
+      "objectId": "wikipedia-office-scope:7d6d90374417f2ad0600fbf1750dbe87",
+      "beforeObjectHash": "b169029f4b6ad14108fbf9a39dda2c21196c7c7967effb03b5944d45a5fa7b6f",
+      "afterObjectHash": "30a3c889b889213bd1974b7d10f645957f25bd78d6aa029f026775f9c830b674",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 1,
+      "originalInputClaimEvidenceHash": "a572061d77992ea52032101039ae4f7771b76514d2ea1e7ffde9cbd30fd543be"
+    },
+    {
+      "objectId": "wikipedia-office-scope:a8bb0217919602e9dc5d03be58aecedd",
+      "beforeObjectHash": "cd0db5c745c224e795aa1e890fb6b53af30dd50210dbd394f498bd05cdde3fba",
+      "afterObjectHash": "0d56f9921af641621023886790e8401ff86a4dd6c74eb03aab95819e2cd20163",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      ],
+      "originalInputClaimCount": 1,
+      "originalInputClaimEvidenceHash": "9d1bc2de9de55c2e824f27070176c5c6bdf824719a73ce328d24f114203a4553"
+    },
+    {
+      "objectId": "wikipedia-office-scope:9703bd815dacc1bc17d0aa7044b4a482",
+      "beforeObjectHash": "ed31cdd6a3583040bc91c2d99b203e472f88c0dda4140e5bceb7b72b76b3a031",
+      "afterObjectHash": "357273f8981c71f91637f47e75e774bba982acac25bff98f9996560c6055ae99",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+      ],
+      "originalInputClaimCount": 28,
+      "originalInputClaimEvidenceHash": "c0e9eb394be0d6b8e98abfd952f859b7cef70440a7ee655713d8ce6c46b75a93"
+    },
+    {
+      "objectId": "wikipedia-office-scope:efd6dec621965a1e16fbe254a24e4ba8",
+      "beforeObjectHash": "59af5083c5de5445e3d030b99ce7b13e680b04c547fea97a56c552b917d02b3b",
+      "afterObjectHash": "31ca99f8552787935887d29384bd92c6eaa634975b1fa3b5946971a983df3f21",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+      ],
+      "originalInputClaimCount": 14,
+      "originalInputClaimEvidenceHash": "c05a5aa2012de9821c9d7ced78fc389e193f1a6b8ce7f6358859ff581a77b42e"
+    },
+    {
+      "objectId": "wikipedia-office-scope:590f9589904c12eef1228b80fba41244",
+      "beforeObjectHash": "4dd4ca7f9ff6fc892665fe447707ce4d6f98d3aba0677aaf510b878df3b99b7c",
+      "afterObjectHash": "dd1dd044ca941f679f00c41d3fc2b7476651dfd07a67c22ad065585dcdbfc087",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+      ],
+      "originalInputClaimCount": 7,
+      "originalInputClaimEvidenceHash": "898be5c7b332c33e0b52815ecbb9d2b5555f316579d85bd89878bea3dd5cdb4a"
+    },
+    {
+      "objectId": "wikipedia-office-scope:7b2aaac7e5cd239094bd0fddbf6db371",
+      "beforeObjectHash": "80b1472195eb0f995b5a165c378a2424e28b268fdc976b7a9f0b52c21c6c3597",
+      "afterObjectHash": "a42f5bc89c532a554771094b7dde0222052ce39d70e81e2b048f9b0f9a8eae9b",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+      ],
+      "originalInputClaimCount": 32,
+      "originalInputClaimEvidenceHash": "996a074d0237818c7b806bd3d4bf3a9d97f8941b8fa661c4bc1f9c5c253f4cf3"
+    },
+    {
+      "objectId": "wikipedia-office-scope:54759d6aeb45b4018bc94cc2f35f5734",
+      "beforeObjectHash": "4869d2cc867437c48872352fe0bc7ef87adbe7a7d7600e6fd67d253312cf5f70",
+      "afterObjectHash": "b73e4bcf47ecdf0cf1f684604eafbcd744839bad6f84c05401f667e15cd6d17b",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+      ],
+      "originalInputClaimCount": 14,
+      "originalInputClaimEvidenceHash": "d0836e6d766aefe68f77a4898e228254ebbcba87c94f9fd5431db8b50cf7c938"
+    },
+    {
+      "objectId": "wikipedia-office-scope:16d54a873a341b67846ed7b5a3936bc9",
+      "beforeObjectHash": "da1906fd32f58669dc51053298ca08bba31b7ba00818743578f8cc5a537e9cb6",
+      "afterObjectHash": "50f5d50a205b59f1b6b107b40f90ae119f683d237579a9cce62764039789a582",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+      ],
+      "originalInputClaimCount": 18,
+      "originalInputClaimEvidenceHash": "dbec0559f1ce0e7e39ec11833edb955ccb0366b176b12c1f78fe66f397ce3b9a"
+    },
+    {
+      "objectId": "wikipedia-office-scope:f014e7a89e01725753bc3dd8a61efa59",
+      "beforeObjectHash": "0d449b6e575b73414262759ccf0609da5e6f55715c71e1156eb10e2d7646d1f1",
+      "afterObjectHash": "1e6897719284bcd7b9f9b03ffd790717c24dd07986309c9870215b6758533b07",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+      ],
+      "originalInputClaimCount": 14,
+      "originalInputClaimEvidenceHash": "a41724bdc436636a2ac955ab5ed2af5bba8be3e9c7d971dd5170e2371a4042a1"
+    },
+    {
+      "objectId": "wikipedia-office-scope:3a68486e54a5f7bffdacb17338bd595b",
+      "beforeObjectHash": "6961674b062a42a495e068b3bbba82f956c3692ed3c3c1e55bbb7f0d6a097f7b",
+      "afterObjectHash": "58a3f1afa723eb912719379c6f1d9071a1100c54e72f0120d85dbaf33a9d2155",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+      ],
+      "originalInputClaimCount": 5,
+      "originalInputClaimEvidenceHash": "e8f9a348461aa2af10c115c136a28865fb24b2a661f92ae191482f4fdc121f60"
+    },
+    {
+      "objectId": "wikipedia-office-scope:8e807824550ba0c85f59c47564267a36",
+      "beforeObjectHash": "e94583d44909cf65522142298de2ff1ecc57b06e62b5948e6bbd0c0d0408285c",
+      "afterObjectHash": "75f52251acfa3bcc702dca92df190745ca6968453a54c37982eee8527a463377",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+      ],
+      "originalInputClaimCount": 2,
+      "originalInputClaimEvidenceHash": "17ec07cb2582da489200f3e0b0fa95ebb6856c36651efad563212358c329d7a7"
+    },
+    {
+      "objectId": "wikipedia-office-scope:ecd4f2082e259a311e4d5bed1aae4858",
+      "beforeObjectHash": "2704cdfdf7239812cf990fb33520484063cd58934f8f3f989fd2470ed97727e8",
+      "afterObjectHash": "85227d2730762ce6d59fd3e2ae6c17975718df7b633ec335ef805a4b7d8d3f4b",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:314092@f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab"
+      ],
+      "originalInputClaimCount": 1,
+      "originalInputClaimEvidenceHash": "02416a92d4e22d39f93a56b8575bc8ddfcbd52f646b281d57b9ba1d88d059d55"
+    },
+    {
+      "objectId": "wikipedia-office-scope:28af04f80b87156d0295d1cd19e2abd1",
+      "beforeObjectHash": "61871faa0d62dae269ce598b75c9409d6a9689087bc695c7861228fa6523e233",
+      "afterObjectHash": "4f23ef120d144d456aef963f7e35f65fe24d80f7ad36c948edddedd411d0a1c4",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:314092@f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab"
+      ],
+      "originalInputClaimCount": 91,
+      "originalInputClaimEvidenceHash": "745ea46e72c83f890857eada615f22a8f7770dc8839b3e2b3030d5c24dd170f7"
+    },
+    {
+      "objectId": "wikipedia-office-scope:5423cdc85bf1f40aa71da6273e9050ec",
+      "beforeObjectHash": "ad5e7f6869a84687faab2a10b3bdf25d8cad869c4ec7d2deb5c611f20a702441",
+      "afterObjectHash": "cca1363176c576997ebd397f2ff2250210228511241db70363f3283e2ddaa282",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e"
+      ],
+      "originalInputClaimCount": 6,
+      "originalInputClaimEvidenceHash": "be5effd77e5519cfede1140fe53b08943e78fc154a6be565570b89cb05db18e3"
+    },
+    {
+      "objectId": "wikipedia-office-scope:7ca130f99091b3754bde3aade6ce064a",
+      "beforeObjectHash": "68103cfbb1c6cd531e7bf61080d74757688153e7732d264d752a46d24e901a6a",
+      "afterObjectHash": "2d4c928a126a20d7962e377bcb36d9be4ed8205b8d0ecf52a41a8f3062f09195",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e"
+      ],
+      "originalInputClaimCount": 9,
+      "originalInputClaimEvidenceHash": "f168489697fa1a84dbf84968ec8d5899b99fe5f1b37baa4851c6a3ec9105ccf0"
+    },
+    {
+      "objectId": "wikipedia-office-scope:abeb54e2105e13fcd3cb071da7ffb255",
+      "beforeObjectHash": "834da43a0121fb34431fb57c862dda4012d1af681c3ba1a57852c674aa08c1ca",
+      "afterObjectHash": "41eaee61d847cc9ba4cceca36b57edcf7f58c9a804ae6d33338020ec0c1cf8a0",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e"
+      ],
+      "originalInputClaimCount": 1,
+      "originalInputClaimEvidenceHash": "630a578c4dc93010b96724caa778d9eff4389c0c9daffe7780fa725af9ec6d4a"
+    },
+    {
+      "objectId": "wikipedia-office-scope:4eddbfd2a89202560cc8c42f10f5bd83",
+      "beforeObjectHash": "d1a11b5660681743740a57c81255a1360a315082644c4ea90b669f150cd3c166",
+      "afterObjectHash": "f5a41b75c024d8d8b1b5b27021436cb8a9d621a115fcba97c16e9a19f06c55f3",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e"
+      ],
+      "originalInputClaimCount": 20,
+      "originalInputClaimEvidenceHash": "5afbd32a8596c67c4630e0bad8b0196d9663b81fbc4b9cf3c5be942c76df6e23"
+    },
+    {
+      "objectId": "wikipedia-office-scope:e65c853f5e96b489300f0ad49766b461",
+      "beforeObjectHash": "1974513936700b9b9095caa40d50e9362a5c1b9a079e6b0d20c22a234342a1dd",
+      "afterObjectHash": "12e95d47e935976e718211392e666fdc8e808b16345a052cfb7465e32de7310b",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e"
+      ],
+      "originalInputClaimCount": 8,
+      "originalInputClaimEvidenceHash": "0d26a26ad7108dd55a989aef9b20664dc99532e4d45cd05394240187d8eaabfa"
+    },
+    {
+      "objectId": "wikipedia-office-scope:454c83f0ed74a3c8d75393df10e5a549",
+      "beforeObjectHash": "230a4a727558a0ee2e4aa8fcb320815374e3fa03549bcaf84c5007a81d644d2b",
+      "afterObjectHash": "eb889a7e12373a973e0d88237faad5eae6030580985ef5aabf293276fd8be9b6",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e"
+      ],
+      "originalInputClaimCount": 20,
+      "originalInputClaimEvidenceHash": "bef16f8942ac7bbf1392844236c28cf4d352ec042e63fd1fc08e4436559c56e9"
+    },
+    {
+      "objectId": "wikipedia-office-scope:47b76df05c7e489a5ef2bb86dce43abc",
+      "beforeObjectHash": "2642279d25b91755bc09b9dc428762c684dfa1cac64fa88971c74dc768884a97",
+      "afterObjectHash": "a1a5c3c6209d9f1b64d915f39780a4916ec99730974b04f4e0d2bbfc9331245e",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:17254923@e210f2fedf63e1b83f1ff17c3ba8ac23b674629b6e73133b7f44d460a722fd1f"
+      ],
+      "originalInputClaimCount": 32,
+      "originalInputClaimEvidenceHash": "2826850f5ea038ed9e1d8895c2f37c164d2136d9874d4f25593ba1a92389a1a6"
+    },
+    {
+      "objectId": "wikipedia-office-scope:a37a7ea69b117d0f33a17cafe2c4a305",
+      "beforeObjectHash": "5501edc5c1ee45abad0141caf0684c12a0a9b3162e29a8dcd875c795bc6784f3",
+      "afterObjectHash": "bc19e6316fa1f90977d9d8e2f215ecc1723bbb9715977ff3a62a8f5b133b39b8",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:17255213@fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514"
+      ],
+      "originalInputClaimCount": 1,
+      "originalInputClaimEvidenceHash": "982bada8426b4c3f4bf13f1e07fddfb27a45ec9da0bffad9f7d26ddf7dfe4b29"
+    },
+    {
+      "objectId": "wikipedia-office-scope:8365e36aa0d98dc384f54646bc5061b4",
+      "beforeObjectHash": "5aba1a48c985613752ec9a49412411198b9200f4d26ee39c2709e23c07d74b08",
+      "afterObjectHash": "878599e515a7f59e82e08a987b09ac2ff88bcc6b6050ed772eb508d7dc4bc55c",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:17255213@fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514"
+      ],
+      "originalInputClaimCount": 5,
+      "originalInputClaimEvidenceHash": "5ca67d5453103c49bb31a095c0203e4eca69499a11c62fb85072341a85c3fa89"
+    },
+    {
+      "objectId": "wikipedia-office-scope:718113f73be6af43b38c2e760fb053b2",
+      "beforeObjectHash": "79df0aa2474f9d4b00617746f020383a5568947afe9495a4651d4d8f5a6023cb",
+      "afterObjectHash": "344134e17fc0efd7de948a8959f722e07af9e665de5e4eab7dda922c9bd0c32d",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:17255213@fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "c8171de27ebd5e9e56c6ddd3c1de8d044822c97d4b9f09d6a984cc25ee530170"
+    },
+    {
+      "objectId": "wikipedia-office-scope:c1d43422c6a95485dbdcabc48a9369ad",
+      "beforeObjectHash": "00b3756838d8c75327a690aa915acb5023680349ec87665ca9ece880f8561ae0",
+      "afterObjectHash": "e6cfffb8b5200cc5f010b79c4500ad1f84c4f848755c6ccdf987d86c9b90627e",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:17255213@fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514"
+      ],
+      "originalInputClaimCount": 1,
+      "originalInputClaimEvidenceHash": "17edb27611796e3991233e17baedcab128eed10bce86f667df7fc8d0f5ffe3a5"
+    },
+    {
+      "objectId": "wikipedia-office-scope:854747ff00d93c36c411a90b2abf790f",
+      "beforeObjectHash": "594a2639a34f6edc53cb9cd905504b32a344c2a0a6e0194be1f3b1578729bb13",
+      "afterObjectHash": "244ad84a7a825444232d4e6aa06d06b28d9a5d8cc25b59b7d9a3c6afe7426661",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:17255213@fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514"
+      ],
+      "originalInputClaimCount": 9,
+      "originalInputClaimEvidenceHash": "040e775ffb7cb191fcb5171f0c2d5030c7f9f9b8fca01f50a4b58de53a1d9433"
+    },
+    {
+      "objectId": "wikipedia-office-scope:fa85be85e09d0d21501106e9f477b6d1",
+      "beforeObjectHash": "1f7bceab6cbbe0de71420c236ff8014d22c8e4140dd975959d5c85f89f3af036",
+      "afterObjectHash": "4223fa924e57fbd332bbd4676edf316b3f70af2598d0d5dfff22cf30edc7994d",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:1420574@12511a4f9a10aa42352aa5bcfbff8405d4d8635c748df4a6b9a6f80803df8427"
+      ],
+      "originalInputClaimCount": 19,
+      "originalInputClaimEvidenceHash": "e185c2f3d106de199044837314fcb97b48d279d6a4183e58368601efc97db7de"
+    },
+    {
+      "objectId": "wikipedia-office-scope:681f9eac4400d3b6b87d18c414a6561d",
+      "beforeObjectHash": "b33ab867e60c7e7a2b6ae5dc1252e692663ab807dadcc285ee18bb7c8b637792",
+      "afterObjectHash": "f16bad311d026474d85d30fe6be1cd24bcb201b4e122478f052cceef3724f35e",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:47851611@050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78"
+      ],
+      "originalInputClaimCount": 3,
+      "originalInputClaimEvidenceHash": "1b98ff1d5800ea421ee7c36145ae1201ca8d0654f836650f7f613431c620505f"
+    },
+    {
+      "objectId": "wikipedia-office-scope:413793ff5ebb8aeee646fbafe6142d38",
+      "beforeObjectHash": "1382a0e3bdfa9ca4eba21d1f01929a55bf54c4be15ee9439be7f5bcec91bbfe0",
+      "afterObjectHash": "e497b8fc2e501a0413a9d93e0b122a67f7ebca1a35e3a81d5fe3cadcad0cc579",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:47851611@050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78"
+      ],
+      "originalInputClaimCount": 23,
+      "originalInputClaimEvidenceHash": "f5ca76a05302a5613d0589acc6acc56b293988b6583c82035e402d74b0dd4453"
+    },
+    {
+      "objectId": "wikipedia-office-scope:b6316b5ded06e0fa515f8e1be3199fea",
+      "beforeObjectHash": "6d69b0d4de8d8633d820464e7ca3bc87d2ad209ab4abb1e6bbc7fd0981b79a1e",
+      "afterObjectHash": "8ad0b8a28df44e18e9690f238247e9eab223d1c5f8fec22e13d524150cdd6a97",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:530241@829732fb3734c8609735e3a680e8fa8d730d091e719b20d4ed7b18fee6529577"
+      ],
+      "originalInputClaimCount": 6,
+      "originalInputClaimEvidenceHash": "0d09ecc8f899a1796b3a586b4a7ceea0b18335ac06eb9fd38bfd5f5791044abb"
+    },
+    {
+      "objectId": "wikipedia-office-scope:4db48c4e509270ea0d5dffd46b0d4b43",
+      "beforeObjectHash": "cc39ef1da91fc6d67ff8c435bfe59e07ca27cf3aa955c380b934927d1b2bb4c7",
+      "afterObjectHash": "cebd347fba3f15c6fa77548dc9c511343228cac3beeea5d5ef6ea3342a87cca8",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:516942@87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca"
+      ],
+      "originalInputClaimCount": 2,
+      "originalInputClaimEvidenceHash": "1f7a6dc8b4a8e2a91df9f24b9e6c2ff90cb188f7be7e8c06e91ec26455e4e055"
+    },
+    {
+      "objectId": "wikipedia-office-scope:a925e8857e0f078c48afeb10e7c1e2cc",
+      "beforeObjectHash": "dfb0f74c247c608385f314194c732067b5be3abe178f8f8f401635dcddb031a3",
+      "afterObjectHash": "8c1f5a5a0774f606f4bbc4c44a830040f958ec66d256ebec29d8af307b19d6cd",
+      "changedFields": [
+        "types"
+      ],
+      "sourceIds": [
+        "wikipedia-en-facts:516942@87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca"
+      ],
+      "originalInputClaimCount": 12,
+      "originalInputClaimEvidenceHash": "7287f7824d6d49e5b1517efd28e682d1edd545497c2e690c362eaa17ca801d34"
+    }
+  ],
+  "affectedShardCopies": [
+    {
+      "path": "collections/catalog-1.json",
+      "objects": [
+        "wikipedia-office-scope:35b4fb96c2d0c312180f34224ab720ae",
+        "wikipedia-office-scope:fe960e3a7500f5a3f6cba2b68a3823dc",
+        "wikipedia-office-scope:fe8aa6b7ebe1f600103112423c69e4ef",
+        "wikipedia-office-scope:3eea962bd89aa3e0dc5675b86cefd067",
+        "wikipedia-office-scope:41abaf7a79f75c4e1d94a0473bec3f17",
+        "wikipedia-office-scope:537d053b96841e7079ee2afb63faa1c9",
+        "wikipedia-office-scope:d6ecb3166f75600fe03a001e4c2ea55a",
+        "wikipedia-office-scope:1d11c70970462b6334c8fe2c896e680c",
+        "wikipedia-office-scope:e82e73919986bb8f645091db6c3b2f43",
+        "wikipedia-office-scope:840155e522587cdbe5b956d5bce0fdb9",
+        "wikipedia-office-scope:221fae1b7eb488c56bbc97c812c83450",
+        "wikipedia-office-scope:e970864f65f957d0eea22e3ed74fc127",
+        "wikipedia-office-scope:16aeb32e60cb5655cf4dfba7d15d42f6",
+        "wikipedia-office-scope:ffd1c922f8fa63f54b777ae88fc8aad8",
+        "wikipedia-office-scope:a000c849a73705ed42c3c8411067d784",
+        "wikipedia-office-scope:aa02359f3e26c2af41c83dde88d73b01",
+        "wikipedia-office-scope:c5d657dc09e1ca09cad589f4aae46280",
+        "wikipedia-office-scope:d06fa419935dbed57eee3e56da9fd7b3",
+        "wikipedia-office-scope:882376171419a2ccd6314a6c97aed1a5",
+        "wikipedia-office-scope:0988fe4aceb19bd57c375e0a44366d8c",
+        "wikipedia-office-scope:3620f1ced9ff4c9267e9d63a17777343",
+        "wikipedia-office-scope:d8348f5f3cb81ed8948facbd5cbb1281",
+        "wikipedia-office-scope:149df698fe6ad32c634da1035e463844",
+        "wikipedia-office-scope:c5a7760ca0db13ca1c9b521cc2c79401",
+        "wikipedia-office-scope:7bf1335bcfd549a2cd52de498d7c95c0",
+        "wikipedia-office-scope:11b287243457698f42a7ccb026f848ac",
+        "wikipedia-office-scope:ab76426eb9ea67e353e72fc85aaf0fb8",
+        "wikipedia-office-scope:a920918ff764a47a34fe215a814b84d3",
+        "wikipedia-office-scope:9c8182cbf2a77c473da37176c1b97b07",
+        "wikipedia-office-scope:28e9081a6e5c2f7488ff34866619edc5",
+        "wikipedia-office-scope:411e34f2e1eb13e824a566bb12675933",
+        "wikipedia-office-scope:5f907b342dbba03e7fa02ec56dc4c285",
+        "wikipedia-office-scope:563a7e40465cc6abe5aa5743913cad81",
+        "wikipedia-office-scope:7c66eb5861f461d579b3d0a9780eab80",
+        "wikipedia-office-scope:fb7f5dc75afc7a35e8a31126f67f8fa1",
+        "wikipedia-office-scope:9f83303d978acaeabbc4a96af787db81",
+        "wikipedia-office-scope:d473012b2c2bfc7bd57d3cf6d8f30f91",
+        "wikipedia-office-scope:b5c25753301c231eb592e768fede04d9",
+        "wikipedia-office-scope:301d7aab773557fa8166396bbb2a2116",
+        "wikipedia-office-scope:03c2be8f56e5db26dc08bfaf6af3a6a9",
+        "wikipedia-office-scope:ea7890d2bc5a0489270f3f43c0436550",
+        "wikipedia-office-scope:cf6ae872f406f8140a60d2727ff3ce1a",
+        "wikipedia-office-scope:a67e9262c8716d3882730e47e2012a4a",
+        "wikipedia-office-scope:2cabd10967734a86f4c64ad43de70576",
+        "wikipedia-office-scope:34b470a798b8eed2487b3988b714cd95",
+        "wikipedia-office-scope:8a5a30ed7bc930471cc77abd24e29508",
+        "wikipedia-office-scope:fba0665d5645ec29a8494860ed00aa4e",
+        "wikipedia-office-scope:f1466878e1375dbaf297be14ff4dfc31",
+        "wikipedia-office-scope:bdf42ab1f16ac804a6c5db1eae120407",
+        "wikipedia-office-scope:bb69c11b5fa70aa13b3de776715b2206",
+        "wikipedia-office-scope:8af0a294120a651184cf6022644f0769",
+        "wikipedia-office-scope:0ccd3c488b982d41b686369b95e6cbb5",
+        "wikipedia-office-scope:2c3433b42f1f5831156ce1b4523e0d18",
+        "wikipedia-office-scope:266f138036c6113f83dbdcf3c7f01ced",
+        "wikipedia-office-scope:3ab09cc61e5e7ad593b8901a526c212c",
+        "wikipedia-office-scope:e99705ff8b4c7a6dc39070913ffab1aa",
+        "wikipedia-office-scope:4ee495de485a3cde16c18e26d79a0284",
+        "wikipedia-office-scope:7ecda4cbf9a33e6118473de9b6b59126",
+        "wikipedia-office-scope:9152f467eb0b3add04ab9bff91ec13b1",
+        "wikipedia-office-scope:0483cf641c5b95ac66ca9b3ba55bc7a1",
+        "wikipedia-office-scope:a4d16572feebbb56feedef4331eee566",
+        "wikipedia-office-scope:63d94ef2cf126f4c0098e68bb3db1070",
+        "wikipedia-office-scope:42d45558f1890172215a531370ea5287",
+        "wikipedia-office-scope:36af5b7f911385b31d0325b91e8fa6b5",
+        "wikipedia-office-scope:820920a4e484266299ce3928f526d394",
+        "wikipedia-office-scope:fb2ab8771d851522d9061a135733873a",
+        "wikipedia-office-scope:93a7ddf48938fb51eae09dd2c9f8d5c4",
+        "wikipedia-office-scope:7d6d90374417f2ad0600fbf1750dbe87",
+        "wikipedia-office-scope:a8bb0217919602e9dc5d03be58aecedd",
+        "wikipedia-office-scope:9703bd815dacc1bc17d0aa7044b4a482",
+        "wikipedia-office-scope:efd6dec621965a1e16fbe254a24e4ba8",
+        "wikipedia-office-scope:590f9589904c12eef1228b80fba41244",
+        "wikipedia-office-scope:7b2aaac7e5cd239094bd0fddbf6db371",
+        "wikipedia-office-scope:54759d6aeb45b4018bc94cc2f35f5734",
+        "wikipedia-office-scope:16d54a873a341b67846ed7b5a3936bc9",
+        "wikipedia-office-scope:f014e7a89e01725753bc3dd8a61efa59",
+        "wikipedia-office-scope:3a68486e54a5f7bffdacb17338bd595b",
+        "wikipedia-office-scope:8e807824550ba0c85f59c47564267a36",
+        "wikipedia-office-scope:ecd4f2082e259a311e4d5bed1aae4858",
+        "wikipedia-office-scope:28af04f80b87156d0295d1cd19e2abd1",
+        "wikipedia-office-scope:5423cdc85bf1f40aa71da6273e9050ec",
+        "wikipedia-office-scope:7ca130f99091b3754bde3aade6ce064a",
+        "wikipedia-office-scope:abeb54e2105e13fcd3cb071da7ffb255",
+        "wikipedia-office-scope:4eddbfd2a89202560cc8c42f10f5bd83",
+        "wikipedia-office-scope:e65c853f5e96b489300f0ad49766b461",
+        "wikipedia-office-scope:454c83f0ed74a3c8d75393df10e5a549",
+        "wikipedia-office-scope:47b76df05c7e489a5ef2bb86dce43abc",
+        "wikipedia-office-scope:a37a7ea69b117d0f33a17cafe2c4a305",
+        "wikipedia-office-scope:8365e36aa0d98dc384f54646bc5061b4",
+        "wikipedia-office-scope:718113f73be6af43b38c2e760fb053b2",
+        "wikipedia-office-scope:c1d43422c6a95485dbdcabc48a9369ad",
+        "wikipedia-office-scope:854747ff00d93c36c411a90b2abf790f",
+        "wikipedia-office-scope:fa85be85e09d0d21501106e9f477b6d1",
+        "wikipedia-office-scope:681f9eac4400d3b6b87d18c414a6561d",
+        "wikipedia-office-scope:413793ff5ebb8aeee646fbafe6142d38",
+        "wikipedia-office-scope:b6316b5ded06e0fa515f8e1be3199fea",
+        "wikipedia-office-scope:4db48c4e509270ea0d5dffd46b0d4b43",
+        "wikipedia-office-scope:a925e8857e0f078c48afeb10e7c1e2cc"
+      ],
+      "occurrences": 98,
+      "beforeBytes": 3750668,
+      "beforeSha256": "ca92e8ff1c2cbfd0ad582b18a64e8faf8b616c842422146576afb33e67dd637c",
+      "afterBytes": 3751942,
+      "afterSha256": "3eb651d79bcb69327810d4dfdf4af9d90a19045ba6bc99a9154b856c807fd57f"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-66142-81ba33a6-1.json",
+      "objects": [
+        "wikipedia-office-scope:537d053b96841e7079ee2afb63faa1c9",
+        "wikipedia-office-scope:d6ecb3166f75600fe03a001e4c2ea55a",
+        "wikipedia-office-scope:1d11c70970462b6334c8fe2c896e680c",
+        "wikipedia-office-scope:e82e73919986bb8f645091db6c3b2f43",
+        "wikipedia-office-scope:840155e522587cdbe5b956d5bce0fdb9",
+        "wikipedia-office-scope:221fae1b7eb488c56bbc97c812c83450",
+        "wikipedia-office-scope:e970864f65f957d0eea22e3ed74fc127",
+        "wikipedia-office-scope:16aeb32e60cb5655cf4dfba7d15d42f6",
+        "wikipedia-office-scope:ffd1c922f8fa63f54b777ae88fc8aad8",
+        "wikipedia-office-scope:a000c849a73705ed42c3c8411067d784",
+        "wikipedia-office-scope:aa02359f3e26c2af41c83dde88d73b01",
+        "wikipedia-office-scope:c5d657dc09e1ca09cad589f4aae46280",
+        "wikipedia-office-scope:d06fa419935dbed57eee3e56da9fd7b3",
+        "wikipedia-office-scope:882376171419a2ccd6314a6c97aed1a5",
+        "wikipedia-office-scope:0988fe4aceb19bd57c375e0a44366d8c",
+        "wikipedia-office-scope:3620f1ced9ff4c9267e9d63a17777343",
+        "wikipedia-office-scope:d8348f5f3cb81ed8948facbd5cbb1281",
+        "wikipedia-office-scope:149df698fe6ad32c634da1035e463844",
+        "wikipedia-office-scope:c5a7760ca0db13ca1c9b521cc2c79401",
+        "wikipedia-office-scope:7bf1335bcfd549a2cd52de498d7c95c0",
+        "wikipedia-office-scope:11b287243457698f42a7ccb026f848ac",
+        "wikipedia-office-scope:ab76426eb9ea67e353e72fc85aaf0fb8",
+        "wikipedia-office-scope:a920918ff764a47a34fe215a814b84d3",
+        "wikipedia-office-scope:9c8182cbf2a77c473da37176c1b97b07",
+        "wikipedia-office-scope:28e9081a6e5c2f7488ff34866619edc5",
+        "wikipedia-office-scope:411e34f2e1eb13e824a566bb12675933",
+        "wikipedia-office-scope:5f907b342dbba03e7fa02ec56dc4c285",
+        "wikipedia-office-scope:563a7e40465cc6abe5aa5743913cad81",
+        "wikipedia-office-scope:7c66eb5861f461d579b3d0a9780eab80",
+        "wikipedia-office-scope:fb7f5dc75afc7a35e8a31126f67f8fa1",
+        "wikipedia-office-scope:9f83303d978acaeabbc4a96af787db81",
+        "wikipedia-office-scope:d473012b2c2bfc7bd57d3cf6d8f30f91",
+        "wikipedia-office-scope:b5c25753301c231eb592e768fede04d9",
+        "wikipedia-office-scope:301d7aab773557fa8166396bbb2a2116",
+        "wikipedia-office-scope:03c2be8f56e5db26dc08bfaf6af3a6a9",
+        "wikipedia-office-scope:ea7890d2bc5a0489270f3f43c0436550",
+        "wikipedia-office-scope:cf6ae872f406f8140a60d2727ff3ce1a",
+        "wikipedia-office-scope:a67e9262c8716d3882730e47e2012a4a",
+        "wikipedia-office-scope:2cabd10967734a86f4c64ad43de70576",
+        "wikipedia-office-scope:34b470a798b8eed2487b3988b714cd95",
+        "wikipedia-office-scope:8a5a30ed7bc930471cc77abd24e29508",
+        "wikipedia-office-scope:fba0665d5645ec29a8494860ed00aa4e",
+        "wikipedia-office-scope:f1466878e1375dbaf297be14ff4dfc31",
+        "wikipedia-office-scope:bdf42ab1f16ac804a6c5db1eae120407",
+        "wikipedia-office-scope:bb69c11b5fa70aa13b3de776715b2206",
+        "wikipedia-office-scope:8af0a294120a651184cf6022644f0769",
+        "wikipedia-office-scope:0ccd3c488b982d41b686369b95e6cbb5",
+        "wikipedia-office-scope:2c3433b42f1f5831156ce1b4523e0d18",
+        "wikipedia-office-scope:266f138036c6113f83dbdcf3c7f01ced",
+        "wikipedia-office-scope:3ab09cc61e5e7ad593b8901a526c212c",
+        "wikipedia-office-scope:e99705ff8b4c7a6dc39070913ffab1aa",
+        "wikipedia-office-scope:4ee495de485a3cde16c18e26d79a0284",
+        "wikipedia-office-scope:7ecda4cbf9a33e6118473de9b6b59126",
+        "wikipedia-office-scope:9152f467eb0b3add04ab9bff91ec13b1",
+        "wikipedia-office-scope:0483cf641c5b95ac66ca9b3ba55bc7a1",
+        "wikipedia-office-scope:a4d16572feebbb56feedef4331eee566",
+        "wikipedia-office-scope:63d94ef2cf126f4c0098e68bb3db1070",
+        "wikipedia-office-scope:42d45558f1890172215a531370ea5287",
+        "wikipedia-office-scope:36af5b7f911385b31d0325b91e8fa6b5",
+        "wikipedia-office-scope:820920a4e484266299ce3928f526d394",
+        "wikipedia-office-scope:fb2ab8771d851522d9061a135733873a",
+        "wikipedia-office-scope:93a7ddf48938fb51eae09dd2c9f8d5c4",
+        "wikipedia-office-scope:7d6d90374417f2ad0600fbf1750dbe87",
+        "wikipedia-office-scope:a8bb0217919602e9dc5d03be58aecedd"
+      ],
+      "occurrences": 64,
+      "beforeBytes": 8360345,
+      "beforeSha256": "98d99ca2952ddce19daf245f03ed22910f6424de2b066c995e22fa3e35421110",
+      "afterBytes": 8361177,
+      "afterSha256": "46b241e71557c3ab4279ccb6e5028258e31ddb64af7001d429653338a75eb400"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-224374-19049344-1.json",
+      "objects": [
+        "wikipedia-office-scope:9703bd815dacc1bc17d0aa7044b4a482",
+        "wikipedia-office-scope:efd6dec621965a1e16fbe254a24e4ba8",
+        "wikipedia-office-scope:590f9589904c12eef1228b80fba41244",
+        "wikipedia-office-scope:7b2aaac7e5cd239094bd0fddbf6db371",
+        "wikipedia-office-scope:54759d6aeb45b4018bc94cc2f35f5734",
+        "wikipedia-office-scope:16d54a873a341b67846ed7b5a3936bc9",
+        "wikipedia-office-scope:f014e7a89e01725753bc3dd8a61efa59",
+        "wikipedia-office-scope:3a68486e54a5f7bffdacb17338bd595b",
+        "wikipedia-office-scope:8e807824550ba0c85f59c47564267a36"
+      ],
+      "occurrences": 9,
+      "beforeBytes": 2537363,
+      "beforeSha256": "6227b19d3d042f0aa8d72a4824fd4c4ea71d68e1380fd1213a2fca4c74b8a1ad",
+      "afterBytes": 2537480,
+      "afterSha256": "3c0943c812717dd6bdeec15faef0c539062e912e887927667172545a5e39a2be"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-314092-f8bec601-1.json",
+      "objects": [
+        "wikipedia-office-scope:ecd4f2082e259a311e4d5bed1aae4858",
+        "wikipedia-office-scope:28af04f80b87156d0295d1cd19e2abd1"
+      ],
+      "occurrences": 2,
+      "beforeBytes": 1585048,
+      "beforeSha256": "95bc64d6fea06618778613cc3356fb6d54d5866ab3a12120b97bb8c7d6052faa",
+      "afterBytes": 1585074,
+      "afterSha256": "2fa31ef1decaa4448a298d49078ea86099deb60f10f4e02f905964fcea7ee87c"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-10736899-0302ea32-1.json",
+      "objects": [
+        "wikipedia-office-scope:5423cdc85bf1f40aa71da6273e9050ec",
+        "wikipedia-office-scope:7ca130f99091b3754bde3aade6ce064a",
+        "wikipedia-office-scope:abeb54e2105e13fcd3cb071da7ffb255",
+        "wikipedia-office-scope:4eddbfd2a89202560cc8c42f10f5bd83",
+        "wikipedia-office-scope:e65c853f5e96b489300f0ad49766b461",
+        "wikipedia-office-scope:454c83f0ed74a3c8d75393df10e5a549"
+      ],
+      "occurrences": 6,
+      "beforeBytes": 1488661,
+      "beforeSha256": "04a9cec21c3af49e30a596f79b56d567a5213353a1623fad63f680b2251c5dc0",
+      "afterBytes": 1488739,
+      "afterSha256": "7184ee0ac844b61ac1372f67d27c84f2c24d02d699601edd81faa187232c2a53"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-17254923-5808fb07-1.json",
+      "objects": [
+        "wikipedia-office-scope:47b76df05c7e489a5ef2bb86dce43abc"
+      ],
+      "occurrences": 1,
+      "beforeBytes": 828376,
+      "beforeSha256": "bea3fcfe9fb798f5059d5fd3787f6356270c7a22f72907d3d3c8ec77b095a765",
+      "afterBytes": 828389,
+      "afterSha256": "dfe41b4e56e39ee190cb4d32e6a1a383a6be326bf88bf2964b39b82cf97f2895"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-17255213-8ded969e-1.json",
+      "objects": [
+        "wikipedia-office-scope:a37a7ea69b117d0f33a17cafe2c4a305",
+        "wikipedia-office-scope:8365e36aa0d98dc384f54646bc5061b4",
+        "wikipedia-office-scope:718113f73be6af43b38c2e760fb053b2",
+        "wikipedia-office-scope:c1d43422c6a95485dbdcabc48a9369ad",
+        "wikipedia-office-scope:854747ff00d93c36c411a90b2abf790f"
+      ],
+      "occurrences": 5,
+      "beforeBytes": 638493,
+      "beforeSha256": "5934be216b3c1195fdf6b01d893d4b02f089cd13590aabfdb27753c08ba05a4b",
+      "afterBytes": 638558,
+      "afterSha256": "bb457cb169ad73f660cf4455e3367c00ac1f27b566d5d434008e7543b68363a8"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-1420574-d45c68cf-1.json",
+      "objects": [
+        "wikipedia-office-scope:fa85be85e09d0d21501106e9f477b6d1"
+      ],
+      "occurrences": 1,
+      "beforeBytes": 760240,
+      "beforeSha256": "e97aeb5b541bcd508a074be0c82a36371437bb6c9c857cf87c692db8e54a56b8",
+      "afterBytes": 760253,
+      "afterSha256": "cb71517adfd1d4e9b433604f917214842ad0f23a201f545e7e52bd8a87a9f73c"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-47851611-65cfb359-1.json",
+      "objects": [
+        "wikipedia-office-scope:681f9eac4400d3b6b87d18c414a6561d",
+        "wikipedia-office-scope:413793ff5ebb8aeee646fbafe6142d38"
+      ],
+      "occurrences": 2,
+      "beforeBytes": 694047,
+      "beforeSha256": "5916c7e53fbdffef5e74273d7e0bd37d4af8a39dffe4159d87efa03a3aeafb5c",
+      "afterBytes": 694073,
+      "afterSha256": "c04e9adf1f076e7337e30f2d2acdff2d22d4aea2c034c4e40ef77fa8846d7e69"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-530241-d26095ed-1.json",
+      "objects": [
+        "wikipedia-office-scope:b6316b5ded06e0fa515f8e1be3199fea"
+      ],
+      "occurrences": 1,
+      "beforeBytes": 442349,
+      "beforeSha256": "315d515f8301ec60ccf29a85258e2c339f18a5118b2164f868b827484111c74f",
+      "afterBytes": 442362,
+      "afterSha256": "82bf53efe1f75d355edf2bfecfebab8d28f0e042df6fb550453420719944608b"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-516942-96226ef4-1.json",
+      "objects": [
+        "wikipedia-office-scope:4db48c4e509270ea0d5dffd46b0d4b43",
+        "wikipedia-office-scope:a925e8857e0f078c48afeb10e7c1e2cc"
+      ],
+      "occurrences": 2,
+      "beforeBytes": 537968,
+      "beforeSha256": "0cacaa5169076a38f82e5f254aae71c5bb22844f59b3817e76eed4481ad580bc",
+      "afterBytes": 537994,
+      "afterSha256": "58617089b828fc800db049307eaad0379fdb1cd2da25f714af675e21160bb6ce"
+    },
+    {
+      "path": "extensions/activity-context/collection.json",
+      "objects": [
+        "wikipedia-office-scope:a67e9262c8716d3882730e47e2012a4a",
+        "wikipedia-office-scope:2cabd10967734a86f4c64ad43de70576",
+        "wikipedia-office-scope:efd6dec621965a1e16fbe254a24e4ba8",
+        "wikipedia-office-scope:590f9589904c12eef1228b80fba41244",
+        "wikipedia-office-scope:7b2aaac7e5cd239094bd0fddbf6db371"
+      ],
+      "occurrences": 5,
+      "beforeBytes": 3622110,
+      "beforeSha256": "6d05e9c6d5a5e9ddcc0666a495dbe9998741102a72e35991f4dab7ce7425aa94",
+      "afterBytes": 3622175,
+      "afterSha256": "83c5bbff291bea46d8f20c7fd8269c8b5edd61c08bdcf869ae7f33ee750fc06f"
+    }
+  ],
+  "expectedObjectOccurrences": 196,
+  "originalInputClaimEvidenceSemantics": "For each exact object, select original office:held-position assertions whose entity value equals its ID. Hash the ordered array of assertionId/assertionHash/sourceSnapshotId/evidence tuples. Full before/after object and claim evidence is retained in the separate local author-verification artifact; no raw works are introduced.",
+  "originalSourceEvidence": [
+    {
+      "sourceId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "10736899"
+      },
+      "revision": "1379817586",
+      "contentHash": "0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "sourceRecordHash": "0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "url": "https://en.wikipedia.org/wiki/List_of_shoguns",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&action=history",
+      "upstreamSnapshotHash": "d4130bf777cfc6a0fb267c1dc4fe2e4e1bdd645c43f67b787aa0e3953ef0b231",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of shoguns, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:1420574@12511a4f9a10aa42352aa5bcfbff8405d4d8635c748df4a6b9a6f80803df8427",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "1420574"
+      },
+      "revision": "1378653649",
+      "contentHash": "12511a4f9a10aa42352aa5bcfbff8405d4d8635c748df4a6b9a6f80803df8427",
+      "sourceRecordHash": "12511a4f9a10aa42352aa5bcfbff8405d4d8635c748df4a6b9a6f80803df8427",
+      "url": "https://en.wikipedia.org/wiki/List_of_premiers_of_China",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20premiers%20of%20China&oldid=1378653649",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20premiers%20of%20China&action=history",
+      "upstreamSnapshotHash": "e9eb366988aed5e64a0f10ff3070bbd6b0816e44f544affc56df2d3e0e4d3cac",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of premiers of China, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20premiers%20of%20China&oldid=1378653649. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20premiers%20of%20China&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:17254923@e210f2fedf63e1b83f1ff17c3ba8ac23b674629b6e73133b7f44d460a722fd1f",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "17254923"
+      },
+      "revision": "1347854700",
+      "contentHash": "e210f2fedf63e1b83f1ff17c3ba8ac23b674629b6e73133b7f44d460a722fd1f",
+      "sourceRecordHash": "e210f2fedf63e1b83f1ff17c3ba8ac23b674629b6e73133b7f44d460a722fd1f",
+      "url": "https://en.wikipedia.org/wiki/List_of_presidents_of_the_Republic_of_China",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20presidents%20of%20the%20Republic%20of%20China&oldid=1347854700",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20presidents%20of%20the%20Republic%20of%20China&action=history",
+      "upstreamSnapshotHash": "8a01decf4156fe4f8b47c1086591c3fdfa874c152d7e4b9984fcf45cc6b3161b",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of presidents of the Republic of China, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20presidents%20of%20the%20Republic%20of%20China&oldid=1347854700. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20presidents%20of%20the%20Republic%20of%20China&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:17255213@fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "17255213"
+      },
+      "revision": "1366242372",
+      "contentHash": "fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514",
+      "sourceRecordHash": "fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514",
+      "url": "https://en.wikipedia.org/wiki/List_of_state_representatives_of_the_People's_Republic_of_China",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20state%20representatives%20of%20the%20People's%20Republic%20of%20China&oldid=1366242372",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20state%20representatives%20of%20the%20People's%20Republic%20of%20China&action=history",
+      "upstreamSnapshotHash": "ed16f88fce1c1be7e11f000c2f60529e08b160af552c6f2207ff9c130b8d056e",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of state representatives of the People's Republic of China, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20state%20representatives%20of%20the%20People's%20Republic%20of%20China&oldid=1366242372. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20state%20representatives%20of%20the%20People's%20Republic%20of%20China&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "224374"
+      },
+      "revision": "1380772779",
+      "contentHash": "87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef",
+      "sourceRecordHash": "87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef",
+      "url": "https://en.wikipedia.org/wiki/List_of_emperors_of_Japan",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&oldid=1380772779",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&action=history",
+      "upstreamSnapshotHash": "50e6292027437082e278b45116283d27acc30055b510229b57e2bf240973bc8d",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of emperors of Japan, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&oldid=1380772779. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:314092@f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "314092"
+      },
+      "revision": "1381068545",
+      "contentHash": "f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab",
+      "sourceRecordHash": "f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab",
+      "url": "https://en.wikipedia.org/wiki/List_of_prime_ministers_of_Japan",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20prime%20ministers%20of%20Japan&oldid=1381068545",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20prime%20ministers%20of%20Japan&action=history",
+      "upstreamSnapshotHash": "b3dd2a982a4b28fd9b2740ade421d285ee52f2d7b6ada02c587cdabb43b9e900",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of prime ministers of Japan, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20prime%20ministers%20of%20Japan&oldid=1381068545. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20prime%20ministers%20of%20Japan&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:47851611@050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "47851611"
+      },
+      "revision": "1366672363",
+      "contentHash": "050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78",
+      "sourceRecordHash": "050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78",
+      "url": "https://en.wikipedia.org/wiki/List_of_Northern_Yuan_khans",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20Northern%20Yuan%20khans&oldid=1366672363",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20Northern%20Yuan%20khans&action=history",
+      "upstreamSnapshotHash": "e146c87ee0c5f1753253caadaef0ce2b57b37b8268d541549cad55412c26040a",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of Northern Yuan khans, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20Northern%20Yuan%20khans&oldid=1366672363. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20Northern%20Yuan%20khans&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:516942@87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "516942"
+      },
+      "revision": "1372964723",
+      "contentHash": "87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca",
+      "sourceRecordHash": "87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca",
+      "url": "https://en.wikipedia.org/wiki/List_of_emperors_of_the_Qing_dynasty",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Qing%20dynasty&oldid=1372964723",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Qing%20dynasty&action=history",
+      "upstreamSnapshotHash": "6cf647d15880ccb6485e19eb8da3d3e47babbe7a3bae191c926d609eee903068",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of emperors of the Qing dynasty, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Qing%20dynasty&oldid=1372964723. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Qing%20dynasty&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:530241@829732fb3734c8609735e3a680e8fa8d730d091e719b20d4ed7b18fee6529577",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "530241"
+      },
+      "revision": "1381383692",
+      "contentHash": "829732fb3734c8609735e3a680e8fa8d730d091e719b20d4ed7b18fee6529577",
+      "sourceRecordHash": "829732fb3734c8609735e3a680e8fa8d730d091e719b20d4ed7b18fee6529577",
+      "url": "https://en.wikipedia.org/wiki/List_of_emperors_of_the_Ming_dynasty",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Ming%20dynasty&oldid=1381383692",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Ming%20dynasty&action=history",
+      "upstreamSnapshotHash": "127f66d65107d57117afc87834d5dae78bccdf53c00a8223d49373dee0df7387",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of emperors of the Ming dynasty, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Ming%20dynasty&oldid=1381383692. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Ming%20dynasty&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "66142"
+      },
+      "revision": "1381475509",
+      "contentHash": "91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b",
+      "sourceRecordHash": "91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b",
+      "url": "https://en.wikipedia.org/wiki/List_of_Chinese_monarchs",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&oldid=1381475509",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&action=history",
+      "upstreamSnapshotHash": "7b385d221f15e7f5cddc6a6309d8ca8d5da11d8d351965989f8d438bf7af4013",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of Chinese monarchs, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&oldid=1381475509. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    }
+  ],
+  "preservedDeclaredOffices": [
+    {
+      "id": "history:office:japanese-imperial-throne",
+      "objectHash": "99d63078881bc81fe1788c7b5f57975254308767c3c1e63b112f364ba32ee1bb",
+      "types": [
+        "gitworld:office"
+      ]
+    },
+    {
+      "id": "history:office:daijo-daijin-1871",
+      "objectHash": "97a9d3150d6d8ef1812e84ab74f22720d74ccc59dfc222f029559f4dda4322f5",
+      "types": [
+        "gitworld:office"
+      ]
+    },
+    {
+      "id": "history:office:japan-prime-minister",
+      "objectHash": "0e0f0a2d2a3bf60120ba209f69ad1ddc44ec85a5a400992d0d5d0d13d953eb13",
+      "types": [
+        "gitworld:office"
+      ]
+    },
+    {
+      "id": "history:office:kamakura-shogun",
+      "objectHash": "a7784f7d0cda2b17ee503c38a94e1a6cb52c9003b1d1a448ed8a8704b0ce78c0",
+      "types": [
+        "gitworld:office"
+      ]
+    },
+    {
+      "id": "history:office:ashikaga-shogun",
+      "objectHash": "d0d66f75730f7d51746b477b62d259b7cfc6d362761aa3c9276f50b22d2d5dad",
+      "types": [
+        "gitworld:office"
+      ]
+    },
+    {
+      "id": "history:office:tokugawa-shogun",
+      "objectHash": "b06a4e259a8f95c1ed940b96d14f6045e1e747ea31b93e23b4f9f4b9e9eb795a",
+      "types": [
+        "gitworld:office"
+      ]
+    },
+    {
+      "id": "history:office:cpg-chairman",
+      "objectHash": "fbd2303aba8ab170c871369dc1557754be7467bde9c2dd4dae4602efeb96306f",
+      "types": [
+        "gitworld:office"
+      ]
+    },
+    {
+      "id": "history:office:prc-state-chairman-1954",
+      "objectHash": "c068cf5a61c4903bc9fb6c737f95a6cc3c5e9f56ebee4503014c9dc92e3df97b",
+      "types": [
+        "gitworld:office"
+      ]
+    },
+    {
+      "id": "history:office:npc-state-representative",
+      "objectHash": "fd77ef2ec76d8c1d17605b9ba995a279b7646a0019f997a7143d84272bfe31c1",
+      "types": [
+        "gitworld:office"
+      ]
+    },
+    {
+      "id": "history:office:prc-honorary-president",
+      "objectHash": "abf10c2aeeb594f89021d22af0e18320226effb8b124385f5a79cace40925000",
+      "types": [
+        "gitworld:office"
+      ]
+    },
+    {
+      "id": "history:office:prc-president-1982",
+      "objectHash": "28f92418387f833394a101f34473cfc8f1b7d33445131ec1e0ad2ffb6eea9b9a",
+      "types": [
+        "gitworld:office"
+      ]
+    }
+  ],
+  "baseApacheVocabularyChanges": [
+    {
+      "path": "types[id=gitworld:office].labels",
+      "before": {
+        "en": "Office / tenure scope",
+        "zh-CN": "职务／年表范围"
+      },
+      "after": {
+        "en": "Office",
+        "zh-CN": "官职"
+      }
+    },
+    {
+      "path": "values[propertyId=binding:historical-type,value=gitworld:office].labels",
+      "before": {
+        "en": "Office / tenure scope",
+        "zh-CN": "职务／年表范围"
+      },
+      "after": {
+        "en": "Office",
+        "zh-CN": "官职"
+      }
+    }
+  ],
+  "oldPropertySemantics": {
+    "unchanged": true,
+    "rawScopeHolderSubjects": 759,
+    "rawHeldPositionValues": 848,
+    "technicalIds": [
+      "office:holder",
+      "office:held-position",
+      "office:position"
+    ],
+    "interpretation": "On a source-defined tenure scope, the legacy holder/held-position fields describe source-listed readings. Their technical identifiers do not prove an attested office. This classification record does not change any assertion, field identifier, canonical source value or historical interpretation.",
+    "remainingDisplayQuestion": "Office holder is retained as the existing generic property label. A context-sensitive source-listed display, if needed, requires a separate explicit presentation change rather than assertion rewriting."
+  },
+  "preservedContent": {
+    "objectIdsIdentitiesLabelsDescriptionsAliases": true,
+    "assertionsHash": "903915154e1c20389b1439fb9b26029fe653d2252a69ada2b6761c8eacc0e021",
+    "sourceRecordsHash": "2211dd159b51eff734c1eca9b925f9c91f71ee5cf890a5eee5dc1e4c73236953",
+    "allClaimsUnreviewed": true,
+    "originalSourceHashes": [
+      {
+        "id": "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b",
+        "contentHash": "91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+      },
+      {
+        "id": "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef",
+        "contentHash": "87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+      },
+      {
+        "id": "wikipedia-en-facts:314092@f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab",
+        "contentHash": "f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab"
+      },
+      {
+        "id": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+        "contentHash": "0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e"
+      },
+      {
+        "id": "wikipedia-en-facts:17254923@e210f2fedf63e1b83f1ff17c3ba8ac23b674629b6e73133b7f44d460a722fd1f",
+        "contentHash": "e210f2fedf63e1b83f1ff17c3ba8ac23b674629b6e73133b7f44d460a722fd1f"
+      },
+      {
+        "id": "wikipedia-en-facts:17255213@fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514",
+        "contentHash": "fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514"
+      },
+      {
+        "id": "wikipedia-en-facts:1420574@12511a4f9a10aa42352aa5bcfbff8405d4d8635c748df4a6b9a6f80803df8427",
+        "contentHash": "12511a4f9a10aa42352aa5bcfbff8405d4d8635c748df4a6b9a6f80803df8427"
+      },
+      {
+        "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+        "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+      },
+      {
+        "id": "wikipedia-en-facts:47851611@050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78",
+        "contentHash": "050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78"
+      },
+      {
+        "id": "wikipedia-en-facts:530241@829732fb3734c8609735e3a680e8fa8d730d091e719b20d4ed7b18fee6529577",
+        "contentHash": "829732fb3734c8609735e3a680e8fa8d730d091e719b20d4ed7b18fee6529577"
+      },
+      {
+        "id": "wikipedia-en-facts:516942@87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca",
+        "contentHash": "87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca"
+      },
+      {
+        "id": "gitworld-binding:east-asia-source-roles@44d66c1941745121bad78783097a04bb06a364a8f369cd413973f2983d326cd7",
+        "contentHash": "44d66c1941745121bad78783097a04bb06a364a8f369cd413973f2983d326cd7"
+      },
+      {
+        "id": "gitworld-binding:east-asia-published-chronologies@a3e5e5ceb4c2c0019fad103992044875852181ed75cd182a50118d74a68a3655",
+        "contentHash": "a3e5e5ceb4c2c0019fad103992044875852181ed75cd182a50118d74a68a3655"
+      },
+      {
+        "id": "gitworld-content-labels:east-asia-preset-labels@38bfce7bba2c59dbc0e01b6121c47a8cecca175e36749fff0c97ef99deabbd1d",
+        "contentHash": "38bfce7bba2c59dbc0e01b6121c47a8cecca175e36749fff0c97ef99deabbd1d"
+      },
+      {
+        "id": "gitworld-activity-contexts:listed-activity-role-contexts@1eb845592345b3fbe0f5a08c41cee9b15a400a379e0b4ac3d1824063f2a5e597",
+        "contentHash": "1eb845592345b3fbe0f5a08c41cee9b15a400a379e0b4ac3d1824063f2a5e597"
+      },
+      {
+        "id": "wikipedia-qualified-office-facts:10736899@fead897088a3b1a08ae25de4d69103d5a48c59fa29e404377efed3564054dac5",
+        "contentHash": "fead897088a3b1a08ae25de4d69103d5a48c59fa29e404377efed3564054dac5"
+      },
+      {
+        "id": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+        "contentHash": "9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c"
+      },
+      {
+        "id": "gitworld-evidenced-fields:japan-normative-institutions-1947@439354d0bc11ffc2e7074d185ba16ac77204723514cba4302254fed91693c99c",
+        "contentHash": "439354d0bc11ffc2e7074d185ba16ac77204723514cba4302254fed91693c99c"
+      }
+    ],
+    "newHistoricalAssertions": 0,
+    "newKnowledgeSourceRecords": 0,
+    "rawUnknownRightsUnchanged": true,
+    "constitutionalSelectedOutputScopeUnchanged": true
+  },
+  "adoptionBoundary": "This complete seed snapshot includes all duplicate object copies with the classification correction. Do not append a conflicting partial object shard or use a partial replace-object import. Existing user libraries are untouched; any later migration must use ordinary guarded editorial changes and reconcile local edits.",
+  "mapperFollowUp": {
+    "productionChanged": false,
+    "mediawiki": "mapWikipediaOfficeTables generates wikipedia-office-scope IDs from table grouping, then mapOfficeTenureRows assigns office. A future small fix should classify only exact generated source scope identities at the MediaWiki boundary, with a synthetic non-institution source-scope regression.",
+    "generic": "Do not globally change mapOfficeTenureRows/projectOfficeTenures defaults for explicit declared-office DTOs or Wikidata. An explicit future semantic option can distinguish source grouping from declared institutional input.",
+    "newWikipediaProfiles": "The Wikipedia profile outputs use source-tenure-scope. This classification record preserves legacy identities and does not modify that module."
+  },
+  "licensing": {
+    "correctedData": "CC-BY-SA-4.0; preserve existing source/extension attribution.",
+    "baseVocabulary": "Apache-2.0 original GitWorld display labels; exactly two label objects narrowed.",
+    "newTypeVocabularyAndLedger": "CC-BY-SA-4.0 original editorial metadata; bare factual identifiers are not claimed as exclusive works.",
+    "rawWorks": "No new raw content or permission; existing NDL/MEXT raw unknown boundaries remain unchanged."
+  },
+  "acceptanceBoundary": "This classification record does not establish C02 completion, historical validation, native/installer acceptance, public-source gate completion or publication approval."
+}

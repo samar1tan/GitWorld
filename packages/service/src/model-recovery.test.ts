@@ -1,0 +1,64 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
+import { mkdtemp, rm } from 'node:fs/promises';
+import path from 'node:path';
+import { tmpdir } from 'node:os';
+import { fileURLToPath } from 'node:url';
+import { DatabaseSync } from 'node:sqlite';
+import { createEditorialRepository } from '../../storage/src/editorial.ts';
+import { createSqliteRepository } from '../../storage/src/index.ts';
+import { validPackage } from '../../storage/src/test-fixtures.ts';
+import { createModelStore, modelPath } from './model-store.ts';
+import type { EditorialJson } from '../../contracts/src/editorial-types.ts';
+import type { ServiceResult } from '../../contracts/src/index.ts';
+
+const root = fileURLToPath(new URL('../../../', import.meta.url)), binary = process.env.GITWORLD_TEST_GIT ?? path.join(root, '.local/bundled-git/runtime/bin/git');
+const native = { skip: !existsSync(binary) && 'Build the pinned bundled Git runtime.' };
+const unwrap = <T>(value: ServiceResult<T>) => { assert.ok(value.ok, JSON.stringify(value)); return value.value; };
+const review = { reviewer: 'Test', reviewedAt: '2026-10-25T00:00:00Z', evidenceReviewed: true, rightsReviewed: true, note: 'Synthetic model' };
+
+for (const interruption of ['after-prepare','after-write','after-receipt'] as const) test(`model publication recovers ${interruption} without a second HEAD or destructive replay`, native, async t => {
+  const directory = await mkdtemp(path.join(tmpdir(), 'gitworld-model-recovery-')), data = validPackage(), file = modelPath(data.dataset.id);
+  const sqlite = createSqliteRepository({ dataDirectory: directory }); unwrap(await sqlite.initialize());
+  const editorial = await createEditorialRepository({ dataDirectory: directory, gitExecutable: binary, gitExecPath: path.resolve(binary, '../../libexec/git-core') });
+  const initial = await editorial.initialize({ [file]: data as unknown as EditorialJson });
+  let fault = true, store = createModelStore(editorial, { dataDirectory: directory, getDraft: async id => unwrap(await sqlite.getDraft(id)), onFault: point => { if (fault && point === interruption) { fault = false; throw new Error('Lost publication response'); } } });
+  t.after(async () => { await store.close(); await editorial.close(); await sqlite.close(); await rm(directory, { recursive: true, force: true }); });
+  data.revision.id = data.history.id = 'authored-B'; data.history.commits[1].title.en = 'B';
+  const draft = unwrap(await sqlite.createDraft({ package: data, baseRevision: null, operationId: 'create-B' })), original = await store.read(data.dataset.id, 'working');
+  const input = { draftId: draft.id, expectedVersion: draft.version, expectedHead: initial.head, expectedModelHash: original.contentHash, review, operationId: 'apply-B' };
+  await assert.rejects(store.publish(input), /Lost publication response/);
+  await store.close(); store = createModelStore(editorial, { dataDirectory: directory, getDraft: async id => unwrap(await sqlite.getDraft(id)) });
+  const recovered = await store.publish(input); assert.equal(recovered.working.head, initial.head); assert.equal((await editorial.status()).head, initial.head);
+  assert.equal((await store.read(data.dataset.id, 'working')).package.history.commits[1].title.en, 'B');
+  data.history.commits[1].title.en = 'C'; await editorial.write([{ path: file, value: data as unknown as EditorialJson }]);
+  assert.deepEqual(await store.publish(input), recovered); assert.equal((await store.read(data.dataset.id, 'working')).package.history.commits[1].title.en, 'C');
+  await assert.rejects(store.publish({ ...input, review: { ...review, note: 'Different input' } }), { message: 'IDEMPOTENCY_CONFLICT' });
+  const metadata = new DatabaseSync(path.join(directory, 'model-operations.sqlite'));
+  metadata.prepare('UPDATE model_writes SET result_json=? WHERE id=?').run(JSON.stringify({ ...recovered, working: { ...recovered.working, path: 'research/forged.json' } }), input.operationId); metadata.close();
+  await assert.rejects(store.publish(input), { message: 'IO_ERROR' }); assert.equal((await store.read(data.dataset.id, 'working')).package.history.commits[1].title.en, 'C');
+  assert.equal((await store.read(data.dataset.id, initial.head)).package.history.commits[1].title.en, 'new');
+});
+
+test('a pending model write cannot overwrite a later edit; invalid versions, hashes, HEAD and packages preserve input', native, async t => {
+  const directory = await mkdtemp(path.join(tmpdir(), 'gitworld-model-guards-')), data = validPackage(), file = modelPath(data.dataset.id);
+  const sqlite = createSqliteRepository({ dataDirectory: directory }); unwrap(await sqlite.initialize());
+  const editorial = await createEditorialRepository({ dataDirectory: directory, gitExecutable: binary, gitExecPath: path.resolve(binary, '../../libexec/git-core') });
+  const initial = await editorial.initialize({ [file]: data as unknown as EditorialJson });
+  let interrupt = true; const store = createModelStore(editorial, { dataDirectory: directory, getDraft: async id => unwrap(await sqlite.getDraft(id)), onFault: point => { if (interrupt && point === 'after-write') { interrupt = false; throw new Error('Before receipt'); } } });
+  t.after(async () => { await store.close(); await editorial.close(); await sqlite.close(); await rm(directory, { recursive: true, force: true }); });
+  const previous = await store.read(data.dataset.id, 'working'); data.revision.id = data.history.id = 'B'; data.history.commits[1].title.en = 'B';
+  const draft = unwrap(await sqlite.createDraft({ package: data, baseRevision: null, operationId: 'draft' })), input = { draftId: draft.id, expectedVersion: draft.version, expectedHead: initial.head, expectedModelHash: previous.contentHash, review, operationId: 'pending' };
+  await assert.rejects(store.publish(input), /Before receipt/); data.history.commits[1].title.en = 'Later C'; await editorial.write([{ path: file, value: data as unknown as EditorialJson }]);
+  await assert.rejects(store.publish(input), { message: 'CONTENT_CHANGED' });
+  for (const [patch, code] of [[{ expectedVersion: 9 }, 'CONFLICT'], [{ expectedModelHash: null }, 'CONTENT_CHANGED'], [{ expectedHead: '0'.repeat(40) }, 'HEAD_CHANGED'], [{ review: { ...review, evidenceReviewed: false } }, 'REVIEW_REQUIRED']] as const) await assert.rejects(store.publish({ ...input, ...patch, operationId: `guard-${code}` }), { message: code });
+  const invalid = structuredClone(data); invalid.history.commits[1].parents = ['unknown'];
+  const bad = unwrap(await sqlite.createDraft({ package: invalid, baseRevision: null, operationId: 'invalid-draft' }));
+  await assert.rejects(store.publish({ ...input, draftId: bad.id, expectedModelHash: (await store.read(data.dataset.id, 'working')).contentHash, operationId: 'bad-package' }), { message: 'VALIDATION_FAILED' });
+  assert.equal((await store.read(data.dataset.id, 'working')).package.history.commits[1].title.en, 'Later C');
+  const metadata = new DatabaseSync(path.join(directory, 'model-operations.sqlite')), pending = JSON.parse(String(metadata.prepare('SELECT prepared_json FROM model_writes WHERE id=?').get(input.operationId)!.prepared_json));
+  pending.result.working.path = 'research/forged.json'; metadata.prepare('UPDATE model_writes SET prepared_json=? WHERE id=?').run(JSON.stringify(pending), input.operationId); metadata.close();
+  await assert.rejects(store.publish(input), { message: 'IO_ERROR' }); assert.equal(await editorial.read('research/forged.json'), null);
+  assert.equal((await editorial.status()).head, initial.head); assert.equal((await editorial.status()).staged.length, 0);
+});

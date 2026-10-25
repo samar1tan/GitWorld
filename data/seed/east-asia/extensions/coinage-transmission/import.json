@@ -1,0 +1,2580 @@
+{
+  "schemaVersion": 1,
+  "kind": "gitworld-knowledge-import",
+  "collection": {
+    "schemaVersion": 1,
+    "objects": [
+      {
+        "id": "history:polity:tang",
+        "identities": [
+          {
+            "provider": "gitworld-declared-historical-subject",
+            "externalId": "history:polity:tang"
+          }
+        ],
+        "labels": {
+          "en": "Tang dynasty",
+          "zh-CN": "唐"
+        },
+        "descriptions": {},
+        "aliases": [],
+        "types": [
+          "gitworld:polity"
+        ]
+      },
+      {
+        "id": "history:event:wado-kaichin-issue-708",
+        "identities": [
+          {
+            "provider": "gitworld-declared-evidenced-subject",
+            "externalId": "history:event:wado-kaichin-issue-708"
+          }
+        ],
+        "types": [
+          "gitworld:coinage-issue",
+          "gitworld:documented-transmission"
+        ],
+        "labels": {
+          "en": "Wado Kaichin issue in 708",
+          "zh-CN": "708年发行和同开珎"
+        },
+        "descriptions": {
+          "en": "The museum explicitly connects the 708 issue to a Tang coin model. A specific carrier is not identified.",
+          "zh-CN": "博物馆明确记载708年铸币采用唐钱范式，未指明具体传播者。"
+        },
+        "aliases": []
+      },
+      {
+        "id": "history:coin-type:wado-kaichin",
+        "identities": [
+          {
+            "provider": "gitworld-declared-evidenced-subject",
+            "externalId": "history:coin-type:wado-kaichin"
+          }
+        ],
+        "types": [
+          "gitworld:coin-type"
+        ],
+        "labels": {
+          "en": "Wado Kaichin",
+          "zh-CN": "和同开珎"
+        },
+        "descriptions": {
+          "en": "The coin type issued in 708 in the museum account. Earlier Japanese mintage evidence remains separate.",
+          "zh-CN": "博物馆记载于708年发行的币型；日本更早铸币证据另行保留。"
+        },
+        "aliases": []
+      },
+      {
+        "id": "history:coin-type:kai-yuan-tong-bao",
+        "identities": [
+          {
+            "provider": "gitworld-declared-evidenced-subject",
+            "externalId": "history:coin-type:kai-yuan-tong-bao"
+          }
+        ],
+        "types": [
+          "gitworld:coin-type"
+        ],
+        "labels": {
+          "en": "Kai Yuan Tong Bao",
+          "zh-CN": "开元通宝"
+        },
+        "descriptions": {
+          "en": "The Tang coin identified by the museum as the model for the 708 issue; its own first-issue date is not modeled here.",
+          "zh-CN": "博物馆所指708年铸币采用的唐钱范式；此处未建模开元通宝的始铸年代。"
+        },
+        "aliases": []
+      },
+      {
+        "id": "history:authority:ritsuryo-coin-issuer-708",
+        "identities": [
+          {
+            "provider": "gitworld-declared-evidenced-subject",
+            "externalId": "history:authority:ritsuryo-coin-issuer-708"
+          }
+        ],
+        "types": [
+          "gitworld:source-described-authority"
+        ],
+        "labels": {
+          "en": "Japanese ritsuryō government: 708 coin issue",
+          "zh-CN": "日本律令政府：708年铸币"
+        },
+        "descriptions": {
+          "en": "The issuing government described in the museum account. Its institutional continuity and named officeholder are not established by this projection.",
+          "zh-CN": "博物馆该段记载的发行机构；本投影未确认其制度延续或具体任职者。"
+        },
+        "aliases": []
+      },
+      {
+        "id": "history:coin-type:fuhon-sen",
+        "identities": [
+          {
+            "provider": "gitworld-declared-evidenced-subject",
+            "externalId": "history:coin-type:fuhon-sen"
+          }
+        ],
+        "types": [
+          "gitworld:coin-type"
+        ],
+        "labels": {
+          "en": "Fuhon-sen",
+          "zh-CN": "富本钱"
+        },
+        "descriptions": {
+          "en": "Archaeological evidence reported by the museum places minting in the latter half of the seventh century. Its issuer is not identified here.",
+          "zh-CN": "博物馆记载的考古证据将铸造置于7世纪后半叶；此处发行者未明。"
+        },
+        "aliases": []
+      }
+    ],
+    "assertions": [
+      {
+        "id": "evidenced-field:a8ab990a5c876da2aac238f0e94de6610e3f5a18",
+        "subjectId": "history:event:wado-kaichin-issue-708",
+        "propertyId": "coinage:issued-type",
+        "value": {
+          "kind": "entity",
+          "objectId": "history:coin-type:wado-kaichin"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "transmission:claim-scope",
+            "value": {
+              "kind": "text",
+              "value": "coin-model-and-issue-not-specific-carrier"
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:issue-type"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:708-issue-and-model"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[0];$.html;p[document-index=42]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 708,
+            "latestYear": 708,
+            "precision": "year",
+            "calendar": "source-calendar-unspecified",
+            "raw": "708"
+          }
+        }
+      },
+      {
+        "id": "evidenced-field:186c952bf2bd9daf86e42692c3a6bfcdbe89cfe0",
+        "subjectId": "history:event:wado-kaichin-issue-708",
+        "propertyId": "coinage:issuer",
+        "value": {
+          "kind": "entity",
+          "objectId": "history:authority:ritsuryo-coin-issuer-708"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "transmission:claim-scope",
+            "value": {
+              "kind": "text",
+              "value": "coin-model-and-issue-not-specific-carrier"
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:issue-issuer"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:708-issue-and-model"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[0];$.html;p[document-index=42]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 708,
+            "latestYear": 708,
+            "precision": "year",
+            "calendar": "source-calendar-unspecified",
+            "raw": "708"
+          }
+        }
+      },
+      {
+        "id": "evidenced-field:8f301a337d1b7a0ee14fffe1f1d00f224cf90033",
+        "subjectId": "history:event:wado-kaichin-issue-708",
+        "propertyId": "transmission:source-model",
+        "value": {
+          "kind": "entity",
+          "objectId": "history:coin-type:kai-yuan-tong-bao"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "transmission:claim-scope",
+            "value": {
+              "kind": "text",
+              "value": "coin-model-and-issue-not-specific-carrier"
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:issue-model"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:708-issue-and-model"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[0];$.html;p[document-index=42]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 708,
+            "latestYear": 708,
+            "precision": "year",
+            "calendar": "source-calendar-unspecified",
+            "raw": "708"
+          }
+        }
+      },
+      {
+        "id": "evidenced-field:ed2e2ccff18496f0c3fa6418031252e7fadd1f42",
+        "subjectId": "history:event:wado-kaichin-issue-708",
+        "propertyId": "transmission:recipient",
+        "value": {
+          "kind": "entity",
+          "objectId": "history:authority:ritsuryo-coin-issuer-708"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "transmission:claim-scope",
+            "value": {
+              "kind": "text",
+              "value": "coin-model-and-issue-not-specific-carrier"
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:issue-recipient"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:708-issue-and-model"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[0];$.html;p[document-index=42]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 708,
+            "latestYear": 708,
+            "precision": "year",
+            "calendar": "source-calendar-unspecified",
+            "raw": "708"
+          }
+        }
+      },
+      {
+        "id": "evidenced-field:682186c3109a89fccbe62ebeaa9bd30b46c5614e",
+        "subjectId": "history:event:wado-kaichin-issue-708",
+        "propertyId": "transmission:documented-change",
+        "value": {
+          "kind": "text",
+          "value": "modeled-coin-issue"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "transmission:claim-scope",
+            "value": {
+              "kind": "text",
+              "value": "coin-model-and-issue-not-specific-carrier"
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:issue-change"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:708-issue-and-model"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[0];$.html;p[document-index=42]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 708,
+            "latestYear": 708,
+            "precision": "year",
+            "calendar": "source-calendar-unspecified",
+            "raw": "708"
+          }
+        }
+      },
+      {
+        "id": "evidenced-field:99b36d78eca147c2e6fece2ab148831008d2af37",
+        "subjectId": "history:event:wado-kaichin-issue-708",
+        "propertyId": "transmission:model-context-polity",
+        "value": {
+          "kind": "entity",
+          "objectId": "history:polity:tang"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "transmission:claim-scope",
+            "value": {
+              "kind": "text",
+              "value": "coin-model-and-issue-not-specific-carrier"
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:model-context"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:708-issue-and-model"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[0];$.html;p[document-index=42]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 708,
+            "latestYear": 708,
+            "precision": "year",
+            "calendar": "source-calendar-unspecified",
+            "raw": "708"
+          }
+        }
+      },
+      {
+        "id": "evidenced-field:43dfd70c0bc3b2ab6b0fdba3c426554e8be35a6e",
+        "subjectId": "history:authority:ritsuryo-coin-issuer-708",
+        "propertyId": "coinage:issued-type",
+        "value": {
+          "kind": "entity",
+          "objectId": "history:coin-type:wado-kaichin"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "transmission:claim-scope",
+            "value": {
+              "kind": "text",
+              "value": "coin-model-and-issue-not-specific-carrier"
+            }
+          },
+          {
+            "propertyId": "source:identity-scope",
+            "value": {
+              "kind": "text",
+              "value": "source-described-issuer-at-708"
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:recipient-type"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:708-issue-and-model"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[0];$.html;p[document-index=42]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 708,
+            "latestYear": 708,
+            "precision": "year",
+            "calendar": "source-calendar-unspecified",
+            "raw": "708"
+          }
+        }
+      },
+      {
+        "id": "evidenced-field:5b384d4f599ec61385e1b848056153e56db15e7d",
+        "subjectId": "history:coin-type:wado-kaichin",
+        "propertyId": "coinage:issuer",
+        "value": {
+          "kind": "entity",
+          "objectId": "history:authority:ritsuryo-coin-issuer-708"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "transmission:claim-scope",
+            "value": {
+              "kind": "text",
+              "value": "coin-model-and-issue-not-specific-carrier"
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:coin-issuer"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:708-issue-and-model"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[0];$.html;p[document-index=42]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 708,
+            "latestYear": 708,
+            "precision": "year",
+            "calendar": "source-calendar-unspecified",
+            "raw": "708"
+          }
+        }
+      },
+      {
+        "id": "evidenced-field:7945142dd0d3abfc85003b6ecaabf9324d382214",
+        "subjectId": "history:coin-type:wado-kaichin",
+        "propertyId": "transmission:source-model",
+        "value": {
+          "kind": "entity",
+          "objectId": "history:coin-type:kai-yuan-tong-bao"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "transmission:claim-scope",
+            "value": {
+              "kind": "text",
+              "value": "coin-model-and-issue-not-specific-carrier"
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:coin-model"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:708-issue-and-model"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[0];$.html;p[document-index=42]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 708,
+            "latestYear": 708,
+            "precision": "year",
+            "calendar": "source-calendar-unspecified",
+            "raw": "708"
+          }
+        }
+      },
+      {
+        "id": "evidenced-field:03aca6f117c35d63f4cd33c0dde99f6e73c1e2b2",
+        "subjectId": "history:authority:ritsuryo-coin-issuer-708",
+        "propertyId": "relation:transmission-event",
+        "value": {
+          "kind": "entity",
+          "objectId": "history:event:wado-kaichin-issue-708"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "transmission:claim-scope",
+            "value": {
+              "kind": "text",
+              "value": "coin-model-and-issue-not-specific-carrier"
+            }
+          },
+          {
+            "propertyId": "transmission:role",
+            "value": {
+              "kind": "text",
+              "value": "recipient"
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:recipient-link"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:708-issue-and-model"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[0];$.html;p[document-index=42]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 708,
+            "latestYear": 708,
+            "precision": "year",
+            "calendar": "source-calendar-unspecified",
+            "raw": "708"
+          }
+        }
+      },
+      {
+        "id": "evidenced-field:8476b75cdd07ecd05713191fadb8ef566ced9b19",
+        "subjectId": "history:coin-type:wado-kaichin",
+        "propertyId": "relation:transmission-event",
+        "value": {
+          "kind": "entity",
+          "objectId": "history:event:wado-kaichin-issue-708"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "transmission:claim-scope",
+            "value": {
+              "kind": "text",
+              "value": "coin-model-and-issue-not-specific-carrier"
+            }
+          },
+          {
+            "propertyId": "transmission:role",
+            "value": {
+              "kind": "text",
+              "value": "produced-type"
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:produced-type-link"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:708-issue-and-model"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[0];$.html;p[document-index=42]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 708,
+            "latestYear": 708,
+            "precision": "year",
+            "calendar": "source-calendar-unspecified",
+            "raw": "708"
+          }
+        }
+      },
+      {
+        "id": "evidenced-field:e9d597680364c838d25165cd802245f45eaeff4e",
+        "subjectId": "history:coin-type:kai-yuan-tong-bao",
+        "propertyId": "relation:transmission-event",
+        "value": {
+          "kind": "entity",
+          "objectId": "history:event:wado-kaichin-issue-708"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "transmission:claim-scope",
+            "value": {
+              "kind": "text",
+              "value": "coin-model-and-issue-not-specific-carrier"
+            }
+          },
+          {
+            "propertyId": "transmission:role",
+            "value": {
+              "kind": "text",
+              "value": "model"
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:model-link"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:708-issue-and-model"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[0];$.html;p[document-index=42]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 708,
+            "latestYear": 708,
+            "precision": "year",
+            "calendar": "source-calendar-unspecified",
+            "raw": "708"
+          }
+        }
+      },
+      {
+        "id": "evidenced-field:f3eaf20ac018ad949865b78a68dfcdfdd9098787",
+        "subjectId": "history:polity:tang",
+        "propertyId": "relation:transmission-event",
+        "value": {
+          "kind": "entity",
+          "objectId": "history:event:wado-kaichin-issue-708"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "transmission:claim-scope",
+            "value": {
+              "kind": "text",
+              "value": "coin-model-and-issue-not-specific-carrier"
+            }
+          },
+          {
+            "propertyId": "transmission:role",
+            "value": {
+              "kind": "text",
+              "value": "model-context"
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:model-context-link"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:708-issue-and-model"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[0];$.html;p[document-index=42]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 708,
+            "latestYear": 708,
+            "precision": "year",
+            "calendar": "source-calendar-unspecified",
+            "raw": "708"
+          }
+        }
+      },
+      {
+        "id": "evidenced-field:3748f892f795cc1d4bacd89c06b71925818090d3",
+        "subjectId": "history:coin-type:fuhon-sen",
+        "propertyId": "coinage:production-attestation",
+        "value": {
+          "kind": "text",
+          "value": "archaeologically-attested-mintage"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "evidence:discovery-year",
+            "value": {
+              "kind": "time",
+              "value": {
+                "earliestYear": 1998,
+                "latestYear": 1998,
+                "precision": "year",
+                "calendar": "source-calendar-unspecified",
+                "raw": "1998"
+              }
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:earlier-production"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:earlier-mintage"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[1];$.html;p[document-index=36]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 651,
+            "latestYear": 700,
+            "precision": "interval",
+            "calendar": "source-calendar-unspecified",
+            "raw": "latter half of the seventh century"
+          },
+          "certainty": "possible"
+        }
+      },
+      {
+        "id": "evidenced-field:2b7e3fdfd7865dd54a987693eddd1d32985adb41",
+        "subjectId": "history:event:wado-kaichin-issue-708",
+        "propertyId": "coinage:earlier-mintage-evidence",
+        "value": {
+          "kind": "entity",
+          "objectId": "history:coin-type:fuhon-sen"
+        },
+        "qualifiers": [
+          {
+            "propertyId": "transmission:claim-scope",
+            "value": {
+              "kind": "text",
+              "value": "coin-model-and-issue-not-specific-carrier"
+            }
+          },
+          {
+            "propertyId": "projection:rule-id",
+            "value": {
+              "kind": "text",
+              "value": "wado-708-evidenced-model-and-recipient-change@1-local-evidenced-candidate:earlier-evidence-link"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:708-issue-and-model"
+            }
+          },
+          {
+            "propertyId": "projection:source-fact",
+            "value": {
+              "kind": "text",
+              "value": "boj-ancient-currency:earlier-mintage"
+            }
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[0];$.html;p[document-index=42]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          },
+          {
+            "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+            "locator": "$.facts[1];$.html;p[document-index=36]",
+            "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          }
+        ],
+        "sourceSnapshotId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "review": "unreviewed",
+        "validTime": {
+          "point": {
+            "earliestYear": 708,
+            "latestYear": 708,
+            "precision": "year",
+            "calendar": "source-calendar-unspecified",
+            "raw": "708"
+          }
+        }
+      }
+    ],
+    "sources": [
+      {
+        "id": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "identity": {
+          "provider": "gitworld-evidenced-fields",
+          "externalId": "wado-708-evidenced-model-and-recipient-change"
+        },
+        "revision": "1-local-evidenced-candidate",
+        "contentHash": "98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "retrievedAt": "2026-10-25T01:38:16.974Z",
+        "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/historical-transformations-prd.md",
+        "adapterVersion": "evidenced-published-fields-v2",
+        "rights": {
+          "licenseId": "CC-BY-SA-4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "redistribution": "allowed",
+          "attribution": "Selected factual references: Currency Museum, Bank of Japan, Historical events and currencies in use: Ancient Times, https://www.imes.boj.or.jp/cm/english/history/content/index.html, retrieved 25 October 2026, pinned ETag and source hash in this record. GitWorld independently structured these two factual references and authored the typed interpretation and English/Simplified Chinese display under CC BY-SA 4.0. That license covers GitWorld original contributions, not exclusive ownership of bare facts or the museum text, images, HTML, translations, compilation, trademarks or endorsement. The acquired work and ordinary normalization remain unknown for redistribution."
+        },
+        "record": {
+          "schemaVersion": 1,
+          "mappingVersion": "evidenced-published-fields-v2",
+          "plan": {
+            "schemaVersion": 1,
+            "id": "wado-708-evidenced-model-and-recipient-change",
+            "revision": "1-local-evidenced-candidate",
+            "preparedAt": "2026-10-25T01:38:16.974Z",
+            "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/historical-transformations-prd.md",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "redistribution": "unknown",
+              "attribution": "GitWorld independently structured the identified 708 issue/model and earlier-mintage facts from the Bank of Japan Currency Museum and authored bilingual interpretation/display metadata. The acquired museum work remains unknown; no museum paragraph, anchor label, image or HTML is included. This pending selected-output candidate is not a redistribution approval or museum endorsement."
+            },
+            "profiles": [
+              {
+                "id": "boj-ancient-currency",
+                "identity": {
+                  "provider": "official-document-html",
+                  "externalId": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+                },
+                "revision": "\"23f89159-8c67-5e79516aaf800\"",
+                "contentHash": "c55e8e02371a6617b4761a7bab910f7e684ca597c143f578f2cfa6c1f78b9f30",
+                "citation": {
+                  "title": "Historical events and currencies in use: Ancient Times",
+                  "language": "en",
+                  "creator": "Currency Museum, Bank of Japan",
+                  "rightsEvidence": [
+                    "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+                  ],
+                  "rightsNote": "The acquired museum work remains unknown. Projection retains selected fact locators/hashes, URLs and original bilingual interpretation, excluding the paragraph text, anchor labels, images and raw HTML. Selected-output rights require independent review; text omission alone grants no permission."
+                },
+                "facts": [
+                  {
+                    "id": "708-issue-and-model",
+                    "selector": {
+                      "kind": "element",
+                      "tag": "p",
+                      "contains": "minted the Wado Kaichin coin in 708"
+                    },
+                    "textHash": "bee17eea6f2b0b85e1cd176db6d38bc2e4ee53b363bd89e3b0820d7f0ae606f7"
+                  },
+                  {
+                    "id": "earlier-mintage",
+                    "selector": {
+                      "kind": "element",
+                      "tag": "p",
+                      "contains": "archaeological survey conducted at the Asukaike Ruins in 1998"
+                    },
+                    "textHash": "299ebe5f9e2a62188efb179b05e28e320ba2ce7b2c313c123156aa4ce0f36644"
+                  }
+                ]
+              }
+            ],
+            "objects": [
+              {
+                "id": "history:event:wado-kaichin-issue-708",
+                "identities": [
+                  {
+                    "provider": "gitworld-declared-evidenced-subject",
+                    "externalId": "history:event:wado-kaichin-issue-708"
+                  }
+                ],
+                "types": [
+                  "gitworld:coinage-issue",
+                  "gitworld:documented-transmission"
+                ],
+                "labels": {
+                  "en": "Wado Kaichin issue in 708",
+                  "zh-CN": "708年发行和同开珎"
+                },
+                "descriptions": {
+                  "en": "The museum explicitly connects the 708 issue to a Tang coin model. A specific carrier is not identified.",
+                  "zh-CN": "博物馆明确记载708年铸币采用唐钱范式，未指明具体传播者。"
+                },
+                "aliases": []
+              },
+              {
+                "id": "history:coin-type:wado-kaichin",
+                "identities": [
+                  {
+                    "provider": "gitworld-declared-evidenced-subject",
+                    "externalId": "history:coin-type:wado-kaichin"
+                  }
+                ],
+                "types": [
+                  "gitworld:coin-type"
+                ],
+                "labels": {
+                  "en": "Wado Kaichin",
+                  "zh-CN": "和同开珎"
+                },
+                "descriptions": {
+                  "en": "The coin type issued in 708 in the museum account. Earlier Japanese mintage evidence remains separate.",
+                  "zh-CN": "博物馆记载于708年发行的币型；日本更早铸币证据另行保留。"
+                },
+                "aliases": []
+              },
+              {
+                "id": "history:coin-type:kai-yuan-tong-bao",
+                "identities": [
+                  {
+                    "provider": "gitworld-declared-evidenced-subject",
+                    "externalId": "history:coin-type:kai-yuan-tong-bao"
+                  }
+                ],
+                "types": [
+                  "gitworld:coin-type"
+                ],
+                "labels": {
+                  "en": "Kai Yuan Tong Bao",
+                  "zh-CN": "开元通宝"
+                },
+                "descriptions": {
+                  "en": "The Tang coin identified by the museum as the model for the 708 issue; its own first-issue date is not modeled here.",
+                  "zh-CN": "博物馆所指708年铸币采用的唐钱范式；此处未建模开元通宝的始铸年代。"
+                },
+                "aliases": []
+              },
+              {
+                "id": "history:authority:ritsuryo-coin-issuer-708",
+                "identities": [
+                  {
+                    "provider": "gitworld-declared-evidenced-subject",
+                    "externalId": "history:authority:ritsuryo-coin-issuer-708"
+                  }
+                ],
+                "types": [
+                  "gitworld:source-described-authority"
+                ],
+                "labels": {
+                  "en": "Japanese ritsuryō government: 708 coin issue",
+                  "zh-CN": "日本律令政府：708年铸币"
+                },
+                "descriptions": {
+                  "en": "The issuing government described in the museum account. Its institutional continuity and named officeholder are not established by this projection.",
+                  "zh-CN": "博物馆该段记载的发行机构；本投影未确认其制度延续或具体任职者。"
+                },
+                "aliases": []
+              },
+              {
+                "id": "history:coin-type:fuhon-sen",
+                "identities": [
+                  {
+                    "provider": "gitworld-declared-evidenced-subject",
+                    "externalId": "history:coin-type:fuhon-sen"
+                  }
+                ],
+                "types": [
+                  "gitworld:coin-type"
+                ],
+                "labels": {
+                  "en": "Fuhon-sen",
+                  "zh-CN": "富本钱"
+                },
+                "descriptions": {
+                  "en": "Archaeological evidence reported by the museum places minting in the latter half of the seventh century. Its issuer is not identified here.",
+                  "zh-CN": "博物馆记载的考古证据将铸造置于7世纪后半叶；此处发行者未明。"
+                },
+                "aliases": []
+              }
+            ],
+            "statements": [
+              {
+                "id": "issue-type",
+                "subjectId": "history:event:wado-kaichin-issue-708",
+                "propertyId": "coinage:issued-type",
+                "value": {
+                  "kind": "entity",
+                  "objectId": "history:coin-type:wado-kaichin"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 708,
+                    "latestYear": 708,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "708"
+                  }
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "interpretation": {
+                  "en": "The museum explicitly states the 708 issue, its issuing government and Tang coin model. Keep this issue observation separate from earlier coinage, unidentified carriers and the recipient’s unsupported prior state.",
+                  "zh-CN": "博物馆明确记载708年发行、发行机构与唐钱范式；将这条发行观察与更早铸币、未知传播者及接收方未经证实的此前状态分开。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "transmission:claim-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "coin-model-and-issue-not-specific-carrier"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "issue-issuer",
+                "subjectId": "history:event:wado-kaichin-issue-708",
+                "propertyId": "coinage:issuer",
+                "value": {
+                  "kind": "entity",
+                  "objectId": "history:authority:ritsuryo-coin-issuer-708"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 708,
+                    "latestYear": 708,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "708"
+                  }
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "interpretation": {
+                  "en": "The museum explicitly states the 708 issue, its issuing government and Tang coin model. Keep this issue observation separate from earlier coinage, unidentified carriers and the recipient’s unsupported prior state.",
+                  "zh-CN": "博物馆明确记载708年发行、发行机构与唐钱范式；将这条发行观察与更早铸币、未知传播者及接收方未经证实的此前状态分开。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "transmission:claim-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "coin-model-and-issue-not-specific-carrier"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "issue-model",
+                "subjectId": "history:event:wado-kaichin-issue-708",
+                "propertyId": "transmission:source-model",
+                "value": {
+                  "kind": "entity",
+                  "objectId": "history:coin-type:kai-yuan-tong-bao"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 708,
+                    "latestYear": 708,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "708"
+                  }
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "interpretation": {
+                  "en": "The museum explicitly states the 708 issue, its issuing government and Tang coin model. Keep this issue observation separate from earlier coinage, unidentified carriers and the recipient’s unsupported prior state.",
+                  "zh-CN": "博物馆明确记载708年发行、发行机构与唐钱范式；将这条发行观察与更早铸币、未知传播者及接收方未经证实的此前状态分开。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "transmission:claim-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "coin-model-and-issue-not-specific-carrier"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "issue-recipient",
+                "subjectId": "history:event:wado-kaichin-issue-708",
+                "propertyId": "transmission:recipient",
+                "value": {
+                  "kind": "entity",
+                  "objectId": "history:authority:ritsuryo-coin-issuer-708"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 708,
+                    "latestYear": 708,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "708"
+                  }
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "interpretation": {
+                  "en": "The museum explicitly states the 708 issue, its issuing government and Tang coin model. Keep this issue observation separate from earlier coinage, unidentified carriers and the recipient’s unsupported prior state.",
+                  "zh-CN": "博物馆明确记载708年发行、发行机构与唐钱范式；将这条发行观察与更早铸币、未知传播者及接收方未经证实的此前状态分开。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "transmission:claim-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "coin-model-and-issue-not-specific-carrier"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "issue-change",
+                "subjectId": "history:event:wado-kaichin-issue-708",
+                "propertyId": "transmission:documented-change",
+                "value": {
+                  "kind": "text",
+                  "value": "modeled-coin-issue"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 708,
+                    "latestYear": 708,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "708"
+                  }
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "interpretation": {
+                  "en": "The museum explicitly states the 708 issue, its issuing government and Tang coin model. Keep this issue observation separate from earlier coinage, unidentified carriers and the recipient’s unsupported prior state.",
+                  "zh-CN": "博物馆明确记载708年发行、发行机构与唐钱范式；将这条发行观察与更早铸币、未知传播者及接收方未经证实的此前状态分开。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "transmission:claim-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "coin-model-and-issue-not-specific-carrier"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "model-context",
+                "subjectId": "history:event:wado-kaichin-issue-708",
+                "propertyId": "transmission:model-context-polity",
+                "value": {
+                  "kind": "entity",
+                  "objectId": "history:polity:tang"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 708,
+                    "latestYear": 708,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "708"
+                  }
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "interpretation": {
+                  "en": "The museum explicitly states the 708 issue, its issuing government and Tang coin model. Keep this issue observation separate from earlier coinage, unidentified carriers and the recipient’s unsupported prior state.",
+                  "zh-CN": "博物馆明确记载708年发行、发行机构与唐钱范式；将这条发行观察与更早铸币、未知传播者及接收方未经证实的此前状态分开。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "transmission:claim-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "coin-model-and-issue-not-specific-carrier"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "recipient-type",
+                "subjectId": "history:authority:ritsuryo-coin-issuer-708",
+                "propertyId": "coinage:issued-type",
+                "value": {
+                  "kind": "entity",
+                  "objectId": "history:coin-type:wado-kaichin"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 708,
+                    "latestYear": 708,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "708"
+                  }
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "interpretation": {
+                  "en": "The museum explicitly states the 708 issue, its issuing government and Tang coin model. Keep this issue observation separate from earlier coinage, unidentified carriers and the recipient’s unsupported prior state.",
+                  "zh-CN": "博物馆明确记载708年发行、发行机构与唐钱范式；将这条发行观察与更早铸币、未知传播者及接收方未经证实的此前状态分开。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "transmission:claim-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "coin-model-and-issue-not-specific-carrier"
+                    }
+                  },
+                  {
+                    "propertyId": "source:identity-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "source-described-issuer-at-708"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "coin-issuer",
+                "subjectId": "history:coin-type:wado-kaichin",
+                "propertyId": "coinage:issuer",
+                "value": {
+                  "kind": "entity",
+                  "objectId": "history:authority:ritsuryo-coin-issuer-708"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 708,
+                    "latestYear": 708,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "708"
+                  }
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "interpretation": {
+                  "en": "The museum explicitly states the 708 issue, its issuing government and Tang coin model. Keep this issue observation separate from earlier coinage, unidentified carriers and the recipient’s unsupported prior state.",
+                  "zh-CN": "博物馆明确记载708年发行、发行机构与唐钱范式；将这条发行观察与更早铸币、未知传播者及接收方未经证实的此前状态分开。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "transmission:claim-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "coin-model-and-issue-not-specific-carrier"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "coin-model",
+                "subjectId": "history:coin-type:wado-kaichin",
+                "propertyId": "transmission:source-model",
+                "value": {
+                  "kind": "entity",
+                  "objectId": "history:coin-type:kai-yuan-tong-bao"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 708,
+                    "latestYear": 708,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "708"
+                  }
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "interpretation": {
+                  "en": "The museum explicitly states the 708 issue, its issuing government and Tang coin model. Keep this issue observation separate from earlier coinage, unidentified carriers and the recipient’s unsupported prior state.",
+                  "zh-CN": "博物馆明确记载708年发行、发行机构与唐钱范式；将这条发行观察与更早铸币、未知传播者及接收方未经证实的此前状态分开。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "transmission:claim-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "coin-model-and-issue-not-specific-carrier"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "recipient-link",
+                "subjectId": "history:authority:ritsuryo-coin-issuer-708",
+                "propertyId": "relation:transmission-event",
+                "value": {
+                  "kind": "entity",
+                  "objectId": "history:event:wado-kaichin-issue-708"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 708,
+                    "latestYear": 708,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "708"
+                  }
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "interpretation": {
+                  "en": "The museum explicitly states the 708 issue, its issuing government and Tang coin model. Keep this issue observation separate from earlier coinage, unidentified carriers and the recipient’s unsupported prior state.",
+                  "zh-CN": "博物馆明确记载708年发行、发行机构与唐钱范式；将这条发行观察与更早铸币、未知传播者及接收方未经证实的此前状态分开。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "transmission:claim-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "coin-model-and-issue-not-specific-carrier"
+                    }
+                  },
+                  {
+                    "propertyId": "transmission:role",
+                    "value": {
+                      "kind": "text",
+                      "value": "recipient"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "produced-type-link",
+                "subjectId": "history:coin-type:wado-kaichin",
+                "propertyId": "relation:transmission-event",
+                "value": {
+                  "kind": "entity",
+                  "objectId": "history:event:wado-kaichin-issue-708"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 708,
+                    "latestYear": 708,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "708"
+                  }
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "interpretation": {
+                  "en": "The museum explicitly states the 708 issue, its issuing government and Tang coin model. Keep this issue observation separate from earlier coinage, unidentified carriers and the recipient’s unsupported prior state.",
+                  "zh-CN": "博物馆明确记载708年发行、发行机构与唐钱范式；将这条发行观察与更早铸币、未知传播者及接收方未经证实的此前状态分开。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "transmission:claim-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "coin-model-and-issue-not-specific-carrier"
+                    }
+                  },
+                  {
+                    "propertyId": "transmission:role",
+                    "value": {
+                      "kind": "text",
+                      "value": "produced-type"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "model-link",
+                "subjectId": "history:coin-type:kai-yuan-tong-bao",
+                "propertyId": "relation:transmission-event",
+                "value": {
+                  "kind": "entity",
+                  "objectId": "history:event:wado-kaichin-issue-708"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 708,
+                    "latestYear": 708,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "708"
+                  }
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "interpretation": {
+                  "en": "The museum explicitly states the 708 issue, its issuing government and Tang coin model. Keep this issue observation separate from earlier coinage, unidentified carriers and the recipient’s unsupported prior state.",
+                  "zh-CN": "博物馆明确记载708年发行、发行机构与唐钱范式；将这条发行观察与更早铸币、未知传播者及接收方未经证实的此前状态分开。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "transmission:claim-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "coin-model-and-issue-not-specific-carrier"
+                    }
+                  },
+                  {
+                    "propertyId": "transmission:role",
+                    "value": {
+                      "kind": "text",
+                      "value": "model"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "model-context-link",
+                "subjectId": "history:polity:tang",
+                "propertyId": "relation:transmission-event",
+                "value": {
+                  "kind": "entity",
+                  "objectId": "history:event:wado-kaichin-issue-708"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 708,
+                    "latestYear": 708,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "708"
+                  }
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "interpretation": {
+                  "en": "The museum explicitly states the 708 issue, its issuing government and Tang coin model. Keep this issue observation separate from earlier coinage, unidentified carriers and the recipient’s unsupported prior state.",
+                  "zh-CN": "博物馆明确记载708年发行、发行机构与唐钱范式；将这条发行观察与更早铸币、未知传播者及接收方未经证实的此前状态分开。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "transmission:claim-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "coin-model-and-issue-not-specific-carrier"
+                    }
+                  },
+                  {
+                    "propertyId": "transmission:role",
+                    "value": {
+                      "kind": "text",
+                      "value": "model-context"
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "earlier-production",
+                "subjectId": "history:coin-type:fuhon-sen",
+                "propertyId": "coinage:production-attestation",
+                "value": {
+                  "kind": "text",
+                  "value": "archaeologically-attested-mintage"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:earlier-mintage"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 651,
+                    "latestYear": 700,
+                    "precision": "interval",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "latter half of the seventh century"
+                  },
+                  "certainty": "possible"
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:earlier-mintage"
+                ],
+                "interpretation": {
+                  "en": "The report places minting within the latter half of the seventh century, represented by the ordinal civil-century interval 651–700. Treat it as possible timing, not continuous production or evidence for a named issuer. The 1998 discovery date is evidence metadata.",
+                  "zh-CN": "报道将铸造置于7世纪后半叶，按序数世纪表示为651至700年，仅表示时段内的可能日期，不表示持续铸造或某位发行者。1998年的发现日期属于证据元数据。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "evidence:discovery-year",
+                    "value": {
+                      "kind": "time",
+                      "value": {
+                        "earliestYear": 1998,
+                        "latestYear": 1998,
+                        "precision": "year",
+                        "calendar": "source-calendar-unspecified",
+                        "raw": "1998"
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "id": "earlier-evidence-link",
+                "subjectId": "history:event:wado-kaichin-issue-708",
+                "propertyId": "coinage:earlier-mintage-evidence",
+                "value": {
+                  "kind": "entity",
+                  "objectId": "history:coin-type:fuhon-sen"
+                },
+                "factKeys": [
+                  "boj-ancient-currency:708-issue-and-model",
+                  "boj-ancient-currency:earlier-mintage"
+                ],
+                "validTime": {
+                  "point": {
+                    "earliestYear": 708,
+                    "latestYear": 708,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "708"
+                  }
+                },
+                "timeFactKeys": [
+                  "boj-ancient-currency:708-issue-and-model"
+                ],
+                "interpretation": {
+                  "en": "The two selected museum facts identify mintage earlier than the 708 issue. This comparison is not a lineage, a claim of the same issuer or a claim that Fuhon-sen was the model.",
+                  "zh-CN": "两条所选博物馆事实显示存在早于708年的铸造证据；并不表示继承、同一发行机构或富本钱是其范式。"
+                },
+                "qualifiers": [
+                  {
+                    "propertyId": "transmission:claim-scope",
+                    "value": {
+                      "kind": "text",
+                      "value": "coin-model-and-issue-not-specific-carrier"
+                    }
+                  }
+                ]
+              }
+            ],
+            "fieldCatalog": {
+              "schemaVersion": 1,
+              "kind": "historical-field-display-labels",
+              "properties": [
+                {
+                  "id": "projection:rule-id",
+                  "labels": {
+                    "en": "Mapping rule",
+                    "zh-CN": "映射规则"
+                  }
+                },
+                {
+                  "id": "projection:source-fact",
+                  "labels": {
+                    "en": "Source field",
+                    "zh-CN": "来源字段"
+                  }
+                },
+                {
+                  "id": "coinage:issued-type",
+                  "labels": {
+                    "en": "Issued coin type",
+                    "zh-CN": "所发行的钱币类型"
+                  }
+                },
+                {
+                  "id": "coinage:issuer",
+                  "labels": {
+                    "en": "Issuing authority",
+                    "zh-CN": "发行机构"
+                  }
+                },
+                {
+                  "id": "transmission:source-model",
+                  "labels": {
+                    "en": "Documented model",
+                    "zh-CN": "来源明确记载的范式"
+                  }
+                },
+                {
+                  "id": "transmission:recipient",
+                  "labels": {
+                    "en": "Recipient",
+                    "zh-CN": "接收方"
+                  }
+                },
+                {
+                  "id": "transmission:model-context-polity",
+                  "labels": {
+                    "en": "Political setting of the model",
+                    "zh-CN": "钱币范式所属政权"
+                  }
+                },
+                {
+                  "id": "relation:transmission-event",
+                  "labels": {
+                    "en": "Transmission and recipient change",
+                    "zh-CN": "传播与接收方变化"
+                  }
+                },
+                {
+                  "id": "transmission:documented-change",
+                  "labels": {
+                    "en": "Documented change",
+                    "zh-CN": "来源明确记载的变化"
+                  }
+                },
+                {
+                  "id": "transmission:role",
+                  "labels": {
+                    "en": "Role in the transmission",
+                    "zh-CN": "传播关系中的角色"
+                  }
+                },
+                {
+                  "id": "transmission:claim-scope",
+                  "labels": {
+                    "en": "Meaning of this transmission claim",
+                    "zh-CN": "此传播主张的含义"
+                  }
+                },
+                {
+                  "id": "source:identity-scope",
+                  "labels": {
+                    "en": "Scope of the source identity",
+                    "zh-CN": "来源身份的范围"
+                  }
+                },
+                {
+                  "id": "coinage:production-attestation",
+                  "labels": {
+                    "en": "Evidence of minting",
+                    "zh-CN": "铸币证据"
+                  }
+                },
+                {
+                  "id": "coinage:earlier-mintage-evidence",
+                  "labels": {
+                    "en": "Earlier mintage evidence",
+                    "zh-CN": "更早铸币的证据"
+                  }
+                },
+                {
+                  "id": "evidence:discovery-year",
+                  "labels": {
+                    "en": "Reported archaeological discovery year",
+                    "zh-CN": "来源记载的考古发现年份"
+                  }
+                }
+              ],
+              "types": [
+                {
+                  "id": "gitworld:coin-type",
+                  "labels": {
+                    "en": "Coin type",
+                    "zh-CN": "钱币类型"
+                  }
+                },
+                {
+                  "id": "gitworld:source-described-authority",
+                  "labels": {
+                    "en": "Source-described authority",
+                    "zh-CN": "来源记载的执政机构"
+                  }
+                },
+                {
+                  "id": "gitworld:coinage-issue",
+                  "labels": {
+                    "en": "Coin issue",
+                    "zh-CN": "铸币发行"
+                  }
+                },
+                {
+                  "id": "gitworld:documented-transmission",
+                  "labels": {
+                    "en": "Documented transmission",
+                    "zh-CN": "有据传播"
+                  }
+                },
+                {
+                  "id": "gitworld:polity",
+                  "labels": {
+                    "en": "Polity",
+                    "zh-CN": "政治实体"
+                  }
+                }
+              ],
+              "values": [
+                {
+                  "propertyId": "transmission:documented-change",
+                  "value": "modeled-coin-issue",
+                  "labels": {
+                    "en": "Issuance of a coin modeled on another type",
+                    "zh-CN": "参照另一币型铸币发行"
+                  }
+                },
+                {
+                  "propertyId": "transmission:role",
+                  "value": "recipient",
+                  "labels": {
+                    "en": "Recipient",
+                    "zh-CN": "接收方"
+                  }
+                },
+                {
+                  "propertyId": "transmission:role",
+                  "value": "produced-type",
+                  "labels": {
+                    "en": "Produced coin type",
+                    "zh-CN": "所铸币型"
+                  }
+                },
+                {
+                  "propertyId": "transmission:role",
+                  "value": "model",
+                  "labels": {
+                    "en": "Coin used as a model",
+                    "zh-CN": "作为范式的钱币"
+                  }
+                },
+                {
+                  "propertyId": "transmission:role",
+                  "value": "model-context",
+                  "labels": {
+                    "en": "Political setting of the model",
+                    "zh-CN": "范式所属政权"
+                  }
+                },
+                {
+                  "propertyId": "transmission:claim-scope",
+                  "value": "coin-model-and-issue-not-specific-carrier",
+                  "labels": {
+                    "en": "Coin model and issue; no specific carrier established",
+                    "zh-CN": "钱币范式与发行；未确认具体传播者"
+                  }
+                },
+                {
+                  "propertyId": "source:identity-scope",
+                  "value": "source-described-issuer-at-708",
+                  "labels": {
+                    "en": "Authority described for this 708 issue",
+                    "zh-CN": "来源就708年发行所述的机构"
+                  }
+                },
+                {
+                  "propertyId": "coinage:production-attestation",
+                  "value": "archaeologically-attested-mintage",
+                  "labels": {
+                    "en": "Minting supported by archaeological evidence",
+                    "zh-CN": "有考古证据支持的铸造"
+                  }
+                }
+              ],
+              "semanticNotes": [
+                {
+                  "ids": [
+                    "transmission:source-model",
+                    "transmission:recipient",
+                    "transmission:model-context-polity",
+                    "relation:transmission-event"
+                  ],
+                  "en": "A source explicitly identifies a coin model and the recipient issue. This does not establish a named envoy, complete institutional copying, an active Tang government transfer or a Git parent.",
+                  "zh-CN": "来源明确记载钱币范式与接收方的发行，但未确认具体使节、完整制度照搬、唐政府主动传授或 Git 继承关系。"
+                },
+                {
+                  "ids": [
+                    "coinage:issued-type",
+                    "coinage:earlier-mintage-evidence",
+                    "coinage:production-attestation"
+                  ],
+                  "en": "The 708 issue is a dated observation. Earlier production has a broad possible period and an unidentified issuer; neither creates a continuous before regime or makes 708 the first coinage in Japan.",
+                  "zh-CN": "708年发行是一条有日期的观察。更早铸造仅有宽泛的可能时段，发行者未明；不据此构造连续的此前制度，也不把708年说成日本最早铸币。"
+                }
+              ]
+            },
+            "selectedOutputRights": {
+              "schemaVersion": 1,
+              "kind": "gitworld-selected-output-rights-scope",
+              "id": "wado-708-two-facts-and-original-presentation",
+              "revision": "1-distribution-record",
+              "status": "selected-output-distribution-record",
+              "preparedAt": "2026-10-25T02:06:17.107Z",
+              "normalizationStage": "Ordinary source normalization remains unknown. This distinct distribution classification covers only the exact retained factual references and independently authored payload below.",
+              "prePromotionSourceRecordHash": "865260d5efeb7aac5ea1c3df6fa25c05805e6854d126ef21e4e1acfd43ff0577",
+              "normalizationRights": {
+                "licenseId": "CC-BY-SA-4.0",
+                "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+                "redistribution": "unknown",
+                "attribution": "GitWorld independently structured the identified 708 issue/model and earlier-mintage facts from the Bank of Japan Currency Museum and authored bilingual interpretation/display metadata. The acquired museum work remains unknown; no museum paragraph, anchor label, image or HTML is included. This pending selected-output candidate is not a redistribution approval or museum endorsement."
+              },
+              "sourceProfilesHash": "569d09b2c97d1b80a18b8b2c55588b2ccca4fdf14f1d9ba5f211d5873adf492a",
+              "authoredPayloadHash": "eb33a2e7aeb4fff07fb3650af1fc0581abc169b1cc0c12a024acd44df5fb4137",
+              "distributionRights": {
+                "licenseId": "CC-BY-SA-4.0",
+                "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+                "redistribution": "allowed",
+                "attribution": "Selected factual references: Currency Museum, Bank of Japan, Historical events and currencies in use: Ancient Times, https://www.imes.boj.or.jp/cm/english/history/content/index.html, retrieved 25 October 2026, pinned ETag and source hash in this record. GitWorld independently structured these two factual references and authored the typed interpretation and English/Simplified Chinese display under CC BY-SA 4.0. That license covers GitWorld original contributions, not exclusive ownership of bare facts or the museum text, images, HTML, translations, compilation, trademarks or endorsement. The acquired work and ordinary normalization remain unknown for redistribution."
+              },
+              "retainedSourceFields": [
+                "facts.key",
+                "facts.profileId",
+                "facts.factId",
+                "facts.locator",
+                "facts.textHash",
+                "facts.links.href",
+                "facts.links.locator",
+                "facts.links.textHash",
+                "facts.referenceAnchors",
+                "short functional selectors",
+                "source identity/revision/hash and citation headers"
+              ],
+              "excludedSourceExpression": [
+                "facts.text",
+                "facts.links.text",
+                "museum paragraphs or their translation",
+                "source HTML or layout",
+                "images",
+                "overall museum page compilation"
+              ],
+              "originalPresentation": "The authoredPayloadHash binds five original objects, fifteen typed statements and their original English/Simplified Chinese interpretation and field vocabulary. Bare historical names, dates and factual relationships are not claimed as exclusive works.",
+              "assessment": "A bounded artifact-specific inference from the retained factual metadata and independent modeling, not BOJ or IMES permission, a guarantee of legal certainty, or an automatic consequence of deleting text.",
+              "policyEvidence": [
+                {
+                  "id": "boj-main-site-exclusion",
+                  "url": "https://www.boj.or.jp/en/about/copyright.htm",
+                  "clause": "Opening scope paragraph excludes linked websites, including IMES, from the main-site reproduction conditions.",
+                  "checkedAt": "2026-10-25",
+                  "use": "Negative scope evidence; main-site conditions do not license the museum work."
+                },
+                {
+                  "id": "imes-source-work-copyright",
+                  "url": "https://www.imes.boj.or.jp/en/imesnotice_r.html",
+                  "clause": "Copyright paragraphs 1–3 protect site works, allow credited quotations and require permission for copying or reproduction.",
+                  "checkedAt": "2026-10-25",
+                  "use": "No general reproduction license is established. This selected output excludes the acquired work and does not rely on the quotation provision to republish paragraphs."
+                },
+                {
+                  "id": "bunka-noncreative-facts-and-compilations",
+                  "url": "https://www.bunka.go.jp/english/policy/copyright/system/",
+                  "clause": "Works conditions 1–3 distinguish data and ideas from creative expression; the following compilation paragraph protects creative selection or arrangement.",
+                  "checkedAt": "2026-10-25",
+                  "use": "Artifact-specific assessment limited to the two exact factual records and independently authored payload. The museum narrative, translation, images and overall selection/arrangement are excluded."
+                },
+                {
+                  "id": "cc-original-contribution-scope",
+                  "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en",
+                  "clause": "Sections 2 and 3 delimit licensor authority, endorsement, attribution and ShareAlike conditions.",
+                  "checkedAt": "2026-10-25",
+                  "use": "CC BY-SA 4.0 applies to GitWorld original contributions only; bare factual references and excluded source works are not relicensed by this statement."
+                }
+              ],
+              "sourceScopes": [
+                {
+                  "profileId": "boj-ancient-currency",
+                  "identity": {
+                    "provider": "official-document-html",
+                    "externalId": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+                  },
+                  "sourceRevision": "\"23f89159-8c67-5e79516aaf800\"",
+                  "sourceContentHash": "c55e8e02371a6617b4761a7bab910f7e684ca597c143f578f2cfa6c1f78b9f30",
+                  "sourceUrl": "https://www.imes.boj.or.jp/cm/english/history/content/index.html",
+                  "retrievedAt": "2026-10-25T01:34:22.703Z",
+                  "sourceTitle": "Historical events and currencies in use: Ancient Times",
+                  "sourceLanguage": "en",
+                  "creatorOrEditionCredit": "Currency Museum, Bank of Japan",
+                  "sourceWorkRights": {
+                    "redistribution": "unknown",
+                    "attribution": "Bank of Japan Currency Museum, Historical events and currencies in use. Local acquisition only; source expression, images and HTML are excluded from the projected selected-fact candidate. No redistribution decision for this acquired work."
+                  },
+                  "selectedFactIds": [
+                    "708-issue-and-model",
+                    "earlier-mintage"
+                  ],
+                  "factRecordHashes": [
+                    {
+                      "factId": "708-issue-and-model",
+                      "sha256": "2de1511379e0f41dc85a09909aed477583fc8bdbc10723b357b67decbf20650f",
+                      "locator": "$.html;p[document-index=42]",
+                      "textHash": "bee17eea6f2b0b85e1cd176db6d38bc2e4ee53b363bd89e3b0820d7f0ae606f7"
+                    },
+                    {
+                      "factId": "earlier-mintage",
+                      "sha256": "be315f5818e83639c0602bf250e47386c98734114e8276c62ffbcd7596d403d3",
+                      "locator": "$.html;p[document-index=36]",
+                      "textHash": "299ebe5f9e2a62188efb179b05e28e320ba2ce7b2c313c123156aa4ce0f36644"
+                    }
+                  ],
+                  "selectedOutput": "Two selected factual references and original typed/bilingual interpretation only. No field paragraph or anchor label is retained.",
+                  "policyIds": [
+                    "boj-main-site-exclusion",
+                    "imes-source-work-copyright",
+                    "bunka-noncreative-facts-and-compilations",
+                    "cc-original-contribution-scope"
+                  ],
+                  "notice": "Attribute the Currency Museum and preserve its exact source identity, ETag, acquisition date and hash. The source work remains unknown; this scope licenses only original GitWorld contributions and does not assert endorsement.",
+                  "boundary": "This scope does not cover another fact, paragraph, translation, image, compilation or changed authored payload."
+                }
+              ],
+              "publicationState": "This record classifies the exact selected output only. It neither licenses source works nor changes historical review, publication authorization, installer validation or runtime behavior."
+            }
+          },
+          "inputSources": [
+            {
+              "identity": {
+                "provider": "official-document-html",
+                "externalId": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+              },
+              "revision": "\"23f89159-8c67-5e79516aaf800\"",
+              "contentHash": "c55e8e02371a6617b4761a7bab910f7e684ca597c143f578f2cfa6c1f78b9f30",
+              "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html",
+              "retrievedAt": "2026-10-25T01:34:22.703Z",
+              "rights": {
+                "redistribution": "unknown",
+                "attribution": "Bank of Japan Currency Museum, Historical events and currencies in use. Local acquisition only; source expression, images and HTML are excluded from the projected selected-fact candidate. No redistribution decision for this acquired work."
+              }
+            }
+          ],
+          "facts": [
+            {
+              "key": "boj-ancient-currency:708-issue-and-model",
+              "profileId": "boj-ancient-currency",
+              "factId": "708-issue-and-model",
+              "locator": "$.html;p[document-index=42]",
+              "textHash": "bee17eea6f2b0b85e1cd176db6d38bc2e4ee53b363bd89e3b0820d7f0ae606f7",
+              "links": [],
+              "referenceAnchors": []
+            },
+            {
+              "key": "boj-ancient-currency:earlier-mintage",
+              "profileId": "boj-ancient-currency",
+              "factId": "earlier-mintage",
+              "locator": "$.html;p[document-index=36]",
+              "textHash": "299ebe5f9e2a62188efb179b05e28e320ba2ce7b2c313c123156aa4ce0f36644",
+              "links": [],
+              "referenceAnchors": []
+            }
+          ],
+          "curatorDistributionStep": {
+            "version": "selected-output-rights-v1",
+            "normalizationSourceRecordHash": "865260d5efeb7aac5ea1c3df6fa25c05805e6854d126ef21e4e1acfd43ff0577",
+            "normalizationRights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "redistribution": "unknown",
+              "attribution": "GitWorld independently structured the identified 708 issue/model and earlier-mintage facts from the Bank of Japan Currency Museum and authored bilingual interpretation/display metadata. The acquired museum work remains unknown; no museum paragraph, anchor label, image or HTML is included. This pending selected-output candidate is not a redistribution approval or museum endorsement."
+            },
+            "decisionStatus": "selected-output-distribution-record"
+          }
+        }
+      }
+    ]
+  },
+  "vocabulary": {
+    "id": "gitworld:connected-depth:coinage-transmission:v1",
+    "revision": "1-local-evidenced-candidate",
+    "catalog": {
+      "schemaVersion": 1,
+      "kind": "historical-field-display-labels",
+      "properties": [
+        {
+          "id": "projection:rule-id",
+          "labels": {
+            "en": "Mapping rule",
+            "zh-CN": "映射规则"
+          }
+        },
+        {
+          "id": "projection:source-fact",
+          "labels": {
+            "en": "Source field",
+            "zh-CN": "来源字段"
+          }
+        },
+        {
+          "id": "coinage:issued-type",
+          "labels": {
+            "en": "Issued coin type",
+            "zh-CN": "所发行的钱币类型"
+          }
+        },
+        {
+          "id": "coinage:issuer",
+          "labels": {
+            "en": "Issuing authority",
+            "zh-CN": "发行机构"
+          }
+        },
+        {
+          "id": "transmission:source-model",
+          "labels": {
+            "en": "Documented model",
+            "zh-CN": "来源明确记载的范式"
+          }
+        },
+        {
+          "id": "transmission:recipient",
+          "labels": {
+            "en": "Recipient",
+            "zh-CN": "接收方"
+          }
+        },
+        {
+          "id": "transmission:model-context-polity",
+          "labels": {
+            "en": "Political setting of the model",
+            "zh-CN": "钱币范式所属政权"
+          }
+        },
+        {
+          "id": "relation:transmission-event",
+          "labels": {
+            "en": "Transmission and recipient change",
+            "zh-CN": "传播与接收方变化"
+          }
+        },
+        {
+          "id": "transmission:documented-change",
+          "labels": {
+            "en": "Documented change",
+            "zh-CN": "来源明确记载的变化"
+          }
+        },
+        {
+          "id": "transmission:role",
+          "labels": {
+            "en": "Role in the transmission",
+            "zh-CN": "传播关系中的角色"
+          }
+        },
+        {
+          "id": "transmission:claim-scope",
+          "labels": {
+            "en": "Meaning of this transmission claim",
+            "zh-CN": "此传播主张的含义"
+          }
+        },
+        {
+          "id": "source:identity-scope",
+          "labels": {
+            "en": "Scope of the source identity",
+            "zh-CN": "来源身份的范围"
+          }
+        },
+        {
+          "id": "coinage:production-attestation",
+          "labels": {
+            "en": "Evidence of minting",
+            "zh-CN": "铸币证据"
+          }
+        },
+        {
+          "id": "coinage:earlier-mintage-evidence",
+          "labels": {
+            "en": "Earlier mintage evidence",
+            "zh-CN": "更早铸币的证据"
+          }
+        },
+        {
+          "id": "evidence:discovery-year",
+          "labels": {
+            "en": "Reported archaeological discovery year",
+            "zh-CN": "来源记载的考古发现年份"
+          }
+        }
+      ],
+      "types": [
+        {
+          "id": "gitworld:coin-type",
+          "labels": {
+            "en": "Coin type",
+            "zh-CN": "钱币类型"
+          }
+        },
+        {
+          "id": "gitworld:source-described-authority",
+          "labels": {
+            "en": "Source-described authority",
+            "zh-CN": "来源记载的执政机构"
+          }
+        },
+        {
+          "id": "gitworld:coinage-issue",
+          "labels": {
+            "en": "Coin issue",
+            "zh-CN": "铸币发行"
+          }
+        },
+        {
+          "id": "gitworld:documented-transmission",
+          "labels": {
+            "en": "Documented transmission",
+            "zh-CN": "有据传播"
+          }
+        },
+        {
+          "id": "gitworld:polity",
+          "labels": {
+            "en": "Polity",
+            "zh-CN": "政治实体"
+          }
+        }
+      ],
+      "values": [
+        {
+          "propertyId": "transmission:documented-change",
+          "value": "modeled-coin-issue",
+          "labels": {
+            "en": "Issuance of a coin modeled on another type",
+            "zh-CN": "参照另一币型铸币发行"
+          }
+        },
+        {
+          "propertyId": "transmission:role",
+          "value": "recipient",
+          "labels": {
+            "en": "Recipient",
+            "zh-CN": "接收方"
+          }
+        },
+        {
+          "propertyId": "transmission:role",
+          "value": "produced-type",
+          "labels": {
+            "en": "Produced coin type",
+            "zh-CN": "所铸币型"
+          }
+        },
+        {
+          "propertyId": "transmission:role",
+          "value": "model",
+          "labels": {
+            "en": "Coin used as a model",
+            "zh-CN": "作为范式的钱币"
+          }
+        },
+        {
+          "propertyId": "transmission:role",
+          "value": "model-context",
+          "labels": {
+            "en": "Political setting of the model",
+            "zh-CN": "范式所属政权"
+          }
+        },
+        {
+          "propertyId": "transmission:claim-scope",
+          "value": "coin-model-and-issue-not-specific-carrier",
+          "labels": {
+            "en": "Coin model and issue; no specific carrier established",
+            "zh-CN": "钱币范式与发行；未确认具体传播者"
+          }
+        },
+        {
+          "propertyId": "source:identity-scope",
+          "value": "source-described-issuer-at-708",
+          "labels": {
+            "en": "Authority described for this 708 issue",
+            "zh-CN": "来源就708年发行所述的机构"
+          }
+        },
+        {
+          "propertyId": "coinage:production-attestation",
+          "value": "archaeologically-attested-mintage",
+          "labels": {
+            "en": "Minting supported by archaeological evidence",
+            "zh-CN": "有考古证据支持的铸造"
+          }
+        }
+      ],
+      "semanticNotes": [
+        {
+          "ids": [
+            "transmission:source-model",
+            "transmission:recipient",
+            "transmission:model-context-polity",
+            "relation:transmission-event"
+          ],
+          "en": "A source explicitly identifies a coin model and the recipient issue. This does not establish a named envoy, complete institutional copying, an active Tang government transfer or a Git parent.",
+          "zh-CN": "来源明确记载钱币范式与接收方的发行，但未确认具体使节、完整制度照搬、唐政府主动传授或 Git 继承关系。"
+        },
+        {
+          "ids": [
+            "coinage:issued-type",
+            "coinage:earlier-mintage-evidence",
+            "coinage:production-attestation"
+          ],
+          "en": "The 708 issue is a dated observation. Earlier production has a broad possible period and an unidentified issuer; neither creates a continuous before regime or makes 708 the first coinage in Japan.",
+          "zh-CN": "708年发行是一条有日期的观察。更早铸造仅有宽泛的可能时段，发行者未明；不据此构造连续的此前制度，也不把708年说成日本最早铸币。"
+        }
+      ]
+    },
+    "origin": {
+      "identity": {
+        "provider": "gitworld-evidenced-field-vocabulary",
+        "externalId": "wado-708-evidenced-model-and-recipient-change"
+      },
+      "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/historical-transformations-prd.md",
+      "retrievedAt": "2026-10-25T01:38:16.974Z",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "allowed",
+        "attribution": "Selected factual references: Currency Museum, Bank of Japan, Historical events and currencies in use: Ancient Times, https://www.imes.boj.or.jp/cm/english/history/content/index.html, retrieved 25 October 2026, pinned ETag and source hash in this record. GitWorld independently structured these two factual references and authored the typed interpretation and English/Simplified Chinese display under CC BY-SA 4.0. That license covers GitWorld original contributions, not exclusive ownership of bare facts or the museum text, images, HTML, translations, compilation, trademarks or endorsement. The acquired work and ordinary normalization remain unknown for redistribution."
+      },
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+          "sourceHash": "98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+          "locator": "$.plan.fieldCatalog"
+        }
+      ]
+    }
+  },
+  "sourceRights": {
+    "schemaVersion": 1,
+    "status": "selected-output-distribution-record",
+    "title": "Selected facts for the 708 coin model and recipient issue",
+    "selectedOutputDecision": "The recorded distribution classification is limited to the two identified factual records and exact original typed/bilingual presentation. It is not permission over the museum work or a change to historical review.",
+    "sources": [
+      {
+        "id": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "identity": {
+          "provider": "gitworld-evidenced-fields",
+          "externalId": "wado-708-evidenced-model-and-recipient-change"
+        },
+        "revision": "1-local-evidenced-candidate",
+        "contentHash": "98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+        "rights": {
+          "licenseId": "CC-BY-SA-4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "redistribution": "allowed",
+          "attribution": "Selected factual references: Currency Museum, Bank of Japan, Historical events and currencies in use: Ancient Times, https://www.imes.boj.or.jp/cm/english/history/content/index.html, retrieved 25 October 2026, pinned ETag and source hash in this record. GitWorld independently structured these two factual references and authored the typed interpretation and English/Simplified Chinese display under CC BY-SA 4.0. That license covers GitWorld original contributions, not exclusive ownership of bare facts or the museum text, images, HTML, translations, compilation, trademarks or endorsement. The acquired work and ordinary normalization remain unknown for redistribution."
+        }
+      }
+    ],
+    "inputSources": [
+      {
+        "profileId": "boj-ancient-currency",
+        "identity": {
+          "provider": "official-document-html",
+          "externalId": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+        },
+        "revision": "\"23f89159-8c67-5e79516aaf800\"",
+        "contentHash": "c55e8e02371a6617b4761a7bab910f7e684ca597c143f578f2cfa6c1f78b9f30",
+        "url": "https://www.imes.boj.or.jp/cm/english/history/content/index.html",
+        "revisionUrl": "https://www.imes.boj.or.jp/cm/english/history/content/index.html",
+        "retrievedAt": "2026-10-25T01:34:22.703Z",
+        "rights": {
+          "redistribution": "unknown",
+          "attribution": "Bank of Japan Currency Museum, Historical events and currencies in use. Local acquisition only; source expression, images and HTML are excluded from the projected selected-fact candidate. No redistribution decision for this acquired work."
+        },
+        "citation": {
+          "title": "Historical events and currencies in use: Ancient Times",
+          "language": "en",
+          "creator": "Currency Museum, Bank of Japan",
+          "rightsEvidence": [
+            "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          ],
+          "rightsNote": "The acquired museum work remains unknown. Projection retains selected fact locators/hashes, URLs and original bilingual interpretation, excluding the paragraph text, anchor labels, images and raw HTML. Selected-output rights require independent review; text omission alone grants no permission."
+        },
+        "historyUrl": null
+      }
+    ],
+    "boundary": {
+      "included": "Typed unreviewed facts, exact identities/editions/source hashes, short structural selectors, selected-field/link-text hashes, link URLs, temporal interpretation and original bilingual display.",
+      "excluded": "Raw HTML, article/museum paragraphs, anchor prose, images, metadata dumps, caches, private notes and source archive paths."
+    },
+    "rawSourceRights": "Original source permissions remain unchanged; includeText false does not upgrade unknown rights.",
+    "historicalReview": "Historical assertions retain their recorded unreviewed status. Distribution classification does not establish historical accuracy or broaden temporal evidence.",
+    "selectedOutputScope": {
+      "schemaVersion": 1,
+      "kind": "gitworld-selected-output-rights-scope",
+      "id": "wado-708-two-facts-and-original-presentation",
+      "revision": "1-distribution-record",
+      "status": "selected-output-distribution-record",
+      "preparedAt": "2026-10-25T02:06:17.107Z",
+      "normalizationStage": "Ordinary source normalization remains unknown. This distinct distribution classification covers only the exact retained factual references and independently authored payload below.",
+      "prePromotionSourceRecordHash": "865260d5efeb7aac5ea1c3df6fa25c05805e6854d126ef21e4e1acfd43ff0577",
+      "normalizationRights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "unknown",
+        "attribution": "GitWorld independently structured the identified 708 issue/model and earlier-mintage facts from the Bank of Japan Currency Museum and authored bilingual interpretation/display metadata. The acquired museum work remains unknown; no museum paragraph, anchor label, image or HTML is included. This pending selected-output candidate is not a redistribution approval or museum endorsement."
+      },
+      "sourceProfilesHash": "569d09b2c97d1b80a18b8b2c55588b2ccca4fdf14f1d9ba5f211d5873adf492a",
+      "authoredPayloadHash": "eb33a2e7aeb4fff07fb3650af1fc0581abc169b1cc0c12a024acd44df5fb4137",
+      "distributionRights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "allowed",
+        "attribution": "Selected factual references: Currency Museum, Bank of Japan, Historical events and currencies in use: Ancient Times, https://www.imes.boj.or.jp/cm/english/history/content/index.html, retrieved 25 October 2026, pinned ETag and source hash in this record. GitWorld independently structured these two factual references and authored the typed interpretation and English/Simplified Chinese display under CC BY-SA 4.0. That license covers GitWorld original contributions, not exclusive ownership of bare facts or the museum text, images, HTML, translations, compilation, trademarks or endorsement. The acquired work and ordinary normalization remain unknown for redistribution."
+      },
+      "retainedSourceFields": [
+        "facts.key",
+        "facts.profileId",
+        "facts.factId",
+        "facts.locator",
+        "facts.textHash",
+        "facts.links.href",
+        "facts.links.locator",
+        "facts.links.textHash",
+        "facts.referenceAnchors",
+        "short functional selectors",
+        "source identity/revision/hash and citation headers"
+      ],
+      "excludedSourceExpression": [
+        "facts.text",
+        "facts.links.text",
+        "museum paragraphs or their translation",
+        "source HTML or layout",
+        "images",
+        "overall museum page compilation"
+      ],
+      "originalPresentation": "The authoredPayloadHash binds five original objects, fifteen typed statements and their original English/Simplified Chinese interpretation and field vocabulary. Bare historical names, dates and factual relationships are not claimed as exclusive works.",
+      "assessment": "A bounded artifact-specific inference from the retained factual metadata and independent modeling, not BOJ or IMES permission, a guarantee of legal certainty, or an automatic consequence of deleting text.",
+      "policyEvidence": [
+        {
+          "id": "boj-main-site-exclusion",
+          "url": "https://www.boj.or.jp/en/about/copyright.htm",
+          "clause": "Opening scope paragraph excludes linked websites, including IMES, from the main-site reproduction conditions.",
+          "checkedAt": "2026-10-25",
+          "use": "Negative scope evidence; main-site conditions do not license the museum work."
+        },
+        {
+          "id": "imes-source-work-copyright",
+          "url": "https://www.imes.boj.or.jp/en/imesnotice_r.html",
+          "clause": "Copyright paragraphs 1–3 protect site works, allow credited quotations and require permission for copying or reproduction.",
+          "checkedAt": "2026-10-25",
+          "use": "No general reproduction license is established. This selected output excludes the acquired work and does not rely on the quotation provision to republish paragraphs."
+        },
+        {
+          "id": "bunka-noncreative-facts-and-compilations",
+          "url": "https://www.bunka.go.jp/english/policy/copyright/system/",
+          "clause": "Works conditions 1–3 distinguish data and ideas from creative expression; the following compilation paragraph protects creative selection or arrangement.",
+          "checkedAt": "2026-10-25",
+          "use": "Artifact-specific assessment limited to the two exact factual records and independently authored payload. The museum narrative, translation, images and overall selection/arrangement are excluded."
+        },
+        {
+          "id": "cc-original-contribution-scope",
+          "url": "https://creativecommons.org/licenses/by-sa/4.0/legalcode.en",
+          "clause": "Sections 2 and 3 delimit licensor authority, endorsement, attribution and ShareAlike conditions.",
+          "checkedAt": "2026-10-25",
+          "use": "CC BY-SA 4.0 applies to GitWorld original contributions only; bare factual references and excluded source works are not relicensed by this statement."
+        }
+      ],
+      "sourceScopes": [
+        {
+          "profileId": "boj-ancient-currency",
+          "identity": {
+            "provider": "official-document-html",
+            "externalId": "https://www.imes.boj.or.jp/cm/english/history/content/index.html"
+          },
+          "sourceRevision": "\"23f89159-8c67-5e79516aaf800\"",
+          "sourceContentHash": "c55e8e02371a6617b4761a7bab910f7e684ca597c143f578f2cfa6c1f78b9f30",
+          "sourceUrl": "https://www.imes.boj.or.jp/cm/english/history/content/index.html",
+          "retrievedAt": "2026-10-25T01:34:22.703Z",
+          "sourceTitle": "Historical events and currencies in use: Ancient Times",
+          "sourceLanguage": "en",
+          "creatorOrEditionCredit": "Currency Museum, Bank of Japan",
+          "sourceWorkRights": {
+            "redistribution": "unknown",
+            "attribution": "Bank of Japan Currency Museum, Historical events and currencies in use. Local acquisition only; source expression, images and HTML are excluded from the projected selected-fact candidate. No redistribution decision for this acquired work."
+          },
+          "selectedFactIds": [
+            "708-issue-and-model",
+            "earlier-mintage"
+          ],
+          "factRecordHashes": [
+            {
+              "factId": "708-issue-and-model",
+              "sha256": "2de1511379e0f41dc85a09909aed477583fc8bdbc10723b357b67decbf20650f",
+              "locator": "$.html;p[document-index=42]",
+              "textHash": "bee17eea6f2b0b85e1cd176db6d38bc2e4ee53b363bd89e3b0820d7f0ae606f7"
+            },
+            {
+              "factId": "earlier-mintage",
+              "sha256": "be315f5818e83639c0602bf250e47386c98734114e8276c62ffbcd7596d403d3",
+              "locator": "$.html;p[document-index=36]",
+              "textHash": "299ebe5f9e2a62188efb179b05e28e320ba2ce7b2c313c123156aa4ce0f36644"
+            }
+          ],
+          "selectedOutput": "Two selected factual references and original typed/bilingual interpretation only. No field paragraph or anchor label is retained.",
+          "policyIds": [
+            "boj-main-site-exclusion",
+            "imes-source-work-copyright",
+            "bunka-noncreative-facts-and-compilations",
+            "cc-original-contribution-scope"
+          ],
+          "notice": "Attribute the Currency Museum and preserve its exact source identity, ETag, acquisition date and hash. The source work remains unknown; this scope licenses only original GitWorld contributions and does not assert endorsement.",
+          "boundary": "This scope does not cover another fact, paragraph, translation, image, compilation or changed authored payload."
+        }
+      ],
+      "publicationState": "This record classifies the exact selected output only. It neither licenses source works nor changes historical review, publication authorization, installer validation or runtime behavior."
+    },
+    "licenseScope": "CC BY-SA 4.0 applies to the exact GitWorld original typed interpretation, arrangement and bilingual presentation. Bare factual references are not claimed as exclusive works; museum text, translations, images, HTML, overall page arrangement and trademarks remain excluded.",
+    "normalizationAndDistribution": {
+      "normalization": "unknown, unchanged",
+      "acquiredWork": "unknown, unchanged",
+      "distribution": "allowed only within the exact selected-output classification",
+      "runtimeInference": false
+    }
+  }
+}

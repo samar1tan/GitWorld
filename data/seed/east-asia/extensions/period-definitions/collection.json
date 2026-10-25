@@ -1,0 +1,4734 @@
+{
+  "schemaVersion": 1,
+  "objects": [
+    {
+      "id": "history:period-definition:wikipedia-en:47870676",
+      "identities": [
+        {
+          "provider": "wikipedia-period-definition",
+          "externalId": "47870676"
+        }
+      ],
+      "labels": {
+        "en": "Jōmon period",
+        "zh-CN": "绳文时代"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:period-definition"
+      ]
+    },
+    {
+      "id": "history:period-definition:wikipedia-en:166289",
+      "identities": [
+        {
+          "provider": "wikipedia-period-definition",
+          "externalId": "166289"
+        }
+      ],
+      "labels": {
+        "en": "Yayoi period",
+        "zh-CN": "弥生时代"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:period-definition"
+      ]
+    },
+    {
+      "id": "history:period-definition:wikipedia-en:166431",
+      "identities": [
+        {
+          "provider": "wikipedia-period-definition",
+          "externalId": "166431"
+        }
+      ],
+      "labels": {
+        "en": "Kofun period",
+        "zh-CN": "古坟时代"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:period-definition"
+      ]
+    },
+    {
+      "id": "history:period-definition:wikipedia-en:1060314",
+      "identities": [
+        {
+          "provider": "wikipedia-period-definition",
+          "externalId": "1060314"
+        }
+      ],
+      "labels": {
+        "en": "Yangshao culture",
+        "zh-CN": "仰韶文化"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:period-definition"
+      ]
+    },
+    {
+      "id": "history:period-definition:wikipedia-en:1060368",
+      "identities": [
+        {
+          "provider": "wikipedia-period-definition",
+          "externalId": "1060368"
+        }
+      ],
+      "labels": {
+        "en": "Longshan culture",
+        "zh-CN": "龙山文化"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:period-definition"
+      ]
+    },
+    {
+      "id": "history:period-definition:wikipedia-en:526037",
+      "identities": [
+        {
+          "provider": "wikipedia-period-definition",
+          "externalId": "526037"
+        }
+      ],
+      "labels": {
+        "en": "Liangzhu culture",
+        "zh-CN": "良渚文化"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:period-definition"
+      ]
+    }
+  ],
+  "assertions": [
+    {
+      "id": "evidenced-field:7237230a62f51c3efcd3302eb144df724bf3e40a",
+      "subjectId": "history:period-definition:wikipedia-en:47870676",
+      "propertyId": "period:definition-start",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": -14000,
+          "latestYear": -14000,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 14,000"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "article-overview"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:jomon:article-overview:start"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jomon:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[0];$.text;p[document-index=506]",
+          "url": "https://en.wikipedia.org/w/index.php?title=J%C5%8Dmon%20period&oldid=1380542509"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:9a6784b6d30b88d6af0254ee9e210010c616b509",
+      "subjectId": "history:period-definition:wikipedia-en:47870676",
+      "propertyId": "period:definition-end",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": -300,
+          "latestYear": -300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "300 BC"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "article-overview"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:jomon:article-overview:end"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jomon:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[0];$.text;p[document-index=506]",
+          "url": "https://en.wikipedia.org/w/index.php?title=J%C5%8Dmon%20period&oldid=1380542509"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:1bc83cf2f206c837e4a76551a51e91b5956a9651",
+      "subjectId": "history:period-definition:wikipedia-en:47870676",
+      "propertyId": "period:definition-label",
+      "value": {
+        "kind": "text",
+        "value": "Jōmon period"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "article-overview"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:jomon:article-overview:period:definition-label"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jomon:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[0];$.text;p[document-index=506]",
+          "url": "https://en.wikipedia.org/w/index.php?title=J%C5%8Dmon%20period&oldid=1380542509"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": -14000,
+          "latestYear": -14000,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 14,000"
+        },
+        "end": {
+          "earliestYear": -300,
+          "latestYear": -300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "300 BC"
+        },
+        "certainty": "possible"
+      }
+    },
+    {
+      "id": "evidenced-field:bd445e371b2b2d162c38ea56a7068a1c82f2416c",
+      "subjectId": "history:period-definition:wikipedia-en:47870676",
+      "propertyId": "period:chronology-basis",
+      "value": {
+        "kind": "text",
+        "value": "article-overview"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "article-overview"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:jomon:article-overview:period:chronology-basis"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jomon:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[0];$.text;p[document-index=506]",
+          "url": "https://en.wikipedia.org/w/index.php?title=J%C5%8Dmon%20period&oldid=1380542509"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": -14000,
+          "latestYear": -14000,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 14,000"
+        },
+        "end": {
+          "earliestYear": -300,
+          "latestYear": -300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "300 BC"
+        },
+        "certainty": "possible"
+      }
+    },
+    {
+      "id": "evidenced-field:55f530df67ee9b3472445112402e38604f10b8ff",
+      "subjectId": "history:period-definition:wikipedia-en:166289",
+      "propertyId": "period:definition-start",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": -300,
+          "latestYear": -300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 300 BC"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "conventional-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yayoi:conventional-range:start"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:dates"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:chronology-qualification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[1];$.text;p[document-index=504]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[2];$.text;p[document-index=557]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:fcd24106817445eb0fd72b890ed6d2e53576b6f2",
+      "subjectId": "history:period-definition:wikipedia-en:166289",
+      "propertyId": "period:definition-end",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 300,
+          "latestYear": 300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "AD 300"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "conventional-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yayoi:conventional-range:end"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:dates"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:chronology-qualification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[1];$.text;p[document-index=504]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[2];$.text;p[document-index=557]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:05e20ea39c719fed0e027a74fa6190e6ab7d7eb9",
+      "subjectId": "history:period-definition:wikipedia-en:166289",
+      "propertyId": "period:definition-label",
+      "value": {
+        "kind": "text",
+        "value": "Yayoi period"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "conventional-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yayoi:conventional-range:period:definition-label"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:dates"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:chronology-qualification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[1];$.text;p[document-index=504]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[2];$.text;p[document-index=557]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": -300,
+          "latestYear": -300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 300 BC"
+        },
+        "end": {
+          "earliestYear": 300,
+          "latestYear": 300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "AD 300"
+        },
+        "certainty": "possible"
+      }
+    },
+    {
+      "id": "evidenced-field:21b4387a0ebe30e9cfcb1ebc683eebbd3c940061",
+      "subjectId": "history:period-definition:wikipedia-en:166289",
+      "propertyId": "period:chronology-basis",
+      "value": {
+        "kind": "text",
+        "value": "conventional-range"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "conventional-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yayoi:conventional-range:period:chronology-basis"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:dates"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:chronology-qualification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[1];$.text;p[document-index=504]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[2];$.text;p[document-index=557]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": -300,
+          "latestYear": -300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 300 BC"
+        },
+        "end": {
+          "earliestYear": 300,
+          "latestYear": 300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "AD 300"
+        },
+        "certainty": "possible"
+      }
+    },
+    {
+      "id": "evidenced-field:3262a6c925e061d082fb3171c4b4c13f314ddfd4",
+      "subjectId": "history:period-definition:wikipedia-en:166289",
+      "propertyId": "period:definition-start",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": -1000,
+          "latestYear": -901,
+          "precision": "century",
+          "calendar": "source-calendar-unspecified",
+          "raw": "around the 10th century BC"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "earlier-tenth-century"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yayoi:earlier-tenth-century:start"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:dates"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:chronology-qualification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[1];$.text;p[document-index=504]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[2];$.text;p[document-index=557]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:f367d765f6ffe8be5289ccf6ce95d517f423c54f",
+      "subjectId": "history:period-definition:wikipedia-en:166289",
+      "propertyId": "period:definition-end",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 201,
+          "latestYear": 300,
+          "precision": "century",
+          "calendar": "source-calendar-unspecified",
+          "raw": "mid-3rd century AD"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "earlier-tenth-century"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yayoi:earlier-tenth-century:end"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:dates"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:chronology-qualification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[1];$.text;p[document-index=504]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[2];$.text;p[document-index=557]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:c692ea29e870a4414f95a829a40945c8573200e3",
+      "subjectId": "history:period-definition:wikipedia-en:166289",
+      "propertyId": "period:definition-label",
+      "value": {
+        "kind": "text",
+        "value": "Yayoi period"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "earlier-tenth-century"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yayoi:earlier-tenth-century:period:definition-label"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:dates"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:chronology-qualification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[1];$.text;p[document-index=504]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[2];$.text;p[document-index=557]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": -1000,
+          "latestYear": -901,
+          "precision": "century",
+          "calendar": "source-calendar-unspecified",
+          "raw": "around the 10th century BC"
+        },
+        "end": {
+          "earliestYear": 201,
+          "latestYear": 300,
+          "precision": "century",
+          "calendar": "source-calendar-unspecified",
+          "raw": "mid-3rd century AD"
+        },
+        "certainty": "possible"
+      }
+    },
+    {
+      "id": "evidenced-field:eefafd8f996e4ab06dda8bc454abd656af994d80",
+      "subjectId": "history:period-definition:wikipedia-en:166289",
+      "propertyId": "period:chronology-basis",
+      "value": {
+        "kind": "text",
+        "value": "earlier-tenth-century"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "earlier-tenth-century"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yayoi:earlier-tenth-century:period:chronology-basis"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:dates"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:chronology-qualification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[1];$.text;p[document-index=504]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[2];$.text;p[document-index=557]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": -1000,
+          "latestYear": -901,
+          "precision": "century",
+          "calendar": "source-calendar-unspecified",
+          "raw": "around the 10th century BC"
+        },
+        "end": {
+          "earliestYear": 201,
+          "latestYear": 300,
+          "precision": "century",
+          "calendar": "source-calendar-unspecified",
+          "raw": "mid-3rd century AD"
+        },
+        "certainty": "possible"
+      }
+    },
+    {
+      "id": "evidenced-field:9fef51b763a88e18c937bcef93e6885fff353098",
+      "subjectId": "history:period-definition:wikipedia-en:166289",
+      "propertyId": "period:definition-start",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": -900,
+          "latestYear": -701,
+          "precision": "interval",
+          "calendar": "source-calendar-unspecified",
+          "raw": "9th–8th century BC"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "earlier-ninth-eighth-century"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yayoi:earlier-ninth-eighth-century:start"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:dates"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:chronology-qualification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[1];$.text;p[document-index=504]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[2];$.text;p[document-index=557]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:357c6fbf5b7bec30061133c8138532169268e575",
+      "subjectId": "history:period-definition:wikipedia-en:166289",
+      "propertyId": "period:definition-end",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 201,
+          "latestYear": 300,
+          "precision": "century",
+          "calendar": "source-calendar-unspecified",
+          "raw": "mid-3rd century AD"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "earlier-ninth-eighth-century"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yayoi:earlier-ninth-eighth-century:end"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:dates"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:chronology-qualification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[1];$.text;p[document-index=504]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[2];$.text;p[document-index=557]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:9d47d3d6712271ee812472ec26c9a352be92f9f8",
+      "subjectId": "history:period-definition:wikipedia-en:166289",
+      "propertyId": "period:definition-label",
+      "value": {
+        "kind": "text",
+        "value": "Yayoi period"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "earlier-ninth-eighth-century"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yayoi:earlier-ninth-eighth-century:period:definition-label"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:dates"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:chronology-qualification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[1];$.text;p[document-index=504]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[2];$.text;p[document-index=557]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": -900,
+          "latestYear": -701,
+          "precision": "interval",
+          "calendar": "source-calendar-unspecified",
+          "raw": "9th–8th century BC"
+        },
+        "end": {
+          "earliestYear": 201,
+          "latestYear": 300,
+          "precision": "century",
+          "calendar": "source-calendar-unspecified",
+          "raw": "mid-3rd century AD"
+        },
+        "certainty": "possible"
+      }
+    },
+    {
+      "id": "evidenced-field:0bcf7e9a5a70e309d4a1699563186ce424179b83",
+      "subjectId": "history:period-definition:wikipedia-en:166289",
+      "propertyId": "period:chronology-basis",
+      "value": {
+        "kind": "text",
+        "value": "earlier-ninth-eighth-century"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "earlier-ninth-eighth-century"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yayoi:earlier-ninth-eighth-century:period:chronology-basis"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:dates"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yayoi:chronology-qualification"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[1];$.text;p[document-index=504]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[2];$.text;p[document-index=557]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": -900,
+          "latestYear": -701,
+          "precision": "interval",
+          "calendar": "source-calendar-unspecified",
+          "raw": "9th–8th century BC"
+        },
+        "end": {
+          "earliestYear": 201,
+          "latestYear": 300,
+          "precision": "century",
+          "calendar": "source-calendar-unspecified",
+          "raw": "mid-3rd century AD"
+        },
+        "certainty": "possible"
+      }
+    },
+    {
+      "id": "evidenced-field:db77136304cb6a0f3e729c008561a1af46d332f0",
+      "subjectId": "history:period-definition:wikipedia-en:166431",
+      "propertyId": "period:definition-start",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 201,
+          "latestYear": 300,
+          "precision": "century",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 3rd Century"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:kofun:infobox-range:start"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "kofun:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[5].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Kofun%20period&oldid=1378867155"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:363a56b9a691e8549483ba83d2bf04740359b85a",
+      "subjectId": "history:period-definition:wikipedia-en:166431",
+      "propertyId": "period:definition-end",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 538,
+          "latestYear": 538,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "538 AD"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:kofun:infobox-range:end"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "kofun:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[5].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Kofun%20period&oldid=1378867155"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:26fcf6996768247b22b296658ac304d78f2fdaeb",
+      "subjectId": "history:period-definition:wikipedia-en:166431",
+      "propertyId": "period:definition-label",
+      "value": {
+        "kind": "text",
+        "value": "Kofun period"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:kofun:infobox-range:period:definition-label"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "kofun:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[5].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Kofun%20period&oldid=1378867155"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": 201,
+          "latestYear": 300,
+          "precision": "century",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 3rd Century"
+        },
+        "end": {
+          "earliestYear": 538,
+          "latestYear": 538,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "538 AD"
+        },
+        "certainty": "possible"
+      }
+    },
+    {
+      "id": "evidenced-field:fde2674088d0101500710141397f46a82d833acd",
+      "subjectId": "history:period-definition:wikipedia-en:166431",
+      "propertyId": "period:chronology-basis",
+      "value": {
+        "kind": "text",
+        "value": "infobox-range"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:kofun:infobox-range:period:chronology-basis"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "kofun:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[5].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Kofun%20period&oldid=1378867155"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": 201,
+          "latestYear": 300,
+          "precision": "century",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 3rd Century"
+        },
+        "end": {
+          "earliestYear": 538,
+          "latestYear": 538,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "538 AD"
+        },
+        "certainty": "possible"
+      }
+    },
+    {
+      "id": "evidenced-field:fce330fbf2c34e4f0bfd2085fca44f3acc902f34",
+      "subjectId": "history:period-definition:wikipedia-en:1060314",
+      "propertyId": "period:definition-start",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": -5000,
+          "latestYear": -5000,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 5000"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yangshao:infobox-range:start"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yangshao:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[4];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yangshao%20culture&oldid=1379047029"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:3b156cd4e33c833735bcb85cbf9f3bd0b97ba140",
+      "subjectId": "history:period-definition:wikipedia-en:1060314",
+      "propertyId": "period:definition-end",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": -3000,
+          "latestYear": -3000,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 3000 BC"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yangshao:infobox-range:end"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yangshao:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[4];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yangshao%20culture&oldid=1379047029"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:0a068fa6364c96b1c481a39d37ed27dfd8902f6e",
+      "subjectId": "history:period-definition:wikipedia-en:1060314",
+      "propertyId": "period:definition-label",
+      "value": {
+        "kind": "text",
+        "value": "Yangshao culture"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yangshao:infobox-range:period:definition-label"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yangshao:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[4];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yangshao%20culture&oldid=1379047029"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": -5000,
+          "latestYear": -5000,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 5000"
+        },
+        "end": {
+          "earliestYear": -3000,
+          "latestYear": -3000,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 3000 BC"
+        },
+        "certainty": "possible"
+      }
+    },
+    {
+      "id": "evidenced-field:6442869800df07d30a4cf2ae8e1af2eab854ca0f",
+      "subjectId": "history:period-definition:wikipedia-en:1060314",
+      "propertyId": "period:chronology-basis",
+      "value": {
+        "kind": "text",
+        "value": "infobox-range"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:yangshao:infobox-range:period:chronology-basis"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "yangshao:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[4];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Yangshao%20culture&oldid=1379047029"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": -5000,
+          "latestYear": -5000,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 5000"
+        },
+        "end": {
+          "earliestYear": -3000,
+          "latestYear": -3000,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 3000 BC"
+        },
+        "certainty": "possible"
+      }
+    },
+    {
+      "id": "evidenced-field:abc1385cdced54add3e3b5bcb8dd55cb524a5164",
+      "subjectId": "history:period-definition:wikipedia-en:1060368",
+      "propertyId": "period:definition-start",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": -3000,
+          "latestYear": -3000,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 3000"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:longshan:infobox-range:start"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "longshan:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[5];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Longshan%20culture&oldid=1360689710"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:ad41693126ff051568942b10d921756747ae59c5",
+      "subjectId": "history:period-definition:wikipedia-en:1060368",
+      "propertyId": "period:definition-end",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": -1900,
+          "latestYear": -1900,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 1900 BC"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:longshan:infobox-range:end"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "longshan:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[5];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Longshan%20culture&oldid=1360689710"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:c57e4cab8acded852d615641d03a97d944e5360e",
+      "subjectId": "history:period-definition:wikipedia-en:1060368",
+      "propertyId": "period:definition-label",
+      "value": {
+        "kind": "text",
+        "value": "Longshan culture"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:longshan:infobox-range:period:definition-label"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "longshan:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[5];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Longshan%20culture&oldid=1360689710"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": -3000,
+          "latestYear": -3000,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 3000"
+        },
+        "end": {
+          "earliestYear": -1900,
+          "latestYear": -1900,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 1900 BC"
+        },
+        "certainty": "possible"
+      }
+    },
+    {
+      "id": "evidenced-field:13e679abdd30fa857969b0c69c7414660b3e8d5b",
+      "subjectId": "history:period-definition:wikipedia-en:1060368",
+      "propertyId": "period:chronology-basis",
+      "value": {
+        "kind": "text",
+        "value": "infobox-range"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:longshan:infobox-range:period:chronology-basis"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "longshan:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[5];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Longshan%20culture&oldid=1360689710"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": -3000,
+          "latestYear": -3000,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 3000"
+        },
+        "end": {
+          "earliestYear": -1900,
+          "latestYear": -1900,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. 1900 BC"
+        },
+        "certainty": "possible"
+      }
+    },
+    {
+      "id": "evidenced-field:5e08695ff53472f2000d0e0942dabe6183f587d6",
+      "subjectId": "history:period-definition:wikipedia-en:526037",
+      "propertyId": "period:definition-start",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": -3300,
+          "latestYear": -3300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "3300"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:liangzhu:infobox-range:start"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "liangzhu:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[6];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Liangzhu%20culture&oldid=1375049632"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:4c68b2afe0b9fb1d46467ab78664f05a6fb974d2",
+      "subjectId": "history:period-definition:wikipedia-en:526037",
+      "propertyId": "period:definition-end",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": -2300,
+          "latestYear": -2300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "2300 BC"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:liangzhu:infobox-range:end"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "liangzhu:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[6];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Liangzhu%20culture&oldid=1375049632"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:c94cb808ea1b8303e46840e29e75bf3f647402a8",
+      "subjectId": "history:period-definition:wikipedia-en:526037",
+      "propertyId": "period:definition-label",
+      "value": {
+        "kind": "text",
+        "value": "Liangzhu culture"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:liangzhu:infobox-range:period:definition-label"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "liangzhu:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[6];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Liangzhu%20culture&oldid=1375049632"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": -3300,
+          "latestYear": -3300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "3300"
+        },
+        "end": {
+          "earliestYear": -2300,
+          "latestYear": -2300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "2300 BC"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:53c24d59009564dcf2b29c8f040ce0965733bef0",
+      "subjectId": "history:period-definition:wikipedia-en:526037",
+      "propertyId": "period:chronology-basis",
+      "value": {
+        "kind": "text",
+        "value": "infobox-range"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "period:chronology-basis",
+          "value": {
+            "kind": "text",
+            "value": "infobox-range"
+          }
+        },
+        {
+          "propertyId": "period:temporal-semantics",
+          "value": {
+            "kind": "text",
+            "value": "published-period-definition-not-polity-lifespan"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "wikipedia-archaeological-period-definitions@1:liangzhu:infobox-range:period:chronology-basis"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "liangzhu:dates"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+          "locator": "$.facts[6];$.text;table.infobox[0].tr[3].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Liangzhu%20culture&oldid=1375049632"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "review": "unreviewed",
+      "validTime": {
+        "start": {
+          "earliestYear": -3300,
+          "latestYear": -3300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "3300"
+        },
+        "end": {
+          "earliestYear": -2300,
+          "latestYear": -2300,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "2300 BC"
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "identity": {
+        "provider": "gitworld-evidenced-fields",
+        "externalId": "wikipedia-archaeological-period-definitions"
+      },
+      "revision": "1",
+      "contentHash": "4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "retrievedAt": "2026-10-25T02:51:07.703Z",
+      "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/period-definitions-prd.md",
+      "adapterVersion": "evidenced-published-fields-v2",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "allowed",
+        "attribution": "English Wikipedia contributors, included fixed editions and author-history links. GitWorld selects date facts and authors typed period definitions, range normalization and English/Simplified Chinese presentation under CC-BY-SA-4.0. Raw HTML, source paragraphs, images and link labels are excluded. No source endorsement."
+      },
+      "record": {
+        "schemaVersion": 1,
+        "mappingVersion": "evidenced-published-fields-v2",
+        "plan": {
+          "schemaVersion": 1,
+          "id": "wikipedia-archaeological-period-definitions",
+          "revision": "1",
+          "preparedAt": "2026-10-25T02:51:07.703Z",
+          "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/period-definitions-prd.md",
+          "rights": {
+            "licenseId": "CC-BY-SA-4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "redistribution": "allowed",
+            "attribution": "English Wikipedia contributors, included fixed editions and author-history links. GitWorld selects date facts and authors typed period definitions, range normalization and English/Simplified Chinese presentation under CC-BY-SA-4.0. Raw HTML, source paragraphs, images and link labels are excluded. No source endorsement."
+          },
+          "profiles": [
+            {
+              "id": "jomon",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "47870676"
+              },
+              "revision": "1380542509",
+              "contentHash": "6a7314556b9f3bef155af7387373f06c88db9664eb1188145ce3b3698ce41ea6",
+              "citation": {
+                "title": "Jōmon period",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected factual dates and original bilingual interpretation are adapted under CC-BY-SA-4.0 with fixed revision and author history. No article prose, anchor labels, HTML or images are retained."
+              },
+              "facts": [
+                {
+                  "id": "dates",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "p",
+                    "startsWith": "In Japanese history, the Jōmon period"
+                  },
+                  "textHash": "7150d9accac213e99775e461787bf04af8483ade77582cf77dec5e790ce91414"
+                }
+              ]
+            },
+            {
+              "id": "yayoi",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "166289"
+              },
+              "revision": "1379321741",
+              "contentHash": "7953ccc5f57e4b31e305d4baff76f0f84854ce8d589feddc2a97092572860377",
+              "citation": {
+                "title": "Yayoi period",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected factual dates and original bilingual interpretation are adapted under CC-BY-SA-4.0 with fixed revision and author history. No article prose, anchor labels, HTML or images are retained."
+              },
+              "facts": [
+                {
+                  "id": "dates",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "p",
+                    "startsWith": "The Yayoi period (Japanese:"
+                  },
+                  "textHash": "2441c1027b99a01e1d56f298adfd77b5f7f0c3f609d114c3a06b1e778b235282"
+                },
+                {
+                  "id": "chronology-qualification",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "p",
+                    "startsWith": "The Yayoi period is, generally, accepted"
+                  },
+                  "textHash": "edf8f8ca17490e860a877a12ea3946154e1ccb53fa1a60dedf30ade53cbdf94e"
+                }
+              ]
+            },
+            {
+              "id": "kofun",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "166431"
+              },
+              "revision": "1378867155",
+              "contentHash": "973c906ba3f69ed424567aee2ca3cda6f55224a556978ba2c3ae9b33a26906ee",
+              "citation": {
+                "title": "Kofun period",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected factual dates and original bilingual interpretation are adapted under CC-BY-SA-4.0 with fixed revision and author history. No article prose, anchor labels, HTML or images are retained."
+              },
+              "facts": [
+                {
+                  "id": "dates",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Dates"
+                  },
+                  "textHash": "e8cce0beb4445c512f48bb970064a09f755179a2bd596ab8e21a167e1b4747ba"
+                }
+              ]
+            },
+            {
+              "id": "yangshao",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "1060314"
+              },
+              "revision": "1379047029",
+              "contentHash": "7d7a51a09cdf248c17ea5b0a4891110bb2fcb6ad5be5d2bcebe53ef897cd554f",
+              "citation": {
+                "title": "Yangshao culture",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected factual dates and original bilingual interpretation are adapted under CC-BY-SA-4.0 with fixed revision and author history. No article prose, anchor labels, HTML or images are retained."
+              },
+              "facts": [
+                {
+                  "id": "dates",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Dates"
+                  },
+                  "textHash": "b9226a58540cb5ff966a4be04d0f442b7fdbd0fd869a0cfe11f4e393cec46be8"
+                }
+              ]
+            },
+            {
+              "id": "longshan",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "1060368"
+              },
+              "revision": "1360689710",
+              "contentHash": "2c61902752100ea95074282b1c53548f9f354d26e115fde61fca798c56ec3c03",
+              "citation": {
+                "title": "Longshan culture",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected factual dates and original bilingual interpretation are adapted under CC-BY-SA-4.0 with fixed revision and author history. No article prose, anchor labels, HTML or images are retained."
+              },
+              "facts": [
+                {
+                  "id": "dates",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Dates"
+                  },
+                  "textHash": "65a0808228fd89dc81320c20712a31edb18a7fd9c9dbe58b01409036324d4b4a"
+                }
+              ]
+            },
+            {
+              "id": "liangzhu",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "526037"
+              },
+              "revision": "1375049632",
+              "contentHash": "a54d2b37ab97c383b8b127a04a482ff20c5133fcd62a7b764db81d68588fcd74",
+              "citation": {
+                "title": "Liangzhu culture",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://en.wikipedia.org/wiki/Wikipedia:Copyrights",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected factual dates and original bilingual interpretation are adapted under CC-BY-SA-4.0 with fixed revision and author history. No article prose, anchor labels, HTML or images are retained."
+              },
+              "facts": [
+                {
+                  "id": "dates",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Dates"
+                  },
+                  "textHash": "9352c0bdc6358744dca7de19ef4bbed18902787cd1b51554e81eaf2f4d10c80a"
+                }
+              ]
+            }
+          ],
+          "objects": [
+            {
+              "id": "history:period-definition:wikipedia-en:47870676",
+              "identities": [
+                {
+                  "provider": "wikipedia-period-definition",
+                  "externalId": "47870676"
+                }
+              ],
+              "labels": {
+                "en": "Jōmon period",
+                "zh-CN": "绳文时代"
+              },
+              "descriptions": {},
+              "aliases": [],
+              "types": [
+                "gitworld:period-definition"
+              ]
+            },
+            {
+              "id": "history:period-definition:wikipedia-en:166289",
+              "identities": [
+                {
+                  "provider": "wikipedia-period-definition",
+                  "externalId": "166289"
+                }
+              ],
+              "labels": {
+                "en": "Yayoi period",
+                "zh-CN": "弥生时代"
+              },
+              "descriptions": {},
+              "aliases": [],
+              "types": [
+                "gitworld:period-definition"
+              ]
+            },
+            {
+              "id": "history:period-definition:wikipedia-en:166431",
+              "identities": [
+                {
+                  "provider": "wikipedia-period-definition",
+                  "externalId": "166431"
+                }
+              ],
+              "labels": {
+                "en": "Kofun period",
+                "zh-CN": "古坟时代"
+              },
+              "descriptions": {},
+              "aliases": [],
+              "types": [
+                "gitworld:period-definition"
+              ]
+            },
+            {
+              "id": "history:period-definition:wikipedia-en:1060314",
+              "identities": [
+                {
+                  "provider": "wikipedia-period-definition",
+                  "externalId": "1060314"
+                }
+              ],
+              "labels": {
+                "en": "Yangshao culture",
+                "zh-CN": "仰韶文化"
+              },
+              "descriptions": {},
+              "aliases": [],
+              "types": [
+                "gitworld:period-definition"
+              ]
+            },
+            {
+              "id": "history:period-definition:wikipedia-en:1060368",
+              "identities": [
+                {
+                  "provider": "wikipedia-period-definition",
+                  "externalId": "1060368"
+                }
+              ],
+              "labels": {
+                "en": "Longshan culture",
+                "zh-CN": "龙山文化"
+              },
+              "descriptions": {},
+              "aliases": [],
+              "types": [
+                "gitworld:period-definition"
+              ]
+            },
+            {
+              "id": "history:period-definition:wikipedia-en:526037",
+              "identities": [
+                {
+                  "provider": "wikipedia-period-definition",
+                  "externalId": "526037"
+                }
+              ],
+              "labels": {
+                "en": "Liangzhu culture",
+                "zh-CN": "良渚文化"
+              },
+              "descriptions": {},
+              "aliases": [],
+              "types": [
+                "gitworld:period-definition"
+              ]
+            }
+          ],
+          "statements": [
+            {
+              "id": "jomon:article-overview:start",
+              "subjectId": "history:period-definition:wikipedia-en:47870676",
+              "propertyId": "period:definition-start",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": -14000,
+                  "latestYear": -14000,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 14,000"
+                }
+              },
+              "factKeys": [
+                "jomon:dates"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "article-overview"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Use the overview range as an approximate definition. It does not establish a uniform culture or population throughout these years.",
+                "zh-CN": "采用概览中的近似范围；不据此认定这些年份间文化或人口始终一致。"
+              }
+            },
+            {
+              "id": "jomon:article-overview:end",
+              "subjectId": "history:period-definition:wikipedia-en:47870676",
+              "propertyId": "period:definition-end",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": -300,
+                  "latestYear": -300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "300 BC"
+                }
+              },
+              "factKeys": [
+                "jomon:dates"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "article-overview"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Use the overview range as an approximate definition. It does not establish a uniform culture or population throughout these years.",
+                "zh-CN": "采用概览中的近似范围；不据此认定这些年份间文化或人口始终一致。"
+              }
+            },
+            {
+              "id": "jomon:article-overview:period:definition-label",
+              "subjectId": "history:period-definition:wikipedia-en:47870676",
+              "propertyId": "period:definition-label",
+              "value": {
+                "kind": "text",
+                "value": "Jōmon period"
+              },
+              "factKeys": [
+                "jomon:dates"
+              ],
+              "timeFactKeys": [
+                "jomon:dates"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": -14000,
+                  "latestYear": -14000,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 14,000"
+                },
+                "end": {
+                  "earliestYear": -300,
+                  "latestYear": -300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "300 BC"
+                },
+                "certainty": "possible"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "article-overview"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Use the overview range as an approximate definition. It does not establish a uniform culture or population throughout these years.",
+                "zh-CN": "采用概览中的近似范围；不据此认定这些年份间文化或人口始终一致。"
+              }
+            },
+            {
+              "id": "jomon:article-overview:period:chronology-basis",
+              "subjectId": "history:period-definition:wikipedia-en:47870676",
+              "propertyId": "period:chronology-basis",
+              "value": {
+                "kind": "text",
+                "value": "article-overview"
+              },
+              "factKeys": [
+                "jomon:dates"
+              ],
+              "timeFactKeys": [
+                "jomon:dates"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": -14000,
+                  "latestYear": -14000,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 14,000"
+                },
+                "end": {
+                  "earliestYear": -300,
+                  "latestYear": -300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "300 BC"
+                },
+                "certainty": "possible"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "article-overview"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Use the overview range as an approximate definition. It does not establish a uniform culture or population throughout these years.",
+                "zh-CN": "采用概览中的近似范围；不据此认定这些年份间文化或人口始终一致。"
+              }
+            },
+            {
+              "id": "yayoi:conventional-range:start",
+              "subjectId": "history:period-definition:wikipedia-en:166289",
+              "propertyId": "period:definition-start",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": -300,
+                  "latestYear": -300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 300 BC"
+                }
+              },
+              "factKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "conventional-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Keep the conventional range alongside the earlier chronology reported by the same fixed article; neither becomes a consensus boundary.",
+                "zh-CN": "保留同一固定版本中的传统范围与较早纪年，不把任一种方案当作统一边界。"
+              }
+            },
+            {
+              "id": "yayoi:conventional-range:end",
+              "subjectId": "history:period-definition:wikipedia-en:166289",
+              "propertyId": "period:definition-end",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 300,
+                  "latestYear": 300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "AD 300"
+                }
+              },
+              "factKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "conventional-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Keep the conventional range alongside the earlier chronology reported by the same fixed article; neither becomes a consensus boundary.",
+                "zh-CN": "保留同一固定版本中的传统范围与较早纪年，不把任一种方案当作统一边界。"
+              }
+            },
+            {
+              "id": "yayoi:conventional-range:period:definition-label",
+              "subjectId": "history:period-definition:wikipedia-en:166289",
+              "propertyId": "period:definition-label",
+              "value": {
+                "kind": "text",
+                "value": "Yayoi period"
+              },
+              "factKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "timeFactKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": -300,
+                  "latestYear": -300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 300 BC"
+                },
+                "end": {
+                  "earliestYear": 300,
+                  "latestYear": 300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "AD 300"
+                },
+                "certainty": "possible"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "conventional-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Keep the conventional range alongside the earlier chronology reported by the same fixed article; neither becomes a consensus boundary.",
+                "zh-CN": "保留同一固定版本中的传统范围与较早纪年，不把任一种方案当作统一边界。"
+              }
+            },
+            {
+              "id": "yayoi:conventional-range:period:chronology-basis",
+              "subjectId": "history:period-definition:wikipedia-en:166289",
+              "propertyId": "period:chronology-basis",
+              "value": {
+                "kind": "text",
+                "value": "conventional-range"
+              },
+              "factKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "timeFactKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": -300,
+                  "latestYear": -300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 300 BC"
+                },
+                "end": {
+                  "earliestYear": 300,
+                  "latestYear": 300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "AD 300"
+                },
+                "certainty": "possible"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "conventional-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Keep the conventional range alongside the earlier chronology reported by the same fixed article; neither becomes a consensus boundary.",
+                "zh-CN": "保留同一固定版本中的传统范围与较早纪年，不把任一种方案当作统一边界。"
+              }
+            },
+            {
+              "id": "yayoi:earlier-tenth-century:start",
+              "subjectId": "history:period-definition:wikipedia-en:166289",
+              "propertyId": "period:definition-start",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": -1000,
+                  "latestYear": -901,
+                  "precision": "century",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "around the 10th century BC"
+                }
+              },
+              "factKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "earlier-tenth-century"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Retain this explicitly stated earlier chronology as possible. The source also reports controversy; “mid-third century” remains the full third-century envelope, without selecting an invented narrower cutoff.",
+                "zh-CN": "将来源明确列出的较早纪年保留为可能适用；来源同时记有争议。“三世纪中叶”采用完整世纪包络，不选取未经支持的更窄年份。"
+              }
+            },
+            {
+              "id": "yayoi:earlier-tenth-century:end",
+              "subjectId": "history:period-definition:wikipedia-en:166289",
+              "propertyId": "period:definition-end",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 201,
+                  "latestYear": 300,
+                  "precision": "century",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "mid-3rd century AD"
+                }
+              },
+              "factKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "earlier-tenth-century"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Retain this explicitly stated earlier chronology as possible. The source also reports controversy; “mid-third century” remains the full third-century envelope, without selecting an invented narrower cutoff.",
+                "zh-CN": "将来源明确列出的较早纪年保留为可能适用；来源同时记有争议。“三世纪中叶”采用完整世纪包络，不选取未经支持的更窄年份。"
+              }
+            },
+            {
+              "id": "yayoi:earlier-tenth-century:period:definition-label",
+              "subjectId": "history:period-definition:wikipedia-en:166289",
+              "propertyId": "period:definition-label",
+              "value": {
+                "kind": "text",
+                "value": "Yayoi period"
+              },
+              "factKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "timeFactKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": -1000,
+                  "latestYear": -901,
+                  "precision": "century",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "around the 10th century BC"
+                },
+                "end": {
+                  "earliestYear": 201,
+                  "latestYear": 300,
+                  "precision": "century",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "mid-3rd century AD"
+                },
+                "certainty": "possible"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "earlier-tenth-century"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Retain this explicitly stated earlier chronology as possible. The source also reports controversy; “mid-third century” remains the full third-century envelope, without selecting an invented narrower cutoff.",
+                "zh-CN": "将来源明确列出的较早纪年保留为可能适用；来源同时记有争议。“三世纪中叶”采用完整世纪包络，不选取未经支持的更窄年份。"
+              }
+            },
+            {
+              "id": "yayoi:earlier-tenth-century:period:chronology-basis",
+              "subjectId": "history:period-definition:wikipedia-en:166289",
+              "propertyId": "period:chronology-basis",
+              "value": {
+                "kind": "text",
+                "value": "earlier-tenth-century"
+              },
+              "factKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "timeFactKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": -1000,
+                  "latestYear": -901,
+                  "precision": "century",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "around the 10th century BC"
+                },
+                "end": {
+                  "earliestYear": 201,
+                  "latestYear": 300,
+                  "precision": "century",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "mid-3rd century AD"
+                },
+                "certainty": "possible"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "earlier-tenth-century"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Retain this explicitly stated earlier chronology as possible. The source also reports controversy; “mid-third century” remains the full third-century envelope, without selecting an invented narrower cutoff.",
+                "zh-CN": "将来源明确列出的较早纪年保留为可能适用；来源同时记有争议。“三世纪中叶”采用完整世纪包络，不选取未经支持的更窄年份。"
+              }
+            },
+            {
+              "id": "yayoi:earlier-ninth-eighth-century:start",
+              "subjectId": "history:period-definition:wikipedia-en:166289",
+              "propertyId": "period:definition-start",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": -900,
+                  "latestYear": -701,
+                  "precision": "interval",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "9th–8th century BC"
+                }
+              },
+              "factKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "earlier-ninth-eighth-century"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Retain this explicitly stated earlier chronology as possible. The source also reports controversy; “mid-third century” remains the full third-century envelope, without selecting an invented narrower cutoff.",
+                "zh-CN": "将来源明确列出的较早纪年保留为可能适用；来源同时记有争议。“三世纪中叶”采用完整世纪包络，不选取未经支持的更窄年份。"
+              }
+            },
+            {
+              "id": "yayoi:earlier-ninth-eighth-century:end",
+              "subjectId": "history:period-definition:wikipedia-en:166289",
+              "propertyId": "period:definition-end",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 201,
+                  "latestYear": 300,
+                  "precision": "century",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "mid-3rd century AD"
+                }
+              },
+              "factKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "earlier-ninth-eighth-century"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Retain this explicitly stated earlier chronology as possible. The source also reports controversy; “mid-third century” remains the full third-century envelope, without selecting an invented narrower cutoff.",
+                "zh-CN": "将来源明确列出的较早纪年保留为可能适用；来源同时记有争议。“三世纪中叶”采用完整世纪包络，不选取未经支持的更窄年份。"
+              }
+            },
+            {
+              "id": "yayoi:earlier-ninth-eighth-century:period:definition-label",
+              "subjectId": "history:period-definition:wikipedia-en:166289",
+              "propertyId": "period:definition-label",
+              "value": {
+                "kind": "text",
+                "value": "Yayoi period"
+              },
+              "factKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "timeFactKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": -900,
+                  "latestYear": -701,
+                  "precision": "interval",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "9th–8th century BC"
+                },
+                "end": {
+                  "earliestYear": 201,
+                  "latestYear": 300,
+                  "precision": "century",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "mid-3rd century AD"
+                },
+                "certainty": "possible"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "earlier-ninth-eighth-century"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Retain this explicitly stated earlier chronology as possible. The source also reports controversy; “mid-third century” remains the full third-century envelope, without selecting an invented narrower cutoff.",
+                "zh-CN": "将来源明确列出的较早纪年保留为可能适用；来源同时记有争议。“三世纪中叶”采用完整世纪包络，不选取未经支持的更窄年份。"
+              }
+            },
+            {
+              "id": "yayoi:earlier-ninth-eighth-century:period:chronology-basis",
+              "subjectId": "history:period-definition:wikipedia-en:166289",
+              "propertyId": "period:chronology-basis",
+              "value": {
+                "kind": "text",
+                "value": "earlier-ninth-eighth-century"
+              },
+              "factKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "timeFactKeys": [
+                "yayoi:dates",
+                "yayoi:chronology-qualification"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": -900,
+                  "latestYear": -701,
+                  "precision": "interval",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "9th–8th century BC"
+                },
+                "end": {
+                  "earliestYear": 201,
+                  "latestYear": 300,
+                  "precision": "century",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "mid-3rd century AD"
+                },
+                "certainty": "possible"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "earlier-ninth-eighth-century"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Retain this explicitly stated earlier chronology as possible. The source also reports controversy; “mid-third century” remains the full third-century envelope, without selecting an invented narrower cutoff.",
+                "zh-CN": "将来源明确列出的较早纪年保留为可能适用；来源同时记有争议。“三世纪中叶”采用完整世纪包络，不选取未经支持的更窄年份。"
+              }
+            },
+            {
+              "id": "kofun:infobox-range:start",
+              "subjectId": "history:period-definition:wikipedia-en:166431",
+              "propertyId": "period:definition-start",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 201,
+                  "latestYear": 300,
+                  "precision": "century",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 3rd Century"
+                }
+              },
+              "factKeys": [
+                "kofun:dates"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "kofun:infobox-range:end",
+              "subjectId": "history:period-definition:wikipedia-en:166431",
+              "propertyId": "period:definition-end",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 538,
+                  "latestYear": 538,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "538 AD"
+                }
+              },
+              "factKeys": [
+                "kofun:dates"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "kofun:infobox-range:period:definition-label",
+              "subjectId": "history:period-definition:wikipedia-en:166431",
+              "propertyId": "period:definition-label",
+              "value": {
+                "kind": "text",
+                "value": "Kofun period"
+              },
+              "factKeys": [
+                "kofun:dates"
+              ],
+              "timeFactKeys": [
+                "kofun:dates"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": 201,
+                  "latestYear": 300,
+                  "precision": "century",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 3rd Century"
+                },
+                "end": {
+                  "earliestYear": 538,
+                  "latestYear": 538,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "538 AD"
+                },
+                "certainty": "possible"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "kofun:infobox-range:period:chronology-basis",
+              "subjectId": "history:period-definition:wikipedia-en:166431",
+              "propertyId": "period:chronology-basis",
+              "value": {
+                "kind": "text",
+                "value": "infobox-range"
+              },
+              "factKeys": [
+                "kofun:dates"
+              ],
+              "timeFactKeys": [
+                "kofun:dates"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": 201,
+                  "latestYear": 300,
+                  "precision": "century",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 3rd Century"
+                },
+                "end": {
+                  "earliestYear": 538,
+                  "latestYear": 538,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "538 AD"
+                },
+                "certainty": "possible"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "yangshao:infobox-range:start",
+              "subjectId": "history:period-definition:wikipedia-en:1060314",
+              "propertyId": "period:definition-start",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": -5000,
+                  "latestYear": -5000,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 5000"
+                }
+              },
+              "factKeys": [
+                "yangshao:dates"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "yangshao:infobox-range:end",
+              "subjectId": "history:period-definition:wikipedia-en:1060314",
+              "propertyId": "period:definition-end",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": -3000,
+                  "latestYear": -3000,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 3000 BC"
+                }
+              },
+              "factKeys": [
+                "yangshao:dates"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "yangshao:infobox-range:period:definition-label",
+              "subjectId": "history:period-definition:wikipedia-en:1060314",
+              "propertyId": "period:definition-label",
+              "value": {
+                "kind": "text",
+                "value": "Yangshao culture"
+              },
+              "factKeys": [
+                "yangshao:dates"
+              ],
+              "timeFactKeys": [
+                "yangshao:dates"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": -5000,
+                  "latestYear": -5000,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 5000"
+                },
+                "end": {
+                  "earliestYear": -3000,
+                  "latestYear": -3000,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 3000 BC"
+                },
+                "certainty": "possible"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "yangshao:infobox-range:period:chronology-basis",
+              "subjectId": "history:period-definition:wikipedia-en:1060314",
+              "propertyId": "period:chronology-basis",
+              "value": {
+                "kind": "text",
+                "value": "infobox-range"
+              },
+              "factKeys": [
+                "yangshao:dates"
+              ],
+              "timeFactKeys": [
+                "yangshao:dates"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": -5000,
+                  "latestYear": -5000,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 5000"
+                },
+                "end": {
+                  "earliestYear": -3000,
+                  "latestYear": -3000,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 3000 BC"
+                },
+                "certainty": "possible"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "longshan:infobox-range:start",
+              "subjectId": "history:period-definition:wikipedia-en:1060368",
+              "propertyId": "period:definition-start",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": -3000,
+                  "latestYear": -3000,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 3000"
+                }
+              },
+              "factKeys": [
+                "longshan:dates"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "longshan:infobox-range:end",
+              "subjectId": "history:period-definition:wikipedia-en:1060368",
+              "propertyId": "period:definition-end",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": -1900,
+                  "latestYear": -1900,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 1900 BC"
+                }
+              },
+              "factKeys": [
+                "longshan:dates"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "longshan:infobox-range:period:definition-label",
+              "subjectId": "history:period-definition:wikipedia-en:1060368",
+              "propertyId": "period:definition-label",
+              "value": {
+                "kind": "text",
+                "value": "Longshan culture"
+              },
+              "factKeys": [
+                "longshan:dates"
+              ],
+              "timeFactKeys": [
+                "longshan:dates"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": -3000,
+                  "latestYear": -3000,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 3000"
+                },
+                "end": {
+                  "earliestYear": -1900,
+                  "latestYear": -1900,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 1900 BC"
+                },
+                "certainty": "possible"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "longshan:infobox-range:period:chronology-basis",
+              "subjectId": "history:period-definition:wikipedia-en:1060368",
+              "propertyId": "period:chronology-basis",
+              "value": {
+                "kind": "text",
+                "value": "infobox-range"
+              },
+              "factKeys": [
+                "longshan:dates"
+              ],
+              "timeFactKeys": [
+                "longshan:dates"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": -3000,
+                  "latestYear": -3000,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 3000"
+                },
+                "end": {
+                  "earliestYear": -1900,
+                  "latestYear": -1900,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. 1900 BC"
+                },
+                "certainty": "possible"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "liangzhu:infobox-range:start",
+              "subjectId": "history:period-definition:wikipedia-en:526037",
+              "propertyId": "period:definition-start",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": -3300,
+                  "latestYear": -3300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "3300"
+                }
+              },
+              "factKeys": [
+                "liangzhu:dates"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "liangzhu:infobox-range:end",
+              "subjectId": "history:period-definition:wikipedia-en:526037",
+              "propertyId": "period:definition-end",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": -2300,
+                  "latestYear": -2300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "2300 BC"
+                }
+              },
+              "factKeys": [
+                "liangzhu:dates"
+              ],
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "liangzhu:infobox-range:period:definition-label",
+              "subjectId": "history:period-definition:wikipedia-en:526037",
+              "propertyId": "period:definition-label",
+              "value": {
+                "kind": "text",
+                "value": "Liangzhu culture"
+              },
+              "factKeys": [
+                "liangzhu:dates"
+              ],
+              "timeFactKeys": [
+                "liangzhu:dates"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": -3300,
+                  "latestYear": -3300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "3300"
+                },
+                "end": {
+                  "earliestYear": -2300,
+                  "latestYear": -2300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "2300 BC"
+                }
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            },
+            {
+              "id": "liangzhu:infobox-range:period:chronology-basis",
+              "subjectId": "history:period-definition:wikipedia-en:526037",
+              "propertyId": "period:chronology-basis",
+              "value": {
+                "kind": "text",
+                "value": "infobox-range"
+              },
+              "factKeys": [
+                "liangzhu:dates"
+              ],
+              "timeFactKeys": [
+                "liangzhu:dates"
+              ],
+              "validTime": {
+                "start": {
+                  "earliestYear": -3300,
+                  "latestYear": -3300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "3300"
+                },
+                "end": {
+                  "earliestYear": -2300,
+                  "latestYear": -2300,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "2300 BC"
+                }
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "period:chronology-basis",
+                  "value": {
+                    "kind": "text",
+                    "value": "infobox-range"
+                  }
+                },
+                {
+                  "propertyId": "period:temporal-semantics",
+                  "value": {
+                    "kind": "text",
+                    "value": "published-period-definition-not-polity-lifespan"
+                  }
+                }
+              ],
+              "interpretation": {
+                "en": "Normalize only the fixed infobox date field. This is the applicability of a published period definition, not proof of continuous political rule.",
+                "zh-CN": "仅规范化固定信息框的日期字段；表示来源定义的适用范围，不证明政治统治连续存在。"
+              }
+            }
+          ],
+          "fieldCatalog": {
+            "schemaVersion": 1,
+            "kind": "historical-field-display-labels",
+            "properties": [
+              {
+                "id": "period:definition-start",
+                "labels": {
+                  "en": "Definition start",
+                  "zh-CN": "定义的起点"
+                }
+              },
+              {
+                "id": "period:definition-end",
+                "labels": {
+                  "en": "Definition end",
+                  "zh-CN": "定义的终点"
+                }
+              },
+              {
+                "id": "period:definition-label",
+                "labels": {
+                  "en": "Source definition label",
+                  "zh-CN": "来源中的时期名称"
+                }
+              },
+              {
+                "id": "period:chronology-basis",
+                "labels": {
+                  "en": "Date interpretation",
+                  "zh-CN": "纪年解释"
+                }
+              },
+              {
+                "id": "period:temporal-semantics",
+                "labels": {
+                  "en": "Temporal meaning",
+                  "zh-CN": "时间含义"
+                }
+              },
+              {
+                "id": "projection:rule-id",
+                "labels": {
+                  "en": "Mapping rule",
+                  "zh-CN": "映射规则"
+                }
+              },
+              {
+                "id": "projection:source-fact",
+                "labels": {
+                  "en": "Source field",
+                  "zh-CN": "来源字段"
+                }
+              }
+            ],
+            "types": [
+              {
+                "id": "gitworld:period-definition",
+                "labels": {
+                  "en": "Period definition",
+                  "zh-CN": "时期定义"
+                }
+              }
+            ],
+            "values": [
+              {
+                "propertyId": "period:chronology-basis",
+                "value": "article-overview",
+                "labels": {
+                  "en": "Article overview range",
+                  "zh-CN": "条目概览范围"
+                }
+              },
+              {
+                "propertyId": "period:chronology-basis",
+                "value": "conventional-range",
+                "labels": {
+                  "en": "Conventional range in the source",
+                  "zh-CN": "来源中的传统范围"
+                }
+              },
+              {
+                "propertyId": "period:chronology-basis",
+                "value": "earlier-tenth-century",
+                "labels": {
+                  "en": "Alternative tenth-century BCE start",
+                  "zh-CN": "公元前十世纪起点方案"
+                }
+              },
+              {
+                "propertyId": "period:chronology-basis",
+                "value": "earlier-ninth-eighth-century",
+                "labels": {
+                  "en": "Alternative ninth–eighth-century BCE start",
+                  "zh-CN": "公元前九至八世纪起点方案"
+                }
+              },
+              {
+                "propertyId": "period:chronology-basis",
+                "value": "infobox-range",
+                "labels": {
+                  "en": "Infobox date range",
+                  "zh-CN": "信息框日期范围"
+                }
+              },
+              {
+                "propertyId": "period:temporal-semantics",
+                "value": "published-period-definition-not-polity-lifespan",
+                "labels": {
+                  "en": "Published period definition; no polity lifespan",
+                  "zh-CN": "来源的时期定义；不表示政权存续"
+                }
+              },
+              {
+                "propertyId": "period:definition-label",
+                "value": "Jōmon period",
+                "labels": {
+                  "en": "Jōmon period",
+                  "zh-CN": "绳文时代"
+                }
+              },
+              {
+                "propertyId": "period:definition-label",
+                "value": "Yayoi period",
+                "labels": {
+                  "en": "Yayoi period",
+                  "zh-CN": "弥生时代"
+                }
+              },
+              {
+                "propertyId": "period:definition-label",
+                "value": "Kofun period",
+                "labels": {
+                  "en": "Kofun period",
+                  "zh-CN": "古坟时代"
+                }
+              },
+              {
+                "propertyId": "period:definition-label",
+                "value": "Yangshao culture",
+                "labels": {
+                  "en": "Yangshao culture",
+                  "zh-CN": "仰韶文化"
+                }
+              },
+              {
+                "propertyId": "period:definition-label",
+                "value": "Longshan culture",
+                "labels": {
+                  "en": "Longshan culture",
+                  "zh-CN": "龙山文化"
+                }
+              },
+              {
+                "propertyId": "period:definition-label",
+                "value": "Liangzhu culture",
+                "labels": {
+                  "en": "Liangzhu culture",
+                  "zh-CN": "良渚文化"
+                }
+              }
+            ],
+            "semanticNotes": [
+              {
+                "ids": [
+                  "gitworld:period-definition",
+                  "period:definition-label",
+                  "period:definition-start",
+                  "period:definition-end"
+                ],
+                "en": "A source-specific archaeological period definition. Its dates classify source material; they do not define a polity, ancestry, continuous population or civilization origin. Approximate and competing chronologies remain possible.",
+                "zh-CN": "特定来源对考古时期的定义。日期用于组织来源材料，不表示政权、继承、人口连续性或文明起源。近似日期及竞争纪年保持为可能适用。"
+              }
+            ]
+          },
+          "temporalNormalization": {
+            "version": "selected-period-ranges-v1",
+            "calendar": "source-calendar-unspecified",
+            "rules": [
+              "Civil BC/AD numbering has no year zero.",
+              "An explicit c./ca./circa/around qualification makes the derived extent possible.",
+              "An ordinal century is retained as its full civil century, with no invented mid-century cutoff.",
+              "Distinct explicit source chronology alternatives remain separately qualified assertions.",
+              "No missing endpoint is borrowed from another hypothesis, page or period."
+            ],
+            "definitions": [
+              {
+                "definitionIdentity": {
+                  "provider": "wikipedia-period-definition",
+                  "externalId": "47870676"
+                },
+                "sourceProfile": "jomon",
+                "dateProfile": {
+                  "kind": "between-shared-era-overview",
+                  "capturePattern": "between (c\\.\\s*[\\d,]+) and ([\\d,]+ BC)"
+                }
+              },
+              {
+                "definitionIdentity": {
+                  "provider": "wikipedia-period-definition",
+                  "externalId": "166289"
+                },
+                "sourceProfile": "yayoi",
+                "dateProfile": {
+                  "kind": "conventional-and-explicit-century-alternatives",
+                  "conventionalPattern": "c\\.\\s*\\d+ BC\\s*[–—]\\s*AD\\s*\\d+",
+                  "alternativePattern": "around the (\\d+)(?:st|nd|rd|th) century BC or (\\d+)(?:st|nd|rd|th)[–—](\\d+)(?:st|nd|rd|th) century BC to the mid-(\\d+)(?:st|nd|rd|th) century AD",
+                  "qualificationSelector": {
+                    "kind": "element",
+                    "tag": "p",
+                    "startsWith": "The Yayoi period is, generally, accepted"
+                  }
+                }
+              },
+              {
+                "definitionIdentity": {
+                  "provider": "wikipedia-period-definition",
+                  "externalId": "166431"
+                },
+                "sourceProfile": "kofun",
+                "dateProfile": {
+                  "kind": "literal-date-field-range"
+                }
+              },
+              {
+                "definitionIdentity": {
+                  "provider": "wikipedia-period-definition",
+                  "externalId": "1060314"
+                },
+                "sourceProfile": "yangshao",
+                "dateProfile": {
+                  "kind": "literal-date-field-range"
+                }
+              },
+              {
+                "definitionIdentity": {
+                  "provider": "wikipedia-period-definition",
+                  "externalId": "1060368"
+                },
+                "sourceProfile": "longshan",
+                "dateProfile": {
+                  "kind": "literal-date-field-range"
+                }
+              },
+              {
+                "definitionIdentity": {
+                  "provider": "wikipedia-period-definition",
+                  "externalId": "526037"
+                },
+                "sourceProfile": "liangzhu",
+                "dateProfile": {
+                  "kind": "literal-date-field-range"
+                }
+              }
+            ],
+            "captures": [
+              {
+                "definitionId": "history:period-definition:wikipedia-en:47870676",
+                "basis": "article-overview",
+                "factKeys": [
+                  "jomon:dates"
+                ],
+                "sourceDateFragment": "c. 14,000–300 BC",
+                "normalized": {
+                  "start": {
+                    "earliestYear": -14000,
+                    "latestYear": -14000,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "c. 14,000"
+                  },
+                  "end": {
+                    "earliestYear": -300,
+                    "latestYear": -300,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "300 BC"
+                  },
+                  "certainty": "possible"
+                },
+                "policyVersion": "selected-period-ranges-v1"
+              },
+              {
+                "definitionId": "history:period-definition:wikipedia-en:166289",
+                "basis": "conventional-range",
+                "factKeys": [
+                  "yayoi:dates",
+                  "yayoi:chronology-qualification"
+                ],
+                "sourceDateFragment": "c. 300 BC – AD 300",
+                "normalized": {
+                  "start": {
+                    "earliestYear": -300,
+                    "latestYear": -300,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "c. 300 BC"
+                  },
+                  "end": {
+                    "earliestYear": 300,
+                    "latestYear": 300,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "AD 300"
+                  },
+                  "certainty": "possible"
+                },
+                "policyVersion": "selected-period-ranges-v1"
+              },
+              {
+                "definitionId": "history:period-definition:wikipedia-en:166289",
+                "basis": "earlier-tenth-century",
+                "factKeys": [
+                  "yayoi:dates",
+                  "yayoi:chronology-qualification"
+                ],
+                "sourceDateFragment": "around the 10th century BC or 9th–8th century BC to the mid-3rd century AD",
+                "normalized": {
+                  "start": {
+                    "earliestYear": -1000,
+                    "latestYear": -901,
+                    "precision": "century",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "around the 10th century BC"
+                  },
+                  "end": {
+                    "earliestYear": 201,
+                    "latestYear": 300,
+                    "precision": "century",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "mid-3rd century AD"
+                  },
+                  "certainty": "possible"
+                },
+                "policyVersion": "selected-period-ranges-v1"
+              },
+              {
+                "definitionId": "history:period-definition:wikipedia-en:166289",
+                "basis": "earlier-ninth-eighth-century",
+                "factKeys": [
+                  "yayoi:dates",
+                  "yayoi:chronology-qualification"
+                ],
+                "sourceDateFragment": "around the 10th century BC or 9th–8th century BC to the mid-3rd century AD",
+                "normalized": {
+                  "start": {
+                    "earliestYear": -900,
+                    "latestYear": -701,
+                    "precision": "interval",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "9th–8th century BC"
+                  },
+                  "end": {
+                    "earliestYear": 201,
+                    "latestYear": 300,
+                    "precision": "century",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "mid-3rd century AD"
+                  },
+                  "certainty": "possible"
+                },
+                "policyVersion": "selected-period-ranges-v1"
+              },
+              {
+                "definitionId": "history:period-definition:wikipedia-en:166431",
+                "basis": "infobox-range",
+                "factKeys": [
+                  "kofun:dates"
+                ],
+                "sourceDateFragment": "c. 3rd Century–538 AD",
+                "normalized": {
+                  "start": {
+                    "earliestYear": 201,
+                    "latestYear": 300,
+                    "precision": "century",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "c. 3rd Century"
+                  },
+                  "end": {
+                    "earliestYear": 538,
+                    "latestYear": 538,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "538 AD"
+                  },
+                  "certainty": "possible"
+                },
+                "policyVersion": "selected-period-ranges-v1"
+              },
+              {
+                "definitionId": "history:period-definition:wikipedia-en:1060314",
+                "basis": "infobox-range",
+                "factKeys": [
+                  "yangshao:dates"
+                ],
+                "sourceDateFragment": "c. 5000 – c. 3000 BC",
+                "normalized": {
+                  "start": {
+                    "earliestYear": -5000,
+                    "latestYear": -5000,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "c. 5000"
+                  },
+                  "end": {
+                    "earliestYear": -3000,
+                    "latestYear": -3000,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "c. 3000 BC"
+                  },
+                  "certainty": "possible"
+                },
+                "policyVersion": "selected-period-ranges-v1"
+              },
+              {
+                "definitionId": "history:period-definition:wikipedia-en:1060368",
+                "basis": "infobox-range",
+                "factKeys": [
+                  "longshan:dates"
+                ],
+                "sourceDateFragment": "c. 3000 – c. 1900 BC",
+                "normalized": {
+                  "start": {
+                    "earliestYear": -3000,
+                    "latestYear": -3000,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "c. 3000"
+                  },
+                  "end": {
+                    "earliestYear": -1900,
+                    "latestYear": -1900,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "c. 1900 BC"
+                  },
+                  "certainty": "possible"
+                },
+                "policyVersion": "selected-period-ranges-v1"
+              },
+              {
+                "definitionId": "history:period-definition:wikipedia-en:526037",
+                "basis": "infobox-range",
+                "factKeys": [
+                  "liangzhu:dates"
+                ],
+                "sourceDateFragment": "3300–2300 BC",
+                "normalized": {
+                  "start": {
+                    "earliestYear": -3300,
+                    "latestYear": -3300,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "3300"
+                  },
+                  "end": {
+                    "earliestYear": -2300,
+                    "latestYear": -2300,
+                    "precision": "year",
+                    "calendar": "source-calendar-unspecified",
+                    "raw": "2300 BC"
+                  }
+                },
+                "policyVersion": "selected-period-ranges-v1"
+              }
+            ]
+          }
+        },
+        "inputSources": [
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "47870676"
+            },
+            "revision": "1380542509",
+            "contentHash": "6a7314556b9f3bef155af7387373f06c88db9664eb1188145ce3b3698ce41ea6",
+            "url": "https://en.wikipedia.org/wiki/J%C5%8Dmon_period",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=J%C5%8Dmon%20period&oldid=1380542509",
+            "retrievedAt": "2026-10-25T02:47:44.663Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Jōmon period, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=J%C5%8Dmon%20period&oldid=1380542509; author history: https://en.wikipedia.org/w/index.php?title=J%C5%8Dmon%20period&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          },
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "166289"
+            },
+            "revision": "1379321741",
+            "contentHash": "7953ccc5f57e4b31e305d4baff76f0f84854ce8d589feddc2a97092572860377",
+            "url": "https://en.wikipedia.org/wiki/Yayoi_period",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741",
+            "retrievedAt": "2026-10-25T02:47:45.921Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Yayoi period, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Yayoi%20period&oldid=1379321741; author history: https://en.wikipedia.org/w/index.php?title=Yayoi%20period&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          },
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "166431"
+            },
+            "revision": "1378867155",
+            "contentHash": "973c906ba3f69ed424567aee2ca3cda6f55224a556978ba2c3ae9b33a26906ee",
+            "url": "https://en.wikipedia.org/wiki/Kofun_period",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Kofun%20period&oldid=1378867155",
+            "retrievedAt": "2026-10-25T02:47:47.460Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Kofun period, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Kofun%20period&oldid=1378867155; author history: https://en.wikipedia.org/w/index.php?title=Kofun%20period&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          },
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "1060314"
+            },
+            "revision": "1379047029",
+            "contentHash": "7d7a51a09cdf248c17ea5b0a4891110bb2fcb6ad5be5d2bcebe53ef897cd554f",
+            "url": "https://en.wikipedia.org/wiki/Yangshao_culture",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Yangshao%20culture&oldid=1379047029",
+            "retrievedAt": "2026-10-25T02:47:49.662Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Yangshao culture, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Yangshao%20culture&oldid=1379047029; author history: https://en.wikipedia.org/w/index.php?title=Yangshao%20culture&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          },
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "1060368"
+            },
+            "revision": "1360689710",
+            "contentHash": "2c61902752100ea95074282b1c53548f9f354d26e115fde61fca798c56ec3c03",
+            "url": "https://en.wikipedia.org/wiki/Longshan_culture",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Longshan%20culture&oldid=1360689710",
+            "retrievedAt": "2026-10-25T02:47:51.722Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Longshan culture, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Longshan%20culture&oldid=1360689710; author history: https://en.wikipedia.org/w/index.php?title=Longshan%20culture&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          },
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "526037"
+            },
+            "revision": "1375049632",
+            "contentHash": "a54d2b37ab97c383b8b127a04a482ff20c5133fcd62a7b764db81d68588fcd74",
+            "url": "https://en.wikipedia.org/wiki/Liangzhu_culture",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Liangzhu%20culture&oldid=1375049632",
+            "retrievedAt": "2026-10-25T02:47:52.987Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Liangzhu culture, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Liangzhu%20culture&oldid=1375049632; author history: https://en.wikipedia.org/w/index.php?title=Liangzhu%20culture&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          }
+        ],
+        "facts": [
+          {
+            "key": "jomon:dates",
+            "profileId": "jomon",
+            "factId": "dates",
+            "locator": "$.text;p[document-index=506]",
+            "textHash": "7150d9accac213e99775e461787bf04af8483ade77582cf77dec5e790ce91414",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Japanese_language",
+                "locator": "$.text;p[document-index=506];a[eligible-link-index=0]",
+                "textHash": "be4ee906d3efecfc34a94a6cd378633a67f7f35d5abbc3f498715ac5dcbee54f"
+              },
+              {
+                "href": "https://en.wiktionary.org/wiki/%E7%B8%84%E6%96%87",
+                "locator": "$.text;p[document-index=506];a[eligible-link-index=1]",
+                "textHash": "03abc64749c0363f53f250b0e5d067f3dd5b17e10349ede2e781dd5e5aca00f4"
+              },
+              {
+                "href": "https://en.wiktionary.org/wiki/%E6%99%82%E4%BB%A3",
+                "locator": "$.text;p[document-index=506];a[eligible-link-index=2]",
+                "textHash": "0d2ffa6d22c44c51f1b1e94ddba8af66d1c7f32ab9e40bda92f8453061b79304"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Hepburn_romanization",
+                "locator": "$.text;p[document-index=506];a[eligible-link-index=3]",
+                "textHash": "940d17a24fdc302edb4059eec13032e3488f9435ddd79339ef7dd13f49199cfb"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/J%C5%8Dmon_people",
+                "locator": "$.text;p[document-index=506];a[eligible-link-index=4]",
+                "textHash": "42bc0be4e1b23844a3e0cd8e5ce131e2a4f3582de4ce654fbc2682200cbdeffe"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Hunter-gatherer",
+                "locator": "$.text;p[document-index=506];a[eligible-link-index=5]",
+                "textHash": "b1c6345bfdc2ef5ab5de0ad43b144691fcaf8ba8e25e9ac7e4025d5a852ad14b"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Sedentism",
+                "locator": "$.text;p[document-index=506];a[eligible-link-index=6]",
+                "textHash": "cfae6f82c226c21f61eb92522ffa81c3238e15aebc9c67cc2d3a2fbfee11d02b"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Northeast_Asia",
+                "locator": "$.text;p[document-index=506];a[eligible-link-index=7]",
+                "textHash": "2d598402f672358544f2f65d4afeee6dc0393cf38d58f137357f5591a405b5e8"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/The_Korean_Peninsula",
+                "locator": "$.text;p[document-index=506];a[eligible-link-index=8]",
+                "textHash": "b9df906375f20ba376a71862b443fd06f0155fb943f48ff57bb3de94166c2892"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/China",
+                "locator": "$.text;p[document-index=506];a[eligible-link-index=9]",
+                "textHash": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Southeast_Asia",
+                "locator": "$.text;p[document-index=506];a[eligible-link-index=10]",
+                "textHash": "a73ef7e2d61c6ea010d6bf8e7a0d629819aa80e7bb5d3a9dbbf9c8675fe4999c"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Genetic_admixture",
+                "locator": "$.text;p[document-index=506];a[eligible-link-index=11]",
+                "textHash": "fbeb9dc115751badf02f15dd5f25567cf4ea52a21663ba98b1d64b37d1113243"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Japonic_languages",
+                "locator": "$.text;p[document-index=506];a[eligible-link-index=12]",
+                "textHash": "34d8540b129efaa04d75841551ab8de85e46bfc5d4d66b27360c46b4f185b5f5"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Yayoi_people",
+                "locator": "$.text;p[document-index=506];a[eligible-link-index=13]",
+                "textHash": "4b26fccaebaf2d840263ffd59e6d9f51ae816f715d7ffb753be4b4af476becd2"
+              }
+            ],
+            "referenceAnchors": []
+          },
+          {
+            "key": "yayoi:dates",
+            "profileId": "yayoi",
+            "factId": "dates",
+            "locator": "$.text;p[document-index=504]",
+            "textHash": "2441c1027b99a01e1d56f298adfd77b5f7f0c3f609d114c3a06b1e778b235282",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Japanese_language",
+                "locator": "$.text;p[document-index=504];a[eligible-link-index=0]",
+                "textHash": "be4ee906d3efecfc34a94a6cd378633a67f7f35d5abbc3f498715ac5dcbee54f"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Hepburn_romanization",
+                "locator": "$.text;p[document-index=504];a[eligible-link-index=1]",
+                "textHash": "940d17a24fdc302edb4059eec13032e3488f9435ddd79339ef7dd13f49199cfb"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Japanese_archipelago",
+                "locator": "$.text;p[document-index=504];a[eligible-link-index=2]",
+                "textHash": "d26879aec8d844c5871a16657a8fe11ad3847609b9b33104642819b7df3622c9"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Zenpokoenfun",
+                "locator": "$.text;p[document-index=504];a[eligible-link-index=3]",
+                "textHash": "0de005411763e5b1cbbdfc18d6e9b8d7c05874c2a81ed9bbde0239f21f0bfcf2"
+              }
+            ],
+            "referenceAnchors": [
+              "#cite_note-:3-2",
+              "#cite_note-:2-1"
+            ]
+          },
+          {
+            "key": "yayoi:chronology-qualification",
+            "profileId": "yayoi",
+            "factId": "chronology-qualification",
+            "locator": "$.text;p[document-index=557]",
+            "textHash": "edf8f8ca17490e860a877a12ea3946154e1ccb53fa1a60dedf30ade53cbdf94e",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Radiocarbon_dating",
+                "locator": "$.text;p[document-index=557];a[eligible-link-index=0]",
+                "textHash": "aee1feff5390615e7e4ef0c1609ef2b73393db5912b287cb9eedb2acf01919f4"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Ky%C5%ABsh%C5%AB",
+                "locator": "$.text;p[document-index=557];a[eligible-link-index=1]",
+                "textHash": "ea594c65b175a8b4edd73140014ad87485816aac70356ead4d7d2f461ba16c07"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Panicum_milliaceum",
+                "locator": "$.text;p[document-index=557];a[eligible-link-index=2]",
+                "textHash": "59e9de9cf19726487b963ddd107f4611112deb397cf758aac04191d90aed518d"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Setaria_italica",
+                "locator": "$.text;p[document-index=557];a[eligible-link-index=3]",
+                "textHash": "4d2f7857204fc2ae0f2f317c853a4c0d0948d03f9152c41ad42cb8f877f966ad"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Rice",
+                "locator": "$.text;p[document-index=557];a[eligible-link-index=4]",
+                "textHash": "209f76418ece7c936b65ff4777a578d860f762c37ad6c7f08f5826242199ef51"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Stone_harvesting_knives",
+                "locator": "$.text;p[document-index=557];a[eligible-link-index=5]",
+                "textHash": "c5b6f0ffa705dab8c7ad51aa097f7dbbbf48ae28e01abdb241b054c0c6e9f2ec"
+              }
+            ],
+            "referenceAnchors": [
+              "#cite_note-16",
+              "#cite_note-University_of_Hawaii_Press-15",
+              "#cite_note-14",
+              "#cite_note-13",
+              "#cite_note-e125-12",
+              "#cite_note-Shinya-11",
+              "#cite_note-keally-yayoi-10",
+              "#cite_note-9",
+              "#cite_note-8",
+              "#cite_note-7"
+            ]
+          },
+          {
+            "key": "kofun:dates",
+            "profileId": "kofun",
+            "factId": "dates",
+            "locator": "$.text;table.infobox[0].tr[5].cell[1]",
+            "textHash": "e8cce0beb4445c512f48bb970064a09f755179a2bd596ab8e21a167e1b4747ba",
+            "links": [],
+            "referenceAnchors": []
+          },
+          {
+            "key": "yangshao:dates",
+            "profileId": "yangshao",
+            "factId": "dates",
+            "locator": "$.text;table.infobox[0].tr[3].cell[1]",
+            "textHash": "b9226a58540cb5ff966a4be04d0f442b7fdbd0fd869a0cfe11f4e393cec46be8",
+            "links": [],
+            "referenceAnchors": []
+          },
+          {
+            "key": "longshan:dates",
+            "profileId": "longshan",
+            "factId": "dates",
+            "locator": "$.text;table.infobox[0].tr[3].cell[1]",
+            "textHash": "65a0808228fd89dc81320c20712a31edb18a7fd9c9dbe58b01409036324d4b4a",
+            "links": [],
+            "referenceAnchors": []
+          },
+          {
+            "key": "liangzhu:dates",
+            "profileId": "liangzhu",
+            "factId": "dates",
+            "locator": "$.text;table.infobox[0].tr[3].cell[1]",
+            "textHash": "9352c0bdc6358744dca7de19ef4bbed18902787cd1b51554e81eaf2f4d10c80a",
+            "links": [],
+            "referenceAnchors": []
+          }
+        ]
+      }
+    }
+  ]
+}

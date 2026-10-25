@@ -1,0 +1,889 @@
+{
+  "schemaVersion": 1,
+  "kind": "historical-field-display-labels",
+  "status": "generic-display-catalog-candidate",
+  "languages": [
+    "en",
+    "zh-CN"
+  ],
+  "properties": [
+    {
+      "id": "authority:listed-ruler",
+      "labels": {
+        "en": "Listed authority holder",
+        "zh-CN": "所列执政者"
+      }
+    },
+    {
+      "id": "chronology:holder",
+      "labels": {
+        "en": "Listed person",
+        "zh-CN": "所列人物"
+      }
+    },
+    {
+      "id": "chronology:interval-end",
+      "labels": {
+        "en": "Published interval end",
+        "zh-CN": "所列区间终点"
+      }
+    },
+    {
+      "id": "chronology:interval-start",
+      "labels": {
+        "en": "Published interval start",
+        "zh-CN": "所列区间起点"
+      }
+    },
+    {
+      "id": "chronology:published-date-text",
+      "labels": {
+        "en": "Source date text",
+        "zh-CN": "来源日期原文"
+      }
+    },
+    {
+      "id": "chronology:published-interval",
+      "labels": {
+        "en": "Published interval",
+        "zh-CN": "来源所列区间"
+      }
+    },
+    {
+      "id": "chronology:reported-approximate-year",
+      "labels": {
+        "en": "Approximate source year",
+        "zh-CN": "来源约年"
+      }
+    },
+    {
+      "id": "chronology:reported-end",
+      "labels": {
+        "en": "Reported end boundary",
+        "zh-CN": "来源所列终止时间"
+      }
+    },
+    {
+      "id": "chronology:scope",
+      "labels": {
+        "en": "Chronology subject",
+        "zh-CN": "纪年对象"
+      }
+    },
+    {
+      "id": "chronology:source-column",
+      "labels": {
+        "en": "Chronology source",
+        "zh-CN": "纪年来源"
+      }
+    },
+    {
+      "id": "chronology:source-order",
+      "labels": {
+        "en": "Source order",
+        "zh-CN": "来源顺序"
+      }
+    },
+    {
+      "id": "contact:listed-counterpart",
+      "labels": {
+        "en": "Listed counterpart",
+        "zh-CN": "所列对方君主"
+      }
+    },
+    {
+      "id": "contact:listed-envoy-link",
+      "labels": {
+        "en": "Envoys identified in source",
+        "zh-CN": "来源所列使者"
+      }
+    },
+    {
+      "id": "contact:listed-envoy-names",
+      "labels": {
+        "en": "Envoy names in source",
+        "zh-CN": "来源所列使者姓名"
+      }
+    },
+    {
+      "id": "contact:listed-in",
+      "labels": {
+        "en": "Listed mission",
+        "zh-CN": "所列使团"
+      }
+    },
+    {
+      "id": "contact:listed-sender",
+      "labels": {
+        "en": "Sender",
+        "zh-CN": "派遣者"
+      }
+    },
+    {
+      "id": "court:claimed-monarch",
+      "labels": {
+        "en": "Claimant to imperial title",
+        "zh-CN": "称帝者"
+      }
+    },
+    {
+      "id": "court:monarch",
+      "labels": {
+        "en": "Monarch",
+        "zh-CN": "君主"
+      }
+    },
+    {
+      "id": "court:regent",
+      "labels": {
+        "en": "Regent",
+        "zh-CN": "监国"
+      }
+    },
+    {
+      "id": "event:listed-status",
+      "labels": {
+        "en": "Listed status",
+        "zh-CN": "来源所列状态"
+      }
+    },
+    {
+      "id": "event:listed-time",
+      "labels": {
+        "en": "Recorded time",
+        "zh-CN": "记载时间"
+      }
+    },
+    {
+      "id": "office:held-position",
+      "labels": {
+        "en": "Held position",
+        "zh-CN": "所任职务"
+      }
+    },
+    {
+      "id": "office:holder",
+      "labels": {
+        "en": "Office holder",
+        "zh-CN": "任职者"
+      }
+    },
+    {
+      "id": "office:listed-cabinet",
+      "labels": {
+        "en": "Government named in source",
+        "zh-CN": "来源列示政府"
+      }
+    },
+    {
+      "id": "office:listed-head",
+      "labels": {
+        "en": "Listed executive head",
+        "zh-CN": "所列行政首脑"
+      }
+    },
+    {
+      "id": "office:listed-holder",
+      "labels": {
+        "en": "Listed holder",
+        "zh-CN": "所列任职者"
+      }
+    },
+    {
+      "id": "person:held-military-appointment",
+      "labels": {
+        "en": "Military appointment",
+        "zh-CN": "军事任命"
+      }
+    },
+    {
+      "id": "person:held-regency",
+      "labels": {
+        "en": "Regency",
+        "zh-CN": "监国职务"
+      }
+    },
+    {
+      "id": "person:held-rulership",
+      "labels": {
+        "en": "Recorded rulership",
+        "zh-CN": "所载统治职务"
+      }
+    },
+    {
+      "id": "polity:ruler",
+      "labels": {
+        "en": "Ruler",
+        "zh-CN": "统治者"
+      }
+    },
+    {
+      "id": "source:table-context",
+      "labels": {
+        "en": "Table context",
+        "zh-CN": "表格上下文"
+      }
+    },
+    {
+      "id": "source:context-identity",
+      "labels": {
+        "en": "Source subject identifier",
+        "zh-CN": "来源对象标识"
+      }
+    },
+    {
+      "id": "source:tenure-text",
+      "labels": {
+        "en": "Tenure as written",
+        "zh-CN": "任期原文"
+      }
+    },
+    {
+      "id": "source:alternative-tenure-columns",
+      "labels": {
+        "en": "Alternative source chronologies",
+        "zh-CN": "来源备选纪年"
+      }
+    },
+    {
+      "id": "source:table-locator",
+      "labels": {
+        "en": "Table location",
+        "zh-CN": "表格位置"
+      }
+    },
+    {
+      "id": "source:citation-anchors",
+      "labels": {
+        "en": "Source citation markers",
+        "zh-CN": "来源引注标记"
+      }
+    },
+    {
+      "id": "source:scope-semantics",
+      "labels": {
+        "en": "Meaning of the source scope",
+        "zh-CN": "来源范围含义"
+      }
+    },
+    {
+      "id": "source:review-flag",
+      "labels": {
+        "en": "Review note",
+        "zh-CN": "审阅提示"
+      }
+    },
+    {
+      "id": "source:context-url",
+      "labels": {
+        "en": "Source subject link",
+        "zh-CN": "来源对象链接"
+      }
+    },
+    {
+      "id": "projection:version",
+      "labels": {
+        "en": "Mapping version",
+        "zh-CN": "映射版本"
+      }
+    },
+    {
+      "id": "projection:rule-id",
+      "labels": {
+        "en": "Mapping rule",
+        "zh-CN": "映射规则"
+      }
+    },
+    {
+      "id": "projection:derived-from",
+      "labels": {
+        "en": "Original assertion",
+        "zh-CN": "原始主张"
+      }
+    },
+    {
+      "id": "projection:rule-evidence",
+      "labels": {
+        "en": "Mapping evidence",
+        "zh-CN": "映射依据"
+      }
+    },
+    {
+      "id": "office:position",
+      "labels": {
+        "en": "Office",
+        "zh-CN": "职务"
+      }
+    },
+    {
+      "id": "observation:kind",
+      "labels": {
+        "en": "Observation type",
+        "zh-CN": "观测类型"
+      }
+    },
+    {
+      "id": "observation:acquisition-mode",
+      "labels": {
+        "en": "Acquisition mode",
+        "zh-CN": "获取方式"
+      }
+    },
+    {
+      "id": "observation:observed-at",
+      "labels": {
+        "en": "Observation date",
+        "zh-CN": "观测日期"
+      }
+    },
+    {
+      "id": "observation:semantics",
+      "labels": {
+        "en": "Meaning of the observation",
+        "zh-CN": "观测含义"
+      }
+    },
+    {
+      "id": "office:authority-basis",
+      "labels": {
+        "en": "Basis of authority",
+        "zh-CN": "权力依据"
+      }
+    },
+    {
+      "id": "source:tenure-end-marker",
+      "labels": {
+        "en": "Tenure end note",
+        "zh-CN": "任期终止说明"
+      }
+    },
+    {
+      "id": "source:column-profile",
+      "labels": {
+        "en": "Source column mapping",
+        "zh-CN": "来源列映射"
+      }
+    },
+    {
+      "id": "source:date-markers",
+      "labels": {
+        "en": "Source date qualification",
+        "zh-CN": "来源日期限定"
+      }
+    },
+    {
+      "id": "source:column-heading",
+      "labels": {
+        "en": "Source column heading",
+        "zh-CN": "来源列标题"
+      }
+    },
+    {
+      "id": "source:listing-semantics",
+      "labels": {
+        "en": "Meaning of the listing",
+        "zh-CN": "列名含义"
+      }
+    },
+    {
+      "id": "source:linked-label",
+      "labels": {
+        "en": "Linked name in source",
+        "zh-CN": "来源链接名称"
+      }
+    },
+    {
+      "id": "source:linked-url",
+      "labels": {
+        "en": "Source identity link",
+        "zh-CN": "来源身份链接"
+      }
+    },
+    {
+      "id": "source:status-marker",
+      "labels": {
+        "en": "Source status marker",
+        "zh-CN": "来源状态标记"
+      }
+    },
+    {
+      "id": "binding:derived-from",
+      "labels": {
+        "en": "Original assertion",
+        "zh-CN": "原始主张"
+      }
+    },
+    {
+      "id": "binding:rule",
+      "labels": {
+        "en": "Interpretation rule",
+        "zh-CN": "解释规则"
+      }
+    },
+    {
+      "id": "binding:source-subject",
+      "labels": {
+        "en": "Original source subject",
+        "zh-CN": "原始来源对象"
+      }
+    },
+    {
+      "id": "binding:historical-type",
+      "labels": {
+        "en": "Historical subject type",
+        "zh-CN": "历史对象类型"
+      }
+    },
+    {
+      "id": "binding:review-status",
+      "labels": {
+        "en": "Interpretation review",
+        "zh-CN": "解释审阅状态"
+      }
+    },
+    {
+      "id": "binding:value-source-identity",
+      "labels": {
+        "en": "Original value identity",
+        "zh-CN": "原值身份"
+      }
+    },
+    {
+      "id": "binding:value-target-identity",
+      "labels": {
+        "en": "Resolved value identity",
+        "zh-CN": "映射后身份"
+      }
+    },
+    {
+      "id": "binding:scope-note",
+      "labels": {
+        "en": "Scope note",
+        "zh-CN": "范围说明"
+      }
+    },
+    {
+      "id": "chronology:rule",
+      "labels": {
+        "en": "Chronology mapping rule",
+        "zh-CN": "纪年映射规则"
+      }
+    },
+    {
+      "id": "chronology:source-locator",
+      "labels": {
+        "en": "Chronology source location",
+        "zh-CN": "纪年来源位置"
+      }
+    },
+    {
+      "id": "chronology:projection-semantics",
+      "labels": {
+        "en": "Meaning of the chronology projection",
+        "zh-CN": "纪年投影含义"
+      }
+    },
+    {
+      "id": "chronology:date-qualification",
+      "labels": {
+        "en": "Date qualification",
+        "zh-CN": "日期限定"
+      }
+    }
+  ],
+  "types": [
+    {
+      "id": "gitworld:authority-survey",
+      "labels": {
+        "en": "Authority survey",
+        "zh-CN": "统治权来源记录"
+      }
+    },
+    {
+      "id": "gitworld:chronology-candidate",
+      "labels": {
+        "en": "Chronology candidate",
+        "zh-CN": "纪年候选"
+      }
+    },
+    {
+      "id": "gitworld:court",
+      "labels": {
+        "en": "Court",
+        "zh-CN": "朝廷"
+      }
+    },
+    {
+      "id": "gitworld:court-survey",
+      "labels": {
+        "en": "Court survey",
+        "zh-CN": "朝廷来源记录"
+      }
+    },
+    {
+      "id": "gitworld:office",
+      "labels": {
+        "en": "Office",
+        "zh-CN": "官职"
+      }
+    },
+    {
+      "id": "gitworld:office-holder",
+      "labels": {
+        "en": "Listed ruler or office holder",
+        "zh-CN": "年表人物"
+      }
+    },
+    {
+      "id": "gitworld:office-survey",
+      "labels": {
+        "en": "Office survey",
+        "zh-CN": "职务来源记录"
+      }
+    },
+    {
+      "id": "gitworld:polity",
+      "labels": {
+        "en": "Polity",
+        "zh-CN": "政治实体"
+      }
+    },
+    {
+      "id": "gitworld:source-event-entry",
+      "labels": {
+        "en": "Source activity entry",
+        "zh-CN": "来源活动条目"
+      }
+    },
+    {
+      "id": "gitworld:source-participant",
+      "labels": {
+        "en": "Listed participant",
+        "zh-CN": "来源列名人物"
+      }
+    },
+    {
+      "id": "gitworld:traditional-subject",
+      "labels": {
+        "en": "Traditional subject",
+        "zh-CN": "传统记述对象"
+      }
+    }
+  ],
+  "semanticNotes": [
+    {
+      "ids": [
+        "contact:listed-in",
+        "contact:listed-envoy-link"
+      ],
+      "en": "Listed participation does not establish a completed journey. Retain cancellation and unknown outcomes.",
+      "zh-CN": "列名不等于完成出行；保留取消与结果未知。"
+    },
+    {
+      "ids": [
+        "chronology:interval-start",
+        "chronology:interval-end",
+        "chronology:published-interval"
+      ],
+      "en": "A published chronology interval is not a confirmed polity lifetime.",
+      "zh-CN": "来源纪年区间不等于已确认的政权存亡期。"
+    },
+    {
+      "ids": [
+        "office:listed-cabinet"
+      ],
+      "en": "Source numbering is not automatically official State Council term numbering; unclassified markers remain source material.",
+      "zh-CN": "来源编号不自动等同正式国务院届次；未解释标记保留为来源资料。"
+    }
+  ],
+  "values": [
+    {
+      "propertyId": "source:scope-semantics",
+      "value": "published-rulership-table-scope-not-canonical-polity-or-ancestry",
+      "labels": {
+        "en": "Published ruler-table scope; identity and ancestry remain separate",
+        "zh-CN": "来源年表范围；历史身份与继承关系另行判断"
+      }
+    },
+    {
+      "propertyId": "source:review-flag",
+      "value": "UNREVIEWED_PUBLISHED_TABLE_MAPPING",
+      "labels": {
+        "en": "Table mapping awaits review",
+        "zh-CN": "年表映射待审阅"
+      }
+    },
+    {
+      "propertyId": "source:review-flag",
+      "value": "SOURCE_CALENDAR_UNSPECIFIED",
+      "labels": {
+        "en": "Source calendar is unspecified",
+        "zh-CN": "来源未注明历法"
+      }
+    },
+    {
+      "propertyId": "source:review-flag",
+      "value": "UNCERTAIN_TIME",
+      "labels": {
+        "en": "Source dates are uncertain",
+        "zh-CN": "来源日期不确定"
+      }
+    },
+    {
+      "propertyId": "source:review-flag",
+      "value": "SOURCE_CHRONOLOGY_WARNING",
+      "labels": {
+        "en": "Source chronology needs review",
+        "zh-CN": "来源纪年需审阅"
+      }
+    },
+    {
+      "propertyId": "source:review-flag",
+      "value": "PROVISIONAL_HOLDER",
+      "labels": {
+        "en": "Provisional person identity",
+        "zh-CN": "人物身份暂定"
+      }
+    },
+    {
+      "propertyId": "source:review-flag",
+      "value": "OPEN_END",
+      "labels": {
+        "en": "No end date recorded",
+        "zh-CN": "未记载终止日期"
+      }
+    },
+    {
+      "propertyId": "source:review-flag",
+      "value": "UNPARSED_TIME",
+      "labels": {
+        "en": "Date text was not resolved",
+        "zh-CN": "日期原文尚未解析"
+      }
+    },
+    {
+      "propertyId": "source:review-flag",
+      "value": "SOURCE_SURVEY_HAS_CHANGING_EXECUTIVE_TITLES",
+      "labels": {
+        "en": "Executive titles vary across this survey",
+        "zh-CN": "本表所列行政职衔存在变化"
+      }
+    },
+    {
+      "propertyId": "source:review-flag",
+      "value": "SOURCE_ROLE_CLASSIFICATION_REQUIRES_REVIEW",
+      "labels": {
+        "en": "Role classification awaits review",
+        "zh-CN": "职务分类待审阅"
+      }
+    },
+    {
+      "propertyId": "source:review-flag",
+      "value": "SOURCE_INSTITUTION_AND_ROLE_BINDINGS_REQUIRE_REVIEW",
+      "labels": {
+        "en": "Institution and role mappings await review",
+        "zh-CN": "机构与职务映射待审阅"
+      }
+    },
+    {
+      "propertyId": "source:review-flag",
+      "value": "SOURCE_LISTING_NOT_AUTOMATIC_COMPLETED_MISSION",
+      "labels": {
+        "en": "Listing does not establish a completed mission",
+        "zh-CN": "列名不代表使团已完成出行"
+      }
+    },
+    {
+      "propertyId": "source:review-flag",
+      "value": "NO_INFERRED_INFLUENCE_OR_POLITICAL_ANCESTRY",
+      "labels": {
+        "en": "Influence and political ancestry require separate evidence",
+        "zh-CN": "影响与政治继承关系需要独立依据"
+      }
+    },
+    {
+      "propertyId": "source:review-flag",
+      "value": "SOURCE_HAS_REGENTS_AND_CONCURRENT_COURTS",
+      "labels": {
+        "en": "Source includes regents and concurrent courts",
+        "zh-CN": "来源包含监国与并立朝廷"
+      }
+    },
+    {
+      "propertyId": "source:listing-semantics",
+      "value": "published-event-entry-not-automatic-completion-causation-or-ancestry",
+      "labels": {
+        "en": "Published activity entry; completion and relationships need their own evidence",
+        "zh-CN": "来源活动条目；是否完成及其关系需要独立依据"
+      }
+    },
+    {
+      "propertyId": "binding:review-status",
+      "value": "unreviewed-source-role-interpretation",
+      "labels": {
+        "en": "Source-role interpretation awaits review",
+        "zh-CN": "来源职务解释待审阅"
+      }
+    },
+    {
+      "propertyId": "chronology:projection-semantics",
+      "value": "possible-applicability-throughout-published-candidate-interval-not-confirmed-tenure-or-a-single-event",
+      "labels": {
+        "en": "Possible applicability across the published interval",
+        "zh-CN": "在来源候选区间内可能适用"
+      }
+    },
+    {
+      "propertyId": "chronology:date-qualification",
+      "value": "source-qualified-date-retained-no-invented-margin-or-exact-accession",
+      "labels": {
+        "en": "Qualified source date retained; no extra precision inferred",
+        "zh-CN": "保留来源日期限定，未增加精度"
+      }
+    },
+    {
+      "propertyId": "observation:kind",
+      "value": "current-source-reading",
+      "labels": {
+        "en": "Reading of an explicit current marker",
+        "zh-CN": "明确现任标记的读取"
+      }
+    },
+    {
+      "propertyId": "observation:acquisition-mode",
+      "value": "current-page",
+      "labels": {
+        "en": "Current source revision at retrieval",
+        "zh-CN": "获取时的来源当前版本"
+      }
+    },
+    {
+      "propertyId": "observation:semantics",
+      "value": "explicit-current-marker-read-at-retrieval-not-a-political-event-or-tenure-end",
+      "labels": {
+        "en": "Observation at retrieval; no tenure end inferred",
+        "zh-CN": "获取时点的观测，未推断任期终点"
+      }
+    },
+    {
+      "propertyId": "office:authority-basis",
+      "value": "de-jure",
+      "labels": {
+        "en": "De jure",
+        "zh-CN": "法理职衔"
+      }
+    },
+    {
+      "propertyId": "office:authority-basis",
+      "value": "de-facto",
+      "labels": {
+        "en": "De facto",
+        "zh-CN": "实际行使职权"
+      }
+    },
+    {
+      "propertyId": "source:tenure-end-marker",
+      "value": "deposed",
+      "labels": {
+        "en": "Deposed",
+        "zh-CN": "被废黜"
+      }
+    },
+    {
+      "propertyId": "source:tenure-end-marker",
+      "value": "abdicated",
+      "labels": {
+        "en": "Abdicated",
+        "zh-CN": "退位"
+      }
+    },
+    {
+      "propertyId": "binding:historical-type",
+      "value": "gitworld:authority-survey",
+      "labels": {
+        "en": "Authority survey",
+        "zh-CN": "统治权来源记录"
+      }
+    },
+    {
+      "propertyId": "binding:historical-type",
+      "value": "gitworld:chronology-candidate",
+      "labels": {
+        "en": "Chronology candidate",
+        "zh-CN": "纪年候选"
+      }
+    },
+    {
+      "propertyId": "binding:historical-type",
+      "value": "gitworld:court",
+      "labels": {
+        "en": "Court",
+        "zh-CN": "朝廷"
+      }
+    },
+    {
+      "propertyId": "binding:historical-type",
+      "value": "gitworld:court-survey",
+      "labels": {
+        "en": "Court survey",
+        "zh-CN": "朝廷来源记录"
+      }
+    },
+    {
+      "propertyId": "binding:historical-type",
+      "value": "gitworld:office",
+      "labels": {
+        "en": "Office",
+        "zh-CN": "官职"
+      }
+    },
+    {
+      "propertyId": "binding:historical-type",
+      "value": "gitworld:office-holder",
+      "labels": {
+        "en": "Listed ruler or office holder",
+        "zh-CN": "年表人物"
+      }
+    },
+    {
+      "propertyId": "binding:historical-type",
+      "value": "gitworld:office-survey",
+      "labels": {
+        "en": "Office survey",
+        "zh-CN": "职务来源记录"
+      }
+    },
+    {
+      "propertyId": "binding:historical-type",
+      "value": "gitworld:polity",
+      "labels": {
+        "en": "Polity",
+        "zh-CN": "政治实体"
+      }
+    },
+    {
+      "propertyId": "binding:historical-type",
+      "value": "gitworld:source-event-entry",
+      "labels": {
+        "en": "Source activity entry",
+        "zh-CN": "来源活动条目"
+      }
+    },
+    {
+      "propertyId": "binding:historical-type",
+      "value": "gitworld:source-participant",
+      "labels": {
+        "en": "Listed participant",
+        "zh-CN": "来源列名人物"
+      }
+    },
+    {
+      "propertyId": "binding:historical-type",
+      "value": "gitworld:traditional-subject",
+      "labels": {
+        "en": "Traditional subject",
+        "zh-CN": "传统记述对象"
+      }
+    }
+  ]
+}

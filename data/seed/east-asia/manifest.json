@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 1,
+  "kind": "gitworld-knowledge-bundle",
+  "id": "east-asia-research-foundation-v7",
+  "labels": {
+    "en": "East Asia source collections",
+    "zh-CN": "东亚来源集合"
+  },
+  "shards": [
+    {
+      "path": "collections/catalog-1.json",
+      "bytes": 3751942,
+      "sha256": "3eb651d79bcb69327810d4dfdf4af9d90a19045ba6bc99a9154b856c807fd57f"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-66142-81ba33a6-1.json",
+      "bytes": 8361177,
+      "sha256": "46b241e71557c3ab4279ccb6e5028258e31ddb64af7001d429653338a75eb400"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-66142-81ba33a6-2.json",
+      "bytes": 3766888,
+      "sha256": "503bc30a5456e9d616e0898a34656119c0545a78c2feb07ea86be21949f8793c"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-224374-19049344-1.json",
+      "bytes": 2537480,
+      "sha256": "3c0943c812717dd6bdeec15faef0c539062e912e887927667172545a5e39a2be"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-314092-f8bec601-1.json",
+      "bytes": 1585074,
+      "sha256": "2fa31ef1decaa4448a298d49078ea86099deb60f10f4e02f905964fcea7ee87c"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-10736899-0302ea32-1.json",
+      "bytes": 1488739,
+      "sha256": "7184ee0ac844b61ac1372f67d27c84f2c24d02d699601edd81faa187232c2a53"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-17254923-5808fb07-1.json",
+      "bytes": 828389,
+      "sha256": "dfe41b4e56e39ee190cb4d32e6a1a383a6be326bf88bf2964b39b82cf97f2895"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-17255213-8ded969e-1.json",
+      "bytes": 638558,
+      "sha256": "bb457cb169ad73f660cf4455e3367c00ac1f27b566d5d434008e7543b68363a8"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-1420574-d45c68cf-1.json",
+      "bytes": 760253,
+      "sha256": "cb71517adfd1d4e9b433604f917214842ad0f23a201f545e7e52bd8a87a9f73c"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-24703277-48a0f55b-1.json",
+      "bytes": 702706,
+      "sha256": "240cb488b656b7ecc4f14acc6603d4ccc9a0f5bc6593380e7d6b575badb7c721"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-47851611-65cfb359-1.json",
+      "bytes": 694073,
+      "sha256": "c04e9adf1f076e7337e30f2d2acdff2d22d4aea2c034c4e40ef77fa8846d7e69"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-530241-d26095ed-1.json",
+      "bytes": 442362,
+      "sha256": "82bf53efe1f75d355edf2bfecfebab8d28f0e042df6fb550453420719944608b"
+    },
+    {
+      "path": "collections/wikipedia-en-facts-516942-96226ef4-1.json",
+      "bytes": 537994,
+      "sha256": "58617089b828fc800db049307eaad0379fdb1cd2da25f714af675e21160bb6ce"
+    },
+    {
+      "path": "extensions/activity-context/collection.json",
+      "bytes": 3622175,
+      "sha256": "83c5bbff291bea46d8f20c7fd8269c8b5edd61c08bdcf869ae7f33ee750fc06f"
+    },
+    {
+      "path": "extensions/qualified-office/collection.json",
+      "bytes": 2050980,
+      "sha256": "c84d21a827078afabb14f08e8245da3c1381364f8ca7c8f2bca84847a12c572b"
+    },
+    {
+      "path": "extensions/political-integration/collection.json",
+      "bytes": 54854,
+      "sha256": "cdcca2cae2ff96f8a3bf3472cf3332ba4b6c2ab1478e8e63e692b78b67231dd6"
+    },
+    {
+      "path": "extensions/constitutional-states/collection.json",
+      "bytes": 171213,
+      "sha256": "bf9830bd474a5e455070bbdc4200625e92dccc2fc25347152b82a743e17d8d9b"
+    },
+    {
+      "path": "extensions/political-transitions/collection.json",
+      "bytes": 196634,
+      "sha256": "5c6d159e07905348df8b7187671819fdc610771bc8195c942e8b97215bb32987"
+    },
+    {
+      "path": "extensions/coinage-transmission/collection.json",
+      "bytes": 86789,
+      "sha256": "e99f848ddd378072a8e45fd5a3b7380d2ac0ffb11640e17857155f7cb3aeaf88"
+    },
+    {
+      "path": "extensions/period-definitions/collection.json",
+      "bytes": 178906,
+      "sha256": "5550e5ac9d471c962d53a1ef2a344ba11dc7fc30c3d7b4477da51b184e7d24df"
+    },
+    {
+      "path": "extensions/court-office-constitutional-observations/collection.json",
+      "bytes": 187987,
+      "sha256": "e6832e0796a4255afc3ebe0b9f2f294d4d0720a04311908ae5de19c3c5fdb272"
+    }
+  ],
+  "fieldCatalog": {
+    "path": "fields.json",
+    "bytes": 21077,
+    "sha256": "bdeaac4fbc42d8bb8875806af7cf37b83444627991a855c926ebfae51664ad5f"
+  },
+  "sourceRights": {
+    "path": "source-rights.json",
+    "bytes": 21352,
+    "sha256": "ab83d858400c8bf4a6fe4871e8595357398db1b9260616aa2399d54a7d762cc1"
+  },
+  "collectionHash": "8b5b80a6b348524cb4821044edcbe821d76187c0b339b90f34f3f54e0276d387",
+  "counts": {
+    "objects": 1214,
+    "assertions": 4031,
+    "sources": 22
+  },
+  "sourceHashes": [
+    {
+      "id": "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b",
+      "contentHash": "91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+    },
+    {
+      "id": "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef",
+      "contentHash": "87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+    },
+    {
+      "id": "wikipedia-en-facts:314092@f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab",
+      "contentHash": "f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab"
+    },
+    {
+      "id": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "contentHash": "0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e"
+    },
+    {
+      "id": "wikipedia-en-facts:17254923@e210f2fedf63e1b83f1ff17c3ba8ac23b674629b6e73133b7f44d460a722fd1f",
+      "contentHash": "e210f2fedf63e1b83f1ff17c3ba8ac23b674629b6e73133b7f44d460a722fd1f"
+    },
+    {
+      "id": "wikipedia-en-facts:17255213@fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514",
+      "contentHash": "fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514"
+    },
+    {
+      "id": "wikipedia-en-facts:1420574@12511a4f9a10aa42352aa5bcfbff8405d4d8635c748df4a6b9a6f80803df8427",
+      "contentHash": "12511a4f9a10aa42352aa5bcfbff8405d4d8635c748df4a6b9a6f80803df8427"
+    },
+    {
+      "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+      "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+    },
+    {
+      "id": "wikipedia-en-facts:47851611@050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78",
+      "contentHash": "050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78"
+    },
+    {
+      "id": "wikipedia-en-facts:530241@829732fb3734c8609735e3a680e8fa8d730d091e719b20d4ed7b18fee6529577",
+      "contentHash": "829732fb3734c8609735e3a680e8fa8d730d091e719b20d4ed7b18fee6529577"
+    },
+    {
+      "id": "wikipedia-en-facts:516942@87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca",
+      "contentHash": "87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca"
+    },
+    {
+      "id": "gitworld-binding:east-asia-source-roles@44d66c1941745121bad78783097a04bb06a364a8f369cd413973f2983d326cd7",
+      "contentHash": "44d66c1941745121bad78783097a04bb06a364a8f369cd413973f2983d326cd7"
+    },
+    {
+      "id": "gitworld-binding:east-asia-published-chronologies@a3e5e5ceb4c2c0019fad103992044875852181ed75cd182a50118d74a68a3655",
+      "contentHash": "a3e5e5ceb4c2c0019fad103992044875852181ed75cd182a50118d74a68a3655"
+    },
+    {
+      "id": "gitworld-content-labels:east-asia-preset-labels@38bfce7bba2c59dbc0e01b6121c47a8cecca175e36749fff0c97ef99deabbd1d",
+      "contentHash": "38bfce7bba2c59dbc0e01b6121c47a8cecca175e36749fff0c97ef99deabbd1d"
+    },
+    {
+      "id": "gitworld-activity-contexts:listed-activity-role-contexts@1eb845592345b3fbe0f5a08c41cee9b15a400a379e0b4ac3d1824063f2a5e597",
+      "contentHash": "1eb845592345b3fbe0f5a08c41cee9b15a400a379e0b4ac3d1824063f2a5e597"
+    },
+    {
+      "id": "wikipedia-qualified-office-facts:10736899@fead897088a3b1a08ae25de4d69103d5a48c59fa29e404377efed3564054dac5",
+      "contentHash": "fead897088a3b1a08ae25de4d69103d5a48c59fa29e404377efed3564054dac5"
+    },
+    {
+      "id": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "contentHash": "9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c"
+    },
+    {
+      "id": "gitworld-evidenced-fields:japan-normative-institutions-1947@439354d0bc11ffc2e7074d185ba16ac77204723514cba4302254fed91693c99c",
+      "contentHash": "439354d0bc11ffc2e7074d185ba16ac77204723514cba4302254fed91693c99c"
+    },
+    {
+      "id": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "contentHash": "ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea"
+    },
+    {
+      "id": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+      "contentHash": "98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3"
+    },
+    {
+      "id": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "contentHash": "4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651"
+    },
+    {
+      "id": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "contentHash": "4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8"
+    }
+  ],
+  "fieldCatalogOverlays": [
+    {
+      "path": "extensions/activity-context/fields.json",
+      "bytes": 4450,
+      "sha256": "ce23e6e4b9f3f0d0bd95a69b92236187d0ff1ea630508e86beb106be86e9e98e"
+    },
+    {
+      "path": "extensions/qualified-office/fields.json",
+      "bytes": 2466,
+      "sha256": "7fc1fe709c153c3a83d0eb1add02482ff4e310f75ab53540b0235e2de239185b"
+    },
+    {
+      "path": "extensions/political-integration/fields.json",
+      "bytes": 3305,
+      "sha256": "67dd6621c0a5ce896608f41ce40386d8bdb598703c89fc46cb66c27f4c9a965d"
+    },
+    {
+      "path": "extensions/constitutional-states/fields.json",
+      "bytes": 6655,
+      "sha256": "05d16105eb574e07f04beb79b79c813c68460e71af80c4b7963eb0f48f9713e0"
+    },
+    {
+      "path": "extensions/taxonomy-correction/fields.json",
+      "bytes": 601,
+      "sha256": "4444fd86e13521466dbfd020ec63e9b9506855842b663d3de7678e0c98874664"
+    },
+    {
+      "path": "extensions/political-transitions/fields.json",
+      "bytes": 6313,
+      "sha256": "1e76b8cd535c62035707dc839fe8b4d725791eb3bc5779cc6e968f23c6b68bb5"
+    },
+    {
+      "path": "extensions/coinage-transmission/fields.json",
+      "bytes": 6156,
+      "sha256": "360022c1b1e9a638491fd98d3aebadea467cb0b62c1e528d2ee02030decc9e2b"
+    },
+    {
+      "path": "extensions/period-definitions/fields.json",
+      "bytes": 4417,
+      "sha256": "18645102bce5b7be55977d6dfe5ccfdaf1715f445848cd32cd1be1f789526ec6"
+    },
+    {
+      "path": "extensions/court-office-constitutional-observations/fields.json",
+      "bytes": 8742,
+      "sha256": "2e7a81ab401d129880acc52cf250c58ade2584108930106900a6123497252c33"
+    }
+  ],
+  "supportingFiles": [
+    {
+      "path": "extensions/activity-context/source-rights.json",
+      "bytes": 17019,
+      "sha256": "44a141e96385816c1ee08ac6002ce67aab25c734ca571ed3fea58d20665d34e7"
+    },
+    {
+      "path": "extensions/activity-context/plan.json",
+      "bytes": 3833,
+      "sha256": "35fc50551262808bd381a0609bc68574d01bc65820efb954d01cd5abc0186723"
+    },
+    {
+      "path": "extensions/qualified-office/source-rights.json",
+      "bytes": 6522,
+      "sha256": "e187db8957fe8a9cf569a71e7278e2c7ab8cce399bc2e32cbb0b285d971c25b7"
+    },
+    {
+      "path": "extensions/qualified-office/plan.json",
+      "bytes": 2657,
+      "sha256": "4028b3c9360bbf1b6a79567f271eda46a16b4de1b441c46a6381a6f3fa3acbfb"
+    },
+    {
+      "path": "extensions/political-integration/plan.json",
+      "bytes": 17130,
+      "sha256": "935e0bf9cbccb4e1cfa7e7a7ce22c5e5d4bd063c8c1f9fb22e0a0eb90c17f1ed"
+    },
+    {
+      "path": "extensions/political-integration/source-rights.json",
+      "bytes": 5589,
+      "sha256": "6e281b888a344be6bc498820bdfdfb072c584c110d6eb71f01e536b21a8821fb"
+    },
+    {
+      "path": "extensions/constitutional-states/plan.json",
+      "bytes": 74931,
+      "sha256": "0641f79a9460be32738a98f31115c577a3ffe4cecce6304cba93d0ab0b945408"
+    },
+    {
+      "path": "extensions/constitutional-states/source-rights.json",
+      "bytes": 31160,
+      "sha256": "63deeffe2287a4e2cf0c745b7dafee0e6d37768ff0d2115444e06c5a3b94f4d5"
+    },
+    {
+      "path": "extensions/taxonomy-correction/plan.json",
+      "bytes": 109088,
+      "sha256": "9c6aacb0684f65ad4b7b6f0f1f4946276bda5260ac2c51b627fd6d55a1d614e0"
+    },
+    {
+      "path": "extensions/taxonomy-correction/source-rights.json",
+      "bytes": 14916,
+      "sha256": "3e9dc562231f84729b91ac2ec2e66742d2bab41d8a9499c0dddd385dfd47151e"
+    },
+    {
+      "path": "extensions/political-transitions/plan.json",
+      "bytes": 42468,
+      "sha256": "ad171451da6d991a9c10d7b109440e9d0a1410845a73b9a79b184369c6baaa45"
+    },
+    {
+      "path": "extensions/political-transitions/source-rights.json",
+      "bytes": 7939,
+      "sha256": "d3232ee70d52c29096508434572329afad3f792d0a64489ae2a42cdd7d63b6b3"
+    },
+    {
+      "path": "extensions/political-transitions/import.json",
+      "bytes": 223250,
+      "sha256": "155bce578b9f894bed88836242d443bc283163e9fb2398dff1153d476a1074fb"
+    },
+    {
+      "path": "extensions/coinage-transmission/plan.json",
+      "bytes": 41861,
+      "sha256": "38431c2c41efe1e52b98131749f83cb19ea02fff3cf21ac989b514f2c98484f0"
+    },
+    {
+      "path": "extensions/coinage-transmission/source-rights.json",
+      "bytes": 12621,
+      "sha256": "6a4ddf7e28bae3b3679d4a7bf66d5130e75254916743f06a94b9a6180edfdef8"
+    },
+    {
+      "path": "extensions/coinage-transmission/import.json",
+      "bytes": 112927,
+      "sha256": "e8d483030318c9c2a53586be20a8e6d47c6894154b56d60c409197c6b67e230d"
+    },
+    {
+      "path": "extensions/coinage-transmission/selected-output-scope.json",
+      "bytes": 7823,
+      "sha256": "56e468f6ab650f1aba289e939ebf43ea8fe07516c560682de5832505691f1a59"
+    },
+    {
+      "path": "extensions/period-definitions/plan.json",
+      "bytes": 71059,
+      "sha256": "f55a6067fed2c4b06117e5b64fb96277343ce37b6ec039ce26d9a7ef6e7d2e03"
+    },
+    {
+      "path": "extensions/period-definitions/source-rights.json",
+      "bytes": 7473,
+      "sha256": "447fd51bd4f82ca1d6e31b124dc21041cafc9219724c98f1e1dca203fc3e23b0"
+    },
+    {
+      "path": "extensions/period-definitions/import.json",
+      "bytes": 202601,
+      "sha256": "3b8be3712037745dee31478a0ef9f10ce9947af30cdff15a235ab19913978f63"
+    },
+    {
+      "path": "navigation/plan.json",
+      "bytes": 2540438,
+      "sha256": "61af565f778e05c8e567411a1a166d45d1f6ed9269e6192d4c55bb99c1d85e72"
+    },
+    {
+      "path": "navigation/source-rights.json",
+      "bytes": 695,
+      "sha256": "7e35b1e2ad2dceecbc0666453bd40e612f63019b80f5462e34c98fd5ab0a086b"
+    },
+    {
+      "path": "extensions/court-office-constitutional-observations/plan.json",
+      "bytes": 72467,
+      "sha256": "7231acf40c91f91dcbe973be0d21022b14df860395fb2ffafec24fb22df79bc9"
+    },
+    {
+      "path": "extensions/court-office-constitutional-observations/source-rights.json",
+      "bytes": 10457,
+      "sha256": "685bdec59526e373fbd5932b8528a5638714a19fb4b3044ae338f0ddaab0d78a"
+    },
+    {
+      "path": "extensions/court-office-constitutional-observations/import.json",
+      "bytes": 219596,
+      "sha256": "a925434a8780a6eae5036ec1e60156506e96370d9e00d11ea65b109c4f57fcb0"
+    }
+  ],
+  "navigation": {
+    "path": "navigation/bootstrap.json",
+    "bytes": 894819,
+    "sha256": "fc187320efb061200b93f0bc547511e4676b5f090d5399adeee8950113d62e0a"
+  }
+}

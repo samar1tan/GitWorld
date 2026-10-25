@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 1,
+  "kind": "historical-field-display-labels",
+  "properties": [
+    {
+      "id": "relation:activity-assertion",
+      "labels": {
+        "en": "Source activity assertion",
+        "zh-CN": "来源活动主张"
+      }
+    },
+    {
+      "id": "relation:membership-assertion",
+      "labels": {
+        "en": "Source role assertion",
+        "zh-CN": "来源任职主张"
+      }
+    },
+    {
+      "id": "relation:listed-person",
+      "labels": {
+        "en": "Person listed in source",
+        "zh-CN": "来源所列人物"
+      }
+    },
+    {
+      "id": "relation:listed-role",
+      "labels": {
+        "en": "Role in the source listing",
+        "zh-CN": "来源列名角色"
+      }
+    },
+    {
+      "id": "relation:membership-property",
+      "labels": {
+        "en": "Recorded role field",
+        "zh-CN": "所载任职字段"
+      }
+    },
+    {
+      "id": "relation:activity-time",
+      "labels": {
+        "en": "Activity time as recorded",
+        "zh-CN": "来源活动时间"
+      }
+    },
+    {
+      "id": "relation:membership-time",
+      "labels": {
+        "en": "Role time as recorded",
+        "zh-CN": "来源任职时间"
+      }
+    },
+    {
+      "id": "relation:overlap-resolution",
+      "labels": {
+        "en": "Time overlap",
+        "zh-CN": "时间交集"
+      }
+    },
+    {
+      "id": "relation:source-status",
+      "labels": {
+        "en": "Status stated by source",
+        "zh-CN": "来源明确状态"
+      }
+    },
+    {
+      "id": "relation:status-assertion",
+      "labels": {
+        "en": "Source status assertion",
+        "zh-CN": "来源状态主张"
+      }
+    },
+    {
+      "id": "relation:modeling-semantics",
+      "labels": {
+        "en": "Meaning of the derived context",
+        "zh-CN": "推导上下文的含义"
+      }
+    },
+    {
+      "id": "projection:derived-from",
+      "labels": {
+        "en": "Original assertion",
+        "zh-CN": "原始主张"
+      }
+    },
+    {
+      "id": "projection:rule-id",
+      "labels": {
+        "en": "Mapping rule",
+        "zh-CN": "映射规则"
+      }
+    },
+    {
+      "id": "contact:listed-sender-context",
+      "labels": {
+        "en": "Recorded context of the listed sender",
+        "zh-CN": "所列派遣者的任职上下文"
+      }
+    },
+    {
+      "id": "contact:activity-listing-as-sender-context",
+      "labels": {
+        "en": "Activity listing with a sender in this context",
+        "zh-CN": "派遣者与本对象相关的活动列名"
+      }
+    },
+    {
+      "id": "contact:listed-counterpart-context",
+      "labels": {
+        "en": "Recorded context of the listed counterpart",
+        "zh-CN": "所列对方人物的任职上下文"
+      }
+    },
+    {
+      "id": "contact:activity-listing-as-counterpart-context",
+      "labels": {
+        "en": "Activity listing with a counterpart in this context",
+        "zh-CN": "对方人物与本对象相关的活动列名"
+      }
+    }
+  ],
+  "types": [],
+  "values": [
+    {
+      "propertyId": "relation:listed-role",
+      "value": "contact:listed-sender",
+      "labels": {
+        "en": "Sender listed in source",
+        "zh-CN": "来源所列派遣者"
+      }
+    },
+    {
+      "propertyId": "relation:listed-role",
+      "value": "contact:listed-counterpart",
+      "labels": {
+        "en": "Counterpart listed in source",
+        "zh-CN": "来源所列对方人物"
+      }
+    },
+    {
+      "propertyId": "relation:source-status",
+      "value": "cancelled",
+      "labels": {
+        "en": "Cancelled in source",
+        "zh-CN": "来源记为取消"
+      }
+    },
+    {
+      "propertyId": "relation:overlap-resolution",
+      "value": "year-overlap",
+      "labels": {
+        "en": "Overlap at recorded year resolution",
+        "zh-CN": "在收录年份精度上相交"
+      }
+    },
+    {
+      "propertyId": "relation:overlap-resolution",
+      "value": "possible-year-overlap",
+      "labels": {
+        "en": "Possible overlap at year resolution",
+        "zh-CN": "在年份精度上可能相交"
+      }
+    },
+    {
+      "propertyId": "relation:modeling-semantics",
+      "value": "listed-person-role-context-not-proof-of-participation-or-transfer",
+      "labels": {
+        "en": "Context of a source-listed person; participation and transmission need separate evidence",
+        "zh-CN": "来源所列人物的任职上下文；实际参与和传播需要独立依据"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"name":"@gitworld/ingestion","version":"0.1.0","private":true,"type":"module","exports":"./src/index.ts","dependencies":{"parse5":"8.0.1"}}

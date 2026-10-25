@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "id": "qualified-authority-endpoints",
+  "revision": "1-candidate",
+  "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/source-bindings-prd.md",
+  "source": {
+    "provider": "wikipedia-en",
+    "externalId": "10736899",
+    "revision": "1379817586",
+    "upstreamSnapshotHash": "d4130bf777cfc6a0fb267c1dc4fe2e4e1bdd645c43f67b787aa0e3953ef0b231"
+  },
+  "tables": [
+    {
+      "id": "source-authority-survey",
+      "tableIndex": 4,
+      "expectedHeaders": [
+        "No.",
+        "Portrait",
+        "Name (Birth–Death)",
+        "de facto shogun from",
+        "de facto shogun until"
+      ],
+      "holderColumn": 2,
+      "startColumn": 3,
+      "endColumn": 4,
+      "contextId": "history:office:azuchi-momoyama-authority",
+      "contextType": "gitworld:authority-survey",
+      "fields": {
+        "de-jure": {
+          "propertyId": "authority:listed-de-jure-holder",
+          "labels": {
+            "en": "Authority listed de jure in source",
+            "zh-CN": "来源所列法理权力持有者"
+          }
+        },
+        "de-facto": {
+          "propertyId": "authority:listed-de-facto-holder",
+          "labels": {
+            "en": "Authority listed de facto in source",
+            "zh-CN": "来源所列实际权力持有者"
+          }
+        }
+      }
+    },
+    {
+      "id": "source-shogunal-office",
+      "tableIndex": 5,
+      "expectedHeaders": [
+        "No.",
+        "Portrait",
+        "Name (Birth–Death)",
+        "Shogun from",
+        "Shogun until"
+      ],
+      "holderColumn": 2,
+      "startColumn": 3,
+      "endColumn": 4,
+      "contextId": "history:office:tokugawa-shogun",
+      "contextType": "gitworld:office",
+      "fields": {
+        "de-jure": {
+          "propertyId": "office:listed-de-jure-holder",
+          "labels": {
+            "en": "Officeholder listed de jure",
+            "zh-CN": "来源所列法理任职者"
+          }
+        },
+        "de-facto": {
+          "propertyId": "office:listed-de-facto-authority",
+          "labels": {
+            "en": "Authority listed de facto",
+            "zh-CN": "来源所列实际权力持有者"
+          }
+        }
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+      "locator": "table[4] and table[5]; authority labels and shared holder/start cells",
+      "citation": "Pair source endpoints only within the same holder cell and explicit authority basis. Preserve source-survey context and unresolved endpoints; a comparative authority listing does not confer a formal military office."
+    }
+  ]
+}

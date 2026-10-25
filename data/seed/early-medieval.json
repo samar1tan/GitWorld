@@ -1,0 +1,5682 @@
+{
+  "schemaVersion": 1,
+  "dataset": {
+    "id": "gitworld-curated-history",
+    "name": {
+      "en": "World history",
+      "zh-CN": "世界历史"
+    },
+    "description": {
+      "en": "The current revision covers Carolingian partitions, court relocations, Sui integration and earlier contexts. Dates between records replay a recorded model; they do not certify continuous historical coverage.",
+      "zh-CN": "当前数据版本涵盖加洛林分割、宫廷迁驻、隋的整合及更早的背景。记录之间的日期只回放已收录模型，不代表连续完整的历史覆盖。"
+    },
+    "license": "Apache-2.0 (GitWorld-authored records); cited third-party works retain their own rights"
+  },
+  "revision": {
+    "id": "early-medieval-2026-10-25.2",
+    "parentRevisionId": null,
+    "createdAt": "2026-10-24T17:30:18.887Z",
+    "notes": {
+      "en": "Initial reviewed seed: original summaries, citation-only references, explicit limits and model resolutions. Editorial preparation is AI-assisted, not specialist certification.",
+      "zh-CN": "初始种子：原创摘要、仅引用的来源、明确的局限与模型决议。编辑准备由 AI 辅助，不代表史学专家认证。"
+    }
+  },
+  "catalog": {
+    "scopes": [
+      {
+        "id": "europe",
+        "parentId": null,
+        "name": {
+          "en": "Europe",
+          "zh-CN": "欧洲"
+        },
+        "summary": {
+          "en": "Frankish rulers build an imperial claim; inheritance and negotiated partitions reshape their realm.",
+          "zh-CN": "法兰克统治者确立帝国名号；继承与协商分割不断重塑其领地。"
+        },
+        "coverage": [
+          751,
+          870
+        ],
+        "viewBox": {
+          "x": 447,
+          "y": 54,
+          "width": 167,
+          "height": 133
+        },
+        "location": {
+          "x": 518,
+          "y": 115
+        },
+        "sourceIds": [
+          "met-france",
+          "wallonia-verdun",
+          "wallonia-meerssen"
+        ]
+      },
+      {
+        "id": "west-asia",
+        "parentId": null,
+        "name": {
+          "en": "Mediterranean & West Asia",
+          "zh-CN": "地中海与西亚"
+        },
+        "summary": {
+          "en": "The Abbasids take power in the east while an Umayyad ruler establishes a new base in al-Andalus.",
+          "zh-CN": "阿拔斯在东方掌权，一位倭马亚统治者则在安达卢斯建立新的统治中心。"
+        },
+        "coverage": [
+          750,
+          892
+        ],
+        "viewBox": {
+          "x": 453,
+          "y": 101,
+          "width": 228,
+          "height": 131
+        },
+        "location": {
+          "x": 580,
+          "y": 159
+        },
+        "sourceIds": [
+          "ashmolean-abbasid",
+          "met-abbasid",
+          "met-iberia"
+        ]
+      },
+      {
+        "id": "east-asia",
+        "parentId": null,
+        "name": {
+          "en": "East Asia",
+          "zh-CN": "东亚"
+        },
+        "summary": {
+          "en": "Explore selected court, political and cultural records: Sui integration, Tang–Japan planning connections and earlier Qin rule.",
+          "zh-CN": "探索精选宫廷、政治与文化记录：隋的整合、唐日规划联系，以及更早的秦朝统治。"
+        },
+        "coverage": [
+          -221,
+          794
+        ],
+        "viewBox": {
+          "x": 686,
+          "y": 95,
+          "width": 211,
+          "height": 136
+        },
+        "location": {
+          "x": 780,
+          "y": 156
+        },
+        "sourceIds": [
+          "met-china",
+          "met-japan"
+        ]
+      }
+    ],
+    "processes": [
+      {
+        "id": "carolingian-succession",
+        "scopeIds": [
+          "europe"
+        ],
+        "name": {
+          "en": "Carolingian succession",
+          "zh-CN": "加洛林的继承与分割"
+        },
+        "summary": {
+          "en": "A dynasty’s inheritance repeatedly changes the political map.",
+          "zh-CN": "同一王朝的继承，反复改变政治格局。"
+        },
+        "coverage": [
+          751,
+          870
+        ],
+        "branchIds": [
+          "francia/main",
+          "francia/west",
+          "francia/middle",
+          "francia/east",
+          "francia/lotharingia"
+        ],
+        "eventIds": [
+          "charlemagne-768",
+          "imperial-coronation-800",
+          "louis-succeeds-814",
+          "verdun-843",
+          "meerssen-870"
+        ],
+        "sourceIds": [
+          "met-france",
+          "wallonia-verdun",
+          "wallonia-meerssen"
+        ]
+      },
+      {
+        "id": "frankish-papal-alliance",
+        "scopeIds": [
+          "europe"
+        ],
+        "name": {
+          "en": "A dynasty and the papacy",
+          "zh-CN": "王朝与教廷"
+        },
+        "summary": {
+          "en": "Papal support helps secure Pippin’s new royal dynasty.",
+          "zh-CN": "教宗的支持帮助丕平巩固新王朝。"
+        },
+        "coverage": [
+          751,
+          754
+        ],
+        "branchIds": [
+          "francia/papacy"
+        ],
+        "eventIds": [
+          "pepin-751",
+          "papal-anointing-754"
+        ],
+        "sourceIds": [
+          "met-france",
+          "kcl-pepin"
+        ]
+      },
+      {
+        "id": "abbasid-court",
+        "scopeIds": [
+          "west-asia"
+        ],
+        "name": {
+          "en": "The Abbasid court changes its seat",
+          "zh-CN": "阿拔斯宫廷的迁驻"
+        },
+        "summary": {
+          "en": "A new dynasty establishes its court in Iraq; selected records follow Baghdad, Samarra and a return to Baghdad.",
+          "zh-CN": "新王朝在伊拉克建立宫廷；精选记录追踪巴格达、萨迈拉，以及返回巴格达的过程。"
+        },
+        "coverage": [
+          750,
+          892
+        ],
+        "branchIds": [
+          "abbasid/main"
+        ],
+        "eventIds": [
+          "abbasid-revolution-750",
+          "baghdad-762",
+          "samarra-836"
+        ],
+        "sourceIds": [
+          "ashmolean-abbasid",
+          "met-abbasid",
+          "qatar-samarra"
+        ]
+      },
+      {
+        "id": "umayyad-andalus",
+        "scopeIds": [
+          "west-asia"
+        ],
+        "name": {
+          "en": "An Umayyad line in al-Andalus",
+          "zh-CN": "倭马亚在安达卢斯的延续"
+        },
+        "summary": {
+          "en": "After the dynasty loses power in the east, Abd al-Rahman I builds an emirate in Iberia.",
+          "zh-CN": "失去东方的统治后，阿卜杜勒·拉赫曼一世在伊比利亚建立埃米尔国。"
+        },
+        "coverage": [
+          756,
+          785
+        ],
+        "branchIds": [
+          "andalus/main"
+        ],
+        "eventIds": [
+          "cordoba-emirate-756",
+          "cordoba-mosque-785"
+        ],
+        "sourceIds": [
+          "met-iberia",
+          "ashmolean-abbasid"
+        ]
+      },
+      {
+        "id": "tang-transformation",
+        "scopeIds": [
+          "east-asia"
+        ],
+        "name": {
+          "en": "Tang rule through rebellion",
+          "zh-CN": "唐朝与安史之乱"
+        },
+        "summary": {
+          "en": "The dynasty survives a major rebellion with its court’s authority weakened.",
+          "zh-CN": "王朝在大规模叛乱后延续，但朝廷的权威受到削弱。"
+        },
+        "coverage": [
+          618,
+          763
+        ],
+        "branchIds": [
+          "tang/main"
+        ],
+        "eventIds": [
+          "tang-founded-618",
+          "an-lushan-755",
+          "rebellion-ends-763"
+        ],
+        "sourceIds": [
+          "met-china",
+          "met-tang",
+          "loc-an-lushan"
+        ]
+      },
+      {
+        "id": "japan-court-capitals",
+        "scopeIds": [
+          "east-asia"
+        ],
+        "name": {
+          "en": "Japanese court relocations",
+          "zh-CN": "日本朝廷的迁都与返回"
+        },
+        "summary": {
+          "en": "The court leaves Nara, returns, then moves through Nagaoka to Heian. A return to a city need not restore its earlier state.",
+          "zh-CN": "朝廷离开奈良后又返回，随后迁往长冈、平安。回到同一座城市，并不意味着恢复此前的状态。"
+        },
+        "coverage": [
+          710,
+          794
+        ],
+        "branchIds": [
+          "japan/main"
+        ],
+        "eventIds": [
+          "nara-710",
+          "nagaoka-784",
+          "heian-794"
+        ],
+        "sourceIds": [
+          "met-japan",
+          "muko-capitals",
+          "nabunken-chronology"
+        ]
+      },
+      {
+        "id": "sui-integration",
+        "scopeIds": [
+          "east-asia"
+        ],
+        "name": {
+          "en": "From divided rule to Sui integration",
+          "zh-CN": "从分立统治到隋朝整合"
+        },
+        "summary": {
+          "en": "Sui rule begins in the north; the end of Chen brings the southern realm into the same modeled outcome.",
+          "zh-CN": "隋先在北方建立统治；陈的终结使南方领地进入同一建模结果。"
+        },
+        "coverage": [
+          557,
+          589
+        ],
+        "sourceIds": [
+          "met-china"
+        ],
+        "branchIds": [
+          "sui/main",
+          "chen/main"
+        ],
+        "eventIds": []
+      },
+      {
+        "id": "buddhism-japan",
+        "scopeIds": [
+          "east-asia"
+        ],
+        "name": {
+          "en": "Buddhism and the Japanese court",
+          "zh-CN": "佛教与日本朝廷"
+        },
+        "summary": {
+          "en": "A Baekje royal gift has two traditional dates; earlier private practice remains possible.",
+          "zh-CN": "百济王室赠礼存在两种传统纪年；此前民间可能已信仰佛教。"
+        },
+        "coverage": [
+          538,
+          552
+        ],
+        "sourceIds": [
+          "nara-buddhism",
+          "met-japan"
+        ],
+        "branchIds": [
+          "japan/buddhism"
+        ],
+        "eventIds": []
+      },
+      {
+        "id": "qin-imperial-rule",
+        "scopeIds": [
+          "east-asia"
+        ],
+        "name": {
+          "en": "Qin imperial rule",
+          "zh-CN": "秦朝的帝国统治"
+        },
+        "summary": {
+          "en": "The imperial title and a later policy on texts provide two selected states before the Common Era.",
+          "zh-CN": "皇帝称号与稍后的焚书政策，提供两个公元前的精选状态。"
+        },
+        "coverage": [
+          -221,
+          -213
+        ],
+        "sourceIds": [
+          "met-qin"
+        ],
+        "branchIds": [
+          "qin/main"
+        ],
+        "eventIds": []
+      }
+    ],
+    "events": [
+      {
+        "id": "charlemagne-768",
+        "title": {
+          "en": "Two brothers inherit",
+          "zh-CN": "兄弟分承王国"
+        },
+        "summary": {
+          "en": "After Pippin’s death, Charlemagne and Carloman divide the Frankish kingdom.",
+          "zh-CN": "丕平去世后，查理曼与卡洛曼分承法兰克王国。"
+        },
+        "commitIds": [
+          "francia-768"
+        ],
+        "sourceIds": [
+          "met-france"
+        ]
+      },
+      {
+        "id": "imperial-coronation-800",
+        "title": {
+          "en": "An imperial title in Rome",
+          "zh-CN": "在罗马加冕为帝"
+        },
+        "summary": {
+          "en": "Pope Leo III crowns Charlemagne emperor in Rome.",
+          "zh-CN": "教宗利奥三世在罗马为查理曼加冕，授予皇帝称号。"
+        },
+        "commitIds": [
+          "francia-800"
+        ],
+        "sourceIds": [
+          "met-france"
+        ]
+      },
+      {
+        "id": "louis-succeeds-814",
+        "title": {
+          "en": "Louis succeeds Charlemagne",
+          "zh-CN": "虔诚者路易继位"
+        },
+        "summary": {
+          "en": "Charlemagne dies; his surviving son Louis the Pious inherits the empire.",
+          "zh-CN": "查理曼去世，在世的儿子虔诚者路易继承帝国。"
+        },
+        "commitIds": [
+          "francia-814"
+        ],
+        "sourceIds": [
+          "met-france"
+        ]
+      },
+      {
+        "id": "verdun-843",
+        "title": {
+          "en": "Three kingdoms at Verdun",
+          "zh-CN": "凡尔登：分为三个王国"
+        },
+        "summary": {
+          "en": "Louis’s sons settle their conflict with a three-way partition at Verdun.",
+          "zh-CN": "路易的儿子们在凡尔登达成三分协议，结束彼此的争战。"
+        },
+        "commitIds": [
+          "west-843",
+          "middle-843",
+          "east-843"
+        ],
+        "sourceIds": [
+          "met-france",
+          "wallonia-verdun"
+        ]
+      },
+      {
+        "id": "meerssen-870",
+        "title": {
+          "en": "Lotharingia is divided",
+          "zh-CN": "洛塔林吉亚被瓜分"
+        },
+        "summary": {
+          "en": "Charles the Bald and Louis the German partition Lotharingia at Meerssen.",
+          "zh-CN": "秃头查理与日耳曼人路易在梅尔森瓜分洛塔林吉亚。"
+        },
+        "commitIds": [
+          "west-870",
+          "east-870",
+          "lotharingia-870"
+        ],
+        "sourceIds": [
+          "wallonia-meerssen"
+        ]
+      },
+      {
+        "id": "pepin-751",
+        "title": {
+          "en": "Pippin becomes king",
+          "zh-CN": "丕平成为国王"
+        },
+        "summary": {
+          "en": "With papal support, Pippin is elected king of the Franks.",
+          "zh-CN": "在教宗支持下，丕平被推举为法兰克国王。"
+        },
+        "commitIds": [
+          "francia-751"
+        ],
+        "sourceIds": [
+          "met-france",
+          "kcl-pepin"
+        ]
+      },
+      {
+        "id": "papal-anointing-754",
+        "title": {
+          "en": "Papal anointing at Saint-Denis",
+          "zh-CN": "圣但尼的教宗涂油礼"
+        },
+        "summary": {
+          "en": "Pope Stephen II anoints Pippin and his sons Charles and Carloman.",
+          "zh-CN": "教宗斯德望二世为丕平及其两子查理、卡洛曼施行涂油礼。"
+        },
+        "commitIds": [
+          "papacy-754"
+        ],
+        "sourceIds": [
+          "kcl-pepin"
+        ]
+      },
+      {
+        "id": "abbasid-revolution-750",
+        "title": {
+          "en": "The Abbasids take power",
+          "zh-CN": "阿拔斯掌权"
+        },
+        "summary": {
+          "en": "The Abbasid revolution overthrows Umayyad rule in the east.",
+          "zh-CN": "阿拔斯革命推翻倭马亚在东方的统治。"
+        },
+        "commitIds": [
+          "abbasid-750"
+        ],
+        "sourceIds": [
+          "ashmolean-abbasid",
+          "met-abbasid"
+        ]
+      },
+      {
+        "id": "baghdad-762",
+        "title": {
+          "en": "A court at Baghdad",
+          "zh-CN": "宫廷落脚巴格达"
+        },
+        "summary": {
+          "en": "Al-Mansur establishes Baghdad as the Abbasid capital.",
+          "zh-CN": "曼苏尔将巴格达确立为阿拔斯的都城。"
+        },
+        "commitIds": [
+          "abbasid-762"
+        ],
+        "sourceIds": [
+          "ashmolean-abbasid",
+          "met-abbasid"
+        ]
+      },
+      {
+        "id": "samarra-836",
+        "title": {
+          "en": "The court moves to Samarra",
+          "zh-CN": "宫廷迁往萨迈拉"
+        },
+        "summary": {
+          "en": "Samarra becomes the caliphal residence, a role it retains until 892.",
+          "zh-CN": "萨迈拉成为哈里发驻地，并保持这一地位直至 892 年。"
+        },
+        "commitIds": [
+          "abbasid-836"
+        ],
+        "sourceIds": [
+          "met-abbasid",
+          "ashmolean-abbasid"
+        ]
+      },
+      {
+        "id": "cordoba-emirate-756",
+        "title": {
+          "en": "An emirate at Córdoba",
+          "zh-CN": "科尔多瓦的埃米尔国"
+        },
+        "summary": {
+          "en": "Abd al-Rahman I establishes Umayyad rule in al-Andalus.",
+          "zh-CN": "阿卜杜勒·拉赫曼一世在安达卢斯建立倭马亚统治。"
+        },
+        "commitIds": [
+          "andalus-756"
+        ],
+        "sourceIds": [
+          "met-iberia",
+          "ashmolean-abbasid"
+        ]
+      },
+      {
+        "id": "cordoba-mosque-785",
+        "title": {
+          "en": "A great mosque for Córdoba",
+          "zh-CN": "科尔多瓦大清真寺开建"
+        },
+        "summary": {
+          "en": "Abd al-Rahman I begins the Great Mosque of Córdoba.",
+          "zh-CN": "阿卜杜勒·拉赫曼一世开始修建科尔多瓦大清真寺。"
+        },
+        "commitIds": [
+          "andalus-785"
+        ],
+        "sourceIds": [
+          "met-iberia"
+        ]
+      },
+      {
+        "id": "tang-founded-618",
+        "title": {
+          "en": "Li Yuan founds the Tang",
+          "zh-CN": "李渊建立唐朝"
+        },
+        "summary": {
+          "en": "Li Yuan establishes the Tang dynasty after the Sui collapse.",
+          "zh-CN": "隋朝瓦解后，李渊建立唐朝。"
+        },
+        "commitIds": [
+          "tang-618"
+        ],
+        "sourceIds": [
+          "met-china"
+        ]
+      },
+      {
+        "id": "an-lushan-755",
+        "title": {
+          "en": "An Lushan rebels",
+          "zh-CN": "安禄山起兵"
+        },
+        "summary": {
+          "en": "A frontier commander turns his forces against the Tang court.",
+          "zh-CN": "一位边镇将领率军反叛唐朝朝廷。"
+        },
+        "commitIds": [
+          "tang-755"
+        ],
+        "sourceIds": [
+          "met-china",
+          "loc-an-lushan"
+        ]
+      },
+      {
+        "id": "rebellion-ends-763",
+        "title": {
+          "en": "The dynasty survives",
+          "zh-CN": "王朝延续"
+        },
+        "summary": {
+          "en": "The rebellion ends, but the Tang court’s power remains weakened.",
+          "zh-CN": "叛乱结束，但唐朝朝廷的权力仍受到削弱。"
+        },
+        "commitIds": [
+          "tang-763"
+        ],
+        "sourceIds": [
+          "loc-an-lushan",
+          "met-tang"
+        ]
+      },
+      {
+        "id": "nara-710",
+        "title": {
+          "en": "The court settles at Nara",
+          "zh-CN": "朝廷迁入奈良"
+        },
+        "summary": {
+          "en": "Heijō-kyō at Nara adopts a grid inspired by Tang Chang’an, without its enclosing walls.",
+          "zh-CN": "奈良的平城京借鉴唐长安的棋盘格局，但没有外围城墙。"
+        },
+        "commitIds": [
+          "japan-710"
+        ],
+        "sourceIds": [
+          "met-japan"
+        ]
+      },
+      {
+        "id": "nagaoka-784",
+        "title": {
+          "en": "Ten years at Nagaoka",
+          "zh-CN": "长冈的十年"
+        },
+        "summary": {
+          "en": "The court leaves Heijō-kyō for Nagaoka-kyō.",
+          "zh-CN": "朝廷离开平城京，迁往长冈京。"
+        },
+        "commitIds": [
+          "japan-784"
+        ],
+        "sourceIds": [
+          "muko-capitals"
+        ]
+      },
+      {
+        "id": "heian-794",
+        "title": {
+          "en": "Heian becomes the court’s seat",
+          "zh-CN": "朝廷定都平安"
+        },
+        "summary": {
+          "en": "The court moves to Heian-kyō, at present-day Kyoto.",
+          "zh-CN": "朝廷迁往平安京，即今天的京都。"
+        },
+        "commitIds": [
+          "japan-794"
+        ],
+        "sourceIds": [
+          "muko-capitals",
+          "met-japan"
+        ]
+      }
+    ],
+    "places": [
+      {
+        "id": "aachen",
+        "name": {
+          "en": "Aachen",
+          "zh-CN": "亚琛"
+        },
+        "scopeIds": [
+          "europe"
+        ],
+        "longitude": 6.08,
+        "latitude": 50.78
+      },
+      {
+        "id": "rome",
+        "name": {
+          "en": "Rome",
+          "zh-CN": "罗马"
+        },
+        "scopeIds": [
+          "europe",
+          "west-asia"
+        ],
+        "longitude": 12.5,
+        "latitude": 41.9
+      },
+      {
+        "id": "baghdad",
+        "name": {
+          "en": "Baghdad",
+          "zh-CN": "巴格达"
+        },
+        "scopeIds": [
+          "west-asia"
+        ],
+        "longitude": 44.4,
+        "latitude": 33.3
+      },
+      {
+        "id": "samarra",
+        "name": {
+          "en": "Samarra",
+          "zh-CN": "萨迈拉"
+        },
+        "scopeIds": [
+          "west-asia"
+        ],
+        "longitude": 43.88,
+        "latitude": 34.2
+      },
+      {
+        "id": "cordoba",
+        "name": {
+          "en": "Córdoba",
+          "zh-CN": "科尔多瓦"
+        },
+        "scopeIds": [
+          "west-asia"
+        ],
+        "longitude": -4.78,
+        "latitude": 37.88
+      },
+      {
+        "id": "changan",
+        "name": {
+          "en": "Chang’an",
+          "zh-CN": "长安"
+        },
+        "scopeIds": [
+          "east-asia"
+        ],
+        "longitude": 108.9,
+        "latitude": 34.27
+      },
+      {
+        "id": "nara",
+        "name": {
+          "en": "Nara",
+          "zh-CN": "奈良"
+        },
+        "scopeIds": [
+          "east-asia"
+        ],
+        "longitude": 135.78,
+        "latitude": 34.68
+      },
+      {
+        "id": "heian",
+        "name": {
+          "en": "Heian",
+          "zh-CN": "平安京"
+        },
+        "scopeIds": [
+          "east-asia"
+        ],
+        "longitude": 135.75,
+        "latitude": 35.02
+      }
+    ],
+    "defaults": {
+      "timeWindow": [
+        600,
+        900
+      ],
+      "scopeId": null,
+      "worldView": {
+        "x": 0,
+        "y": 0,
+        "width": 1000,
+        "height": 520
+      }
+    }
+  },
+  "history": {
+    "id": "early-medieval-2026-10-25.2",
+    "branches": [
+      {
+        "id": "francia/main",
+        "name": {
+          "en": "Carolingian inheritance",
+          "zh-CN": "加洛林共同前史"
+        },
+        "description": {
+          "en": "Selected political records. Between dates, a query returns the latest recorded model state, not a complete reconstruction of that year.",
+          "zh-CN": "精选政治记录。日期之间的查询返回此前最新收录状态，不等于该年的完整历史复原。"
+        },
+        "scopeId": "europe",
+        "processId": "carolingian-succession",
+        "coverage": [
+          751,
+          842
+        ],
+        "commitIds": [
+          "francia-751",
+          "francia-768",
+          "francia-771",
+          "francia-800",
+          "francia-814",
+          "francia-840"
+        ],
+        "color": "#7ea9ed"
+      },
+      {
+        "id": "francia/west",
+        "name": {
+          "en": "West Francia",
+          "zh-CN": "西法兰克"
+        },
+        "description": {
+          "en": "Charles’s western kingdom and its share of Lotharingia in 870. Later reigns are not yet covered.",
+          "zh-CN": "查理的西部王国及其 870 年所得洛塔林吉亚份额；尚未收录此后的统治。"
+        },
+        "scopeId": "europe",
+        "processId": "carolingian-succession",
+        "coverage": [
+          843,
+          870
+        ],
+        "commitIds": [
+          "west-843",
+          "west-870"
+        ],
+        "forkCommitId": "francia-840",
+        "color": "#79a9f2"
+      },
+      {
+        "id": "francia/middle",
+        "name": {
+          "en": "Middle Francia",
+          "zh-CN": "中法兰克"
+        },
+        "description": {
+          "en": "Lothair I’s middle kingdom; this path ends with the partition of 855.",
+          "zh-CN": "洛泰尔一世的中部王国；此路径止于 855 年的再分割。"
+        },
+        "scopeId": "europe",
+        "processId": "carolingian-succession",
+        "coverage": [
+          843,
+          855
+        ],
+        "commitIds": [
+          "middle-843",
+          "middle-855"
+        ],
+        "forkCommitId": "francia-840",
+        "color": "#ba9de0"
+      },
+      {
+        "id": "francia/east",
+        "name": {
+          "en": "East Francia",
+          "zh-CN": "东法兰克"
+        },
+        "description": {
+          "en": "Louis’s eastern kingdom and its share of Lotharingia in 870. Later reigns are not yet covered.",
+          "zh-CN": "路易的东部王国及其 870 年所得洛塔林吉亚份额；尚未收录此后的统治。"
+        },
+        "scopeId": "europe",
+        "processId": "carolingian-succession",
+        "coverage": [
+          843,
+          870
+        ],
+        "commitIds": [
+          "east-843",
+          "east-870"
+        ],
+        "forkCommitId": "francia-840",
+        "color": "#d0b17b"
+      },
+      {
+        "id": "francia/lotharingia",
+        "name": {
+          "en": "Lotharingia",
+          "zh-CN": "洛塔林吉亚"
+        },
+        "description": {
+          "en": "A northern successor of the middle kingdom, followed through the partition of 870. Italy and Provence remain outside this branch.",
+          "zh-CN": "中部王国的北部继承区域，追踪至 870 年分割；意大利与普罗旺斯不属于这条分支。"
+        },
+        "scopeId": "europe",
+        "processId": "carolingian-succession",
+        "coverage": [
+          855,
+          870
+        ],
+        "commitIds": [
+          "lotharingia-855",
+          "lotharingia-869",
+          "lotharingia-870"
+        ],
+        "forkCommitId": "middle-855",
+        "color": "#d28d9e"
+      },
+      {
+        "id": "abbasid/main",
+        "name": {
+          "en": "Abbasid court",
+          "zh-CN": "阿拔斯宫廷"
+        },
+        "description": {
+          "en": "This path follows selected court locations. Other rulers, institutions and intervening changes are not fully recorded.",
+          "zh-CN": "这条路径追踪精选宫廷驻地。历任统治者、制度和中间变化未完整收录。"
+        },
+        "scopeId": "west-asia",
+        "processId": "abbasid-court",
+        "coverage": [
+          750,
+          892
+        ],
+        "commitIds": [
+          "abbasid-750",
+          "abbasid-762",
+          "abbasid-836",
+          "abbasid-892"
+        ],
+        "color": "#d0b17b"
+      },
+      {
+        "id": "japan/main",
+        "name": {
+          "en": "Japanese court capitals",
+          "zh-CN": "日本朝廷都城"
+        },
+        "description": {
+          "en": "This path follows selected court locations. Other rulers, institutions and intervening changes are not fully recorded.",
+          "zh-CN": "这条路径追踪精选宫廷驻地。历任统治者、制度和中间变化未完整收录。"
+        },
+        "scopeId": "east-asia",
+        "processId": "japan-court-capitals",
+        "coverage": [
+          710,
+          794
+        ],
+        "commitIds": [
+          "japan-710",
+          "japan-740",
+          "japan-744",
+          "japan-745",
+          "japan-784",
+          "japan-794"
+        ],
+        "color": "#ba9de0"
+      },
+      {
+        "id": "tang/main",
+        "name": {
+          "en": "Tang through rebellion",
+          "zh-CN": "叛乱中的唐朝"
+        },
+        "description": {
+          "en": "Three sampled records of foundation, rebellion and survival. The intervening reigns are not reconstructed.",
+          "zh-CN": "选取建朝、叛乱与延续三个记录；未复原中间历任统治。"
+        },
+        "scopeId": "east-asia",
+        "processId": "tang-transformation",
+        "coverage": [
+          618,
+          763
+        ],
+        "commitIds": [
+          "tang-618",
+          "tang-ca700",
+          "tang-755",
+          "tang-763"
+        ],
+        "color": "#90a2d1"
+      },
+      {
+        "id": "francia/papacy",
+        "processId": "frankish-papal-alliance",
+        "scopeId": "europe",
+        "coverage": [
+          751,
+          754
+        ],
+        "name": {
+          "en": "Royal anointing",
+          "zh-CN": "王室受膏礼"
+        },
+        "description": {
+          "en": "A thematic path from Pippin’s accession to the papal anointing; not a new independent kingdom.",
+          "zh-CN": "一条从丕平即位延伸至教宗施行受膏礼的主题路径，并非一个新的独立王国。"
+        },
+        "commitIds": [
+          "papacy-754"
+        ]
+      },
+      {
+        "id": "andalus/main",
+        "processId": "umayyad-andalus",
+        "scopeId": "west-asia",
+        "coverage": [
+          756,
+          785
+        ],
+        "name": {
+          "en": "Umayyad Córdoba",
+          "zh-CN": "倭马亚统治下的科尔多瓦"
+        },
+        "description": {
+          "en": "Selected records in al-Andalus; this is not a descendant state of the Abbasid court.",
+          "zh-CN": "安达卢斯的精选记录；此政权并非阿拔斯宫廷的衍生国家。"
+        },
+        "commitIds": [
+          "andalus-756",
+          "andalus-785"
+        ]
+      },
+      {
+        "id": "sui/main",
+        "processId": "sui-integration",
+        "scopeId": "east-asia",
+        "coverage": [
+          581,
+          589
+        ],
+        "name": {
+          "en": "Sui",
+          "zh-CN": "隋"
+        },
+        "description": {
+          "en": "North–south integration is represented by an explicit field ledger.",
+          "zh-CN": "南北整合以明确的字段处理表呈现。"
+        },
+        "commitIds": [
+          "sui-581",
+          "sui-589"
+        ]
+      },
+      {
+        "id": "chen/main",
+        "processId": "sui-integration",
+        "scopeId": "east-asia",
+        "coverage": [
+          557,
+          588
+        ],
+        "name": {
+          "en": "Chen",
+          "zh-CN": "陈"
+        },
+        "description": {
+          "en": "A southern ruling house before Sui conquest; the route terminates at integration.",
+          "zh-CN": "隋征服前的南方统治家族；此路径在整合时终止。"
+        },
+        "commitIds": [
+          "chen-557"
+        ]
+      },
+      {
+        "id": "japan/buddhism",
+        "processId": "buddhism-japan",
+        "scopeId": "east-asia",
+        "coverage": [
+          538,
+          552
+        ],
+        "name": {
+          "en": "Buddhism at the Japanese court",
+          "zh-CN": "日本朝廷中的佛教"
+        },
+        "description": {
+          "en": "A record with two traditional dates. It does not date the first private practice of Buddhism.",
+          "zh-CN": "这条记录保留两种传统纪年，并不确定民间最早信仰佛教的时间。"
+        },
+        "commitIds": [
+          "japan-buddhism-538-552"
+        ]
+      },
+      {
+        "id": "qin/main",
+        "processId": "qin-imperial-rule",
+        "scopeId": "east-asia",
+        "coverage": [
+          -221,
+          -213
+        ],
+        "name": {
+          "en": "Qin",
+          "zh-CN": "秦"
+        },
+        "description": {
+          "en": "Selected imperial records; no direct ancestry is asserted from Qin to the medieval paths.",
+          "zh-CN": "帝国统治的精选记录；此处不主张秦与中世纪各路径之间存在直接谱系。"
+        },
+        "commitIds": [
+          "qin-221-bce",
+          "qin-213-bce"
+        ]
+      }
+    ],
+    "commits": [
+      {
+        "id": "francia-751",
+        "branchId": "francia/main",
+        "year": 751,
+        "title": {
+          "en": "Pippin takes the crown",
+          "zh-CN": "丕平登上王位"
+        },
+        "summary": {
+          "en": "Pippin’s accession begins Carolingian kingship.",
+          "zh-CN": "丕平即位，加洛林家族开始掌握王权。"
+        },
+        "parents": [],
+        "eventId": "pepin-751",
+        "sourceIds": [
+          "met-france"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": "pippin-iii",
+            "label": {
+              "en": "Pippin III",
+              "zh-CN": "丕平三世"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.dynasty": {
+            "key": "carolingian",
+            "label": {
+              "en": "Carolingian house",
+              "zh-CN": "加洛林家族"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.form": {
+            "key": "frankish-kingship",
+            "label": {
+              "en": "Frankish kingship",
+              "zh-CN": "法兰克王权"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.capital": {
+            "key": null,
+            "label": {
+              "en": "No single court residence recorded",
+              "zh-CN": "未收录唯一宫廷驻地"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          },
+          "politics.condition": {
+            "key": "carolingian-accession",
+            "label": {
+              "en": "A new royal dynasty",
+              "zh-CN": "新王朝即位"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": "frankish-realm",
+            "label": {
+              "en": "Frankish realm",
+              "zh-CN": "法兰克领地"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "Selected political records. Between dates, a query returns the latest recorded model state, not a complete reconstruction of that year.",
+          "zh-CN": "精选政治记录。日期之间的查询返回此前最新收录状态，不等于该年的完整历史复原。"
+        },
+        "date": {
+          "earliestYear": 751,
+          "latestYear": 751,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "baseline",
+        "lineage": [],
+        "evidence": [
+          {
+            "sourceId": "met-france",
+            "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+          }
+        ]
+      },
+      {
+        "id": "francia-768",
+        "branchId": "francia/main",
+        "year": 768,
+        "title": {
+          "en": "Two brothers inherit",
+          "zh-CN": "兄弟分承王国"
+        },
+        "summary": {
+          "en": "Pippin’s sons Charles and Carloman divide the inheritance.",
+          "zh-CN": "丕平的儿子查理与卡洛曼分承遗产。"
+        },
+        "parents": [
+          "francia-751"
+        ],
+        "eventId": "charlemagne-768",
+        "sourceIds": [
+          "met-france"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": "charles-and-carloman",
+            "label": {
+              "en": "Charles and Carloman",
+              "zh-CN": "查理与卡洛曼"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "divided-inheritance-768",
+            "label": {
+              "en": "Inheritance divided between brothers",
+              "zh-CN": "兄弟分承领地"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "Both brothers are kept in one selected record; their separate rule is not expanded into branches in this sample.",
+          "zh-CN": "本切片将两兄弟保留在同一记录中，未进一步展开各自统治分支。"
+        },
+        "date": {
+          "earliestYear": 768,
+          "latestYear": 768,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "francia-751",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-france",
+            "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+          }
+        ]
+      },
+      {
+        "id": "francia-771",
+        "branchId": "francia/main",
+        "year": 771,
+        "title": {
+          "en": "Charlemagne rules alone",
+          "zh-CN": "查理曼独掌王权"
+        },
+        "summary": {
+          "en": "Carloman dies; Charlemagne takes over his brother’s share.",
+          "zh-CN": "卡洛曼去世，查理曼接掌其兄弟的领地。"
+        },
+        "parents": [
+          "francia-768"
+        ],
+        "sourceIds": [
+          "met-france"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": "charlemagne",
+            "label": {
+              "en": "Charlemagne",
+              "zh-CN": "查理曼"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "sole-frankish-rule",
+            "label": {
+              "en": "One king holds both shares",
+              "zh-CN": "一位国王掌握两部分领地"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "date": {
+          "earliestYear": 771,
+          "latestYear": 771,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "francia-768",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-france",
+            "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+          }
+        ]
+      },
+      {
+        "id": "francia-800",
+        "branchId": "francia/main",
+        "year": 800,
+        "title": {
+          "en": "An imperial title",
+          "zh-CN": "获得皇帝称号"
+        },
+        "summary": {
+          "en": "Charlemagne receives the imperial crown in Rome.",
+          "zh-CN": "查理曼在罗马接受皇帝冠冕。"
+        },
+        "parents": [
+          "francia-771"
+        ],
+        "eventId": "imperial-coronation-800",
+        "sourceIds": [
+          "met-france"
+        ],
+        "changes": {
+          "politics.form": {
+            "key": "carolingian-empire",
+            "label": {
+              "en": "Kingship with an imperial title",
+              "zh-CN": "具有皇帝称号的王权"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "imperial-coronation",
+            "label": {
+              "en": "Imperial coronation",
+              "zh-CN": "加冕为帝"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": null,
+            "label": {
+              "en": "Expansion since 771 is not reconstructed",
+              "zh-CN": "未复原 771 年之后的扩张范围"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          }
+        },
+        "note": {
+          "en": "A coronation changes the recorded title; it does not by itself redraw territory or make Rome a fixed capital.",
+          "zh-CN": "加冕改变记录中的称号；它本身不重划疆界，也不使罗马成为固定首都。"
+        },
+        "date": {
+          "earliestYear": 800,
+          "latestYear": 800,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "francia-771",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-france",
+            "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+          }
+        ]
+      },
+      {
+        "id": "francia-814",
+        "branchId": "francia/main",
+        "year": 814,
+        "title": {
+          "en": "Louis inherits",
+          "zh-CN": "路易继位"
+        },
+        "summary": {
+          "en": "Louis the Pious succeeds Charlemagne.",
+          "zh-CN": "虔诚者路易继承查理曼。"
+        },
+        "parents": [
+          "francia-800"
+        ],
+        "eventId": "louis-succeeds-814",
+        "sourceIds": [
+          "met-france"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": "louis-pious",
+            "label": {
+              "en": "Louis the Pious",
+              "zh-CN": "虔诚者路易"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "louis-succession",
+            "label": {
+              "en": "Succession after Charlemagne",
+              "zh-CN": "查理曼去世后的继承"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "date": {
+          "earliestYear": 814,
+          "latestYear": 814,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "francia-800",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-france",
+            "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+          }
+        ]
+      },
+      {
+        "id": "francia-840",
+        "branchId": "francia/main",
+        "year": 840,
+        "title": {
+          "en": "An inheritance contested",
+          "zh-CN": "继承权陷入争夺"
+        },
+        "summary": {
+          "en": "Louis dies; his sons’ competing claims lead towards the settlement at Verdun.",
+          "zh-CN": "路易去世；其子嗣争夺继承，最终走向凡尔登协议。"
+        },
+        "parents": [
+          "francia-814"
+        ],
+        "sourceIds": [
+          "ndb-lothar",
+          "wallonia-verdun"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": "lothair-charles-louis",
+            "label": {
+              "en": "Lothair, Charles and Louis: rival claims",
+              "zh-CN": "洛泰尔、查理与路易：相互竞争的主张"
+            },
+            "status": "known",
+            "sourceIds": [
+              "wallonia-verdun"
+            ],
+            "evidence": [
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "succession-conflict",
+            "label": {
+              "en": "Succession conflict",
+              "zh-CN": "继承冲突"
+            },
+            "status": "known",
+            "sourceIds": [
+              "wallonia-verdun"
+            ],
+            "evidence": [
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "A shared pre-partition context for the three modeled outcomes. It does not collapse the civil war into a single event.",
+          "zh-CN": "作为三种分割结果共享的前置背景；不表示内战只发生了一次事件。"
+        },
+        "date": {
+          "earliestYear": 840,
+          "latestYear": 840,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "francia-814",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "ndb-lothar",
+                "locator": "Neue Deutsche Biographie, Lothar I., biography paragraphs on 840–843 and the 855 partition before Prüm"
+              },
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "ndb-lothar",
+            "locator": "Neue Deutsche Biographie, Lothar I., biography paragraphs on 840–843 and the 855 partition before Prüm"
+          },
+          {
+            "sourceId": "wallonia-verdun",
+            "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+          }
+        ]
+      },
+      {
+        "id": "west-843",
+        "branchId": "francia/west",
+        "year": 843,
+        "title": {
+          "en": "Charles receives the west",
+          "zh-CN": "查理取得西部"
+        },
+        "summary": {
+          "en": "Verdun assigns the western kingdom to Charles the Bald.",
+          "zh-CN": "凡尔登协议将西部王国分配给秃头查理。"
+        },
+        "parents": [
+          "francia-840"
+        ],
+        "eventId": "verdun-843",
+        "sourceIds": [
+          "met-france",
+          "wallonia-verdun"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": "charles-bald",
+            "label": {
+              "en": "Charles the Bald",
+              "zh-CN": "秃头查理"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france",
+              "wallonia-verdun"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              },
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.form": {
+            "key": "frankish-kingship",
+            "label": {
+              "en": "Frankish kingship",
+              "zh-CN": "法兰克王权"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "verdun-settlement",
+            "label": {
+              "en": "Partition agreed at Verdun",
+              "zh-CN": "凡尔登协议确立分割"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france",
+              "wallonia-verdun"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              },
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": "west-francia-843",
+            "label": {
+              "en": "Western portion of the Frankish realm",
+              "zh-CN": "法兰克领地的西部部分"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france",
+              "wallonia-verdun"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              },
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "The regional names describe medieval realms; they are not modern national borders.",
+          "zh-CN": "区域名称指中世纪的统治范围，不等于现代国界。"
+        },
+        "date": {
+          "earliestYear": 843,
+          "latestYear": 843,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "split",
+        "lineage": [
+          {
+            "parentId": "francia-840",
+            "kind": "split",
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              },
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-france",
+            "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+          },
+          {
+            "sourceId": "wallonia-verdun",
+            "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+          }
+        ]
+      },
+      {
+        "id": "west-870",
+        "branchId": "francia/west",
+        "year": 870,
+        "title": {
+          "en": "A share of Lotharingia",
+          "zh-CN": "取得部分洛塔林吉亚"
+        },
+        "summary": {
+          "en": "At Meerssen, Charles and Louis divide Lotharingia.",
+          "zh-CN": "在梅尔森，查理与路易分割洛塔林吉亚。"
+        },
+        "parents": [
+          "west-843"
+        ],
+        "eventId": "meerssen-870",
+        "sourceIds": [
+          "wallonia-meerssen"
+        ],
+        "changes": {
+          "politics.condition": {
+            "key": "meerssen-settlement",
+            "label": {
+              "en": "Meerssen partition",
+              "zh-CN": "梅尔森分割"
+            },
+            "status": "known",
+            "sourceIds": [
+              "wallonia-meerssen"
+            ],
+            "evidence": [
+              {
+                "sourceId": "wallonia-meerssen",
+                "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": "west-francia-870",
+            "label": {
+              "en": "Western kingdom plus its Meerssen share of Lotharingia",
+              "zh-CN": "西部王国及梅尔森分配的洛塔林吉亚份额"
+            },
+            "status": "known",
+            "sourceIds": [
+              "wallonia-meerssen"
+            ],
+            "evidence": [
+              {
+                "sourceId": "wallonia-meerssen",
+                "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "Lotharingia was only one successor to Middle Francia. This record does not mean all middle lands were absorbed.",
+          "zh-CN": "洛塔林吉亚只是中法兰克的一部分继承区域；此记录不表示整个中部领地被吞并。"
+        },
+        "date": {
+          "earliestYear": 870,
+          "latestYear": 870,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "west-843",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "wallonia-meerssen",
+                "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "wallonia-meerssen",
+            "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+          }
+        ]
+      },
+      {
+        "id": "middle-843",
+        "branchId": "francia/middle",
+        "year": 843,
+        "title": {
+          "en": "Lothair holds the middle",
+          "zh-CN": "洛泰尔取得中部"
+        },
+        "summary": {
+          "en": "Lothair’s middle kingdom links northern lands with Italy.",
+          "zh-CN": "洛泰尔的中部王国连接北方领地与意大利。"
+        },
+        "parents": [
+          "francia-840"
+        ],
+        "eventId": "verdun-843",
+        "sourceIds": [
+          "met-france",
+          "wallonia-verdun"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": "lothair-i",
+            "label": {
+              "en": "Lothair I",
+              "zh-CN": "洛泰尔一世"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france",
+              "wallonia-verdun"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              },
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "verdun-settlement",
+            "label": {
+              "en": "Partition agreed at Verdun",
+              "zh-CN": "凡尔登协议确立分割"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france",
+              "wallonia-verdun"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              },
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": "middle-francia-843",
+            "label": {
+              "en": "Middle kingdom, from northern Frankish lands into Italy",
+              "zh-CN": "从法兰克北方领地延伸至意大利的中部王国"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france",
+              "wallonia-verdun"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              },
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "The regional names describe medieval realms; they are not modern national borders.",
+          "zh-CN": "区域名称指中世纪的统治范围，不等于现代国界。"
+        },
+        "date": {
+          "earliestYear": 843,
+          "latestYear": 843,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "split",
+        "lineage": [
+          {
+            "parentId": "francia-840",
+            "kind": "split",
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              },
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-france",
+            "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+          },
+          {
+            "sourceId": "wallonia-verdun",
+            "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+          }
+        ]
+      },
+      {
+        "id": "middle-855",
+        "branchId": "francia/middle",
+        "year": 855,
+        "title": {
+          "en": "The middle kingdom divides",
+          "zh-CN": "中部王国再次分割"
+        },
+        "summary": {
+          "en": "Lothair I divides his realm among Louis II, Lothair II and Charles before retiring to Prüm.",
+          "zh-CN": "洛泰尔一世退居普吕姆前，将领地分给路易二世、洛泰尔二世与查理。"
+        },
+        "parents": [
+          "middle-843"
+        ],
+        "sourceIds": [
+          "ndb-lothar"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": "three-sons-lothair",
+            "label": {
+              "en": "Louis II, Lothair II and Charles",
+              "zh-CN": "路易二世、洛泰尔二世与查理"
+            },
+            "status": "known",
+            "sourceIds": [
+              "ndb-lothar"
+            ],
+            "evidence": [
+              {
+                "sourceId": "ndb-lothar",
+                "locator": "Neue Deutsche Biographie, Lothar I., biography paragraphs on 840–843 and the 855 partition before Prüm"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.form": {
+            "key": "partitioned-successor-realms",
+            "label": {
+              "en": "Separate successor kingdoms",
+              "zh-CN": "分别统治的继承王国"
+            },
+            "status": "known",
+            "sourceIds": [
+              "ndb-lothar"
+            ],
+            "evidence": [
+              {
+                "sourceId": "ndb-lothar",
+                "locator": "Neue Deutsche Biographie, Lothar I., biography paragraphs on 840–843 and the 855 partition before Prüm"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "middle-partition-855",
+            "label": {
+              "en": "Partition before Lothair I’s death",
+              "zh-CN": "洛泰尔一世去世前的分割"
+            },
+            "status": "known",
+            "sourceIds": [
+              "ndb-lothar"
+            ],
+            "evidence": [
+              {
+                "sourceId": "ndb-lothar",
+                "locator": "Neue Deutsche Biographie, Lothar I., biography paragraphs on 840–843 and the 855 partition before Prüm"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": "three-middle-successors",
+            "label": {
+              "en": "Italy; northern lands; Provence and Burgundy",
+              "zh-CN": "意大利；北方领地；普罗旺斯与勃艮第"
+            },
+            "status": "known",
+            "sourceIds": [
+              "ndb-lothar"
+            ],
+            "evidence": [
+              {
+                "sourceId": "ndb-lothar",
+                "locator": "Neue Deutsche Biographie, Lothar I., biography paragraphs on 840–843 and the 855 partition before Prüm"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "This branch ends with the partition. Only the northern successor is expanded below; Italy and Provence are not fully modeled.",
+          "zh-CN": "此分支止于分割。下方只展开北部继承区域；意大利和普罗旺斯尚未完整建模。"
+        },
+        "date": {
+          "earliestYear": 855,
+          "latestYear": 855,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "middle-843",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "ndb-lothar",
+                "locator": "Neue Deutsche Biographie, Lothar I., biography paragraphs on 840–843 and the 855 partition before Prüm"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "ndb-lothar",
+            "locator": "Neue Deutsche Biographie, Lothar I., biography paragraphs on 840–843 and the 855 partition before Prüm"
+          }
+        ]
+      },
+      {
+        "id": "east-843",
+        "branchId": "francia/east",
+        "year": 843,
+        "title": {
+          "en": "Louis receives the east",
+          "zh-CN": "路易取得东部"
+        },
+        "summary": {
+          "en": "Verdun assigns the eastern kingdom to Louis the German.",
+          "zh-CN": "凡尔登协议将东部王国分配给日耳曼人路易。"
+        },
+        "parents": [
+          "francia-840"
+        ],
+        "eventId": "verdun-843",
+        "sourceIds": [
+          "met-france",
+          "wallonia-verdun"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": "louis-german",
+            "label": {
+              "en": "Louis the German",
+              "zh-CN": "日耳曼人路易"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france",
+              "wallonia-verdun"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              },
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.form": {
+            "key": "frankish-kingship",
+            "label": {
+              "en": "Frankish kingship",
+              "zh-CN": "法兰克王权"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "verdun-settlement",
+            "label": {
+              "en": "Partition agreed at Verdun",
+              "zh-CN": "凡尔登协议确立分割"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france",
+              "wallonia-verdun"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              },
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": "east-francia-843",
+            "label": {
+              "en": "Eastern portion of the Frankish realm",
+              "zh-CN": "法兰克领地的东部部分"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france",
+              "wallonia-verdun"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              },
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "The regional names describe medieval realms; they are not modern national borders.",
+          "zh-CN": "区域名称指中世纪的统治范围，不等于现代国界。"
+        },
+        "date": {
+          "earliestYear": 843,
+          "latestYear": 843,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "split",
+        "lineage": [
+          {
+            "parentId": "francia-840",
+            "kind": "split",
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              },
+              {
+                "sourceId": "wallonia-verdun",
+                "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-france",
+            "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+          },
+          {
+            "sourceId": "wallonia-verdun",
+            "locator": "Article dated 11 August 843: three rulers and territories assigned at Verdun"
+          }
+        ]
+      },
+      {
+        "id": "east-870",
+        "branchId": "francia/east",
+        "year": 870,
+        "title": {
+          "en": "The eastern share at Meerssen",
+          "zh-CN": "梅尔森的东部分配"
+        },
+        "summary": {
+          "en": "Louis gains the eastern share of Lotharingia in the agreement with Charles.",
+          "zh-CN": "路易与查理达成协议，取得洛塔林吉亚的东部份额。"
+        },
+        "parents": [
+          "east-843"
+        ],
+        "eventId": "meerssen-870",
+        "sourceIds": [
+          "wallonia-meerssen"
+        ],
+        "changes": {
+          "politics.condition": {
+            "key": "meerssen-settlement",
+            "label": {
+              "en": "Meerssen partition",
+              "zh-CN": "梅尔森分割"
+            },
+            "status": "known",
+            "sourceIds": [
+              "wallonia-meerssen"
+            ],
+            "evidence": [
+              {
+                "sourceId": "wallonia-meerssen",
+                "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": "east-francia-870",
+            "label": {
+              "en": "Eastern kingdom plus its Meerssen share of Lotharingia",
+              "zh-CN": "东部王国及梅尔森分配的洛塔林吉亚份额"
+            },
+            "status": "known",
+            "sourceIds": [
+              "wallonia-meerssen"
+            ],
+            "evidence": [
+              {
+                "sourceId": "wallonia-meerssen",
+                "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "The shared treaty changes both branches. No parent edge is added from one kingdom to the other.",
+          "zh-CN": "同一条约改变两条分支；两个王国之间并不因此产生父子继承关系。"
+        },
+        "date": {
+          "earliestYear": 870,
+          "latestYear": 870,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "east-843",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "wallonia-meerssen",
+                "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "wallonia-meerssen",
+            "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+          }
+        ]
+      },
+      {
+        "id": "lotharingia-855",
+        "branchId": "francia/lotharingia",
+        "year": 855,
+        "title": {
+          "en": "Lothair II’s northern kingdom",
+          "zh-CN": "洛泰尔二世的北部王国"
+        },
+        "summary": {
+          "en": "Lothair II receives the northern lands of his father’s realm.",
+          "zh-CN": "洛泰尔二世继承父亲领地的北部。"
+        },
+        "parents": [
+          "middle-855"
+        ],
+        "sourceIds": [
+          "ndb-lothar"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": "lothair-ii",
+            "label": {
+              "en": "Lothair II",
+              "zh-CN": "洛泰尔二世"
+            },
+            "status": "known",
+            "sourceIds": [
+              "ndb-lothar"
+            ],
+            "evidence": [
+              {
+                "sourceId": "ndb-lothar",
+                "locator": "Neue Deutsche Biographie, Lothar I., biography paragraphs on 840–843 and the 855 partition before Prüm"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.form": {
+            "key": "frankish-kingship",
+            "label": {
+              "en": "Frankish kingship",
+              "zh-CN": "法兰克王权"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-france"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-france",
+                "locator": "Timeline and Key Events: Carolingian dynasty, 751–987; Pippin, Charlemagne, Louis and the partition of 843"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "northern-successor-855",
+            "label": {
+              "en": "Northern successor kingdom",
+              "zh-CN": "北部继承王国"
+            },
+            "status": "known",
+            "sourceIds": [
+              "ndb-lothar"
+            ],
+            "evidence": [
+              {
+                "sourceId": "ndb-lothar",
+                "locator": "Neue Deutsche Biographie, Lothar I., biography paragraphs on 840–843 and the 855 partition before Prüm"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": "lotharingia-855",
+            "label": {
+              "en": "Northern middle lands, including Aachen and extending to Frisia",
+              "zh-CN": "中部领地的北部，包括亚琛并延伸至弗里西亚"
+            },
+            "status": "known",
+            "sourceIds": [
+              "ndb-lothar"
+            ],
+            "evidence": [
+              {
+                "sourceId": "ndb-lothar",
+                "locator": "Neue Deutsche Biographie, Lothar I., biography paragraphs on 840–843 and the 855 partition before Prüm"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "Lotharingia is a successor within the former middle realm, not another name for all of Middle Francia.",
+          "zh-CN": "洛塔林吉亚是原中部领地内的继承王国，不是整个中法兰克的别称。"
+        },
+        "date": {
+          "earliestYear": 855,
+          "latestYear": 855,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "split",
+        "lineage": [
+          {
+            "parentId": "middle-855",
+            "kind": "split",
+            "evidence": [
+              {
+                "sourceId": "ndb-lothar",
+                "locator": "Neue Deutsche Biographie, Lothar I., biography paragraphs on 840–843 and the 855 partition before Prüm"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "ndb-lothar",
+            "locator": "Neue Deutsche Biographie, Lothar I., biography paragraphs on 840–843 and the 855 partition before Prüm"
+          }
+        ]
+      },
+      {
+        "id": "lotharingia-869",
+        "branchId": "francia/lotharingia",
+        "year": 869,
+        "title": {
+          "en": "A disputed succession",
+          "zh-CN": "继承再起争端"
+        },
+        "summary": {
+          "en": "Lothair II dies; Charles claims the kingdom and is crowned at Metz.",
+          "zh-CN": "洛泰尔二世去世；查理宣称继位，并在梅斯加冕。"
+        },
+        "parents": [
+          "lotharingia-855"
+        ],
+        "sourceIds": [
+          "wallonia-meerssen"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": "charles-lotharingian-claim",
+            "label": {
+              "en": "Charles the Bald claims the crown",
+              "zh-CN": "秃头查理宣称继位"
+            },
+            "status": "known",
+            "sourceIds": [
+              "wallonia-meerssen"
+            ],
+            "evidence": [
+              {
+                "sourceId": "wallonia-meerssen",
+                "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "lotharingian-dispute",
+            "label": {
+              "en": "A succession disputed by neighboring rulers",
+              "zh-CN": "邻近统治者争夺继承权"
+            },
+            "status": "known",
+            "sourceIds": [
+              "wallonia-meerssen"
+            ],
+            "evidence": [
+              {
+                "sourceId": "wallonia-meerssen",
+                "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "date": {
+          "earliestYear": 869,
+          "latestYear": 869,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "lotharingia-855",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "wallonia-meerssen",
+                "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "wallonia-meerssen",
+            "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+          }
+        ]
+      },
+      {
+        "id": "lotharingia-870",
+        "branchId": "francia/lotharingia",
+        "year": 870,
+        "title": {
+          "en": "Partition at Meerssen",
+          "zh-CN": "在梅尔森被分割"
+        },
+        "summary": {
+          "en": "Lotharingia is divided between Charles and Louis.",
+          "zh-CN": "洛塔林吉亚由查理与路易分割。"
+        },
+        "parents": [
+          "lotharingia-869"
+        ],
+        "eventId": "meerssen-870",
+        "sourceIds": [
+          "wallonia-meerssen"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": "charles-and-louis-870",
+            "label": {
+              "en": "Charles and Louis, over their separate shares",
+              "zh-CN": "查理与路易分别统治各自份额"
+            },
+            "status": "known",
+            "sourceIds": [
+              "wallonia-meerssen"
+            ],
+            "evidence": [
+              {
+                "sourceId": "wallonia-meerssen",
+                "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.form": {
+            "key": "partitioned-between-neighbors",
+            "label": {
+              "en": "Territory divided between neighboring kingdoms",
+              "zh-CN": "领地分属邻近王国"
+            },
+            "status": "known",
+            "sourceIds": [
+              "wallonia-meerssen"
+            ],
+            "evidence": [
+              {
+                "sourceId": "wallonia-meerssen",
+                "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "meerssen-settlement",
+            "label": {
+              "en": "Meerssen partition",
+              "zh-CN": "梅尔森分割"
+            },
+            "status": "known",
+            "sourceIds": [
+              "wallonia-meerssen"
+            ],
+            "evidence": [
+              {
+                "sourceId": "wallonia-meerssen",
+                "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": "lotharingia-partitioned-870",
+            "label": {
+              "en": "Western and eastern shares under different kings",
+              "zh-CN": "西、东两份领地由不同国王统治"
+            },
+            "status": "known",
+            "sourceIds": [
+              "wallonia-meerssen"
+            ],
+            "evidence": [
+              {
+                "sourceId": "wallonia-meerssen",
+                "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "The modeled succession ends here; the name and later political history of Lotharingia continue beyond this sample.",
+          "zh-CN": "本切片的继承路径止于此处；洛塔林吉亚的名称及后续政治史并未就此消失。"
+        },
+        "date": {
+          "earliestYear": 870,
+          "latestYear": 870,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "lotharingia-869",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "wallonia-meerssen",
+                "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "wallonia-meerssen",
+            "locator": "Article dated 8 August 870: division of Lotharingia between Charles and Louis"
+          }
+        ]
+      },
+      {
+        "id": "abbasid-750",
+        "branchId": "abbasid/main",
+        "year": 750,
+        "title": {
+          "en": "Abbasid rule begins",
+          "zh-CN": "阿拔斯开始统治"
+        },
+        "summary": {
+          "en": "The Abbasids replace Umayyad rule in the east.",
+          "zh-CN": "阿拔斯取代倭马亚在东方的统治。"
+        },
+        "parents": [],
+        "eventId": "abbasid-revolution-750",
+        "sourceIds": [
+          "met-abbasid",
+          "ashmolean-abbasid"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": null,
+            "label": {
+              "en": "Not recorded in this model",
+              "zh-CN": "本模型未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          },
+          "politics.dynasty": {
+            "key": "abbasid",
+            "label": {
+              "en": "Abbasid house",
+              "zh-CN": "阿拔斯家族"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-abbasid"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-abbasid",
+                "locator": "Opening historical paragraphs: Abbasid rule from 750; Baghdad and Samarra"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.form": {
+            "key": "caliphate",
+            "label": {
+              "en": "Caliphate",
+              "zh-CN": "哈里发政体"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-abbasid"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-abbasid",
+                "locator": "Opening historical paragraphs: Abbasid rule from 750; Baghdad and Samarra"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.capital": {
+            "key": null,
+            "label": {
+              "en": "Early court sites are not resolved here",
+              "zh-CN": "此处未确定早期宫廷驻地"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          },
+          "politics.condition": {
+            "key": "abbasid-accession",
+            "label": {
+              "en": "Change of dynasty in the east",
+              "zh-CN": "东方统治王朝更替"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-abbasid"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-abbasid",
+                "locator": "Opening historical paragraphs: Abbasid rule from 750; Baghdad and Samarra"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": null,
+            "label": {
+              "en": "Not recorded in this model",
+              "zh-CN": "本模型未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          }
+        },
+        "note": {
+          "en": "The Umayyad line later continues in al-Andalus. This branch concerns the Abbasid court, not every Islamic polity.",
+          "zh-CN": "倭马亚一支后来在安达卢斯延续。此分支关注阿拔斯宫廷，不代表所有伊斯兰政体。"
+        },
+        "date": {
+          "earliestYear": 750,
+          "latestYear": 750,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "baseline",
+        "lineage": [],
+        "evidence": [
+          {
+            "sourceId": "met-abbasid",
+            "locator": "Opening historical paragraphs: Abbasid rule from 750; Baghdad and Samarra"
+          },
+          {
+            "sourceId": "ashmolean-abbasid",
+            "locator": "Historical Background: Abbasid dynasty; Baghdad becomes the capital in 762"
+          }
+        ]
+      },
+      {
+        "id": "abbasid-762",
+        "branchId": "abbasid/main",
+        "year": 762,
+        "title": {
+          "en": "A new seat at Baghdad",
+          "zh-CN": "宫廷落脚巴格达"
+        },
+        "summary": {
+          "en": "Baghdad becomes the Abbasid capital.",
+          "zh-CN": "巴格达成为阿拔斯都城。"
+        },
+        "parents": [
+          "abbasid-750"
+        ],
+        "eventId": "baghdad-762",
+        "sourceIds": [
+          "met-abbasid",
+          "ashmolean-abbasid"
+        ],
+        "changes": {
+          "politics.capital": {
+            "key": "baghdad",
+            "label": {
+              "en": "Baghdad",
+              "zh-CN": "巴格达"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-abbasid",
+              "ashmolean-abbasid"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-abbasid",
+                "locator": "Opening historical paragraphs: Abbasid rule from 750; Baghdad and Samarra"
+              },
+              {
+                "sourceId": "ashmolean-abbasid",
+                "locator": "Historical Background: Abbasid dynasty; Baghdad becomes the capital in 762"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "court-in-baghdad",
+            "label": {
+              "en": "Court established at Baghdad",
+              "zh-CN": "宫廷设于巴格达"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-abbasid"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-abbasid",
+                "locator": "Opening historical paragraphs: Abbasid rule from 750; Baghdad and Samarra"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "This path follows selected court locations. Other rulers, institutions and intervening changes are not fully recorded.",
+          "zh-CN": "这条路径追踪精选宫廷驻地。历任统治者、制度和中间变化未完整收录。"
+        },
+        "date": {
+          "earliestYear": 762,
+          "latestYear": 762,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "abbasid-750",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "met-abbasid",
+                "locator": "Opening historical paragraphs: Abbasid rule from 750; Baghdad and Samarra"
+              },
+              {
+                "sourceId": "ashmolean-abbasid",
+                "locator": "Historical Background: Abbasid dynasty; Baghdad becomes the capital in 762"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-abbasid",
+            "locator": "Opening historical paragraphs: Abbasid rule from 750; Baghdad and Samarra"
+          },
+          {
+            "sourceId": "ashmolean-abbasid",
+            "locator": "Historical Background: Abbasid dynasty; Baghdad becomes the capital in 762"
+          }
+        ]
+      },
+      {
+        "id": "abbasid-836",
+        "branchId": "abbasid/main",
+        "year": 836,
+        "title": {
+          "en": "The court moves to Samarra",
+          "zh-CN": "宫廷迁往萨迈拉"
+        },
+        "summary": {
+          "en": "Samarra becomes the caliphal seat.",
+          "zh-CN": "萨迈拉成为哈里发驻地。"
+        },
+        "parents": [
+          "abbasid-762"
+        ],
+        "eventId": "samarra-836",
+        "sourceIds": [
+          "met-abbasid",
+          "qatar-samarra"
+        ],
+        "changes": {
+          "politics.capital": {
+            "key": "samarra",
+            "label": {
+              "en": "Samarra",
+              "zh-CN": "萨迈拉"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-abbasid",
+              "qatar-samarra"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-abbasid",
+                "locator": "Opening historical paragraphs: Abbasid rule from 750; Baghdad and Samarra"
+              },
+              {
+                "sourceId": "qatar-samarra",
+                "locator": "Paragraphs on the caliphal residence at Samarra, 836–892, and the return to Baghdad"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "court-in-samarra",
+            "label": {
+              "en": "Court established at Samarra",
+              "zh-CN": "宫廷设于萨迈拉"
+            },
+            "status": "known",
+            "sourceIds": [
+              "qatar-samarra"
+            ],
+            "evidence": [
+              {
+                "sourceId": "qatar-samarra",
+                "locator": "Paragraphs on the caliphal residence at Samarra, 836–892, and the return to Baghdad"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "This path follows selected court locations. Other rulers, institutions and intervening changes are not fully recorded.",
+          "zh-CN": "这条路径追踪精选宫廷驻地。历任统治者、制度和中间变化未完整收录。"
+        },
+        "date": {
+          "earliestYear": 836,
+          "latestYear": 836,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "abbasid-762",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "met-abbasid",
+                "locator": "Opening historical paragraphs: Abbasid rule from 750; Baghdad and Samarra"
+              },
+              {
+                "sourceId": "qatar-samarra",
+                "locator": "Paragraphs on the caliphal residence at Samarra, 836–892, and the return to Baghdad"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-abbasid",
+            "locator": "Opening historical paragraphs: Abbasid rule from 750; Baghdad and Samarra"
+          },
+          {
+            "sourceId": "qatar-samarra",
+            "locator": "Paragraphs on the caliphal residence at Samarra, 836–892, and the return to Baghdad"
+          }
+        ]
+      },
+      {
+        "id": "abbasid-892",
+        "branchId": "abbasid/main",
+        "year": 892,
+        "title": {
+          "en": "Back to Baghdad",
+          "zh-CN": "返回巴格达"
+        },
+        "summary": {
+          "en": "The caliphal court returns from Samarra to Baghdad.",
+          "zh-CN": "哈里发宫廷从萨迈拉返回巴格达。"
+        },
+        "parents": [
+          "abbasid-836"
+        ],
+        "sourceIds": [
+          "qatar-samarra"
+        ],
+        "changes": {
+          "politics.capital": {
+            "key": "baghdad",
+            "label": {
+              "en": "Baghdad",
+              "zh-CN": "巴格达"
+            },
+            "status": "known",
+            "sourceIds": [
+              "qatar-samarra"
+            ],
+            "evidence": [
+              {
+                "sourceId": "qatar-samarra",
+                "locator": "Paragraphs on the caliphal residence at Samarra, 836–892, and the return to Baghdad"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "court-return-baghdad",
+            "label": {
+              "en": "Court returns to Baghdad",
+              "zh-CN": "宫廷返回巴格达"
+            },
+            "status": "known",
+            "sourceIds": [
+              "qatar-samarra"
+            ],
+            "evidence": [
+              {
+                "sourceId": "qatar-samarra",
+                "locator": "Paragraphs on the caliphal residence at Samarra, 836–892, and the return to Baghdad"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "The residence returns to an earlier value. A matching city name does not mean the political situation has reverted.",
+          "zh-CN": "驻地恢复为此前的值；同一城市名称不表示政治局势也恢复如初。"
+        },
+        "date": {
+          "earliestYear": 892,
+          "latestYear": 892,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "abbasid-836",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "qatar-samarra",
+                "locator": "Paragraphs on the caliphal residence at Samarra, 836–892, and the return to Baghdad"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "qatar-samarra",
+            "locator": "Paragraphs on the caliphal residence at Samarra, 836–892, and the return to Baghdad"
+          }
+        ]
+      },
+      {
+        "id": "japan-710",
+        "branchId": "japan/main",
+        "year": 710,
+        "title": {
+          "en": "The court settles at Nara",
+          "zh-CN": "朝廷迁入奈良"
+        },
+        "summary": {
+          "en": "Heijō-kyō becomes the court’s capital.",
+          "zh-CN": "平城京成为朝廷都城。"
+        },
+        "parents": [],
+        "eventId": "nara-710",
+        "sourceIds": [
+          "met-japan",
+          "nabunken-chronology"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": null,
+            "label": {
+              "en": "Not recorded in this model",
+              "zh-CN": "本模型未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          },
+          "politics.dynasty": {
+            "key": null,
+            "label": {
+              "en": "Dynastic labels are not modeled for this path",
+              "zh-CN": "本路径未建模王朝标签"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          },
+          "politics.form": {
+            "key": "japanese-imperial-court",
+            "label": {
+              "en": "Japanese imperial court",
+              "zh-CN": "日本天皇朝廷"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-japan"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-japan",
+                "locator": "Key Events: 710 and 794; Nara planning and court relocation"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.capital": {
+            "key": "heijo-kyo",
+            "label": {
+              "en": "Heijō-kyō (Nara)",
+              "zh-CN": "平城京（奈良）"
+            },
+            "status": "known",
+            "sourceIds": [
+              "nabunken-chronology"
+            ],
+            "evidence": [
+              {
+                "sourceId": "nabunken-chronology",
+                "locator": "Chronology entries for 710, 740, 744 and 745"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "nara-capital-710",
+            "label": {
+              "en": "Court relocation to Nara",
+              "zh-CN": "朝廷迁入奈良"
+            },
+            "status": "known",
+            "sourceIds": [
+              "nabunken-chronology"
+            ],
+            "evidence": [
+              {
+                "sourceId": "nabunken-chronology",
+                "locator": "Chronology entries for 710, 740, 744 and 745"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": null,
+            "label": {
+              "en": "Not recorded in this model",
+              "zh-CN": "本模型未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          },
+          "culture.planning": {
+            "key": "nara-grid",
+            "label": {
+              "en": "Grid plan drawing on Chang’an, without its enclosing walls",
+              "zh-CN": "借鉴长安棋盘格局，未设置同样的外围城墙"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-japan"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-japan",
+                "locator": "Key Events: 710 and 794; Nara planning and court relocation"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "Cultural borrowing is a relationship between practices. It does not make the Japanese court a descendant version of the Tang state.",
+          "zh-CN": "文化借鉴是实践之间的联系；它不使日本朝廷成为唐朝国家的后代版本。"
+        },
+        "date": {
+          "earliestYear": 710,
+          "latestYear": 710,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "baseline",
+        "lineage": [],
+        "evidence": [
+          {
+            "sourceId": "met-japan",
+            "locator": "Key Events: 710 and 794; Nara planning and court relocation"
+          },
+          {
+            "sourceId": "nabunken-chronology",
+            "locator": "Chronology entries for 710, 740, 744 and 745"
+          }
+        ]
+      },
+      {
+        "id": "japan-740",
+        "branchId": "japan/main",
+        "year": 740,
+        "title": {
+          "en": "The capital moves to Kuni",
+          "zh-CN": "迁都恭仁"
+        },
+        "summary": {
+          "en": "The court leaves Nara for Kuni.",
+          "zh-CN": "朝廷离开奈良，迁往恭仁。"
+        },
+        "parents": [
+          "japan-710"
+        ],
+        "sourceIds": [
+          "nabunken-chronology",
+          "nabunken-palace"
+        ],
+        "changes": {
+          "politics.capital": {
+            "key": "kuni-kyo",
+            "label": {
+              "en": "Kuni-kyō",
+              "zh-CN": "恭仁京"
+            },
+            "status": "known",
+            "sourceIds": [
+              "nabunken-chronology"
+            ],
+            "evidence": [
+              {
+                "sourceId": "nabunken-chronology",
+                "locator": "Chronology entries for 710, 740, 744 and 745"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "court-in-kuni",
+            "label": {
+              "en": "Court relocation to Kuni",
+              "zh-CN": "朝廷迁往恭仁"
+            },
+            "status": "known",
+            "sourceIds": [
+              "nabunken-chronology"
+            ],
+            "evidence": [
+              {
+                "sourceId": "nabunken-chronology",
+                "locator": "Chronology entries for 710, 740, 744 and 745"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "culture.planning": {
+            "key": null,
+            "label": {
+              "en": "The new capital’s plan is not modeled",
+              "zh-CN": "未建模新都城的规划"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          }
+        },
+        "note": {
+          "en": "Parts of the Nara palace were moved to Kuni; later archaeological layers preserve evidence of these changes.",
+          "zh-CN": "奈良宫的部分建筑迁至恭仁，后来的考古地层保留了这些变化的证据。"
+        },
+        "date": {
+          "earliestYear": 740,
+          "latestYear": 740,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "japan-710",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "nabunken-chronology",
+                "locator": "Chronology entries for 710, 740, 744 and 745"
+              },
+              {
+                "sourceId": "nabunken-palace",
+                "locator": "English summary of Nara Palace excavation report XVII: Heijo palace and capital layout"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "nabunken-chronology",
+            "locator": "Chronology entries for 710, 740, 744 and 745"
+          },
+          {
+            "sourceId": "nabunken-palace",
+            "locator": "English summary of Nara Palace excavation report XVII: Heijo palace and capital layout"
+          }
+        ]
+      },
+      {
+        "id": "japan-744",
+        "branchId": "japan/main",
+        "year": 744,
+        "title": {
+          "en": "Naniwa becomes the capital",
+          "zh-CN": "难波成为都城"
+        },
+        "summary": {
+          "en": "Naniwa replaces Kuni as the capital.",
+          "zh-CN": "难波取代恭仁，成为都城。"
+        },
+        "parents": [
+          "japan-740"
+        ],
+        "sourceIds": [
+          "nabunken-chronology"
+        ],
+        "changes": {
+          "politics.capital": {
+            "key": "naniwa",
+            "label": {
+              "en": "Naniwa",
+              "zh-CN": "难波"
+            },
+            "status": "known",
+            "sourceIds": [
+              "nabunken-chronology"
+            ],
+            "evidence": [
+              {
+                "sourceId": "nabunken-chronology",
+                "locator": "Chronology entries for 710, 740, 744 and 745"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "court-in-naniwa",
+            "label": {
+              "en": "Court relocation to Naniwa",
+              "zh-CN": "朝廷迁往难波"
+            },
+            "status": "known",
+            "sourceIds": [
+              "nabunken-chronology"
+            ],
+            "evidence": [
+              {
+                "sourceId": "nabunken-chronology",
+                "locator": "Chronology entries for 710, 740, 744 and 745"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "date": {
+          "earliestYear": 744,
+          "latestYear": 744,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "japan-740",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "nabunken-chronology",
+                "locator": "Chronology entries for 710, 740, 744 and 745"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "nabunken-chronology",
+            "locator": "Chronology entries for 710, 740, 744 and 745"
+          }
+        ]
+      },
+      {
+        "id": "japan-745",
+        "branchId": "japan/main",
+        "year": 745,
+        "title": {
+          "en": "The court returns to Nara",
+          "zh-CN": "朝廷返回奈良"
+        },
+        "summary": {
+          "en": "After further moves, the court returns to Nara.",
+          "zh-CN": "经历进一步迁移后，朝廷返回奈良。"
+        },
+        "parents": [
+          "japan-744"
+        ],
+        "sourceIds": [
+          "nabunken-chronology",
+          "nabunken-palace"
+        ],
+        "changes": {
+          "politics.capital": {
+            "key": "heijo-kyo",
+            "label": {
+              "en": "Heijō-kyō (Nara)",
+              "zh-CN": "平城京（奈良）"
+            },
+            "status": "known",
+            "sourceIds": [
+              "nabunken-chronology"
+            ],
+            "evidence": [
+              {
+                "sourceId": "nabunken-chronology",
+                "locator": "Chronology entries for 710, 740, 744 and 745"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "court-return-nara",
+            "label": {
+              "en": "Court returns to Nara",
+              "zh-CN": "朝廷返回奈良"
+            },
+            "status": "known",
+            "sourceIds": [
+              "nabunken-palace"
+            ],
+            "evidence": [
+              {
+                "sourceId": "nabunken-palace",
+                "locator": "English summary of Nara Palace excavation report XVII: Heijo palace and capital layout"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "The brief Shigaraki phase in 745 is described here rather than represented as a second same-year version. Rebuilt palace compounds show that returning did not simply restore the old layout.",
+          "zh-CN": "745 年短暂的紫香乐阶段在此说明，未另建同年版本。重建的宫殿区表明，返回并非简单复原旧布局。"
+        },
+        "date": {
+          "earliestYear": 745,
+          "latestYear": 745,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "japan-744",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "nabunken-chronology",
+                "locator": "Chronology entries for 710, 740, 744 and 745"
+              },
+              {
+                "sourceId": "nabunken-palace",
+                "locator": "English summary of Nara Palace excavation report XVII: Heijo palace and capital layout"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "nabunken-chronology",
+            "locator": "Chronology entries for 710, 740, 744 and 745"
+          },
+          {
+            "sourceId": "nabunken-palace",
+            "locator": "English summary of Nara Palace excavation report XVII: Heijo palace and capital layout"
+          }
+        ]
+      },
+      {
+        "id": "japan-784",
+        "branchId": "japan/main",
+        "year": 784,
+        "title": {
+          "en": "A new capital at Nagaoka",
+          "zh-CN": "迁往长冈新都"
+        },
+        "summary": {
+          "en": "The court leaves Heijō-kyō for Nagaoka-kyō.",
+          "zh-CN": "朝廷离开平城京，迁往长冈京。"
+        },
+        "parents": [
+          "japan-745"
+        ],
+        "eventId": "nagaoka-784",
+        "sourceIds": [
+          "muko-capitals",
+          "nabunken-chronology"
+        ],
+        "changes": {
+          "politics.capital": {
+            "key": "nagaoka-kyo",
+            "label": {
+              "en": "Nagaoka-kyō",
+              "zh-CN": "长冈京"
+            },
+            "status": "known",
+            "sourceIds": [
+              "muko-capitals"
+            ],
+            "evidence": [
+              {
+                "sourceId": "muko-capitals",
+                "locator": "Guide section on Nagaoka-kyo: transfer in 784 and the move to Heian-kyo in 794"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "court-in-nagaoka",
+            "label": {
+              "en": "Court relocation to Nagaoka",
+              "zh-CN": "朝廷迁往长冈"
+            },
+            "status": "known",
+            "sourceIds": [
+              "muko-capitals"
+            ],
+            "evidence": [
+              {
+                "sourceId": "muko-capitals",
+                "locator": "Guide section on Nagaoka-kyo: transfer in 784 and the move to Heian-kyo in 794"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "This path follows selected court locations. Other rulers, institutions and intervening changes are not fully recorded.",
+          "zh-CN": "这条路径追踪精选宫廷驻地。历任统治者、制度和中间变化未完整收录。"
+        },
+        "date": {
+          "earliestYear": 784,
+          "latestYear": 784,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "japan-745",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "muko-capitals",
+                "locator": "Guide section on Nagaoka-kyo: transfer in 784 and the move to Heian-kyo in 794"
+              },
+              {
+                "sourceId": "nabunken-chronology",
+                "locator": "Chronology entries for 710, 740, 744 and 745"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "muko-capitals",
+            "locator": "Guide section on Nagaoka-kyo: transfer in 784 and the move to Heian-kyo in 794"
+          },
+          {
+            "sourceId": "nabunken-chronology",
+            "locator": "Chronology entries for 710, 740, 744 and 745"
+          }
+        ]
+      },
+      {
+        "id": "japan-794",
+        "branchId": "japan/main",
+        "year": 794,
+        "title": {
+          "en": "Heian becomes the court’s seat",
+          "zh-CN": "朝廷定都平安"
+        },
+        "summary": {
+          "en": "The court moves from Nagaoka to Heian-kyō.",
+          "zh-CN": "朝廷从长冈迁至平安京。"
+        },
+        "parents": [
+          "japan-784"
+        ],
+        "eventId": "heian-794",
+        "sourceIds": [
+          "muko-capitals",
+          "nabunken-chronology"
+        ],
+        "changes": {
+          "politics.capital": {
+            "key": "heian-kyo",
+            "label": {
+              "en": "Heian-kyō",
+              "zh-CN": "平安京"
+            },
+            "status": "known",
+            "sourceIds": [
+              "muko-capitals"
+            ],
+            "evidence": [
+              {
+                "sourceId": "muko-capitals",
+                "locator": "Guide section on Nagaoka-kyo: transfer in 784 and the move to Heian-kyo in 794"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "court-in-heian",
+            "label": {
+              "en": "Court relocation to Heian",
+              "zh-CN": "朝廷迁往平安"
+            },
+            "status": "known",
+            "sourceIds": [
+              "muko-capitals"
+            ],
+            "evidence": [
+              {
+                "sourceId": "muko-capitals",
+                "locator": "Guide section on Nagaoka-kyo: transfer in 784 and the move to Heian-kyo in 794"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "This path follows selected court locations. Other rulers, institutions and intervening changes are not fully recorded.",
+          "zh-CN": "这条路径追踪精选宫廷驻地。历任统治者、制度和中间变化未完整收录。"
+        },
+        "date": {
+          "earliestYear": 794,
+          "latestYear": 794,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "japan-784",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "muko-capitals",
+                "locator": "Guide section on Nagaoka-kyo: transfer in 784 and the move to Heian-kyo in 794"
+              },
+              {
+                "sourceId": "nabunken-chronology",
+                "locator": "Chronology entries for 710, 740, 744 and 745"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "muko-capitals",
+            "locator": "Guide section on Nagaoka-kyo: transfer in 784 and the move to Heian-kyo in 794"
+          },
+          {
+            "sourceId": "nabunken-chronology",
+            "locator": "Chronology entries for 710, 740, 744 and 745"
+          }
+        ]
+      },
+      {
+        "id": "tang-618",
+        "branchId": "tang/main",
+        "year": 618,
+        "title": {
+          "en": "Tang rule begins",
+          "zh-CN": "唐朝建立"
+        },
+        "summary": {
+          "en": "The Tang dynasty emerges after the Sui collapse.",
+          "zh-CN": "隋朝瓦解后，唐朝建立。"
+        },
+        "parents": [],
+        "eventId": "tang-founded-618",
+        "sourceIds": [
+          "met-china",
+          "met-tang"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": null,
+            "label": {
+              "en": "Ruler succession is not modeled on this path",
+              "zh-CN": "此路径未建模历任皇帝"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          },
+          "politics.dynasty": {
+            "key": "tang",
+            "label": {
+              "en": "Tang dynasty",
+              "zh-CN": "唐朝"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline and Key Events: 581, 618, ca. 700; Northern/Southern dynasties and Tang rule"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.form": {
+            "key": "tang-imperial-government",
+            "label": {
+              "en": "Tang imperial government",
+              "zh-CN": "唐朝帝国政体"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-tang"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-tang",
+                "locator": "Paragraphs on Tang foundation, Chang’an and the weakening of authority after An Lushan"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.capital": {
+            "key": null,
+            "label": {
+              "en": "Court locations are not reconstructed for these records",
+              "zh-CN": "这些记录未复原宫廷驻地"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          },
+          "politics.condition": {
+            "key": "tang-foundation",
+            "label": {
+              "en": "Dynastic foundation after the Sui",
+              "zh-CN": "隋亡后的建朝"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline and Key Events: 581, 618, ca. 700; Northern/Southern dynasties and Tang rule"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": null,
+            "label": {
+              "en": "Not recorded in this model",
+              "zh-CN": "本模型未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          }
+        },
+        "note": {
+          "en": "This path samples dynastic continuity and rebellion, not every reign or the whole territory under Tang authority.",
+          "zh-CN": "此路径选取王朝延续与叛乱，不覆盖每任皇帝或唐朝统治的全部地域。"
+        },
+        "date": {
+          "earliestYear": 618,
+          "latestYear": 618,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "baseline",
+        "lineage": [],
+        "evidence": [
+          {
+            "sourceId": "met-china",
+            "locator": "Timeline and Key Events: 581, 618, ca. 700; Northern/Southern dynasties and Tang rule"
+          },
+          {
+            "sourceId": "met-tang",
+            "locator": "Paragraphs on Tang foundation, Chang’an and the weakening of authority after An Lushan"
+          }
+        ]
+      },
+      {
+        "id": "tang-755",
+        "branchId": "tang/main",
+        "year": 755,
+        "title": {
+          "en": "An Lushan rebels",
+          "zh-CN": "安禄山起兵"
+        },
+        "summary": {
+          "en": "A major rebellion challenges Tang rule.",
+          "zh-CN": "大规模叛乱挑战唐朝统治。"
+        },
+        "parents": [
+          "tang-ca700"
+        ],
+        "eventId": "an-lushan-755",
+        "sourceIds": [
+          "met-tang",
+          "loc-an-lushan"
+        ],
+        "changes": {
+          "politics.condition": {
+            "key": "an-lushan-rebellion",
+            "label": {
+              "en": "An Lushan rebellion",
+              "zh-CN": "安史之乱"
+            },
+            "status": "known",
+            "sourceIds": [
+              "loc-an-lushan"
+            ],
+            "evidence": [
+              {
+                "sourceId": "loc-an-lushan",
+                "locator": "China—History—An Lushan Rebellion, 755–763 (alphabetic subject entry)"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "The long parent edge omits many intermediate changes, including the Wu Zhou interlude. It preserves only the sampled Tang context, not uninterrupted rule across every year.",
+          "zh-CN": "长父边省略了包括武周阶段在内的许多中间变化；它只保留选取的唐朝背景，不表示每一年统治都未中断。"
+        },
+        "date": {
+          "earliestYear": 755,
+          "latestYear": 755,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "tang-ca700",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "met-tang",
+                "locator": "Paragraphs on Tang foundation, Chang’an and the weakening of authority after An Lushan"
+              },
+              {
+                "sourceId": "loc-an-lushan",
+                "locator": "China—History—An Lushan Rebellion, 755–763 (alphabetic subject entry)"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-tang",
+            "locator": "Paragraphs on Tang foundation, Chang’an and the weakening of authority after An Lushan"
+          },
+          {
+            "sourceId": "loc-an-lushan",
+            "locator": "China—History—An Lushan Rebellion, 755–763 (alphabetic subject entry)"
+          }
+        ]
+      },
+      {
+        "id": "tang-763",
+        "branchId": "tang/main",
+        "year": 763,
+        "title": {
+          "en": "The dynasty survives",
+          "zh-CN": "王朝延续"
+        },
+        "summary": {
+          "en": "The rebellion ends, while the court’s authority is weakened.",
+          "zh-CN": "叛乱结束，但朝廷权威受到削弱。"
+        },
+        "parents": [
+          "tang-755"
+        ],
+        "eventId": "rebellion-ends-763",
+        "sourceIds": [
+          "met-tang",
+          "loc-an-lushan"
+        ],
+        "changes": {
+          "politics.condition": {
+            "key": "post-rebellion-tang",
+            "label": {
+              "en": "Rebellion ended; court authority weakened",
+              "zh-CN": "叛乱结束；朝廷权威削弱"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-tang",
+              "loc-an-lushan"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-tang",
+                "locator": "Paragraphs on Tang foundation, Chang’an and the weakening of authority after An Lushan"
+              },
+              {
+                "sourceId": "loc-an-lushan",
+                "locator": "China—History—An Lushan Rebellion, 755–763 (alphabetic subject entry)"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "note": {
+          "en": "A surviving dynasty and changed political conditions can coexist. The model does not infer territorial recovery from the end of the rebellion.",
+          "zh-CN": "王朝延续与政治局势改变可以同时发生；模型不从叛乱结束推断领土已完全收复。"
+        },
+        "date": {
+          "earliestYear": 763,
+          "latestYear": 763,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "tang-755",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "met-tang",
+                "locator": "Paragraphs on Tang foundation, Chang’an and the weakening of authority after An Lushan"
+              },
+              {
+                "sourceId": "loc-an-lushan",
+                "locator": "China—History—An Lushan Rebellion, 755–763 (alphabetic subject entry)"
+              }
+            ]
+          }
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-tang",
+            "locator": "Paragraphs on Tang foundation, Chang’an and the weakening of authority after An Lushan"
+          },
+          {
+            "sourceId": "loc-an-lushan",
+            "locator": "China—History—An Lushan Rebellion, 755–763 (alphabetic subject entry)"
+          }
+        ]
+      },
+      {
+        "id": "papacy-754",
+        "branchId": "francia/papacy",
+        "year": 754,
+        "title": {
+          "en": "Papal anointing at Saint-Denis",
+          "zh-CN": "教宗在圣但尼施行受膏礼"
+        },
+        "summary": {
+          "en": "Pope Stephen anoints Pippin and his sons, reinforcing the dynasty’s position.",
+          "zh-CN": "教宗斯德望为丕平及其诸子施行受膏礼，巩固了王朝的地位。"
+        },
+        "parents": [
+          "francia-751"
+        ],
+        "changes": {
+          "politics.condition": {
+            "key": "papal-anointing",
+            "label": {
+              "en": "Pippin and his sons receive papal anointing",
+              "zh-CN": "教宗为丕平及其诸子施行受膏礼"
+            },
+            "status": "known",
+            "sourceIds": [
+              "kcl-pepin"
+            ],
+            "evidence": [
+              {
+                "sourceId": "kcl-pepin",
+                "locator": "Pepin 1: accession in 751 and papal anointing in 754"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "sourceIds": [
+          "kcl-pepin"
+        ],
+        "evidence": [
+          {
+            "sourceId": "kcl-pepin",
+            "locator": "Pepin 1: accession in 751 and papal anointing in 754"
+          }
+        ],
+        "date": {
+          "earliestYear": 754,
+          "latestYear": 754,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "francia-751",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "kcl-pepin",
+                "locator": "Pepin 1: accession in 751 and papal anointing in 754"
+              }
+            ]
+          }
+        ],
+        "note": {
+          "en": "This parent edge reuses a recorded state for a thematic continuation. It does not represent a territorial split.",
+          "zh-CN": "这条父边复用已记录的状态，延续同一主题，并不表示领土分裂。"
+        },
+        "eventId": "papal-anointing-754"
+      },
+      {
+        "id": "andalus-756",
+        "branchId": "andalus/main",
+        "year": 756,
+        "title": {
+          "en": "An Umayyad emirate at Córdoba",
+          "zh-CN": "科尔多瓦的倭马亚埃米尔国"
+        },
+        "summary": {
+          "en": "Abd al-Rahman I establishes an emirate in al-Andalus.",
+          "zh-CN": "阿卜杜勒·拉赫曼一世在安达卢斯建立埃米尔国。"
+        },
+        "parents": [],
+        "changes": {
+          "politics.ruler": {
+            "key": "abd-al-rahman-i",
+            "label": {
+              "en": "Abd al-Rahman I",
+              "zh-CN": "阿卜杜勒·拉赫曼一世"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-iberia"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-iberia",
+                "locator": "Key Events: 756 and 785; Abd al-Rahman I and the Great Mosque of Córdoba"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.dynasty": {
+            "key": "umayyad",
+            "label": {
+              "en": "Umayyad house",
+              "zh-CN": "倭马亚家族"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-iberia"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-iberia",
+                "locator": "Key Events: 756 and 785; Abd al-Rahman I and the Great Mosque of Córdoba"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.form": {
+            "key": "umayyad-emirate",
+            "label": {
+              "en": "Emirate",
+              "zh-CN": "埃米尔国"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-iberia"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-iberia",
+                "locator": "Key Events: 756 and 785; Abd al-Rahman I and the Great Mosque of Córdoba"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "cordoba-emirate",
+            "label": {
+              "en": "Emirate established at Córdoba",
+              "zh-CN": "在科尔多瓦建立埃米尔国"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-iberia"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-iberia",
+                "locator": "Key Events: 756 and 785; Abd al-Rahman I and the Great Mosque of Córdoba"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": null,
+            "label": {
+              "en": "Extent of control is not reconstructed",
+              "zh-CN": "此状态未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          }
+        },
+        "sourceIds": [
+          "met-iberia"
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-iberia",
+            "locator": "Key Events: 756 and 785; Abd al-Rahman I and the Great Mosque of Córdoba"
+          }
+        ],
+        "date": {
+          "earliestYear": 756,
+          "latestYear": 756,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "baseline",
+        "lineage": [],
+        "eventId": "cordoba-emirate-756"
+      },
+      {
+        "id": "andalus-785",
+        "branchId": "andalus/main",
+        "year": 785,
+        "title": {
+          "en": "Construction begins on the Great Mosque",
+          "zh-CN": "大清真寺开始兴建"
+        },
+        "summary": {
+          "en": "Abd al-Rahman I begins the Great Mosque of Córdoba.",
+          "zh-CN": "阿卜杜勒·拉赫曼一世开始兴建科尔多瓦大清真寺。"
+        },
+        "parents": [
+          "andalus-756"
+        ],
+        "changes": {
+          "politics.condition": {
+            "key": "cordoba-mosque-start",
+            "label": {
+              "en": "Great Mosque construction begins",
+              "zh-CN": "大清真寺开始兴建"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-iberia"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-iberia",
+                "locator": "Key Events: 756 and 785; Abd al-Rahman I and the Great Mosque of Córdoba"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "sourceIds": [
+          "met-iberia"
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-iberia",
+            "locator": "Key Events: 756 and 785; Abd al-Rahman I and the Great Mosque of Córdoba"
+          }
+        ],
+        "date": {
+          "earliestYear": 785,
+          "latestYear": 785,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "andalus-756",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "met-iberia",
+                "locator": "Key Events: 756 and 785; Abd al-Rahman I and the Great Mosque of Córdoba"
+              }
+            ]
+          }
+        ],
+        "eventId": "cordoba-mosque-785"
+      },
+      {
+        "id": "sui-581",
+        "branchId": "sui/main",
+        "year": 581,
+        "title": {
+          "en": "Yang Jian establishes Sui rule",
+          "zh-CN": "杨坚建立隋朝统治"
+        },
+        "summary": {
+          "en": "Yang Jian establishes the Sui dynasty in the north.",
+          "zh-CN": "杨坚在北方建立隋朝。"
+        },
+        "parents": [],
+        "changes": {
+          "politics.ruler": {
+            "key": "yang-jian",
+            "label": {
+              "en": "Yang Jian (Emperor Wen)",
+              "zh-CN": "杨坚（隋文帝）"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.dynasty": {
+            "key": "sui",
+            "label": {
+              "en": "Sui dynasty",
+              "zh-CN": "隋朝"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.form": {
+            "key": "imperial-rule",
+            "label": {
+              "en": "Imperial dynastic rule",
+              "zh-CN": "王朝帝制"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.capital": {
+            "key": null,
+            "label": {
+              "en": "Court reconstruction is not dated in this state",
+              "zh-CN": "此状态未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          },
+          "politics.condition": {
+            "key": "sui-north",
+            "label": {
+              "en": "Sui rule established in the north",
+              "zh-CN": "隋在北方建立统治"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": "sui-northern-rule",
+            "label": {
+              "en": "Northern realm; the south is not yet integrated",
+              "zh-CN": "北方领地；南方尚未整合"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "culture.planning": {
+            "key": null,
+            "label": {
+              "en": "Not recorded for this state",
+              "zh-CN": "此状态未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          }
+        },
+        "sourceIds": [
+          "met-china"
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-china",
+            "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+          }
+        ],
+        "date": {
+          "earliestYear": 581,
+          "latestYear": 581,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "baseline",
+        "lineage": []
+      },
+      {
+        "id": "chen-557",
+        "branchId": "chen/main",
+        "year": 557,
+        "title": {
+          "en": "Chen rule in the south",
+          "zh-CN": "陈朝统治南方"
+        },
+        "summary": {
+          "en": "The Chen dynasty rules in southern China; the source chronology dates it to 557–589.",
+          "zh-CN": "陈朝统治中国南方；来源年表将其年代记为 557—589 年。"
+        },
+        "parents": [],
+        "changes": {
+          "politics.ruler": {
+            "key": null,
+            "label": {
+              "en": "Not recorded for this state",
+              "zh-CN": "此状态未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          },
+          "politics.dynasty": {
+            "key": "chen",
+            "label": {
+              "en": "Chen dynasty",
+              "zh-CN": "陈朝"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.form": {
+            "key": "imperial-rule",
+            "label": {
+              "en": "Imperial dynastic rule",
+              "zh-CN": "王朝帝制"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.capital": {
+            "key": null,
+            "label": {
+              "en": "Not recorded for this state",
+              "zh-CN": "此状态未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          },
+          "politics.condition": {
+            "key": "chen-south",
+            "label": {
+              "en": "Chen rule in the south",
+              "zh-CN": "陈朝统治南方"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": "chen-southern-rule",
+            "label": {
+              "en": "Southern realm; exact borders are not reconstructed",
+              "zh-CN": "南方领地；未重建精确边界"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "culture.planning": {
+            "key": null,
+            "label": {
+              "en": "Not recorded for this state",
+              "zh-CN": "此状态未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          }
+        },
+        "sourceIds": [
+          "met-china"
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-china",
+            "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+          }
+        ],
+        "date": {
+          "earliestYear": 557,
+          "latestYear": 557,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "baseline",
+        "lineage": []
+      },
+      {
+        "id": "sui-589",
+        "branchId": "sui/main",
+        "year": 589,
+        "title": {
+          "en": "The southern realm comes under Sui rule",
+          "zh-CN": "南方领地纳入隋朝统治"
+        },
+        "summary": {
+          "en": "The end of Chen rule brings the north and south under the Sui dynasty.",
+          "zh-CN": "陈朝统治结束，南北归于隋朝统治之下。"
+        },
+        "parents": [
+          "sui-581",
+          "chen-557"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": "yang-jian",
+            "label": {
+              "en": "Yang Jian (Emperor Wen)",
+              "zh-CN": "杨坚（隋文帝）"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.dynasty": {
+            "key": "sui",
+            "label": {
+              "en": "Sui dynasty",
+              "zh-CN": "隋朝"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.form": {
+            "key": "imperial-rule",
+            "label": {
+              "en": "Imperial dynastic rule",
+              "zh-CN": "王朝帝制"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.capital": {
+            "key": null,
+            "label": {
+              "en": "Residence changes during consolidation are not resolved",
+              "zh-CN": "此状态未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          },
+          "politics.condition": {
+            "key": "sui-unification",
+            "label": {
+              "en": "Chen rule ends; north and south are integrated under Sui",
+              "zh-CN": "陈朝统治结束；南北在隋朝之下整合"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": "sui-north-south",
+            "label": {
+              "en": "Northern and southern realms under Sui; not modern borders",
+              "zh-CN": "隋朝统治下的南北领地；不表示现代边界"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "culture.planning": {
+            "key": null,
+            "label": {
+              "en": "Not recorded for this state",
+              "zh-CN": "此状态未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          }
+        },
+        "sourceIds": [
+          "met-china"
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-china",
+            "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+          }
+        ],
+        "date": {
+          "earliestYear": 589,
+          "latestYear": 589,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "integration",
+        "lineage": [
+          {
+            "parentId": "sui-581",
+            "kind": "integration",
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ]
+          },
+          {
+            "parentId": "chen-557",
+            "kind": "integration",
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+              }
+            ]
+          }
+        ],
+        "note": {
+          "en": "Two parents represent the political settings brought into one modeled outcome by conquest. They do not imply shared sovereignty, a peaceful merger, or the inheritance of every Chen institution. The integration ledger deliberately resets unsupported fields.",
+          "zh-CN": "两个父节点表示两种政治格局，经由征服汇入同一个建模结果。它们不意味着共享主权、和平合并，或全部继承陈朝制度。整合处理表有意重置缺乏依据的字段。"
+        },
+        "integration": {
+          "resolutions": {
+            "politics.ruler": {
+              "strategy": "retain",
+              "parentIds": [
+                "sui-581"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "met-china",
+                  "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+                }
+              ],
+              "note": {
+                "en": "An explicit editorial abstraction of the documented political outcome.",
+                "zh-CN": "这是编辑时对有文献依据的政治结果所作的明确抽象。"
+              }
+            },
+            "politics.dynasty": {
+              "strategy": "retain",
+              "parentIds": [
+                "sui-581"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "met-china",
+                  "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+                }
+              ],
+              "note": {
+                "en": "An explicit editorial abstraction of the documented political outcome.",
+                "zh-CN": "这是编辑时对有文献依据的政治结果所作的明确抽象。"
+              }
+            },
+            "politics.form": {
+              "strategy": "retain",
+              "parentIds": [
+                "sui-581",
+                "chen-557"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "met-china",
+                  "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+                }
+              ],
+              "note": {
+                "en": "An explicit editorial abstraction of the documented political outcome.",
+                "zh-CN": "这是编辑时对有文献依据的政治结果所作的明确抽象。"
+              }
+            },
+            "politics.capital": {
+              "strategy": "unknown",
+              "parentIds": [
+                "sui-581",
+                "chen-557"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "met-china",
+                  "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+                }
+              ],
+              "note": {
+                "en": "The cited overview does not resolve this field for the integrated state.",
+                "zh-CN": "所引概览未明确整合后状态的这一字段。"
+              }
+            },
+            "politics.condition": {
+              "strategy": "modify",
+              "parentIds": [
+                "sui-581",
+                "chen-557"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "met-china",
+                  "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+                }
+              ],
+              "note": {
+                "en": "An explicit editorial abstraction of the documented political outcome.",
+                "zh-CN": "这是编辑时对有文献依据的政治结果所作的明确抽象。"
+              }
+            },
+            "territory.extent": {
+              "strategy": "modify",
+              "parentIds": [
+                "sui-581",
+                "chen-557"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "met-china",
+                  "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+                }
+              ],
+              "note": {
+                "en": "An explicit editorial abstraction of the documented political outcome.",
+                "zh-CN": "这是编辑时对有文献依据的政治结果所作的明确抽象。"
+              }
+            },
+            "culture.planning": {
+              "strategy": "unknown",
+              "parentIds": [
+                "sui-581",
+                "chen-557"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "met-china",
+                  "locator": "Timeline: Chen dynasty (South China), 557–589; Key Events: 581, Yang Jian’s rule in the north and unification by 589"
+                }
+              ],
+              "note": {
+                "en": "The cited overview does not resolve this field for the integrated state.",
+                "zh-CN": "所引概览未明确整合后状态的这一字段。"
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "tang-ca700",
+        "branchId": "tang/main",
+        "year": 700,
+        "title": {
+          "en": "Chang’an around 700",
+          "zh-CN": "约 700 年的长安"
+        },
+        "summary": {
+          "en": "Chang’an has a planned street grid enclosed by walls and gates.",
+          "zh-CN": "长安采用规划的网格街道，外围设有城墙与城门。"
+        },
+        "parents": [
+          "tang-618"
+        ],
+        "changes": {
+          "politics.ruler": {
+            "key": null,
+            "label": {
+              "en": "Not recorded for this state",
+              "zh-CN": "此状态未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          },
+          "politics.condition": {
+            "key": "changan-ca700",
+            "label": {
+              "en": "Chang’an around 700",
+              "zh-CN": "约 700 年的长安"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Key Events: ca. 700, Chang’an’s street grid, walls and gates"
+              }
+            ],
+            "certainty": "documented"
+          },
+          "culture.planning": {
+            "key": "changan-walled-grid",
+            "label": {
+              "en": "Street grid with enclosing walls and gates",
+              "zh-CN": "外围设有城墙与城门的网格街道"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-china"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Key Events: ca. 700, Chang’an’s street grid, walls and gates"
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "sourceIds": [
+          "met-china"
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-china",
+            "locator": "Key Events: ca. 700, Chang’an’s street grid, walls and gates"
+          }
+        ],
+        "date": {
+          "earliestYear": 700,
+          "latestYear": 700,
+          "precision": "approximate",
+          "calendar": "proleptic-gregorian",
+          "note": {
+            "en": "The source says circa 700. No numerical error range is supplied; 700 is an approximate reference point.",
+            "zh-CN": "来源记为约 700 年，未给出数值误差范围；700 年仅为近似参考点。"
+          }
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "tang-618",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "met-china",
+                "locator": "Key Events: ca. 700, Chang’an’s street grid, walls and gates"
+              }
+            ]
+          }
+        ],
+        "note": {
+          "en": "The date is approximate. This is a city-planning observation, not a complete Tang political snapshot.",
+          "zh-CN": "日期为近似值。这是一条城市规划观察，并非完整的唐朝政治状态快照。"
+        }
+      },
+      {
+        "id": "japan-buddhism-538-552",
+        "branchId": "japan/buddhism",
+        "year": 552,
+        "title": {
+          "en": "A gift from Baekje: 538 or 552",
+          "zh-CN": "来自百济的赠礼：538 年或 552 年"
+        },
+        "summary": {
+          "en": "Traditional accounts date a Baekje royal gift of Buddhist images and texts to 538 or 552.",
+          "zh-CN": "传统记载将百济王室赠送佛像和经书的时间记为 538 年或 552 年。"
+        },
+        "parents": [],
+        "changes": {
+          "politics.condition": {
+            "key": "baekje-buddhist-gift",
+            "label": {
+              "en": "Baekje royal gift associated with public introduction of Buddhism",
+              "zh-CN": "与佛教正式传入有关的百济王室赠礼"
+            },
+            "status": "known",
+            "sourceIds": [
+              "nara-buddhism"
+            ],
+            "evidence": [
+              {
+                "sourceId": "nara-buddhism",
+                "locator": "用語ID 1, 解説: two chronologies, 538 and 552; earlier private practice is possible"
+              }
+            ],
+            "certainty": "disputed"
+          }
+        },
+        "sourceIds": [
+          "nara-buddhism"
+        ],
+        "evidence": [
+          {
+            "sourceId": "nara-buddhism",
+            "locator": "用語ID 1, 解説"
+          }
+        ],
+        "date": {
+          "earliestYear": 538,
+          "latestYear": 552,
+          "precision": "interval",
+          "calendar": "proleptic-gregorian",
+          "note": {
+            "en": "The bounds encode alternative traditional dates (538 or 552), not a continuous event from 538 to 552.",
+            "zh-CN": "这两个界限表示两种传统纪年（538 年或 552 年），并非从 538 年持续到 552 年的事件。"
+          }
+        },
+        "kind": "baseline",
+        "lineage": [],
+        "note": {
+          "en": "Queries before the latest bound do not select this state as settled. The record remains directly inspectable by ID. This formal court tradition does not establish the first arrival of Buddhism.",
+          "zh-CN": "在最晚界限之前的日期进行查询时，不会将此状态选为已确定状态。记录仍可通过 ID 直接查看。关于佛教正式传入朝廷的这一传统记载，并不能确定佛教最初传入的时间。"
+        }
+      },
+      {
+        "id": "qin-221-bce",
+        "branchId": "qin/main",
+        "year": -221,
+        "title": {
+          "en": "Qin imperial rule",
+          "zh-CN": "秦朝的帝国统治"
+        },
+        "summary": {
+          "en": "After conquering six rival states, Ying Zheng takes the title First Emperor.",
+          "zh-CN": "征服六国后，嬴政采用“始皇帝”称号。"
+        },
+        "parents": [],
+        "changes": {
+          "politics.ruler": {
+            "key": "qin-shihuang",
+            "label": {
+              "en": "Qin Shihuang",
+              "zh-CN": "秦始皇"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-qin"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-qin",
+                "locator": "Title (221–206 B.C.) and paragraphs 1–4: conquest of six states, imperial title and burning of texts in 213 B.C."
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.dynasty": {
+            "key": "qin",
+            "label": {
+              "en": "Qin dynasty",
+              "zh-CN": "秦朝"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-qin"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-qin",
+                "locator": "Title (221–206 B.C.) and paragraphs 1–4: conquest of six states, imperial title and burning of texts in 213 B.C."
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.form": {
+            "key": "imperial-rule",
+            "label": {
+              "en": "Imperial dynastic rule",
+              "zh-CN": "王朝帝制"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-qin"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-qin",
+                "locator": "Title (221–206 B.C.) and paragraphs 1–4: conquest of six states, imperial title and burning of texts in 213 B.C."
+              }
+            ],
+            "certainty": "documented"
+          },
+          "politics.condition": {
+            "key": "qin-imperial-title",
+            "label": {
+              "en": "First Emperor title after the conquests",
+              "zh-CN": "征服之后采用“始皇帝”称号"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-qin"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-qin",
+                "locator": "Title (221–206 B.C.) and paragraphs 1–4: conquest of six states, imperial title and burning of texts in 213 B.C."
+              }
+            ],
+            "certainty": "documented"
+          },
+          "territory.extent": {
+            "key": null,
+            "label": {
+              "en": "Conquest sequence and boundaries are not reconstructed",
+              "zh-CN": "此状态未收录"
+            },
+            "status": "unknown",
+            "sourceIds": [],
+            "evidence": []
+          }
+        },
+        "sourceIds": [
+          "met-qin"
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-qin",
+            "locator": "Title (221–206 B.C.) and paragraphs 1–4: conquest of six states, imperial title and burning of texts in 213 B.C."
+          }
+        ],
+        "date": {
+          "earliestYear": -221,
+          "latestYear": -221,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "baseline",
+        "lineage": [],
+        "note": {
+          "en": "The date uses the specialist essay’s dynasty title. A separate Met chronology labels its Qin foundation entry 206 B.C.; that conflicting label is not used here.",
+          "zh-CN": "日期采用专题文章标题中的秦朝年代。另一个大都会艺术博物馆年表将秦的建立条目标为公元前 206 年；此处不采用这一冲突标注。"
+        }
+      },
+      {
+        "id": "qin-213-bce",
+        "branchId": "qin/main",
+        "year": -213,
+        "title": {
+          "en": "The state orders destruction of texts",
+          "zh-CN": "国家下令毁书"
+        },
+        "summary": {
+          "en": "The Qin state sponsors the burning of Confucian works and other classical texts.",
+          "zh-CN": "秦政权支持焚毁儒家著作及其他经典文献。"
+        },
+        "parents": [
+          "qin-221-bce"
+        ],
+        "changes": {
+          "politics.condition": {
+            "key": "qin-text-burning",
+            "label": {
+              "en": "State-sponsored burning of texts",
+              "zh-CN": "国家推动的焚书"
+            },
+            "status": "known",
+            "sourceIds": [
+              "met-qin"
+            ],
+            "evidence": [
+              {
+                "sourceId": "met-qin",
+                "locator": "Title (221–206 B.C.) and paragraphs 1–4: conquest of six states, imperial title and burning of texts in 213 B.C."
+              }
+            ],
+            "certainty": "documented"
+          }
+        },
+        "sourceIds": [
+          "met-qin"
+        ],
+        "evidence": [
+          {
+            "sourceId": "met-qin",
+            "locator": "Title (221–206 B.C.) and paragraphs 1–4: conquest of six states, imperial title and burning of texts in 213 B.C."
+          }
+        ],
+        "date": {
+          "earliestYear": -213,
+          "latestYear": -213,
+          "precision": "year",
+          "calendar": "proleptic-gregorian"
+        },
+        "kind": "change",
+        "lineage": [
+          {
+            "parentId": "qin-221-bce",
+            "kind": "continuation",
+            "evidence": [
+              {
+                "sourceId": "met-qin",
+                "locator": "Title (221–206 B.C.) and paragraphs 1–4: conquest of six states, imperial title and burning of texts in 213 B.C."
+              }
+            ]
+          }
+        ],
+        "note": {
+          "en": "This records the cited policy claim; it does not quantify the destruction or resolve every later account.",
+          "zh-CN": "这条记录保留所引来源对该政策的说法，不量化毁坏程度，也不裁定所有后世记载。"
+        }
+      }
+    ],
+    "fields": [
+      {
+        "id": "politics.ruler",
+        "group": "politics",
+        "name": {
+          "en": "Ruler / claimants",
+          "zh-CN": "统治者／争位者"
+        },
+        "valueType": "concept"
+      },
+      {
+        "id": "politics.dynasty",
+        "group": "politics",
+        "name": {
+          "en": "Ruling house",
+          "zh-CN": "统治家族"
+        },
+        "valueType": "concept"
+      },
+      {
+        "id": "politics.form",
+        "group": "politics",
+        "name": {
+          "en": "Political organization",
+          "zh-CN": "政治组织"
+        },
+        "valueType": "concept"
+      },
+      {
+        "id": "politics.capital",
+        "group": "politics",
+        "name": {
+          "en": "Court residence",
+          "zh-CN": "宫廷驻地"
+        },
+        "description": {
+          "en": "A recorded court location; not every society has one fixed capital.",
+          "zh-CN": "记录中的宫廷驻地；并非所有政体都有唯一固定首都。"
+        },
+        "valueType": "concept"
+      },
+      {
+        "id": "politics.condition",
+        "group": "politics",
+        "name": {
+          "en": "Recorded context",
+          "zh-CN": "记录背景"
+        },
+        "valueType": "concept"
+      },
+      {
+        "id": "territory.extent",
+        "group": "territory",
+        "name": {
+          "en": "Territorial description",
+          "zh-CN": "地域描述"
+        },
+        "description": {
+          "en": "A qualitative description, not a reconstructed border.",
+          "zh-CN": "定性范围描述，不是复原疆界。"
+        },
+        "valueType": "concept"
+      },
+      {
+        "id": "culture.planning",
+        "group": "culture",
+        "name": {
+          "en": "Capital planning",
+          "zh-CN": "都城规划"
+        },
+        "valueType": "concept"
+      }
+    ],
+    "sources": {
+      "met-france": {
+        "id": "met-france",
+        "title": "France, 500–1000 A.D.",
+        "url": "https://www.metmuseum.org/toah/ht/06/euwf",
+        "publisher": "The Metropolitan Museum of Art",
+        "language": "en",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "ashmolean-abbasid": {
+        "id": "ashmolean-abbasid",
+        "title": "Abbasid Ceramics: The Historical Background",
+        "url": "https://islamicceramics.ashmolean.org/Abbasid/history.htm",
+        "publisher": "Ashmolean Museum, University of Oxford",
+        "language": "en",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "met-abbasid": {
+        "id": "met-abbasid",
+        "title": "The Art of the Abbasid Period (750–1258)",
+        "url": "https://www.metmuseum.org/essays/the-art-of-the-abbasid-period-750-1258",
+        "publisher": "The Metropolitan Museum of Art",
+        "language": "en",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "met-china": {
+        "id": "met-china",
+        "title": "China, 500–1000 A.D.",
+        "url": "https://www.metmuseum.org/toah/ht/06/eac",
+        "publisher": "The Metropolitan Museum of Art",
+        "language": "en",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "met-japan": {
+        "id": "met-japan",
+        "title": "Japan, 500–1000 A.D.",
+        "url": "https://www.metmuseum.org/ko/toah/ht/06/eaj",
+        "publisher": "The Metropolitan Museum of Art",
+        "language": "en",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "kcl-pepin": {
+        "id": "kcl-pepin",
+        "title": "Pepin 1",
+        "url": "https://pbe.kcl.ac.uk/data/D62/F29.htm",
+        "publisher": "Prosopography of the Byzantine Empire, King’s College London",
+        "language": "en",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "wallonia-verdun": {
+        "id": "wallonia-verdun",
+        "title": "Le partage décisif du Regnum Francorum par le Traité de Verdun",
+        "url": "https://connaitrelawallonie.wallonie.be/histoire/timeline/11-aout-843-le-partage-decisif-du-regnum-francorum-par-le-traite-de-verdun",
+        "publisher": "Connaître la Wallonie / Institut Destrée",
+        "language": "fr",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "wallonia-meerssen": {
+        "id": "wallonia-meerssen",
+        "title": "Le traité de Meerssen",
+        "url": "https://connaitrelawallonie.wallonie.be/histoire/timeline/8-aout-870-le-traite-de-meerssen",
+        "publisher": "Connaître la Wallonie / Institut Destrée",
+        "language": "fr",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "met-iberia": {
+        "id": "met-iberia",
+        "title": "Iberian Peninsula, 500–1000 A.D.",
+        "url": "https://www.metmuseum.org/ko/toah/ht/06/eusi",
+        "publisher": "The Metropolitan Museum of Art",
+        "language": "en",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "met-tang": {
+        "id": "met-tang",
+        "title": "Tang Dynasty (618–907)",
+        "url": "https://www.metmuseum.org/essays/tang-dynasty-618-906",
+        "publisher": "The Metropolitan Museum of Art",
+        "language": "en",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "loc-an-lushan": {
+        "id": "loc-an-lushan",
+        "title": "Library of Congress Subject Headings: China—History—An Lushan Rebellion, 755–763",
+        "url": "https://www.loc.gov/aba/publications/Archived-LCSH38/C.pdf",
+        "publisher": "Library of Congress",
+        "language": "en",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "muko-capitals": {
+        "id": "muko-capitals",
+        "title": "Muko City: Guide to the City",
+        "url": "https://www.city.muko.kyoto.jp/uploaded/attachment/12617.pdf",
+        "publisher": "Muko City",
+        "language": "en",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "nabunken-chronology": {
+        "id": "nabunken-chronology",
+        "title": "Chronology — Asuka & Nara",
+        "url": "https://www.nabunken.go.jp/english/chronology.html",
+        "publisher": "Nara National Research Institute for Cultural Properties",
+        "language": "en",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "qatar-samarra": {
+        "id": "qatar-samarra",
+        "title": "Artistry in Abbasid Architecture: The Stucco Decorations from Samarra",
+        "url": "https://qm.org.qa/en/stories/all-stories/collection-highlight-abbasid-stucco-panel/",
+        "publisher": "Qatar Museums",
+        "language": "en",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "ndb-lothar": {
+        "id": "ndb-lothar",
+        "title": "Lothar I. — Neue Deutsche Biographie",
+        "url": "https://www.deutsche-biographie.de/gnd118780514.html?language=en",
+        "publisher": "Historische Kommission / Bayerische Staatsbibliothek",
+        "language": "de",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "nabunken-palace": {
+        "id": "nabunken-palace",
+        "title": "Nara (Heijo) Palace Site Excavation Report XVII (2011), English Summary",
+        "url": "https://www.nabunken.go.jp/english/monograph/84.html",
+        "publisher": "Nara National Research Institute for Cultural Properties",
+        "language": "en",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "nara-buddhism": {
+        "id": "nara-buddhism",
+        "title": "仏教伝来",
+        "url": "https://manyo-hyakka.pref.nara.jp/db/detail?cls=db_yougo3&pkey=1",
+        "publisher": "Nara Prefecture Complex of Man’yo Culture",
+        "language": "ja",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      },
+      "met-qin": {
+        "id": "met-qin",
+        "title": "Qin Dynasty (221–206 B.C.)",
+        "url": "https://www.metmuseum.org/essays/qin-dynasty-221-206-b-c",
+        "publisher": "The Metropolitan Museum of Art",
+        "language": "en",
+        "rights": {
+          "status": "approved",
+          "license": "Citation metadata only; upstream rights retained",
+          "basis": "Only bibliographic metadata and GitWorld-authored factual summaries are distributed. No publisher article text or images are included. This review concerns redistribution scope, not scholarly endorsement.",
+          "redistribution": "citation-only",
+          "reviewedBy": "GitWorld editorial preparation (Rowan, AI-assisted)",
+          "reviewedAt": "2026-10-24T17:30:18.887Z"
+        },
+        "retrievedAt": "2026-10-24T17:30:18.887Z"
+      }
+    },
+    "datasetId": "gitworld-curated-history",
+    "tags": [
+      {
+        "id": "verdun-843",
+        "name": {
+          "en": "Verdun, 843",
+          "zh-CN": "凡尔登，843 年"
+        },
+        "commitId": "west-843",
+        "description": {
+          "en": "Named entry into the western branch; compare the other two outcomes.",
+          "zh-CN": "西部分支的命名入口；可与另外两种结果比较。"
+        }
+      },
+      {
+        "id": "nara-return-745",
+        "name": {
+          "en": "Return to Nara, 745",
+          "zh-CN": "返回奈良，745 年"
+        },
+        "commitId": "japan-745"
+      },
+      {
+        "id": "sui-integration-589",
+        "name": {
+          "en": "Sui integration, 589",
+          "zh-CN": "隋的整合，589 年"
+        },
+        "commitId": "sui-589"
+      },
+      {
+        "id": "qin-imperial-221-bce",
+        "name": {
+          "en": "Qin, 221 BCE",
+          "zh-CN": "秦，公元前 221 年"
+        },
+        "commitId": "qin-221-bce"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "changan-nara-planning",
+        "kind": "influence",
+        "fromCommitId": "tang-ca700",
+        "toCommitId": "japan-710",
+        "fieldIds": [
+          "culture.planning"
+        ],
+        "summary": {
+          "en": "Nara adapts Chang’an’s grid plan while omitting the enclosing city walls and gates.",
+          "zh-CN": "奈良借鉴长安的网格规划，但未采用环城城墙与城门。"
+        },
+        "evidence": [
+          {
+            "sourceId": "met-japan",
+            "locator": "Key Events: 710, Nara’s grid and its relationship to Chang’an"
+          }
+        ]
+      }
+    ]
+  }
+}

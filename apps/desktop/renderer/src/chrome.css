@@ -1,0 +1,77 @@
+/* Native window chrome and app navigation share one quiet visual hierarchy. */
+.workspace-modes { display:flex;align-items:center;gap:5px;min-height:38px;padding:3px 14px;border-bottom:1px solid #32363e;background:#1b1e23;flex:none;overflow-x:auto; }
+.workspace-modes button { min-height:30px;padding:5px 10px;border-bottom:2px solid transparent;white-space:nowrap;color:#b7c2d2;font-size:.8125rem; }
+.workspace-modes button[aria-current=page] { color:#eef4ff;border-bottom-color:#83aff1;background:#253246; }
+.workspace-mode-spacer { flex:1; }
+.workspace-revision { display:flex;gap:6px;align-items:center;color:#a9b7c9;font-size:.75rem;white-space:nowrap;padding:0 8px; }
+.tool-workspace { min-width:0; }
+.ui-icon { display:block; width:18px; height:18px; flex:none; }
+.workspace .topbar {
+  min-height:52px;
+  height:auto;
+  padding:8px 16px;
+  gap:8px 20px;
+  background:#202226;
+  border-bottom:1px solid #ffffff0a;
+  -webkit-app-region:drag;
+  user-select:none;
+}
+:root[data-platform=darwin] .workspace .topbar {
+  padding-left:var(--native-titlebar-gutter,88px);
+  min-height:max(52px,var(--native-titlebar-height,52px));
+}
+.titlebar-leading { display:flex; align-items:center; gap:16px; min-width:0; }
+.topbar .brand { gap:9px; color:#a7b7cf; flex:none; }
+.topbar .brand strong { font-size:16px; font-weight:600; letter-spacing:-.3px; }
+.topbar .brand .ui-icon { width:19px; height:19px; }
+.titlebar-divider { width:1px; height:18px; background:#ffffff14; flex:none; }
+.topbar button,.topbar select,.topbar label,.topbar details { -webkit-app-region:no-drag; }
+.release-switcher { position:relative; min-width:0; font-size:.8125rem; }
+.release-switcher>summary { display:flex; align-items:center; gap:10px; min-height:34px; padding:5px 8px; border-radius:5px; cursor:pointer; color:#d5dae2; list-style:none; }
+.release-switcher>summary::-webkit-details-marker { display:none; }
+.release-switcher>summary:hover,.release-switcher[open]>summary { background:#ffffff09; }
+.release-date { color:#a0a8b5; font-size:.75rem; }
+.release-switcher>summary .ui-icon { width:14px; height:14px; color:#9ca7b7; }
+.release-popover { position:absolute; z-index:100; top:calc(100% + 7px); left:0; width:min(420px,calc(100vw - 200px)); min-width:240px; max-height:65vh; overflow:auto; padding:7px; color:#dce3ed; border:1px solid #4a5362; background:#242931; border-radius:9px; box-shadow:0 16px 50px #0008,0 2px 8px #0007; user-select:text; }
+.release-popover-heading { display:flex; flex-direction:column; gap:4px; padding:10px 10px 12px; border-bottom:1px solid #ffffff10; }
+.release-popover-heading strong { font-size:.875rem; font-weight:500; }
+.release-popover-heading>span { color:#b1bed0; font-size:.75rem; }
+.release-option { display:block; width:100%; padding:11px 10px; text-align:left; border-radius:5px; margin-top:3px; }
+.release-option:hover { background:#33445c; }
+.release-option[aria-current=true] { background:#2d3b4e; }
+.release-option-main { display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.release-option-main time { font-size:.8125rem; color:#e0e8f5; }
+.release-option-main .ui-icon { color:#a4c9ff; }
+.release-option code { display:block; margin-top:5px; font-size:.75rem; color:#b7c6dd; overflow-wrap:anywhere; }
+.release-option small { display:block; margin-top:7px; font-size:.75rem; color:#b5bfcc; line-height:1.5; }
+.topbar .desktop-top-actions { gap:10px; margin-left:auto; }
+.desktop-top-actions .titlebar-action { display:flex; align-items:center; gap:7px; min-height:34px; padding:5px 9px; border:1px solid transparent; color:#c5ccd7; font-size:.8125rem; border-radius:5px; }
+.titlebar-action:hover { background:#ffffff09; color:#f0f3f7; }
+.titlebar-action .ui-icon { color:#9caabd; width:16px; height:16px; }
+.desktop-top-actions .language-control { position:relative; gap:4px; min-height:34px; padding-left:8px; color:#aab6c8; border-left:1px solid #ffffff10; }
+.language-control>.ui-icon:first-child { width:15px; height:15px; pointer-events:none; }
+.desktop-top-actions .language-control select { appearance:none; font-size:.8125rem; min-height:32px; max-width:none; padding:4px 23px 4px 5px; background:transparent; border:1px solid transparent; border-radius:5px; cursor:pointer; }
+.language-control select:hover { background:#ffffff09; }
+.language-control>.ui-icon:last-child { position:absolute; right:4px; width:13px; height:13px; pointer-events:none; }
+.workspace .navigation-bar { min-height:40px; height:auto; padding:4px 16px; gap:12px; background:#1b1e23; border-bottom:1px solid #32363e; justify-content:space-between; font-size:.8125rem; }
+.breadcrumb-trail { display:flex; align-items:center; gap:7px; min-width:0; flex:1; }
+.breadcrumb-trail button { color:#b8c3d3; white-space:nowrap; flex:none; min-height:30px; padding:4px 6px; }
+.breadcrumb-trail button:hover { background:#ffffff07; color:#f0f4fa; }
+.breadcrumb-trail .navigation-back { display:flex; align-items:center; justify-content:center; width:28px; padding:4px; margin-right:6px; }
+.breadcrumb-divider { color:#657286; flex:none; }
+.breadcrumb-current { min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#e0e6f0; font-weight:500; }
+.navigation-bar .return-world { display:flex; align-items:center; gap:6px; min-height:30px; padding:4px 6px; color:#b2c1d6; flex:none; }
+.return-world .ui-icon { width:15px; height:15px; }
+.return-world:hover { color:#e0eeff; background:#ffffff07; }
+.startup::before { content:''; position:fixed; inset:0 0 auto; height:max(52px,var(--native-titlebar-height,52px)); -webkit-app-region:drag; }
+@media(max-width:860px) {
+  .workspace .topbar { gap:4px 14px; }
+  .titlebar-leading { gap:10px; }
+  .topbar .desktop-top-actions { gap:5px; }
+  .release-date { display:none; }
+  .navigation-bar .return-world span { display:none; }
+  .navigation-bar .return-world { width:30px; justify-content:center; }
+}
+
+.release-dataset { display:flex; flex-direction:column; gap:5px; margin-top:7px; color:#b7c6da; font-size:.75rem; }
+.release-dataset select { width:100%; font-size:.875rem; min-height:34px; }

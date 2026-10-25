@@ -1,0 +1,81 @@
+import type { HistoryLocale } from '@gitworld/domain';
+
+const messages = {
+  en: {
+    navigationRecipe:'Navigation scope',followWorking:'Follows working data',fixedNavigation:'Navigation fixed at',unassignedScope:'Unassigned material',allMaterialScope:'All material',navigationContexts:'Contexts: {count}',navigationIdentifiers:'Navigation identifiers',
+    research: 'Research', newRecord: 'New investigation', records: 'Investigations', noRecords: 'No investigations saved yet.',
+    listFilter: 'Find an investigation', untitled: 'Untitled investigation', chooseRecord: 'Open an investigation or start with a question.',
+    question: 'Question', questionPlaceholder: 'What are you investigating?', scope: 'Scope', query: 'Name or keyword',
+    from: 'From year', to: 'To year', timeHint: 'Use negative years for BCE. Leave both dates empty for no date filter.',
+    useScope: 'Use current scope', exploreScope: 'Explore this scope', objects: { one: '{count} selected object', other: '{count} selected objects' }, fields: { one: '{count} selected field', other: '{count} selected fields' },
+    interpretation: 'Working interpretation', interpretationPlaceholder: 'What does the evidence support so far?',
+    openQuestions: 'Open questions', openQuestionsPlaceholder: 'One unresolved question per line',
+    evidence: 'Evidence', noEvidence: 'Select a source, claim, object or historical state in exploration to attach its fixed reference.',
+    addEvidence: 'Attach current evidence', removeEvidence: 'Remove {title}', inspect: 'Inspect', source: 'Source', assertion: 'Claim',
+    remove: 'Remove', evidenceCount: 'Attached references: {count}', evidenceShown: 'Showing {shown} of {total}', showMoreEvidence: 'Show more', showAllEvidence: 'Show all', collapseEvidence: 'Collapse',
+    object: 'Object', historicalState: 'Historical state', fixedComparison: 'Fixed comparison', attachComparison: 'Attach current comparison',
+    removeComparison: 'Remove comparison', endpointA: 'A', endpointB: 'B', repositoryRevision: 'Data revision', locator: 'Locator',
+    historicalTime: 'Historical time', includesUnreviewed: 'Includes unreviewed claims',
+    save: 'Save working changes', saving: 'Saving…', saved: 'Saved to working changes', unsaved: 'Unsaved input', draft: 'Unsaved draft',
+    reviewChanges: 'Review changes', returnExplore: 'Return to exploration', history: 'Data revisions', noHistory: 'No committed revision of this record yet.',
+    previous: 'Previous revision', working: 'Working record', closeRevision: 'Close revision', loading: 'Loading…',
+    changed: 'Changed', same: 'Unchanged', removed: 'Removed', added: 'Added', details: 'Reference details',
+    titleRequired: 'Enter a research question before saving.', invalidTime: 'Enter both year bounds, in order. Historical year zero is not valid.',
+    recovered: 'Recovered unsaved input', conflict: 'The saved record changed. Keep this draft as a new investigation or reload the saved record.',
+    unavailable: 'The local service is unavailable. Your input remains here.', invalidRecord: 'The record could not be saved. Check its fields and references.',
+    failed: 'The operation could not be completed. Your input remains here.', retry: 'Retry', errorCode: 'Error code',
+    saveAsNew: 'Keep draft as new investigation', reloadSaved: 'Reload saved record', reloadConfirm: 'Replace this unsaved input with the saved record?',
+    replaceInput: 'Replace input', keepEditing: 'Keep editing', edited: 'Edited {date}', sourceLanguage: 'Source text',
+    discardDraft: 'Discard draft', discardNew: 'Discard this unfinished investigation? No research record has been saved.',
+    discardEdit: 'Discard these unsaved edits? The saved research record will remain.',
+    replaceDraft: 'Save or discard the current input before opening another investigation.',
+    saveContinue: 'Save and continue', discardContinue: 'Discard and continue',
+    revisionUnavailable: 'That committed revision could not be opened.', scopeEmpty: 'No object or date filter',
+    recoveryError: 'The draft could not be stored. Your input remains here; retry before leaving.',
+    refreshFailed: 'The working record was saved, but its list or revision history could not be refreshed.',
+    bce: '{year} BCE', period: '{from}–{to}',
+  },
+  'zh-CN': {
+    navigationRecipe:'导航范围',followWorking:'跟随工作资料',fixedNavigation:'导航固定于',unassignedScope:'未分配背景的资料',allMaterialScope:'全部资料',navigationContexts:'背景数：{count}',navigationIdentifiers:'导航标识',
+    research: '研究记录', newRecord: '新建研究', records: '研究', noRecords: '尚未保存研究记录。',
+    listFilter: '查找研究记录', untitled: '未命名研究', chooseRecord: '打开一项研究，或从一个问题开始。',
+    question: '研究问题', questionPlaceholder: '你正在研究什么？', scope: '研究范围', query: '名称或关键词',
+    from: '起始年份', to: '结束年份', timeHint: '负数表示公元前。两个年份都留空时不按日期筛选。',
+    useScope: '采用当前范围', exploreScope: '探索这个范围', objects: '已选 {count} 个对象', fields: '已选 {count} 个字段',
+    interpretation: '暂时的理解', interpretationPlaceholder: '目前的证据支持什么判断？',
+    openQuestions: '尚待解决的问题', openQuestionsPlaceholder: '每行记录一个未解决的问题',
+    evidence: '依据', noEvidence: '在探索中选择来源、主张、对象或历史状态，即可附上其固定版本引用。',
+    addEvidence: '附上当前依据', removeEvidence: '移除 {title}', inspect: '查看', source: '来源', assertion: '主张',
+    remove: '移除', evidenceCount: '已附引用：{count} 条', evidenceShown: '当前显示 {shown}/{total} 条', showMoreEvidence: '显示更多', showAllEvidence: '显示全部', collapseEvidence: '收起',
+    object: '对象', historicalState: '历史状态', fixedComparison: '固定比较', attachComparison: '附上当前比较',
+    removeComparison: '移除比较', endpointA: 'A', endpointB: 'B', repositoryRevision: '资料版本', locator: '定位信息',
+    historicalTime: '历史时间', includesUnreviewed: '包含未审阅主张',
+    save: '保存工作变化', saving: '正在保存…', saved: '已保存为工作变化', unsaved: '有未保存输入', draft: '未保存草稿',
+    reviewChanges: '审阅变化', returnExplore: '返回探索', history: '资料修订记录', noHistory: '这项研究尚无已提交版本。',
+    previous: '较早版本', working: '工作记录', closeRevision: '关闭旧版本', loading: '正在读取…',
+    changed: '有变化', same: '未变化', removed: '已移除', added: '已添加', details: '引用详情',
+    titleRequired: '保存前请填写研究问题。', invalidTime: '请按先后填写两个年份。历史年份不能为零。',
+    recovered: '已恢复未保存输入', conflict: '已保存记录发生了变化。可将当前草稿另存为新研究，或重新读取已保存记录。',
+    unavailable: '本地服务暂不可用，当前输入仍保留。', invalidRecord: '记录未能保存，请检查字段与引用。',
+    failed: '操作未完成，当前输入仍保留。', retry: '重试', errorCode: '错误代码',
+    saveAsNew: '将草稿另存为新研究', reloadSaved: '重新读取已保存记录', reloadConfirm: '用已保存记录替换这些未保存输入？',
+    replaceInput: '替换输入', keepEditing: '继续编辑', edited: '修改于 {date}', sourceLanguage: '来源原文',
+    discardDraft: '放弃草稿', discardNew: '放弃这项未完成的研究？目前尚未保存研究记录。',
+    discardEdit: '放弃这些未保存的修改？已保存的研究记录会保留。',
+    replaceDraft: '打开另一项研究前，请先保存或放弃当前输入。',
+    saveContinue: '保存并继续', discardContinue: '放弃并继续',
+    revisionUnavailable: '无法打开这次提交中的研究版本。', scopeEmpty: '未限定对象或日期',
+    recoveryError: '草稿暂未能存储，输入仍在这里；离开前请重试。',
+    refreshFailed: '工作记录已保存，但列表或修订记录暂未刷新。',
+    bce: '公元前 {year} 年', period: '{from}–{to}',
+  },
+} as const;
+export type ResearchCopyKey = keyof typeof messages.en;
+type Parameters = { navigationContexts:{count:number}; objects: { count: number }; fields: { count: number }; removeEvidence: { title: string }; edited: { date: string }; bce: { year: number }; period: { from: string; to: string }; evidenceCount: { count: number }; evidenceShown: { shown: number; total: number } };
+export function researchCopy<K extends ResearchCopyKey>(locale: HistoryLocale, key: K, ...args: K extends keyof Parameters ? [Parameters[K]] : []): string {
+  const values = args[0] as Record<string, string | number> | undefined;
+  const template = messages[locale][key];
+  let message: string = typeof template === 'string' ? template : template[new Intl.PluralRules(locale).select(Number(values?.count)) === 'one' ? 'one' : 'other'];
+  for (const [name, value] of Object.entries(values ?? {})) message = message.replaceAll(`{${name}}`, typeof value === 'number' ? new Intl.NumberFormat(locale).format(value) : value);
+  return message;
+}

@@ -1,0 +1,527 @@
+{
+  "schemaVersion": 1,
+  "id": "explicit-jin-wu-integration",
+  "revision": "2-candidate-source-text-separation",
+  "preparedAt": "2026-10-24T23:14:12.815Z",
+  "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/historical-transformations-prd.md",
+  "rights": {
+    "licenseId": "CC-BY-SA-4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "redistribution": "allowed",
+    "attribution": "GitWorld selected and interpreted the explicitly identified source fields, retained exact source versions/hashes and separately identified bilingual modeling labels. Source-derived content remains CC-BY-SA-4.0; no official endorsement."
+  },
+  "profiles": [
+    {
+      "id": "jin-wu-integration",
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "15051666"
+      },
+      "revision": "1379420937",
+      "contentHash": "aa14fab85b067c8dbc16c775520a1b72f2de6e5e5a22b70760702ff8976c83e3",
+      "citation": {
+        "title": "Conquest of Wu by Jin",
+        "language": "en",
+        "creator": "English Wikipedia contributors",
+        "rightsEvidence": [
+          "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "https://creativecommons.org/licenses/by-sa/4.0/"
+        ],
+        "rightsNote": "Selected fixed-revision facts remain CC-BY-SA-4.0; article prose, images and HTML are excluded. Exact revision and author history accompany the source."
+      },
+      "facts": [
+        {
+          "id": "date",
+          "selector": {
+            "kind": "table-field",
+            "tableClass": "infobox",
+            "tableIndex": 0,
+            "header": "Date"
+          },
+          "textHash": "38a83fc940dee6c86883c2b006fc72847ffebf1063fd80b900a5e5fc79f0298c",
+          "includeText": true
+        },
+        {
+          "id": "result",
+          "selector": {
+            "kind": "table-field",
+            "tableClass": "infobox",
+            "tableIndex": 0,
+            "header": "Result"
+          },
+          "textHash": "d8a02a2d0770b429a3c9b3f5ae7418b8382404b7cbfb46047d01806d5ba0756f",
+          "includeText": true
+        },
+        {
+          "id": "territorial-outcome",
+          "selector": {
+            "kind": "table-field",
+            "tableClass": "infobox",
+            "tableIndex": 0,
+            "header": "Territorial changes"
+          },
+          "textHash": "76d817b5569b2c65e66f429ea3ba8bc6efe1178af4ffa4678811b02c0cf02a7d",
+          "includeText": true
+        },
+        {
+          "id": "jin-participant",
+          "selector": {
+            "kind": "section-cell",
+            "tableClass": "infobox",
+            "tableIndex": 0,
+            "heading": "Belligerents",
+            "rowOffset": 1,
+            "column": 0
+          },
+          "textHash": "4649e5098fb61731f7107feb410c727d2824a58decb45aa9361befb832afa7e8",
+          "includeText": true
+        },
+        {
+          "id": "wu-participant",
+          "selector": {
+            "kind": "section-cell",
+            "tableClass": "infobox",
+            "tableIndex": 0,
+            "heading": "Belligerents",
+            "rowOffset": 1,
+            "column": 1
+          },
+          "textHash": "00c1e468e4e4b1d39812fd02c8c5a0cba81828a5682eced2a6ca1e50afe43e42",
+          "includeText": true
+        }
+      ]
+    },
+    {
+      "id": "jin-context",
+      "identity": {
+        "provider": "wikipedia-en",
+        "externalId": "55020"
+      },
+      "revision": "1359294647",
+      "contentHash": "4a52801e3f93d2774f2a0bafdbe88cc1a5756bfbf88c87199bd25962baafbd8f",
+      "citation": {
+        "title": "Jin dynasty (266–420)",
+        "language": "en",
+        "creator": "English Wikipedia contributors",
+        "rightsEvidence": [
+          "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+          "https://creativecommons.org/licenses/by-sa/4.0/"
+        ],
+        "rightsNote": "Selected fixed-revision facts remain CC-BY-SA-4.0; article prose, images and HTML are excluded. Exact revision and author history accompany the source."
+      },
+      "facts": [
+        {
+          "id": "western-phase",
+          "selector": {
+            "kind": "element",
+            "tag": "h3",
+            "id": "Western_Jin_(266–316)"
+          },
+          "textHash": "0954efd4a774f774373c45b4f1b00ca55c605b862fb6405d00cb49e8833386cc",
+          "includeText": true
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "history:event:jin-incorporation-of-wu-280",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:event:jin-incorporation-of-wu-280"
+        }
+      ],
+      "types": [
+        "gitworld:political-integration"
+      ],
+      "labels": {
+        "en": "Jin conquest and incorporation of Wu",
+        "zh-CN": "晋灭吴与政治整合"
+      },
+      "descriptions": {
+        "en": "Jin defeated Wu in 280; the source records political integration as the outcome.",
+        "zh-CN": "晋于280年灭吴；来源明确记载了政治整合的结果。"
+      },
+      "aliases": []
+    }
+  ],
+  "statements": [
+    {
+      "id": "incorporator",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:incorporating-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:western-jin"
+      },
+      "factKeys": [
+        "jin-wu-integration:territorial-outcome",
+        "jin-wu-integration:result",
+        "jin-wu-integration:jin-participant",
+        "jin-wu-integration:wu-participant",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "month": 5,
+          "day": 1,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "1 May 280"
+        }
+      },
+      "timeFactKeys": [
+        "jin-wu-integration:date"
+      ],
+      "interpretation": {
+        "en": "The territorial-outcome field explicitly states unification under Jin. The participant is bound to the Western Jin phase with the separately selected phase heading, not by ruler-table order.",
+        "zh-CN": "领土结果字段明确记载晋实现统一；参与政权依据另行选取的阶段标题对应西晋，不按君主表次序推导。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:identity-scope",
+          "value": {
+            "kind": "text",
+            "value": "western-jin-phase"
+          }
+        }
+      ]
+    },
+    {
+      "id": "incorporated",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:incorporated-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:eastern-wu"
+      },
+      "factKeys": [
+        "jin-wu-integration:territorial-outcome",
+        "jin-wu-integration:result",
+        "jin-wu-integration:jin-participant",
+        "jin-wu-integration:wu-participant",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "month": 5,
+          "day": 1,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "1 May 280"
+        }
+      },
+      "timeFactKeys": [
+        "jin-wu-integration:date"
+      ],
+      "interpretation": {
+        "en": "The territorial-outcome field explicitly states unification under Jin. The participant is bound to the Western Jin phase with the separately selected phase heading, not by ruler-table order.",
+        "zh-CN": "领土结果字段明确记载晋实现统一；参与政权依据另行选取的阶段标题对应西晋，不按君主表次序推导。"
+      },
+      "qualifiers": []
+    },
+    {
+      "id": "outcome",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:stated-outcome",
+      "value": {
+        "kind": "text",
+        "value": "political-incorporation"
+      },
+      "factKeys": [
+        "jin-wu-integration:territorial-outcome",
+        "jin-wu-integration:result",
+        "jin-wu-integration:jin-participant",
+        "jin-wu-integration:wu-participant",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "month": 5,
+          "day": 1,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "1 May 280"
+        }
+      },
+      "timeFactKeys": [
+        "jin-wu-integration:date"
+      ],
+      "interpretation": {
+        "en": "The territorial-outcome field explicitly states unification under Jin. The participant is bound to the Western Jin phase with the separately selected phase heading, not by ruler-table order.",
+        "zh-CN": "领土结果字段明确记载晋实现统一；参与政权依据另行选取的阶段标题对应西晋，不按君主表次序推导。"
+      },
+      "qualifiers": []
+    },
+    {
+      "id": "campaign-start",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:campaign-start",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 279,
+          "latestYear": 280,
+          "precision": "interval",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. December 279 or January 280"
+        }
+      },
+      "factKeys": [
+        "jin-wu-integration:date"
+      ],
+      "interpretation": {
+        "en": "Preserve the published approximate alternatives; choose neither a single year nor a calendar conversion.",
+        "zh-CN": "保留来源的约略起点及备选年份，不选择某一年或擅作历法换算。"
+      },
+      "qualifiers": []
+    },
+    {
+      "id": "campaign-end",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:campaign-end",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "month": 5,
+          "day": 1,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "1 May 280"
+        }
+      },
+      "factKeys": [
+        "jin-wu-integration:date"
+      ],
+      "interpretation": {
+        "en": "The campaign conclusion and the start alternatives remain separate source dates.",
+        "zh-CN": "战役终点与起点的备选纪年分别保留。"
+      },
+      "qualifiers": []
+    },
+    {
+      "id": "participant-incorporating",
+      "subjectId": "history:polity:western-jin",
+      "propertyId": "relation:integration-event",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:jin-incorporation-of-wu-280"
+      },
+      "factKeys": [
+        "jin-wu-integration:territorial-outcome",
+        "jin-wu-integration:result",
+        "jin-wu-integration:jin-participant",
+        "jin-wu-integration:wu-participant",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "month": 5,
+          "day": 1,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "1 May 280"
+        }
+      },
+      "timeFactKeys": [
+        "jin-wu-integration:date"
+      ],
+      "interpretation": {
+        "en": "The territorial-outcome field explicitly states unification under Jin. The participant is bound to the Western Jin phase with the separately selected phase heading, not by ruler-table order.",
+        "zh-CN": "领土结果字段明确记载晋实现统一；参与政权依据另行选取的阶段标题对应西晋，不按君主表次序推导。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:participant-role",
+          "value": {
+            "kind": "text",
+            "value": "incorporating"
+          }
+        }
+      ]
+    },
+    {
+      "id": "participant-incorporated",
+      "subjectId": "history:polity:eastern-wu",
+      "propertyId": "relation:integration-event",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:jin-incorporation-of-wu-280"
+      },
+      "factKeys": [
+        "jin-wu-integration:territorial-outcome",
+        "jin-wu-integration:result",
+        "jin-wu-integration:jin-participant",
+        "jin-wu-integration:wu-participant",
+        "jin-context:western-phase"
+      ],
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "month": 5,
+          "day": 1,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "1 May 280"
+        }
+      },
+      "timeFactKeys": [
+        "jin-wu-integration:date"
+      ],
+      "interpretation": {
+        "en": "The territorial-outcome field explicitly states unification under Jin. The participant is bound to the Western Jin phase with the separately selected phase heading, not by ruler-table order.",
+        "zh-CN": "领土结果字段明确记载晋实现统一；参与政权依据另行选取的阶段标题对应西晋，不按君主表次序推导。"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:participant-role",
+          "value": {
+            "kind": "text",
+            "value": "incorporated"
+          }
+        }
+      ]
+    }
+  ],
+  "fieldCatalog": {
+    "schemaVersion": 1,
+    "kind": "historical-field-display-labels",
+    "properties": [
+      {
+        "id": "projection:rule-id",
+        "labels": {
+          "en": "Mapping rule",
+          "zh-CN": "映射规则"
+        }
+      },
+      {
+        "id": "projection:source-fact",
+        "labels": {
+          "en": "Source field",
+          "zh-CN": "来源字段"
+        }
+      },
+      {
+        "id": "transformation:incorporating-polity",
+        "labels": {
+          "en": "Incorporating polity",
+          "zh-CN": "实施整合的政权"
+        }
+      },
+      {
+        "id": "transformation:incorporated-polity",
+        "labels": {
+          "en": "Incorporated polity",
+          "zh-CN": "被整合的政权"
+        }
+      },
+      {
+        "id": "transformation:stated-outcome",
+        "labels": {
+          "en": "Documented political outcome",
+          "zh-CN": "来源明确记载的政治结果"
+        }
+      },
+      {
+        "id": "relation:integration-event",
+        "labels": {
+          "en": "Political integration",
+          "zh-CN": "政治整合"
+        }
+      },
+      {
+        "id": "transformation:campaign-start",
+        "labels": {
+          "en": "Campaign start as recorded",
+          "zh-CN": "来源所载战役起点"
+        }
+      },
+      {
+        "id": "transformation:campaign-end",
+        "labels": {
+          "en": "Campaign conclusion as recorded",
+          "zh-CN": "来源所载战役终点"
+        }
+      },
+      {
+        "id": "transformation:participant-role",
+        "labels": {
+          "en": "Role in the integration",
+          "zh-CN": "在整合中的角色"
+        }
+      },
+      {
+        "id": "transformation:identity-scope",
+        "labels": {
+          "en": "Participant identity scope",
+          "zh-CN": "参与政权的身份范围"
+        }
+      }
+    ],
+    "types": [
+      {
+        "id": "gitworld:political-integration",
+        "labels": {
+          "en": "Political integration",
+          "zh-CN": "政治整合"
+        }
+      }
+    ],
+    "values": [
+      {
+        "propertyId": "transformation:stated-outcome",
+        "value": "political-incorporation",
+        "labels": {
+          "en": "Political incorporation stated by source",
+          "zh-CN": "来源明确记载的政治整合"
+        }
+      },
+      {
+        "propertyId": "transformation:participant-role",
+        "value": "incorporating",
+        "labels": {
+          "en": "Incorporating polity",
+          "zh-CN": "实施整合的政权"
+        }
+      },
+      {
+        "propertyId": "transformation:participant-role",
+        "value": "incorporated",
+        "labels": {
+          "en": "Incorporated polity",
+          "zh-CN": "被整合的政权"
+        }
+      },
+      {
+        "propertyId": "transformation:identity-scope",
+        "value": "western-jin-phase",
+        "labels": {
+          "en": "Jin in the source-defined Western Jin phase",
+          "zh-CN": "来源所界定的西晋阶段"
+        }
+      }
+    ],
+    "semanticNotes": [
+      {
+        "ids": [
+          "transformation:stated-outcome",
+          "relation:integration-event"
+        ],
+        "en": "An explicitly sourced political outcome; it neither asserts modern territorial borders nor creates Git ancestry. Event links are dated to the event, not extended indefinitely.",
+        "zh-CN": "有明确来源的政治结果，不据此断言现代领土边界或创建 Git 继承关系。事件关系只适用于事件时间，不无限延长。"
+      }
+    ]
+  }
+}

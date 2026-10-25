@@ -1,0 +1,4855 @@
+{
+  "schemaVersion": 1,
+  "objects": [
+    {
+      "id": "history:polity:cao-wei",
+      "identities": [
+        {
+          "provider": "gitworld-declared-historical-subject",
+          "externalId": "history:polity:cao-wei"
+        }
+      ],
+      "labels": {
+        "en": "Cao Wei",
+        "zh-CN": "曹魏"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:polity"
+      ]
+    },
+    {
+      "id": "history:polity:shu-han",
+      "identities": [
+        {
+          "provider": "gitworld-declared-historical-subject",
+          "externalId": "history:polity:shu-han"
+        }
+      ],
+      "labels": {
+        "en": "Shu Han",
+        "zh-CN": "蜀汉"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:polity"
+      ]
+    },
+    {
+      "id": "history:polity:eastern-wu",
+      "identities": [
+        {
+          "provider": "gitworld-declared-historical-subject",
+          "externalId": "history:polity:eastern-wu"
+        }
+      ],
+      "labels": {
+        "en": "Eastern Wu",
+        "zh-CN": "孙吴"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:polity"
+      ]
+    },
+    {
+      "id": "history:polity:western-jin",
+      "identities": [
+        {
+          "provider": "gitworld-declared-historical-subject",
+          "externalId": "history:polity:western-jin"
+        }
+      ],
+      "labels": {
+        "en": "Western Jin",
+        "zh-CN": "西晋"
+      },
+      "descriptions": {},
+      "aliases": [],
+      "types": [
+        "gitworld:polity"
+      ]
+    },
+    {
+      "id": "history:event:jin-incorporation-of-wu-280",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:event:jin-incorporation-of-wu-280"
+        }
+      ],
+      "types": [
+        "gitworld:political-integration"
+      ],
+      "labels": {
+        "en": "Jin conquest and incorporation of Wu",
+        "zh-CN": "晋灭吴与政治整合"
+      },
+      "descriptions": {
+        "en": "Jin defeated Wu in 280; the source records political integration as the outcome.",
+        "zh-CN": "晋于280年灭吴；来源明确记载了政治整合的结果。"
+      },
+      "aliases": []
+    },
+    {
+      "id": "history:event:wei-conquest-of-shu-263",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:event:wei-conquest-of-shu-263"
+        }
+      ],
+      "types": [
+        "gitworld:political-transition"
+      ],
+      "labels": {
+        "en": "Wei conquest of Shu Han",
+        "zh-CN": "魏灭蜀汉"
+      },
+      "descriptions": {
+        "en": "Wei’s campaign ended Shu Han in 263; uncertain months are retained in the source date.",
+        "zh-CN": "魏于263年征服蜀汉；来源中的约略月份予以保留。"
+      },
+      "aliases": []
+    },
+    {
+      "id": "history:event:wei-jin-dynastic-replacement-266",
+      "identities": [
+        {
+          "provider": "gitworld-declared-evidenced-subject",
+          "externalId": "history:event:wei-jin-dynastic-replacement-266"
+        }
+      ],
+      "types": [
+        "gitworld:political-transition"
+      ],
+      "labels": {
+        "en": "Replacement of Cao Wei by Western Jin",
+        "zh-CN": "曹魏与西晋的王朝更替"
+      },
+      "descriptions": {
+        "en": "The fixed source describes Cao Huan’s forced abdication and Sima Yan’s establishment of Jin in 266.",
+        "zh-CN": "固定来源记载曹奂被迫退位及司马炎于266年建立晋。"
+      },
+      "aliases": []
+    }
+  ],
+  "assertions": [
+    {
+      "id": "evidenced-field:c5ceca967de26790d666972e9ab9a37f7d40ccaa",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:incorporating-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:western-jin"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:identity-scope",
+          "value": {
+            "kind": "text",
+            "value": "western-jin-phase"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "explicit-jin-wu-integration@2-candidate-source-text-separation:incorporator"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:territorial-outcome"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:jin-participant"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:wu-participant"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[2];$.text;table.infobox[0].tr[7].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[1];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[9].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[4];$.text;table.infobox[0].tr[9].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[0];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "month": 5,
+          "day": 1,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "1 May 280"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:bdd7f7f689bc35741a6946cd6b0009965886a648",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:incorporated-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:eastern-wu"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "explicit-jin-wu-integration@2-candidate-source-text-separation:incorporated"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:territorial-outcome"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:jin-participant"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:wu-participant"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[2];$.text;table.infobox[0].tr[7].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[1];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[9].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[4];$.text;table.infobox[0].tr[9].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[0];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "month": 5,
+          "day": 1,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "1 May 280"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:82b5bfca960433b92eb607c72225f128b605cebd",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:stated-outcome",
+      "value": {
+        "kind": "text",
+        "value": "political-incorporation"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "explicit-jin-wu-integration@2-candidate-source-text-separation:outcome"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:territorial-outcome"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:jin-participant"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:wu-participant"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[2];$.text;table.infobox[0].tr[7].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[1];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[9].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[4];$.text;table.infobox[0].tr[9].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[0];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "month": 5,
+          "day": 1,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "1 May 280"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:4311b3954f8b8ebf677de84fbc0d631f9e63e4d1",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:campaign-start",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 279,
+          "latestYear": 280,
+          "precision": "interval",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. December 279 or January 280"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "explicit-jin-wu-integration@2-candidate-source-text-separation:campaign-start"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[0];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:c982885d82d59f01fa7939c8323fba14442a4535",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:campaign-end",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "month": 5,
+          "day": 1,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "1 May 280"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "explicit-jin-wu-integration@2-candidate-source-text-separation:campaign-end"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[0];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:791795599786898e30d62a9bf9d0f179003d7531",
+      "subjectId": "history:polity:western-jin",
+      "propertyId": "relation:integration-event",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:jin-incorporation-of-wu-280"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:participant-role",
+          "value": {
+            "kind": "text",
+            "value": "incorporating"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "explicit-jin-wu-integration@2-candidate-source-text-separation:participant-incorporating"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:territorial-outcome"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:jin-participant"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:wu-participant"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[2];$.text;table.infobox[0].tr[7].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[1];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[9].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[4];$.text;table.infobox[0].tr[9].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[0];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "month": 5,
+          "day": 1,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "1 May 280"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:7af23f06800d9ebac6027b0c6384ae2134dd8344",
+      "subjectId": "history:polity:eastern-wu",
+      "propertyId": "relation:integration-event",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:jin-incorporation-of-wu-280"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:participant-role",
+          "value": {
+            "kind": "text",
+            "value": "incorporated"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "explicit-jin-wu-integration@2-candidate-source-text-separation:participant-incorporated"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:territorial-outcome"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:jin-participant"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:wu-participant"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[2];$.text;table.infobox[0].tr[7].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[1];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[9].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[4];$.text;table.infobox[0].tr[9].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+          "locator": "$.facts[0];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "month": 5,
+          "day": 1,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "1 May 280"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:e622cbe63b41d0f8ed800b22d7cd8e42df2b2e89",
+      "subjectId": "history:event:wei-conquest-of-shu-263",
+      "propertyId": "transformation:outgoing-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:shu-han"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:263-outgoing"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:wei"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:shu"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:summary"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[1];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[2];$.text;table.infobox[0].tr[8].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[8].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[4];$.text;p[document-index=209]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[0];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 263,
+          "latestYear": 263,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "263"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:addeb58d1facc5960db7dac2af52a46d3a8df428",
+      "subjectId": "history:event:wei-conquest-of-shu-263",
+      "propertyId": "transformation:incoming-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:cao-wei"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:263-incoming"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:wei"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:shu"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:summary"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[1];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[2];$.text;table.infobox[0].tr[8].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[8].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[4];$.text;p[document-index=209]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[0];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 263,
+          "latestYear": 263,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "263"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:092c0c5cb09077a9965dce9531cc21e6aa1c9f46",
+      "subjectId": "history:event:wei-conquest-of-shu-263",
+      "propertyId": "transformation:mechanism",
+      "value": {
+        "kind": "text",
+        "value": "military-conquest"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:263-mechanism"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:wei"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:shu"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:summary"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[1];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[2];$.text;table.infobox[0].tr[8].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[8].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[4];$.text;p[document-index=209]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[0];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 263,
+          "latestYear": 263,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "263"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:d039aa20295afdf7dcf6fcd88413511e9e0421da",
+      "subjectId": "history:event:wei-conquest-of-shu-263",
+      "propertyId": "transformation:stated-outcome",
+      "value": {
+        "kind": "text",
+        "value": "fall-of-conquered-polity"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:263-outcome"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:wei"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:shu"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:summary"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[1];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[2];$.text;table.infobox[0].tr[8].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[8].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[4];$.text;p[document-index=209]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[0];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 263,
+          "latestYear": 263,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "263"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:bccbda48d184c7e6fe062b75f5f5986768bb1652",
+      "subjectId": "history:event:wei-conquest-of-shu-263",
+      "propertyId": "transformation:source-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 263,
+          "latestYear": 263,
+          "precision": "interval",
+          "calendar": "source-calendar-unspecified",
+          "raw": "c. September or October – November or December 263"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:263-source-date"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[0];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:a5b14f0a528fbc0c6d45283c57f8750c5c9ccc1f",
+      "subjectId": "history:polity:shu-han",
+      "propertyId": "relation:political-transition",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:wei-conquest-of-shu-263"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:transition-role",
+          "value": {
+            "kind": "text",
+            "value": "outgoing"
+          }
+        },
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:263-outgoing-link"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:wei"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:shu"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:summary"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[1];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[2];$.text;table.infobox[0].tr[8].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[8].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[4];$.text;p[document-index=209]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[0];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 263,
+          "latestYear": 263,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "263"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:cc1f5edee1f58ac090098e108435f3a04dc77cb4",
+      "subjectId": "history:polity:cao-wei",
+      "propertyId": "relation:political-transition",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:wei-conquest-of-shu-263"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:transition-role",
+          "value": {
+            "kind": "text",
+            "value": "incoming"
+          }
+        },
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:263-incoming-link"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:wei"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:shu"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:summary"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "wei-shu-conquest:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[1];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[2];$.text;table.infobox[0].tr[8].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[3];$.text;table.infobox[0].tr[8].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[4];$.text;p[document-index=209]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[0];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 263,
+          "latestYear": 263,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "263"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:fcbab05e0bca832a7d1c00fd8c4c73f4f2b947ab",
+      "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+      "propertyId": "transformation:outgoing-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:cao-wei"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:266-outgoing"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:replacement"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-identity"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[7];$.text;p[document-index=944]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[6];$.text;p[document-index=862]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 266,
+          "latestYear": 266,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "266"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:f420ba50e2c0692529d9d80f07a2eb75dcd378c6",
+      "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+      "propertyId": "transformation:incoming-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:western-jin"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:266-incoming"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:replacement"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-identity"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[7];$.text;p[document-index=944]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[6];$.text;p[document-index=862]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 266,
+          "latestYear": 266,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "266"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:1059b161d4360d6680de2b34287f8fabb9bf9980",
+      "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+      "propertyId": "transformation:mechanism",
+      "value": {
+        "kind": "text",
+        "value": "dynastic-replacement"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:266-mechanism"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:replacement"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-identity"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[7];$.text;p[document-index=944]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[6];$.text;p[document-index=862]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 266,
+          "latestYear": 266,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "266"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:9be7ece0ae2ea81a874e16665c1196bbef3b8dea",
+      "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+      "propertyId": "transformation:stated-outcome",
+      "value": {
+        "kind": "text",
+        "value": "dynastic-replacement"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:266-outcome"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:replacement"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-identity"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[7];$.text;p[document-index=944]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[6];$.text;p[document-index=862]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 266,
+          "latestYear": 266,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "266"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:cfcac33e64d5839e5d8dbded18d45db1a0461a49",
+      "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+      "propertyId": "transformation:source-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 266,
+          "latestYear": 266,
+          "month": 2,
+          "day": 4,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "4 February 266"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:266-source-date"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:replacement"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-identity"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[7];$.text;p[document-index=944]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[6];$.text;p[document-index=862]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:9754ecb7166d1d96f7c6caec6450e1cc3510d078",
+      "subjectId": "history:polity:cao-wei",
+      "propertyId": "relation:political-transition",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:wei-jin-dynastic-replacement-266"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:transition-role",
+          "value": {
+            "kind": "text",
+            "value": "outgoing"
+          }
+        },
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:266-outgoing-link"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:replacement"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-identity"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[7];$.text;p[document-index=944]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[6];$.text;p[document-index=862]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 266,
+          "latestYear": 266,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "266"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:b429ab942251d9eef1af455f233746ae2d6737d9",
+      "subjectId": "history:polity:western-jin",
+      "propertyId": "relation:political-transition",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:wei-jin-dynastic-replacement-266"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:transition-role",
+          "value": {
+            "kind": "text",
+            "value": "incoming"
+          }
+        },
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:266-incoming-link"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:replacement"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-identity"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[7];$.text;p[document-index=944]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[6];$.text;p[document-index=862]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 266,
+          "latestYear": 266,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "266"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:f4004580f79547a1e6df48b473f061459aa6e5c7",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:outgoing-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:eastern-wu"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:280-outgoing"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:territorial-outcome"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:jin"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:wu"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[9];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[10];$.text;table.infobox[0].tr[7].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[11];$.text;table.infobox[0].tr[9].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[12];$.text;table.infobox[0].tr[9].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[8];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "280"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:ceea76fdfda08006262d92d57517d4d23265fa8d",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:incoming-polity",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:polity:western-jin"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:280-incoming"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:territorial-outcome"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:jin"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:wu"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[9];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[10];$.text;table.infobox[0].tr[7].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[11];$.text;table.infobox[0].tr[9].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[12];$.text;table.infobox[0].tr[9].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[8];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "280"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:38d3af6b8dbd1d706d3c9cf0b860f28a6f165cc5",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:mechanism",
+      "value": {
+        "kind": "text",
+        "value": "military-conquest"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:280-mechanism"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:territorial-outcome"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:jin"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:wu"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[9];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[10];$.text;table.infobox[0].tr[7].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[11];$.text;table.infobox[0].tr[9].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[12];$.text;table.infobox[0].tr[9].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[8];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "280"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:f464d0012c1f201e52bc8c28858f67e50501e111",
+      "subjectId": "history:event:jin-incorporation-of-wu-280",
+      "propertyId": "transformation:source-date",
+      "value": {
+        "kind": "time",
+        "value": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "month": 5,
+          "day": 1,
+          "precision": "day",
+          "calendar": "source-calendar-unspecified",
+          "raw": "1 May 280"
+        }
+      },
+      "qualifiers": [
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:280-source-date"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[8];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed"
+    },
+    {
+      "id": "evidenced-field:a5c5687039b95b2088bb2d6467d4743ab4f9279f",
+      "subjectId": "history:polity:eastern-wu",
+      "propertyId": "relation:political-transition",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:jin-incorporation-of-wu-280"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:transition-role",
+          "value": {
+            "kind": "text",
+            "value": "outgoing"
+          }
+        },
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:280-outgoing-link"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:territorial-outcome"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:jin"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:wu"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[9];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[10];$.text;table.infobox[0].tr[7].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[11];$.text;table.infobox[0].tr[9].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[12];$.text;table.infobox[0].tr[9].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[8];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "280"
+        }
+      }
+    },
+    {
+      "id": "evidenced-field:b01ba06c05e638643411bf39fc526d9a3b99deb8",
+      "subjectId": "history:polity:western-jin",
+      "propertyId": "relation:political-transition",
+      "value": {
+        "kind": "entity",
+        "objectId": "history:event:jin-incorporation-of-wu-280"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "transformation:transition-role",
+          "value": {
+            "kind": "text",
+            "value": "incoming"
+          }
+        },
+        {
+          "propertyId": "temporal:resolution-policy",
+          "value": {
+            "kind": "text",
+            "value": "source-year-not-converted-day"
+          }
+        },
+        {
+          "propertyId": "projection:rule-id",
+          "value": {
+            "kind": "text",
+            "value": "three-kingdoms-evidenced-political-transitions@1-local-evidenced-candidate:280-incoming-link"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:result"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:territorial-outcome"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:jin"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:wu"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-context:western-phase"
+          }
+        },
+        {
+          "propertyId": "projection:source-fact",
+          "value": {
+            "kind": "text",
+            "value": "jin-wu-integration:date"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[9];$.text;table.infobox[0].tr[6].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[10];$.text;table.infobox[0].tr[7].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[11];$.text;table.infobox[0].tr[9].cell[0]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[12];$.text;table.infobox[0].tr[9].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[5];$.text;h3[document-index=934]#Western_Jin_(266–316)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647"
+        },
+        {
+          "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+          "locator": "$.facts[8];$.text;table.infobox[0].tr[4].cell[1]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "review": "unreviewed",
+      "validTime": {
+        "point": {
+          "earliestYear": 280,
+          "latestYear": 280,
+          "precision": "year",
+          "calendar": "source-calendar-unspecified",
+          "raw": "280"
+        }
+      }
+    }
+  ],
+  "sources": [
+    {
+      "id": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "identity": {
+        "provider": "gitworld-evidenced-fields",
+        "externalId": "explicit-jin-wu-integration"
+      },
+      "revision": "2-candidate-source-text-separation",
+      "contentHash": "9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "retrievedAt": "2026-10-24T23:14:12.815Z",
+      "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/historical-transformations-prd.md",
+      "adapterVersion": "evidenced-published-fields-v2",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "allowed",
+        "attribution": "GitWorld selected and interpreted the explicitly identified source fields, retained exact source versions/hashes and separately identified bilingual modeling labels. Source-derived content remains CC-BY-SA-4.0; no official endorsement."
+      },
+      "record": {
+        "schemaVersion": 1,
+        "mappingVersion": "evidenced-published-fields-v2",
+        "plan": {
+          "schemaVersion": 1,
+          "id": "explicit-jin-wu-integration",
+          "revision": "2-candidate-source-text-separation",
+          "preparedAt": "2026-10-24T23:14:12.815Z",
+          "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/historical-transformations-prd.md",
+          "rights": {
+            "licenseId": "CC-BY-SA-4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "redistribution": "allowed",
+            "attribution": "GitWorld selected and interpreted the explicitly identified source fields, retained exact source versions/hashes and separately identified bilingual modeling labels. Source-derived content remains CC-BY-SA-4.0; no official endorsement."
+          },
+          "profiles": [
+            {
+              "id": "jin-wu-integration",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "15051666"
+              },
+              "revision": "1379420937",
+              "contentHash": "aa14fab85b067c8dbc16c775520a1b72f2de6e5e5a22b70760702ff8976c83e3",
+              "citation": {
+                "title": "Conquest of Wu by Jin",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected fixed-revision facts remain CC-BY-SA-4.0; article prose, images and HTML are excluded. Exact revision and author history accompany the source."
+              },
+              "facts": [
+                {
+                  "id": "date",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Date"
+                  },
+                  "textHash": "38a83fc940dee6c86883c2b006fc72847ffebf1063fd80b900a5e5fc79f0298c",
+                  "includeText": true
+                },
+                {
+                  "id": "result",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Result"
+                  },
+                  "textHash": "d8a02a2d0770b429a3c9b3f5ae7418b8382404b7cbfb46047d01806d5ba0756f",
+                  "includeText": true
+                },
+                {
+                  "id": "territorial-outcome",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Territorial changes"
+                  },
+                  "textHash": "76d817b5569b2c65e66f429ea3ba8bc6efe1178af4ffa4678811b02c0cf02a7d",
+                  "includeText": true
+                },
+                {
+                  "id": "jin-participant",
+                  "selector": {
+                    "kind": "section-cell",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "heading": "Belligerents",
+                    "rowOffset": 1,
+                    "column": 0
+                  },
+                  "textHash": "4649e5098fb61731f7107feb410c727d2824a58decb45aa9361befb832afa7e8",
+                  "includeText": true
+                },
+                {
+                  "id": "wu-participant",
+                  "selector": {
+                    "kind": "section-cell",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "heading": "Belligerents",
+                    "rowOffset": 1,
+                    "column": 1
+                  },
+                  "textHash": "00c1e468e4e4b1d39812fd02c8c5a0cba81828a5682eced2a6ca1e50afe43e42",
+                  "includeText": true
+                }
+              ]
+            },
+            {
+              "id": "jin-context",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "55020"
+              },
+              "revision": "1359294647",
+              "contentHash": "4a52801e3f93d2774f2a0bafdbe88cc1a5756bfbf88c87199bd25962baafbd8f",
+              "citation": {
+                "title": "Jin dynasty (266–420)",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected fixed-revision facts remain CC-BY-SA-4.0; article prose, images and HTML are excluded. Exact revision and author history accompany the source."
+              },
+              "facts": [
+                {
+                  "id": "western-phase",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "h3",
+                    "id": "Western_Jin_(266–316)"
+                  },
+                  "textHash": "0954efd4a774f774373c45b4f1b00ca55c605b862fb6405d00cb49e8833386cc",
+                  "includeText": true
+                }
+              ]
+            }
+          ],
+          "objects": [
+            {
+              "id": "history:event:jin-incorporation-of-wu-280",
+              "identities": [
+                {
+                  "provider": "gitworld-declared-evidenced-subject",
+                  "externalId": "history:event:jin-incorporation-of-wu-280"
+                }
+              ],
+              "types": [
+                "gitworld:political-integration"
+              ],
+              "labels": {
+                "en": "Jin conquest and incorporation of Wu",
+                "zh-CN": "晋灭吴与政治整合"
+              },
+              "descriptions": {
+                "en": "Jin defeated Wu in 280; the source records political integration as the outcome.",
+                "zh-CN": "晋于280年灭吴；来源明确记载了政治整合的结果。"
+              },
+              "aliases": []
+            }
+          ],
+          "statements": [
+            {
+              "id": "incorporator",
+              "subjectId": "history:event:jin-incorporation-of-wu-280",
+              "propertyId": "transformation:incorporating-polity",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:polity:western-jin"
+              },
+              "factKeys": [
+                "jin-wu-integration:territorial-outcome",
+                "jin-wu-integration:result",
+                "jin-wu-integration:jin-participant",
+                "jin-wu-integration:wu-participant",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 280,
+                  "latestYear": 280,
+                  "month": 5,
+                  "day": 1,
+                  "precision": "day",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "1 May 280"
+                }
+              },
+              "timeFactKeys": [
+                "jin-wu-integration:date"
+              ],
+              "interpretation": {
+                "en": "The territorial-outcome field explicitly states unification under Jin. The participant is bound to the Western Jin phase with the separately selected phase heading, not by ruler-table order.",
+                "zh-CN": "领土结果字段明确记载晋实现统一；参与政权依据另行选取的阶段标题对应西晋，不按君主表次序推导。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "transformation:identity-scope",
+                  "value": {
+                    "kind": "text",
+                    "value": "western-jin-phase"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "incorporated",
+              "subjectId": "history:event:jin-incorporation-of-wu-280",
+              "propertyId": "transformation:incorporated-polity",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:polity:eastern-wu"
+              },
+              "factKeys": [
+                "jin-wu-integration:territorial-outcome",
+                "jin-wu-integration:result",
+                "jin-wu-integration:jin-participant",
+                "jin-wu-integration:wu-participant",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 280,
+                  "latestYear": 280,
+                  "month": 5,
+                  "day": 1,
+                  "precision": "day",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "1 May 280"
+                }
+              },
+              "timeFactKeys": [
+                "jin-wu-integration:date"
+              ],
+              "interpretation": {
+                "en": "The territorial-outcome field explicitly states unification under Jin. The participant is bound to the Western Jin phase with the separately selected phase heading, not by ruler-table order.",
+                "zh-CN": "领土结果字段明确记载晋实现统一；参与政权依据另行选取的阶段标题对应西晋，不按君主表次序推导。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "outcome",
+              "subjectId": "history:event:jin-incorporation-of-wu-280",
+              "propertyId": "transformation:stated-outcome",
+              "value": {
+                "kind": "text",
+                "value": "political-incorporation"
+              },
+              "factKeys": [
+                "jin-wu-integration:territorial-outcome",
+                "jin-wu-integration:result",
+                "jin-wu-integration:jin-participant",
+                "jin-wu-integration:wu-participant",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 280,
+                  "latestYear": 280,
+                  "month": 5,
+                  "day": 1,
+                  "precision": "day",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "1 May 280"
+                }
+              },
+              "timeFactKeys": [
+                "jin-wu-integration:date"
+              ],
+              "interpretation": {
+                "en": "The territorial-outcome field explicitly states unification under Jin. The participant is bound to the Western Jin phase with the separately selected phase heading, not by ruler-table order.",
+                "zh-CN": "领土结果字段明确记载晋实现统一；参与政权依据另行选取的阶段标题对应西晋，不按君主表次序推导。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "campaign-start",
+              "subjectId": "history:event:jin-incorporation-of-wu-280",
+              "propertyId": "transformation:campaign-start",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 279,
+                  "latestYear": 280,
+                  "precision": "interval",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. December 279 or January 280"
+                }
+              },
+              "factKeys": [
+                "jin-wu-integration:date"
+              ],
+              "interpretation": {
+                "en": "Preserve the published approximate alternatives; choose neither a single year nor a calendar conversion.",
+                "zh-CN": "保留来源的约略起点及备选年份，不选择某一年或擅作历法换算。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "campaign-end",
+              "subjectId": "history:event:jin-incorporation-of-wu-280",
+              "propertyId": "transformation:campaign-end",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 280,
+                  "latestYear": 280,
+                  "month": 5,
+                  "day": 1,
+                  "precision": "day",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "1 May 280"
+                }
+              },
+              "factKeys": [
+                "jin-wu-integration:date"
+              ],
+              "interpretation": {
+                "en": "The campaign conclusion and the start alternatives remain separate source dates.",
+                "zh-CN": "战役终点与起点的备选纪年分别保留。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "participant-incorporating",
+              "subjectId": "history:polity:western-jin",
+              "propertyId": "relation:integration-event",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:event:jin-incorporation-of-wu-280"
+              },
+              "factKeys": [
+                "jin-wu-integration:territorial-outcome",
+                "jin-wu-integration:result",
+                "jin-wu-integration:jin-participant",
+                "jin-wu-integration:wu-participant",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 280,
+                  "latestYear": 280,
+                  "month": 5,
+                  "day": 1,
+                  "precision": "day",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "1 May 280"
+                }
+              },
+              "timeFactKeys": [
+                "jin-wu-integration:date"
+              ],
+              "interpretation": {
+                "en": "The territorial-outcome field explicitly states unification under Jin. The participant is bound to the Western Jin phase with the separately selected phase heading, not by ruler-table order.",
+                "zh-CN": "领土结果字段明确记载晋实现统一；参与政权依据另行选取的阶段标题对应西晋，不按君主表次序推导。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "transformation:participant-role",
+                  "value": {
+                    "kind": "text",
+                    "value": "incorporating"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "participant-incorporated",
+              "subjectId": "history:polity:eastern-wu",
+              "propertyId": "relation:integration-event",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:event:jin-incorporation-of-wu-280"
+              },
+              "factKeys": [
+                "jin-wu-integration:territorial-outcome",
+                "jin-wu-integration:result",
+                "jin-wu-integration:jin-participant",
+                "jin-wu-integration:wu-participant",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 280,
+                  "latestYear": 280,
+                  "month": 5,
+                  "day": 1,
+                  "precision": "day",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "1 May 280"
+                }
+              },
+              "timeFactKeys": [
+                "jin-wu-integration:date"
+              ],
+              "interpretation": {
+                "en": "The territorial-outcome field explicitly states unification under Jin. The participant is bound to the Western Jin phase with the separately selected phase heading, not by ruler-table order.",
+                "zh-CN": "领土结果字段明确记载晋实现统一；参与政权依据另行选取的阶段标题对应西晋，不按君主表次序推导。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "transformation:participant-role",
+                  "value": {
+                    "kind": "text",
+                    "value": "incorporated"
+                  }
+                }
+              ]
+            }
+          ],
+          "fieldCatalog": {
+            "schemaVersion": 1,
+            "kind": "historical-field-display-labels",
+            "properties": [
+              {
+                "id": "projection:rule-id",
+                "labels": {
+                  "en": "Mapping rule",
+                  "zh-CN": "映射规则"
+                }
+              },
+              {
+                "id": "projection:source-fact",
+                "labels": {
+                  "en": "Source field",
+                  "zh-CN": "来源字段"
+                }
+              },
+              {
+                "id": "transformation:incorporating-polity",
+                "labels": {
+                  "en": "Incorporating polity",
+                  "zh-CN": "实施整合的政权"
+                }
+              },
+              {
+                "id": "transformation:incorporated-polity",
+                "labels": {
+                  "en": "Incorporated polity",
+                  "zh-CN": "被整合的政权"
+                }
+              },
+              {
+                "id": "transformation:stated-outcome",
+                "labels": {
+                  "en": "Documented political outcome",
+                  "zh-CN": "来源明确记载的政治结果"
+                }
+              },
+              {
+                "id": "relation:integration-event",
+                "labels": {
+                  "en": "Political integration",
+                  "zh-CN": "政治整合"
+                }
+              },
+              {
+                "id": "transformation:campaign-start",
+                "labels": {
+                  "en": "Campaign start as recorded",
+                  "zh-CN": "来源所载战役起点"
+                }
+              },
+              {
+                "id": "transformation:campaign-end",
+                "labels": {
+                  "en": "Campaign conclusion as recorded",
+                  "zh-CN": "来源所载战役终点"
+                }
+              },
+              {
+                "id": "transformation:participant-role",
+                "labels": {
+                  "en": "Role in the integration",
+                  "zh-CN": "在整合中的角色"
+                }
+              },
+              {
+                "id": "transformation:identity-scope",
+                "labels": {
+                  "en": "Participant identity scope",
+                  "zh-CN": "参与政权的身份范围"
+                }
+              }
+            ],
+            "types": [
+              {
+                "id": "gitworld:political-integration",
+                "labels": {
+                  "en": "Political integration",
+                  "zh-CN": "政治整合"
+                }
+              }
+            ],
+            "values": [
+              {
+                "propertyId": "transformation:stated-outcome",
+                "value": "political-incorporation",
+                "labels": {
+                  "en": "Political incorporation stated by source",
+                  "zh-CN": "来源明确记载的政治整合"
+                }
+              },
+              {
+                "propertyId": "transformation:participant-role",
+                "value": "incorporating",
+                "labels": {
+                  "en": "Incorporating polity",
+                  "zh-CN": "实施整合的政权"
+                }
+              },
+              {
+                "propertyId": "transformation:participant-role",
+                "value": "incorporated",
+                "labels": {
+                  "en": "Incorporated polity",
+                  "zh-CN": "被整合的政权"
+                }
+              },
+              {
+                "propertyId": "transformation:identity-scope",
+                "value": "western-jin-phase",
+                "labels": {
+                  "en": "Jin in the source-defined Western Jin phase",
+                  "zh-CN": "来源所界定的西晋阶段"
+                }
+              }
+            ],
+            "semanticNotes": [
+              {
+                "ids": [
+                  "transformation:stated-outcome",
+                  "relation:integration-event"
+                ],
+                "en": "An explicitly sourced political outcome; it neither asserts modern territorial borders nor creates Git ancestry. Event links are dated to the event, not extended indefinitely.",
+                "zh-CN": "有明确来源的政治结果，不据此断言现代领土边界或创建 Git 继承关系。事件关系只适用于事件时间，不无限延长。"
+              }
+            ]
+          }
+        },
+        "inputSources": [
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "15051666"
+            },
+            "revision": "1379420937",
+            "contentHash": "aa14fab85b067c8dbc16c775520a1b72f2de6e5e5a22b70760702ff8976c83e3",
+            "url": "https://en.wikipedia.org/wiki/Conquest_of_Wu_by_Jin",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937",
+            "retrievedAt": "2026-10-24T22:52:57.204Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Conquest of Wu by Jin, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937; author history: https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          },
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "55020"
+            },
+            "revision": "1359294647",
+            "contentHash": "4a52801e3f93d2774f2a0bafdbe88cc1a5756bfbf88c87199bd25962baafbd8f",
+            "url": "https://en.wikipedia.org/wiki/Jin_dynasty_(266%E2%80%93420)",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647",
+            "retrievedAt": "2026-10-24T22:52:58.645Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Jin dynasty (266–420), English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647; author history: https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          }
+        ],
+        "facts": [
+          {
+            "key": "jin-wu-integration:date",
+            "profileId": "jin-wu-integration",
+            "factId": "date",
+            "locator": "$.text;table.infobox[0].tr[4].cell[1]",
+            "textHash": "38a83fc940dee6c86883c2b006fc72847ffebf1063fd80b900a5e5fc79f0298c",
+            "text": "c. December 279 or January 280 – 1 May 280",
+            "links": [],
+            "referenceAnchors": [
+              "#cite_note-end_date-4",
+              "#cite_note-start_date-2"
+            ]
+          },
+          {
+            "key": "jin-wu-integration:result",
+            "profileId": "jin-wu-integration",
+            "factId": "result",
+            "locator": "$.text;table.infobox[0].tr[6].cell[1]",
+            "textHash": "d8a02a2d0770b429a3c9b3f5ae7418b8382404b7cbfb46047d01806d5ba0756f",
+            "text": "Jin victory",
+            "links": [],
+            "referenceAnchors": []
+          },
+          {
+            "key": "jin-wu-integration:territorial-outcome",
+            "profileId": "jin-wu-integration",
+            "factId": "territorial-outcome",
+            "locator": "$.text;table.infobox[0].tr[7].cell[1]",
+            "textHash": "76d817b5569b2c65e66f429ea3ba8bc6efe1178af4ffa4678811b02c0cf02a7d",
+            "text": "Unification of China under the Jin dynasty",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Jin_dynasty_(266%E2%80%93420)",
+                "locator": "$.text;table.infobox[0].tr[7].cell[1];a[eligible-link-index=0]",
+                "textHash": "4649e5098fb61731f7107feb410c727d2824a58decb45aa9361befb832afa7e8",
+                "text": "Jin dynasty"
+              }
+            ],
+            "referenceAnchors": []
+          },
+          {
+            "key": "jin-wu-integration:jin-participant",
+            "profileId": "jin-wu-integration",
+            "factId": "jin-participant",
+            "locator": "$.text;table.infobox[0].tr[9].cell[0]",
+            "textHash": "4649e5098fb61731f7107feb410c727d2824a58decb45aa9361befb832afa7e8",
+            "text": "Jin dynasty",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Jin_dynasty_(266%E2%80%93420)",
+                "locator": "$.text;table.infobox[0].tr[9].cell[0];a[eligible-link-index=0]",
+                "textHash": "4649e5098fb61731f7107feb410c727d2824a58decb45aa9361befb832afa7e8",
+                "text": "Jin dynasty"
+              }
+            ],
+            "referenceAnchors": []
+          },
+          {
+            "key": "jin-wu-integration:wu-participant",
+            "profileId": "jin-wu-integration",
+            "factId": "wu-participant",
+            "locator": "$.text;table.infobox[0].tr[9].cell[1]",
+            "textHash": "00c1e468e4e4b1d39812fd02c8c5a0cba81828a5682eced2a6ca1e50afe43e42",
+            "text": "Wu",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Eastern_Wu",
+                "locator": "$.text;table.infobox[0].tr[9].cell[1];a[eligible-link-index=0]",
+                "textHash": "00c1e468e4e4b1d39812fd02c8c5a0cba81828a5682eced2a6ca1e50afe43e42",
+                "text": "Wu"
+              }
+            ],
+            "referenceAnchors": []
+          },
+          {
+            "key": "jin-context:western-phase",
+            "profileId": "jin-context",
+            "factId": "western-phase",
+            "locator": "$.text;h3[document-index=934]#Western_Jin_(266–316)",
+            "textHash": "0954efd4a774f774373c45b4f1b00ca55c605b862fb6405d00cb49e8833386cc",
+            "text": "Western Jin (266–316)",
+            "links": [],
+            "referenceAnchors": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "identity": {
+        "provider": "gitworld-evidenced-fields",
+        "externalId": "three-kingdoms-evidenced-political-transitions"
+      },
+      "revision": "1-local-evidenced-candidate",
+      "contentHash": "ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "retrievedAt": "2026-10-25T01:38:16.974Z",
+      "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/historical-transformations-prd.md",
+      "adapterVersion": "evidenced-published-fields-v2",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "allowed",
+        "attribution": "GitWorld selected the identified source facts and authored the bilingual modeling and display metadata. Wikipedia-derived material remains CC-BY-SA-4.0 with fixed editions and author history. Raw source works, images and full prose are excluded; no source endorsement."
+      },
+      "record": {
+        "schemaVersion": 1,
+        "mappingVersion": "evidenced-published-fields-v2",
+        "plan": {
+          "schemaVersion": 1,
+          "id": "three-kingdoms-evidenced-political-transitions",
+          "revision": "1-local-evidenced-candidate",
+          "preparedAt": "2026-10-25T01:38:16.974Z",
+          "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/historical-transformations-prd.md",
+          "rights": {
+            "licenseId": "CC-BY-SA-4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "redistribution": "allowed",
+            "attribution": "GitWorld selected the identified source facts and authored the bilingual modeling and display metadata. Wikipedia-derived material remains CC-BY-SA-4.0 with fixed editions and author history. Raw source works, images and full prose are excluded; no source endorsement."
+          },
+          "profiles": [
+            {
+              "id": "wei-shu-conquest",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "15108068"
+              },
+              "revision": "1373985551",
+              "contentHash": "1f7d674fb7e84ad3596bf329f6e45074f02940ba88aeb0976f94dd9e6edcb196",
+              "citation": {
+                "title": "Conquest of Shu by Wei",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected facts and independently authored bilingual interpretation remain CC-BY-SA-4.0. Exact revision, source hash and author history are retained; no article prose, HTML or image is retained."
+              },
+              "facts": [
+                {
+                  "id": "date",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Date"
+                  },
+                  "textHash": "8758d6ef29c73f637438582c7b5d49d760b278494cbe975716475ff0eb59beb0"
+                },
+                {
+                  "id": "result",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Result"
+                  },
+                  "textHash": "085892dbb643340790388ff360d95d71669b9793642a52a95f7a1baa64019eb1"
+                },
+                {
+                  "id": "wei",
+                  "selector": {
+                    "kind": "section-cell",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "heading": "Belligerents",
+                    "rowOffset": 1,
+                    "column": 0
+                  },
+                  "textHash": "b012cd726ff3fa69df73615db27bc9e4a2930c39ce08c33f69a13346b9c5f326"
+                },
+                {
+                  "id": "shu",
+                  "selector": {
+                    "kind": "section-cell",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "heading": "Belligerents",
+                    "rowOffset": 1,
+                    "column": 1
+                  },
+                  "textHash": "1c9f02dd65d96b0d51222917ada02ffb49338f51644bc0d996603db34442d1a8"
+                },
+                {
+                  "id": "summary",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "p",
+                    "startsWith": "The Conquest of Shu by Wei was"
+                  },
+                  "textHash": "6c90426b26e9aca1596265c283377839a869151aec6827f0b9244c3c999c843f"
+                }
+              ]
+            },
+            {
+              "id": "jin-context",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "55020"
+              },
+              "revision": "1359294647",
+              "contentHash": "4a52801e3f93d2774f2a0bafdbe88cc1a5756bfbf88c87199bd25962baafbd8f",
+              "citation": {
+                "title": "Jin dynasty (266–420)",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected facts and independently authored bilingual interpretation remain CC-BY-SA-4.0. Exact revision, source hash and author history are retained; no article prose, HTML or image is retained."
+              },
+              "facts": [
+                {
+                  "id": "western-phase",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "h3",
+                    "id": "Western_Jin_(266–316)"
+                  },
+                  "textHash": "0954efd4a774f774373c45b4f1b00ca55c605b862fb6405d00cb49e8833386cc"
+                },
+                {
+                  "id": "western-identity",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "p",
+                    "startsWith": "There are two main divisions in the history of the dynasty."
+                  },
+                  "textHash": "9edf884e153e989870a82f4d09f90cf8725ca880a955121e538f69a0f219a8b5"
+                },
+                {
+                  "id": "replacement",
+                  "selector": {
+                    "kind": "element",
+                    "tag": "p",
+                    "startsWith": "The Jin dynasty was founded by Sima Yan, who became known as Emperor Wu"
+                  },
+                  "textHash": "99fc9225729821133428c1c56583518091a894e37e9cfad907824e5c9f7c5706"
+                }
+              ]
+            },
+            {
+              "id": "jin-wu-integration",
+              "identity": {
+                "provider": "wikipedia-en",
+                "externalId": "15051666"
+              },
+              "revision": "1379420937",
+              "contentHash": "aa14fab85b067c8dbc16c775520a1b72f2de6e5e5a22b70760702ff8976c83e3",
+              "citation": {
+                "title": "Conquest of Wu by Jin",
+                "language": "en",
+                "creator": "English Wikipedia contributors",
+                "rightsEvidence": [
+                  "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+                  "https://creativecommons.org/licenses/by-sa/4.0/"
+                ],
+                "rightsNote": "Selected facts and independently authored bilingual interpretation remain CC-BY-SA-4.0. Exact revision, source hash and author history are retained; no article prose, HTML or image is retained."
+              },
+              "facts": [
+                {
+                  "id": "date",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Date"
+                  },
+                  "textHash": "38a83fc940dee6c86883c2b006fc72847ffebf1063fd80b900a5e5fc79f0298c"
+                },
+                {
+                  "id": "result",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Result"
+                  },
+                  "textHash": "d8a02a2d0770b429a3c9b3f5ae7418b8382404b7cbfb46047d01806d5ba0756f"
+                },
+                {
+                  "id": "territorial-outcome",
+                  "selector": {
+                    "kind": "table-field",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "header": "Territorial changes"
+                  },
+                  "textHash": "76d817b5569b2c65e66f429ea3ba8bc6efe1178af4ffa4678811b02c0cf02a7d"
+                },
+                {
+                  "id": "jin",
+                  "selector": {
+                    "kind": "section-cell",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "heading": "Belligerents",
+                    "rowOffset": 1,
+                    "column": 0
+                  },
+                  "textHash": "4649e5098fb61731f7107feb410c727d2824a58decb45aa9361befb832afa7e8"
+                },
+                {
+                  "id": "wu",
+                  "selector": {
+                    "kind": "section-cell",
+                    "tableClass": "infobox",
+                    "tableIndex": 0,
+                    "heading": "Belligerents",
+                    "rowOffset": 1,
+                    "column": 1
+                  },
+                  "textHash": "00c1e468e4e4b1d39812fd02c8c5a0cba81828a5682eced2a6ca1e50afe43e42"
+                }
+              ]
+            }
+          ],
+          "objects": [
+            {
+              "id": "history:event:wei-conquest-of-shu-263",
+              "identities": [
+                {
+                  "provider": "gitworld-declared-evidenced-subject",
+                  "externalId": "history:event:wei-conquest-of-shu-263"
+                }
+              ],
+              "types": [
+                "gitworld:political-transition"
+              ],
+              "labels": {
+                "en": "Wei conquest of Shu Han",
+                "zh-CN": "魏灭蜀汉"
+              },
+              "descriptions": {
+                "en": "Wei’s campaign ended Shu Han in 263; uncertain months are retained in the source date.",
+                "zh-CN": "魏于263年征服蜀汉；来源中的约略月份予以保留。"
+              },
+              "aliases": []
+            },
+            {
+              "id": "history:event:wei-jin-dynastic-replacement-266",
+              "identities": [
+                {
+                  "provider": "gitworld-declared-evidenced-subject",
+                  "externalId": "history:event:wei-jin-dynastic-replacement-266"
+                }
+              ],
+              "types": [
+                "gitworld:political-transition"
+              ],
+              "labels": {
+                "en": "Replacement of Cao Wei by Western Jin",
+                "zh-CN": "曹魏与西晋的王朝更替"
+              },
+              "descriptions": {
+                "en": "The fixed source describes Cao Huan’s forced abdication and Sima Yan’s establishment of Jin in 266.",
+                "zh-CN": "固定来源记载曹奂被迫退位及司马炎于266年建立晋。"
+              },
+              "aliases": []
+            }
+          ],
+          "statements": [
+            {
+              "id": "263-outgoing",
+              "subjectId": "history:event:wei-conquest-of-shu-263",
+              "propertyId": "transformation:outgoing-polity",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:polity:shu-han"
+              },
+              "factKeys": [
+                "wei-shu-conquest:result",
+                "wei-shu-conquest:wei",
+                "wei-shu-conquest:shu",
+                "wei-shu-conquest:summary"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 263,
+                  "latestYear": 263,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "263"
+                }
+              },
+              "timeFactKeys": [
+                "wei-shu-conquest:date"
+              ],
+              "interpretation": {
+                "en": "Bind the source-stated conquest and fall to the two named participants. All published month alternatives are in 263; these roles use year resolution and do not choose a day.",
+                "zh-CN": "将来源明确记载的征服、蜀汉终结与所列双方对应。备选月份均在263年；角色按年适用，不选择某日。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "263-incoming",
+              "subjectId": "history:event:wei-conquest-of-shu-263",
+              "propertyId": "transformation:incoming-polity",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:polity:cao-wei"
+              },
+              "factKeys": [
+                "wei-shu-conquest:result",
+                "wei-shu-conquest:wei",
+                "wei-shu-conquest:shu",
+                "wei-shu-conquest:summary"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 263,
+                  "latestYear": 263,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "263"
+                }
+              },
+              "timeFactKeys": [
+                "wei-shu-conquest:date"
+              ],
+              "interpretation": {
+                "en": "Bind the source-stated conquest and fall to the two named participants. All published month alternatives are in 263; these roles use year resolution and do not choose a day.",
+                "zh-CN": "将来源明确记载的征服、蜀汉终结与所列双方对应。备选月份均在263年；角色按年适用，不选择某日。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "263-mechanism",
+              "subjectId": "history:event:wei-conquest-of-shu-263",
+              "propertyId": "transformation:mechanism",
+              "value": {
+                "kind": "text",
+                "value": "military-conquest"
+              },
+              "factKeys": [
+                "wei-shu-conquest:result",
+                "wei-shu-conquest:wei",
+                "wei-shu-conquest:shu",
+                "wei-shu-conquest:summary"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 263,
+                  "latestYear": 263,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "263"
+                }
+              },
+              "timeFactKeys": [
+                "wei-shu-conquest:date"
+              ],
+              "interpretation": {
+                "en": "Bind the source-stated conquest and fall to the two named participants. All published month alternatives are in 263; these roles use year resolution and do not choose a day.",
+                "zh-CN": "将来源明确记载的征服、蜀汉终结与所列双方对应。备选月份均在263年；角色按年适用，不选择某日。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "263-outcome",
+              "subjectId": "history:event:wei-conquest-of-shu-263",
+              "propertyId": "transformation:stated-outcome",
+              "value": {
+                "kind": "text",
+                "value": "fall-of-conquered-polity"
+              },
+              "factKeys": [
+                "wei-shu-conquest:result",
+                "wei-shu-conquest:wei",
+                "wei-shu-conquest:shu",
+                "wei-shu-conquest:summary"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 263,
+                  "latestYear": 263,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "263"
+                }
+              },
+              "timeFactKeys": [
+                "wei-shu-conquest:date"
+              ],
+              "interpretation": {
+                "en": "Bind the source-stated conquest and fall to the two named participants. All published month alternatives are in 263; these roles use year resolution and do not choose a day.",
+                "zh-CN": "将来源明确记载的征服、蜀汉终结与所列双方对应。备选月份均在263年；角色按年适用，不选择某日。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "263-source-date",
+              "subjectId": "history:event:wei-conquest-of-shu-263",
+              "propertyId": "transformation:source-date",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 263,
+                  "latestYear": 263,
+                  "precision": "interval",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "c. September or October – November or December 263"
+                }
+              },
+              "factKeys": [
+                "wei-shu-conquest:date"
+              ],
+              "interpretation": {
+                "en": "Bind the source-stated conquest and fall to the two named participants. All published month alternatives are in 263; these roles use year resolution and do not choose a day.",
+                "zh-CN": "将来源明确记载的征服、蜀汉终结与所列双方对应。备选月份均在263年；角色按年适用，不选择某日。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "263-outgoing-link",
+              "subjectId": "history:polity:shu-han",
+              "propertyId": "relation:political-transition",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:event:wei-conquest-of-shu-263"
+              },
+              "factKeys": [
+                "wei-shu-conquest:result",
+                "wei-shu-conquest:wei",
+                "wei-shu-conquest:shu",
+                "wei-shu-conquest:summary"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 263,
+                  "latestYear": 263,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "263"
+                }
+              },
+              "timeFactKeys": [
+                "wei-shu-conquest:date"
+              ],
+              "interpretation": {
+                "en": "Bind the source-stated conquest and fall to the two named participants. All published month alternatives are in 263; these roles use year resolution and do not choose a day.",
+                "zh-CN": "将来源明确记载的征服、蜀汉终结与所列双方对应。备选月份均在263年；角色按年适用，不选择某日。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "transformation:transition-role",
+                  "value": {
+                    "kind": "text",
+                    "value": "outgoing"
+                  }
+                },
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "263-incoming-link",
+              "subjectId": "history:polity:cao-wei",
+              "propertyId": "relation:political-transition",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:event:wei-conquest-of-shu-263"
+              },
+              "factKeys": [
+                "wei-shu-conquest:result",
+                "wei-shu-conquest:wei",
+                "wei-shu-conquest:shu",
+                "wei-shu-conquest:summary"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 263,
+                  "latestYear": 263,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "263"
+                }
+              },
+              "timeFactKeys": [
+                "wei-shu-conquest:date"
+              ],
+              "interpretation": {
+                "en": "Bind the source-stated conquest and fall to the two named participants. All published month alternatives are in 263; these roles use year resolution and do not choose a day.",
+                "zh-CN": "将来源明确记载的征服、蜀汉终结与所列双方对应。备选月份均在263年；角色按年适用，不选择某日。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "transformation:transition-role",
+                  "value": {
+                    "kind": "text",
+                    "value": "incoming"
+                  }
+                },
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "266-outgoing",
+              "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+              "propertyId": "transformation:outgoing-polity",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:polity:cao-wei"
+              },
+              "factKeys": [
+                "jin-context:replacement",
+                "jin-context:western-identity",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 266,
+                  "latestYear": 266,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "266"
+                }
+              },
+              "timeFactKeys": [
+                "jin-context:replacement",
+                "jin-context:western-identity"
+              ],
+              "interpretation": {
+                "en": "The source explicitly describes forced abdication and the foundation of Jin. Identify the Western Jin phase separately and compare at year resolution; do not infer a military conquest or convert the reported day.",
+                "zh-CN": "来源明确记载被迫退位与晋的建立，另以阶段证据对应西晋。按年比较，不推断军事征服，也不换算来源所载日期。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "266-incoming",
+              "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+              "propertyId": "transformation:incoming-polity",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:polity:western-jin"
+              },
+              "factKeys": [
+                "jin-context:replacement",
+                "jin-context:western-identity",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 266,
+                  "latestYear": 266,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "266"
+                }
+              },
+              "timeFactKeys": [
+                "jin-context:replacement",
+                "jin-context:western-identity"
+              ],
+              "interpretation": {
+                "en": "The source explicitly describes forced abdication and the foundation of Jin. Identify the Western Jin phase separately and compare at year resolution; do not infer a military conquest or convert the reported day.",
+                "zh-CN": "来源明确记载被迫退位与晋的建立，另以阶段证据对应西晋。按年比较，不推断军事征服，也不换算来源所载日期。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "266-mechanism",
+              "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+              "propertyId": "transformation:mechanism",
+              "value": {
+                "kind": "text",
+                "value": "dynastic-replacement"
+              },
+              "factKeys": [
+                "jin-context:replacement",
+                "jin-context:western-identity",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 266,
+                  "latestYear": 266,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "266"
+                }
+              },
+              "timeFactKeys": [
+                "jin-context:replacement",
+                "jin-context:western-identity"
+              ],
+              "interpretation": {
+                "en": "The source explicitly describes forced abdication and the foundation of Jin. Identify the Western Jin phase separately and compare at year resolution; do not infer a military conquest or convert the reported day.",
+                "zh-CN": "来源明确记载被迫退位与晋的建立，另以阶段证据对应西晋。按年比较，不推断军事征服，也不换算来源所载日期。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "266-outcome",
+              "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+              "propertyId": "transformation:stated-outcome",
+              "value": {
+                "kind": "text",
+                "value": "dynastic-replacement"
+              },
+              "factKeys": [
+                "jin-context:replacement",
+                "jin-context:western-identity",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 266,
+                  "latestYear": 266,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "266"
+                }
+              },
+              "timeFactKeys": [
+                "jin-context:replacement",
+                "jin-context:western-identity"
+              ],
+              "interpretation": {
+                "en": "The source explicitly describes forced abdication and the foundation of Jin. Identify the Western Jin phase separately and compare at year resolution; do not infer a military conquest or convert the reported day.",
+                "zh-CN": "来源明确记载被迫退位与晋的建立，另以阶段证据对应西晋。按年比较，不推断军事征服，也不换算来源所载日期。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "266-source-date",
+              "subjectId": "history:event:wei-jin-dynastic-replacement-266",
+              "propertyId": "transformation:source-date",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 266,
+                  "latestYear": 266,
+                  "month": 2,
+                  "day": 4,
+                  "precision": "day",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "4 February 266"
+                }
+              },
+              "factKeys": [
+                "jin-context:replacement",
+                "jin-context:western-identity"
+              ],
+              "interpretation": {
+                "en": "The source explicitly describes forced abdication and the foundation of Jin. Identify the Western Jin phase separately and compare at year resolution; do not infer a military conquest or convert the reported day.",
+                "zh-CN": "来源明确记载被迫退位与晋的建立，另以阶段证据对应西晋。按年比较，不推断军事征服，也不换算来源所载日期。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "266-outgoing-link",
+              "subjectId": "history:polity:cao-wei",
+              "propertyId": "relation:political-transition",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:event:wei-jin-dynastic-replacement-266"
+              },
+              "factKeys": [
+                "jin-context:replacement",
+                "jin-context:western-identity",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 266,
+                  "latestYear": 266,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "266"
+                }
+              },
+              "timeFactKeys": [
+                "jin-context:replacement",
+                "jin-context:western-identity"
+              ],
+              "interpretation": {
+                "en": "The source explicitly describes forced abdication and the foundation of Jin. Identify the Western Jin phase separately and compare at year resolution; do not infer a military conquest or convert the reported day.",
+                "zh-CN": "来源明确记载被迫退位与晋的建立，另以阶段证据对应西晋。按年比较，不推断军事征服，也不换算来源所载日期。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "transformation:transition-role",
+                  "value": {
+                    "kind": "text",
+                    "value": "outgoing"
+                  }
+                },
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "266-incoming-link",
+              "subjectId": "history:polity:western-jin",
+              "propertyId": "relation:political-transition",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:event:wei-jin-dynastic-replacement-266"
+              },
+              "factKeys": [
+                "jin-context:replacement",
+                "jin-context:western-identity",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 266,
+                  "latestYear": 266,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "266"
+                }
+              },
+              "timeFactKeys": [
+                "jin-context:replacement",
+                "jin-context:western-identity"
+              ],
+              "interpretation": {
+                "en": "The source explicitly describes forced abdication and the foundation of Jin. Identify the Western Jin phase separately and compare at year resolution; do not infer a military conquest or convert the reported day.",
+                "zh-CN": "来源明确记载被迫退位与晋的建立，另以阶段证据对应西晋。按年比较，不推断军事征服，也不换算来源所载日期。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "transformation:transition-role",
+                  "value": {
+                    "kind": "text",
+                    "value": "incoming"
+                  }
+                },
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "280-outgoing",
+              "subjectId": "history:event:jin-incorporation-of-wu-280",
+              "propertyId": "transformation:outgoing-polity",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:polity:eastern-wu"
+              },
+              "factKeys": [
+                "jin-wu-integration:result",
+                "jin-wu-integration:territorial-outcome",
+                "jin-wu-integration:jin",
+                "jin-wu-integration:wu",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 280,
+                  "latestYear": 280,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "280"
+                }
+              },
+              "timeFactKeys": [
+                "jin-wu-integration:date"
+              ],
+              "interpretation": {
+                "en": "Use the existing evidenced 280 integration, adding only common comparison fields and participant links. This does not change the original event or its source assertions.",
+                "zh-CN": "沿用已有据的280年政治整合，仅增加共用比较字段与参与方关系，不改原事件或原来源主张。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "280-incoming",
+              "subjectId": "history:event:jin-incorporation-of-wu-280",
+              "propertyId": "transformation:incoming-polity",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:polity:western-jin"
+              },
+              "factKeys": [
+                "jin-wu-integration:result",
+                "jin-wu-integration:territorial-outcome",
+                "jin-wu-integration:jin",
+                "jin-wu-integration:wu",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 280,
+                  "latestYear": 280,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "280"
+                }
+              },
+              "timeFactKeys": [
+                "jin-wu-integration:date"
+              ],
+              "interpretation": {
+                "en": "Use the existing evidenced 280 integration, adding only common comparison fields and participant links. This does not change the original event or its source assertions.",
+                "zh-CN": "沿用已有据的280年政治整合，仅增加共用比较字段与参与方关系，不改原事件或原来源主张。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "280-mechanism",
+              "subjectId": "history:event:jin-incorporation-of-wu-280",
+              "propertyId": "transformation:mechanism",
+              "value": {
+                "kind": "text",
+                "value": "military-conquest"
+              },
+              "factKeys": [
+                "jin-wu-integration:result",
+                "jin-wu-integration:territorial-outcome",
+                "jin-wu-integration:jin",
+                "jin-wu-integration:wu",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 280,
+                  "latestYear": 280,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "280"
+                }
+              },
+              "timeFactKeys": [
+                "jin-wu-integration:date"
+              ],
+              "interpretation": {
+                "en": "Use the existing evidenced 280 integration, adding only common comparison fields and participant links. This does not change the original event or its source assertions.",
+                "zh-CN": "沿用已有据的280年政治整合，仅增加共用比较字段与参与方关系，不改原事件或原来源主张。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "280-source-date",
+              "subjectId": "history:event:jin-incorporation-of-wu-280",
+              "propertyId": "transformation:source-date",
+              "value": {
+                "kind": "time",
+                "value": {
+                  "earliestYear": 280,
+                  "latestYear": 280,
+                  "month": 5,
+                  "day": 1,
+                  "precision": "day",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "1 May 280"
+                }
+              },
+              "factKeys": [
+                "jin-wu-integration:date"
+              ],
+              "interpretation": {
+                "en": "Use the existing evidenced 280 integration, adding only common comparison fields and participant links. This does not change the original event or its source assertions.",
+                "zh-CN": "沿用已有据的280年政治整合，仅增加共用比较字段与参与方关系，不改原事件或原来源主张。"
+              },
+              "qualifiers": []
+            },
+            {
+              "id": "280-outgoing-link",
+              "subjectId": "history:polity:eastern-wu",
+              "propertyId": "relation:political-transition",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:event:jin-incorporation-of-wu-280"
+              },
+              "factKeys": [
+                "jin-wu-integration:result",
+                "jin-wu-integration:territorial-outcome",
+                "jin-wu-integration:jin",
+                "jin-wu-integration:wu",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 280,
+                  "latestYear": 280,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "280"
+                }
+              },
+              "timeFactKeys": [
+                "jin-wu-integration:date"
+              ],
+              "interpretation": {
+                "en": "Use the existing evidenced 280 integration, adding only common comparison fields and participant links. This does not change the original event or its source assertions.",
+                "zh-CN": "沿用已有据的280年政治整合，仅增加共用比较字段与参与方关系，不改原事件或原来源主张。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "transformation:transition-role",
+                  "value": {
+                    "kind": "text",
+                    "value": "outgoing"
+                  }
+                },
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "280-incoming-link",
+              "subjectId": "history:polity:western-jin",
+              "propertyId": "relation:political-transition",
+              "value": {
+                "kind": "entity",
+                "objectId": "history:event:jin-incorporation-of-wu-280"
+              },
+              "factKeys": [
+                "jin-wu-integration:result",
+                "jin-wu-integration:territorial-outcome",
+                "jin-wu-integration:jin",
+                "jin-wu-integration:wu",
+                "jin-context:western-phase"
+              ],
+              "validTime": {
+                "point": {
+                  "earliestYear": 280,
+                  "latestYear": 280,
+                  "precision": "year",
+                  "calendar": "source-calendar-unspecified",
+                  "raw": "280"
+                }
+              },
+              "timeFactKeys": [
+                "jin-wu-integration:date"
+              ],
+              "interpretation": {
+                "en": "Use the existing evidenced 280 integration, adding only common comparison fields and participant links. This does not change the original event or its source assertions.",
+                "zh-CN": "沿用已有据的280年政治整合，仅增加共用比较字段与参与方关系，不改原事件或原来源主张。"
+              },
+              "qualifiers": [
+                {
+                  "propertyId": "transformation:transition-role",
+                  "value": {
+                    "kind": "text",
+                    "value": "incoming"
+                  }
+                },
+                {
+                  "propertyId": "temporal:resolution-policy",
+                  "value": {
+                    "kind": "text",
+                    "value": "source-year-not-converted-day"
+                  }
+                }
+              ]
+            }
+          ],
+          "fieldCatalog": {
+            "schemaVersion": 1,
+            "kind": "historical-field-display-labels",
+            "properties": [
+              {
+                "id": "projection:rule-id",
+                "labels": {
+                  "en": "Mapping rule",
+                  "zh-CN": "映射规则"
+                }
+              },
+              {
+                "id": "projection:source-fact",
+                "labels": {
+                  "en": "Source field",
+                  "zh-CN": "来源字段"
+                }
+              },
+              {
+                "id": "transformation:outgoing-polity",
+                "labels": {
+                  "en": "Displaced polity",
+                  "zh-CN": "被取代的政权"
+                }
+              },
+              {
+                "id": "transformation:incoming-polity",
+                "labels": {
+                  "en": "Incoming polity",
+                  "zh-CN": "接替的政权"
+                }
+              },
+              {
+                "id": "transformation:mechanism",
+                "labels": {
+                  "en": "Form of political change",
+                  "zh-CN": "政治转变方式"
+                }
+              },
+              {
+                "id": "transformation:stated-outcome",
+                "labels": {
+                  "en": "Documented political outcome",
+                  "zh-CN": "来源明确记载的政治结果"
+                }
+              },
+              {
+                "id": "transformation:source-date",
+                "labels": {
+                  "en": "Date reported by source",
+                  "zh-CN": "来源所载日期"
+                }
+              },
+              {
+                "id": "relation:political-transition",
+                "labels": {
+                  "en": "Political transition",
+                  "zh-CN": "政治转变"
+                }
+              },
+              {
+                "id": "transformation:transition-role",
+                "labels": {
+                  "en": "Role in the political transition",
+                  "zh-CN": "政治转变中的角色"
+                }
+              },
+              {
+                "id": "temporal:resolution-policy",
+                "labels": {
+                  "en": "Date resolution used here",
+                  "zh-CN": "本次采用的日期粒度"
+                }
+              },
+              {
+                "id": "transformation:incorporating-polity",
+                "labels": {
+                  "en": "Incorporating polity",
+                  "zh-CN": "实施整合的政权"
+                }
+              },
+              {
+                "id": "transformation:identity-scope",
+                "labels": {
+                  "en": "Participant identity scope",
+                  "zh-CN": "参与政权的身份范围"
+                }
+              },
+              {
+                "id": "transformation:incorporated-polity",
+                "labels": {
+                  "en": "Incorporated polity",
+                  "zh-CN": "被整合的政权"
+                }
+              },
+              {
+                "id": "transformation:campaign-start",
+                "labels": {
+                  "en": "Campaign start as recorded",
+                  "zh-CN": "来源所载战役起点"
+                }
+              },
+              {
+                "id": "transformation:campaign-end",
+                "labels": {
+                  "en": "Campaign conclusion as recorded",
+                  "zh-CN": "来源所载战役终点"
+                }
+              },
+              {
+                "id": "relation:integration-event",
+                "labels": {
+                  "en": "Political integration",
+                  "zh-CN": "政治整合"
+                }
+              },
+              {
+                "id": "transformation:participant-role",
+                "labels": {
+                  "en": "Role in the integration",
+                  "zh-CN": "在整合中的角色"
+                }
+              }
+            ],
+            "types": [
+              {
+                "id": "gitworld:political-transition",
+                "labels": {
+                  "en": "Political transition",
+                  "zh-CN": "政治转变"
+                }
+              },
+              {
+                "id": "gitworld:political-integration",
+                "labels": {
+                  "en": "Political integration",
+                  "zh-CN": "政治整合"
+                }
+              },
+              {
+                "id": "gitworld:polity",
+                "labels": {
+                  "en": "Polity",
+                  "zh-CN": "政治实体"
+                }
+              }
+            ],
+            "values": [
+              {
+                "propertyId": "transformation:mechanism",
+                "value": "military-conquest",
+                "labels": {
+                  "en": "Military conquest",
+                  "zh-CN": "军事征服"
+                }
+              },
+              {
+                "propertyId": "transformation:mechanism",
+                "value": "dynastic-replacement",
+                "labels": {
+                  "en": "Dynastic replacement",
+                  "zh-CN": "王朝替换"
+                }
+              },
+              {
+                "propertyId": "transformation:stated-outcome",
+                "value": "fall-of-conquered-polity",
+                "labels": {
+                  "en": "Fall of the conquered polity",
+                  "zh-CN": "被征服政权终结"
+                }
+              },
+              {
+                "propertyId": "transformation:stated-outcome",
+                "value": "dynastic-replacement",
+                "labels": {
+                  "en": "One dynasty replaces another",
+                  "zh-CN": "王朝更替"
+                }
+              },
+              {
+                "propertyId": "transformation:transition-role",
+                "value": "incoming",
+                "labels": {
+                  "en": "Incoming polity",
+                  "zh-CN": "接替的政权"
+                }
+              },
+              {
+                "propertyId": "transformation:transition-role",
+                "value": "outgoing",
+                "labels": {
+                  "en": "Displaced polity",
+                  "zh-CN": "被取代的政权"
+                }
+              },
+              {
+                "propertyId": "temporal:resolution-policy",
+                "value": "source-year-not-converted-day",
+                "labels": {
+                  "en": "Compare the source year without choosing a converted event day",
+                  "zh-CN": "按来源年份比较，不选择换算后的事件日"
+                }
+              },
+              {
+                "propertyId": "transformation:identity-scope",
+                "value": "western-jin-phase",
+                "labels": {
+                  "en": "Jin in the source-defined Western Jin phase",
+                  "zh-CN": "来源所界定的西晋阶段"
+                }
+              },
+              {
+                "propertyId": "transformation:stated-outcome",
+                "value": "political-incorporation",
+                "labels": {
+                  "en": "Political incorporation stated by source",
+                  "zh-CN": "来源明确记载的政治整合"
+                }
+              },
+              {
+                "propertyId": "transformation:participant-role",
+                "value": "incorporating",
+                "labels": {
+                  "en": "Incorporating polity",
+                  "zh-CN": "实施整合的政权"
+                }
+              },
+              {
+                "propertyId": "transformation:participant-role",
+                "value": "incorporated",
+                "labels": {
+                  "en": "Incorporated polity",
+                  "zh-CN": "被整合的政权"
+                }
+              }
+            ],
+            "semanticNotes": [
+              {
+                "ids": [
+                  "transformation:outgoing-polity",
+                  "transformation:incoming-polity",
+                  "transformation:mechanism",
+                  "relation:political-transition"
+                ],
+                "en": "Participants and mechanisms come from explicit event evidence. A conquest and a dynastic replacement are different; neither relation creates Git ancestry or copies the participants’ fields.",
+                "zh-CN": "参与政权和转变方式均须有明确事件证据。征服与王朝替换含义不同；均不创建 Git 继承关系，也不复制参与政权的字段。"
+              }
+            ]
+          }
+        },
+        "inputSources": [
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "15108068"
+            },
+            "revision": "1373985551",
+            "contentHash": "1f7d674fb7e84ad3596bf329f6e45074f02940ba88aeb0976f94dd9e6edcb196",
+            "url": "https://en.wikipedia.org/wiki/Conquest_of_Shu_by_Wei",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551",
+            "retrievedAt": "2026-10-25T01:34:21.445Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Conquest of Shu by Wei, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&oldid=1373985551; author history: https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Shu%20by%20Wei&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          },
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "55020"
+            },
+            "revision": "1359294647",
+            "contentHash": "4a52801e3f93d2774f2a0bafdbe88cc1a5756bfbf88c87199bd25962baafbd8f",
+            "url": "https://en.wikipedia.org/wiki/Jin_dynasty_(266%E2%80%93420)",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647",
+            "retrievedAt": "2026-10-24T22:52:58.645Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Jin dynasty (266–420), English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&oldid=1359294647; author history: https://en.wikipedia.org/w/index.php?title=Jin%20dynasty%20(266%E2%80%93420)&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          },
+          {
+            "identity": {
+              "provider": "wikipedia-en",
+              "externalId": "15051666"
+            },
+            "revision": "1379420937",
+            "contentHash": "aa14fab85b067c8dbc16c775520a1b72f2de6e5e5a22b70760702ff8976c83e3",
+            "url": "https://en.wikipedia.org/wiki/Conquest_of_Wu_by_Jin",
+            "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937",
+            "retrievedAt": "2026-10-24T22:52:57.204Z",
+            "rights": {
+              "licenseId": "CC-BY-SA-4.0",
+              "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+              "attribution": "Conquest of Wu by Jin, English Wikipedia contributors; https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&oldid=1379420937; author history: https://en.wikipedia.org/w/index.php?title=Conquest%20of%20Wu%20by%20Jin&action=history. GitWorld extracts and normalizes table facts; images and article rendering are excluded.",
+              "redistribution": "allowed"
+            }
+          }
+        ],
+        "facts": [
+          {
+            "key": "wei-shu-conquest:date",
+            "profileId": "wei-shu-conquest",
+            "factId": "date",
+            "locator": "$.text;table.infobox[0].tr[4].cell[1]",
+            "textHash": "8758d6ef29c73f637438582c7b5d49d760b278494cbe975716475ff0eb59beb0",
+            "links": [],
+            "referenceAnchors": [
+              "#cite_note-ending_date-4",
+              "#cite_note-starting_date-2"
+            ]
+          },
+          {
+            "key": "wei-shu-conquest:result",
+            "profileId": "wei-shu-conquest",
+            "factId": "result",
+            "locator": "$.text;table.infobox[0].tr[6].cell[1]",
+            "textHash": "085892dbb643340790388ff360d95d71669b9793642a52a95f7a1baa64019eb1",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Cao_Wei",
+                "locator": "$.text;table.infobox[0].tr[6].cell[1];a[eligible-link-index=0]",
+                "textHash": "b012cd726ff3fa69df73615db27bc9e4a2930c39ce08c33f69a13346b9c5f326"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Shu_Han",
+                "locator": "$.text;table.infobox[0].tr[6].cell[1];a[eligible-link-index=1]",
+                "textHash": "1c9f02dd65d96b0d51222917ada02ffb49338f51644bc0d996603db34442d1a8"
+              }
+            ],
+            "referenceAnchors": []
+          },
+          {
+            "key": "wei-shu-conquest:wei",
+            "profileId": "wei-shu-conquest",
+            "factId": "wei",
+            "locator": "$.text;table.infobox[0].tr[8].cell[0]",
+            "textHash": "b012cd726ff3fa69df73615db27bc9e4a2930c39ce08c33f69a13346b9c5f326",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Cao_Wei",
+                "locator": "$.text;table.infobox[0].tr[8].cell[0];a[eligible-link-index=0]",
+                "textHash": "b012cd726ff3fa69df73615db27bc9e4a2930c39ce08c33f69a13346b9c5f326"
+              }
+            ],
+            "referenceAnchors": []
+          },
+          {
+            "key": "wei-shu-conquest:shu",
+            "profileId": "wei-shu-conquest",
+            "factId": "shu",
+            "locator": "$.text;table.infobox[0].tr[8].cell[1]",
+            "textHash": "1c9f02dd65d96b0d51222917ada02ffb49338f51644bc0d996603db34442d1a8",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Shu_Han",
+                "locator": "$.text;table.infobox[0].tr[8].cell[1];a[eligible-link-index=0]",
+                "textHash": "1c9f02dd65d96b0d51222917ada02ffb49338f51644bc0d996603db34442d1a8"
+              }
+            ],
+            "referenceAnchors": []
+          },
+          {
+            "key": "wei-shu-conquest:summary",
+            "profileId": "wei-shu-conquest",
+            "factId": "summary",
+            "locator": "$.text;p[document-index=209]",
+            "textHash": "6c90426b26e9aca1596265c283377839a869151aec6827f0b9244c3c999c843f",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Cao_Wei",
+                "locator": "$.text;p[document-index=209];a[eligible-link-index=0]",
+                "textHash": "b012cd726ff3fa69df73615db27bc9e4a2930c39ce08c33f69a13346b9c5f326"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Shu_Han",
+                "locator": "$.text;p[document-index=209];a[eligible-link-index=1]",
+                "textHash": "1c9f02dd65d96b0d51222917ada02ffb49338f51644bc0d996603db34442d1a8"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Three_Kingdoms",
+                "locator": "$.text;p[document-index=209];a[eligible-link-index=2]",
+                "textHash": "14c479528ed1c6f87b857be81c3ba5b3728b7322f008a1c4f74ef7edf0d5e474"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/End_of_the_Han_dynasty",
+                "locator": "$.text;p[document-index=209];a[eligible-link-index=3]",
+                "textHash": "361e48d0308f20e32dba5fb56328baf18d72ef0ccb43b84f5c262d2a6a1fc6c8"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Han_dynasty#Eastern_Han",
+                "locator": "$.text;p[document-index=209];a[eligible-link-index=4]",
+                "textHash": "aa05130705a1f8a43982f9d5a837ccb164cbacdf9a851099ed30c5c5fc8e6bf6"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Jin_dynasty_(266%E2%80%93420)#Western_Jin_(266%E2%80%93316)",
+                "locator": "$.text;p[document-index=209];a[eligible-link-index=5]",
+                "textHash": "c342cd9271b38efdd0d4c68887f73e36e6d4d3e5e37e68033a4f748f9627ec5c"
+              }
+            ],
+            "referenceAnchors": []
+          },
+          {
+            "key": "jin-context:western-phase",
+            "profileId": "jin-context",
+            "factId": "western-phase",
+            "locator": "$.text;h3[document-index=934]#Western_Jin_(266–316)",
+            "textHash": "0954efd4a774f774373c45b4f1b00ca55c605b862fb6405d00cb49e8833386cc",
+            "links": [],
+            "referenceAnchors": []
+          },
+          {
+            "key": "jin-context:western-identity",
+            "profileId": "jin-context",
+            "factId": "western-identity",
+            "locator": "$.text;p[document-index=862]",
+            "textHash": "9edf884e153e989870a82f4d09f90cf8725ca880a955121e538f69a0f219a8b5",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Cao_Wei",
+                "locator": "$.text;p[document-index=862];a[eligible-link-index=0]",
+                "textHash": "b012cd726ff3fa69df73615db27bc9e4a2930c39ce08c33f69a13346b9c5f326"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Cao_Huan",
+                "locator": "$.text;p[document-index=862];a[eligible-link-index=1]",
+                "textHash": "a1860a43041e768af80d915442d2c4d71e65b31ea7a538adfd9b55c4b9ed3120"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Luoyang",
+                "locator": "$.text;p[document-index=862];a[eligible-link-index=2]",
+                "textHash": "1ef0f91ba369b8222a92c65f9d31180cd8136f738b80df79645217fc148081de"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Chang%27an",
+                "locator": "$.text;p[document-index=862];a[eligible-link-index=3]",
+                "textHash": "9938b66c19e994361931ff9bfec709c4c642cd3bce98a988d951ac7b846cde68"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Xi%27an",
+                "locator": "$.text;p[document-index=862];a[eligible-link-index=4]",
+                "textHash": "9e74fa2d2ab0e7719ce13b4fe7213b3df0d2c2f32d36e4894a44bbbaced5e439"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Eastern_Wu",
+                "locator": "$.text;p[document-index=862];a[eligible-link-index=5]",
+                "textHash": "5c27706acae53cee25d11dcb9ec1842159e0c3f5e6fb2f5a082e4e3b51835d3f"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Three_Kingdoms",
+                "locator": "$.text;p[document-index=862];a[eligible-link-index=6]",
+                "textHash": "14c479528ed1c6f87b857be81c3ba5b3728b7322f008a1c4f74ef7edf0d5e474"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/China_proper",
+                "locator": "$.text;p[document-index=862];a[eligible-link-index=7]",
+                "textHash": "747d6f0c8fdffb5a1077b1fdd452b9b73c070943b0de23f53defa9b3a7038ae1"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Han_dynasty",
+                "locator": "$.text;p[document-index=862];a[eligible-link-index=8]",
+                "textHash": "a32ee0f65b258ed3ccc9a766eb2252b6ec334625e8e0964c5a4ab76c24645841"
+              }
+            ],
+            "referenceAnchors": []
+          },
+          {
+            "key": "jin-context:replacement",
+            "profileId": "jin-context",
+            "factId": "replacement",
+            "locator": "$.text;p[document-index=944]",
+            "textHash": "99fc9225729821133428c1c56583518091a894e37e9cfad907824e5c9f7c5706",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Sima_Yi",
+                "locator": "$.text;p[document-index=944];a[eligible-link-index=0]",
+                "textHash": "21c920e887e9bdae47960acf3c3472b46c71929507320f202a332c2f999d3975"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Cao_Wei",
+                "locator": "$.text;p[document-index=944];a[eligible-link-index=1]",
+                "textHash": "b012cd726ff3fa69df73615db27bc9e4a2930c39ce08c33f69a13346b9c5f326"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Cao_Huan",
+                "locator": "$.text;p[document-index=944];a[eligible-link-index=2]",
+                "textHash": "a1860a43041e768af80d915442d2c4d71e65b31ea7a538adfd9b55c4b9ed3120"
+              },
+              {
+                "href": "https://en.wikipedia.org/wiki/Eastern_Wu",
+                "locator": "$.text;p[document-index=944];a[eligible-link-index=3]",
+                "textHash": "5c27706acae53cee25d11dcb9ec1842159e0c3f5e6fb2f5a082e4e3b51835d3f"
+              }
+            ],
+            "referenceAnchors": [
+              "#cite_note-8",
+              "#cite_note-:1-4",
+              "#cite_note-:0-2"
+            ]
+          },
+          {
+            "key": "jin-wu-integration:date",
+            "profileId": "jin-wu-integration",
+            "factId": "date",
+            "locator": "$.text;table.infobox[0].tr[4].cell[1]",
+            "textHash": "38a83fc940dee6c86883c2b006fc72847ffebf1063fd80b900a5e5fc79f0298c",
+            "links": [],
+            "referenceAnchors": [
+              "#cite_note-end_date-4",
+              "#cite_note-start_date-2"
+            ]
+          },
+          {
+            "key": "jin-wu-integration:result",
+            "profileId": "jin-wu-integration",
+            "factId": "result",
+            "locator": "$.text;table.infobox[0].tr[6].cell[1]",
+            "textHash": "d8a02a2d0770b429a3c9b3f5ae7418b8382404b7cbfb46047d01806d5ba0756f",
+            "links": [],
+            "referenceAnchors": []
+          },
+          {
+            "key": "jin-wu-integration:territorial-outcome",
+            "profileId": "jin-wu-integration",
+            "factId": "territorial-outcome",
+            "locator": "$.text;table.infobox[0].tr[7].cell[1]",
+            "textHash": "76d817b5569b2c65e66f429ea3ba8bc6efe1178af4ffa4678811b02c0cf02a7d",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Jin_dynasty_(266%E2%80%93420)",
+                "locator": "$.text;table.infobox[0].tr[7].cell[1];a[eligible-link-index=0]",
+                "textHash": "4649e5098fb61731f7107feb410c727d2824a58decb45aa9361befb832afa7e8"
+              }
+            ],
+            "referenceAnchors": []
+          },
+          {
+            "key": "jin-wu-integration:jin",
+            "profileId": "jin-wu-integration",
+            "factId": "jin",
+            "locator": "$.text;table.infobox[0].tr[9].cell[0]",
+            "textHash": "4649e5098fb61731f7107feb410c727d2824a58decb45aa9361befb832afa7e8",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Jin_dynasty_(266%E2%80%93420)",
+                "locator": "$.text;table.infobox[0].tr[9].cell[0];a[eligible-link-index=0]",
+                "textHash": "4649e5098fb61731f7107feb410c727d2824a58decb45aa9361befb832afa7e8"
+              }
+            ],
+            "referenceAnchors": []
+          },
+          {
+            "key": "jin-wu-integration:wu",
+            "profileId": "jin-wu-integration",
+            "factId": "wu",
+            "locator": "$.text;table.infobox[0].tr[9].cell[1]",
+            "textHash": "00c1e468e4e4b1d39812fd02c8c5a0cba81828a5682eced2a6ca1e50afe43e42",
+            "links": [
+              {
+                "href": "https://en.wikipedia.org/wiki/Eastern_Wu",
+                "locator": "$.text;table.infobox[0].tr[9].cell[1];a[eligible-link-index=0]",
+                "textHash": "00c1e468e4e4b1d39812fd02c8c5a0cba81828a5682eced2a6ca1e50afe43e42"
+              }
+            ],
+            "referenceAnchors": []
+          }
+        ]
+      }
+    }
+  ]
+}

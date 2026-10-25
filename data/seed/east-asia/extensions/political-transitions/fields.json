@@ -1,0 +1,250 @@
+{
+  "schemaVersion": 1,
+  "kind": "historical-field-display-labels",
+  "properties": [
+    {
+      "id": "projection:rule-id",
+      "labels": {
+        "en": "Mapping rule",
+        "zh-CN": "映射规则"
+      }
+    },
+    {
+      "id": "projection:source-fact",
+      "labels": {
+        "en": "Source field",
+        "zh-CN": "来源字段"
+      }
+    },
+    {
+      "id": "transformation:outgoing-polity",
+      "labels": {
+        "en": "Displaced polity",
+        "zh-CN": "被取代的政权"
+      }
+    },
+    {
+      "id": "transformation:incoming-polity",
+      "labels": {
+        "en": "Incoming polity",
+        "zh-CN": "接替的政权"
+      }
+    },
+    {
+      "id": "transformation:mechanism",
+      "labels": {
+        "en": "Form of political change",
+        "zh-CN": "政治转变方式"
+      }
+    },
+    {
+      "id": "transformation:stated-outcome",
+      "labels": {
+        "en": "Documented political outcome",
+        "zh-CN": "来源明确记载的政治结果"
+      }
+    },
+    {
+      "id": "transformation:source-date",
+      "labels": {
+        "en": "Date reported by source",
+        "zh-CN": "来源所载日期"
+      }
+    },
+    {
+      "id": "relation:political-transition",
+      "labels": {
+        "en": "Political transition",
+        "zh-CN": "政治转变"
+      }
+    },
+    {
+      "id": "transformation:transition-role",
+      "labels": {
+        "en": "Role in the political transition",
+        "zh-CN": "政治转变中的角色"
+      }
+    },
+    {
+      "id": "temporal:resolution-policy",
+      "labels": {
+        "en": "Date resolution used here",
+        "zh-CN": "本次采用的日期粒度"
+      }
+    },
+    {
+      "id": "transformation:incorporating-polity",
+      "labels": {
+        "en": "Incorporating polity",
+        "zh-CN": "实施整合的政权"
+      }
+    },
+    {
+      "id": "transformation:identity-scope",
+      "labels": {
+        "en": "Participant identity scope",
+        "zh-CN": "参与政权的身份范围"
+      }
+    },
+    {
+      "id": "transformation:incorporated-polity",
+      "labels": {
+        "en": "Incorporated polity",
+        "zh-CN": "被整合的政权"
+      }
+    },
+    {
+      "id": "transformation:campaign-start",
+      "labels": {
+        "en": "Campaign start as recorded",
+        "zh-CN": "来源所载战役起点"
+      }
+    },
+    {
+      "id": "transformation:campaign-end",
+      "labels": {
+        "en": "Campaign conclusion as recorded",
+        "zh-CN": "来源所载战役终点"
+      }
+    },
+    {
+      "id": "relation:integration-event",
+      "labels": {
+        "en": "Political integration",
+        "zh-CN": "政治整合"
+      }
+    },
+    {
+      "id": "transformation:participant-role",
+      "labels": {
+        "en": "Role in the integration",
+        "zh-CN": "在整合中的角色"
+      }
+    }
+  ],
+  "types": [
+    {
+      "id": "gitworld:political-transition",
+      "labels": {
+        "en": "Political transition",
+        "zh-CN": "政治转变"
+      }
+    },
+    {
+      "id": "gitworld:political-integration",
+      "labels": {
+        "en": "Political integration",
+        "zh-CN": "政治整合"
+      }
+    },
+    {
+      "id": "gitworld:polity",
+      "labels": {
+        "en": "Polity",
+        "zh-CN": "政治实体"
+      }
+    }
+  ],
+  "values": [
+    {
+      "propertyId": "transformation:mechanism",
+      "value": "military-conquest",
+      "labels": {
+        "en": "Military conquest",
+        "zh-CN": "军事征服"
+      }
+    },
+    {
+      "propertyId": "transformation:mechanism",
+      "value": "dynastic-replacement",
+      "labels": {
+        "en": "Dynastic replacement",
+        "zh-CN": "王朝替换"
+      }
+    },
+    {
+      "propertyId": "transformation:stated-outcome",
+      "value": "fall-of-conquered-polity",
+      "labels": {
+        "en": "Fall of the conquered polity",
+        "zh-CN": "被征服政权终结"
+      }
+    },
+    {
+      "propertyId": "transformation:stated-outcome",
+      "value": "dynastic-replacement",
+      "labels": {
+        "en": "One dynasty replaces another",
+        "zh-CN": "王朝更替"
+      }
+    },
+    {
+      "propertyId": "transformation:transition-role",
+      "value": "incoming",
+      "labels": {
+        "en": "Incoming polity",
+        "zh-CN": "接替的政权"
+      }
+    },
+    {
+      "propertyId": "transformation:transition-role",
+      "value": "outgoing",
+      "labels": {
+        "en": "Displaced polity",
+        "zh-CN": "被取代的政权"
+      }
+    },
+    {
+      "propertyId": "temporal:resolution-policy",
+      "value": "source-year-not-converted-day",
+      "labels": {
+        "en": "Compare the source year without choosing a converted event day",
+        "zh-CN": "按来源年份比较，不选择换算后的事件日"
+      }
+    },
+    {
+      "propertyId": "transformation:identity-scope",
+      "value": "western-jin-phase",
+      "labels": {
+        "en": "Jin in the source-defined Western Jin phase",
+        "zh-CN": "来源所界定的西晋阶段"
+      }
+    },
+    {
+      "propertyId": "transformation:stated-outcome",
+      "value": "political-incorporation",
+      "labels": {
+        "en": "Political incorporation stated by source",
+        "zh-CN": "来源明确记载的政治整合"
+      }
+    },
+    {
+      "propertyId": "transformation:participant-role",
+      "value": "incorporating",
+      "labels": {
+        "en": "Incorporating polity",
+        "zh-CN": "实施整合的政权"
+      }
+    },
+    {
+      "propertyId": "transformation:participant-role",
+      "value": "incorporated",
+      "labels": {
+        "en": "Incorporated polity",
+        "zh-CN": "被整合的政权"
+      }
+    }
+  ],
+  "semanticNotes": [
+    {
+      "ids": [
+        "transformation:outgoing-polity",
+        "transformation:incoming-polity",
+        "transformation:mechanism",
+        "relation:political-transition"
+      ],
+      "en": "Participants and mechanisms come from explicit event evidence. A conquest and a dynastic replacement are different; neither relation creates Git ancestry or copies the participants’ fields.",
+      "zh-CN": "参与政权和转变方式均须有明确事件证据。征服与王朝替换含义不同；均不创建 Git 继承关系，也不复制参与政权的字段。"
+    }
+  ]
+}

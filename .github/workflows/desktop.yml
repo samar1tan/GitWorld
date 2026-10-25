@@ -1,0 +1,44 @@
+name: Desktop checks
+on:
+  push:
+    paths: ["apps/**", "packages/**", "data/**", "scripts/**", "site/**", "THIRD_PARTY_NOTICES.md", "package.json", "package-lock.json", "tsconfig.base.json", ".github/workflows/desktop.yml", ".github/workflows/pages.yml"]
+  pull_request:
+    paths: ["apps/**", "packages/**", "data/**", "scripts/**", "site/**", "THIRD_PARTY_NOTICES.md", "package.json", "package-lock.json", "tsconfig.base.json", ".github/workflows/desktop.yml", ".github/workflows/pages.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: desktop-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: node apps/desktop/build-renderer.mjs
+      - run: node site/build.mjs
+  macos-runtime:
+    runs-on: macos-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+        env:
+          GITWORLD_REQUIRE_BUNDLED_GIT_TESTS: "1"
+      - run: npm run desktop:smoke
+      - run: npm run desktop:package:internal
+      - run: npm run desktop:smoke:packaged

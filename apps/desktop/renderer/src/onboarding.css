@@ -1,0 +1,55 @@
+.onboarding-panel,.onboarding-tip,.onboarding-save-error { box-sizing:border-box; color:#dce3ee; border:1px solid #465369; border-radius:6px; background:#202631; font-size:14px; line-height:1.55; }
+.onboarding-panel { width:100%; max-width:100%; max-height:min(240px,calc(100dvh - 120px)); overflow:auto; padding:0 16px 12px; }
+.onboarding-heading { position:sticky; top:0; z-index:1; display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:42px; background:#202631; margin-bottom:8px; padding:4px 0; box-sizing:border-box; }
+.onboarding-heading h2 { display:flex; align-items:center; flex-wrap:wrap; gap:4px 12px; font-size:14px; font-weight:500; margin:0; }
+.onboarding-heading h2 > span { font-size:12px; color:#adbed3; font-weight:400; }
+.onboarding-heading > .onboarding-actions { justify-content:flex-end; }
+.onboarding-heading [data-onboarding=close] { min-width:28px; min-height:28px; font-size:20px; line-height:1; padding:0 6px; background:transparent; border-color:transparent; }
+.onboarding-heading [data-onboarding=progress],.onboarding-heading [data-onboarding=options] { background:transparent; border-color:transparent; color:#b8cbe3; }
+.onboarding-heading [aria-expanded=true] { border-color:#7396c4; background:#2a384d; }
+.onboarding-button { box-sizing:border-box; min-height:30px; padding:5px 9px; border:1px solid #536075; border-radius:4px; background:#2c3543; color:#dce5f1; font:inherit; font-size:12px; line-height:1.45; cursor:pointer; }
+.onboarding-button:hover { background:#35445a; }
+.onboarding-button:focus-visible,.onboarding-tracks button:focus-visible { outline:2px solid #8cbbfa; outline-offset:2px; }
+.onboarding-button.primary { background:#28598e; border-color:#749ac6; }
+.onboarding-tracks { display:flex; flex-wrap:wrap; gap:5px; margin:0; border-bottom:1px solid #465369; }
+.onboarding-tracks button { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; column-gap:5px; padding:6px 8px; background:none; color:#aebdce; font:inherit; font-size:13px; border:0; border-bottom:2px solid transparent; cursor:pointer; }
+.onboarding-tracks button[aria-pressed=true] { color:#edf2f8; border-bottom-color:#85b7f6; background:#29374c; }
+.onboarding-tracks small { font-size:12px; color:#acbcd0; }
+.onboarding-current { display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:64px; }
+.onboarding-current > div { flex:1; min-width:0; }
+.onboarding-current > .onboarding-button { flex:none; font-size:14px; }
+.onboarding-current h3 { font-weight:500; font-size:14px; margin:0 0 4px; }
+.onboarding-current p { margin:0; max-width:100ch; color:#bfcbdc; font-size:14px; }
+.onboarding-actions { display:flex; align-items:center; gap:7px; flex-wrap:wrap; }
+.onboarding-steps { margin:12px 0 0; border-top:1px solid #465369; padding-top:8px; font-size:13px; color:#c3cedd; }
+.onboarding-steps ol { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:3px 15px; list-style:none; margin:0; padding:0; }
+.onboarding-steps li { display:flex; gap:9px; align-items:center; padding:5px 0; }
+.onboarding-steps li[aria-current] { color:#e3edfb; }
+.onboarding-step-mark { flex:0 0 21px; width:21px; height:21px; box-sizing:border-box; display:grid; place-items:center; border:1px solid #60758f; color:#c8d9ed; border-radius:50%; font-size:12px; line-height:1; }
+.onboarding-options { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 20px; border-top:1px solid #465369; margin-top:12px; padding-top:8px; }
+.onboarding-settings { display:flex; flex-wrap:wrap; align-items:center; gap:7px; }
+.onboarding-settings > .onboarding-button { color:#bacbe1; background:transparent; }
+.onboarding-tip { max-width:460px; display:flex; align-items:flex-start; gap:10px; padding:11px 12px; box-shadow:0 5px 18px #0003; }
+.onboarding-tip p { margin:0 0 7px; color:#becbdb; }
+.onboarding-tip > button { border:0; background:transparent; font-size:18px; padding:0 4px; min-width:24px; }
+.onboarding-save-error { padding:10px 12px; margin-top:9px; border-color:#9a8195; font-size:12px; }
+.onboarding-save-error p { margin:0 0 7px; }
+.onboarding-panel .onboarding-save-error { background:#2d2932; }
+.onboarding-error { font-size:13px; color:#e6c4d4; }
+.onboarding-restart { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px 20px; font-size:13px; min-height:64px; }
+.onboarding-restart p { margin:0 0 8px; }
+@media(max-width:700px) { .onboarding-heading { flex-wrap:wrap; gap:4px; padding-right:32px; } .onboarding-heading > .onboarding-actions { justify-content:flex-start; } .onboarding-heading [data-onboarding=close] { position:absolute; right:0; top:5px; } .onboarding-current { align-items:flex-start; flex-wrap:wrap; gap:10px; } .onboarding-current > div { flex-basis:100%; } .onboarding-tip { max-width:calc(100vw - 32px); } }
+body { display:flex; flex-direction:column; height:100dvh; overflow:hidden; }
+#app { flex:1; min-height:0; min-width:0; overflow:hidden; }
+#app .workspace,#app .manager { height:100%; min-height:0; }
+.workspace-guidance-host { flex:none; min-height:0; max-height:240px; overflow:auto; background:#1b222c; }
+.workspace-guidance-host:empty { display:none; }
+.workspace-guidance-host .onboarding-tip { max-width:none; border-radius:0; border-right:0; border-left:0; box-shadow:none; padding:8px 16px; align-items:center; }
+.workspace-guidance-host .onboarding-tip > div { display:flex; align-items:center; flex:1; gap:14px; }
+.workspace-guidance-host .onboarding-tip p { margin:0; font-size:13px; }
+.workspace-guidance-host .onboarding-panel { width:100%; max-width:none; border-radius:0; border-left:0; border-right:0; box-shadow:none; }
+.workspace-guidance-host > .onboarding-save-error,.client-state-notice { margin:0; border:0; border-top:1px solid #89758a; border-radius:0; padding:9px 16px; font-size:13px; background:#302b35; color:#e2d6e3; }
+.client-state-notice p { margin:0 0 7px; }
+.client-state-notice .onboarding-actions { margin-top:6px; }
+.manager-guide-entry { margin-left:auto; }
+@media(max-width:700px) { .workspace-guidance-host .onboarding-tip > div { flex-wrap:wrap; gap:6px; } .onboarding-options { align-items:flex-start; } }

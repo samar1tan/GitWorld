@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "title": "Source-listed activity contexts candidate",
+  "status": "pending-independent-content-and-rights-review; not-publication-approval",
+  "baseManifestHash": "2abc1a119e029336e51f0df1bff506ccba74b77fb87a2e76a9c2dadb90b272b3",
+  "dataLicense": {
+    "id": "CC-BY-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "licenseScope": "Selected source-derived facts, interpretations, translations and this candidate field vocabulary remain CC-BY-SA-4.0. The source-code license does not replace these content terms.",
+  "sources": [
+    {
+      "id": "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "66142"
+      },
+      "revision": "1381475509",
+      "contentHash": "91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b",
+      "url": "https://en.wikipedia.org/wiki/List_of_Chinese_monarchs",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&oldid=1381475509",
+      "retrievedAt": "2026-10-24T19:34:25.430Z",
+      "adapterVersion": "english-wikipedia-fact-subset-v1",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of Chinese monarchs, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&oldid=1381475509. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      },
+      "selectedFactsManifest": {
+        "schemaVersion": 1,
+        "provider": "wikipedia-en",
+        "articleTitle": "List of Chinese monarchs",
+        "pageId": "66142",
+        "revision": "1381475509",
+        "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&oldid=1381475509",
+        "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&action=history",
+        "upstreamSnapshotHash": "7b385d221f15e7f5cddc6a6309d8ca8d5da11d8d351965989f8d438bf7af4013",
+        "hashSemantics": "SHA-256 of the canonical original Action API parse record; raw record remains in the local acquisition archive.",
+        "retrievedAt": "2026-10-24T19:34:25.430Z",
+        "retrievalMode": "unknown",
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of Chinese monarchs, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&oldid=1381475509. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "changes": [
+          "Selected table-linked names and primary date facts; excluded article prose, portraits, image tags and HTML.",
+          "Retained source table/row/cell locators, citation anchors, competing chronology flags and original date precision.",
+          "Normalized source facts into unreviewed office-holder assertions and analytical source scopes; inferred no polity ancestry."
+        ],
+        "factRows": 442,
+        "factRecords": 442,
+        "review": "unreviewed"
+      }
+    },
+    {
+      "id": "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "224374"
+      },
+      "revision": "1380772779",
+      "contentHash": "87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef",
+      "url": "https://en.wikipedia.org/wiki/List_of_emperors_of_Japan",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&oldid=1380772779",
+      "retrievedAt": "2026-10-24T20:10:49.340Z",
+      "adapterVersion": "english-wikipedia-fact-subset-v1",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of emperors of Japan, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&oldid=1380772779. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      },
+      "selectedFactsManifest": {
+        "schemaVersion": 1,
+        "provider": "wikipedia-en",
+        "articleTitle": "List of emperors of Japan",
+        "pageId": "224374",
+        "revision": "1380772779",
+        "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&oldid=1380772779",
+        "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&action=history",
+        "upstreamSnapshotHash": "50e6292027437082e278b45116283d27acc30055b510229b57e2bf240973bc8d",
+        "hashSemantics": "SHA-256 of the canonical original Action API parse record; raw record remains in the local acquisition archive.",
+        "retrievedAt": "2026-10-24T20:10:49.340Z",
+        "retrievalMode": "current-page",
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of emperors of Japan, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&oldid=1380772779. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "changes": [
+          "Selected table-linked names and primary date facts; excluded article prose, portraits, image tags and HTML.",
+          "Retained source table/row/cell locators, citation anchors, competing chronology flags and original date precision.",
+          "Normalized source facts into unreviewed office-holder assertions and analytical source scopes; inferred no polity ancestry.",
+          "Explicit Present/Incumbent source rows also have a current-source-reading point at retrieval; this is neither a political event nor an inferred tenure endpoint."
+        ],
+        "factRows": 134,
+        "factRecords": 134,
+        "review": "unreviewed"
+      }
+    },
+    {
+      "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "24703277"
+      },
+      "revision": "1373459286",
+      "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+      "url": "https://en.wikipedia.org/wiki/Japanese_missions_to_Tang_China",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286",
+      "retrievedAt": "2026-10-24T19:51:30.706Z",
+      "adapterVersion": "english-wikipedia-fact-subset-v1",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Japanese missions to Tang China, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286. Author history: https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      },
+      "selectedFactsManifest": {
+        "schemaVersion": 1,
+        "provider": "wikipedia-en",
+        "articleTitle": "Japanese missions to Tang China",
+        "pageId": "24703277",
+        "revision": "1373459286",
+        "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286",
+        "historyUrl": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&action=history",
+        "upstreamSnapshotHash": "ddb1e3b9b301fec8ca9b84dcbd6c8f9cf42ff2b76b42e4bd46827b762ba32d26",
+        "hashSemantics": "SHA-256 of the canonical original Action API parse record; raw record remains in the local acquisition archive.",
+        "retrievedAt": "2026-10-24T19:51:30.706Z",
+        "retrievalMode": "unknown",
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Japanese missions to Tang China, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286. Author history: https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "changes": [
+          "Selected table-linked names and primary date facts; excluded article prose, portraits, image tags and HTML.",
+          "Retained source table/row/cell locators, citation anchors, competing chronology flags and original date precision.",
+          "Normalized dated source-event entries and listed participant links; inferred no completion, causation or political ancestry. Profile display labels are editorial labels rather than original quotations."
+        ],
+        "factRows": 20,
+        "factRecords": 93,
+        "review": "unreviewed"
+      }
+    },
+    {
+      "id": "gitworld-binding:east-asia-source-roles@44d66c1941745121bad78783097a04bb06a364a8f369cd413973f2983d326cd7",
+      "identity": {
+        "provider": "gitworld-source-binding",
+        "externalId": "east-asia-source-roles"
+      },
+      "revision": "1-unreviewed",
+      "contentHash": "44d66c1941745121bad78783097a04bb06a364a8f369cd413973f2983d326cd7",
+      "url": "https://github.com/samar1tan/GitWorld",
+      "retrievedAt": "2026-10-24T20:54:15.407Z",
+      "adapterVersion": "source-identity-role-bindings-v1",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "allowed",
+        "attribution": "Historical source scopes and selected table facts: named English Wikipedia contributors at the permanent revisions and history links retained in the included source manifests. GitWorld supplied English/Simplified Chinese subject labels and explicit role/type mappings, retained original statements, and inferred no political ancestry. These source-derived mapping and translation records remain CC-BY-SA-4.0; no official endorsement."
+      }
+    },
+    {
+      "id": "gitworld-content-labels:east-asia-preset-labels@38bfce7bba2c59dbc0e01b6121c47a8cecca175e36749fff0c97ef99deabbd1d",
+      "identity": {
+        "provider": "gitworld-content-labels",
+        "externalId": "east-asia-preset-labels"
+      },
+      "revision": "1-unreviewed",
+      "contentHash": "38bfce7bba2c59dbc0e01b6121c47a8cecca175e36749fff0c97ef99deabbd1d",
+      "url": "https://github.com/samar1tan/GitWorld",
+      "retrievedAt": "2026-10-24T21:18:32.161Z",
+      "adapterVersion": "provenanced-content-labels-v1",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "allowed",
+        "attribution": "Selected names and source facts: English, Chinese and Japanese Wikipedia contributors. Individual permanent revision and author-history URLs are retained in the source facts. GitWorld supplied explicitly identified display/script translations and composed labels, retaining original source values; no official endorsement."
+      },
+      "labelEvidence": "Exact original names, metadata revision/hash, author-history URLs and identified translations remain in this source record; it is unchanged from the reviewed base."
+    },
+    {
+      "id": "gitworld-activity-contexts:listed-activity-role-contexts@1eb845592345b3fbe0f5a08c41cee9b15a400a379e0b4ac3d1824063f2a5e597",
+      "identity": {
+        "provider": "gitworld-activity-contexts",
+        "externalId": "listed-activity-role-contexts"
+      },
+      "revision": "1-candidate",
+      "contentHash": "1eb845592345b3fbe0f5a08c41cee9b15a400a379e0b4ac3d1824063f2a5e597",
+      "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/source-bindings-prd.md",
+      "retrievedAt": "2026-10-24T22:34:52.143Z",
+      "adapterVersion": "source-listed-activity-contexts-v1",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "redistribution": "allowed",
+        "attribution": "Source-derived activity and role facts: the English Wikipedia contributors identified by the included permanent revisions and author-history links. GitWorld joined source-listed persons to separately dated roles at year resolution, retained original assertions and source scopes, and supplied bilingual field labels. This interpretation does not establish participation, a completed journey, influence or ancestry; no official endorsement."
+      },
+      "inputSourceVersions": [
+        {
+          "id": "gitworld-binding:east-asia-source-roles@44d66c1941745121bad78783097a04bb06a364a8f369cd413973f2983d326cd7",
+          "identity": {
+            "provider": "gitworld-source-binding",
+            "externalId": "east-asia-source-roles"
+          },
+          "revision": "1-unreviewed",
+          "contentHash": "44d66c1941745121bad78783097a04bb06a364a8f369cd413973f2983d326cd7"
+        },
+        {
+          "id": "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef",
+          "identity": {
+            "provider": "wikipedia-en-facts",
+            "externalId": "224374"
+          },
+          "revision": "1380772779",
+          "contentHash": "87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef"
+        },
+        {
+          "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+          "identity": {
+            "provider": "wikipedia-en-facts",
+            "externalId": "24703277"
+          },
+          "revision": "1373459286",
+          "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+        },
+        {
+          "id": "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b",
+          "identity": {
+            "provider": "wikipedia-en-facts",
+            "externalId": "66142"
+          },
+          "revision": "1381475509",
+          "contentHash": "91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b"
+        }
+      ]
+    }
+  ],
+  "labelAttribution": "English, Chinese and Japanese Wikipedia contributors; exact page revision, author-history URL and metadata snapshot hashes accompany selected label facts in the content-label source record.",
+  "changes": [
+    "Retained the selected original activity, role and status assertions with their derivation dependency closure, unchanged source manifests and display-translation ledger.",
+    "Joined exact stable actor identities across dated activity and role assertions under the saved versioned plan; retained both source revisions/hashes and original temporal scopes.",
+    "Added unreviewed forward/inverse listed-person contexts at possible year resolution; did not establish participation, completion, transmission or political ancestry.",
+    "Added independently identified English and Simplified Chinese field/value labels without changing canonical source values."
+  ],
+  "mappingPlan": {
+    "id": "listed-activity-role-contexts",
+    "revision": "1-candidate",
+    "path": "plan.json"
+  },
+  "boundary": {
+    "included": "Selected names, dates, role/participant facts, explicit unreviewed interpretation rules and independently identified display translations.",
+    "excluded": "Raw article HTML, images, full article prose, operational API responses, original PDF/chart/OCR, caches, private notes and local paths."
+  },
+  "historicalReview": "Every new assertion remains unreviewed. Redistribution compatibility does not establish historical correctness, complete coverage, independent review or installed-app acceptance.",
+  "adoptionSemantics": "Partial ordinary KnowledgeCollection: combine with its exact base or use append-observations. Never erase omitted claims by treating this partial candidate as a full object replacement."
+}

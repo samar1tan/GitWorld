@@ -1,0 +1,24 @@
+name: Prototype checks
+on:
+  push:
+    paths: ["prototype/**", ".github/workflows/prototype.yml"]
+  pull_request:
+    paths: ["prototype/**", ".github/workflows/prototype.yml"]
+permissions:
+  contents: read
+jobs:
+  scope-prototype:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: prototype
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: prototype/package-lock.json
+      - run: npm ci
+      - run: npm test
+      - run: npm run build

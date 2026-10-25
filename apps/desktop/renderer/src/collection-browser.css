@@ -1,0 +1,42 @@
+.collection-form { display:flex;flex-direction:column;gap:10px;border-bottom:1px solid #343d49;padding-bottom:15px; }
+.collection-form>label,.collection-query label,.collection-review { display:flex;flex-direction:column;gap:6px;font-size:13px;min-width:0; }
+.collection-form>label { max-width:430px; }
+.collection-form p { margin:0;line-height:1.55; }
+.collection-download { font:12px var(--mono);color:#b2c4da; }
+.collection-query { display:grid;grid-template-columns:minmax(180px,1fr) 100px 100px 125px auto;gap:10px;align-items:end; }
+.collection-query input { width:100%;min-width:0;box-sizing:border-box; }
+.collection-query>label:first-child { grid-column:auto; }
+.collection-layout { display:grid;grid-template-columns:250px minmax(0,1fr);gap:20px;min-width:0; }
+.collection-jobs { border-right:1px solid #343d49;padding-right:12px;max-height:55vh;overflow:auto; }
+.collection-preview { min-width:0;font-size:14px;line-height:1.55; }
+.collection-preview h2 { margin-top:0;font-size:17px; }
+.collection-preview h3 { font-size:14px; }
+.collection-preview code,.collection-preview a { overflow-wrap:anywhere; }
+.collection-preview details { font-size:12px;color:#adbed3;margin:10px 0; }
+.collection-preview li { margin:4px 0; }
+.collection-review { max-width:430px;margin-top:15px; }
+.collection-issues { margin:16px 0;border-top:1px solid #3d4858;padding-top:10px; }
+.collection-issues-heading { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 14px; }
+.collection-issues-heading>button { font-size:14px; }
+.collection-issues-heading>button[aria-expanded=true] { border-color:#7e9fc9;background:#28364a; }
+.collection-issues-heading>span { color:#adbed3;font-size:12px; }
+.collection-issues-body { margin-top:10px;padding:12px;border:1px solid #3c4a5e;border-radius:4px;background:#1c232d; }
+.collection-issues-body>.source-muted { margin:0 0 10px;font-size:13px; }
+.collection-report-progress { display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:8px 0 12px;font-size:13px; }
+.collection-issues-body .source-notice p { margin:0 0 9px; }
+.collection-issue-pagination { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin:10px 0;font-size:12px;color:#b9c9de; }
+.collection-issue-pagination>div { display:flex;gap:6px; }
+.collection-issue-pagination button { font-size:13px; }
+.collection-issue-pagination button:disabled { opacity:.5;cursor:default; }
+.collection-issue-pagination [tabindex]:focus-visible { outline:2px solid #8bb6f3;outline-offset:3px; }
+.collection-issue-list { margin:0;padding:0 0 0 3.6em;max-height:360px;overflow:auto;overscroll-behavior:contain; }
+.collection-issue-list>li { padding:10px 6px;border-bottom:1px solid #354151;font-size:14px; }
+.collection-issue-list>li:last-child { border-bottom:0; }
+.collection-issue-list p { margin:0 0 6px; }
+.collection-issue-list small { font-size:12px;color:#aebed1; }
+.collection-issue-list details { margin:5px 0 0; }
+.collection-aggregate { margin:10px 0;padding:8px 10px;border-left:2px solid #809fc8;background:#242e3b;font-size:13px; }
+.collection-aggregate p { margin:0 0 5px; }
+.collection-aggregate .source-muted { font-size:12px;margin:0; }
+@media(max-width:1100px) { .collection-query { grid-template-columns:minmax(180px,1fr) 85px 85px; }.collection-layout { grid-template-columns:210px minmax(0,1fr); }.collection-query>label:first-child { grid-column:span 3; } }
+@media(max-width:760px) { .collection-layout { grid-template-columns:1fr; }.collection-jobs { border-right:0;border-bottom:1px solid #343d49;max-height:200px;padding:0 0 10px; }.collection-query { grid-template-columns:1fr 1fr; }.collection-query>label:first-child { grid-column:span 2; } }

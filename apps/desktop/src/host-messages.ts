@@ -1,0 +1,9 @@
+export const hostMessages = {
+  en: { view: 'View', import: 'Import a historical data package', export: 'Export a historical data package', backup: 'Create a library backup', restore: 'Restore a library backup', dataPackage: 'GitWorld data package', database: 'GitWorld library backup', startupTitle: 'GitWorld could not start', startupBody: 'The local data service did not start. Your library has not been reset. Close GitWorld and try again; use a verified backup if the problem persists.', closeSaveTitle:'The workspace has not finished saving', closeSaveBody:'GitWorld is still open. Retry saving, or keep the window open to resolve the problem.', retrySave:'Retry', keepOpen:'Keep Open', closeDirtyTitle:'Discard unsaved form changes?', closeDirtyBody:'Your saved library and exploration workspace are retained. Changes still in this form will be lost if you quit.', keepEditing:'Keep Editing', discardQuit:'Discard and Quit' },
+  'zh-CN': { view: '视图', import: '导入历史数据包', export: '导出历史数据包', backup: '创建资料库备份', restore: '恢复资料库备份', dataPackage: 'GitWorld 数据包', database: 'GitWorld 资料库备份', startupTitle: 'GitWorld 无法启动', startupBody: '本地数据服务未能启动。资料库没有被重置。请关闭 GitWorld 后重试；若问题持续，可使用已验证的备份恢复。', closeSaveTitle:'工作区尚未完成保存', closeSaveBody:'GitWorld 仍保持打开。可以重试保存，或保留窗口以处理问题。', retrySave:'重试', keepOpen:'保持打开', closeDirtyTitle:'放弃尚未保存的表单修改？', closeDirtyBody:'已保存的资料库和探索工作区会保留。若退出，当前表单中尚未保存的修改将丢失。', keepEditing:'继续编辑', discardQuit:'放弃修改并退出' },
+} as const;
+
+export const settingsHostMessages = {
+  en: { settings: 'Settings…', zoomIn: 'Zoom In', zoomOut: 'Zoom Out', resetZoom: 'Actual Size', saveTitle: 'Display preference could not be saved', saveBody: 'The current zoom has been kept. Open Settings to retry.' },
+  'zh-CN': { settings: '设置…', zoomIn: '放大界面', zoomOut: '缩小界面', resetZoom: '实际大小', saveTitle: '未能保存显示设置', saveBody: '当前缩放比例已保留。请打开“设置”后重试。' },
+} as const;

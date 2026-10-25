@@ -1,0 +1,206 @@
+{
+  "schemaVersion": 1,
+  "kind": "taxonomy-correction-rights-and-changes",
+  "status": "classification-rights-record",
+  "dataLicense": {
+    "id": "CC-BY-SA-4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0/"
+  },
+  "scope": "The twelve edited data shards retain existing CC BY-SA 4.0 rights. The new type vocabulary and editorial correction ledger are original GitWorld metadata under CC BY-SA 4.0. The edited original base fields.json remains Apache-2.0. No source/assertion record or raw-work permission is changed.",
+  "changes": [
+    "Reclassified exactly 98 source grouping objects, across all 196 object copies in twelve shards, from office to source-tenure-scope.",
+    "Kept every object ID, identity, label, description and alias; kept all 3935 assertions and 18 source records exactly.",
+    "Narrowed only the base office type label and its existing binding:historical-type controlled-value display to Office / 官职.",
+    "Added the bilingual Source table grouping / 来源年表分组 display for gitworld:source-tenure-scope and a hash-bound modern classification ledger. The grouping follows the source table and does not establish an office, polity or territory; no historical event or source record was created."
+  ],
+  "originalSources": [
+    {
+      "sourceId": "wikipedia-en-facts:66142@91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "66142"
+      },
+      "revision": "1381475509",
+      "contentHash": "91bb5db3d2d093a6c42db0d4b5064bc68a1b983b0715709df60493711b8fad7b",
+      "upstreamSnapshotHash": "7b385d221f15e7f5cddc6a6309d8ca8d5da11d8d351965989f8d438bf7af4013",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&oldid=1381475509",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&action=history",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of Chinese monarchs, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&oldid=1381475509. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20Chinese%20monarchs&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:224374@87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "224374"
+      },
+      "revision": "1380772779",
+      "contentHash": "87475be45dc20b4e64e5e318ac524fa5822cce37643511540c95b2dc9a29a8ef",
+      "upstreamSnapshotHash": "50e6292027437082e278b45116283d27acc30055b510229b57e2bf240973bc8d",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&oldid=1380772779",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&action=history",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of emperors of Japan, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&oldid=1380772779. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20Japan&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:314092@f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "314092"
+      },
+      "revision": "1381068545",
+      "contentHash": "f4ddffc5cd7cbc20ebc7923322f01b109f1f3881ad017d4bb5ff406af24080ab",
+      "upstreamSnapshotHash": "b3dd2a982a4b28fd9b2740ade421d285ee52f2d7b6ada02c587cdabb43b9e900",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20prime%20ministers%20of%20Japan&oldid=1381068545",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20prime%20ministers%20of%20Japan&action=history",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of prime ministers of Japan, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20prime%20ministers%20of%20Japan&oldid=1381068545. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20prime%20ministers%20of%20Japan&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:10736899@0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "10736899"
+      },
+      "revision": "1379817586",
+      "contentHash": "0117589bbca2f73cb5e3c340af6923d6a5907d040281398d80bf3f6416b7a26e",
+      "upstreamSnapshotHash": "d4130bf777cfc6a0fb267c1dc4fe2e4e1bdd645c43f67b787aa0e3953ef0b231",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&action=history",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of shoguns, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&oldid=1379817586. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20shoguns&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:17254923@e210f2fedf63e1b83f1ff17c3ba8ac23b674629b6e73133b7f44d460a722fd1f",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "17254923"
+      },
+      "revision": "1347854700",
+      "contentHash": "e210f2fedf63e1b83f1ff17c3ba8ac23b674629b6e73133b7f44d460a722fd1f",
+      "upstreamSnapshotHash": "8a01decf4156fe4f8b47c1086591c3fdfa874c152d7e4b9984fcf45cc6b3161b",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20presidents%20of%20the%20Republic%20of%20China&oldid=1347854700",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20presidents%20of%20the%20Republic%20of%20China&action=history",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of presidents of the Republic of China, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20presidents%20of%20the%20Republic%20of%20China&oldid=1347854700. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20presidents%20of%20the%20Republic%20of%20China&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:17255213@fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "17255213"
+      },
+      "revision": "1366242372",
+      "contentHash": "fc3a7e8a3eb60c8eba2550f2f9a3a455499be548ea08014ce254d1c5038ad514",
+      "upstreamSnapshotHash": "ed16f88fce1c1be7e11f000c2f60529e08b160af552c6f2207ff9c130b8d056e",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20state%20representatives%20of%20the%20People's%20Republic%20of%20China&oldid=1366242372",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20state%20representatives%20of%20the%20People's%20Republic%20of%20China&action=history",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of state representatives of the People's Republic of China, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20state%20representatives%20of%20the%20People's%20Republic%20of%20China&oldid=1366242372. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20state%20representatives%20of%20the%20People's%20Republic%20of%20China&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:1420574@12511a4f9a10aa42352aa5bcfbff8405d4d8635c748df4a6b9a6f80803df8427",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "1420574"
+      },
+      "revision": "1378653649",
+      "contentHash": "12511a4f9a10aa42352aa5bcfbff8405d4d8635c748df4a6b9a6f80803df8427",
+      "upstreamSnapshotHash": "e9eb366988aed5e64a0f10ff3070bbd6b0816e44f544affc56df2d3e0e4d3cac",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20premiers%20of%20China&oldid=1378653649",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20premiers%20of%20China&action=history",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of premiers of China, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20premiers%20of%20China&oldid=1378653649. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20premiers%20of%20China&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:47851611@050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "47851611"
+      },
+      "revision": "1366672363",
+      "contentHash": "050c07f52411eb75d86ae02dce0db78ee049fb3c282b8f8e28d29b1ba5e75f78",
+      "upstreamSnapshotHash": "e146c87ee0c5f1753253caadaef0ce2b57b37b8268d541549cad55412c26040a",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20Northern%20Yuan%20khans&oldid=1366672363",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20Northern%20Yuan%20khans&action=history",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of Northern Yuan khans, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20Northern%20Yuan%20khans&oldid=1366672363. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20Northern%20Yuan%20khans&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:530241@829732fb3734c8609735e3a680e8fa8d730d091e719b20d4ed7b18fee6529577",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "530241"
+      },
+      "revision": "1381383692",
+      "contentHash": "829732fb3734c8609735e3a680e8fa8d730d091e719b20d4ed7b18fee6529577",
+      "upstreamSnapshotHash": "127f66d65107d57117afc87834d5dae78bccdf53c00a8223d49373dee0df7387",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Ming%20dynasty&oldid=1381383692",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Ming%20dynasty&action=history",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of emperors of the Ming dynasty, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Ming%20dynasty&oldid=1381383692. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Ming%20dynasty&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    },
+    {
+      "sourceId": "wikipedia-en-facts:516942@87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "516942"
+      },
+      "revision": "1372964723",
+      "contentHash": "87f4554d10c1b95ac7bf59663481d6d0b20913d675a1373138ab49604de37cca",
+      "upstreamSnapshotHash": "6cf647d15880ccb6485e19eb8da3d3e47babbe7a3bae191c926d609eee903068",
+      "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Qing%20dynasty&oldid=1372964723",
+      "historyUrl": "https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Qing%20dynasty&action=history",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "List of emperors of the Qing dynasty, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Qing%20dynasty&oldid=1372964723. Author history: https://en.wikipedia.org/w/index.php?title=List%20of%20emperors%20of%20the%20Qing%20dynasty&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      }
+    }
+  ],
+  "includedAttributionFiles": [
+    "../../source-rights.json",
+    "../activity-context/source-rights.json",
+    "../qualified-office/source-rights.json",
+    "../political-integration/source-rights.json",
+    "../constitutional-states/source-rights.json"
+  ],
+  "boundary": "Original source HTML, images, PDFs, raw acquisition/API data, user libraries and local preparation/review files are excluded. This classification record grants no new permission for additional source works."
+}
