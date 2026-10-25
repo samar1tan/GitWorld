@@ -385,7 +385,7 @@ export async function createLocalService(options: LocalServiceOptions): Promise<
         const left = before.state({ ...request.params.a.state, propertyIds: properties }), right = after.state({ ...request.params.b.state, propertyIds: properties });
         return { a: left, b: right, fields: properties.map((propertyId, i) => { const before = left.fields[i], after = right.fields[i]; return { propertyId, before, after, kind: ['unknown','uncertain'].includes(before.status) || ['unknown','uncertain'].includes(after.status) ? 'unknown' : canonicalJson(before.values) === canonicalJson(after.values) ? 'same' : 'changed' }; }) };
       }
-      case 'knowledge.conflicts': return knowledgeStore().conflicts();
+      case 'knowledge.conflicts': return importStore().annotateConflicts(await knowledgeStore().conflicts());
       case 'knowledge.resolve': { await knowledgeStore().resolve(request.params.objectId, request.params.choice, request.params.expectedHead); invalidateContent(); return editing().status(); }
       case 'source.search': {
         const { query, language, cursor, operationId } = request.params;

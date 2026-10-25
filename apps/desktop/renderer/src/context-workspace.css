@@ -22,6 +22,8 @@
 .context-notice[role=alert] { border-color:#a08762; background:#30291e; }
 .context-notice p { margin:5px 0; color:#d5dce7; }
 .context-batches { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:9px; }
+.context-batch-filters { display:grid; grid-template-columns:minmax(180px,1fr) minmax(170px,240px) max-content; gap:10px; align-items:end; margin:12px 0; }
+.context-batch-filters .context-field { margin:0; }
 .context-batch { border:1px solid #424d5c; background:#1d2229; color:#dde3eb; border-radius:4px; text-align:left; padding:12px 13px; cursor:pointer; min-width:0; }
 .context-batch[aria-pressed=true] { border-color:#80aee6; background:#273b53; }
 .context-batch strong,.context-batch small { display:block; overflow-wrap:anywhere; }
@@ -39,6 +41,7 @@
 .context-confirmation { max-width:700px; }
 @media(max-width:1280px) { .context-editor-layout { grid-template-columns:190px minmax(0,1fr); } .context-workspace>header { padding:25px 20px 11px; } .context-workspace-body { padding:0 20px 28px; } }
 @media(max-width:900px) { .context-editor-layout { grid-template-columns:1fr; } .context-editor-layout>.sidebar { max-height:100px; } }
+@media(max-width:600px) { .context-batch-filters { grid-template-columns:minmax(0,1fr) max-content; } .context-batch-filters>.context-field:first-child { grid-column:1/-1; } }
 
 .context-target-picker { padding:10px 0; border-bottom:1px solid #3c4551; }
 .context-target-picker>summary { font-size:13px; color:#b9c7d8; }

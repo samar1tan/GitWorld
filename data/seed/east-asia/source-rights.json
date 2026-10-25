@@ -253,5 +253,13 @@
     "removedInterpretedBindings": 21,
     "addedQualifiedClaims": 8,
     "originalFactsAndSourcesUnchanged": true
+  },
+  "sourceReferenceRepair": {
+    "plan": "extensions/source-reference-links/plan.json",
+    "ledger": "extensions/source-reference-links/reconciliation.json",
+    "rights": "extensions/source-reference-links/source-rights.json",
+    "referenceObjects": 5,
+    "identityLinks": 5,
+    "originalRecordsUnchanged": true
   }
 }

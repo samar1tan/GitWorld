@@ -25740,6 +25740,106 @@
           "locator": "$.facts[5]"
         }
       ]
+    },
+    {
+      "contextId": "research-context:japan-related",
+      "objectId": "wikipedia-en:Empress_Saimei",
+      "decision": {
+        "kind": "profile",
+        "recordedAt": "2026-10-25T14:38:11.213Z",
+        "profile": {
+          "id": "gitworld:source-material-context-membership",
+          "version": "2"
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "revision": "1",
+          "contentHash": "45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "locator": "$.facts[0]"
+        }
+      ]
+    },
+    {
+      "contextId": "research-context:china-related",
+      "objectId": "wikipedia-en:Emperor_Tang_Wenzong",
+      "decision": {
+        "kind": "profile",
+        "recordedAt": "2026-10-25T14:38:11.213Z",
+        "profile": {
+          "id": "gitworld:source-material-context-membership",
+          "version": "2"
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "revision": "1",
+          "contentHash": "45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "locator": "$.facts[1]"
+        }
+      ]
+    },
+    {
+      "contextId": "research-context:china-related",
+      "objectId": "wikipedia-en:Emperor_Tang_Zhaozong",
+      "decision": {
+        "kind": "profile",
+        "recordedAt": "2026-10-25T14:38:11.213Z",
+        "profile": {
+          "id": "gitworld:source-material-context-membership",
+          "version": "2"
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "revision": "1",
+          "contentHash": "45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "locator": "$.facts[2]"
+        }
+      ]
+    },
+    {
+      "contextId": "research-context:japan-related",
+      "objectId": "wikipedia-en:Emperor_Kammu",
+      "decision": {
+        "kind": "profile",
+        "recordedAt": "2026-10-25T14:38:11.213Z",
+        "profile": {
+          "id": "gitworld:source-material-context-membership",
+          "version": "2"
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "revision": "1",
+          "contentHash": "45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "locator": "$.facts[3]"
+        }
+      ]
+    },
+    {
+      "contextId": "research-context:japan-related",
+      "objectId": "wikipedia-en:Emperor_Mommu",
+      "decision": {
+        "kind": "profile",
+        "recordedAt": "2026-10-25T14:38:11.213Z",
+        "profile": {
+          "id": "gitworld:source-material-context-membership",
+          "version": "2"
+        }
+      },
+      "sourceRefs": [
+        {
+          "sourceId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "revision": "1",
+          "contentHash": "45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "locator": "$.facts[4]"
+        }
+      ]
     }
   ],
   "typeRoles": [
@@ -25834,6 +25934,10 @@
     {
       "typeId": "gitworld:period-definition",
       "role": "period-definition"
+    },
+    {
+      "typeId": "gitworld:source-identity-reference",
+      "role": "other"
     }
   ],
   "sourcePresentations": [
@@ -25934,6 +26038,15 @@
       "labels": {
         "en": "Japanese military authority: qualified tenure correction",
         "zh-CN": "日本武家权力：任期依据修正"
+      }
+    },
+    {
+      "sourceId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+      "revision": "1",
+      "contentHash": "45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+      "labels": {
+        "en": "Mission source links: recorded person identities",
+        "zh-CN": "使节来源链接：人物身份引用"
       }
     }
   ]

@@ -1,0 +1,57 @@
+import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import { canonicalJson } from '../packages/domain/src/canonical.ts';
+import { auditSourceReferenceTargets, projectSourceReferenceLinks, SOURCE_REFERENCE_VERSION } from '../packages/ingestion/src/source-reference-links.ts';
+import { loadTrustedKnowledgeBundle, knowledgeCollectionFingerprint } from '../packages/service/src/trusted-bundled-knowledge.ts';
+
+const args = process.argv.slice(2), arg = key => { const i = args.indexOf(key); if (i < 0 || !args[i + 1]) throw Error(`Missing ${key}`); return args[i + 1]; };
+const base = path.resolve(arg('--base')), output = path.resolve(arg('--output'));
+assert.ok(base !== output && !output.startsWith(`${base}${path.sep}`) && !base.startsWith(`${output}${path.sep}`), 'Use a separate output directory; never rewrite a frozen bundle.');
+const hash = text => createHash('sha256').update(text).digest('hex'), text = value => `${JSON.stringify(value, null, 2)}\n`;
+const read = file => fs.readFile(path.join(base, file), 'utf8'), manifestText = await read('manifest.json');
+const plan = JSON.parse(await fs.readFile(arg('--plan'), 'utf8')), snapshots = JSON.parse(await fs.readFile(arg('--redirects'), 'utf8')), fields = JSON.parse(await fs.readFile(arg('--fields'), 'utf8'));
+assert.equal(hash(manifestText), plan.bundle.baseManifestHash);
+assert.notEqual(plan.bundle.id, JSON.parse(manifestText).id);
+assert.match(plan.bundle.id, /^east-asia-research-foundation-v[1-9][0-9]*$/);
+const original = await loadTrustedKnowledgeBundle({ manifestText, expectedManifestHash: hash(manifestText), readText: read });
+const result = projectSourceReferenceLinks(original.collection, snapshots, plan), source = result.collection.sources.find(value => value.id === result.sourceId);
+assert.ok(source);
+for (const key of ['objects', 'assertions', 'sources']) for (const value of original.collection[key]) assert.equal(canonicalJson(result.collection[key].find(item => item.id === value.id)), canonicalJson(value), `Original ${key} record changed: ${value.id}`);
+const audit = auditSourceReferenceTargets(result.collection);
+assert.deepEqual(audit.missingValues, []); assert.deepEqual(audit.incompleteLabels, []); assert.deepEqual(audit.opaqueLabels, []);
+const existing = new Set(original.collection.objects.map(value => value.id)), links = result.collection.assertions.filter(value => result.assertionIds.includes(value.id));
+const sourceIds = new Set(links.flatMap(value => [value.sourceSnapshotId, ...value.evidence.map(item => item.sourceId)]));
+const extension = { schemaVersion: 1, objects: result.collection.objects.filter(value => !existing.has(value.id)), assertions: links, sources: result.collection.sources.filter(value => sourceIds.has(value.id)) };
+assert.equal(extension.objects.length, plan.decisions.length); assert.equal(extension.assertions.length, plan.decisions.length);
+const prefix = 'extensions/source-reference-links';
+const ledger = { schemaVersion: 1, kind: 'modern-source-identity-reference-repair', mappingVersion: SOURCE_REFERENCE_VERSION, baseManifestId: original.manifest.id, baseManifestHash: hash(manifestText), originalCollectionHash: original.manifest.collectionHash, originalSourceHashes: original.manifest.sourceHashes, originalRecordsRetained: { objects: original.collection.objects.length, assertions: original.collection.assertions.length, sources: original.collection.sources.length }, referenceObjectIds: result.referenceObjectIds, identityAssertionIds: result.assertionIds, sourceId: result.sourceId, audit: { missingMainValueTargets: audit.missingValues.length, missingProvenanceQualifierTargets: new Set(audit.missingQualifiers.map(value => value.objectId)).size, provenanceQualifierProperties: [...new Set(audit.missingQualifiers.map(value => value.propertyId))], incompleteBilingualObjects: audit.incompleteLabels.length, opaqueObjectLabels: audit.opaqueLabels.length }, boundary: 'Only explicitly pinned main-value links are repaired. Provenance-only source-local context identifiers are retained; no person or political entity is invented. Identity links are untimed modern interpretations, not historical events, activity completion, office tenures or ancestry. Installed acceptance remains separate.' };
+const rights = { schemaVersion: 1, title: 'Source-linked identity reference repair', status: 'candidate-not-publication-approval', dataLicense: { id: 'CC-BY-SA-4.0', url: 'https://creativecommons.org/licenses/by-sa/4.0/' }, licenseScope: 'Selected fixed-revision Wikipedia redirect identities, original source-reference objects, identity-link interpretations and English/Simplified Chinese presentation. Original source facts retain their own rights and attribution.', attribution: plan.rights.attribution, sources: plan.decisions.map(value => ({ pageId: value.redirect.pageId, title: value.redirect.title, revision: value.redirect.revision, contentHash: value.redirect.contentHash, hashSemantics: 'SHA-256 of the fixed revision redirect wikitext. Raw operational acquisition records are not distributed.', permanentRevisionUrl: `https://en.wikipedia.org/w/index.php?title=${encodeURIComponent(value.redirect.title)}&oldid=${value.redirect.revision}`, historyUrl: `https://en.wikipedia.org/w/index.php?title=${encodeURIComponent(value.redirect.title)}&action=history`, destination: { pageId: value.redirect.destinationPageId, title: value.redirect.destinationTitle, revision: value.redirect.destinationRevision }, originalSource: value.source, originalAssertionId: value.originalAssertionId })), permissionEvidence: plan.permissionEvidence, changes: ['Added five explicit source-linked references while retaining every previous object, source, assertion, value, temporal scope and review state.', 'Retained source-listed alternative spellings separately; linked only destinations proven by fixed direct Wikipedia redirects.', 'Authored bilingual reference descriptions, vocabulary and derived-source presentation. No article biography, relationship or historical date was added.'], excluded: 'Article prose, images, HTML, complete API responses, raw operational crawls, private notes and user data.', adoptionSemantics: 'The additive bundle initializes an empty library. Existing user libraries and old Git revisions are not rewritten or implicitly migrated.', historicalReview: 'Every added link is an unreviewed modern identity interpretation. Source permission does not establish historical completeness, native acceptance or release approval.' };
+await fs.mkdir(output);
+const manifest = structuredClone(original.manifest), entries = [...manifest.shards, manifest.fieldCatalog, manifest.sourceRights, ...manifest.fieldCatalogOverlays ?? [], ...manifest.supportingFiles ?? [], ...(manifest.navigation ? [manifest.navigation] : [])];
+for (const entry of entries) { const destination = path.join(output, entry.path); await fs.mkdir(path.dirname(destination), { recursive: true }); await fs.copyFile(path.join(base, entry.path), destination); }
+const write = async (file, value) => { const body = text(value); await fs.mkdir(path.dirname(path.join(output, file)), { recursive: true }); await fs.writeFile(path.join(output, file), body); return { path: file, bytes: Buffer.byteLength(body), sha256: hash(body) }; };
+manifest.shards.push(await write(`${prefix}/collection.json`, extension));
+manifest.fieldCatalogOverlays = [...manifest.fieldCatalogOverlays ?? [], await write(`${prefix}/fields.json`, fields)];
+manifest.supportingFiles = [...manifest.supportingFiles ?? []];
+for (const [name, value] of Object.entries({ 'plan.json': plan, 'source-rights.json': rights, 'reconciliation.json': ledger })) manifest.supportingFiles.push(await write(`${prefix}/${name}`, value));
+const sourceRights = JSON.parse(await read(manifest.sourceRights.path)); sourceRights.sourceReferenceRepair = { plan: `${prefix}/plan.json`, ledger: `${prefix}/reconciliation.json`, rights: `${prefix}/source-rights.json`, referenceObjects: result.referenceObjectIds.length, identityLinks: result.assertionIds.length, originalRecordsUnchanged: true };
+manifest.sourceRights = await write(manifest.sourceRights.path, sourceRights);
+assert.ok(manifest.navigation, 'The preset references need source titles and existing context membership.');
+const navigation = JSON.parse(await read(manifest.navigation.path));
+navigation.sourcePresentations.push({ sourceId: source.id, revision: source.revision, contentHash: source.contentHash, labels: plan.sourceLabels });
+navigation.typeRoles.push({ typeId: 'gitworld:source-identity-reference', role: 'other' });
+for (const [index, decision] of plan.decisions.entries()) {
+  const memberships = navigation.memberships.filter(value => value.objectId === decision.target.objectId);
+  assert.ok(memberships.length, `No destination context membership: ${decision.target.objectId}`);
+  for (const membership of memberships) navigation.memberships.push({ contextId: membership.contextId, objectId: decision.sourceObjectId, decision: { kind: 'profile', recordedAt: plan.preparedAt, profile: structuredClone(navigation.definitions.find(value => value.id === membership.contextId).profile) }, sourceRefs: [{ sourceId: source.id, revision: source.revision, contentHash: source.contentHash, locator: `$.facts[${index}]` }] });
+}
+manifest.navigation = await write(manifest.navigation.path, navigation);
+const navRightsIndex = manifest.supportingFiles.findIndex(value => value.path === 'navigation/source-rights.json'); assert.ok(navRightsIndex >= 0);
+const navRights = JSON.parse(await read('navigation/source-rights.json')); navRights.changes.push('Added five source-reference memberships inherited from their explicitly resolved destinations, their reference type role and the snapshot-bound bilingual identity-reference source title. Original memberships and source presentations remain unchanged.');
+manifest.supportingFiles[navRightsIndex] = await write('navigation/source-rights.json', navRights);
+manifest.id = plan.bundle.id; manifest.counts = Object.fromEntries(['objects', 'assertions', 'sources'].map(key => [key, result.collection[key].length])); manifest.collectionHash = knowledgeCollectionFingerprint(result.collection); manifest.sourceHashes = result.collection.sources.map(value => ({ id: value.id, contentHash: value.contentHash }));
+const finalManifest = await write('manifest.json', manifest), finalText = await fs.readFile(path.join(output, 'manifest.json'), 'utf8');
+await loadTrustedKnowledgeBundle({ manifestText: finalText, expectedManifestHash: finalManifest.sha256, readText: file => fs.readFile(path.join(output, file), 'utf8') });
+console.log(JSON.stringify({ manifest: finalManifest, id: manifest.id, counts: manifest.counts, sourceId: source.id, originalRecordsUnchanged: true, audit: ledger.audit }));

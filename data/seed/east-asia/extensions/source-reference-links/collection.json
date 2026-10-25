@@ -1,0 +1,2200 @@
+{
+  "schemaVersion": 1,
+  "objects": [
+    {
+      "id": "wikipedia-en:Empress_Saimei",
+      "identities": [
+        {
+          "provider": "wikipedia-en-source-link",
+          "externalId": "Empress Saimei"
+        }
+      ],
+      "labels": {
+        "en": "Empress Saimei",
+        "zh-CN": "齐明天皇"
+      },
+      "descriptions": {
+        "en": "The mission table uses Saimei, a name for the same person recorded as Empress Kōgyoku. Follow Referenced person for the existing records; the source-listed name is retained.",
+        "zh-CN": "使节年表以齐明天皇之名列记此人，来源链接指向皇极天皇。同一人的不同天皇名在此保留；通过“所指人物”查看已有记录。"
+      },
+      "aliases": [],
+      "types": [
+        "gitworld:source-identity-reference"
+      ]
+    },
+    {
+      "id": "wikipedia-en:Emperor_Tang_Wenzong",
+      "identities": [
+        {
+          "provider": "wikipedia-en-source-link",
+          "externalId": "Emperor Tang Wenzong"
+        }
+      ],
+      "labels": {
+        "en": "Emperor Tang Wenzong",
+        "zh-CN": "唐文宗"
+      },
+      "descriptions": {
+        "en": "The mission table links to “Emperor Tang Wenzong”, a published redirect to Emperor Wenzong of Tang. Follow Referenced person for the existing records.",
+        "zh-CN": "使节年表中的链接“Emperor Tang Wenzong”经来源重定向指向唐文宗。通过“所指人物”查看已有记录。"
+      },
+      "aliases": [],
+      "types": [
+        "gitworld:source-identity-reference"
+      ]
+    },
+    {
+      "id": "wikipedia-en:Emperor_Tang_Zhaozong",
+      "identities": [
+        {
+          "provider": "wikipedia-en-source-link",
+          "externalId": "Emperor Tang Zhaozong"
+        }
+      ],
+      "labels": {
+        "en": "Emperor Tang Zhaozong",
+        "zh-CN": "唐昭宗"
+      },
+      "descriptions": {
+        "en": "The mission table links to “Emperor Tang Zhaozong”, a published redirect to Emperor Zhaozong of Tang. Follow Referenced person for the existing records.",
+        "zh-CN": "使节年表中的链接“Emperor Tang Zhaozong”经来源重定向指向唐昭宗。通过“所指人物”查看已有记录。"
+      },
+      "aliases": [],
+      "types": [
+        "gitworld:source-identity-reference"
+      ]
+    },
+    {
+      "id": "wikipedia-en:Emperor_Kammu",
+      "identities": [
+        {
+          "provider": "wikipedia-en-source-link",
+          "externalId": "Emperor Kammu"
+        }
+      ],
+      "labels": {
+        "en": "Emperor Kammu",
+        "zh-CN": "桓武天皇"
+      },
+      "descriptions": {
+        "en": "The mission table links to “Emperor Kammu”, a published redirect to Emperor Kanmu. Follow Referenced person for the existing records.",
+        "zh-CN": "使节年表中的链接“Emperor Kammu”经来源重定向指向桓武天皇。通过“所指人物”查看已有记录。"
+      },
+      "aliases": [],
+      "types": [
+        "gitworld:source-identity-reference"
+      ]
+    },
+    {
+      "id": "wikipedia-en:Emperor_Mommu",
+      "identities": [
+        {
+          "provider": "wikipedia-en-source-link",
+          "externalId": "Emperor Mommu"
+        }
+      ],
+      "labels": {
+        "en": "Emperor Mommu",
+        "zh-CN": "文武天皇"
+      },
+      "descriptions": {
+        "en": "The mission table links to “Emperor Mommu”, a published redirect to Emperor Monmu. Follow Referenced person for the existing records.",
+        "zh-CN": "使节年表中的链接“Emperor Mommu”经来源重定向指向文武天皇。通过“所指人物”查看已有记录。"
+      },
+      "aliases": [],
+      "types": [
+        "gitworld:source-identity-reference"
+      ]
+    }
+  ],
+  "assertions": [
+    {
+      "id": "source-reference:18966d1adc9ac07987aae68ea87a62bcf0e29557",
+      "subjectId": "wikipedia-en:Empress_Saimei",
+      "propertyId": "reference:person",
+      "value": {
+        "kind": "entity",
+        "objectId": "wikipedia-en:Empress_Kōgyoku"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "reference:source-spelling",
+          "value": {
+            "kind": "text",
+            "value": "Empress Saimei",
+            "language": "en"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+          "locator": "$.facts[12]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286"
+        },
+        {
+          "sourceId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "locator": "$.facts[0].redirect",
+          "url": "https://en.wikipedia.org/w/index.php?title=Empress%20Saimei&oldid=88649158"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+      "review": "unreviewed"
+    },
+    {
+      "id": "source-reference:1af472c7ed8244f3931363fda90b2c0000f0e9c2",
+      "subjectId": "wikipedia-en:Emperor_Tang_Wenzong",
+      "propertyId": "reference:person",
+      "value": {
+        "kind": "entity",
+        "objectId": "wikipedia-en:Emperor_Wenzong_of_Tang"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "reference:source-spelling",
+          "value": {
+            "kind": "text",
+            "value": "Emperor Tang Wenzong",
+            "language": "en"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+          "locator": "$.facts[85]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286"
+        },
+        {
+          "sourceId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "locator": "$.facts[1].redirect",
+          "url": "https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Wenzong&oldid=321946630"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+      "review": "unreviewed"
+    },
+    {
+      "id": "source-reference:41783a52021775bc6a958ef1700e7814202e57d3",
+      "subjectId": "wikipedia-en:Emperor_Tang_Zhaozong",
+      "propertyId": "reference:person",
+      "value": {
+        "kind": "entity",
+        "objectId": "wikipedia-en:Emperor_Zhaozong_of_Tang"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "reference:source-spelling",
+          "value": {
+            "kind": "text",
+            "value": "Emperor Tang Zhaozong",
+            "language": "en"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+          "locator": "$.facts[91]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286"
+        },
+        {
+          "sourceId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "locator": "$.facts[2].redirect",
+          "url": "https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Zhaozong&oldid=331386807"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+      "review": "unreviewed"
+    },
+    {
+      "id": "source-reference:bb669eaf657505444b7a82fbfec2a0ed46f72744",
+      "subjectId": "wikipedia-en:Emperor_Kammu",
+      "propertyId": "reference:person",
+      "value": {
+        "kind": "entity",
+        "objectId": "wikipedia-en:Emperor_Kanmu"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "reference:source-spelling",
+          "value": {
+            "kind": "text",
+            "value": "Emperor Kammu",
+            "language": "en"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+          "locator": "$.facts[77]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286"
+        },
+        {
+          "sourceId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "locator": "$.facts[3].redirect",
+          "url": "https://en.wikipedia.org/w/index.php?title=Emperor%20Kammu&oldid=578326834"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+      "review": "unreviewed"
+    },
+    {
+      "id": "source-reference:148a69a78baad41d4ac8d826377bacf64d7ce340",
+      "subjectId": "wikipedia-en:Emperor_Mommu",
+      "propertyId": "reference:person",
+      "value": {
+        "kind": "entity",
+        "objectId": "wikipedia-en:Emperor_Monmu"
+      },
+      "qualifiers": [
+        {
+          "propertyId": "reference:source-spelling",
+          "value": {
+            "kind": "text",
+            "value": "Emperor Mommu",
+            "language": "en"
+          }
+        }
+      ],
+      "evidence": [
+        {
+          "sourceId": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+          "locator": "$.facts[28]",
+          "url": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286"
+        },
+        {
+          "sourceId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+          "locator": "$.facts[4].redirect",
+          "url": "https://en.wikipedia.org/w/index.php?title=Emperor%20Mommu&oldid=578327539"
+        }
+      ],
+      "sourceSnapshotId": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+      "review": "unreviewed"
+    }
+  ],
+  "sources": [
+    {
+      "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+      "identity": {
+        "provider": "wikipedia-en-facts",
+        "externalId": "24703277"
+      },
+      "revision": "1373459286",
+      "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+      "retrievedAt": "2026-10-24T19:51:30.706Z",
+      "url": "https://en.wikipedia.org/wiki/Japanese_missions_to_Tang_China",
+      "revisionUrl": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286",
+      "adapterVersion": "english-wikipedia-fact-subset-v1",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Japanese missions to Tang China, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286. Author history: https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+        "redistribution": "allowed"
+      },
+      "record": {
+        "manifest": {
+          "schemaVersion": 1,
+          "provider": "wikipedia-en",
+          "articleTitle": "Japanese missions to Tang China",
+          "pageId": "24703277",
+          "revision": "1373459286",
+          "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286",
+          "historyUrl": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&action=history",
+          "upstreamSnapshotHash": "ddb1e3b9b301fec8ca9b84dcbd6c8f9cf42ff2b76b42e4bd46827b762ba32d26",
+          "hashSemantics": "SHA-256 of the canonical original Action API parse record; raw record remains in the local acquisition archive.",
+          "retrievedAt": "2026-10-24T19:51:30.706Z",
+          "retrievalMode": "unknown",
+          "licenseId": "CC-BY-SA-4.0",
+          "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "attribution": "Japanese missions to Tang China, English Wikipedia contributors. Source: https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286. Author history: https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&action=history. GitWorld selected and normalized table facts; changes are recorded in this manifest. No official endorsement.",
+          "changes": [
+            "Selected table-linked names and primary date facts; excluded article prose, portraits, image tags and HTML.",
+            "Retained source table/row/cell locators, citation anchors, competing chronology flags and original date precision.",
+            "Normalized dated source-event entries and listed participant links; inferred no completion, causation or political ancestry. Profile display labels are editorial labels rather than original quotations."
+          ],
+          "factRows": 20,
+          "factRecords": 93,
+          "review": "unreviewed"
+        },
+        "facts": [
+          {
+            "id": "wikipedia-event-claim:a91e5cdad48caeea4fcf5f691bb44cc7",
+            "subjectId": "wikipedia-event:24703277:e881f7a6c384ba8d96804a6458fdecb4",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Jomei"
+            },
+            "upstreamLocator": "$.text;table[0].row[1].cell[1]",
+            "primaryTenureText": "630–632",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:bf7399bc925727550d6b261478e0535a",
+            "subjectId": "wikipedia-event:24703277:e881f7a6c384ba8d96804a6458fdecb4",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Inugami no Mitasuki (犬上御田鍬) Kusushi Enichi (藥師惠日)"
+            },
+            "upstreamLocator": "$.text;table[0].row[1].cell[2]",
+            "primaryTenureText": "630–632",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:58570c72a78207d07876411b8157936f",
+            "subjectId": "wikipedia-event:24703277:e881f7a6c384ba8d96804a6458fdecb4",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Inugami_no_Mitasuki"
+            },
+            "upstreamLocator": "$.text;table[0].row[1].cell[2]",
+            "primaryTenureText": "630–632",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:da286c6447e6d82b725f89ed79f5c424",
+            "subjectId": "wikipedia-event:24703277:e881f7a6c384ba8d96804a6458fdecb4",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Taizong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[1].cell[3]",
+            "primaryTenureText": "630–632",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:4b18632db4df669dfbcdf2857bfed61e",
+            "subjectId": "wikipedia-event:24703277:de4ba552e14dc86bbfd1e635cab804bd",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Kōtoku"
+            },
+            "upstreamLocator": "$.text;table[0].row[2].cell[1]",
+            "primaryTenureText": "653–654",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:414ba6d2ddd89a5c4725db46720790a6",
+            "subjectId": "wikipedia-event:24703277:de4ba552e14dc86bbfd1e635cab804bd",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Kishi no Nagani (吉士長丹) Kishi no Koma (吉士駒) Takada no Nemaro (高田根麻呂) Kanimori no Omaro (掃守小麻呂)"
+            },
+            "upstreamLocator": "$.text;table[0].row[2].cell[2]",
+            "primaryTenureText": "653–654",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:2b49020ab53288f054937bf75ac2d510",
+            "subjectId": "wikipedia-event:24703277:de4ba552e14dc86bbfd1e635cab804bd",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "text",
+              "value": "Kishi no Nagani (吉士長丹) Kishi no Koma (吉士駒) Takada no Nemaro (高田根麻呂) Kanimori no Omaro (掃守小麻呂)"
+            },
+            "upstreamLocator": "$.text;table[0].row[2].cell[2]",
+            "primaryTenureText": "653–654",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:77fe2026a7a284cc04c7681344800936",
+            "subjectId": "wikipedia-event:24703277:de4ba552e14dc86bbfd1e635cab804bd",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Gaozong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[2].cell[3]",
+            "primaryTenureText": "653–654",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:da064524a97cd11202d3df7d844fc013",
+            "subjectId": "wikipedia-event:24703277:795881c5705558059d7550c3b7d47c90",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Kōtoku"
+            },
+            "upstreamLocator": "$.text;table[0].row[3].cell[1]",
+            "primaryTenureText": "654–655",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-kuromaro-3"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:ebdc20f8e628efc729690a3ecef7a9f4",
+            "subjectId": "wikipedia-event:24703277:795881c5705558059d7550c3b7d47c90",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Takamuko no Kuromaro Kawabe no Maro (河邊) Kusushi Enichi"
+            },
+            "upstreamLocator": "$.text;table[0].row[3].cell[2]",
+            "primaryTenureText": "654–655",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-kuromaro-3"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:650d6951c938cbe14930637d616dfb57",
+            "subjectId": "wikipedia-event:24703277:795881c5705558059d7550c3b7d47c90",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Takamuko_no_Kuromaro"
+            },
+            "upstreamLocator": "$.text;table[0].row[3].cell[2]",
+            "primaryTenureText": "654–655",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-kuromaro-3"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:e7c3a54fb9356e0f5c2baff03761d7ca",
+            "subjectId": "wikipedia-event:24703277:795881c5705558059d7550c3b7d47c90",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Gaozong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[3].cell[3]",
+            "primaryTenureText": "654–655",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-kuromaro-3"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:3de81506041c2d107888868aa993a092",
+            "subjectId": "wikipedia-event:24703277:3883196d08429bd1d3b3e9c3e0914b13",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Empress_Saimei"
+            },
+            "upstreamLocator": "$.text;table[0].row[4].cell[1]",
+            "primaryTenureText": "659–661",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-4"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:2dae88525ad3b0e155a9985547a1cc20",
+            "subjectId": "wikipedia-event:24703277:3883196d08429bd1d3b3e9c3e0914b13",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Sakaibe no Iwashiki (坂合部石布) Tsumori no Kisa (津守吉祥) Iki no Hakatoko (伊吉博德)"
+            },
+            "upstreamLocator": "$.text;table[0].row[4].cell[2]",
+            "primaryTenureText": "659–661",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-4"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:f95db2012d774c8622a8c7f18fa1bc52",
+            "subjectId": "wikipedia-event:24703277:3883196d08429bd1d3b3e9c3e0914b13",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Iki_no_Hakatoko"
+            },
+            "upstreamLocator": "$.text;table[0].row[4].cell[2]",
+            "primaryTenureText": "659–661",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-4"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:a0c4ec1c04e2f33177c80f2eeb6ea54d",
+            "subjectId": "wikipedia-event:24703277:3883196d08429bd1d3b3e9c3e0914b13",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Gaozong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[4].cell[3]",
+            "primaryTenureText": "659–661",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-4"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:85b6652b991acdcb6c120ad2ed7d0d08",
+            "subjectId": "wikipedia-event:24703277:ed4734877a3fafd9d43efed39804cc4a",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Tenji"
+            },
+            "upstreamLocator": "$.text;table[0].row[5].cell[1]",
+            "primaryTenureText": "665–667",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:9c3c2d22adce04a07e06e71839007d0b",
+            "subjectId": "wikipedia-event:24703277:ed4734877a3fafd9d43efed39804cc4a",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Mori no Ōishi (守大石) Sakaibe no Iwatsumi (坂合部岩積)"
+            },
+            "upstreamLocator": "$.text;table[0].row[5].cell[2]",
+            "primaryTenureText": "665–667",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:740b398ce2ac4060a5cd6acf4d363129",
+            "subjectId": "wikipedia-event:24703277:ed4734877a3fafd9d43efed39804cc4a",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "text",
+              "value": "Mori no Ōishi (守大石) Sakaibe no Iwatsumi (坂合部岩積)"
+            },
+            "upstreamLocator": "$.text;table[0].row[5].cell[2]",
+            "primaryTenureText": "665–667",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:f5ff0f25a31cc1a378585806738ffcec",
+            "subjectId": "wikipedia-event:24703277:ed4734877a3fafd9d43efed39804cc4a",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Gaozong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[5].cell[3]",
+            "primaryTenureText": "665–667",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:261fbed14b470570ea311783b3dc176e",
+            "subjectId": "wikipedia-event:24703277:d1060a2524aa66d0b0f72d94499383c6",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Tenji"
+            },
+            "upstreamLocator": "$.text;table[0].row[6].cell[1]",
+            "primaryTenureText": "667–668",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:b952fb258eb65313be30ce312628c40c",
+            "subjectId": "wikipedia-event:24703277:d1060a2524aa66d0b0f72d94499383c6",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Iki no Hakatoko Kasa no Moroishi (笠諸石)"
+            },
+            "upstreamLocator": "$.text;table[0].row[6].cell[2]",
+            "primaryTenureText": "667–668",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:1901223ba50c11726b36dabed166be33",
+            "subjectId": "wikipedia-event:24703277:d1060a2524aa66d0b0f72d94499383c6",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "text",
+              "value": "Iki no Hakatoko Kasa no Moroishi (笠諸石)"
+            },
+            "upstreamLocator": "$.text;table[0].row[6].cell[2]",
+            "primaryTenureText": "667–668",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:526e9658abf69b85888e21b9e7790362",
+            "subjectId": "wikipedia-event:24703277:d1060a2524aa66d0b0f72d94499383c6",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Gaozong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[6].cell[3]",
+            "primaryTenureText": "667–668",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:724dab9325aba6d8aab81b6db6e2ad66",
+            "subjectId": "wikipedia-event:24703277:370640e3c1c1812f1d4092612b8eaf1d",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Tenji"
+            },
+            "upstreamLocator": "$.text;table[0].row[7].cell[1]",
+            "primaryTenureText": "669–670",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:43e0a725ac5807e59b9ee0aba53dc6f8",
+            "subjectId": "wikipedia-event:24703277:370640e3c1c1812f1d4092612b8eaf1d",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Kawachi no Kujira (河内鯨)"
+            },
+            "upstreamLocator": "$.text;table[0].row[7].cell[2]",
+            "primaryTenureText": "669–670",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:5f9878d3535cae81d0805b24b4416924",
+            "subjectId": "wikipedia-event:24703277:370640e3c1c1812f1d4092612b8eaf1d",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "text",
+              "value": "Kawachi no Kujira (河内鯨)"
+            },
+            "upstreamLocator": "$.text;table[0].row[7].cell[2]",
+            "primaryTenureText": "669–670",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:03f8696339948f58003af90e69048faa",
+            "subjectId": "wikipedia-event:24703277:370640e3c1c1812f1d4092612b8eaf1d",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Gaozong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[7].cell[3]",
+            "primaryTenureText": "669–670",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:b70ca49b14efb35cd55cbc800e12cd09",
+            "subjectId": "wikipedia-event:24703277:d560d77bf71273871db94f57ee4b6b3b",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Mommu"
+            },
+            "upstreamLocator": "$.text;table[0].row[8].cell[1]",
+            "primaryTenureText": "702–704",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:cea260bcf886b4a91805871f4cc20005",
+            "subjectId": "wikipedia-event:24703277:d560d77bf71273871db94f57ee4b6b3b",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Awata no Mahito (粟田真人) Takahashi no Kasama (高橋笠間) Sakaibe no Ōkita (坂合部大分) Yamanoue no Okura (山上憶良) Kose no Ōji (巨勢祖父)"
+            },
+            "upstreamLocator": "$.text;table[0].row[8].cell[2]",
+            "primaryTenureText": "702–704",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:72fcd78297a4c39ac94f07e7e08d9cd9",
+            "subjectId": "wikipedia-event:24703277:d560d77bf71273871db94f57ee4b6b3b",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Awata_no_Mahito"
+            },
+            "upstreamLocator": "$.text;table[0].row[8].cell[2]",
+            "primaryTenureText": "702–704",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:b1f40297b3ba6c2e3703a1b5c1bd324f",
+            "subjectId": "wikipedia-event:24703277:d560d77bf71273871db94f57ee4b6b3b",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Yamanoue_no_Okura"
+            },
+            "upstreamLocator": "$.text;table[0].row[8].cell[2]",
+            "primaryTenureText": "702–704",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:99fb9e22985a787a6ced8f201e1c784b",
+            "subjectId": "wikipedia-event:24703277:d560d77bf71273871db94f57ee4b6b3b",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Wu_Zetian"
+            },
+            "upstreamLocator": "$.text;table[0].row[8].cell[3]",
+            "primaryTenureText": "702–704",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:9141ec4ecf93a0fad5993328d544f087",
+            "subjectId": "wikipedia-event:24703277:bd4dc609ea6a9cb4e851737b790d0d87",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Empress_Genshō"
+            },
+            "upstreamLocator": "$.text;table[0].row[9].cell[1]",
+            "primaryTenureText": "717-718",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-5"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:ab66be81fa7f65decafbbe4646eee4e7",
+            "subjectId": "wikipedia-event:24703277:bd4dc609ea6a9cb4e851737b790d0d87",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Tajihi no Agatamori (多治比縣守) Abe no Yasumaro (阿倍安麻呂) Ōtomo no Yamamori (大伴山守) Fujiwara no Umakai (藤原馬養)"
+            },
+            "upstreamLocator": "$.text;table[0].row[9].cell[2]",
+            "primaryTenureText": "717-718",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-5"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:71cce48fa052e491dada87af5ad896fa",
+            "subjectId": "wikipedia-event:24703277:bd4dc609ea6a9cb4e851737b790d0d87",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Fujiwara_no_Umakai"
+            },
+            "upstreamLocator": "$.text;table[0].row[9].cell[2]",
+            "primaryTenureText": "717-718",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-5"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:8a8da6b59642cf4b8f0045b2460034f7",
+            "subjectId": "wikipedia-event:24703277:bd4dc609ea6a9cb4e851737b790d0d87",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Xuanzong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[9].cell[3]",
+            "primaryTenureText": "717-718",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-5"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:c0f329c9fae0605f67c3c58342d216b0",
+            "subjectId": "wikipedia-event:24703277:fdd76fe92da57e89850ba5b07e912ddc",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Shōmu"
+            },
+            "upstreamLocator": "$.text;table[0].row[10].cell[1]",
+            "primaryTenureText": "733–734",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:70eb5c3ef7ab362a344d24655591b1a8",
+            "subjectId": "wikipedia-event:24703277:fdd76fe92da57e89850ba5b07e912ddc",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Tajihi no Hironari (多治比廣成) Nakatomi no Nashiro (中臣名代)"
+            },
+            "upstreamLocator": "$.text;table[0].row[10].cell[2]",
+            "primaryTenureText": "733–734",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:01cf794d9259e1dc98fa6d69ce96dfb6",
+            "subjectId": "wikipedia-event:24703277:fdd76fe92da57e89850ba5b07e912ddc",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "text",
+              "value": "Tajihi no Hironari (多治比廣成) Nakatomi no Nashiro (中臣名代)"
+            },
+            "upstreamLocator": "$.text;table[0].row[10].cell[2]",
+            "primaryTenureText": "733–734",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:9dd32ee3ada5a376a70a952a3388c0d3",
+            "subjectId": "wikipedia-event:24703277:fdd76fe92da57e89850ba5b07e912ddc",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Xuanzong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[10].cell[3]",
+            "primaryTenureText": "733–734",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:4b29b5c58d8d9d5b3eecd588cec4f586",
+            "subjectId": "wikipedia-event:24703277:95def11eeb30006d54919e88872a96eb",
+            "propertyId": "event:listed-time",
+            "value": {
+              "kind": "time",
+              "value": {
+                "earliestYear": 746,
+                "latestYear": 746,
+                "precision": "year",
+                "calendar": "source-anno-domini-year",
+                "raw": "746"
+              }
+            },
+            "upstreamLocator": "$.text;table[0].row[11].cell[0]",
+            "primaryTenureText": "746",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:3e28c1ceb5f5b40441149a32e226c674",
+            "subjectId": "wikipedia-event:24703277:95def11eeb30006d54919e88872a96eb",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Shōmu"
+            },
+            "upstreamLocator": "$.text;table[0].row[11].cell[1]",
+            "primaryTenureText": "746",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:9fbe8190ba0e84cdacca8ccee56232dc",
+            "subjectId": "wikipedia-event:24703277:95def11eeb30006d54919e88872a96eb",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Isonokami no Otomaro (石上乙麻呂)"
+            },
+            "upstreamLocator": "$.text;table[0].row[11].cell[2]",
+            "primaryTenureText": "746",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:28bf4313373d14f69737747cab30404f",
+            "subjectId": "wikipedia-event:24703277:95def11eeb30006d54919e88872a96eb",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Isonokami_no_Otomaro"
+            },
+            "upstreamLocator": "$.text;table[0].row[11].cell[2]",
+            "primaryTenureText": "746",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:e9dc1a3342784f0c7d2fdbb7fb5be3bb",
+            "subjectId": "wikipedia-event:24703277:95def11eeb30006d54919e88872a96eb",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Xuanzong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[11].cell[3]",
+            "primaryTenureText": "746",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:82780ada8111f6d1eabff6a73d6fe5b8",
+            "subjectId": "wikipedia-event:24703277:95def11eeb30006d54919e88872a96eb",
+            "propertyId": "event:listed-status",
+            "value": {
+              "kind": "text",
+              "value": "cancelled"
+            },
+            "upstreamLocator": "$.text;table[0].row[11].cell[4]",
+            "primaryTenureText": "746",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:37b3e607ae90b2b8dc01dee4fac119d0",
+            "subjectId": "wikipedia-event:24703277:4b3326b0b6093c11956100256bf089a8",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Empress_Kōken"
+            },
+            "upstreamLocator": "$.text;table[0].row[12].cell[1]",
+            "primaryTenureText": "750–753",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-6"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:9076d6d00f2e6a19da47fbccdbc72ac8",
+            "subjectId": "wikipedia-event:24703277:4b3326b0b6093c11956100256bf089a8",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Fujiwara no Kiyokawa (藤原清河) Ōtomo no Komaro (大伴古麻呂) Kibi no Makibi (吉備真備)"
+            },
+            "upstreamLocator": "$.text;table[0].row[12].cell[2]",
+            "primaryTenureText": "750–753",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-6"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:194b72b56e5a5b14feae4de1dc492d41",
+            "subjectId": "wikipedia-event:24703277:4b3326b0b6093c11956100256bf089a8",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Fujiwara_no_Kiyokawa"
+            },
+            "upstreamLocator": "$.text;table[0].row[12].cell[2]",
+            "primaryTenureText": "750–753",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-6"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:8a572a88e820c695ad5ca59a25faa56f",
+            "subjectId": "wikipedia-event:24703277:4b3326b0b6093c11956100256bf089a8",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Kibi_no_Makibi"
+            },
+            "upstreamLocator": "$.text;table[0].row[12].cell[2]",
+            "primaryTenureText": "750–753",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-6"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:cfd9455df14ff52077b576b6aa28f70c",
+            "subjectId": "wikipedia-event:24703277:4b3326b0b6093c11956100256bf089a8",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Xuanzong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[12].cell[3]",
+            "primaryTenureText": "750–753",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-6"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:ac02ba00a931bd0b12009f6c764d3508",
+            "subjectId": "wikipedia-event:24703277:7f3a991ff33cc3ddc8be65e680502dff",
+            "propertyId": "event:listed-time",
+            "value": {
+              "kind": "time",
+              "value": {
+                "earliestYear": 761,
+                "latestYear": 761,
+                "precision": "year",
+                "calendar": "source-anno-domini-year",
+                "raw": "761"
+              }
+            },
+            "upstreamLocator": "$.text;table[0].row[13].cell[0]",
+            "primaryTenureText": "761",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:bb920ec8908b961e8858cb6292939b4e",
+            "subjectId": "wikipedia-event:24703277:7f3a991ff33cc3ddc8be65e680502dff",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Junnin"
+            },
+            "upstreamLocator": "$.text;table[0].row[13].cell[1]",
+            "primaryTenureText": "761",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:9d3ce464338dba7248e3e2993787a5f2",
+            "subjectId": "wikipedia-event:24703277:7f3a991ff33cc3ddc8be65e680502dff",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Kō Gendo (高元度)"
+            },
+            "upstreamLocator": "$.text;table[0].row[13].cell[2]",
+            "primaryTenureText": "761",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:aa32ca866ab7e805b97fe902ae1feb00",
+            "subjectId": "wikipedia-event:24703277:7f3a991ff33cc3ddc8be65e680502dff",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "text",
+              "value": "Kō Gendo (高元度)"
+            },
+            "upstreamLocator": "$.text;table[0].row[13].cell[2]",
+            "primaryTenureText": "761",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:a4bd76965a2a08ce0456a55e3aa74b95",
+            "subjectId": "wikipedia-event:24703277:7f3a991ff33cc3ddc8be65e680502dff",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Suzong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[13].cell[3]",
+            "primaryTenureText": "761",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:c0e9d544f64c7317e70f54ff1f56d54f",
+            "subjectId": "wikipedia-event:24703277:36cb880ad78bafae15b3fb51bb4e464b",
+            "propertyId": "event:listed-time",
+            "value": {
+              "kind": "time",
+              "value": {
+                "earliestYear": 761,
+                "latestYear": 761,
+                "precision": "year",
+                "calendar": "source-anno-domini-year",
+                "raw": "761"
+              }
+            },
+            "upstreamLocator": "$.text;table[0].row[14].cell[0]",
+            "primaryTenureText": "761",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:07d4e48720bb5c08b3b0f67ca4abd725",
+            "subjectId": "wikipedia-event:24703277:36cb880ad78bafae15b3fb51bb4e464b",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Junnin"
+            },
+            "upstreamLocator": "$.text;table[0].row[14].cell[1]",
+            "primaryTenureText": "761",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:48ff9751481e84d23970a20dfed7e4e8",
+            "subjectId": "wikipedia-event:24703277:36cb880ad78bafae15b3fb51bb4e464b",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Naka no Iwatomo (仲石伴) Isonokami no Yakatsugu (石上宅嗣) Fujiwara no Tamaro (藤原田麻呂)"
+            },
+            "upstreamLocator": "$.text;table[0].row[14].cell[2]",
+            "primaryTenureText": "761",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:97ac1211dae3ba15921dce35e718ddfd",
+            "subjectId": "wikipedia-event:24703277:36cb880ad78bafae15b3fb51bb4e464b",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Isonokami_no_Yakatsugu"
+            },
+            "upstreamLocator": "$.text;table[0].row[14].cell[2]",
+            "primaryTenureText": "761",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:8cc7b66aec2767836362166a3ce2fdf9",
+            "subjectId": "wikipedia-event:24703277:36cb880ad78bafae15b3fb51bb4e464b",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Suzong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[14].cell[3]",
+            "primaryTenureText": "761",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:8316d87e7e21f0b44840869ccff0851e",
+            "subjectId": "wikipedia-event:24703277:36cb880ad78bafae15b3fb51bb4e464b",
+            "propertyId": "event:listed-status",
+            "value": {
+              "kind": "text",
+              "value": "cancelled"
+            },
+            "upstreamLocator": "$.text;table[0].row[14].cell[4]",
+            "primaryTenureText": "761",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:ea65c5c7f116cb93b377dc095f514979",
+            "subjectId": "wikipedia-event:24703277:abf0527a7142b6d46bfd6909865d6ef4",
+            "propertyId": "event:listed-time",
+            "value": {
+              "kind": "time",
+              "value": {
+                "earliestYear": 762,
+                "latestYear": 762,
+                "precision": "year",
+                "calendar": "source-anno-domini-year",
+                "raw": "762"
+              }
+            },
+            "upstreamLocator": "$.text;table[0].row[15].cell[0]",
+            "primaryTenureText": "762",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:0992388c58ab2fff1398a3f3e6f83143",
+            "subjectId": "wikipedia-event:24703277:abf0527a7142b6d46bfd6909865d6ef4",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Junnin"
+            },
+            "upstreamLocator": "$.text;table[0].row[15].cell[1]",
+            "primaryTenureText": "762",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:46cd6d90ff8bb8209877bd4064ef2164",
+            "subjectId": "wikipedia-event:24703277:abf0527a7142b6d46bfd6909865d6ef4",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Nakatomi no Takanushi (中臣鷹主) Koma no Hiroyama (高麗廣山)"
+            },
+            "upstreamLocator": "$.text;table[0].row[15].cell[2]",
+            "primaryTenureText": "762",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:24ae28703359017ef316b94e690a0255",
+            "subjectId": "wikipedia-event:24703277:abf0527a7142b6d46bfd6909865d6ef4",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "text",
+              "value": "Nakatomi no Takanushi (中臣鷹主) Koma no Hiroyama (高麗廣山)"
+            },
+            "upstreamLocator": "$.text;table[0].row[15].cell[2]",
+            "primaryTenureText": "762",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:08e8f862a491d90b615e73adebc837c4",
+            "subjectId": "wikipedia-event:24703277:abf0527a7142b6d46bfd6909865d6ef4",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Daizong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[15].cell[3]",
+            "primaryTenureText": "762",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:9f86c503b0f6552d81595efed63cd1d0",
+            "subjectId": "wikipedia-event:24703277:abf0527a7142b6d46bfd6909865d6ef4",
+            "propertyId": "event:listed-status",
+            "value": {
+              "kind": "text",
+              "value": "cancelled"
+            },
+            "upstreamLocator": "$.text;table[0].row[15].cell[4]",
+            "primaryTenureText": "762",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:e0b4f6d2d5524c778d3f876ec4fcfec8",
+            "subjectId": "wikipedia-event:24703277:c3fa5ef0ad53cbf5c67f2020e49cc365",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Kōnin"
+            },
+            "upstreamLocator": "$.text;table[0].row[16].cell[1]",
+            "primaryTenureText": "777-778",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:ad4220a8bfef43bca9cb86705105a6c5",
+            "subjectId": "wikipedia-event:24703277:c3fa5ef0ad53cbf5c67f2020e49cc365",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Saeki no Imaemishi (佐伯今毛人) Ōtomo no Masutate (大伴益立) Fujiwara no Takatori (藤原鷹取) Ono no Iwane (小野石根) Ōmiwa no Suetari (大神末足)"
+            },
+            "upstreamLocator": "$.text;table[0].row[16].cell[2]",
+            "primaryTenureText": "777-778",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:f01d9431309c04fb51d5f28b13edb201",
+            "subjectId": "wikipedia-event:24703277:c3fa5ef0ad53cbf5c67f2020e49cc365",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Fujiwara_no_Takatori"
+            },
+            "upstreamLocator": "$.text;table[0].row[16].cell[2]",
+            "primaryTenureText": "777-778",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:1ad77b72b61b6864bf3d4c11f7cae27f",
+            "subjectId": "wikipedia-event:24703277:c3fa5ef0ad53cbf5c67f2020e49cc365",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Daizong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[16].cell[3]",
+            "primaryTenureText": "777-778",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:5ffa167674b6222f188afe38cd31c128",
+            "subjectId": "wikipedia-event:24703277:f196e593e933776a3a852a83c62efbb5",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Kōnin"
+            },
+            "upstreamLocator": "$.text;table[0].row[17].cell[1]",
+            "primaryTenureText": "779–781",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:9d6e2b7559c5c6429332a3bbd9b8a967",
+            "subjectId": "wikipedia-event:24703277:f196e593e933776a3a852a83c62efbb5",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Fuse no Kiyonao (布勢清直)"
+            },
+            "upstreamLocator": "$.text;table[0].row[17].cell[2]",
+            "primaryTenureText": "779–781",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:dc8377825f0c633d098c895046faa65f",
+            "subjectId": "wikipedia-event:24703277:f196e593e933776a3a852a83c62efbb5",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "text",
+              "value": "Fuse no Kiyonao (布勢清直)"
+            },
+            "upstreamLocator": "$.text;table[0].row[17].cell[2]",
+            "primaryTenureText": "779–781",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:bd07c379dd9377d739ad0a588585d331",
+            "subjectId": "wikipedia-event:24703277:f196e593e933776a3a852a83c62efbb5",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Dezong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[17].cell[3]",
+            "primaryTenureText": "779–781",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:b0716ac0836bef7adbb9b879ed7c18a1",
+            "subjectId": "wikipedia-event:24703277:d5c9179187a523f353d9b784b8f305f9",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Kammu"
+            },
+            "upstreamLocator": "$.text;table[0].row[18].cell[1]",
+            "primaryTenureText": "804–805",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:d607996a77b7591e0455740facb96ca0",
+            "subjectId": "wikipedia-event:24703277:d5c9179187a523f353d9b784b8f305f9",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Fujiwara no Kadonomaro (藤原葛野麻呂) Ishikawa no Michimasu (石川道益)"
+            },
+            "upstreamLocator": "$.text;table[0].row[18].cell[2]",
+            "primaryTenureText": "804–805",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:4ee7cda960bb224adbb8a42bef66c534",
+            "subjectId": "wikipedia-event:24703277:d5c9179187a523f353d9b784b8f305f9",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "text",
+              "value": "Fujiwara no Kadonomaro (藤原葛野麻呂) Ishikawa no Michimasu (石川道益)"
+            },
+            "upstreamLocator": "$.text;table[0].row[18].cell[2]",
+            "primaryTenureText": "804–805",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:8014370e271a8757c0e4ff29f73df430",
+            "subjectId": "wikipedia-event:24703277:d5c9179187a523f353d9b784b8f305f9",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Dezong_of_Tang"
+            },
+            "upstreamLocator": "$.text;table[0].row[18].cell[3]",
+            "primaryTenureText": "804–805",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:96e7126690ae06e23f711c21eed9c704",
+            "subjectId": "wikipedia-event:24703277:4b5a0003b9e1a1da1340bd5770079dcc",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Ninmyō"
+            },
+            "upstreamLocator": "$.text;table[0].row[19].cell[1]",
+            "primaryTenureText": "838–839",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-7"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:f8d4d275b9235c71379e5803ce814f6f",
+            "subjectId": "wikipedia-event:24703277:4b5a0003b9e1a1da1340bd5770079dcc",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Fujiwara no Tsunetsugu (藤原常嗣) Ono no Takamura (小野篂)"
+            },
+            "upstreamLocator": "$.text;table[0].row[19].cell[2]",
+            "primaryTenureText": "838–839",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-7"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:71a293af2d7b760f7a9afe1e7e9568b2",
+            "subjectId": "wikipedia-event:24703277:4b5a0003b9e1a1da1340bd5770079dcc",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Fujiwara_no_Tsunetsugu"
+            },
+            "upstreamLocator": "$.text;table[0].row[19].cell[2]",
+            "primaryTenureText": "838–839",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-7"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:b2d6ca717dc7c4759927d19ce40412fd",
+            "subjectId": "wikipedia-event:24703277:4b5a0003b9e1a1da1340bd5770079dcc",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Ono_no_Takamura"
+            },
+            "upstreamLocator": "$.text;table[0].row[19].cell[2]",
+            "primaryTenureText": "838–839",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-7"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:94d60ce5d9621075c852bd3c17fd38c4",
+            "subjectId": "wikipedia-event:24703277:4b5a0003b9e1a1da1340bd5770079dcc",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Tang_Wenzong"
+            },
+            "upstreamLocator": "$.text;table[0].row[19].cell[3]",
+            "primaryTenureText": "838–839",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": [
+                "#cite_note-7"
+              ]
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:a29c4413d0872efa869cf29a2da4e34c",
+            "subjectId": "wikipedia-event:24703277:e7fd89dad7928e4343033637b2349b52",
+            "propertyId": "event:listed-time",
+            "value": {
+              "kind": "time",
+              "value": {
+                "earliestYear": 894,
+                "latestYear": 894,
+                "precision": "year",
+                "calendar": "source-anno-domini-year",
+                "raw": "894"
+              }
+            },
+            "upstreamLocator": "$.text;table[0].row[20].cell[0]",
+            "primaryTenureText": "894",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:cbbf6062fa613ceda9e7cef5324f50a7",
+            "subjectId": "wikipedia-event:24703277:e7fd89dad7928e4343033637b2349b52",
+            "propertyId": "contact:listed-sender",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Uda"
+            },
+            "upstreamLocator": "$.text;table[0].row[20].cell[1]",
+            "primaryTenureText": "894",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:bd196444e6d4dbaa303ef8cf97c0a33a",
+            "subjectId": "wikipedia-event:24703277:e7fd89dad7928e4343033637b2349b52",
+            "propertyId": "contact:listed-envoy-names",
+            "value": {
+              "kind": "text",
+              "value": "Sugawara no Michizane (菅原道真) Ki no Haseo (紀長谷雄)"
+            },
+            "upstreamLocator": "$.text;table[0].row[20].cell[2]",
+            "primaryTenureText": "894",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:af044c46666f799b52ef024fc7edf7b6",
+            "subjectId": "wikipedia-event:24703277:e7fd89dad7928e4343033637b2349b52",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Sugawara_no_Michizane"
+            },
+            "upstreamLocator": "$.text;table[0].row[20].cell[2]",
+            "primaryTenureText": "894",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:652c1afaa1450c2ec4f4ffa40b1ae1a6",
+            "subjectId": "wikipedia-event:24703277:e7fd89dad7928e4343033637b2349b52",
+            "propertyId": "contact:listed-envoy-link",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Ki_no_Haseo"
+            },
+            "upstreamLocator": "$.text;table[0].row[20].cell[2]",
+            "primaryTenureText": "894",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:2c6dcef5a484805e98de811ce5df659a",
+            "subjectId": "wikipedia-event:24703277:e7fd89dad7928e4343033637b2349b52",
+            "propertyId": "contact:listed-counterpart",
+            "value": {
+              "kind": "entity",
+              "objectId": "wikipedia-en:Emperor_Tang_Zhaozong"
+            },
+            "upstreamLocator": "$.text;table[0].row[20].cell[3]",
+            "primaryTenureText": "894",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          },
+          {
+            "id": "wikipedia-event-claim:3f3e0828b9001c4120a11c2721f256dc",
+            "subjectId": "wikipedia-event:24703277:e7fd89dad7928e4343033637b2349b52",
+            "propertyId": "event:listed-status",
+            "value": {
+              "kind": "text",
+              "value": "cancelled"
+            },
+            "upstreamLocator": "$.text;table[0].row[20].cell[4]",
+            "primaryTenureText": "894",
+            "citationAnchors": {
+              "kind": "raw",
+              "value": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "gitworld-source-references:east-asia-source-reference-repair@45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+      "identity": {
+        "provider": "gitworld-source-references",
+        "externalId": "east-asia-source-reference-repair"
+      },
+      "revision": "1",
+      "contentHash": "45fcff704bbbc466d86568d1daf162bb98951bd61922719dcdd56c5029b4dcdd",
+      "retrievedAt": "2026-10-25T14:38:11.213Z",
+      "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/source-bindings-prd.md",
+      "adapterVersion": "published-source-reference-links-v1",
+      "rights": {
+        "licenseId": "CC-BY-SA-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "attribution": "Empress Saimei, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Empress%20Saimei&oldid=88649158; author history https://en.wikipedia.org/w/index.php?title=Empress%20Saimei&action=history. Emperor Tang Wenzong, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Wenzong&oldid=321946630; author history https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Wenzong&action=history. Emperor Tang Zhaozong, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Zhaozong&oldid=331386807; author history https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Zhaozong&action=history. Emperor Kammu, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Emperor%20Kammu&oldid=578326834; author history https://en.wikipedia.org/w/index.php?title=Emperor%20Kammu&action=history. Emperor Mommu, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Emperor%20Mommu&oldid=578327539; author history https://en.wikipedia.org/w/index.php?title=Emperor%20Mommu&action=history. Selected redirect identities only; article prose, images and full raw responses excluded. GitWorld added explicit unreviewed identity links and bilingual reference presentation; no historical date or relationship is inferred. No official endorsement.",
+        "redistribution": "allowed"
+      },
+      "record": {
+        "schemaVersion": 1,
+        "id": "east-asia-source-reference-repair",
+        "revision": "1",
+        "mappingVersion": "published-source-reference-links-v1",
+        "manifest": {
+          "articleTitle": "Published Wikipedia redirect identity references",
+          "changes": [
+            "Selected fixed-revision redirect identities and original table-claim locators; excluded article prose, images, full HTML and operational API responses.",
+            "Added typed source-identity references and explicit person links. Original objects, assertions, sources and historical review states are unchanged.",
+            "Identity resolution is modern navigation metadata; no historical time, biography, office, mission completion, ancestry or influence is inferred."
+          ]
+        },
+        "plan": {
+          "schemaVersion": 1,
+          "id": "east-asia-source-reference-repair",
+          "revision": "1",
+          "preparedAt": "2026-10-25T14:38:11.213Z",
+          "url": "https://github.com/samar1tan/GitWorld/blob/main/docs/source-bindings-prd.md",
+          "rights": {
+            "licenseId": "CC-BY-SA-4.0",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+            "attribution": "Empress Saimei, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Empress%20Saimei&oldid=88649158; author history https://en.wikipedia.org/w/index.php?title=Empress%20Saimei&action=history. Emperor Tang Wenzong, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Wenzong&oldid=321946630; author history https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Wenzong&action=history. Emperor Tang Zhaozong, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Zhaozong&oldid=331386807; author history https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Zhaozong&action=history. Emperor Kammu, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Emperor%20Kammu&oldid=578326834; author history https://en.wikipedia.org/w/index.php?title=Emperor%20Kammu&action=history. Emperor Mommu, English Wikipedia contributors: https://en.wikipedia.org/w/index.php?title=Emperor%20Mommu&oldid=578327539; author history https://en.wikipedia.org/w/index.php?title=Emperor%20Mommu&action=history. Selected redirect identities only; article prose, images and full raw responses excluded. GitWorld added explicit unreviewed identity links and bilingual reference presentation; no historical date or relationship is inferred. No official endorsement.",
+            "redistribution": "allowed"
+          },
+          "sourceLabels": {
+            "en": "Mission source links: recorded person identities",
+            "zh-CN": "使节来源链接：人物身份引用"
+          },
+          "decisions": [
+            {
+              "id": "mission-linked-title-2481733",
+              "sourceObjectId": "wikipedia-en:Empress_Saimei",
+              "originalAssertionId": "wikipedia-event-claim:3de81506041c2d107888868aa993a092",
+              "originalAssertionHash": "d621f55bfa384d4037bac62bb8148725a3fc6c0b91bcd32c0a7c0439e72f68bb",
+              "source": {
+                "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+                "revision": "1373459286",
+                "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+              },
+              "redirect": {
+                "pageId": "2481733",
+                "title": "Empress Saimei",
+                "revision": "88649158",
+                "contentHash": "09a54d4e3e90beb4abbeeb4566234fb02cd313261ab73ee44f97b29046d9d627",
+                "destinationPageId": "10421",
+                "destinationTitle": "Empress Kōgyoku",
+                "destinationRevision": "1381532604"
+              },
+              "target": {
+                "objectId": "wikipedia-en:Empress_Kōgyoku",
+                "sha256": "ea3d8fe46ac913dbea28ca5c7d568a8442bdc75a5d75b76b851b2092a451cdc1",
+                "type": "gitworld:office-holder"
+              },
+              "labels": {
+                "en": "Empress Saimei",
+                "zh-CN": "齐明天皇"
+              },
+              "descriptions": {
+                "en": "The mission table uses Saimei, a name for the same person recorded as Empress Kōgyoku. Follow Referenced person for the existing records; the source-listed name is retained.",
+                "zh-CN": "使节年表以齐明天皇之名列记此人，来源链接指向皇极天皇。同一人的不同天皇名在此保留；通过“所指人物”查看已有记录。"
+              }
+            },
+            {
+              "id": "mission-linked-title-24825088",
+              "sourceObjectId": "wikipedia-en:Emperor_Tang_Wenzong",
+              "originalAssertionId": "wikipedia-event-claim:94d60ce5d9621075c852bd3c17fd38c4",
+              "originalAssertionHash": "81becf1c8375e588b343c4c8e8573080ac906306e4be2b74a2a9b1c5b2905283",
+              "source": {
+                "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+                "revision": "1373459286",
+                "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+              },
+              "redirect": {
+                "pageId": "24825088",
+                "title": "Emperor Tang Wenzong",
+                "revision": "321946630",
+                "contentHash": "ce898c9d577dcfc7b318beb26d53f164d0b7797de37bc3ae187d4f8972fb6b1c",
+                "destinationPageId": "3083598",
+                "destinationTitle": "Emperor Wenzong of Tang",
+                "destinationRevision": "1358760494"
+              },
+              "target": {
+                "objectId": "wikipedia-en:Emperor_Wenzong_of_Tang",
+                "sha256": "5ea35e4e190d0e90a3c502d05e4e39433c0154ed5cc1e3e11033247735c98eb0",
+                "type": "gitworld:office-holder"
+              },
+              "labels": {
+                "en": "Emperor Tang Wenzong",
+                "zh-CN": "唐文宗"
+              },
+              "descriptions": {
+                "en": "The mission table links to “Emperor Tang Wenzong”, a published redirect to Emperor Wenzong of Tang. Follow Referenced person for the existing records.",
+                "zh-CN": "使节年表中的链接“Emperor Tang Wenzong”经来源重定向指向唐文宗。通过“所指人物”查看已有记录。"
+              }
+            },
+            {
+              "id": "mission-linked-title-25416145",
+              "sourceObjectId": "wikipedia-en:Emperor_Tang_Zhaozong",
+              "originalAssertionId": "wikipedia-event-claim:2c6dcef5a484805e98de811ce5df659a",
+              "originalAssertionHash": "7cedf9673daaa4a89504db1643e3d7605c4dfc288a30b4b1283828a5d8706c01",
+              "source": {
+                "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+                "revision": "1373459286",
+                "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+              },
+              "redirect": {
+                "pageId": "25416145",
+                "title": "Emperor Tang Zhaozong",
+                "revision": "331386807",
+                "contentHash": "2253e30a88931765f3d8b1f8f52bfca931d4287529f797129baf79d16b6f3c2b",
+                "destinationPageId": "2950973",
+                "destinationTitle": "Emperor Zhaozong of Tang",
+                "destinationRevision": "1380774270"
+              },
+              "target": {
+                "objectId": "wikipedia-en:Emperor_Zhaozong_of_Tang",
+                "sha256": "b0a8f6bd3cc6a59581686fb83b6daa6c19d4b8c17688c1f5c86fe5d147cafeeb",
+                "type": "gitworld:office-holder"
+              },
+              "labels": {
+                "en": "Emperor Tang Zhaozong",
+                "zh-CN": "唐昭宗"
+              },
+              "descriptions": {
+                "en": "The mission table links to “Emperor Tang Zhaozong”, a published redirect to Emperor Zhaozong of Tang. Follow Referenced person for the existing records.",
+                "zh-CN": "使节年表中的链接“Emperor Tang Zhaozong”经来源重定向指向唐昭宗。通过“所指人物”查看已有记录。"
+              }
+            },
+            {
+              "id": "mission-linked-title-40865795",
+              "sourceObjectId": "wikipedia-en:Emperor_Kammu",
+              "originalAssertionId": "wikipedia-event-claim:b0716ac0836bef7adbb9b879ed7c18a1",
+              "originalAssertionHash": "fa6f1ab1eda7a33054770d4a87b58426f25a5a65a55b7e2c60a6732c9c4dafc3",
+              "source": {
+                "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+                "revision": "1373459286",
+                "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+              },
+              "redirect": {
+                "pageId": "40865795",
+                "title": "Emperor Kammu",
+                "revision": "578326834",
+                "contentHash": "15b57f374861e1326a4a9c6b21b58f47871bb40fe646ecc69a2f2eeef40a1064",
+                "destinationPageId": "10126",
+                "destinationTitle": "Emperor Kanmu",
+                "destinationRevision": "1359542926"
+              },
+              "target": {
+                "objectId": "wikipedia-en:Emperor_Kanmu",
+                "sha256": "d70ec9b3e745c09415c9a792a8bda9755f515674cbcf469d6d0e4a08e84eeb6e",
+                "type": "gitworld:office-holder"
+              },
+              "labels": {
+                "en": "Emperor Kammu",
+                "zh-CN": "桓武天皇"
+              },
+              "descriptions": {
+                "en": "The mission table links to “Emperor Kammu”, a published redirect to Emperor Kanmu. Follow Referenced person for the existing records.",
+                "zh-CN": "使节年表中的链接“Emperor Kammu”经来源重定向指向桓武天皇。通过“所指人物”查看已有记录。"
+              }
+            },
+            {
+              "id": "mission-linked-title-40865841",
+              "sourceObjectId": "wikipedia-en:Emperor_Mommu",
+              "originalAssertionId": "wikipedia-event-claim:b70ca49b14efb35cd55cbc800e12cd09",
+              "originalAssertionHash": "4118b7f108133b191d2e3d4e7243fca1876669e6073c95d22e0bd41952193b6e",
+              "source": {
+                "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+                "revision": "1373459286",
+                "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+              },
+              "redirect": {
+                "pageId": "40865841",
+                "title": "Emperor Mommu",
+                "revision": "578327539",
+                "contentHash": "5522672fb43a0be40ed14cb672dc976b5ce3145215ba5584a3ef2280cd9d1f41",
+                "destinationPageId": "10428",
+                "destinationTitle": "Emperor Monmu",
+                "destinationRevision": "1376957729"
+              },
+              "target": {
+                "objectId": "wikipedia-en:Emperor_Monmu",
+                "sha256": "3bcf8b67ad29655a0e298d60ec13d49905171e50d27e84c7f4edb8b399e116d6",
+                "type": "gitworld:office-holder"
+              },
+              "labels": {
+                "en": "Emperor Mommu",
+                "zh-CN": "文武天皇"
+              },
+              "descriptions": {
+                "en": "The mission table links to “Emperor Mommu”, a published redirect to Emperor Monmu. Follow Referenced person for the existing records.",
+                "zh-CN": "使节年表中的链接“Emperor Mommu”经来源重定向指向文武天皇。通过“所指人物”查看已有记录。"
+              }
+            }
+          ],
+          "bundle": {
+            "baseManifestHash": "3ce3a5dbac92ef5a0a937bfdc9c61abdda4ba44bfb99192ceb68bd2ee94b0e0f",
+            "id": "east-asia-research-foundation-v9"
+          },
+          "navigationPolicy": "Add each reference to the existing destination research contexts through the reference source facts. Retain every prior membership and classify references as other, not as a second person or political structure.",
+          "permissionEvidence": {
+            "observedAt": "2026-10-25T14:41:55.635Z",
+            "url": "https://en.wikipedia.org/w/api.php?action=query&meta=siteinfo&siprop=rightsinfo&format=json&formatversion=2&maxlag=5",
+            "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+            "licenseName": "Creative Commons Attribution-Share Alike 4.0",
+            "scope": "English Wikipedia selected redirect facts; preserve permanent revisions, author histories, attribution and the CC BY-SA 4.0 license. This observation does not grant rights in external linked works or article images."
+          },
+          "acquisitionEvidence": {
+            "redirectResponseSha256": "bf8508536d2d5df2cda84065cfa7165cb0c8311f706872e05de5bc8b70023329",
+            "resolvedMetadataResponseSha256": "1dc78cdc13bae06622ff4e7ea0778bc8df8aea575fc73249f2889d890cbd9ad3",
+            "rawResponsesDistributed": false
+          }
+        },
+        "facts": [
+          {
+            "decisionId": "mission-linked-title-2481733",
+            "originalAssertionId": "wikipedia-event-claim:3de81506041c2d107888868aa993a092",
+            "originalAssertionHash": "d621f55bfa384d4037bac62bb8148725a3fc6c0b91bcd32c0a7c0439e72f68bb",
+            "originalSource": {
+              "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+              "revision": "1373459286",
+              "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+            },
+            "sourceObjectId": "wikipedia-en:Empress_Saimei",
+            "originalEvidence": [
+              {
+                "sourceId": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+                "locator": "$.facts[12]",
+                "url": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286"
+              }
+            ],
+            "redirect": {
+              "pageId": "2481733",
+              "title": "Empress Saimei",
+              "revision": "88649158",
+              "contentHash": "09a54d4e3e90beb4abbeeb4566234fb02cd313261ab73ee44f97b29046d9d627",
+              "target": {
+                "pageId": "10421",
+                "title": "Empress Kōgyoku",
+                "revision": "1381532604"
+              },
+              "retrievedAt": "2026-10-25T14:38:11.213Z",
+              "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=Empress%20Saimei&oldid=88649158",
+              "historyUrl": "https://en.wikipedia.org/w/index.php?title=Empress%20Saimei&action=history"
+            },
+            "targetObjectId": "wikipedia-en:Empress_Kōgyoku",
+            "targetObjectHash": "ea3d8fe46ac913dbea28ca5c7d568a8442bdc75a5d75b76b851b2092a451cdc1"
+          },
+          {
+            "decisionId": "mission-linked-title-24825088",
+            "originalAssertionId": "wikipedia-event-claim:94d60ce5d9621075c852bd3c17fd38c4",
+            "originalAssertionHash": "81becf1c8375e588b343c4c8e8573080ac906306e4be2b74a2a9b1c5b2905283",
+            "originalSource": {
+              "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+              "revision": "1373459286",
+              "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+            },
+            "sourceObjectId": "wikipedia-en:Emperor_Tang_Wenzong",
+            "originalEvidence": [
+              {
+                "sourceId": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+                "locator": "$.facts[85]",
+                "url": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286"
+              }
+            ],
+            "redirect": {
+              "pageId": "24825088",
+              "title": "Emperor Tang Wenzong",
+              "revision": "321946630",
+              "contentHash": "ce898c9d577dcfc7b318beb26d53f164d0b7797de37bc3ae187d4f8972fb6b1c",
+              "target": {
+                "pageId": "3083598",
+                "title": "Emperor Wenzong of Tang",
+                "revision": "1358760494"
+              },
+              "retrievedAt": "2026-10-25T14:38:11.213Z",
+              "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Wenzong&oldid=321946630",
+              "historyUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Wenzong&action=history"
+            },
+            "targetObjectId": "wikipedia-en:Emperor_Wenzong_of_Tang",
+            "targetObjectHash": "5ea35e4e190d0e90a3c502d05e4e39433c0154ed5cc1e3e11033247735c98eb0"
+          },
+          {
+            "decisionId": "mission-linked-title-25416145",
+            "originalAssertionId": "wikipedia-event-claim:2c6dcef5a484805e98de811ce5df659a",
+            "originalAssertionHash": "7cedf9673daaa4a89504db1643e3d7605c4dfc288a30b4b1283828a5d8706c01",
+            "originalSource": {
+              "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+              "revision": "1373459286",
+              "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+            },
+            "sourceObjectId": "wikipedia-en:Emperor_Tang_Zhaozong",
+            "originalEvidence": [
+              {
+                "sourceId": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+                "locator": "$.facts[91]",
+                "url": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286"
+              }
+            ],
+            "redirect": {
+              "pageId": "25416145",
+              "title": "Emperor Tang Zhaozong",
+              "revision": "331386807",
+              "contentHash": "2253e30a88931765f3d8b1f8f52bfca931d4287529f797129baf79d16b6f3c2b",
+              "target": {
+                "pageId": "2950973",
+                "title": "Emperor Zhaozong of Tang",
+                "revision": "1380774270"
+              },
+              "retrievedAt": "2026-10-25T14:38:11.213Z",
+              "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Zhaozong&oldid=331386807",
+              "historyUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Tang%20Zhaozong&action=history"
+            },
+            "targetObjectId": "wikipedia-en:Emperor_Zhaozong_of_Tang",
+            "targetObjectHash": "b0a8f6bd3cc6a59581686fb83b6daa6c19d4b8c17688c1f5c86fe5d147cafeeb"
+          },
+          {
+            "decisionId": "mission-linked-title-40865795",
+            "originalAssertionId": "wikipedia-event-claim:b0716ac0836bef7adbb9b879ed7c18a1",
+            "originalAssertionHash": "fa6f1ab1eda7a33054770d4a87b58426f25a5a65a55b7e2c60a6732c9c4dafc3",
+            "originalSource": {
+              "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+              "revision": "1373459286",
+              "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+            },
+            "sourceObjectId": "wikipedia-en:Emperor_Kammu",
+            "originalEvidence": [
+              {
+                "sourceId": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+                "locator": "$.facts[77]",
+                "url": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286"
+              }
+            ],
+            "redirect": {
+              "pageId": "40865795",
+              "title": "Emperor Kammu",
+              "revision": "578326834",
+              "contentHash": "15b57f374861e1326a4a9c6b21b58f47871bb40fe646ecc69a2f2eeef40a1064",
+              "target": {
+                "pageId": "10126",
+                "title": "Emperor Kanmu",
+                "revision": "1359542926"
+              },
+              "retrievedAt": "2026-10-25T14:38:11.213Z",
+              "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Kammu&oldid=578326834",
+              "historyUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Kammu&action=history"
+            },
+            "targetObjectId": "wikipedia-en:Emperor_Kanmu",
+            "targetObjectHash": "d70ec9b3e745c09415c9a792a8bda9755f515674cbcf469d6d0e4a08e84eeb6e"
+          },
+          {
+            "decisionId": "mission-linked-title-40865841",
+            "originalAssertionId": "wikipedia-event-claim:b70ca49b14efb35cd55cbc800e12cd09",
+            "originalAssertionHash": "4118b7f108133b191d2e3d4e7243fca1876669e6073c95d22e0bd41952193b6e",
+            "originalSource": {
+              "id": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+              "revision": "1373459286",
+              "contentHash": "6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0"
+            },
+            "sourceObjectId": "wikipedia-en:Emperor_Mommu",
+            "originalEvidence": [
+              {
+                "sourceId": "wikipedia-en-facts:24703277@6ec043a7af2c53054e5447950352ed624209839a29b5acfe7543285c1f4cd4f0",
+                "locator": "$.facts[28]",
+                "url": "https://en.wikipedia.org/w/index.php?title=Japanese%20missions%20to%20Tang%20China&oldid=1373459286"
+              }
+            ],
+            "redirect": {
+              "pageId": "40865841",
+              "title": "Emperor Mommu",
+              "revision": "578327539",
+              "contentHash": "5522672fb43a0be40ed14cb672dc976b5ce3145215ba5584a3ef2280cd9d1f41",
+              "target": {
+                "pageId": "10428",
+                "title": "Emperor Monmu",
+                "revision": "1376957729"
+              },
+              "retrievedAt": "2026-10-25T14:38:11.213Z",
+              "permanentRevisionUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Mommu&oldid=578327539",
+              "historyUrl": "https://en.wikipedia.org/w/index.php?title=Emperor%20Mommu&action=history"
+            },
+            "targetObjectId": "wikipedia-en:Emperor_Monmu",
+            "targetObjectHash": "3bcf8b67ad29655a0e298d60ec13d49905171e50d27e84c7f4edb8b399e116d6"
+          }
+        ]
+      }
+    }
+  ]
+}

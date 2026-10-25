@@ -14,7 +14,7 @@ import type { ServiceMethod, ServiceMethods, ServiceRequest } from '../../contra
 import { createEditorialRepository } from '../../storage/src/editorial.ts';
 import { createKnowledgeStore, knowledgeCollectionSeedFiles } from './knowledge-store.ts';
 import { createKnowledgeEditor } from './knowledge-editor.ts';
-import { createKnowledgeImports, knowledgeArtifactHash } from './knowledge-imports.ts';
+import { createKnowledgeImports, knowledgeArtifactHash, validateKnowledgeImportDirectory } from './knowledge-imports.ts';
 import { parseKnowledgeImportArtifact, readSelectedKnowledgeCollectionFile } from './knowledge-collection-files.ts';
 import { loadLegacyFieldCatalog, planKnowledgeVocabulary, vocabularyBaselinePath, vocabularyHash as hash, vocabularyPath } from './knowledge-vocabulary.ts';
 import { createLocalService } from './index.ts';
@@ -24,6 +24,7 @@ const root=fileURLToPath(new URL('../../../',import.meta.url)),binary=process.en
 const native={skip:!existsSync(binary)&&'Build the pinned bundled Git runtime.'};
 const git={gitExecutable:binary,gitExecPath:path.resolve(binary,'../../libexec/git-core')};
 const objectPath=(id='fixture:subject')=>`objects/${hash(id)}.json`;
+const retainedReview={reviewConflicts:{kind:'wikipedia-mapping' as const,jobId:'a'.repeat(64)}};
 function artifact(version='A',catalogId='fixture:catalog'):KnowledgeImportArtifact{
   const record={fixture:'Selected synthetic fact',version},sourceId=`fixture:source:${version}`,contentHash=hash(record);
   return{schemaVersion:1,kind:'gitworld-knowledge-import',collection:{schemaVersion:1,
@@ -102,6 +103,92 @@ test('catalog competition, deletion by omission and local corrections block the 
   const omission=artifact('B');delete omission.vocabulary!.catalog.properties[0].labels['zh-CN'];const missing=await request(f,imports,omission,'omission');await assert.rejects(imports.adopt(missing.params,missing.read),{message:'CONFLICT'});assert.deepEqual(await f.repo.status(),before);
   const local=artifact();local.vocabulary!.revision='LOCAL';local.vocabulary!.catalog=artifact('LOCAL').vocabulary!.catalog;const snapshot=await f.repo.snapshot(),plan=planKnowledgeVocabulary(snapshot.files,local,knowledgeArtifactHash(local));await f.repo.write(plan.changes.filter(change=>change.path!==vocabularyBaselinePath(local.vocabulary!.id)));const localFile=await f.repo.read(vocabularyPath(local.vocabulary!.id));
   const incoming=await request(f,imports,artifact('NEXT'),'incoming');await assert.rejects(imports.adopt(incoming.params,incoming.read),{message:'CONFLICT'});assert.deepEqual(await f.repo.read(vocabularyPath(local.vocabulary!.id)),localFile);
+});
+
+async function reviewedConflict(f:Awaited<ReturnType<typeof fixture>>,imports:ReturnType<typeof createKnowledgeImports>){
+  const initial=await request(f,imports);await imports.adopt(initial.params,initial.read);
+  const editor=f.editor(),context=await editor.editContext({objectId:'fixture:subject'});
+  await editor.saveEdit({operationId:'local-before-source-update',objectId:'fixture:subject',assertionId:'fixture:claim',expectedHead:context.head,expectedObjectHash:context.objectHash,change:{mode:'correct',propertyId:'fixture:field',value:{kind:'text',value:'LOCAL',language:'en'},evidence:{sourceId:'fixture:source:A',locator:'Local review'},review:'unreviewed',reason:'Preserve this local review while considering the next source'}});
+  const incoming=artifact('B');incoming.vocabulary!.catalog.properties.push({id:'fixture:new-field',labels:{en:'New field','zh-CN':'新增字段'}});
+  incoming.collection.assertions.push({...structuredClone(incoming.collection.assertions[0]),id:'fixture:new-claim',propertyId:'fixture:new-field',value:{kind:'text',value:'A newly mapped value'}});
+  return{initial,incoming,selected:await request(f,imports,incoming,'source-update')};
+}
+
+test('paired conflict review cannot commit an incoming new field before its complete catalog adoption',native,async t=>{
+  const f=await fixture(t),imports=f.open(),prepared=await reviewedConflict(f,imports),before=await f.repo.snapshot();
+  await assert.rejects(imports.adopt(prepared.selected.params,prepared.selected.read),{message:'CONFLICT'});assert.deepEqual(await f.repo.snapshot(),before);assert.deepEqual(imports.pendingPaths(),[]);
+  const report=await imports.adopt(prepared.selected.params,prepared.selected.read,retainedReview);
+  assert.equal(report.conflicts.length,1);assert.deepEqual(report.changedObjects,[]);assert.ok(imports.pendingPaths().includes(objectPath()));
+  assert.deepEqual(report.continuation,retainedReview.reviewConflicts);const raw=await f.store.conflicts();assert.equal(raw[0].continuation,undefined);
+  assert.deepEqual(imports.annotateConflicts(raw),raw.map(value=>({...value,continuation:report.continuation})));
+  const unrelated=structuredClone(raw);unrelated[0].local!.object.labels.en='A different current conflict';assert.equal(imports.annotateConflicts(unrelated)[0].continuation,undefined);
+  await imports.close();await f.repo.close();
+  const options={dataDirectory:f.library,...git,resolveFileToken:(token:string)=>token==='source-update'?prepared.selected.file:undefined};let service=await createLocalService(options);t.after(async()=>{await service.close();});
+  const status=await call(service,'repository.status',{});await call(service,'knowledge.resolve',{objectId:'fixture:subject',choice:'incoming',expectedHead:status.head});
+  const detail=await call(service,'knowledge.object',{objectId:'fixture:subject'});assert.ok(detail.assertions.some(value=>value.propertyId==='fixture:new-field'));assert.equal(detail.display!.properties['fixture:new-field']?.['zh-CN'],undefined);
+  const stage=await api(service,'repository.stage',{paths:[objectPath()]});assert.ok(!stage.ok&&stage.error.code==='REVIEW_REQUIRED');assert.equal(stage.error.parameters?.reason,'incomplete-paired-import');
+  await service.close();service=await createLocalService(options);assert.deepEqual(await call(service,'knowledge.pendingImports',{}),[]);assert.ok((await call(service,'repository.stagePlan',{paths:[objectPath()]})).incomplete!.includes(objectPath()));
+  const preview=await call(service,'knowledge.filePreview',{fileToken:'source-update'}),accepted=await call(service,'knowledge.fileAdopt',{fileToken:'source-update',operationId:'complete-reviewed-source',previewId:preview.preview.prepared!.id,expectedHead:preview.preview.prepared!.baseHead,expectedInputHash:preview.preview.inputHash,review:'unreviewed'});
+  assert.deepEqual(accepted.conflicts,[]);assert.equal((await call(service,'knowledge.object',{objectId:'fixture:subject'})).display!.properties['fixture:new-field']['zh-CN'],'新增字段');
+  const paths=(await call(service,'repository.status',{})).unstaged.map(value=>value.path);await call(service,'repository.stage',{paths});const frozen=await call(service,'repository.status',{});const committed=await call(service,'repository.commit',{operationId:'commit-complete-pair',expectedHead:frozen.head,expectedTree:frozen.stagedTree,message:'Adopt the reviewed source and its complete vocabulary'});
+  await service.close();service=await createLocalService(options);assert.equal((await call(service,'knowledge.object',{objectId:'fixture:subject',revision:committed.oid})).display!.properties['fixture:new-field']['zh-CN'],'新增字段');
+  assert.deepEqual(await call(service,'knowledge.resumeImport',{operationId:prepared.selected.params.operationId,previewId:prepared.selected.params.previewId!}),report);
+  assert.equal((await call(service,'repository.stagePlan',{paths:[objectPath()]})).incomplete,undefined);
+});
+
+test('paired conflict evidence resumes prepared, partial, written and lost-receipt phases through the existing import receipt',native,async t=>{
+  for(const point of ['after-prepare','partial-write','after-write','after-receipt']as const)await t.test(point,async sub=>{
+    const f=await fixture(sub);let imports=f.open();const prepared=await reviewedConflict(f,imports);await imports.close();
+    let once=true;const wrapped:EditorialRepository={...f.repo,async write(changes,guards){if(point==='partial-write'&&once){once=false;await f.repo.write(changes.slice(0,1),guards);throw Error('Interrupted conflict evidence');}return f.repo.write(changes,guards);}};
+    imports=f.open({onFault:at=>{if(point===at&&once){once=false;throw Error('Interrupted conflict evidence');}}},wrapped);
+    const before=await f.repo.read(objectPath()),catalog=await f.repo.read(vocabularyPath('fixture:catalog'));await assert.rejects(imports.adopt(prepared.selected.params,prepared.selected.read,retainedReview),/Interrupted conflict evidence/);
+    assert.deepEqual(await f.repo.read(objectPath()),before);assert.deepEqual(await f.repo.read(vocabularyPath('fixture:catalog')),catalog);validateKnowledgeImportDirectory(f.library);
+    await imports.close();await f.repo.close();const service=await createLocalService({dataDirectory:f.library,...git,resolveFileToken:()=>{throw Error('Expired token must not be used');}});sub.after(async()=>{await service.close();});
+    const pending=await call(service,'knowledge.pendingImports',{});assert.equal(pending.length,point==='after-receipt'?0:1);
+    if(pending.length){const refused=await api(service,'knowledge.resolve',{objectId:'fixture:subject',choice:'incoming',expectedHead:prepared.selected.params.expectedHead});assert.ok(!refused.ok&&refused.error.code==='REVIEW_REQUIRED');}
+    const input={operationId:prepared.selected.params.operationId,previewId:prepared.selected.params.previewId!},report=await call(service,'knowledge.resumeImport',input);
+    assert.equal(report.conflicts.length,1);assert.deepEqual(await call(service,'knowledge.resumeImport',input),report);assert.deepEqual(await call(service,'knowledge.conflicts',{}),report.conflicts.map(value=>({...value,continuation:report.continuation})));
+    assert.deepEqual((await call(service,'knowledge.object',{objectId:'fixture:subject'})).assertions,(before as any).assertions);assert.deepEqual(await call(service,'knowledge.pendingImports',{}),[]);
+    await call(service,'knowledge.resolve',{objectId:'fixture:subject',choice:'local',expectedHead:prepared.selected.params.expectedHead});assert.deepEqual(await call(service,'knowledge.conflicts',{}),[]);
+    assert.ok((await call(service,'repository.stagePlan',{paths:[objectPath()]})).incomplete!.includes(objectPath()));
+  });
+});
+
+test('paired conflict review validates the whole candidate before evidence writes and rejects damaged prepared or changed HEAD recovery',native,async t=>{
+  await t.test('vocabulary conflict precedes evidence',async sub=>{
+    const f=await fixture(sub),imports=f.open(),prepared=await reviewedConflict(f,imports),competing=structuredClone(prepared.incoming);competing.vocabulary!.id='fixture:competing';competing.vocabulary!.origin.identity.externalId='fixture:competing';
+    const selected=await request(f,imports,competing,'competing-with-local-edit'),before=await f.repo.snapshot();await assert.rejects(imports.adopt(selected.params,selected.read),{message:'CONFLICT'});assert.deepEqual(await f.repo.snapshot(),before);assert.deepEqual(await f.store.conflicts(),[]);
+  });
+  await t.test('cross-object duplicate assertion is not valid evidence',async sub=>{
+    const f=await fixture(sub),imports=f.open(),prepared=await reviewedConflict(f,imports),outside={schemaVersion:1,object:{...artifact().collection.objects[0],id:'fixture:outside'},assertions:[{...artifact().collection.assertions[0],id:'fixture:new-claim',subjectId:'fixture:outside'}]};
+    await f.repo.write([{path:objectPath('fixture:outside'),value:outside as any}]);const selected=await request(f,imports,prepared.incoming,'invalid-complete-candidate'),before=await f.repo.snapshot();
+    await assert.rejects(imports.adopt(selected.params,selected.read),/DUPLICATE_KNOWLEDGE_ID/);assert.deepEqual(await f.repo.snapshot(),before);assert.deepEqual(await f.store.conflicts(),[]);
+  });
+  await t.test('recomputed envelope cannot add an object write to conflict review',async sub=>{
+    const f=await fixture(sub);let imports=f.open();const prepared=await reviewedConflict(f,imports);await imports.close();imports=f.open({onFault:at=>{if(at==='after-prepare')throw Error('Prepared review');}});await assert.rejects(imports.adopt(prepared.selected.params,prepared.selected.read,retainedReview),/Prepared review/);await imports.close();
+    const database=new DatabaseSync(path.join(f.library,'knowledge-imports.sqlite')),row=database.prepare('SELECT prepared FROM operations WHERE id=?').get(prepared.selected.params.operationId) as {prepared:string},value=JSON.parse(row.prepared);value.changes.push({path:objectPath(),value:value.result.conflicts[0].incoming});value.result.paths.push(objectPath());value.hash=hash({...value,hash:''});database.prepare('UPDATE operations SET prepared=? WHERE id=?').run(canonicalJson(value),prepared.selected.params.operationId);database.close();
+    const before=await f.repo.snapshot();assert.throws(()=>validateKnowledgeImportDirectory(f.library),/VALIDATION_FAILED/);assert.throws(()=>f.open(),/VALIDATION_FAILED/);assert.deepEqual(await f.repo.snapshot(),before);
+  });
+  await t.test('partial review cannot be moved to a new HEAD',async sub=>{
+    const f=await fixture(sub);let imports=f.open();const prepared=await reviewedConflict(f,imports);await imports.close();imports=f.open({onFault:at=>{if(at==='after-prepare')throw Error('Prepared review');}});await assert.rejects(imports.adopt(prepared.selected.params,prepared.selected.read,retainedReview),/Prepared review/);await imports.close();
+    await f.repo.write([{path:objectPath('fixture:outside'),value:{schemaVersion:1,object:{...artifact().collection.objects[0],id:'fixture:outside'},assertions:[]}}]);let status=await f.repo.status();await f.repo.stage(status.unstaged.map(value=>({path:value.path})));status=await f.repo.status();await f.repo.commit({operationId:'advance-before-review-write',expectedHead:status.head,expectedTree:status.stagedTree,message:'A separate technical concurrent update'});
+    imports=f.open();const before=await f.repo.snapshot();await assert.rejects(imports.resume({operationId:prepared.selected.params.operationId,previewId:prepared.selected.params.previewId!}),{message:'HEAD_CHANGED'});assert.deepEqual(await f.repo.snapshot(),before);assert.deepEqual(await f.store.conflicts(),[]);
+  });
+});
+
+test('complete-pair references reject damaged review identities and legacy report replay never adds continuation metadata',native,async t=>{
+  await t.test('referenced operation and immutable review hash are both required',async sub=>{
+    const f=await fixture(sub),imports=f.open(),prepared=await reviewedConflict(f,imports);await imports.adopt(prepared.selected.params,prepared.selected.read,retainedReview);
+    await f.store.resolve('fixture:subject','incoming',prepared.selected.params.expectedHead);const complete=await request(f,imports,prepared.incoming,'later-complete');await imports.adopt(complete.params,complete.read);await imports.close();
+    const database=new DatabaseSync(path.join(f.library,'knowledge-imports.sqlite')),row=database.prepare('SELECT prepared FROM operations WHERE id=?').get(complete.params.operationId)as{prepared:string},original=JSON.parse(row.prepared),before=await f.repo.snapshot();assert.equal(original.supersedes.length,1);
+    for(const field of ['operationId','preparedHash']as const){const invalid=structuredClone(original);invalid.supersedes[0][field]=field==='operationId'?'missing-review':'0'.repeat(64);invalid.hash=hash({...invalid,hash:''});database.prepare('UPDATE operations SET prepared=? WHERE id=?').run(canonicalJson(invalid),complete.params.operationId);assert.throws(()=>validateKnowledgeImportDirectory(f.library),/VALIDATION_FAILED/);assert.deepEqual(await f.repo.snapshot(),before);}
+    database.prepare('UPDATE operations SET prepared=? WHERE id=?').run(row.prepared,complete.params.operationId);database.close();validateKnowledgeImportDirectory(f.library);
+  });
+  await t.test('a stored legacy report remains byte-compatible',async sub=>{
+    const f=await fixture(sub);let imports=f.open();const prepared=await reviewedConflict(f,imports);await imports.adopt(prepared.selected.params,prepared.selected.read,retainedReview);await imports.close();
+    const database=new DatabaseSync(path.join(f.library,'knowledge-imports.sqlite')),row=database.prepare('SELECT prepared FROM operations WHERE id=?').get(prepared.selected.params.operationId)as{prepared:string},value=JSON.parse(row.prepared);delete value.result.continuation;value.hash=hash({...value,hash:''});const oldResult=canonicalJson(value.result);database.prepare('UPDATE operations SET prepared=?,result=? WHERE id=?').run(canonicalJson(value),oldResult,prepared.selected.params.operationId);database.close();
+    imports=f.open();const result=await imports.resume({operationId:prepared.selected.params.operationId,previewId:prepared.selected.params.previewId!});assert.equal(canonicalJson(result),oldResult);assert.equal(result.continuation,undefined);assert.deepEqual(imports.annotateConflicts(await f.store.conflicts()),await f.store.conflicts());
+  });
 });
 
 let sequence=0;

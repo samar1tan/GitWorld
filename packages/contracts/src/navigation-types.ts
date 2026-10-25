@@ -38,6 +38,8 @@ export type NavigationSaveRequest = {
 export type NavigationSaveResult = { contextId: string; contentHash: string; head: string; paths: string[] };
 export type NavigationBatchSummary = {
   batchKey: string; batch: NavigationBatchRef; labels: KnowledgeText; sourceRefs: NavigationSourceRef[]; sourceRefCount: number;
+  /** Up to 30 provider identities for presentation; searching uses the complete pinned metadata. */
+  providers?: string[];
   objects: number; directObjects: number; relatedObjects: number; unresolvedObjects: number;
   status: 'complete' | 'unavailable'; reason?: 'import-conflicts' | 'incomplete-import-result' | 'missing-objects' | 'import-origin-unavailable';
 };
@@ -87,7 +89,7 @@ export type NavigationServiceMethods = {
   'context.list': { params: NavigationPageRequest & { revision?: NavigationRevision; text?: string }; result: NavigationContextList };
   'context.get': { params: NavigationPageRequest & { contextId: string; revision?: NavigationRevision }; result: NavigationContextRead };
   'context.save': { params: NavigationSaveRequest; result: NavigationSaveResult };
-  'context.batches': { params: NavigationPageRequest & { revision?: NavigationRevision; batchKey?: string; inputHash?: string; previewId?: string }; result: NavigationBatchPage };
+  'context.batches': { params: NavigationPageRequest & { revision?: NavigationRevision; batchKey?: string; inputHash?: string; previewId?: string; text?: string; kind?: NavigationBatchRef['kind'] }; result: NavigationBatchPage };
   'context.batchObjects': { params: NavigationPageRequest & { batch: NavigationBatchRef }; result: NavigationBatchObjects };
   'context.batchSources': { params: NavigationPageRequest & { batch: NavigationBatchRef }; result: NavigationBatchSources };
   'context.membershipPlan': { params: NavigationMembershipPlanRequest; result: NavigationMembershipPlan };

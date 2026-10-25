@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "kind": "historical-field-display-labels",
+  "properties": [
+    {
+      "id": "reference:person",
+      "labels": {
+        "en": "Referenced person",
+        "zh-CN": "所指人物"
+      }
+    },
+    {
+      "id": "reference:source-spelling",
+      "labels": {
+        "en": "Source-linked title",
+        "zh-CN": "来源链接标题"
+      }
+    }
+  ],
+  "types": [
+    {
+      "id": "gitworld:source-identity-reference",
+      "labels": {
+        "en": "Source identity reference",
+        "zh-CN": "来源身份引用"
+      },
+      "navigationRole": "other"
+    }
+  ],
+  "semanticNotes": [
+    {
+      "ids": [
+        "reference:person"
+      ],
+      "en": "This untimed identity link follows a fixed published redirect. Open Other recorded claims to follow the person; it is not a historical state or event.",
+      "zh-CN": "此无历史时间的身份引用依据固定版本的来源重定向。展开“其他收录主张”可进入所指人物；它不表示历史状态或事件。"
+    }
+  ]
+}

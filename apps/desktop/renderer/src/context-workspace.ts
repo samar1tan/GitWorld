@@ -2,12 +2,13 @@ import type { HistoryLocale } from '@gitworld/domain';
 import type { ClosePreparationResult, NavigationApplyResult, NavigationBatchObjects, NavigationBatchSources, NavigationBatchPage, NavigationBatchRef, NavigationBatchSummary, NavigationContextList, NavigationContextRead, NavigationMembershipPlan, NavigationPendingOperation, NavigationPlanPage, NavigationResumeResult, NavigationSaveResult, ServiceMethods } from '@gitworld/contracts';
 import { escapeHtml as esc, ServiceFailure } from './client.ts';
 import { contextCopy as copy, type ContextCopyKey } from './context-copy.ts';
-import { knowledgeLocalizedText } from './knowledge-labels.ts';
+import { knowledgeLocalizedText, knowledgeSourceProviderLabel } from './knowledge-labels.ts';
 
 export type ContextWorkspaceTarget = { contextId?: string; batch?: NavigationBatchRef; planId?: string; mode?: 'add' | 'remove'; importIdentity?:{inputHash:string;previewId?:string} };
 export type ContextWorkspaceApi = { [K in 'list' | 'get' | 'save' | 'batches' | 'batchObjects' | 'batchSources' | 'membershipPlan' | 'plan' | 'applyMembership' | 'pending' | 'resume']: (input: ServiceMethods[`context.${K}`]['params']) => Promise<ServiceMethods[`context.${K}`]['result']> };
 type Options = { locale: () => HistoryLocale; render: () => void; api: ContextWorkspaceApi; storage: Pick<Storage, 'getItem' | 'setItem' | 'removeItem'>; flushDraft?: () => Promise<void>; onClose: () => void | Promise<unknown>; onChanged?: (result: NavigationSaveResult | NavigationApplyResult) => void | Promise<unknown>; onViewContext?: (contextId: string) => void | Promise<unknown>; onOpenChanges?: (paths: string[]) => void | Promise<unknown>; onResumeImport?: () => void | Promise<unknown> };
-type Draft = { schemaVersion: 1; target: ContextWorkspaceTarget; language: HistoryLocale; name: string; purpose: string; rationale: string; mode: 'add' | 'remove'; selectedBatch: NavigationBatchRef | null; planId: string | null; attemptId: string | null; baseline?:string };
+type BatchFilter = { text: string; kind: 'all' | NavigationBatchRef['kind'] };
+type Draft = { schemaVersion: 1; target: ContextWorkspaceTarget; language: HistoryLocale; name: string; purpose: string; rationale: string; mode: 'add' | 'remove'; selectedBatch: NavigationBatchRef | null; planId: string | null; attemptId: string | null; baseline?:string; batchFilter?:BatchFilter };
 const KEY = 'gitworld-context-input-v1';
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value);
 const same = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
@@ -18,18 +19,20 @@ export function parseContextInput(raw: string | null): Draft | null {
     if (!object(v) || v.schemaVersion !== 1 || !object(v.target) || !['en', 'zh-CN'].includes(String(v.language)) || typeof v.name !== 'string' || v.name.length > 500 || typeof v.purpose !== 'string' || v.purpose.length > 5000 || typeof v.rationale !== 'string' || v.rationale.length > 5000 || !['add', 'remove'].includes(String(v.mode)) || !(v.planId === null || typeof v.planId === 'string') || !(v.attemptId === null || typeof v.attemptId === 'string')) return null;
     if (v.target.contextId !== undefined && (typeof v.target.contextId !== 'string' || v.target.contextId.length > 1000)) return null;
     if (v.selectedBatch !== null && (!object(v.selectedBatch) || !['saved-source', 'adopted-import'].includes(String(v.selectedBatch.kind)) || typeof v.selectedBatch.objectSetHash !== 'string')) return null;
+    if(v.batchFilter!==undefined&&(!object(v.batchFilter)||typeof v.batchFilter.text!=='string'||v.batchFilter.text.length>300||/[\x00-\x1f\x7f]/.test(v.batchFilter.text)||!['all','adopted-import','saved-source'].includes(String(v.batchFilter.kind))))return null;
     return v as Draft;
   } catch { return null; }
 }
 
 export function createContextWorkspace(options: Options) {
-  const blank = (target: ContextWorkspaceTarget = {}): Draft => ({ schemaVersion: 1, target: structuredClone(target), language: options.locale(), name: '', purpose: '', rationale: '', mode: target.mode ?? 'add', selectedBatch: target.batch ?? null, planId: target.planId ?? null, attemptId: null });
+  const blank = (target: ContextWorkspaceTarget = {}): Draft => ({ schemaVersion: 1, target: structuredClone(target), language: options.locale(), name: '', purpose: '', rationale: '', mode: target.mode ?? 'add', selectedBatch: target.batch ?? null, planId: target.planId ?? null, attemptId: null, batchFilter:{text:'',kind:'all'} });
   let draft = blank(), baseline = JSON.stringify([options.locale(), '', '', '']), visible = false, busy = false, loading = false, bufferFailed = false;
   let contexts: NavigationContextList | null = null, current: NavigationContextRead | null = null, batches: NavigationBatchPage | null = null;
   let pins:NavigationBatchSources|null=null;
   let plan: NavigationMembershipPlan | null = null, members: NavigationPlanPage | NavigationBatchObjects | null = null;
   let pendingOperations: NavigationPendingOperation[] = [], saved: NavigationSaveResult | NavigationApplyResult | null = null;
   let error: string | null = null, reason: string | null = null, retry: (() => Promise<unknown>) | null = null, search = '';
+  let batchFilter:BatchFilter={text:'',kind:'all'},batchLoading=false;
   let sequence = 0, contextSequence=0,batchSequence=0,pinsSequence=0,memberSequence = 0, pendingWrite: Promise<void> | null = null;
   let confirmation: { kind: 'discard' } | { kind: 'replace'; target: ContextWorkspaceTarget } | null = null;
   const text = (labels: Record<string, string>, fallback = '') => { const value = knowledgeLocalizedText(labels, options.locale(), fallback); return value.text + (options.locale() === 'zh-CN' && /^en(?:-|$)/i.test(value.language ?? '') ? ' · EN' : ''); };
@@ -53,7 +56,7 @@ export function createContextWorkspace(options: Options) {
   function cacheInput() {
     try {
       draft.baseline=baseline;
-      if (hasUnsavedChanges() || draft.selectedBatch || draft.planId) options.storage.setItem(KEY, JSON.stringify(draft));
+      if (hasUnsavedChanges() || draft.selectedBatch || draft.planId || draft.batchFilter&&(draft.batchFilter.text||draft.batchFilter.kind!=='all')) options.storage.setItem(KEY, JSON.stringify(draft));
       else options.storage.removeItem(KEY);
       bufferFailed = false; return true;
     } catch { bufferFailed = true; return false; }
@@ -79,12 +82,24 @@ export function createContextWorkspace(options: Options) {
     return `<div class="context-pages">${button(action, t('previous'), `data-offset="${Math.max(0, value.offset - value.limit)}" ${value.offset === 0 || busy ? 'disabled' : ''}`)}<span>${copy(options.locale(), 'page', { from: value.offset + 1, to: Math.min(value.total, value.offset + count), total: value.total })}</span>${button(action, t('next'), `data-offset="${value.offset + value.limit}" ${value.offset + value.limit >= value.total || busy ? 'disabled' : ''}`)}</div>`;
   }
   const selectionName = (batch: NavigationBatchRef) => t(batch.kind === 'adopted-import' ? 'adopted' : batch.selection === 'source-claim-subjects' ? 'subjects' : 'related');
+  function batchName(value:NavigationBatchSummary){
+    const label=knowledgeLocalizedText(value.labels,options.locale()),provider=value.providers?.[0];
+    if(value.providers?.includes(label.text)||/^[a-f0-9]{40,64}$/i.test(label.text))return provider?knowledgeSourceProviderLabel(provider,options.locale()):t(value.batch.kind==='adopted-import'?'untitledImport':'untitledSource');
+    return text(value.labels)|| (provider?knowledgeSourceProviderLabel(provider,options.locale()):t(value.batch.kind==='adopted-import'?'untitledImport':'untitledSource'));
+  }
   function batchDetails(batch: NavigationBatchRef) {
     return `<details class="context-meta"><summary>${t('details')}</summary><p>${selectionName(batch)}</p><dl>${Object.entries(batch).map(([key, value]) => `<dt>${esc(key)}</dt><dd><code>${esc(String(value))}</code></dd>`).join('')}</dl></details>`;
   }
   function membershipHtml() {
     if (!current) return '';
-    return `<section><h2>${t('membership')}</h2><p>${t('organization')}</p><div class="context-actions">${button('mode-add', t('addMaterial'), `aria-pressed="${draft.mode === 'add'}" ${busy ? 'disabled' : ''}`)}${button('mode-remove', t('removeMaterial'), `aria-pressed="${draft.mode === 'remove'}" ${busy ? 'disabled' : ''}`)}</div><h2>${t('batches')}</h2>${batches?.items.length ? `<div class="context-batches">${batches.items.map((value, index) => `<button type="button" class="context-batch" data-context="batch" data-index="${index}" aria-pressed="${same(value.batch, draft.selectedBatch)}" ${busy || loading || draft.attemptId || value.status !== 'complete' ? 'disabled' : ''}><strong>${esc(text(value.labels))}</strong><small>${selectionName(value.batch)}</small><small>${copy(options.locale(), 'batchCounts', { objects: value.objects, direct: value.directObjects, related: value.relatedObjects })}</small><small>${copy(options.locale(),'sourcePinCount',{count:value.sourceRefCount})}</small>${value.unresolvedObjects ? `<small>${copy(options.locale(), 'unresolved', { count: value.unresolvedObjects })}</small>` : ''}${value.status === 'unavailable' ? `<small>${t(value.reason === 'missing-objects' ? 'missingObjects' : value.reason === 'import-conflicts' ? 'importConflicts' : value.reason === 'incomplete-import-result' ? 'incompleteResult' : 'originUnavailable')}</small>` : ''}</button>`).join('')}</div>${pages('batches-page', batches)}` : `<p>${t(loading ? 'working' : 'noBatches')}</p>`}${draft.selectedBatch ? `${batchDetails(draft.selectedBatch)}${button('source-pins',t('sourcePins'))}${pinsHtml()}<p>${t('completeSet')}</p><label class="context-field">${t('rationale')}<textarea data-context-input="rationale" maxlength="4000" ${busy || loading || draft.attemptId || confirmation ? 'disabled' : ''}>${esc(draft.rationale)}</textarea></label><div class="context-actions">${button('preview', t('preview'), busy || loading || draft.attemptId || pendingOperations.length ? 'disabled' : '', true)}${button('batch-objects', t('batchObjects'), busy ? 'disabled' : '')}</div>` : ''}${planHtml()}</section>`;
+    return `<section><h2>${t('membership')}</h2><p>${t('organization')}</p><div class="context-actions">${button('mode-add', t('addMaterial'), `aria-pressed="${draft.mode === 'add'}" ${busy ? 'disabled' : ''}`)}${button('mode-remove', t('removeMaterial'), `aria-pressed="${draft.mode === 'remove'}" ${busy ? 'disabled' : ''}`)}</div><h2>${t('batches')}</h2>${batchPickerHtml()}${draft.selectedBatch ? `${batchDetails(draft.selectedBatch)}${button('source-pins',t('sourcePins'))}${pinsHtml()}<p>${t('completeSet')}</p><label class="context-field">${t('rationale')}<textarea data-context-input="rationale" maxlength="4000" ${busy || loading || draft.attemptId || confirmation ? 'disabled' : ''}>${esc(draft.rationale)}</textarea></label><div class="context-actions">${button('preview', t('preview'), busy || loading || draft.attemptId || pendingOperations.length ? 'disabled' : '', true)}${button('batch-objects', t('batchObjects'), busy ? 'disabled' : '')}</div>` : ''}${planHtml()}</section>`;
+  }
+  function batchPickerHtml(){
+    const filter=draft.batchFilter??{text:'',kind:'all'},disabled=busy||loading||draft.attemptId||confirmation;
+    return `<form class="context-batch-filters" data-context-form="batch-search" role="search" aria-label="${t('findBatch')}"><label class="context-field">${t('sourceQuery')}<input data-context-input="batch-search" value="${esc(filter.text)}" maxlength="300" ${disabled?'disabled':''}></label><label class="context-field">${t('batchKind')}<select data-context-input="batch-kind" ${disabled?'disabled':''}><option value="all" ${filter.kind==='all'?'selected':''}>${t('allBatches')}</option><option value="adopted-import" ${filter.kind==='adopted-import'?'selected':''}>${t('completeImports')}</option><option value="saved-source" ${filter.kind==='saved-source'?'selected':''}>${t('savedSources')}</option></select></label><button class="context-button" type="submit" ${disabled?'disabled':''}>${t('search')}</button></form>${batchLoading?`<p role="status">${t('working')}</p>`:''}${batches?.items.length?`<div class="context-batches">${batches.items.map((value,index)=>{
+      const title=batchName(value),provider=(value.providers??[]).slice(0,3).map(id=>knowledgeSourceProviderLabel(id,options.locale())).join(' · ');
+      return `<button type="button" class="context-batch" data-context="batch" data-index="${index}" aria-pressed="${same(value.batch,draft.selectedBatch)}" ${busy||loading||batchLoading||draft.attemptId||value.status!=='complete'?'disabled':''}><strong>${esc(title)}</strong>${provider&&provider!==title?`<small>${esc(provider)}</small>`:''}<small>${selectionName(value.batch)}</small><small>${copy(options.locale(),'batchCounts',{objects:value.objects,direct:value.directObjects,related:value.relatedObjects})}</small><small>${copy(options.locale(),'sourcePinCount',{count:value.sourceRefCount})}</small>${value.unresolvedObjects?`<small>${copy(options.locale(),'unresolved',{count:value.unresolvedObjects})}</small>`:''}${value.status==='unavailable'?`<small>${t(value.reason==='missing-objects'?'missingObjects':value.reason==='import-conflicts'?'importConflicts':value.reason==='incomplete-import-result'?'incompleteResult':'originUnavailable')}</small>`:''}</button>`;
+    }).join('')}</div>${pages('batches-page',batches)}`:`<p>${t(loading?'working':batchFilter.text||batchFilter.kind!=='all'?'noBatchMatches':'noBatches')}</p>`}`;
   }
   function planHtml() {
     const objects = members?.items ?? [];
@@ -109,9 +124,15 @@ export function createContextWorkspace(options: Options) {
     return `<main class="context-workspace"><header><div><h1>${current ? esc(text(current.definition.labels)) : t('newContext')}</h1>${hasUnsavedChanges() || saved ? `<small>${hasUnsavedChanges() ? t('draft') : t('saved')}</small>` : ''}</div><div class="context-actions">${hasUnsavedChanges() && !draft.attemptId ? button('discard', t('discard'), busy ? 'disabled' : '') : ''}${button('close', t('close'))}</div></header><div class="context-workspace-body">${confirmation ? `<section class="context-notice context-confirmation" role="alertdialog" aria-modal="false" aria-labelledby="context-confirm-title"><h2 id="context-confirm-title">${t(confirmation.kind === 'replace' ? 'replace' : 'discardTitle')}</h2><p>${t(confirmation.kind === 'replace' ? 'replaceBody' : 'discardBody')}</p><div class="context-actions">${button('keep', t('keep'))}${button('discard-confirm', t(confirmation.kind === 'replace' ? 'continue' : 'confirmDiscard'))}</div></section>` : ''}${errorHtml()}${busy || loading ? `<p role="status">${t('working')}</p>` : ''}${saved ? `<section class="context-notice" role="status" tabindex="-1"><p>${t('counts' in saved ? 'completed' : 'definitionsSaved')}</p><div class="context-actions">${button('view', t('viewContext'), `data-id="${esc(saved.contextId)}"`)}${options.onOpenChanges ? button('changes', t('reviewChanges')) : ''}</div><small>${copy(options.locale(), 'changedPaths', { count: saved.paths.length })}</small></section>` : ''}${current ? `<details class="context-meta" data-context-disclosure="definition"><summary>${t('existingName')}</summary>${definitionHtml()}</details>` : definitionHtml()}${targetPickerHtml()}${membershipBasisHtml()}${membershipHtml()}</div></main>`;
   }
   async function loadContexts(offset = 0) { const s = sequence,read=++contextSequence, value = await options.api.list({ revision: 'working', offset, limit: 25, ...(search.trim() ? { text: search.trim() } : {}) }); if (s === sequence && read===contextSequence&& visible) { contexts = value; redraw(); } }
-  async function loadBatches(offset = 0) { const s = sequence,read=++batchSequence, value = await options.api.batches({ revision: 'working', offset, limit: 10,...draft.target.importIdentity }); if (s === sequence && read===batchSequence&& visible) { batches = value; redraw(); } }
+  const batchRequest=(offset:number,filter:BatchFilter)=>({revision:'working',offset,limit:10,...draft.target.importIdentity,...(filter.text.trim()?{text:filter.text.trim()}:{}),...(filter.kind!=='all'?{kind:filter.kind}:{})});
+  async function loadBatches(offset = 0, filter:BatchFilter=batchFilter) {
+    const s=sequence,read=++batchSequence,selected={...filter};batchLoading=true;redraw();
+    try{const value=await options.api.batches(batchRequest(offset,selected));if(s===sequence&&read===batchSequence&&visible){batches=value;batchFilter=selected;error=null;reason=null;retry=null;}}
+    catch(cause){if(s===sequence&&read===batchSequence&&visible)failure(cause,()=>loadBatches(offset,selected));}
+    finally{if(s===sequence&&read===batchSequence&&visible){batchLoading=false;redraw();}}
+  }
   async function chooseContext(id: string, preserve = false) {
-    const s = ++sequence; loading = true; error = null; redraw();
+    const s = ++sequence; batchSequence++;batchLoading=false;loading = true; error = null; redraw();
     try {
       const value = await options.api.get({ contextId: id, revision: 'working', limit: 10 });
       if (s !== sequence || !visible) return;
@@ -128,12 +149,12 @@ export function createContextWorkspace(options: Options) {
     catch (cause) { if (s === memberSequence) failure(cause, () => loadMembers(offset)); }
   }
   async function initialize(target: ContextWorkspaceTarget, recovered?: Draft) {
-    const s = ++sequence; visible = true; loading = true; draft = recovered ?? blank(target); contexts=null;batches=null;current = null;pins=null;pinsSequence++; plan = null; members = null; saved = null; pendingOperations=[];error = null; reason = null; confirmation = null; baseline = JSON.stringify([draft.language, '', '', '']);const ownedDraft=draft; redraw();
+    const s = ++sequence; visible = true; loading = true; draft = recovered ?? blank(target); draft.batchFilter??={text:'',kind:'all'};batchFilter={...draft.batchFilter};batchLoading=false;contexts=null;batches=null;current = null;pins=null;pinsSequence++; plan = null; members = null; saved = null; pendingOperations=[];error = null; reason = null; confirmation = null; baseline = JSON.stringify([draft.language, '', '', '']);const ownedDraft=draft; redraw();
     try {
       const pending = await options.api.pending({}); if (s !== sequence || !visible) return; pendingOperations = pending;
       if (pending.length || draft.attemptId) return;
       const list = await options.api.list({ revision: 'working', offset: 0, limit: 25 }); if (s !== sequence || !visible) return; contexts = list;
-      const batchList = await options.api.batches({ revision: 'working', offset: 0, limit: 10,...draft.target.importIdentity }); if (s !== sequence || !visible) return; batches = batchList;
+      const batchList = await options.api.batches(batchRequest(0,batchFilter)); if (s !== sequence || !visible) return; batches = batchList;
       if (draft.target.contextId) await chooseContext(draft.target.contextId, !!recovered);
       if (!visible) return;
       if (draft.planId) { const value = await options.api.plan({ planId: draft.planId, offset: 0, limit: 10 }); if (!visible || draft.planId !== value.planId) return; plan = value; members = value; }
@@ -149,7 +170,7 @@ export function createContextWorkspace(options: Options) {
   }
   async function resume() { const value = parseContextInput(options.storage.getItem(KEY)); await initialize(value?.target ?? {}, value ?? undefined); }
   async function run(action: () => Promise<void>) {
-    if (busy) return; busy = true; error = null; reason = null; redraw();
+    if (busy) return; batchSequence++;batchLoading=false;busy = true; error = null; reason = null; redraw();
     pendingWrite = (async () => { try { await action(); } catch (cause) { failure(cause); } finally { busy = false; pendingWrite = null; cacheInput(); redraw(); } })();
     await pendingWrite;
   }
@@ -217,14 +238,16 @@ export function createContextWorkspace(options: Options) {
     if (busy || loading || draft.attemptId || confirmation) return;
     const key = target.dataset.contextInput;
     if (key === 'search') { search = target.value; return; }
+    if(key==='batch-search'){draft.batchFilter={...(draft.batchFilter??{kind:'all'}),text:target.value};cacheInput();return;}
     if (key === 'name' || key === 'purpose' || key === 'rationale') { draft[key] = target.value; if (key === 'rationale') invalidatePlan(); saved = null; cacheInput(); }
   }
   async function change(target: HTMLInputElement | HTMLSelectElement) {
     if (busy || loading || draft.attemptId || confirmation) return;
     if (target.dataset.contextInput === 'target' && target.value) { if(hasUnsavedChanges()&&draft.target.contextId!==target.value){confirmation={kind:'replace',target:{contextId:target.value,batch:draft.selectedBatch??undefined,mode:draft.mode}};redraw();return;}invalidatePlan(); await chooseContext(target.value); }
     else if (target.dataset.contextInput === 'language' && (target.value === 'en' || target.value === 'zh-CN')) { draft.language = target.value; cacheInput(); }
+    else if(target.dataset.contextInput==='batch-kind'&&['all','adopted-import','saved-source'].includes(target.value)){draft.batchFilter={text:draft.batchFilter?.text??'',kind:target.value as BatchFilter['kind']};cacheInput();}
   }
-  async function submit(form: HTMLFormElement) { if (confirmation || busy) return; if (form.dataset.contextForm === 'definition') await saveDefinition(); else if (form.dataset.contextForm === 'search') await loadContexts(); }
+  async function submit(form: HTMLFormElement) { if (confirmation || busy) return; if (form.dataset.contextForm === 'definition') await saveDefinition(); else if (form.dataset.contextForm === 'search') await loadContexts();else if(form.dataset.contextForm==='batch-search')await loadBatches(0,draft.batchFilter); }
   async function prepareClose(): Promise<ClosePreparationResult> { if (pendingWrite) await pendingWrite; if (!cacheInput()) return { ready: false, reason: 'save-failed' }; try { await options.flushDraft?.(); return { ready: true }; } catch (cause) { bufferFailed = true; failure(cause); return { ready: false, reason: 'save-failed' }; } }
   function key(event: KeyboardEvent) { if (event.key === 'Escape' && confirmation) { event.preventDefault(); confirmation = null; redraw(); } }
   return { open, resume, content, click, input, change, submit, key, hasUnsavedChanges, prepareClose, hide: () => { cacheInput(); visible = false; sequence++;pinsSequence++; memberSequence++; }, target: () => structuredClone(draft.target) };

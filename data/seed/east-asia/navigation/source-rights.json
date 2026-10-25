@@ -6,6 +6,7 @@
   "scope": "Navigation and source-presentation metadata only; original citation titles, historical claims, original source works and their rights remain unchanged.",
   "historicalReview": "Membership and navigation roles do not approve historical claims.",
   "changes": [
-    "Added the snapshot-bound bilingual name of the authority-basis correction source; original titles and attributions remain available."
+    "Added the snapshot-bound bilingual name of the authority-basis correction source; original titles and attributions remain available.",
+    "Added five source-reference memberships inherited from their explicitly resolved destinations, their reference type role and the snapshot-bound bilingual identity-reference source title. Original memberships and source presentations remain unchanged."
   ]
 }
