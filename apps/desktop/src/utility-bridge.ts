@@ -2,6 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { utilityProcess, type UtilityProcess } from 'electron';
 import type { OperationProgress, ServiceRequest, ServiceResponse } from '@gitworld/contracts';
 import type { FileGrant } from './file-tokens.ts';
+import { utilityEnvironment } from './utility-environment.ts';
 export type RuntimeProbe = { node: string; electron: string; sqlite: string; roundTrip: boolean; integrity: boolean; serviceImplemented: boolean };
 export class UtilityBridge {
   readonly ready: Promise<RuntimeProbe>;
@@ -10,7 +11,7 @@ export class UtilityBridge {
   #stopped = false;
   #closing: Promise<void> | null = null;
   constructor(modulePath: string, dataDirectory: string, options: { smoke?: boolean; gitExecutable?: string; gitExecPath?: string; onProgress: (progress: OperationProgress) => void }) {
-    this.#child = utilityProcess.fork(modulePath, [], { serviceName: 'GitWorld local data service', stdio: 'pipe', env: { PATH: process.env.PATH, LANG: process.env.LANG, TMPDIR: process.env.TMPDIR } });
+    this.#child = utilityProcess.fork(modulePath, [], { serviceName: 'GitWorld local data service', stdio: 'pipe', env: utilityEnvironment(process.env) });
     this.ready = new Promise((resolve, reject) => {
       const timer = setTimeout(() => { this.#child.kill(); reject(new Error('SERVICE_START_TIMEOUT')); }, 180_000);
       this.#child.on('message', (message) => {
