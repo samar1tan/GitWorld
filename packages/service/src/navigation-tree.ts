@@ -5,6 +5,7 @@ import type { EditorialJson } from '../../contracts/src/editorial-types.ts';
 import type { KnowledgeObjectBundle } from '../../contracts/src/knowledge-workspace-types.ts';
 import type { NavigationBootstrap, NavigationChangeSummary, NavigationContextDefinition, NavigationMembership, NavigationMembershipShard } from '../../contracts/src/navigation-types.ts';
 import { navigationPath, validNavigationDefinition, validNavigationShard } from '../../contracts/src/navigation-validation.ts';
+import { SOURCE_PRESENTATIONS_PATH, readSourcePresentations, sourcePresentationEntries, sourcePresentationsFile } from './knowledge-source-presentations.ts';
 
 export const navigationDigest = (value: unknown) => createHash('sha256').update(canonicalJson(value)).digest('hex');
 export const navigationDefinitionPath = (id: string) => `navigation/contexts/${navigationDigest(id)}/definition.json`;
@@ -22,7 +23,8 @@ export function validNavigationFile(name: string, value: unknown): boolean {
 
 export function parseNavigationBootstrap(text:string):NavigationBootstrap {
   if(Buffer.byteLength(text)>8*1024*1024)return invalid();let value:any;try{value=JSON.parse(text);}catch{return invalid();}
-  if(!value||value.schemaVersion!==1||Object.keys(value).some(key=>!['schemaVersion','definitions','memberships','typeRoles'].includes(key))||!Array.isArray(value.definitions)||!Array.isArray(value.memberships)||value.definitions.length>10000||value.memberships.length>100000||value.definitions.some((definition:any)=>!validNavigationDefinition(definition)||definition.origin!=='source-profile')||new Set(value.definitions.map((definition:any)=>definition.id)).size!==value.definitions.length)return invalid();
+  if(!value||value.schemaVersion!==1||Object.keys(value).some(key=>!['schemaVersion','definitions','memberships','typeRoles','sourcePresentations'].includes(key))||!Array.isArray(value.definitions)||!Array.isArray(value.memberships)||value.definitions.length>10000||value.memberships.length>100000||value.definitions.some((definition:any)=>!validNavigationDefinition(definition)||definition.origin!=='source-profile')||new Set(value.definitions.map((definition:any)=>definition.id)).size!==value.definitions.length)return invalid();
+  if(value.sourcePresentations!==undefined)sourcePresentationEntries(value.sourcePresentations);
   if(value.typeRoles!==undefined&&(!Array.isArray(value.typeRoles)||value.typeRoles.length>10000||value.typeRoles.some((item:any)=>!item||Object.keys(item).some(key=>!['typeId','role'].includes(key))||typeof item.typeId!=='string'||!item.typeId||item.typeId.length>300||!KNOWLEDGE_NAVIGATION_ROLES.includes(item.role))||new Set(value.typeRoles.map((item:any)=>item.typeId)).size!==value.typeRoles.length))return invalid();
   const definitions=new Map<string,NavigationContextDefinition>(value.definitions.map((definition:NavigationContextDefinition)=>[definition.id,definition]));
   const seen=new Set<string>();
@@ -32,12 +34,13 @@ export function parseNavigationBootstrap(text:string):NavigationBootstrap {
 
 export function navigationBootstrapSeedFiles(input:NavigationBootstrap,bundle:{id:string;manifestHash:string},prospective:Record<string,EditorialJson>):Record<string,EditorialJson> {
   const value=parseNavigationBootstrap(canonicalJson(input)),files:Record<string,EditorialJson>={};
+  if(value.sourcePresentations!==undefined)files[SOURCE_PRESENTATIONS_PATH]=sourcePresentationsFile(value.sourcePresentations) as unknown as EditorialJson;
   const batchRef={kind:'trusted-bundle' as const,bundleId:bundle.id,manifestHash:bundle.manifestHash,objectSetHash:navigationDigest([...new Set(value.memberships.map(member=>member.objectId))].sort())};
   const shards=new Map<string,NavigationMembershipShard>();
   for(const definition of value.definitions)files[navigationDefinitionPath(definition.id)]=definition as unknown as EditorialJson;
   for(const member of value.memberships){const partition=navigationPartition(member.objectId),name=navigationMembershipPath(member.contextId,partition),shard=shards.get(name)??{schemaVersion:1,partitionVersion:1,contextId:member.contextId,partition,members:[]};shard.members.push({...structuredClone(member),batchRef});shards.set(name,shard);}
   for(const[name,shard]of shards){shard.members.sort((a,b)=>a.objectId<b.objectId?-1:1);files[name]=shard as unknown as EditorialJson;}
-  knowledgeCollectionFromTree(prospective);readNavigationTree({...prospective,...files});return files;
+  knowledgeCollectionFromTree({...prospective,...files});readNavigationTree({...prospective,...files});return files;
 }
 
 /** The caller supplies one Git snapshot; no second HEAD or working read can enter this view. */
@@ -55,6 +58,7 @@ export function knowledgeCollectionFromTree(files: Record<string,EditorialJson>)
     }
   }
   createKnowledgeIndex(collection);
+  readSourcePresentations(files);
   return collection;
 }
 

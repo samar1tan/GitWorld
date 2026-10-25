@@ -1,6 +1,6 @@
 # A usable main structure for the China/Japan case
 
-Proposal v0.5 · 25 October 2026 · V6 source bundle available; content and installed acceptance pending
+Proposal v0.6 · 25 October 2026 · V7 source bundle available; content and installed acceptance pending
 
 The [coverage inventory](china-japan-coverage.md) remains the source of omissions. This proposal organizes that material into useful investigations; it does not declare the long ruler lists complete or turn the two modern countries into ancient political atoms.
 
@@ -37,7 +37,7 @@ The [transformation module](../historical-transformations-prd.md) supplies the m
 - Two legal instruments and an enforcement event support changed fields on the existing imperial-throne object. Cabinet and Diet roles remain separate institutions. Comparing 1940 with 1950 changes four legal fields while the holder stays the same; annual aggregation retains both dated regimes in 1947. The assertions describe constitutional text, not effective power.
 - The 263 and 266 event objects extend the political sequence through the same participant and mechanism fields. The 708 issue, coin model and recipient remain separate ordinary objects/relations, with earlier Fuhon-sen production evidence and unknown unsupported neighboring-year states.
 
-These increments do not copy arbitrary values across an event or invent inherited fields. Every claim remains unreviewed and includes a fixed-source/extraction profile. The 60-file v6 bundle retains every v5 historical record unchanged and adds six archaeological definitions, six court/office/text subjects and source-based navigation metadata. These additions retain their separate source plans and rights scopes. Unknown raw-work permissions remain separate from reviewed selected facts and original interpretation; original translations, whitepaper and museum prose retain their original status and are excluded. The installed source-acquisition/review journeys remain pending. Raw pages/PDFs and local preparation scripts are not part of the distributed collection.
+These increments do not copy arbitrary values across an event or invent inherited fields. Every claim remains unreviewed and includes a fixed-source/extraction profile. The 60-file v7 bundle retains the v6 historical collection unchanged, including its six archaeological definitions, six court/office/text subjects and source-based navigation metadata; it adds ten bilingual derived-source display names bound to exact source records. These additions retain their separate source plans and rights scopes. Unknown raw-work permissions remain separate from reviewed selected facts and original interpretation; original translations, whitepaper and museum prose retain their original status and are excluded. The installed source-acquisition/review journeys remain pending. Raw pages/PDFs and local preparation scripts are not part of the distributed collection.
 
 ## Priorities for completion
 

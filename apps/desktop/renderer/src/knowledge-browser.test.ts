@@ -163,7 +163,9 @@ test('bulk source groups preserve individual records and field Evidence uses the
   };
   const browser = create(); await browser.open(); await click(browser, 'object', { id: 'fixture:0' });
   let inspector = browser.content().split('<aside class="knowledge-inspector">')[1];
-  assert.equal((inspector.match(/class="knowledge-source-group"/g) ?? []).length, 1); assert.equal((inspector.match(/class="knowledge-source-record"/g) ?? []).length, 20); assert.match(inspector, /<strong>Cliopatria<\/strong>/); assert.match(inspector, /20 source records/);
+  assert.equal((inspector.match(/class="knowledge-source-group"/g) ?? []).length, 1); assert.equal((inspector.match(/class="knowledge-source-record"/g) ?? []).length, 20);
+  const summary = inspector.match(/class="knowledge-source-group"[^>]*><summary>([\s\S]*?)<\/summary>/)![1].replace(/<[^>]+>/g, ' ');
+  assert.match(summary, /Cliopatria/); assert.match(summary, /20 source records/); assert.doesNotMatch(summary, /[a-f0-9]{64}/);
   await browser.execute({ type: 'show-version', reference: { objectId: 'fixture:0', year: 150, revision: OLD, label: 'Alpha object', includeUnreviewed: false } });
   await click(browser, 'field', { property: 'fixture:seat' }); inspector = browser.content().split('<aside class="knowledge-inspector">')[1];
   assert.match(inspector, /<a href="https:\/\/example.invalid\/source">Cliopatria<\/a>/); assert.match(inspector, /fixture:0.early/); assert.match(inspector, /<code>source<\/code>/); assert.ok(inspector.includes(`<code>${'0'.repeat(64)}</code>`)); assert.ok(inspector.includes(`<code>${OLD}</code>`));
@@ -437,4 +439,15 @@ test('comparison research carries only the names read at each fixed snapshot',as
   const f=fixture(t),read=f.api.object;f.head(NEW);f.api.object=async p=>{const result=await read(p);return{...result,object:{...result.object,labels:p.revision===OLD?{en:'Old snapshot','zh-CN':'固定旧名称'}:{en:'Working rename','zh-CN':'工作资料新名称'}}};};
   const browser=f.create();await browser.open();await browser.execute({type:'compare',a:{objectId:'fixture:0',year:100,revision:OLD,label:'Old snapshot',includeUnreviewed:false},b:{objectId:'fixture:0',year:200,revision:OLD,label:'Old snapshot',includeUnreviewed:true}});await click(browser,'research');
   const comparison=f.learning[0].comparison!;assert.deepEqual(comparison.a.labels,{en:'Old snapshot','zh-CN':'固定旧名称'});assert.deepEqual(comparison.b.labels,comparison.a.labels);assert.equal(comparison.a.repositoryRevision,OLD);assert.equal(comparison.b.year,200);assert.equal(comparison.b.includeUnreviewed,true);assert.equal(browser.state().a!.revision,OLD);
+});
+
+
+test('snapshot source display names remain fixed across a Working rename and locale change', async t => {
+  const f = fixture(t), original = f.api.object; let locale: 'en' | 'zh-CN' = 'en';
+  const names = { en: 'Fixed collection name', 'zh-CN': '固定集合名称' }, workingNames = { en: 'Later working collection', 'zh-CN': '后来的工作集合' };
+  f.api.object = async params => { const value = await original(params); return { ...value, sources: value.sources.map(source => ({ ...source, labels: params.revision === OLD ? names : workingNames, title: { en: 'Original source heading' } })) }; };
+  f.head(NEW); const browser = f.create({ locale: () => locale }); await browser.open(); await browser.execute({ type: 'preview-version', reference: { objectId: 'fixture:0', label: 'Alpha object', year: 100, revision: OLD, includeUnreviewed: false } });
+  assert.ok(browser.content().includes(names.en)); assert.ok(!browser.content().includes(workingNames.en));
+  const reads = f.calls.length; locale = 'zh-CN'; const html = browser.content(); assert.ok(html.includes(names['zh-CN'])); assert.ok(!html.includes(workingNames['zh-CN'])); assert.ok(html.includes('Original source heading')); assert.match(html, /lang="en"/); assert.equal(f.calls.length, reads);
+  await click(browser, 'field', { property: 'fixture:seat' }); assert.ok(browser.content().includes(names['zh-CN'])); assert.match(browser.content(), /https:\/\/example.invalid\/source/);
 });

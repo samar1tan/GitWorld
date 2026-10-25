@@ -156,3 +156,12 @@ test('pending-import recovery retains the object draft and ordinary review does 
   reason='navigation-operation-pending';await editor.save();assert.match(editor.content(),/data-object-editor="resume-context"/);assert.doesNotMatch(editor.content(),/data-object-editor="resume-import"/);await click(editor,'resume-context');assert.equal(contextResumed,1);assert.ok(f.storage.getItem('gitworld-object-input-v1')?.includes('A sourced addition'));
   reason = undefined; await editor.save(); assert.doesNotMatch(editor.content(), /data-object-editor="resume-import"/); assert.match(editor.content(), /edit could not be saved/);
 });
+
+
+test('source display names leave the existing source selection and correction evidence identity intact', async t => {
+  const f = fixture(t), names = { en: 'Display collection', 'zh-CN': '显示集合' }, originalTitle = 'Original source heading';
+  f.api.context = async id => { const value = context(id); value.sources[0] = { ...value.sources[0], labels: names, title: { en: originalTitle } }; return value; };
+  const editor = createObjectEditor({ locale: () => 'zh-CN', render() {}, api: f.api, storage: f.storage, onClose() {} }); await editor.open({ objectId: 'object', assertionId: 'claim' });
+  assert.ok(editor.content().includes(`value="source" selected>${names['zh-CN']}</option>`)); assert.ok(editor.content().includes(originalTitle)); assert.match(editor.content(), /object-editor-source-title/); assert.match(editor.content(), /lang="en"/);
+  input(editor, 'reason', 'Keep the same fixed source'); assert.equal(await editor.save(), true); assert.deepEqual(f.calls[0].change.evidence, { sourceId: 'source', locator: 'section 1' });
+});

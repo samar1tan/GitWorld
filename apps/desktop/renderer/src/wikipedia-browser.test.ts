@@ -223,3 +223,13 @@ test('a single honest issue is concise and vocabulary review stays bounded in bo
 test('input recovery is bounded and strips non-form payloads', () => {
   const input = blankWikipediaInput(); const value = parseWikipediaInput(JSON.stringify({ ...input, raw: '<html>not retained</html>', operationId: 'not-a-form-field' })); assert.deepEqual(value, input); assert.equal(parseWikipediaInput(JSON.stringify({ ...input, jobs: Array(11).fill({}) })), null); assert.equal(parseWikipediaInput('x'.repeat(160_001)), null);
 });
+
+
+test('source display names label preview evidence while original titles and fixed links remain inspectable', async t => {
+  const names = { en: 'Display collection', 'zh-CN': '显示集合' }, originalTitle = 'Original source heading';
+  for (const locale of ['en', 'zh-CN'] as const) {
+    const f = fixture(t, locale), browser = f.create(); await choose(browser);
+    f.api.preview = async params => { const result = preview(params); result.sample.sources[0] = { ...result.sample.sources[0], labels: names, title: { en: originalTitle } }; return result; };
+    await submit(browser, 'preview'); const html = browser.content(); assert.ok(html.includes(names[locale])); assert.ok(html.includes(originalTitle)); assert.match(html, /https:\/\/example.invalid\/source/); assert.match(html, /lang="en"/); assert.equal(f.calls.filter(value => value.method === 'adopt').length, 0);
+  }
+});

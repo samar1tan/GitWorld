@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import type { KnowledgeSourceHeader } from '../../../../packages/contracts/src/knowledge-workspace-types.ts';
-import { groupKnowledgeSources, knowledgeSourceLocators, knowledgeSourceTitle } from './knowledge-sources.ts';
+import { groupKnowledgeSources, knowledgeSourceLocators, knowledgeSourceName, knowledgeSourceTitle } from './knowledge-sources.ts';
 
 const source = (index: number): KnowledgeSourceHeader => ({ id: `source:${index}`, identity: { provider: 'cliopatria-frame', externalId: index.toString(16).padStart(64, '0') }, revision: 'v1', contentHash: (index + 100).toString(16).padStart(64, '0'), retrievedAt: '2026-10-25T00:00:00Z', url: 'https://example.invalid/document.zip', adapterVersion: 'fixture', rights: { redistribution: 'unknown' } });
 
@@ -29,4 +29,25 @@ test('locator presentation remains attached to each source and never rewrites cl
   const assertions = [0, 1].map(index => ({ id: `claim:${index}`, subjectId: 'fixture', propertyId: 'fixture:value', value: { kind: 'text' as const, value: 'Fixture' }, qualifiers: [], evidence: [{ sourceId: `source:${index}`, locator: '$.field' }, { sourceId: `source:${index}`, locator: '$.other' }], sourceSnapshotId: `source:${index}`, review: 'unreviewed' as const }));
   const before = structuredClone(assertions), locations = knowledgeSourceLocators({ assertions });
   assert.deepEqual(locations.get('source:0'), ['$.field', '$.other']); assert.deepEqual(locations.get('source:1'), ['$.field', '$.other']); assert.deepEqual(assertions, before);
+});
+
+
+test('source display names select snapshot labels without replacing the original title or inventing a fallback language', () => {
+  const header = { ...source(1), labels: { en: 'Curated source collection', 'zh-CN': '整理后的来源集合' }, title: { en: 'Original source heading' } }, before = structuredClone(header);
+  assert.deepEqual(knowledgeSourceName(header, 'zh-CN'), { text: header.labels['zh-CN'], language: 'zh-CN', originalTitle: { text: header.title.en, language: 'en' } });
+  assert.equal(knowledgeSourceName(header, 'en').text, header.labels.en);
+  assert.equal(knowledgeSourceName({ ...header, labels: { en: header.labels.en } }, 'zh-CN').language, 'en');
+  assert.deepEqual(knowledgeSourceName({ ...header, labels: undefined }, 'zh-CN'), { text: header.title.en, language: 'en', originalTitle: null });
+  assert.equal(knowledgeSourceName({ ...header, labels: { en: header.title.en } }, 'en').originalTitle, null);
+  assert.equal(knowledgeSourceName(source(2), 'zh-CN').language, null);
+  assert.deepEqual(header, before);
+});
+
+test('source display labels participate in grouping independently of original citation titles and key order', () => {
+  const one = { ...source(1), labels: { en: 'Collection', 'zh-CN': '集合甲' }, title: { en: 'Original title' } };
+  const different = { ...source(2), labels: { en: 'Collection', 'zh-CN': '集合乙' }, title: one.title };
+  const reordered = { ...source(3), labels: { 'zh-CN': '集合甲', en: 'Collection' }, title: one.title };
+  const groups = groupKnowledgeSources([one, different, reordered], 'a'.repeat(40));
+  assert.equal(groups.length, 2); assert.deepEqual(groups[0].sources.map(value => value.id), [one.id, reordered.id]); assert.equal(groups[1].sources[0].id, different.id);
+  assert.equal(groups.flatMap(value => value.sources).length, 3);
 });

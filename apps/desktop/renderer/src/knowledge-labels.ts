@@ -139,6 +139,7 @@ export function knowledgeTypeLabel(id: string, locale: HistoryLocale, catalog?: 
 }
 
 const displayCopy = {
+  originalSourceTitle: { en: 'Original source title', 'zh-CN': '来源原题' },
   originalValue: { en: 'Original value', 'zh-CN': '原始值' },
   displayEvidence: { en: 'Display text sources', 'zh-CN': '显示译文来源' },
   translationConflict: { en: 'Conflicting display translations', 'zh-CN': '显示译文有冲突' },

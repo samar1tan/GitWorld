@@ -10,6 +10,7 @@ import type { NavigationApplyRequest, NavigationApplyResult, NavigationBatchObje
 import { navigationContentId, navigationHash, navigationOid, navigationPath, navigationRevision, validNavigationBatch } from '../../contracts/src/navigation-validation.ts';
 import { knowledgeCollectionFromTree, navigationDefinitionPath, navigationDigest as hash, navigationMembershipPath, navigationObjectPath, navigationPartition, navigationSourcePath, readNavigationTree, validNavigationFile } from './navigation-tree.ts';
 import { knowledgeSourceHeader } from './knowledge-display.ts';
+import { SOURCE_PRESENTATIONS_PATH, readSourcePresentations } from './knowledge-source-presentations.ts';
 import type { ServiceError } from '../../contracts/src/index.ts';
 
 const FILE = 'navigation.sqlite';
@@ -100,8 +101,8 @@ export function createNavigationContexts(repository: EditorialRepository, option
   }
   async function snapshot(revision='working') {
     if (!navigationRevision(revision)) return fail('INVALID_REQUEST');
-    const current=await repository.snapshot({from:revision,prefixes:['objects/','sources/','navigation/']});
-    return{...current,collection:knowledgeCollectionFromTree(current.files),navigation:readNavigationTree(current.files)};
+    const current=await repository.snapshot({from:revision,prefixes:['objects/','sources/','navigation/',SOURCE_PRESENTATIONS_PATH]});
+    return{...current,collection:knowledgeCollectionFromTree(current.files),navigation:readNavigationTree(current.files),sourcePresentations:new Map(readSourcePresentations(current.files).map(value=>[value.sourceId,value]))};
   }
   async function batches(current: Awaited<ReturnType<typeof snapshot>>): Promise<Batch[]> {
     const objects=new Map(current.collection.objects.map(object=>[object.id,object])),sources=new Map(current.collection.sources.map(source=>[source.id,source]));
@@ -119,8 +120,8 @@ export function createNavigationContexts(repository: EditorialRepository, option
       const refs=row.sources?.map(sourceRef)??manifest?.sourceRefs??[],pins=refs.map(ref=>sources.get(ref.sourceId)).filter((source):source is KnowledgeSource=>!!source),pinIds=new Set(refs.map(ref=>ref.sourceId));
       const missing=accepted.some(id=>!objects.has(id)),missingSources=refs.some(ref=>sources.get(ref.sourceId)?.contentHash!==ref.contentHash||sources.get(ref.sourceId)?.revision!==ref.revision);
       const reason=incomplete?'incomplete-import-result':conflicts.length?'import-conflicts':missing?'missing-objects':missingSources?'incomplete-import-result':row.sources===undefined&&manifest===undefined?'import-origin-unavailable':undefined;
-      const headers=pins.map(source=>knowledgeSourceHeader(source));
-      const labels=headers[0]?.title??{en:pins[0]?.identity.externalId??row.operationId};
+      const headers=pins.map(source=>knowledgeSourceHeader(source,current.sourcePresentations.get(source.id)));
+      const labels=headers.find(header=>header.labels)?.labels??headers[0]?.title??{en:pins[0]?.identity.externalId??row.operationId};
       const sourceRefs=Object.fromEntries(accepted.map(id=>[id,((bySubject.get(id)??[]).flatMap(assertion=>[assertion.sourceSnapshotId,...assertion.evidence.map(evidence=>evidence.sourceId)]))]));
       result.push({summary:{batchKey:hash(batch),batch,labels,sourceRefs:structuredClone(refs.slice(0,30)),sourceRefCount:refs.length,objects:accepted.length,directObjects:accepted.length,relatedObjects:0,unresolvedObjects:conflicts.length,status:reason?'unavailable':'complete',...(reason?{reason}:{})},objects:accepted.map(id=>({id,labels:objects.get(id)?.labels??{},basis:'direct'})),sourcePins:refs,sourceRefs:Object.fromEntries(Object.entries(sourceRefs).map(([id,ids])=>[id,[...new Set(ids)].filter(sourceId=>pinIds.has(sourceId)).map(sourceId=>sources.get(sourceId)!).filter(Boolean).map(sourceRef)]))});
     }
@@ -132,7 +133,8 @@ export function createNavigationContexts(repository: EditorialRepository, option
         const related=new Set<string>();if(selection==='subjects-and-referenced-objects')for(const claim of claims)for(const value of [claim.value,...claim.qualifiers.map(item=>item.value)])if(value.kind==='entity'&&objects.has(value.objectId)&&!subjects.has(value.objectId))related.add(value.objectId);
         const ids=[...subjects,...related].sort(),selectionHash=hash({selection,source,claims,objectIds:ids});
         const batch:NavigationBatchRef={kind:'saved-source',selection,revision:current.source,sourceId,sourceRevision:source.revision,sourceHash:hash(source),selectionHash,objectSetHash:hash(ids)};
-        result.push({summary:{batchKey:hash(batch),batch,labels:knowledgeSourceHeader(source).title??{en:source.identity.externalId},sourceRefs:[sourceRef(source)],sourceRefCount:1,objects:ids.length,directObjects:subjects.size,relatedObjects:related.size,unresolvedObjects:0,status:'complete'},objects:ids.map(id=>({id,labels:objects.get(id)!.labels,basis:subjects.has(id)?'direct':'related'})),sourcePins:[sourceRef(source)],sourceRefs:Object.fromEntries(ids.map(id=>[id,[sourceRef(source)]]))});
+        const header=knowledgeSourceHeader(source,current.sourcePresentations.get(source.id));
+        result.push({summary:{batchKey:hash(batch),batch,labels:header.labels??header.title??{en:source.identity.externalId},sourceRefs:[sourceRef(source)],sourceRefCount:1,objects:ids.length,directObjects:subjects.size,relatedObjects:related.size,unresolvedObjects:0,status:'complete'},objects:ids.map(id=>({id,labels:objects.get(id)!.labels,basis:subjects.has(id)?'direct':'related'})),sourcePins:[sourceRef(source)],sourceRefs:Object.fromEntries(ids.map(id=>[id,[sourceRef(source)]]))});
       }
     }
     return result.sort((a,b)=>a.summary.batchKey<b.summary.batchKey?-1:1);
@@ -226,8 +228,8 @@ export function createNavigationContexts(repository: EditorialRepository, option
 
 /** Read-only candidate validation: baseline/expected checks precede validation of the completed overlay. */
 export async function validateNavigationDirectory(directory:string,repository:EditorialRepository) {
-  const file=path.join(directory,FILE),current=await repository.snapshot({from:'working',prefixes:['objects/','sources/','navigation/']});
-  const staged=await repository.snapshot({from:'staged',prefixes:['objects/','sources/','navigation/']});
+  const file=path.join(directory,FILE),current=await repository.snapshot({from:'working',prefixes:['objects/','sources/','navigation/',SOURCE_PRESENTATIONS_PATH]});
+  const staged=await repository.snapshot({from:'staged',prefixes:['objects/','sources/','navigation/',SOURCE_PRESENTATIONS_PATH]});
   let database:DatabaseSync|undefined;
   try {
     if(existsSync(file)){database=new DatabaseSync(file,{readOnly:true});checkJournal(database);}

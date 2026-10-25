@@ -8,6 +8,7 @@ import type { SourceRecordSnapshot } from '../../ingestion/src/source-types.ts';
 import { createKnowledgeDisplayIndex } from './knowledge-display.ts';
 import { resolveKnowledgeVocabulary, vocabularySlots, vocabularySourcePath } from './knowledge-vocabulary.ts';
 import { knowledgeCollectionFromTree, readNavigationTree } from './navigation-tree.ts';
+import { SOURCE_PRESENTATIONS_PATH, readSourcePresentations } from './knowledge-source-presentations.ts';
 
 const digest = (value: unknown) => createHash('sha256').update(canonicalJson(value)).digest('hex');
 const json = (value: unknown) => value as EditorialJson;
@@ -30,13 +31,13 @@ export function createKnowledgeStore(repository: EditorialRepository, options: {
   async function read(revision = 'working'): Promise<KnowledgeCollectionRead> {
     if (!validRevision(revision)) throw new Error('INVALID_REQUEST');
     const found = cached.get(revision); if (found && revision !== 'working') return found;
-    const snapshot = await repository.snapshot({ from: revision, prefixes: ['objects/', 'sources/','mappings/field-catalogs/','mappings/field-catalog-baselines/','navigation/'] });
+    const snapshot = await repository.snapshot({ from: revision, prefixes: ['objects/', 'sources/','mappings/field-catalogs/','mappings/field-catalog-baselines/','navigation/',SOURCE_PRESENTATIONS_PATH] });
     const fingerprint = digest({files:snapshot.files,legacy:options.fieldCatalog??null});
     if (found?.fingerprint === fingerprint) return found;
     const collection = knowledgeCollectionFromTree(snapshot.files);
     navigations.set(revision,readNavigationTree(snapshot.files));
     const vocabulary=resolveKnowledgeVocabulary(snapshot.files,options.fieldCatalog);
-    const result = { collection, revision, working: revision === 'working', fingerprint,catalog:vocabulary.catalog,vocabulary:vocabulary.presentation };
+    const result = { collection, revision, working: revision === 'working', fingerprint,catalog:vocabulary.catalog,vocabulary:vocabulary.presentation,sourcePresentations:readSourcePresentations(snapshot.files) };
     indices.delete(revision); displays.delete(revision);
     cached.set(revision, result); return result;
   }
@@ -67,7 +68,7 @@ export function createKnowledgeStore(repository: EditorialRepository, options: {
       let index = indices.get(revision); if (!index) { index = createKnowledgeIndex(view.collection,navigations.get(revision)?.queryMemberships); indices.set(revision, index); }
       const object = index.object(objectId); if (!object) throw new Error('NOT_FOUND');
       const assertions = index.assertions(objectId);
-      let formatter = displays.get(revision); if (!formatter) { formatter = createKnowledgeDisplayIndex(view.collection, view.catalog,view.vocabulary); displays.set(revision, formatter); }
+      let formatter = displays.get(revision); if (!formatter) { formatter = createKnowledgeDisplayIndex(view.collection, view.catalog,view.vocabulary,view.sourcePresentations); displays.set(revision, formatter); }
       const display = formatter.object(objectId, assertions, view.fingerprint!);
       const sourceIds = new Set(assertions.flatMap(value => [value.sourceSnapshotId, ...value.evidence.map(item => item.sourceId)]));
       for (const item of [...Object.values(display.values), ...Object.values(display.objects).map(value => value.display)]) for (const text of Object.values(item)) for (const evidence of text.provenance) sourceIds.add(evidence.sourceId);
@@ -118,6 +119,7 @@ export function createKnowledgeStore(repository: EditorialRepository, options: {
         }
       }
       for(const path of paths)if(path.startsWith('mappings/field-catalogs/')){const catalog=vocabulary.catalogs.find(value=>value.path===path);if(catalog)for(const dependency of [catalog.sourcePath,catalog.baseline,...catalog.vocabulary.origin.evidence.map(pin=>vocabularySourcePath(pin.sourceId))]){if(selected.has(dependency))continue;const current=workingFiles[dependency]??null,staged=stagedFiles[dependency]??null;if(current===null&&staged===null)missing.add(dependency);else if(staged===null||current!==null&&digest(current)!==digest(staged))required.add(dependency);}}
+      if(selected.has(SOURCE_PRESENTATIONS_PATH))for(const entry of readSourcePresentations(workingFiles)){const dependency=sourcePath(entry.sourceId);if(selected.has(dependency))continue;const current=workingFiles[dependency],staged=stagedFiles[dependency];if(staged===undefined||digest(current)!==digest(staged))required.add(dependency);}
       return { selected: [...selected], required: [...required], missing: [...missing] };
     },
     async planAdoption(input: AdoptInput) {

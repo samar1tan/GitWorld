@@ -9,7 +9,10 @@ export type KnowledgeMappingPreview = {
   vocabulary?: KnowledgeVocabularySummary;
 };
 export type KnowledgeImportResult = { preview: KnowledgeMappingPreview; changedObjects: string[]; unchangedObjects: string[]; paths?: string[]; objects?: { id: string; labels: Record<string,string> }[]; totalObjects?: number; batch?: { schemaVersion: 1; inputObjectSetHash: string; acceptedObjectSetHash: string; sourceRefs: { sourceId: string; revision: string | null; contentHash: string }[] }; conflicts: { objectId: string; base: KnowledgeObjectBundle | null; local: KnowledgeObjectBundle | null; incoming: KnowledgeObjectBundle }[] };
-export type KnowledgeSourceHeader = Omit<KnowledgeSource, 'record'> & { title?: Record<string, string>; historyUrl?: string; changes?: string[] };
+/** Collection names are separate from original source titles and exact source identity. */
+export type KnowledgeSourcePresentation = { sourceId: string; revision: string | null; contentHash: string; labels: { en: string; 'zh-CN': string } };
+export type KnowledgeSourcePresentations = { schemaVersion: 1; kind: 'gitworld-source-presentations'; sources: KnowledgeSourcePresentation[] };
+export type KnowledgeSourceHeader = Omit<KnowledgeSource, 'record'> & { labels?: Record<string, string>; title?: Record<string, string>; historyUrl?: string; changes?: string[] };
 export type KnowledgeDisplayEvidence = {
   sourceId: string; method: string; language: string; text: string; assertionId?: string; objectId?: string;
   evidence: { url: string; locator: string; sourceSnapshotHash?: string; citation?: string }[];
@@ -40,4 +43,4 @@ export type KnowledgeImportRequest = { jobId: string; expectedHead: string; expe
 export type KnowledgeFilePreviewRequest = { fileToken: string };
 export type KnowledgeFilePreviewResult = { fileName: string; bytes: number; preview: KnowledgeMappingPreview };
 export type KnowledgeFileImportRequest = KnowledgeFilePreviewRequest & Omit<KnowledgeImportRequest, 'jobId'> & { previewId?: string };
-export type KnowledgeCollectionRead = { collection: KnowledgeCollection; revision: string; working: boolean; fingerprint?: string; catalog?: KnowledgeFieldCatalog; vocabulary?: KnowledgeVocabularyPresentation };
+export type KnowledgeCollectionRead = { collection: KnowledgeCollection; revision: string; working: boolean; fingerprint?: string; catalog?: KnowledgeFieldCatalog; vocabulary?: KnowledgeVocabularyPresentation; sourcePresentations?: KnowledgeSourcePresentation[] };

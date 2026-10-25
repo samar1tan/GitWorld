@@ -20,7 +20,7 @@ export type NavigationMembership = {
 /** A host-pinned bundle supplies data; the service attaches the verified manifest basis. */
 export type NavigationBootstrapDefinition = NavigationContextDefinition & { origin: 'source-profile'; profile: { id: string; version: string } };
 export type NavigationBootstrapMembership = Omit<NavigationMembership,'batchRef'|'sourceRefs'|'decision'> & { sourceRefs: NavigationSourceRef[]; decision: NavigationMembership['decision'] & { kind: 'profile'; profile: { id: string; version: string } } };
-export type NavigationBootstrap = { schemaVersion: 1; definitions: NavigationBootstrapDefinition[]; memberships: NavigationBootstrapMembership[]; typeRoles?: { typeId: string; role: KnowledgeNavigationRole }[] };
+export type NavigationBootstrap = { schemaVersion: 1; definitions: NavigationBootstrapDefinition[]; memberships: NavigationBootstrapMembership[]; typeRoles?: { typeId: string; role: KnowledgeNavigationRole }[]; sourcePresentations?: import('./knowledge-workspace-types.ts').KnowledgeSourcePresentation[] };
 export type NavigationMembershipShard = { schemaVersion: 1; partitionVersion: 1; contextId: string; partition: string; members: NavigationMembership[] };
 export type NavigationPageRequest = { offset?: number; limit?: number };
 export type NavigationPage<T> = { items: T[]; total: number; offset: number; limit: number };

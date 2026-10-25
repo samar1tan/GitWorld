@@ -10,6 +10,7 @@ import type { ServiceError } from '../../contracts/src/index.ts';
 import { validKnowledgeSaveEdit } from '../../contracts/src/knowledge-editor-validation.ts';
 import { createKnowledgeDisplayIndex, knowledgeSourceHeader } from './knowledge-display.ts';
 import { resolveKnowledgeVocabulary } from './knowledge-vocabulary.ts';
+import { SOURCE_PRESENTATIONS_PATH, readSourcePresentations } from './knowledge-source-presentations.ts';
 
 export const MANUAL_KNOWLEDGE_ADAPTER = 'gitworld-local-amendment-v1';
 const digest = (value: unknown) => createHash('sha256').update(canonicalJson(value)).digest('hex');
@@ -37,7 +38,7 @@ export function createKnowledgeEditor(repository: EditorialRepository, options: 
   catch { operations.close(); return fail('IO_ERROR'); }
   let tail: Promise<unknown> = Promise.resolve(), closed = false;
   async function snapshot() {
-    const snapshot = await repository.snapshot({ from: 'working', prefixes: ['objects/','sources/','mappings/field-catalogs/','mappings/field-catalog-baselines/'] });
+    const snapshot = await repository.snapshot({ from: 'working', prefixes: ['objects/','sources/','mappings/field-catalogs/','mappings/field-catalog-baselines/',SOURCE_PRESENTATIONS_PATH] });
     const collection: KnowledgeCollection = { schemaVersion: 1, objects: [], assertions: [], sources: [] };
     const bundles = new Map<string, KnowledgeObjectBundle>();
     for (const [file, value] of Object.entries(snapshot.files)) {
@@ -57,11 +58,11 @@ export function createKnowledgeEditor(repository: EditorialRepository, options: 
     for (const assertion of collection.assertions) if (!properties.has(assertion.propertyId)) properties.set(assertion.propertyId, { id: assertion.propertyId, labels: labels.get(assertion.propertyId) ?? { en: assertion.propertyId } });
     for (const object of collection.objects) for (const type of object.types) if (!types.has(type)) types.set(type, { id: type, labels: labels.get(type) ?? { en: type } });
     catalog.properties = [...properties.values()]; catalog.types = [...types.values()];
-    return { ...snapshot, collection, bundles, index, catalog,vocabulary:vocabulary.presentation };
+    return { ...snapshot, collection, bundles, index, catalog,vocabulary:vocabulary.presentation,sourcePresentations:readSourcePresentations(snapshot.files) };
   }
   async function editContext(input: { objectId?: string } = {}): Promise<KnowledgeEditContext> {
     if (input.objectId !== undefined && !contentId(input.objectId)) return fail('INVALID_REQUEST');
-    const current = await snapshot(), formatter = createKnowledgeDisplayIndex(current.collection, current.catalog,current.vocabulary);
+    const current = await snapshot(), formatter = createKnowledgeDisplayIndex(current.collection, current.catalog,current.vocabulary,current.sourcePresentations);
     const sources = formatter.sourceHeaders(new Set(current.collection.sources.map(source => source.id)));
     if (!input.objectId) return { head: current.head, object: null, objectHash: null, catalog: current.catalog, sources };
     const bundle = current.bundles.get(input.objectId), object = current.index.object(input.objectId);

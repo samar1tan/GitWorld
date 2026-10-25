@@ -29,7 +29,7 @@ port.on('message', async ({ data }) => {
     if (message.type === 'initialize' && !initialized && typeof message.dataDirectory === 'string') {
       initialized = true;
       const runtime = probeDatabase();
-      service = await createService({ dataDirectory: message.dataDirectory, seedPackagePath: path.join(__dirname, 'data/seed/early-medieval.json'), seedKnowledgeBundle:{manifestPath:path.join(__dirname,'data/seed/east-asia/manifest.json'),expectedManifestHash:'2d191dd348484fbbad0f0e55f23427fbf76201a00c5f68e4a71863836146826e'}, ...(message.gitExecutable ? { gitExecutable: message.gitExecutable } : {}), ...(message.gitExecPath ? { gitExecPath: message.gitExecPath } : {}), resolveFileToken: (token, purpose) => grants.resolve(token, purpose), onProgress: (progress) => port.postMessage({ type: 'progress', progress }) });
+      service = await createService({ dataDirectory: message.dataDirectory, seedPackagePath: path.join(__dirname, 'data/seed/early-medieval.json'), seedKnowledgeBundle:{manifestPath:path.join(__dirname,'data/seed/east-asia/manifest.json'),expectedManifestHash:'13f791c8a88f16e26dbf947a60a3cf920cc72bf2255686847a158e5e9d47c6ab'}, ...(message.gitExecutable ? { gitExecutable: message.gitExecutable } : {}), ...(message.gitExecPath ? { gitExecPath: message.gitExecPath } : {}), resolveFileToken: (token, purpose) => grants.resolve(token, purpose), onProgress: (progress) => port.postMessage({ type: 'progress', progress }) });
       port.postMessage({ type: 'initialized', runtime });
     } else if (message.type === 'grant-file' && message.grant) {
       grants.receive(message.grant);

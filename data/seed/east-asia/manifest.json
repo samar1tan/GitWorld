@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "kind": "gitworld-knowledge-bundle",
-  "id": "east-asia-research-foundation-v6",
+  "id": "east-asia-research-foundation-v7",
   "labels": {
     "en": "East Asia source collections",
     "zh-CN": "东亚来源集合"
@@ -369,13 +369,13 @@
     },
     {
       "path": "navigation/plan.json",
-      "bytes": 2535298,
-      "sha256": "6206f710fabf0990b03edc321324a9f0d82444d56ce5895ba33e7a0652493ccd"
+      "bytes": 2540438,
+      "sha256": "61af565f778e05c8e567411a1a166d45d1f6ed9269e6192d4c55bb99c1d85e72"
     },
     {
       "path": "navigation/source-rights.json",
-      "bytes": 579,
-      "sha256": "9484e8c7ca081d134c7a6644cdbd5e9e86e06fc4dae224943dd2227b59aa3928"
+      "bytes": 695,
+      "sha256": "7e35b1e2ad2dceecbc0666453bd40e612f63019b80f5462e34c98fd5ab0a086b"
     },
     {
       "path": "extensions/court-office-constitutional-observations/plan.json",
@@ -395,7 +395,7 @@
   ],
   "navigation": {
     "path": "navigation/bootstrap.json",
-    "bytes": 890340,
-    "sha256": "fac11d5a698ca99d0e5022ea1d818a14f7463d22e10f8535408ffcdf495a051f"
+    "bytes": 894819,
+    "sha256": "fc187320efb061200b93f0bc547511e4676b5f090d5399adeee8950113d62e0a"
   }
 }

@@ -1,4 +1,4 @@
-import type { KnowledgeDisplayEvidence, KnowledgeDisplayText, KnowledgeFieldCatalog, KnowledgeLocalizedDisplay, KnowledgeObjectPresentation, KnowledgeSourceHeader } from '../../contracts/src/knowledge-workspace-types.ts';
+import type { KnowledgeDisplayEvidence, KnowledgeDisplayText, KnowledgeFieldCatalog, KnowledgeLocalizedDisplay, KnowledgeObjectPresentation, KnowledgeSourceHeader, KnowledgeSourcePresentation } from '../../contracts/src/knowledge-workspace-types.ts';
 import type { KnowledgeAssertion, KnowledgeCollection, KnowledgeObject, KnowledgeSource, KnowledgeText } from '../../domain/src/knowledge.ts';
 import { CONTENT_LABEL_VERSION, createContentTextIndex } from '../../ingestion/src/content-labels.ts';
 import type { KnowledgeVocabularyPresentation } from '../../contracts/src/knowledge-import-types.ts';
@@ -16,19 +16,21 @@ const displayEvidence = (items: KnowledgeDisplayEvidence['evidence']): Knowledge
   ...(typeof item.sourceSnapshotHash === 'string' ? {sourceSnapshotHash:item.sourceSnapshotHash} : {}), ...(typeof item.citation === 'string' ? {citation:item.citation} : {}) }));
 
 /** Source bodies remain in the local repository. The inspection response contains attribution headers only. */
-export function knowledgeSourceHeader(source: KnowledgeSource): KnowledgeSourceHeader {
+export function knowledgeSourceHeader(source: KnowledgeSource, presentation?: KnowledgeSourcePresentation): KnowledgeSourceHeader {
   const body: unknown = source.record, manifest = record(body) && record(body.manifest) ? body.manifest : null;
   const header: KnowledgeSourceHeader = { id:source.id, identity:{provider:source.identity.provider,externalId:source.identity.externalId}, revision:source.revision, contentHash:source.contentHash, retrievedAt:source.retrievedAt, url:source.url,
     ...(source.revisionUrl ? {revisionUrl:source.revisionUrl} : {}), adapterVersion:source.adapterVersion,
     rights:{redistribution:source.rights.redistribution,...(source.rights.licenseId ? {licenseId:source.rights.licenseId} : {}),...(source.rights.licenseUrl ? {licenseUrl:source.rights.licenseUrl} : {}),...(source.rights.attribution ? {attribution:source.rights.attribution} : {})} };
   return { ...structuredClone(header), ...(typeof manifest?.articleTitle === 'string' ? { title: { en: manifest.articleTitle } } : {}),
+    ...(presentation?.sourceId===source.id&&presentation.revision===source.revision&&presentation.contentHash===source.contentHash?{labels:structuredClone(presentation.labels)}:{}),
     ...(typeof manifest?.historyUrl === 'string' ? { historyUrl: manifest.historyUrl } : {}),
     ...(Array.isArray(manifest?.changes) && manifest.changes.every((value: unknown) => typeof value === 'string') ? { changes: [...manifest.changes] } : {}) };
 }
 
 /** Hashing and derivation lookups stay in the service; both locales share this serializable presentation. */
-export function createKnowledgeDisplayIndex(collection: KnowledgeCollection, catalog?: KnowledgeFieldCatalog,vocabulary?:KnowledgeVocabularyPresentation) {
+export function createKnowledgeDisplayIndex(collection: KnowledgeCollection, catalog?: KnowledgeFieldCatalog,vocabulary?:KnowledgeVocabularyPresentation,sourcePresentations:KnowledgeSourcePresentation[]=[]) {
   const objects = new Map(collection.objects.map(value => [value.id, value])), textIndex = createContentTextIndex(collection);
+  const presentations=new Map(sourcePresentations.map(value=>[value.sourceId,value]));
   const properties = new Map(catalog?.properties.map(value => [value.id, value.labels]) ?? []), types = new Map(catalog?.types.map(value => [value.id, value.labels]) ?? []);
   const labels = new Map<string, KnowledgeDisplayEvidence[]>();
   for (const source of collection.sources) {
@@ -72,6 +74,6 @@ export function createKnowledgeDisplayIndex(collection: KnowledgeCollection, cat
         types: Object.fromEntries([...typeIds].filter(id => types.has(id)).map(id => [id, structuredClone(types.get(id)!)])), values, qualifierValues,
         notes: structuredClone((catalog?.semanticNotes ?? []).filter(note => note.ids.some(id => propertyIds.has(id)))),...(vocabulary?{vocabulary:structuredClone({fingerprint:vocabulary.fingerprint,origin:vocabulary.origin,...(vocabulary.legacyFingerprint?{legacyFingerprint:vocabulary.legacyFingerprint}:{}),properties:Object.fromEntries(Object.entries(vocabulary.properties).filter(([id])=>propertyIds.has(id))),types:Object.fromEntries(Object.entries(vocabulary.types).filter(([id])=>typeIds.has(id))),values:Object.fromEntries(Object.entries(vocabulary.values).filter(([id])=>propertyIds.has(id)))})}:{}) };
     },
-    sourceHeaders(ids: Set<string>) { return collection.sources.filter(value => ids.has(value.id)).map(knowledgeSourceHeader); },
+    sourceHeaders(ids: Set<string>) { return collection.sources.filter(value => ids.has(value.id)).map(source=>knowledgeSourceHeader(source,presentations.get(source.id))); },
   };
 }

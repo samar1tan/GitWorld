@@ -25835,5 +25835,97 @@
       "typeId": "gitworld:period-definition",
       "role": "period-definition"
     }
+  ],
+  "sourcePresentations": [
+    {
+      "sourceId": "gitworld-activity-contexts:listed-activity-role-contexts@1eb845592345b3fbe0f5a08c41cee9b15a400a379e0b4ac3d1824063f2a5e597",
+      "revision": "1-candidate",
+      "contentHash": "1eb845592345b3fbe0f5a08c41cee9b15a400a379e0b4ac3d1824063f2a5e597",
+      "labels": {
+        "en": "Tang–Japan missions: listed people and court contexts",
+        "zh-CN": "唐日使节记录：所列人物与朝廷背景"
+      }
+    },
+    {
+      "sourceId": "gitworld-binding:east-asia-published-chronologies@a3e5e5ceb4c2c0019fad103992044875852181ed75cd182a50118d74a68a3655",
+      "revision": "1-unreviewed",
+      "contentHash": "a3e5e5ceb4c2c0019fad103992044875852181ed75cd182a50118d74a68a3655",
+      "labels": {
+        "en": "East Asian chronologies: alternatives and reign lengths",
+        "zh-CN": "东亚纪年：不同方案与在位年数"
+      }
+    },
+    {
+      "sourceId": "gitworld-binding:east-asia-source-roles@44d66c1941745121bad78783097a04bb06a364a8f369cd413973f2983d326cd7",
+      "revision": "1-unreviewed",
+      "contentHash": "44d66c1941745121bad78783097a04bb06a364a8f369cd413973f2983d326cd7",
+      "labels": {
+        "en": "East Asian chronologies: subject and role mappings",
+        "zh-CN": "东亚年表：对象与角色对应"
+      }
+    },
+    {
+      "sourceId": "gitworld-content-labels:east-asia-preset-labels@38bfce7bba2c59dbc0e01b6121c47a8cecca175e36749fff0c97ef99deabbd1d",
+      "revision": "1-unreviewed",
+      "contentHash": "38bfce7bba2c59dbc0e01b6121c47a8cecca175e36749fff0c97ef99deabbd1d",
+      "labels": {
+        "en": "East Asian names and text translations",
+        "zh-CN": "东亚名称与文本译文"
+      }
+    },
+    {
+      "sourceId": "gitworld-evidenced-fields:court-office-and-constitutional-text-observations@4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "revision": "1",
+      "contentHash": "4b8ba5c7db793475b3cec6b0ac19c796e655838e87856f44cae9aa5dfe3ad9e8",
+      "labels": {
+        "en": "Japanese court and office changes; PRC constitutional texts",
+        "zh-CN": "日本朝廷与官职变动、中华人民共和国宪法文本"
+      }
+    },
+    {
+      "sourceId": "gitworld-evidenced-fields:explicit-jin-wu-integration@9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "revision": "2-candidate-source-text-separation",
+      "contentHash": "9a4891f7126646774d9d64a6b2382947aa3f54920630dfef21a7c38ef1f5190c",
+      "labels": {
+        "en": "Jin’s conquest of Wu and political integration",
+        "zh-CN": "晋灭吴与政治整合"
+      }
+    },
+    {
+      "sourceId": "gitworld-evidenced-fields:japan-normative-institutions-1947@439354d0bc11ffc2e7074d185ba16ac77204723514cba4302254fed91693c99c",
+      "revision": "2-candidate-source-text-separation",
+      "contentHash": "439354d0bc11ffc2e7074d185ba16ac77204723514cba4302254fed91693c99c",
+      "labels": {
+        "en": "Japan’s constitutional roles and the 1947 transition",
+        "zh-CN": "日本宪法职权与1947年制度转变"
+      }
+    },
+    {
+      "sourceId": "gitworld-evidenced-fields:three-kingdoms-evidenced-political-transitions@ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "revision": "1-local-evidenced-candidate",
+      "contentHash": "ad5065af041562debf94f669c0c5cf4a8c8cfb36c4f991656539512d6e87a3ea",
+      "labels": {
+        "en": "Wei’s conquest of Shu and the Wei–Jin replacement",
+        "zh-CN": "魏灭蜀与魏晋更替"
+      }
+    },
+    {
+      "sourceId": "gitworld-evidenced-fields:wado-708-evidenced-model-and-recipient-change@98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+      "revision": "1-local-evidenced-candidate",
+      "contentHash": "98adbf1460cd26e38dcb98aaa28fed7697e6bc4406236e75614a246822c5fbb3",
+      "labels": {
+        "en": "Japan’s 708 coinage, its Tang model and earlier minting",
+        "zh-CN": "日本708年铸币：唐钱样式与更早的铸币证据"
+      }
+    },
+    {
+      "sourceId": "gitworld-evidenced-fields:wikipedia-archaeological-period-definitions@4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "revision": "1",
+      "contentHash": "4e4c75f9d98c233118257a1cfecb19dc7aff19c180ccdbb9040ed20591771651",
+      "labels": {
+        "en": "China and Japan: archaeological period and culture definitions",
+        "zh-CN": "中国与日本的考古时期与文化定义"
+      }
+    }
   ]
 }
