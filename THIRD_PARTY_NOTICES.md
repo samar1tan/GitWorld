@@ -1,9 +1,11 @@
-# Third-party data and asset notices
+# Third-party code, data and asset notices
 
 The repository's Apache-2.0 license applies to eligible GitWorld contributions. It does not change the licenses of these materials or grant rights to cited articles. Package maintainers must retain the notices for every asset actually shipped; this file is not a substitute for the complete dependency notices produced during desktop packaging.
 
 | Material | Exact use | Rights and evidence | Included notice |
 | --- | --- | --- | --- |
+| `vite@8.3.5`, `rolldown@1.2.15` | The generated renderer includes the module-preload polyfill supplied through Vite's Rolldown plugin. The complete build tools are not shipped as application modules. | MIT core licenses; notices copied from the exact installed packages. The polyfill is present in the [Rolldown 1.2.15 source](https://github.com/rolldown/rolldown/blob/v1.2.15/crates/rolldown_plugin_vite_module_preload_polyfill/src/module-preload-polyfill.js). | [Vite core](data/licenses/vite-8.3.5-core-MIT.txt), [Rolldown](data/licenses/rolldown-1.2.15-MIT.txt) |
+| `esbuild@0.28.2` | Generated main and local-service bundles include esbuild's JavaScript module-interoperability helpers. The esbuild executable is not shipped. | MIT; notice copied from the exact installed package. The helper implementation is in the [esbuild 0.28.2 runtime source](https://github.com/evanw/esbuild/blob/v0.28.2/internal/runtime/runtime.go). | [Full MIT notice](data/licenses/esbuild-0.28.2-MIT.txt) |
 | Natural Earth, 1:110 million land data | Generalized offline land outline in `prototype/public/world-land.svg`, reused by the desktop workbench | Public domain under [Natural Earth's terms](https://www.naturalearthdata.com/about/terms-of-use/), checked 25 October 2026. Made with Natural Earth. | This section |
 | `world-atlas@2.0.2`, `land-110m.json` | Source of the TopoJSON land object used to generate the SVG | [ISC license, version 2.0.2](https://raw.githubusercontent.com/topojson/world-atlas/v2.0.2/LICENSE) | [Full ISC notice](data/licenses/world-atlas-ISC.txt) |
 | `d3-geo@3.1.1`, `d3-array@3.2.4`, `internmap@2.0.3` | Runtime Natural Earth projection and supporting collection operations for historical object maps | ISC; d3-geo also retains its GeographicLib MIT notice. Copied from the exact installed packages. | [d3-geo](data/licenses/d3-geo-3.1.1.txt), [d3-array](data/licenses/d3-array-3.2.4.txt), [internmap](data/licenses/internmap-2.0.3.txt) |

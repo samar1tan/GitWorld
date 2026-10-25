@@ -12,8 +12,8 @@ Use Node.js 24 or 26 with npm. Electron has an independently pinned Node runtime
 ```sh
 npm ci
 npm run typecheck
-npm test
 npm run build
+GITWORLD_REQUIRE_BUNDLED_GIT_TESTS=1 npm test
 npm run desktop:smoke
 npm run dev
 ```
@@ -70,7 +70,7 @@ npm run desktop:package:internal
 npm run desktop:smoke:packaged
 # From a clean checkout after the exact tag is published and included in main:
 # Replace the example tag with the reviewed package version.
-node apps/desktop/build-release.mjs --tag v0.1.0
+node apps/desktop/build-release.mjs --tag v0.1.1
 # Run packaged smoke from the returned isolated checkout.
 ```
 
@@ -87,8 +87,39 @@ retains that QA library. Rebuilding does not replace a personal GitWorld library
 
 The packaged smoke runs the actual ASAR application, not an extracted development
 entry point. It verifies that the bundled runtime supports SQLite after the
-security fuses have been applied. Windows and Linux installers are not validated
-by this command yet.
+supported security fuses have been applied. Platform results must be recorded on
+the actual host; a macOS smoke result cannot establish Linux or Windows behavior.
+
+## Native CI and experimental candidates
+
+[Desktop CI](../../.github/workflows/desktop.yml) preserves the existing macOS
+checks and adds a native `macos-15-intel` job and an experimental Ubuntu 22.04 x64
+job. Both build their own bundled Git and require its integration tests before
+running development and packaged Electron smoke. Ubuntu uses Xvfb and the
+Chromium sandbox; no sandbox-disabling argument or kernel-security change is
+part of the check. Source-only tests that skip unavailable Git integration tests
+do not count as native runtime verification.
+
+The manual [candidate workflow](../../.github/workflows/desktop-candidates.yml)
+must be merged into default `main` before it can be dispatched. Run it from
+`main`, supplying the accepted immutable `release_tag` (for example `v0.1.1`).
+The tag must already be on remote `main` and match the package version. Each
+Intel macOS or Ubuntu runner uses `build-release.mjs`'s isolated production entry:
+fresh clone, `npm ci`, native build and packaging. It then requires the bundled
+Git tests and packaged smoke, and rechecks the complete dependency-tree hash
+against the installation proof before collecting artifacts. Development smoke
+stays in ordinary CI so its Electron import cannot download files into the
+recorded product dependency tree. Workflow artifacts contain only exact
+installers and a sanitized engineering summary, retained for 14 days. They are
+review candidates, not an automatically published Release or an installed
+acceptance receipt.
+
+Linux candidates are limited to experimental x64 `tar.gz` and `deb` packages
+tested on Ubuntu 22.04. Other distributions, desktop sessions and architectures
+remain unverified. Windows is deferred. Intel and Linux candidates cannot borrow
+the primary Apple Silicon artifact's 63-condition installed acceptance; state
+the actual CI environment and remaining GUI/installation checks with each
+download. See the [distribution PRD](../../docs/desktop-distribution-prd.md).
 
 ## Trust boundaries
 

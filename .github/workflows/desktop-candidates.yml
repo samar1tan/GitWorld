@@ -1,0 +1,149 @@
+name: Build experimental desktop candidates
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Immutable version tag already accepted into main (for example v0.1.1)
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: desktop-candidates-${{ inputs.release_tag }}
+  cancel-in-progress: false
+jobs:
+  candidate:
+    if: github.repository == 'samar1tan/GitWorld' && github.ref == 'refs/heads/main'
+    name: ${{ matrix.target }} experimental candidate
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runner: macos-15-intel
+            target: macos-x64
+            platform: darwin
+          - runner: ubuntu-22.04
+            target: ubuntu-22.04-x64
+            platform: linux
+    defaults:
+      run:
+        shell: bash
+    env:
+      RELEASE_TAG: ${{ inputs.release_tag }}
+    steps:
+      - name: Validate the tag and native runner
+        env:
+          EXPECTED_PLATFORM: ${{ matrix.platform }}
+        run: |
+          node <<'NODE'
+          const assert = require('node:assert/strict');
+          assert.match(process.env.RELEASE_TAG, /^v\d+\.\d+\.\d+(?:-[A-Za-z0-9.-]+)?$/);
+          assert.equal(process.platform, process.env.EXPECTED_PLATFORM);
+          assert.equal(process.arch, 'x64');
+          if (process.platform === 'linux') assert.notEqual(process.getuid(), 0);
+          NODE
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.release_tag }}
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Install Linux build and display dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install --no-install-recommends -y build-essential zlib1g-dev \
+            libgtk-3-0 libnss3 libgbm1 libxss1 libasound2 libatk-bridge2.0-0 \
+            libatspi2.0-0 libcups2 libdrm2 libxkbcommon0 xvfb xauth
+      - name: Build the accepted tag through the isolated production entry
+        id: build
+        run: |
+          node --input-type=module <<'NODE'
+          import { appendFile } from 'node:fs/promises';
+          import { buildIsolatedRelease } from './apps/desktop/build-release.mjs';
+          const result = await buildIsolatedRelease(process.cwd(), { tag: process.env.RELEASE_TAG });
+          await appendFile(process.env.GITHUB_OUTPUT, `checkout=${result.checkout}\noutput=${result.output}\n`);
+          NODE
+      - name: Require the candidate's bundled Git integration tests
+        working-directory: ${{ steps.build.outputs.checkout }}
+        run: npm test
+        env:
+          GITWORLD_REQUIRE_BUNDLED_GIT_TESTS: "1"
+      - name: Run the packaged smoke on macOS
+        if: runner.os == 'macOS'
+        working-directory: ${{ steps.build.outputs.checkout }}
+        run: npm run desktop:smoke:packaged
+      - name: Run the packaged sandboxed smoke on Linux
+        if: runner.os == 'Linux'
+        working-directory: ${{ steps.build.outputs.checkout }}
+        run: xvfb-run -a --server-args="-screen 0 1600x1000x24" npm run desktop:smoke:packaged
+      - name: Collect exact installers and a sanitized engineering summary
+        env:
+          CANDIDATE_DIRECTORY: ${{ runner.temp }}/gitworld-candidate-${{ matrix.target }}
+          CANDIDATE_CHECKOUT: ${{ steps.build.outputs.checkout }}
+          CANDIDATE_OUTPUT: ${{ steps.build.outputs.output }}
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { createHash } from 'node:crypto';
+          import { cp, lstat, mkdir, readFile, readdir, writeFile, appendFile } from 'node:fs/promises';
+          import path from 'node:path';
+          import { dependencyTreeHash } from './apps/desktop/release-provenance.mjs';
+          const readJson = async file => JSON.parse(await readFile(file, 'utf8'));
+          const receipt = await readJson(path.join(process.env.CANDIDATE_OUTPUT, 'local-build-receipt.json'));
+          assert.equal(receipt.internal, false);
+          assert.equal(receipt.source.tag, process.env.RELEASE_TAG);
+          assert.equal(receipt.platform, process.platform);
+          assert.equal(receipt.arch, process.arch);
+          const installation = receipt.source.installation;
+          assert.equal(installation.method, 'npm-ci');
+          assert.equal(installation.isolation, 'fresh-checkout');
+          assert.equal(installation.exitCode, 0);
+          assert.equal(installation.sourceCommit, receipt.source.sourceCommit);
+          assert.equal(await dependencyTreeHash(process.env.CANDIDATE_CHECKOUT), installation.dependencyTreeSha256);
+          const packaged = await readJson(path.join(process.env.CANDIDATE_CHECKOUT, '.local/desktop-packaged-smoke.json'));
+          assert.equal(packaged.ok, true);
+          assert.equal(packaged.packaged, true);
+          assert.equal(packaged.platform, process.platform);
+          assert.equal(packaged.arch, process.arch);
+          assert.equal(packaged.sandbox, true);
+          assert.equal(packaged.contextIsolation, true);
+          const expectedExtensions = process.platform === 'darwin' ? ['dmg'] : ['deb', 'tar.gz'];
+          assert.equal(receipt.artifacts.length, expectedExtensions.length);
+          assert.deepEqual(receipt.artifacts.map(item => expectedExtensions.find(ext => item.name.endsWith(`.${ext}`))).sort(), [...expectedExtensions].sort());
+          await mkdir(process.env.CANDIDATE_DIRECTORY, { recursive: false });
+          for (const item of receipt.artifacts) {
+            assert.equal(path.basename(item.name), item.name);
+            const file = path.join(process.env.CANDIDATE_OUTPUT, item.name);
+            assert.ok((await lstat(file)).isFile());
+            const bytes = await readFile(file);
+            assert.equal(bytes.length, item.bytes);
+            assert.equal(createHash('sha256').update(bytes).digest('hex'), item.sha256);
+            await cp(file, path.join(process.env.CANDIDATE_DIRECTORY, item.name));
+          }
+          const { repository, tag, sourceCommit, sourceTree, acceptedMainCommit, lockfileSha256, toolchain } = receipt.source;
+          const packageNames = ['electron', 'electron-builder', 'esbuild', 'vite', '@electron/fuses', '@resvg/resvg-js'];
+          const summary = {
+            schemaVersion: 1, kind: 'gitworld-experimental-engineering-candidate', experimental: true,
+            source: { repository, tag, sourceCommit, sourceTree, acceptedMainCommit, lockfileSha256 },
+            installation: { method: installation.method, isolation: installation.isolation, exitCode: installation.exitCode, sourceCommit: installation.sourceCommit, lockfileSha256: installation.lockfileSha256, npmVersion: installation.npmVersion, startedAt: installation.startedAt, completedAt: installation.completedAt, logSha256: installation.logSha256, dependencyTreeSha256: installation.dependencyTreeSha256 },
+            toolchain: { node: toolchain.node, platform: toolchain.platform, architecture: toolchain.architecture, osRelease: toolchain.osRelease, packages: Object.fromEntries(packageNames.map(name => [name, toolchain.packages[name]])) },
+            build: { buildId: receipt.buildId, completedAt: receipt.completedAt, platform: receipt.platform, arch: receipt.arch, preparedSha256: receipt.preparedSha256, asarSha256: receipt.asarSha256, signing: receipt.signing, distributionSigning: receipt.distributionSigning, binarySigning: receipt.binarySigning },
+            artifacts: receipt.artifacts.map(({ name, bytes, sha256 }) => ({ name, bytes, sha256 })),
+            verification: { environment: 'GitHub-hosted runner', runnerOs: process.env.RUNNER_OS, runnerArch: process.env.RUNNER_ARCH, bundledGitTestsRequired: true, developmentSmokeRun: false, packagedSmoke: packaged.ok, dependencyTreeUnchanged: true, sandbox: packaged.sandbox, contextIsolation: packaged.contextIsolation, runtime: { node: packaged.runtime.node, electron: packaged.runtime.electron, sqlite: packaged.runtime.sqlite, roundTrip: packaged.runtime.roundTrip, integrity: packaged.runtime.integrity }, fullInstalledAcceptance: false },
+          };
+          await writeFile(path.join(process.env.CANDIDATE_DIRECTORY, `GitWorld-${tag}-${process.platform}-${process.arch}-engineering.json`), JSON.stringify(summary, null, 2) + '\n');
+          assert.equal((await readdir(process.env.CANDIDATE_DIRECTORY)).length, receipt.artifacts.length + 1);
+          await appendFile(process.env.GITHUB_STEP_SUMMARY, `## ${tag} · ${process.platform} ${process.arch}\n\nNative build, required bundled Git tests, and packaged smoke succeeded on this runner; the complete dependency tree still matches the installation proof. Development smoke is kept in ordinary Desktop CI to avoid downloading development Electron into the recorded product dependency tree. The uploaded files are experimental candidates for review. Full installed acceptance, signing/notarization, and ordinary-user GUI testing are separate; no Release was published.\n`);
+          NODE
+      - name: Upload candidates for review only
+        uses: actions/upload-artifact@v4
+        with:
+          name: GitWorld-${{ inputs.release_tag }}-${{ matrix.target }}-experimental
+          path: ${{ runner.temp }}/gitworld-candidate-${{ matrix.target }}/*
+          if-no-files-found: error
+          retention-days: 14

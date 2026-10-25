@@ -3,6 +3,7 @@ import { spawnSync } from 'node:child_process';
 import { cp, mkdir, readFile, writeFile, rename, rm, lstat, readdir, open } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { gitBuildTarget, requireLinuxBaseline, linuxGitDependencies } from './git-runtime-platform.mjs';
 
 const VERSION = '2.56.0';
 const SOURCE_SHA256 = '26c56c296b38c0695b26fa95f475f1d01704d2d38e73465ca30b0b2f5dc789d3';
@@ -15,13 +16,13 @@ const runtime = path.join(output, 'runtime');
 const sourceArchive = path.join(output, `corresponding-source/git-${VERSION}.tar.xz`);
 const lgplText = path.join(output, 'corresponding-source/LGPL-2.1-or-later.txt');
 const recipe = fileURLToPath(import.meta.url);
+const platformRecipe = fileURLToPath(new URL('./git-runtime-platform.mjs', import.meta.url));
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const fail = code => { throw new Error(code); };
-if (process.platform !== 'darwin' || !['arm64', 'x64'].includes(process.arch)) fail('BUNDLED_GIT_PLATFORM_NOT_SUPPORTED');
+const target = gitBuildTarget(process.platform, process.arch);
+if (process.platform === 'linux') requireLinuxBaseline(await readFile('/etc/os-release', 'utf8'));
 if (process.argv.slice(2).some(arg => !['--force', '--verify-only'].includes(arg))) fail('BUNDLED_GIT_UNKNOWN_OPTION');
-const architecture = process.arch === 'x64' ? 'x86_64' : 'arm64';
-const configuration = `prefix = /gitworld-runtime\nCC = /usr/bin/clang\nCFLAGS = -O2 -arch ${architecture} -mmacosx-version-min=14.0\nLDFLAGS = -arch ${architecture} -mmacosx-version-min=14.0\nRUNTIME_PREFIX = YesPlease\nNO_HOMEBREW = YesPlease\nNO_DARWIN_PORTS = YesPlease\nNO_CURL = YesPlease\nNO_OPENSSL = YesPlease\nNO_EXPAT = YesPlease\nNO_GETTEXT = YesPlease\nNO_TCLTK = YesPlease\nNO_PERL = YesPlease\nNO_PYTHON = YesPlease\nNO_INSTALL_HARDLINKS = YesPlease\nNO_GITWEB = YesPlease\nNO_RUST = YesPlease\n`;
-const environment = { PATH: '/usr/bin:/bin:/usr/sbin:/sbin', LANG: 'C', LC_ALL: 'C', MACOSX_DEPLOYMENT_TARGET: '14.0' };
+const { configuration, environment } = target;
 function run(program, args, { cwd, log, env = environment } = {}) {
   const result = spawnSync(program, args, { cwd, env, shell: false, encoding: 'utf8', maxBuffer: 32 * 1024 * 1024, timeout: 600_000 });
   if (log) log.push(result.stdout ?? '', result.stderr ?? '');
@@ -36,16 +37,17 @@ async function inventory(directory, relative = '') {
     if (stat.isDirectory()) result.push(...await inventory(directory, file));
     else {
       const bytes = await readFile(full);
-      if (bytes.includes(Buffer.from('/Users/')) || bytes.includes(Buffer.from('/opt/homebrew/'))) fail('BUNDLED_GIT_PRIVATE_BUILD_PATH');
+      if (bytes.includes(Buffer.from('/Users/')) || bytes.includes(Buffer.from('/opt/homebrew/')) || bytes.includes(Buffer.from(project))) fail('BUNDLED_GIT_PRIVATE_BUILD_PATH');
       result.push({ path: file, bytes: bytes.length, sha256: hash(bytes), mode: stat.mode & 0o777 });
     }
   }
   return result;
 }
 const recipeSha256 = hash(await readFile(recipe));
+const platformRecipeSha256 = hash(await readFile(platformRecipe));
 async function correspondingInventory() {
   const folder = path.dirname(sourceArchive);
-  const expected = [`git-${VERSION}.tar.xz`, 'build-bundled-git.mjs', 'config.mak', 'LGPL-2.1-or-later.txt'].sort();
+  const expected = [`git-${VERSION}.tar.xz`, 'build-bundled-git.mjs', 'git-runtime-platform.mjs', 'config.mak', 'LGPL-2.1-or-later.txt'].sort();
   if (JSON.stringify((await readdir(folder)).sort()) !== JSON.stringify(expected)) fail('BUNDLED_GIT_CORRESPONDING_SOURCE_UNEXPECTED');
   const files = [];
   for (const name of expected) {
@@ -58,8 +60,8 @@ async function correspondingInventory() {
 async function validExisting() {
   try {
     const manifest = JSON.parse(await readFile(path.join(output, 'manifest.json'), 'utf8'));
-    if (manifest.schemaVersion !== 1 || manifest.version !== VERSION || manifest.architecture !== process.arch || manifest.source.sha256 !== SOURCE_SHA256 || manifest.recipe.sha256 !== recipeSha256 || manifest.configuration !== configuration || hash(await readFile(sourceArchive)) !== SOURCE_SHA256 || hash(await readFile(lgplText)) !== LGPL_SHA256 || JSON.stringify(await inventory(runtime)) !== JSON.stringify(manifest.files)) return false;
-    if (hash(await readFile(path.join(path.dirname(sourceArchive), 'build-bundled-git.mjs'))) !== recipeSha256 || await readFile(path.join(path.dirname(sourceArchive), 'config.mak'), 'utf8') !== configuration || JSON.stringify(await correspondingInventory()) !== JSON.stringify(manifest.correspondingSourceFiles)) return false;
+    if (manifest.schemaVersion !== 1 || manifest.version !== VERSION || manifest.platform !== process.platform || manifest.architecture !== process.arch || manifest.source.sha256 !== SOURCE_SHA256 || manifest.recipe.sha256 !== recipeSha256 || manifest.configuration !== configuration || hash(await readFile(sourceArchive)) !== SOURCE_SHA256 || hash(await readFile(lgplText)) !== LGPL_SHA256 || JSON.stringify(await inventory(runtime)) !== JSON.stringify(manifest.files)) return false;
+    if (hash(await readFile(path.join(path.dirname(sourceArchive), 'build-bundled-git.mjs'))) !== recipeSha256 || hash(await readFile(path.join(path.dirname(sourceArchive), 'git-runtime-platform.mjs'))) !== platformRecipeSha256 || await readFile(path.join(path.dirname(sourceArchive), 'config.mak'), 'utf8') !== configuration || JSON.stringify(await correspondingInventory()) !== JSON.stringify(manifest.correspondingSourceFiles)) return false;
     const version = run(path.join(runtime, 'bin/git'), ['--version'], { env: { PATH: '/nonexistent', GIT_CONFIG_NOSYSTEM: '1', GIT_CONFIG_GLOBAL: '/dev/null' } });
     return version === `git version ${VERSION}`;
   } catch { return false; }
@@ -123,12 +125,19 @@ await sourceNotices();
 await writeFile(path.join(licenses, 'SOURCE-NOTICES.txt'), 'Notice blocks preserved from the pinned upstream source distribution. This includes source files not selected by this runtime recipe; the complete corresponding source remains authoritative.\n' + noticeBlocks.sort().join('\n'));
 await writeFile(path.join(licenses, 'CORRESPONDING-SOURCE.txt'), `Git ${VERSION}\nSource: ${SOURCE_URL}\nSHA-256: ${SOURCE_SHA256}\nThe exact source archive, unmodified source notices, configuration and build recipe accompany this distribution in the installer resources directory git-corresponding-source/ (development output: corresponding-source/). Git is separately licensed; the GitWorld Apache-2.0 license does not relicense Git.\n`);
 await cp(recipe, path.join(output, 'corresponding-source/build-bundled-git.mjs'));
+await cp(platformRecipe, path.join(output, 'corresponding-source/git-runtime-platform.mjs'));
 await writeFile(path.join(output, 'corresponding-source/config.mak'), configuration);
-const dependencies = run('/usr/bin/otool', ['-L', path.join(runtime, 'bin/git')]).split('\n').slice(1).map(line => line.trim().split(' ')[0]).filter(Boolean);
-if (dependencies.some(name => !name.startsWith('/usr/lib/') && !name.startsWith('/System/Library/'))) fail('BUNDLED_GIT_EXTERNAL_DEPENDENCY');
+let dependencies, elf;
+if (process.platform === 'darwin') {
+  dependencies = run('/usr/bin/otool', ['-L', path.join(runtime, 'bin/git')]).split('\n').slice(1).map(line => line.trim().split(' ')[0]).filter(Boolean);
+  if (dependencies.some(name => !name.startsWith('/usr/lib/') && !name.startsWith('/System/Library/'))) fail('BUNDLED_GIT_EXTERNAL_DEPENDENCY');
+} else {
+  elf = linuxGitDependencies(run('/usr/bin/ldd', [path.join(runtime, 'bin/git')]), run('/usr/bin/readelf', ['-h', path.join(runtime, 'bin/git')]), run('/usr/bin/readelf', ['--version-info', path.join(runtime, 'bin/git')]));
+  dependencies = elf.dependencies;
+}
 const version = run(path.join(runtime, 'bin/git'), ['--version'], { env: { PATH: '/nonexistent', GIT_CONFIG_NOSYSTEM: '1', GIT_CONFIG_GLOBAL: '/dev/null' } });
 if (version !== `git version ${VERSION}`) fail('BUNDLED_GIT_RUNTIME_VERSION_MISMATCH');
 const compiledObjects = [...logs.join('\n').matchAll(/^\s+CC (.+\.o)$/gm)].map(value => value[1]).sort();
-const manifest = { schemaVersion: 1, version: VERSION, architecture: process.arch, platform: process.platform, deploymentTarget: '14.0', source: { url: SOURCE_URL, sha256: SOURCE_SHA256, archive: `corresponding-source/git-${VERSION}.tar.xz`, patches: [] }, recipe: { path: 'corresponding-source/build-bundled-git.mjs', sha256: recipeSha256 }, configuration, compiler: run('/usr/bin/clang', ['--version']), dependencies, compiledObjects, licenseAssets: [{ component: 'Git', license: 'GPL-2.0-only', file: 'share/licenses/git/COPYING' }, { component: 'SHA1DC', license: 'MIT', file: 'share/licenses/git/sha1dc-LICENSE.txt' }, { component: 'reftable', license: 'BSD-3-Clause', file: 'share/licenses/git/reftable-LICENSE' }, { component: 'xdiff and applicable GNU compatibility code', license: 'LGPL-2.1-or-later', file: 'share/licenses/git/LGPL-2.1-or-later.txt', textUrl: LGPL_URL, textSha256: LGPL_SHA256 }, { component: 'upstream source notice blocks', file: 'share/licenses/git/SOURCE-NOTICES.txt' }], networkTransport: 'disabled', runtimeDependencies: 'macOS system libraries; no installed Git or language runtime', bitForBitReproducible: 'not-tested', files: await inventory(runtime), correspondingSourceFiles: await correspondingInventory() };
+const manifest = { schemaVersion: 1, version: VERSION, architecture: process.arch, platform: process.platform, deploymentTarget: target.deploymentTarget, ...(elf ? { experimental: true, elf } : {}), source: { url: SOURCE_URL, sha256: SOURCE_SHA256, archive: `corresponding-source/git-${VERSION}.tar.xz`, patches: [] }, recipe: { path: 'corresponding-source/build-bundled-git.mjs', sha256: recipeSha256 }, configuration, compiler: run(target.compiler, ['--version']), dependencies, compiledObjects, licenseAssets: [{ component: 'Git', license: 'GPL-2.0-only', file: 'share/licenses/git/COPYING' }, { component: 'SHA1DC', license: 'MIT', file: 'share/licenses/git/sha1dc-LICENSE.txt' }, { component: 'reftable', license: 'BSD-3-Clause', file: 'share/licenses/git/reftable-LICENSE' }, { component: 'xdiff and applicable GNU compatibility code', license: 'LGPL-2.1-or-later', file: 'share/licenses/git/LGPL-2.1-or-later.txt', textUrl: LGPL_URL, textSha256: LGPL_SHA256 }, { component: 'upstream source notice blocks', file: 'share/licenses/git/SOURCE-NOTICES.txt' }], networkTransport: 'disabled', runtimeDependencies: `${process.platform === 'darwin' ? 'macOS' : 'allowlisted Ubuntu 22.04'} system libraries; no installed Git or language runtime`, bitForBitReproducible: 'not-tested', files: await inventory(runtime), correspondingSourceFiles: await correspondingInventory() };
 await writeFile(path.join(output, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
 console.log(JSON.stringify({ version: VERSION, architecture: process.arch, cached: false, runtime: '.local/bundled-git/runtime', manifest: '.local/bundled-git/manifest.json' }));
