@@ -4,6 +4,7 @@ import type { NavigationBatchRef, NavigationContextRead, NavigationMembershipPla
 import { createContextWorkspace, parseContextInput, type ContextWorkspaceApi } from './context-workspace.ts';
 import { ServiceFailure } from './client.ts';
 import { validateServiceRequest } from '../../../../packages/contracts/src/validation.ts';
+import { canonicalJson } from '../../../../packages/domain/src/canonical.ts';
 
 const HEAD='1'.repeat(40), HASH='a'.repeat(64), SET='b'.repeat(64), PREVIEW='c'.repeat(64);
 const batch:NavigationBatchRef={kind:'adopted-import',method:'knowledge.fileAdopt',operationId:'fixture-import',inputHash:HASH,objectSetHash:SET,previewId:PREVIEW};
@@ -54,7 +55,8 @@ test('a stale membership plan cannot be applied and keeps the chosen complete ba
 test('normal writing shows progress; an uncertain result resumes the original operation after reopening',async t=>{
   const f=fixture(t),ui=f.create();await createContext(ui);await click(ui,'batch',{index:'0'});await click(ui,'preview');const gate=later<any>(),original=f.api.applyMembership;f.api.applyMembership=async request=>{const result=await original(request);f.pending(request.operationId);await gate.promise;throw new ServiceFailure({code:'IO_ERROR'});};
   const writing=click(ui,'apply');await Promise.resolve();assert.match(ui.content(),/Working…/);assert.doesNotMatch(ui.content(),/result of this write is not confirmed/);gate.resolve(null);await writing;assert.match(ui.content(),/result of this write is not confirmed/);const attempt=parseContextInput(f.storage.getItem('gitworld-context-input-v1'))!.attemptId!;assert.ok(attempt);ui.hide();
-  const reopened=f.create();await reopened.resume();await click(reopened,'check');assert.equal(f.calls.filter(v=>v.method==='applyMembership').length,1);assert.equal(f.calls.find(v=>v.method==='resume')!.input.operationId,attempt);assert.match(reopened.content(),/Membership saved/);assert.equal(f.views.length,0);
+  f.storage.setItem('gitworld-context-input-v1',canonicalJson(JSON.parse(f.storage.getItem('gitworld-context-input-v1')!)));
+  const reopened=f.create();await reopened.resume();assert.equal(parseContextInput(f.storage.getItem('gitworld-context-input-v1'))!.attemptId,attempt);await click(reopened,'check');assert.equal(f.calls.filter(v=>v.method==='applyMembership').length,1);assert.equal(f.calls.find(v=>v.method==='resume')!.input.operationId,attempt);assert.match(reopened.content(),/Membership saved/);assert.equal(f.views.length,0);
 });
 
 test('draft input survives leaving, and replacement requires an explicit discard',async t=>{
@@ -122,4 +124,28 @@ test('saving an explicitly entered Chinese name preserves that locale value whil
   input(ui,'name','古代地理来源观测');input(ui,'purpose','比较有日期的来源观测。');await save(ui);
   const request=f.calls.filter(value=>value.method==='save').at(-1)!.input;assert.deepEqual(request.labels,{en:'A user-organized context','zh-CN':'古代地理来源观测'});
   assert.equal(request.description['zh-CN'],'比较有日期的来源观测。');assert.match(ui.content(),/<h1>A user-organized context<\/h1>/);assert.match(ui.content(),/value="zh-CN" selected/);assert.match(ui.content(),/value="古代地理来源观测"/);
+});
+
+for(const locale of ['en','zh-CN'] as const)for(const kind of ['adopted-import','saved-source'] as const)test(`canonical persistence keeps the selected ${kind} and its recovery state (${locale})`,async t=>{
+  const f=fixture(t),selected:NavigationBatchRef=kind==='adopted-import'?batch:{kind:'saved-source',selection:'source-claim-subjects',revision:'working',sourceId:'source:fixture',sourceRevision:null,sourceHash:HASH,selectionHash:PREVIEW,objectSetHash:SET};
+  const variants:NavigationBatchRef[]=selected.kind==='adopted-import'
+    ?[{...selected,method:'collection.adopt'},{...selected,operationId:'other-import'},{...selected,inputHash:'d'.repeat(64)},{...selected,objectSetHash:'e'.repeat(64)},{...selected,previewId:'f'.repeat(64)}]
+    :[{...selected,selection:'subjects-and-referenced-objects'},{...selected,revision:'2'.repeat(40)},{...selected,sourceId:'source:other'},{...selected,sourceRevision:'r2'},{...selected,sourceHash:'d'.repeat(64)},{...selected,selectionHash:'e'.repeat(64)},{...selected,objectSetHash:'f'.repeat(64)}];
+  const original=f.api.batches;f.api.batches=async request=>{const value=await original(request);const items=[selected,...variants].map((ref,index)=>({...value.items[0],batchKey:String(index),batch:ref}));return {...value,items,total:items.length};};
+  const ui=f.create(undefined,()=>locale);await createContext(ui);await click(ui,'batch',{index:'0'});
+  const note=locale==='en'?'Keep the fixed source observations.':'保留固定来源观测。';input(ui,'rationale',note);
+  if(kind==='adopted-import')await click(ui,'preview');
+  await ui.prepareClose();ui.hide();const stored=f.storage.getItem('gitworld-context-input-v1')!;
+  const previous=parseContextInput(stored)!;f.storage.setItem('gitworld-context-input-v1',canonicalJson(JSON.parse(stored)));
+  assert.notEqual(f.storage.getItem('gitworld-context-input-v1'),stored);
+  const reopened=f.create(undefined,()=>locale);await reopened.resume();
+  const cards=[...reopened.content().matchAll(/<button[^>]*class="context-batch"[^>]*>/g)].map(value=>value[0]);
+  assert.deepEqual(cards.map(tag=>tag.includes('aria-pressed="true"')),[true,...variants.map(()=>false)]);
+  const restored=parseContextInput(f.storage.getItem('gitworld-context-input-v1'))!;
+  assert.deepEqual(restored.selectedBatch,selected);assert.equal(restored.rationale,note);assert.equal(restored.planId,previous.planId);assert.equal(restored.attemptId,previous.attemptId);assert.ok(reopened.content().includes(note));
+  if(kind==='adopted-import'){
+    assert.equal(f.calls.filter(value=>value.method==='membershipPlan').length,1);
+    await click(reopened,'apply');const applied=f.calls.find(value=>value.method==='applyMembership')!.input;
+    assert.equal(applied.planId,previous.planId);assert.equal(applied.expectedPlanHash,HASH);assert.equal(f.calls.filter(value=>value.method==='applyMembership').length,1);
+  }else assert.equal(f.calls.some(value=>value.method==='membershipPlan'||value.method==='applyMembership'),false);
 });
