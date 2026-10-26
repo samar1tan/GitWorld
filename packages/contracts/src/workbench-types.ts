@@ -13,7 +13,10 @@ export type ModelCatalogEntry = {
   authoredRevisionId: string; headContentHash: string | null; working: boolean;
 };
 export type ModelCatalog = { revision: ModelRevision; head: string; models: ModelCatalogEntry[] };
-export type ModelRead = ModelWorkingReceipt & { datasetId: string; revision: ModelRevision; package: DataPackage };
+/** Missing translations only; paths and the basis hash are bound to this exact package. */
+export type ModelPresentation = { contentHash: string; sourceRevisionId: string; zhCN: { path: string[]; text: string }[] };
+export type ModelRead = ModelWorkingReceipt & { datasetId: string; revision: ModelRevision; package: DataPackage; presentation?: ModelPresentation };
+export type LegacyModelRead = ModelRead & { legacyAuthoredRevisionId: string };
 export type ModelWriteGuards = { expectedHead: string; expectedModelHash: string | null };
 
 export type ModelCommandTarget = { kind: 'model'; modelId: string; revision: ModelRevision };

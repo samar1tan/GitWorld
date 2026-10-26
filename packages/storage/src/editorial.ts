@@ -394,6 +394,23 @@ export async function createEditorialRepository(options: EditorialRepositoryOpti
       Object.assign(environment, { GIT_AUTHOR_NAME: identity.name, GIT_AUTHOR_EMAIL: identity.email, GIT_COMMITTER_NAME: identity.name, GIT_COMMITTER_EMAIL: identity.email });
     }),
     log: (limit = 50) => coordinated(async () => { if (!Number.isSafeInteger(limit) || limit < 1 || limit > 1000) fail('INVALID_REQUEST'); const branch = await activeBranch(), hashes = (await value(['rev-list', `--max-count=${limit}`, 'HEAD'])).split('\n').filter(Boolean); return Promise.all(hashes.map(async hash => ({ ...await readCommit(hash), branch }))); }),
+    findModelRevision: (name, contentHash) => coordinated(async () => {
+      filePath(name);
+      if (!/^models\/[a-f0-9]{64}\.json$/.test(name) || !/^[a-f0-9]{64}$/.test(contentHash)) fail('INVALID_REQUEST');
+      // Search committed path changes, including other branches, without moving HEAD.
+      const commits = (await value(['log', '--all', '--format=%H', '--max-count=10001', '--', name])).split('\n').filter(Boolean);
+      for (const commit of commits.slice(0, 10000)) {
+        oid(commit);
+        const result = await git(['show', `${commit}:${name}`], undefined, true);
+        if (result.code !== 0) continue; // A deletion has no package at this commit.
+        let data: unknown;
+        try { data = JSON.parse(result.stdout); } catch { return fail('CORRUPT_REPOSITORY'); }
+        if (digest(canonicalJson(data)) === contentHash) return commit;
+      }
+      // A bounded search never substitutes an unrelated current revision.
+      if (commits.length > 10000) fail('INVALID_REQUEST');
+      return null;
+    }),
     branches: () => coordinated(async () => {
       const current = await activeBranch();
       return (await value(['for-each-ref', '--format=%(refname:lstrip=2) %(objectname)', 'refs/heads/'])).split('\n').filter(Boolean).map(line => {

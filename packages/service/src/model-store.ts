@@ -3,7 +3,9 @@ import path from 'node:path';
 import { DatabaseSync } from 'node:sqlite';
 import { buildContentManifest, canonicalJson, isRecord, validateDataPackage } from '../../domain/src/index.ts';
 import type { DataPackage } from '../../domain/src/package.ts';
-import type { Draft, ModelCatalog, ModelRead, ModelWorkingReceipt, RevisionSummary, ServiceError, ServiceMethods } from '../../contracts/src/index.ts';
+import type { Draft, LegacyModelRead, ModelCatalog, ModelRead, ModelWorkingReceipt, RevisionSummary, ServiceError, ServiceMethods } from '../../contracts/src/index.ts';
+import type { DatasetRef } from '../../domain/src/package.ts';
+import { starterPresentation } from './model-presentation.ts';
 import type { EditorialJson, EditorialRepository } from '../../contracts/src/editorial-types.ts';
 
 const oid = /^[a-f0-9]{40}$/;
@@ -22,6 +24,8 @@ type Row = { signature: string; prepared_json: string; result_json: string | nul
 /** SQL contains draft/retry metadata; every runnable current model is read from Git. */
 export function createModelStore(repository: EditorialRepository, options: {
   dataDirectory: string; getDraft(id: string): Promise<Draft>;
+  getLegacyPackage?(ref: DatasetRef): Promise<DataPackage>;
+  presentationSeed?: DataPackage | null;
   /** Trusted recovery-test hook, never renderer-supplied. */
   onFault?: (point: 'after-prepare' | 'after-write' | 'after-receipt') => void | Promise<void>;
 }) {
@@ -40,7 +44,8 @@ export function createModelStore(repository: EditorialRepository, options: {
     const file = modelPath(datasetId), snapshot = await repository.snapshot({ from: revision, paths: [file] }), raw = snapshot.files[file];
     if (raw === undefined) return fail('REVISION_NOT_FOUND');
     const data = checked(raw, file);
-    return { datasetId, revision, head: snapshot.head, path: file, contentHash: digest(raw), package: data };
+    const contentHash = digest(raw), presentation = starterPresentation(data, options.presentationSeed ?? null, contentHash);
+    return { datasetId, revision, head: snapshot.head, path: file, contentHash, package: data, ...(presentation ? { presentation } : {}) };
   }
   async function catalog(revision: string): Promise<ModelCatalog> {
     validRevision(revision);
@@ -51,6 +56,17 @@ export function createModelStore(repository: EditorialRepository, options: {
       const headContentHash = base === undefined ? null : digest(base);
       return { datasetId: data.dataset.id, name: data.dataset.name, path: file, contentHash, authoredRevisionId: data.revision.id, headContentHash, working: contentHash !== headContentHash };
     }).sort((a, b) => a.datasetId.localeCompare(b.datasetId)) };
+  }
+  async function resolveLegacy(ref: DatasetRef): Promise<LegacyModelRead> {
+    if (ref.revisionId === 'working' || oid.test(ref.revisionId)) return fail('INVALID_REQUEST');
+    if (!options.getLegacyPackage) return fail('REVISION_NOT_FOUND');
+    const data = await options.getLegacyPackage(ref), hash = digest(data);
+    if (data.dataset.id !== ref.datasetId || data.revision.id !== ref.revisionId) return fail('REVISION_NOT_FOUND');
+    const revision = await repository.findModelRevision(modelPath(ref.datasetId), hash);
+    if (revision === null) return fail('REVISION_NOT_FOUND');
+    const result = await read(ref.datasetId, revision);
+    if (result.contentHash !== hash) return fail('CONTENT_CHANGED');
+    return { ...result, legacyAuthoredRevisionId: ref.revisionId };
   }
   async function saved(row: Row, input: PublishInput): Promise<Prepared> {
     try {
@@ -102,7 +118,7 @@ export function createModelStore(repository: EditorialRepository, options: {
     return prepared.result;
   }
   return {
-    read, catalog,
+    read, catalog, resolveLegacy,
     publish(input: PublishInput) { const next = tail.then(() => publish(input)); tail = next.catch(() => undefined); return next; },
     async close() { if (closed) return; await tail; if (closed) return; closed = true; operations.close(); },
   };

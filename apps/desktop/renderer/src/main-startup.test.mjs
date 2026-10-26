@@ -10,6 +10,8 @@ import { copy } from './copy.ts';
 import { workspaceCopy } from './workspace-copy.ts';
 import { createWorkbenchCommands } from '../../../../packages/service/src/workbench-commands.ts';
 import { onboardingProgress } from './onboarding.ts';
+import { validateServiceRequest } from '../../../../packages/contracts/src/index.ts';
+import { execFileSync } from 'node:child_process';
 
 // The complete entry runs with its real renderer. This small DOM host records
 // #app replacements; it does not simulate browser layout or installed acceptance.
@@ -38,13 +40,13 @@ const tick = () => new Promise(setImmediate);
 async function until(check) { for (let turn = 0; turn < 100; turn++) { if (check()) return; await tick(); } assert.fail('The expected startup boundary was not reached.'); }
 const mainPath = fileURLToPath(new URL('./main.ts', import.meta.url));
 const hooks = '\nexport const __startupRegression={ready:()=>startupReady,transitioning:()=>transitioning,flush:()=>clientCache.flush(),guide,workbench:()=>workbench,research:researchWorkspace,enterScope};';
-const compiled = await build({ entryPoints: [mainPath], bundle: true, write: false, platform: 'node', format: 'esm', loader: { '.css': 'empty' }, logLevel: 'silent', plugins: [{ name: 'startup-observation', setup(builder) { builder.onLoad({ filter: /renderer\/src\/main\.ts$/ }, async () => ({ contents: await readFile(mainPath, 'utf8') + hooks, loader: 'ts', resolveDir: fileURLToPath(new URL('.', import.meta.url)) })); } }] });
+const compiled = await build({ entryPoints: [mainPath], bundle: true, write: false, platform: 'node', format: 'esm', loader: { '.css': 'empty' }, logLevel: 'silent', plugins: [{ name: 'startup-observation', setup(builder) { builder.onLoad({ filter: /renderer\/src\/main\.ts$/ }, async () => ({ contents: (process.env.GITWORLD_LEGACY_MAIN_BASELINE ? execFileSync('git', ['show', `${process.env.GITWORLD_LEGACY_MAIN_BASELINE}:apps/desktop/renderer/src/main.ts`], { encoding: 'utf8' }) : await readFile(mainPath, 'utf8')) + hooks, loader: 'ts', resolveDir: fileURLToPath(new URL('.', import.meta.url)) })); } }] });
 const compiledDirectory = await mkdtemp(path.join(os.tmpdir(), 'gitworld-startup-render-'));
 const compiledPath = path.join(compiledDirectory, 'main.bundle.mjs');
 await writeFile(compiledPath, compiled.outputFiles[0].text);
 after(() => rm(compiledDirectory, { recursive: true, force: true }));
 let instance = 0;
-async function fixture(t, locale, suppliedPackage = validPackage()) {
+async function fixture(t, locale, suppliedPackage = validPackage(), legacyWorkspace = null) {
   const app = new Element(), body = new Element('body'), root = new Element('html');
   const info = deferred(), map = deferred(), preferences = deferred(), status = deferred();
   let mode = 'loaded', currentLocale = locale, progress, hostEvent, version = 0, statusCalls = 0;
@@ -68,11 +70,13 @@ async function fixture(t, locale, suppliedPackage = validPackage()) {
         case 'settings.get': result = settings(); break;
         case 'library.status': statusCalls++; await status.promise; if (mode === 'failed') return { protocolVersion: 1, requestId: input.requestId, ok: false, error: { code: 'IO_ERROR' } }; result = { schemaVersion: 3, datasets: mode === 'empty' ? [] : [{ id: data.dataset.id, name: data.dataset.name, activeRevisionId: oid }] }; break;
         case 'model.catalog': result = { revision: 'working', head: oid, models: [] }; break;
-        case 'workspace.load': result = null; break;
+        case 'workspace.load': result = legacyWorkspace; break;
+        case 'revision.get': result = structuredClone(suppliedPackage); break;
+        case 'model.resolveLegacy': result = { datasetId: data.dataset.id, revision: oid, head: oid, package: structuredClone(data), legacyAuthoredRevisionId: suppliedPackage.revision.id }; break;
         case 'model.read': result = { datasetId: data.dataset.id, revision: oid, head: oid, package: structuredClone(data) }; break;
         case 'workspace.save': result = { ...input.params.workspace, version: ++version }; break;
         case 'repository.status': result = { head: oid, branch: 'main', stagedTree: 'b'.repeat(40), staged: [], unstaged: [], conflicts: [], revert: null }; break;
-        case 'command.execute': result = await commands.execute(input.params); break;
+        case 'command.execute': { const checked=validateServiceRequest(input);if(!checked.ok)return {protocolVersion:1,requestId:input.requestId,ok:false,error:checked.error};result = await commands.execute(input.params); break; }
         case 'research.list': result = [...research.values()].map(value => value.record); break;
         case 'research.get': result = research.get(input.params.id); break;
         case 'research.history': result = []; break;
@@ -109,6 +113,16 @@ async function fixture(t, locale, suppliedPackage = validPackage()) {
     async retry(next) { mode = next; const before = statusCalls, button = new Element('button'); button.dataset.app = 'reload'; for (const callback of app.listeners.get('click') ?? []) callback({ target: button, composedPath: () => [button, app, body] }); await until(() => statusCalls > before); await tick(); },
   };
 }
+
+test('complete main opens an authored-ID workspace then nodes, checkout and comparison use actual OIDs', async t => {
+  const data=validPackage(),ref=commitId=>({datasetId:data.dataset.id,revisionId:data.revision.id,commitId,requestedYear:commitId==='old'?-100:100});
+  const saved={id:'primary',version:4,dataset:{datasetId:data.dataset.id,revisionId:data.revision.id},locale:'zh-CN',view:{panel:'history',scopeId:'region',processId:'courts',eventId:null,selectedCommitId:'new',graphRef:null,graphBranch:'realm/main',requestedYear:100,timeWindow:[-100,100],cursor:100,viewport:{x:0,y:0,width:1000,height:500}},trail:[],head:ref('old'),comparison:[ref('old'),ref('new')]};
+  const f=await fixture(t,'zh-CN',data,saved);await f.release();await f.mapFirst();
+  for(const command of ['git show new','git checkout old','git diff old new'])await f.hooks.workbench().execute(command);
+  const calls=f.calls.filter(value=>value.method==='command.execute');assert.equal(calls.length,3);assert.ok(calls.every(value=>value.params.input.intent.target.revision==='a'.repeat(40)));
+  assert.doesNotMatch(f.app.innerHTML,/INVALID_REQUEST/);
+  const normalized=f.calls.find(value=>value.method==='workspace.save');assert.ok(normalized);assert.equal(normalized.params.expectedVersion,4);assert.equal(normalized.params.workspace.dataset.revisionId,'a'.repeat(40));assert.ok(normalized.params.workspace.comparison.every(value=>value.revisionId==='a'.repeat(40)));
+});
 
 for (const locale of ['en', 'zh-CN']) {
   test(`the complete model Guide opens a related fixed investigation and completes only after its real save (${locale})`, async t => {

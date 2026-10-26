@@ -72,12 +72,23 @@ function fixture(t, initialLocale) {
   const previous = new Map(Object.keys(globals).map(key => [key, Object.getOwnPropertyDescriptor(globalThis, key)]));
   for (const [key, value] of Object.entries(globals)) Object.defineProperty(globalThis, key, { configurable: true, writable: true, value });
   t.after(() => { for (const [key, descriptor] of previous) { if (descriptor) Object.defineProperty(globalThis, key, descriptor); else Reflect.deleteProperty(globalThis, key); } });
-  const manager = createManager({ locale: () => locale, package: () => null, onClose() {}, onPublished: async () => {}, onError: error => errors.push(error) });
+  const frames = [];
+  const manager = createManager({ locale: () => locale, package: () => null, renderWorkspace: content => { frames.push(content); app.innerHTML = content; }, onClose() {}, onPublished: async () => {}, onError: error => errors.push(error) });
   const click = (action, extra = {}) => manager.click({ dataset: { manager: action, ...extra } });
-  return { manager, app, calls, click, document, errors, locale: value => { locale = value; }, draft: () => draft, published: () => published, confirmations: () => confirmations, form: purpose => app.forms.find(form => form.dataset.managerForm === purpose) };
+  return { manager, app, frames, calls, click, document, errors, locale: value => { locale = value; }, draft: () => draft, published: () => published, confirmations: () => confirmations, form: purpose => app.forms.find(form => form.dataset.managerForm === purpose) };
 }
 
 for (const locale of ['en', 'zh-CN']) {
+  test(`${locale}: model views delegate every render to the retained workspace shell`, async t => {
+    const f = fixture(t, locale); await f.manager.open();
+    assert.ok(f.frames.length > 0);
+    assert.match(f.app.html, /class="manager manager-layout"/);
+    assert.doesNotMatch(f.app.html, /manager-header|class="topbar"|class="workspace-modes"/);
+    const renders = f.frames.length; await f.click('open-draft', { id: 'draft' });
+    assert.ok(f.frames.length > renders); assert.ok(f.form('object'));
+    assert.doesNotMatch(f.app.html, /manager-header/);
+  });
+
   test(`${locale}: model publication reports working adoption and still requires the separate repository workflow`, async t => {
     const f = fixture(t, locale); await f.manager.open(); await f.click('open-draft', { id: 'draft' }); await f.click('preview');
     const form = f.form('publish'); form.querySelector('[name="reviewer"]').value = 'Technical reviewer'; form.querySelector('[name="note"]').value = 'Reviewed the synthetic model'; form.querySelector('[name="evidence"]').checked = true; form.querySelector('[name="rights"]').checked = true;

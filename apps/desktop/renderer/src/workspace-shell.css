@@ -35,9 +35,6 @@
 .global-terminal .terminal-command button { flex:none; }
 .global-terminal .command-completions { max-height:260px; overflow:auto; }
 .global-terminal .command-completions button { display:block; width:100%; text-align:left; padding:8px; font:13px var(--mono); }
-.manager > .topbar { min-height:52px; display:flex; align-items:center; justify-content:space-between; background:#202226; padding:8px 16px 8px var(--native-titlebar-gutter,88px); -webkit-app-region:drag; }
-.manager > .topbar button { -webkit-app-region:no-drag; }
-.manager .workspace-modes { flex:none; }
 .manager .manager-section-rail .workspace-resources { margin-bottom:16px; }
 @media(max-width:1000px) {
   .workspace .topbar .library-label { display:none; }
@@ -52,7 +49,6 @@
   .source-workspace .source-shell { display:flex; flex-direction:column; overflow:auto; }
   .source-shell > .source-nav { flex-direction:row; flex-wrap:wrap; overflow:visible; border-right:0; border-bottom:1px solid #374352; }
   .source-shell > .source-content { overflow:visible; }
-  .manager > .topbar { padding-top:max(8px,var(--native-titlebar-height,52px)); padding-left:16px; flex-wrap:wrap; }
   .global-terminal .terminal-label span { display:none; }
   .global-terminal .terminal-input-row { padding-inline:9px; }
   .global-terminal .terminal-output { max-height:30vh; }
