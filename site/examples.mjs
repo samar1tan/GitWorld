@@ -1,39 +1,6 @@
 // Public website illustrations and terminal examples, tied to the shipped model.
 const qualify = command => `history --model gitworld-curated-history --revision <commit-oid> ${command}`;
-export const examples = {
-  en: {
-    evidence: 'https://github.com/samar1tan/GitWorld/blob/main/prototype/HISTORY_SOURCES.md',
-    height: 300,
-    nodes: [
-      { id: 'francia-751', x: 55, y: 72, year: 751 },
-      { id: 'francia-840', x: 185, y: 72, year: 840 },
-      { id: 'west-843', x: 305, y: 115, year: 843, selected: true },
-      { id: 'middle-843', x: 305, y: 180 },
-      { id: 'east-843', x: 305, y: 245 },
-      { id: 'west-870', x: 475, y: 115, year: 870 },
-      { id: 'east-870', x: 475, y: 245 },
-    ],
-    edges: [
-      { from: 'francia-751', to: 'francia-840', kind: 'lineage', d: 'M55 72H185', condensed: true },
-      { from: 'francia-840', to: 'west-843', kind: 'lineage', d: 'M185 72Q220 72 220 115H305' },
-      { from: 'francia-840', to: 'middle-843', kind: 'lineage', d: 'M185 72Q220 72 220 180H305' },
-      { from: 'francia-840', to: 'east-843', kind: 'lineage', d: 'M185 72Q220 72 220 245H305' },
-      { from: 'west-843', to: 'west-870', kind: 'lineage', d: 'M305 115H475' },
-      { from: 'east-843', to: 'east-870', kind: 'lineage', d: 'M305 245H475' },
-    ],
-    labels: [
-      { key: 'shared', x: 55, y: 105 },
-      { key: 'west', x: 310, y: 145 },
-      { key: 'middle', x: 310, y: 210 },
-      { key: 'east', x: 310, y: 275 },
-    ],
-    commands: {
-      follow: qualify('log francia/west --graph'),
-      checkout: qualify('checkout francia/west@843'),
-      compare: qualify('diff francia/west@843 francia/east@843'),
-    },
-  },
-  'zh-CN': {
+const capitalExample = {
     evidence: 'https://github.com/samar1tan/GitWorld/blob/main/data/README.md#scope-and-modeling-decisions',
     height: 310,
     nodes: [
@@ -71,5 +38,7 @@ export const examples = {
       checkout: qualify('checkout japan/main@710'),
       compare: qualify('diff tang/main@700 japan/main@710'),
     },
-  },
 };
+
+// Language changes presentation, never historical identity or command targets.
+export const examples = { en: capitalExample, 'zh-CN': capitalExample };

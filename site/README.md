@@ -2,10 +2,9 @@
 
 This is a small static project site, separate from the installed desktop application.
 English is the initial language. `?lang=zh-CN` opens the Chinese entry; language
-switching updates the example, operations, command instructions and accessible
-description together. English uses Carolingian succession; Chinese starts with
-China/Japan material and illustrates Chang’an planning alongside the Japanese
-court’s recorded capital changes. Influence is distinct from lineage. See the
+switching translates the presentation while preserving the same case, dates,
+commands and evidence. Both locales illustrate Chang’an planning alongside the
+Japanese court’s six capital observations from 710 to 794. Influence is distinct from lineage. See the
 [website requirements](../docs/project-website-prd.md) for the current design and maintenance contract.
 
 The header and footer reuse the desktop icon sources in `apps/desktop/resources`;
