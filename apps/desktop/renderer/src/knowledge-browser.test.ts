@@ -95,6 +95,65 @@ test('new fixed references retain bilingual snapshot labels across an overview r
   const reopened=f.create({locale:()=> 'zh-CN'});await reopened.open();assert.match(reopened.content(),/快照名称 · 100/);assert.equal(reopened.state().a!.revision,OLD);assert.equal(reopened.state().a!.year,100);
 });
 
+for (const locale of ['en', 'zh-CN'] as const) test(`command-created comparison names survive an overview restart in ${locale}`, async t => {
+  const f = fixture(t, 55), read = f.api.object, names = { en: 'Snapshot target', 'zh-CN': '快照对象' };
+  f.api.object = async params => { const value = await read(params); return { ...value, object: { ...value.object, labels: names } }; };
+  const saved = initialKnowledgeBrowserState();
+  saved.checkout = { objectId: 'fixture:1', year: 150, revision: OLD, label: 'Retained checkout', includeUnreviewed: true };
+  const a = { objectId: 'fixture:0', year: 100, revision: OLD, label: 'fixture:0', includeUnreviewed: true };
+  const b = { objectId: 'fixture:0', year: 200, revision: OLD, label: 'fixture:0', includeUnreviewed: false };
+  const browser = f.create(); await browser.open(saved); assert.deepEqual(await browser.execute({ type: 'compare', a, b }), { ok: true });
+  await browser.execute({ type: 'scope', patch: { type: 'filters', filters: { text: 'Other object 54' } } }); browser.hide();
+  f.calls.length = 0; const reopened = f.create({ locale: () => locale }); await reopened.open();
+  const title = locale === 'en' ? 'Snapshot target' : '快照对象';
+  assert.ok(reopened.content().includes(`${title} · 100`)); assert.ok(reopened.content().includes(`${title} · 200`));
+  assert.equal(reopened.state().view, 'overview'); assert.deepEqual(reopened.state().checkout, saved.checkout);
+  assert.deepEqual(reopened.state().a, { ...a, label: names.en, labels: names }); assert.deepEqual(reopened.state().b, { ...b, label: names.en, labels: names });
+  assert.equal(f.calls.filter(value => value.method === 'object').length, 0, 'overview restoration must use the saved snapshot names, not a new object read');
+});
+
+test('comparison names remain qualified by each endpoint revision after a Working rename', async t => {
+  const f = fixture(t, 55), read = f.api.object, names = new Map([[OLD, { en: 'Earlier name', 'zh-CN': '旧名称' }], [NEW, { en: 'Later name', 'zh-CN': '新名称' }]]);
+  f.head(NEW);
+  f.api.object = async params => { const value = await read(params); return { ...value, object: { ...value.object, labels: names.get(params.revision!) ?? { en: 'Working rename', 'zh-CN': '工作名称' } } }; };
+  const a = { objectId: 'fixture:0', year: 100, revision: OLD, label: 'fixture:0', includeUnreviewed: false };
+  const b = { objectId: 'fixture:0', year: 200, revision: NEW, label: 'fixture:0', includeUnreviewed: true };
+  const browser = f.create(); await browser.open(); await browser.execute({ type: 'compare', a, b });
+  await browser.execute({ type: 'scope', patch: { type: 'filters', filters: { text: 'Other object 54' } } }); browser.hide();
+  for (const locale of ['en', 'zh-CN'] as const) {
+    const restored = f.create({ locale: () => locale }); await restored.open();
+    assert.ok(restored.content().includes(`${names.get(OLD)![locale]} · 100`)); assert.ok(restored.content().includes(`${names.get(NEW)![locale]} · 200`));
+    assert.deepEqual(restored.state().a, { ...a, label: names.get(OLD)!.en, labels: names.get(OLD) });
+    assert.deepEqual(restored.state().b, { ...b, label: names.get(NEW)!.en, labels: names.get(NEW) });
+    assert.doesNotMatch(restored.content(), /Working rename|工作名称/); restored.hide();
+  }
+  assert.ok(f.calls.filter(value => value.method === 'object').every(value => (value.params as any).revision === OLD || (value.params as any).revision === NEW));
+});
+
+test('a superseded comparison cannot persist late endpoint names into the returned scope', async t => {
+  const f = fixture(t), read = f.api.object, diff = f.api.diff, held = deferred<Awaited<ReturnType<KnowledgeBrowserApi['diff']>>>();
+  f.api.object = async params => { const value = await read(params); return { ...value, object: { ...value.object, labels: { en: 'Late name', 'zh-CN': '迟到名称' } } }; };
+  f.api.diff = () => held.promise;
+  const a = { objectId: 'fixture:0', year: 100, revision: OLD, label: 'fixture:0', includeUnreviewed: false }, b = { ...a, year: 200 };
+  const browser = f.create(); await browser.open(); const comparing = browser.execute({ type: 'compare', a, b }); await new Promise(setImmediate);
+  await browser.execute({ type: 'scope', patch: { type: 'reset' } }); const persisted = f.storage.getItem('gitworld-knowledge-view-v1');
+  held.resolve(await diff({ a: { revision: OLD, state: a }, b: { revision: OLD, state: b } })); await comparing;
+  assert.equal(browser.state().view, 'overview'); assert.deepEqual(browser.state().a, a); assert.deepEqual(browser.state().b, b);
+  assert.equal(f.storage.getItem('gitworld-knowledge-view-v1'), persisted); assert.doesNotMatch(browser.content(), /Late name|迟到名称/);
+});
+
+test('comparison persistence rejects names returned for another object or a nonmatching revision', async t => {
+  for (const mismatch of ['object', 'revision'] as const) {
+    const f = fixture(t), read = f.api.object;
+    f.api.object = async params => { const value = await read(params); return { ...value, revision: mismatch === 'revision' ? 'working' : value.revision, object: { ...value.object, id: mismatch === 'object' ? 'fixture:1' : value.object.id, labels: { en: 'Unbound name', 'zh-CN': '不匹配名称' } } }; };
+    const a = { objectId: 'fixture:0', year: 100, revision: OLD, label: 'fixture:0', includeUnreviewed: false }, b = { ...a, year: 200 };
+    const browser = f.create(); await browser.open(); await browser.execute({ type: 'compare', a, b });
+    assert.deepEqual(browser.state().a, a); assert.deepEqual(browser.state().b, b);
+    const persisted = parseKnowledgeBrowserState(f.storage.getItem('gitworld-knowledge-view-v1'))!; assert.deepEqual(persisted.a, a); assert.deepEqual(persisted.b, b);
+    browser.hide();
+  }
+});
+
 test('scope dimension patches preserve other filters, unapplied input and historical references',()=>{
   const state=initialKnowledgeBrowserState();state.query={time:[1336,1392],text:'court',typeIds:['court'],includeUndated:false};state.queryRevision=OLD;
   state.scopeDraft={text:'Pending keyword',from:'1350',to:'1400',includeUndated:false,includeUnlocated:true,bounds:{west:'',east:'',south:'',north:''},contextIds:[],unassigned:false,typeIds:['court']};state.a={objectId:'a',year:1370,revision:OLD,label:'A',includeUnreviewed:true};state.checkout=state.a;

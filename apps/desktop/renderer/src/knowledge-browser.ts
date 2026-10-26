@@ -8,7 +8,7 @@ import type { PinnedResearchEvidence, ResearchContext } from '../../../../packag
 import type { KnowledgeAssertion, KnowledgeHistory, KnowledgeObjectResult, KnowledgeQuery, KnowledgeQueryResult, KnowledgeState, KnowledgeStateDiff, KnowledgeStateField, KnowledgeText, KnowledgeTime, KnowledgeValue } from '../../../../packages/domain/src/knowledge.ts';
 import { bridge, escapeHtml as esc, ServiceFailure } from './client.ts';
 import { knowledgeCopy as copy, type KnowledgeCopyKey } from './knowledge-copy.ts';
-import { initialKnowledgeBrowserState, isFixedKnowledgeState, parseKnowledgeBrowserState, applyNavigationScopePatch, type FixedKnowledgeState, type KnowledgeBrowserState, type KnowledgeBrowserView,type KnowledgeKindMode } from './knowledge-browser-state.ts';
+import { initialKnowledgeBrowserState, isFixedKnowledgeState, sameFixedKnowledgeState, parseKnowledgeBrowserState, applyNavigationScopePatch, type FixedKnowledgeState, type KnowledgeBrowserState, type KnowledgeBrowserView,type KnowledgeKindMode } from './knowledge-browser-state.ts';
 import { parseResearchPeriod } from './research-draft.ts';
 import { knowledgeDisplayCopy, knowledgeLocalizedText, knowledgeMetadataLabel, knowledgeQualifierLabel, knowledgeTimeLabel, knowledgeTypeLabel, knowledgeValueDisplay } from './knowledge-labels.ts';
 import { groupKnowledgeSources, knowledgeSourceLocators, knowledgeSourceName } from './knowledge-sources.ts';
@@ -414,17 +414,24 @@ export function createKnowledgeBrowser(options: Options) {
   }
   async function loadDifference(reveal: ViewReveal = false) {
     if (!view.a || !view.b) { difference = null; return; }
-    const sequence = ++diffSequence, a = structuredClone(view.a), b = structuredClone(view.b);
+    const sequence = ++diffSequence, a = structuredClone(view.a), b = structuredClone(view.b), originObject = objectSequence, originState = stateSequence;
+    const current = () => sequence === diffSequence && view.view === 'compare' && originObject === objectSequence && originState === stateSequence && sameFixedKnowledgeState(view.a, a) && sameFixedKnowledgeState(view.b, b);
+    const withSnapshotLabels = (reference: FixedKnowledgeState, context: KnowledgeObjectDetail): FixedKnowledgeState => {
+      if (context.object.id !== reference.objectId || context.revision !== reference.revision) return reference;
+      const named = { ...reference, label: text(context.object.labels, reference.label), labels: structuredClone(context.object.labels) };
+      return isFixedKnowledgeState(named) ? named : reference;
+    };
     loadingDiff = true; difference = null; inspectedProperty = null; error = null; redraw();revealFlow('.knowledge-view-heading',reveal);
     try {
       const [value, before, after] = await Promise.all([
         options.api.diff({ a: { state: { objectId: a.objectId, year: a.year, includeUnreviewed: a.includeUnreviewed }, revision: a.revision }, b: { state: { objectId: b.objectId, year: b.year, includeUnreviewed: b.includeUnreviewed }, revision: b.revision } }),
         options.api.object({ objectId: a.objectId, revision: a.revision }), options.api.object({ objectId: b.objectId, revision: b.revision }),
       ]);
-      if (sequence !== diffSequence) return;
+      if (!current()) return;
+      view.a = withSnapshotLabels(view.a!, before); view.b = withSnapshotLabels(view.b!, after);
       difference = value; aDetail = before; bDetail = after; remember(before); remember(after); inspectedSide = 'a'; persist();
       if (JSON.stringify(a) !== JSON.stringify(b) && value.fields.some(field => field.kind === 'changed')) observed({ type: 'comparison', a, b });
-    } catch (cause) { if (sequence === diffSequence) showFailure(cause, () => loadDifference()); }
+    } catch (cause) { if (current()) showFailure(cause, () => loadDifference()); }
     finally { if (sequence === diffSequence) { loadingDiff = false; redraw(); } }
   }
   async function compareInterval(index: number) {
