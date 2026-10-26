@@ -78,6 +78,7 @@ export async function createLocalService(options: LocalServiceOptions): Promise<
   let sourceCollectionTail: Promise<unknown> = Promise.resolve();
   let closed = false;let writeOperationId='library-initialize';
   let initialization = await repository.initialize();
+  const presentationSeed = options.seedPackagePath ? await loadDataPackageFile(options.seedPackagePath, 'publish') : null;
   let editorial: EditorialRepository | null = null;
   let editorialFailure: ServiceError['code'] = 'GIT_UNAVAILABLE';
   let research: ReturnType<typeof createResearchStore> | null = null;
@@ -129,7 +130,7 @@ export async function createLocalService(options: LocalServiceOptions): Promise<
       knowledgeImports=createKnowledgeImports(editorial,knowledge,{dataDirectory:options.dataDirectory,legacy:legacyCatalog});
       navigation=createNavigationContexts(editorial,{dataDirectory:options.dataDirectory,imports:async()=>[...importStore().completedBatches(),...unwrap(await repository.knowledgeImportOperations()) as NavigationImportReceipt[]]});
       wikipedia=await createWikipediaWorkspace({dataDirectory:options.dataDirectory,repository:editorial,imports:knowledgeImports,fetch:options.sourceFetch});
-      models = createModelStore(editorial, { dataDirectory: options.dataDirectory, getDraft: async id => unwrap(await repository.getDraft(id)) });
+      models = createModelStore(editorial, { dataDirectory: options.dataDirectory, getDraft: async id => unwrap(await repository.getDraft(id)), getLegacyPackage: async ref => unwrap(await repository.getPublishedPackage(ref)), presentationSeed: presentationSeed?.ok ? presentationSeed.package : null });
     } catch (error) { wikipedia=null;editorialFailure = error instanceof EditorialFailure ? error.code : 'IO_ERROR';await navigation?.close();navigation=null;await knowledgeImports?.close();knowledgeImports=null;await knowledgeEditor?.close();knowledgeEditor=null;await models?.close();models=null; await editorial?.close(); editorial = null;research=null;knowledge=null;summaries=null; }
   }
   await openEditorialStores();
@@ -223,6 +224,7 @@ export async function createLocalService(options: LocalServiceOptions): Promise<
       case 'library.status': return currentLibrarySummary();
       case 'model.catalog': return modelStore().catalog(request.params.revision);
       case 'model.read': return modelStore().read(request.params.datasetId, request.params.revision);
+      case 'model.resolveLegacy': return modelStore().resolveLegacy(request.params.dataset);
       case 'command.execute': return commands.execute(request.params);
       case 'command.complete': return commands.complete(request.params.input, request.params.context, request.params.contextTarget,request.params.scopeRevision);
       case 'revision.list': return unwrap(await repository.listRevisions(request.params.datasetId));
@@ -568,7 +570,7 @@ export async function createLocalService(options: LocalServiceOptions): Promise<
         const isMaintenance = checked.value.method === 'backup.create' || checked.value.method === 'backup.restore';
         if (isMaintenance && (acquisitionPending || sourceCollectionPending || controllers.size)) return { protocolVersion: 1, requestId, ok: false, error: { code: 'OPERATION_IN_PROGRESS' } };
         const maintenanceBarrier = isMaintenance ? Promise.allSettled([...pendingRequests]) : null;
-        const readonly = ['library.status', 'revision.list', 'revision.get', 'model.catalog', 'model.read', 'command.complete', 'context.list','context.get','context.batches','context.batchObjects','context.batchSources','context.plan','context.pending','knowledge.query','knowledge.object','knowledge.state','knowledge.history','knowledge.diff', 'collection.issues', 'knowledge.filePreview', 'knowledge.pendingImports', 'wikipedia.jobs','wikipedia.inspect','wikipedia.preview','wikipedia.issues','query.execute', 'query.complete', 'workspace.load', 'draft.list', 'draft.get', 'draft.validate', 'draft.preview', 'source.list', 'source.search', 'source.jobs', 'source.record', 'operation.cancel'].includes(checked.value.method) || checked.value.method === 'command.execute' && readOnlyWorkbenchCommand(checked.value.params);
+        const readonly = ['library.status', 'revision.list', 'revision.get', 'model.catalog', 'model.read', 'model.resolveLegacy', 'command.complete', 'context.list','context.get','context.batches','context.batchObjects','context.batchSources','context.plan','context.pending','knowledge.query','knowledge.object','knowledge.state','knowledge.history','knowledge.diff', 'collection.issues', 'knowledge.filePreview', 'knowledge.pendingImports', 'wikipedia.jobs','wikipedia.inspect','wikipedia.preview','wikipedia.issues','query.execute', 'query.complete', 'workspace.load', 'draft.list', 'draft.get', 'draft.validate', 'draft.preview', 'source.list', 'source.search', 'source.jobs', 'source.record', 'operation.cancel'].includes(checked.value.method) || checked.value.method === 'command.execute' && readOnlyWorkbenchCommand(checked.value.params);
         if (!readonly && acquisitionPending) return { protocolVersion: 1, requestId, ok: false, error: { code: 'OPERATION_IN_PROGRESS' } };
         const isCollection = checked.value.method === 'source.collect' || checked.value.method === 'collection.acquire' || checked.value.method === 'collection.rebuildIssues'||checked.value.method==='wikipedia.collect';
         if (sourceCollectionPending && (isCollection || checked.value.method === 'backup.restore')) return { protocolVersion: 1, requestId, ok: false, error: { code: 'OPERATION_IN_PROGRESS' } };

@@ -28,6 +28,8 @@ import type { WorkspaceState, BrowseState, RevisionSummary, LibrarySummary, Serv
 import { request, bridge, escapeHtml as esc, ServiceFailure } from './client';
 import { copy, contentText, yearText, coverageText } from './copy';
 import { createWorkbench } from './workbench-ui';
+import { loadModelWorkspace } from './model-loading';
+import { rememberModelPresentation, displayModelText } from './model-presentation';
 import { createManager } from './manager';
 import { createSourceBrowser } from './source-browser';
 import { createKnowledgeBrowser } from './knowledge-browser';
@@ -95,7 +97,7 @@ const transitions = createWorkspaceTransitions();
 let land = '';
 let mapDragging: {x:number;y:number;view:ViewState['viewport']}|null = null;
 const t = (key:Parameters<typeof copy>[1]) => copy(state.locale,key);
-const text = (value:Parameters<typeof contentText>[0]) => contentText(value,state.locale);
+const text = (value:Parameters<typeof contentText>[0]) => contentText(displayModelText(value),state.locale);
 const ref = ():DatasetRef => ({datasetId:data!.dataset.id, revisionId:data!.revision.id});
 const button = (action:string,label:string,extra='') => `<button type="button" data-app="${action}" ${extra}>${label}</button>`;
 const clientCache = createClientStateCache({ load:key=>request('clientState.load',{key}),save:input=>request('clientState.save',input) }, failed=>{clientFailed=failed;renderGuidance();});
@@ -122,7 +124,6 @@ function clientNotice() {
   return `<div class="client-state-notice"><p>${esc(clientActionError?c('finishModel'):conflict?c('conflict'):c(clientReady?'saveFailed':'loadFailed'))}</p>${conflict?`<p>${esc(c('conflictDetail'))}</p><div class="onboarding-actions">${action('local',c('local'))}${action('saved',c('saved'))}</div>`:`<div class="onboarding-actions">${action('retry',c(clientReady?'retrySave':'retryLoad'))}</div>`}</div>`;
 }
 function updateGuideEntries() {
-  if(managerOpen){const header=app.querySelector('.manager-header');if(header){header.outerHTML=titlebar()+modeNavigation();}decorateResources();}
   for(const entry of app.querySelectorAll<HTMLButtonElement>('[data-onboarding="open"]')){entry.setAttribute('aria-expanded',String(guide.snapshot().panelOpen));entry.disabled=clientMaintenance;}
 }
 function renderGuidance() {
@@ -256,18 +257,21 @@ async function openLibrary(selected?:DatasetRef,restore?:WorkspaceState) {
     if(!transitions.current(sequence))return;
     const status=await request('library.status',{});
     models=await request('model.catalog',{revision:'working'});
-    const stored=await request('workspace.load',{workspaceId:'primary'}),saved=restore??stored;
+    const stored=await request('workspace.load',{workspaceId:'primary'});let saved=restore??stored;
     if(!transitions.current(sequence))return;
-    const target=selected??saved?.dataset??(status.datasets.find(d=>d.activeRevisionId)?{datasetId:status.datasets.find(d=>d.activeRevisionId)!.id,revisionId:status.datasets.find(d=>d.activeRevisionId)!.activeRevisionId!}:null);
+    let target=selected??saved?.dataset??(status.datasets.find(d=>d.activeRevisionId)?{datasetId:status.datasets.find(d=>d.activeRevisionId)!.id,revisionId:status.datasets.find(d=>d.activeRevisionId)!.activeRevisionId!}:null);
     if(!target){persistence.bind(saved?.version??null);data=null;workbench=null;openingLibrary=null;transitioning=false;render();return;}
-    const loaded=target.revisionId==='working'||/^[a-f0-9]{40}$/.test(target.revisionId)?(await request('model.read',{datasetId:target.datasetId,revision:target.revisionId})).package:await request('revision.get',{dataset:target});
+    const opened=await loadModelWorkspace(target,saved,{read:ref=>request('model.read',{datasetId:ref.datasetId,revision:ref.revisionId}),resolveLegacy:dataset=>request('model.resolveLegacy',{dataset})});
+    target=opened.target;saved=opened.saved;
+    const loaded=opened.loaded.package;
+    for(const item of opened.packages){item.package.revision.id=item.revision;item.package.history.id=item.revision;rememberModelPresentation(item);modelPackages.set(`${item.datasetId}\0${item.revision}`,item.package);}
     loaded.revision.id=target.revisionId;loaded.history.id=target.revisionId;modelPackages.set(`${target.datasetId}\0${target.revisionId}`,loaded);
     if(!transitions.current(sequence))return;
     persistence.bind(stored?.version??null);data=loaded;state=freshState(loaded);
-    const restoreSaved=!!saved&&saved.dataset.datasetId===target.datasetId;const sameRevision=restoreSaved&&saved.dataset.revisionId===target.revisionId;
-    if(restoreSaved){const locale=settingsProfile?.values.general.locale??(clientReady?clientCache.get('locale'):null);state={...state,locale:locale==='en'||locale==='zh-CN'?locale:saved.locale,view:fromBrowse(saved.view),trail:saved.trail.map(fromBrowse),head:saved.head?.commitId??null,headRequestedYear:saved.head?.requestedYear??null,headRevision:saved.head?.revisionId??null,comparisonRevisions:saved.comparison?.map(value=>value.revisionId) as [string,string]??null,comparison:saved.comparison?.map(r=>r.commitId) as Workspace['comparison']??null,comparisonRequestedYears:saved.comparison?.map(r=>r.requestedYear) as Workspace['comparisonRequestedYears']??null};}
+    const restoreSaved=saved?.dataset.datasetId===target.datasetId;const sameRevision=restoreSaved&&saved?.dataset.revisionId===target.revisionId;
+    if(restoreSaved&&saved){const locale=settingsProfile?.values.general.locale??(clientReady?clientCache.get('locale'):null);state={...state,locale:locale==='en'||locale==='zh-CN'?locale:saved.locale,view:fromBrowse(saved.view),trail:saved.trail.map(fromBrowse),head:saved.head?.commitId??null,headRequestedYear:saved.head?.requestedYear??null,headRevision:saved.head?.revisionId??null,comparisonRevisions:saved.comparison?.map(value=>value.revisionId) as [string,string]??null,comparison:saved.comparison?.map(r=>r.commitId) as Workspace['comparison']??null,comparisonRequestedYears:saved.comparison?.map(r=>r.requestedYear) as Workspace['comparisonRequestedYears']??null};}
     if(restoreSaved&&!sameRevision){state={...state,trail:[],view:{...state.view,panel:'browse',selectedCommit:null,graphRef:null,graphBranch:null,requestedYear:null}};if(!loaded.catalog.scopes.some(scope=>scope.id===state.view.scopeId))state.view.scopeId=null;if(!loaded.catalog.processes.some(process=>process.id===state.view.processId))state.view.processId=null;}
-    for(const version of new Set([state.headRevision,...state.comparisonRevisions??[]].filter((value):value is string=>!!value&&value!==target.revisionId))){const previous=await request('model.read',{datasetId:target.datasetId,revision:version});previous.package.revision.id=version;previous.package.history.id=version;modelPackages.set(`${target.datasetId}\0${version}`,previous.package);}
+    for(const version of new Set([state.headRevision,...state.comparisonRevisions??[]].filter((value):value is string=>!!value&&value!==target.revisionId))){const previous=await request('model.read',{datasetId:target.datasetId,revision:version});previous.package.revision.id=version;previous.package.history.id=version;rememberModelPresentation(previous);modelPackages.set(`${target.datasetId}\0${version}`,previous.package);}
     modelComparison=null;
     if(state.comparison&&state.comparisonRevisions&&state.comparisonRevisions.some(revision=>revision!==target.revisionId)){
       const a={kind:'model' as const,modelId:target.datasetId,revision:state.comparisonRevisions[0],ref:`commit:${state.comparison[0]}`},b={kind:'model' as const,modelId:target.datasetId,revision:state.comparisonRevisions[1],ref:`commit:${state.comparison[1]}`};
@@ -276,7 +280,7 @@ async function openLibrary(selected?:DatasetRef,restore?:WorkspaceState) {
       if(compared.output.kind!=='model'||compared.output.execution.output.kind!=='diff')throw new Error('INVALID_HISTORY_RESULT');
       modelComparison={a,b,diff:compared.output.execution.output.diff,before:modelPackages.get(`${target.datasetId}\0${a.revision}`)!,after:modelPackages.get(`${target.datasetId}\0${b.revision}`)!,commonBaseStatus:compared.output.comparison?.commonBaseStatus??(a.revision===b.revision?'computed':'different-revisions')};
     }
-    if(restore||!sameRevision)await persistence.save(persisted());
+    if(restore||!sameRevision||opened.normalized)await persistence.save(persisted());
     if(!transitions.current(sequence))return;
     installWorkbench(sequence);openingLibrary=null;transitioning=false;render();void refreshEditingStatus().catch(()=>{});
   }catch(cause){if(transitions.current(sequence)){openingLibrary=null;persistence.resume();transitioning=false;if(data)installWorkbench(sequence);else workbench=null;showError(cause);}}
@@ -303,6 +307,7 @@ async function beforeLibraryTransfer() {
 function afterLibraryTransfer() { clientMaintenance=false;renderGuidance(); }
 async function afterLibraryRestored() { restoringLibrary=true;settingsProfile=null;await initializeClientSettings(true);window.location.reload(); }
 const manager=createManager({locale:()=>state.locale,package:()=>data,onClose:async()=>{managerOpen=false;data=null;workbench=null;await openLibrary();rememberSection();},onError:showError,onRendered:updateGuideEntries,
+  renderWorkspace:content=>{renderWorkspace(`<div class="workspace tool-workspace manager-workspace">${titlebar()}${modeNavigation()}${content}</div>`);decorateResources();const workspace=app.querySelector('.workspace');if(clientReady&&workspace){if(terminalHost.parentElement!==workspace)workspace.append(terminalHost);terminal.render();}},
   onFindData:async()=>{managerOpen=false;data=null;workbench=null;await openLibrary();await openSources();},
   beforeBackup:beforeLibraryTransfer,afterBackup:afterLibraryTransfer,beforeRestore:beforeLibraryTransfer,afterRestore:afterLibraryTransfer,
   onRestored:afterLibraryRestored,
@@ -486,18 +491,21 @@ async function openSources(query?:import('../../../../packages/domain/src/knowle
 function modelCommandContext(){return {head:!state.headRevision||state.headRevision===data?.revision.id?state.head:null,comparison:!state.comparisonRevisions||state.comparisonRevisions.every(revision=>revision===data?.revision.id)?state.comparison:null,currentYear:state.view.cursor,scopeId:state.view.scopeId,timeWindow:state.view.timeWindow};}
 const terminal=createTerminal({host:terminalHost,locale:()=>state.locale,storage:clientCache.storage,status:()=>editingStatus,navigationVersion:()=>interactionVersion,
   execute:input=>request('command.execute',{...input,scopeRevision:knowledgeBrowser.state().queryRevision??'working',...(data?{contextTarget:{kind:'model' as const,modelId:data.dataset.id,revision:data.revision.id},context:modelCommandContext()}:{})}),complete:input=>request('command.complete',{input,scopeRevision:knowledgeBrowser.state().queryRevision??'working',...(data?{contextTarget:{kind:'model' as const,modelId:data.dataset.id,revision:data.revision.id},context:modelCommandContext()}:{})}),
-  onChanges:async()=>{await openTool('changes');},onNavigationError:showError,
+  onChanges:async()=>{await routeWorkspace('changes');},onNavigationError:showError,
   onResult:applyCommandResult,
 });
 async function applyCommandResult(result:WorkbenchCommandExecution,allowNavigation:boolean) {
     if(!result.ok)return;const interaction=interactionVersion,current=()=>!closePending&&interaction===interactionVersion;
-    if(result.effect.type==='repository'){await refreshEditingStatus();models=await request('model.catalog',{revision:'working'});if(allowNavigation&&current()&&['add','unstage','diff','commit','revert','abort-revert'].includes(result.effect.operation))await openTool('changes',true);return;}
+    if(result.effect.type==='repository'){await refreshEditingStatus();models=await request('model.catalog',{revision:'working'});if(allowNavigation&&current()&&['add','unstage','diff','commit','revert','abort-revert'].includes(result.effect.operation)){if(managerOpen&&!await manager.close())return;if(current())await openTool('changes',true);}return;}
     if(result.output.kind==='scope-saved'||result.output.kind==='scope-applied')await refreshEditingStatus();
     if(!allowNavigation||!current())return;
+    const leavesManager=result.effect.type==='scope'||result.output.kind==='scope-plan'||['object-preview','object-checkout','object-history','object-compare'].includes(result.effect.type);
+    if(leavesManager&&managerOpen&&!await manager.close())return;if(!current())return;
     if(result.effect.type==='scope'){if(await openTool('knowledge')&&current())await knowledgeBrowser.execute({type:'scope',patch:result.effect.patch});return;}
     if(result.output.kind==='scope-plan'){await openContextEditor({contextId:result.output.plan.contextId,planId:result.output.plan.planId});return;}
     if(result.output.kind==='model'&&result.effect.type==='model-compare'&&result.output.execution.output.kind==='diff'){
       const effect=result.effect,diff=result.output.execution.output.diff;const [before,after]=await Promise.all([request('model.read',{datasetId:effect.a.modelId,revision:effect.a.revision}),request('model.read',{datasetId:effect.b.modelId,revision:effect.b.revision})]);
+      rememberModelPresentation(before);rememberModelPresentation(after);
       if(!current())return;if(settingsOpen&&!await settingsWorkspace.close())return;if(!current())return;if(managerOpen&&!await manager.close())return;if(!current()||!await closeTool()||!current())return;if(!data||data.dataset.id!==effect.b.modelId||data.revision.id!==effect.b.revision)await openLibrary({datasetId:effect.b.modelId,revisionId:effect.b.revision});
       if(!current())return;modelComparison={diff,a:effect.a,b:effect.b,before:before.package,after:after.package,commonBaseStatus:result.output.comparison?.commonBaseStatus??'computed'};state={...state,comparison:[diff.a.commitId,diff.b.commitId],comparisonRequestedYears:[diff.a.requestedYear,diff.b.requestedYear],comparisonRevisions:[effect.a.revision,effect.b.revision],view:{...state.view,panel:'compare'}};render();void saveWorkspace();return;
     }
@@ -601,9 +609,11 @@ async function compareWithChecked(reference:string) {
   terminal.record(result);if(result.ok)await applyCommandResult(result,interaction===interactionVersion);
 }
 async function openModelReference(target:import('@gitworld/contracts').ModelHistoricalReference) {
-  if(target.kind!=='model'||typeof target.modelId!=='string'||!/^[a-f0-9]{40}$/.test(target.revision)||typeof target.ref!=='string')throw new Error('INVALID_REQUEST');
+  if(target.kind!=='model'||typeof target.modelId!=='string'||typeof target.revision!=='string'||target.revision==='working'||typeof target.ref!=='string')throw new Error('INVALID_REQUEST');
+  if(!/^[a-f0-9]{40}$/.test(target.revision)){const interaction=interactionVersion,resolved=await request('model.resolveLegacy',{dataset:{datasetId:target.modelId,revisionId:target.revision}});if(interaction!==interactionVersion)return;target={...target,revision:resolved.revision};}
   if(!await closeTool())return;
   if(!data||data.dataset.id!==target.modelId||data.revision.id!==target.revision)await openLibrary({datasetId:target.modelId,revisionId:target.revision});
+  if(!data||data.dataset.id!==target.modelId||data.revision.id!==target.revision)throw new Error('REVISION_NOT_FOUND');
   await workbench?.execute(`git show ${target.ref}`);
 }
 function modelReferenceStrip() {

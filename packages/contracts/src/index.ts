@@ -2,7 +2,7 @@ import type { CommandCompletion, CommandExecution, CommandIntent, HistoryContext
 import type { DataPackage, DatasetRef, MapBox, ValidationIssue, ValidationResult, VersionRef } from '../../domain/src/package.ts';
 import type { AcquisitionReceipt, ExternalRecordIdentity, SourceIssue, SourceRecordSnapshot, SourceResult, WikidataSearchPage } from '../../ingestion/src/source-types.ts';
 import type { EditorialBranch, EditorialCommit, EditorialCommitInput, EditorialFailureCode, EditorialJson, EditorialStatus } from './editorial-types.ts';
-import type { ModelCatalog, ModelRead, ModelWorkingReceipt, ModelWriteGuards, ModelCommandTarget, WorkbenchCommandRequest, WorkbenchCommandExecution, WorkbenchCompletion } from './workbench-types.ts';
+import type { ModelCatalog, ModelRead, LegacyModelRead, ModelWorkingReceipt, ModelWriteGuards, ModelCommandTarget, WorkbenchCommandRequest, WorkbenchCommandExecution, WorkbenchCompletion } from './workbench-types.ts';
 import type { ResearchRecord, ResearchRecordEnvelope, ResearchRecordRevision, ResearchRecordSummary } from './research-types.ts';
 import type { KnowledgeQuery, KnowledgeQueryResult, KnowledgeStateRequest, KnowledgeState, KnowledgeStateDiff, KnowledgeHistory } from '../../domain/src/knowledge.ts';
 import type { KnowledgeImportRequest, KnowledgeImportResult, KnowledgeMappingPreview, KnowledgeObjectDetail, KnowledgeFilePreviewRequest, KnowledgeFilePreviewResult, KnowledgeFileImportRequest } from './knowledge-workspace-types.ts';
@@ -49,6 +49,7 @@ export type ServiceMethods = NavigationServiceMethods & {
   'revision.activate': { params: { dataset: DatasetRef; operationId: string }; result: RevisionSummary };
   'model.catalog': { params: { revision: string }; result: ModelCatalog };
   'model.read': { params: { datasetId: string; revision: string }; result: ModelRead };
+  'model.resolveLegacy': { params: { dataset: DatasetRef }; result: LegacyModelRead };
   'command.execute': { params: WorkbenchCommandRequest; result: WorkbenchCommandExecution };
   'command.complete': { params: { input: string; context?: HistoryContext; contextTarget?: ModelCommandTarget; scopeRevision?: string }; result: WorkbenchCompletion[] };
   'query.execute': { params: { dataset: DatasetRef; input: { command: string } | { intent: CommandIntent }; context: HistoryContext }; result: CommandExecution };

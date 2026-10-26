@@ -44,6 +44,8 @@ export type EditorialRepository = {
   /** Trusted local configuration; changes only the author of a future new commit. */
   setIdentity(identity: EditorialIdentity): Promise<void>;
   log(limit?: number): Promise<EditorialCommit[]>;
+  /** Read-only exact-content lookup for legacy model references; never substitutes HEAD. */
+  findModelRevision(path: string, contentHash: string): Promise<string | null>;
   branches(): Promise<EditorialBranch[]>;
   createBranch(name: string): Promise<EditorialStatus>;
   switchBranch(name: string): Promise<EditorialStatus>;
