@@ -75,6 +75,7 @@
 - Link fixes to their issues and record the relevant PR, release and verification result. Distinguish implemented, verified, released and still-unpassed work; partial delivery does not complete an entire acceptance checklist. Reopen an issue when its reported defect persists.
 - Review affected open issues after requirement changes and before finishing a delivery. Remove superseded acceptance conditions, retain outstanding work explicitly, and keep large tracking issues linked to specific actionable tasks.
 - Issue maintenance does not authorize unrelated implementation or resume a paused goal. Keep public issue text in English and exclude private conversations, user libraries and unreviewed attachments.
+- Maintain the project website as an iterative delivery artifact alongside the app, README and Issues. Keep identity assets, localized examples, product behavior and download links aligned; review affected pages in both languages and verify the deployed result after website changes.
 - Use `codex/` as the default prefix for agent-created branches.
 - Introduce CI alongside executable project commands during code initialization; report only checks that actually ran.
 - Select concrete frameworks and dependencies as implementation decisions, informed by desktop delivery, local data operations and the workbench requirements. Verify actual install and runtime behavior on every platform claimed; a successful web build does not establish a working installer.
