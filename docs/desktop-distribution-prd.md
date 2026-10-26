@@ -1,6 +1,6 @@
 # Desktop distribution requirements
 
-Revision **v0.1** · Product scope **v0.1** · 25 October 2026
+Revision **v0.2** · Product scope **v0.1** · 26 October 2026
 
 GitWorld must distinguish an available package from a verified user experience. The primary delivery remains a standalone macOS Apple Silicon application. Additional desktop targets may be distributed experimentally when their actual build, runtime, dependency and rights checks are recorded. An experimental download is not a claim that the complete installed acceptance case passed on that platform.
 
@@ -32,10 +32,16 @@ The [desktop checks](../.github/workflows/desktop.yml) add an explicit `macos-15
 
 The manual [candidate workflow](../.github/workflows/desktop-candidates.yml) must first be merged into default `main` before GitHub permits dispatch. Run it from `main` with an immutable tag already accepted into remote `main`. Each native runner uses the same isolated release entry, including a fresh clone and `npm ci`, then requires the bundled Git tests and packaged smoke. Development smoke stays in ordinary CI because importing development Electron can download files and change the recorded dependency tree. Before uploading, recompute the complete dependency-tree hash with the production provenance implementation and require it to match the installation proof. Read-only permissions and non-persisted checkout credentials remain in force. Only exact installer files and a sanitized engineering/build summary are uploaded as short-lived workflow artifacts; no user library, raw log, checkout path or installed acceptance receipt is uploaded. A failed target uploads no candidate. This workflow does not publish a Release or supply the primary macOS artifact's 63-condition acceptance.
 
+## Public preview distribution
+
+A reviewed Apple Silicon candidate may be made available as an explicitly marked GitHub **prerelease preview** before the complete installed acceptance matrix is closed. Its exact contents, source/build identity, rights, notices, privacy, signing status and packaged runtime must already be reviewed. The ordinary installed software-managed acquisition, adoption, editing, frozen staging, commit and complete-library recovery journey must have actual evidence; seeded examples or backstage writes cannot substitute for it.
+
+The prerelease must include a sanitized acceptance-status record that preserves partial and not-run results, including an unperformed network-isolation test. It must not claim full acceptance, a verified stable release or completion of untested conditions. Experimental Intel/Linux scope and unsigned/not-notarized macOS status remain explicit. This preview does not change the existing 63-check passing-receipt contract: `site/release.json` stays `null`, and the verified-download/site workflow stays disabled until the complete required receipt and verification chain pass.
+
 ## Verification and delivery
 
 For each available target, record the source/tag, operating system, architecture, build and artifact identity, test commands and results, native runtime/Git checks, signing status, and the scope of installation/GUI/recovery testing. Include an explicit untested or experimental status where appropriate. Source tests or a CI process are not a human usability study.
 
-The primary macOS artifact still requires all 63 existing acceptance conditions and the source/build/installer/site verification chain. Additional experimental artifacts use their own evidence; they cannot borrow the primary artifact's installed receipt. A release may link to the verified Apple Silicon download and separately describe reviewed experimental candidates.
+Verified primary macOS delivery still requires all 63 existing acceptance conditions and the source/build/installer/site verification chain. Additional experimental artifacts use their own evidence; they cannot borrow the primary artifact's installed receipt. A release may link to the verified Apple Silicon download and separately describe reviewed experimental candidates.
 
 The [main PRD](PRD.md), [desktop build instructions](../apps/desktop/README.md), [publication policy](governance/publication-policy.md) and [current UED](UED.md) remain applicable. The shared workbench interaction does not change merely to add an architecture. Native visual changes require rendered and operational review on the affected platform before they can be described as verified.

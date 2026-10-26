@@ -8,6 +8,10 @@ Import structured historical material, follow changes across time, compare state
 
 **Local desktop · English and Simplified Chinese**
 
+[Preview for macOS (Apple silicon)](https://github.com/samar1tan/GitWorld/releases/download/v0.1.9/GitWorld-0.1.9-arm64-unsigned.dmg) · [Other preview packages](https://github.com/samar1tan/GitWorld/releases/tag/v0.1.9)
+
+This prerelease is unsigned and not notarized; Intel and Linux builds are experimental.
+
 ![GitWorld: Japanese court relocations, fixed comparison states and a Tang–Nara influence link](docs/media/v0.1.6/branch-workbench.png)
 
 ## A learning workflow
@@ -41,7 +45,7 @@ The starting collection centers on China and Japan. Source language, uncertainty
 
 ## Run from source
 
-Desktop installers are not published yet. With Node.js 24:
+With Node.js 24:
 
 ```sh
 npm ci

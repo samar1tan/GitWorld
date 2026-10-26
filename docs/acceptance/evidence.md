@@ -4,6 +4,8 @@ Release acceptance combines ordinary installed journeys with separately identifi
 
 Run the visible user journeys on the exact final installer, recording its hash, build and source revision, the data revisions, actions and observed results. This includes C01–C12, M13, real acquisition of at least 1,000 source records with usable adopted assertions, independent China/Japan questions, conflict decisions, frozen staging with later edits, research, restart, complete restoration into an empty target, offline exploration and both locales. Only shipped controls, bounded commands and documented file selection count. Developer edits, generated answers and hidden state injection cannot supply these results. Earlier package observations retain their own artifact identity.
 
+Independent operation is demonstrated by the software-managed data lifecycle in an ordinary user library, without Codex, an LLM, hidden writes or hand-authored import repairs. Public-source acquisition can use the network. A deliberate network-isolation test is separate from this independence result: failed test-environment setup supplies no offline evidence and must stay not run. Preserve the existing check IDs and report any incomplete portion honestly; this clarification does not turn a partial check or receipt into a passing one.
+
 Use isolated, deterministic engineering regressions for precise fault, protocol and compatibility boundaries. Bind them to the final source and the tested runtime and bundled Git. Identify synthetic inputs and controlled HTTP responses explicitly; never call these installed observations or inject them into the installed investigation library.
 
 | Mixed requirements | Engineering portion, in addition to the installed user journey |
