@@ -8,7 +8,7 @@ Import structured historical material, follow changes across time, compare state
 
 **Local desktop · English and Simplified Chinese**
 
-[Website](https://samar1tan.github.io/GitWorld/) · [Preview for macOS (Apple silicon)](https://github.com/samar1tan/GitWorld/releases/download/v0.1.9/GitWorld-0.1.9-arm64-unsigned.dmg) · [Other preview packages](https://github.com/samar1tan/GitWorld/releases/tag/v0.1.9)
+[Website](https://samar1tan.github.io/GitWorld/) · [Preview for macOS (Apple silicon)](https://github.com/samar1tan/GitWorld/releases/download/v0.1.10/GitWorld-0.1.10-arm64-unsigned.dmg) · [Release notes](https://github.com/samar1tan/GitWorld/releases/tag/v0.1.10)
 
 This prerelease is unsigned and not notarized; Intel and Linux builds are experimental.
 

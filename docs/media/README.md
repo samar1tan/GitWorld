@@ -1,6 +1,6 @@
 # README media
 
-These are actual captures from the **GitWorld v0.1.6 pre-release application**, build **1792956882310**, source commit [`5059d2076e5b9c72bd8206a68829102ba808fc0b`](https://github.com/samar1tan/GitWorld/commit/5059d2076e5b9c72bd8206a68829102ba808fc0b). They illustrate specific screens, not completed installed acceptance. For current preview packages, see the [Releases page](https://github.com/samar1tan/GitWorld/releases/tag/v0.1.9).
+These are actual captures from the **GitWorld v0.1.6 pre-release application**, build **1792956882310**, source commit [`5059d2076e5b9c72bd8206a68829102ba808fc0b`](https://github.com/samar1tan/GitWorld/commit/5059d2076e5b9c72bd8206a68829102ba808fc0b). They illustrate specific screens, not completed installed acceptance. For current preview packages, see the [Releases page](https://github.com/samar1tan/GitWorld/releases/tag/v0.1.10).
 
 ## Captures and editing
 
