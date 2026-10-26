@@ -1,0 +1,40 @@
+name: Publish preview download page
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - name: Require an unverified project page
+        run: node --input-type=module -e 'import {readFileSync} from "node:fs"; if (JSON.parse(readFileSync("site/release.json", "utf8")) !== null) throw new Error("Use the verified release workflow for configured release metadata.");'
+      - run: node --test site/release.test.mjs site/verify-release.test.mjs
+      - run: node site/build.mjs
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site/dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy project preview page
+        id: deployment
+        uses: actions/deploy-pages@v4

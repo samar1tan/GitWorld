@@ -22,6 +22,8 @@ The main repeated learning loop is **question/scope → acquire and adopt a usef
 
 This release is a conventional, self-sufficient desktop application. Users have the installed app, not Codex, an LLM account, a development checkout or an assistant supplying missing content and operations. All core journeys must work through the shipped interface and bounded commands. Public-source discovery may require a network connection; local exploration, editing and recovery must not require model inference or a public application server. A developer script or agent intervention is engineering evidence, not proof of a usable product journey.
 
+Independent use means that the installed software manages each user’s own acquisition, mapping, adoption, editing, frozen staging, commits and complete-library recovery through shipped controls. A prepared demonstration or an assistant writing records into the library does not establish that capability. Deliberately disconnecting the computer is a separate offline test, not the definition of independent use; a network-isolation test that was not completed remains reported as not run.
+
 ## 2. Goals and boundaries
 
 Goals: world-scale orientation; meaningful before/after and cross-subject comparison; distinguish continuity, splitting, integration and influence; inspect evidence and uncertainty; freely combine supported commands; maintain and publish content without changing code; install and use the application locally with persistent, recoverable data.
