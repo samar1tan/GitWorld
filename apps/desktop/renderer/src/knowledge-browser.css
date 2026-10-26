@@ -34,7 +34,7 @@
 .knowledge-ref-slot > small { display:block; font-size:12px; color:#a3b9d6; margin-bottom:4px; }
 .knowledge-ref-title { display:block; width:100%; text-align:left; color:#d6e5f8; font-size:13px; padding:0; overflow-wrap:anywhere; }
 .knowledge-ref-title:disabled { opacity:.75; }
-.knowledge-ref-slot code { font-size:11px; color:#a9bdd7; }
+.knowledge-ref-slot code { font-size:12px; color:#a9bdd7; }
 .knowledge-ref-actions { display:flex; gap:7px; align-items:center; margin-top:5px; }
 .knowledge-clear { padding:0 5px; color:#b8c9e0; margin-left:auto; }
 .knowledge-view-heading { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:16px 20px 12px; flex-wrap:wrap; }
@@ -135,7 +135,7 @@
 .knowledge-coverage-times progress { display:block; width:100%; height:6px; margin-top:9px; accent-color:#83aff0; }
 .knowledge-qualifier { margin:9px 0; overflow-wrap:anywhere; }
 .knowledge-qualifier strong { font-weight:500; }
-.knowledge-status { display:inline-block; font-size:11px; color:#b8c8de; border:1px solid #4b5c76; border-radius:3px; padding:1px 5px; margin:0 0 6px; }
+.knowledge-status { display:inline-block; font-size:12px; color:#b8c8de; border:1px solid #4b5c76; border-radius:3px; padding:1px 5px; margin:0 0 6px; }
 .knowledge-status.changed { border-color:#729aca; color:#b8d5fc; }
 .knowledge-status.uncertain,.knowledge-status.multiple,.knowledge-status.unreviewed { border-color:#93836a; color:#d6c2a0; }
 .knowledge-observations { display:flex; flex-direction:column; gap:8px; margin:14px 0; }

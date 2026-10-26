@@ -89,6 +89,16 @@ test('tips can be disabled while guide navigation never pretends a task is compl
   context({ section: 'research', editing: false }); assert.match(guide.content(), /onboarding-tip/);
 });
 
+test('the model journey opens its implemented research workflow without redirecting to another object or completing on navigation', async () => {
+  const { guide, moves, focuses } = fixture();
+  guide.hydrate(apply(investigation.slice(0, 4))); guide.open();
+  assert.match(guide.content(), /Open Research/);
+  assert.doesNotMatch(guide.content(), /open an object comparison|To attach fixed references/);
+  await click(guide, 'next');
+  assert.deepEqual(moves, ['research']); assert.deepEqual(focuses, ['research-record']);
+  assert.deepEqual(onboardingProgress(guide.snapshot()), [true, true, true, true, false]);
+});
+
 test('restart clears only the selected guide after an explicit confirmation', async () => {
   const { guide } = fixture(); const prior = apply([...investigation, ...data]); guide.hydrate(prior); guide.open();
   await click(guide, 'restart'); assert.deepEqual(onboardingProgress(guide.snapshot()), [true, true, true, true, true]);
