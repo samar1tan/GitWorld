@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { examples } from './examples.mjs';
+import { english, chinese } from './locales.mjs';
 import { createHistoryEngine, executeIntent } from '../packages/domain/src/index.ts';
 import { parseWorkbenchCommand } from '../packages/service/src/workbench-commands.ts';
 
@@ -9,6 +10,14 @@ const model = JSON.parse(await readFile(new URL('../data/seed/early-medieval.jso
 const engine = createHistoryEngine(model.history);
 const commits = new Map(model.history.commits.map(commit => [commit.id, commit]));
 const revision = 'a'.repeat(40);
+test('language selection preserves case facts, commands, evidence and complete graph labels', () => {
+  assert.deepEqual(examples.en, examples['zh-CN']);
+  assert.deepEqual(examples.en.nodes.map(node => node.year ?? node.yearKey), ['approx700', 710, 740, 744, 745, 784, 794]);
+  for (const copy of [english, chinese]) {
+    for (const label of examples.en.labels) assert.ok(copy[label.key], label.key);
+    assert.ok(copy.approx700);
+  }
+});
 const isAncestor = (ancestor, id) => commits.get(id).parents.some(parent => parent === ancestor || isAncestor(ancestor, parent));
 
 test('website example edges retain actual lineage and influence semantics from the shipped model', () => {
@@ -39,6 +48,7 @@ test('both locale command examples route through the real history grammar and mo
     }
   }
   assert.equal(outcomes['zh-CN'].checkout.snapshot.commitId, 'japan-710');
+  assert.deepEqual(outcomes.en, outcomes['zh-CN']);
   const comparison = outcomes['zh-CN'].compare.diff;
   assert.equal(comparison.a.commitId, 'tang-ca700'); assert.equal(comparison.b.commitId, 'japan-710');
   assert.deepEqual(comparison.commonBaseIds, []);
