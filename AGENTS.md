@@ -85,6 +85,7 @@
 
 - Use the AI-agent working personas in `docs/governance/agent-team.md`: Rowan (product and historical content), Morgan (architecture and reliability), Casey (interaction and usability), Quinn (open source and release), and the root integrator. These are agent roles, not human identities or claims of professional certification.
 - Assign an owner and an independent reviewer to substantive changes. Inspect actual artifacts and record evidence; never fabricate review or consensus. Use cross-disciplinary review for schema/provenance, data import usability, desktop permissions and packaging.
+- Support role-initiated work loops and explicit pipeline requests from the project owner or a top-level coordinating agent through the same [run contract](docs/governance/agent-team.md#triggers-and-run-boundaries). Keep the finding, scope, relevant baseline, owner, reviewer and completion checks explicit. A focused project-operations run can update and verify delivery artifacts without resuming a paused product goal; reuse active work and stop when its outcome is verified.
 - The integrator resolves routine product and engineering decisions within the authorized scope. Escalate only consequential unresolved scope, rights, account, signing identity, binding agreement or other decisions requiring a person, with a concrete recommendation and evidence. A blocked publication does not block unrelated local work.
 
 ## Publication and release gate
