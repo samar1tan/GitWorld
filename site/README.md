@@ -1,14 +1,23 @@
 # Project website
 
 This is a small static project site, separate from the installed desktop application.
-English is the initial language; Simplified Chinese covers visible copy and graph
-labels. Artwork is original SVG. Inter is local with its OFL notice. No analytics,
+English is the initial language. `?lang=zh-CN` opens the Chinese entry; language
+switching updates the example, operations, command instructions and accessible
+description together. English uses Carolingian succession; Chinese starts with
+China/Japan material and illustrates Chang’an planning alongside the Japanese
+court’s recorded capital changes. Influence is distinct from lineage. See the
+[website requirements](../docs/project-website-prd.md) for the current design and maintenance contract.
+
+The header and footer reuse the desktop icon sources in `apps/desktop/resources`;
+the build copies their master and optical small variants to local website assets.
+Keep those canonical sources aligned rather than introducing a separate placeholder.
+Artwork is original SVG. Inter is local with its OFL notice. No analytics,
 external font service or remote application code is loaded.
 
 ```sh
 node site/build.mjs
 python3 -m http.server 4180 --directory site/dist
-node --test site/release.test.mjs site/verify-release.test.mjs
+node --test site/examples.test.mjs site/release.test.mjs site/verify-release.test.mjs
 ```
 
 `release.json` stays `null` until an actual installer passes acceptance and its
@@ -92,7 +101,9 @@ Keep unperformed checks `not-run`; do not fill them from a unit test or smoke ru
 Synthetic records in test modules test rejection behavior and are never real
 acceptance receipts. No actual receipt or release is supplied by this source.
 
-Pages deployment is manual and fails closed while metadata is absent. The
-workflow publishes only `site/dist` after verification, through `github-pages`.
+The verified-release workflow fails closed while metadata is absent. The separate,
+manual preview workflow requires null metadata and links to the public preview
+without claiming complete installation acceptance. Both publish only `site/dist`
+through `github-pages`.
 Repository/environment protections must be separately configured and verified;
 these files do not establish that review policies are enforced remotely.
