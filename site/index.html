@@ -11,17 +11,19 @@
   <link rel="stylesheet" href="./style.css">
   <script type="module" src="./main.js"></script>
 </head>
-<body>
+<body id="top">
   <header class="masthead">
-    <a class="identity" href="./"><img class="brand-mark" src="./assets/gitworld.svg" width="48" height="48" alt=""><span>GitWorld<small data-copy="subtitle">World History Workspace</small></span></a>
+    <a class="identity" href="#top"><img class="brand-mark" src="./assets/gitworld.svg" width="48" height="48" alt=""><span>GitWorld<small data-copy="subtitle">World History Workspace</small></span></a>
     <nav><a href="https://github.com/samar1tan/GitWorld" data-copy="source">Source</a><button id="language" type="button" lang="zh-CN">简体中文</button></nav>
   </header>
   <main>
     <section class="intro">
       <div class="intro-copy">
         <p class="eyebrow" data-copy="eyebrow">BRANCHES · STATES · EVIDENCE</p>
-        <h1 data-copy="title">Explore history through recorded states.</h1>
-        <p class="lead" data-copy="lead">Follow a historical path, check out a version, and compare what the records say changed. Keep the sources and modeling choices within reach.</p>
+        <h1 data-copy="title">Explore history through branches and recorded states.</h1>
+        <p class="lead" data-copy="lead">Follow a shared past into different paths. Inspect what a record says, compare two states, and keep their sources in view.</p>
+      </div>
+      <div class="intro-actions">
         <p class="status" id="release-status" data-copy="development">An unsigned desktop preview is available. You can also run from source.</p>
         <div class="actions" id="actions">
           <a class="primary" id="preview" href="https://github.com/samar1tan/GitWorld/releases/tag/v0.1.10" data-copy="preview">Get desktop preview ↗</a>
@@ -29,22 +31,49 @@
           <a href="https://github.com/samar1tan/GitWorld/blob/main/docs/PRD.md" data-copy="requirements">Read the requirements ↗</a>
         </div>
       </div>
-      <figure class="history-example">
-        <figcaption><span data-copy="example">CAROLINGIAN SUCCESSION</span><span data-copy="exampleYears">751–870 CE</span></figcaption>
-        <div class="example-viewport" id="example-graph" tabindex="0" role="region"></div>
-        <div class="example-legend"><span><i class="lineage-key" aria-hidden="true"></i><span data-copy="lineage">State lineage</span></span><span data-example-influence hidden><i class="influence-key" aria-hidden="true"></i><span data-copy="planningInfluence">Planning influence</span></span></div>
-        <p class="diagram-note" data-copy="diagramNote">Selected records; spacing is not a time scale.</p>
-        <a class="example-evidence" href="https://github.com/samar1tan/GitWorld/blob/main/prototype/HISTORY_SOURCES.md" data-copy="caseEvidence">Model and evidence notes ↗</a>
-      </figure>
     </section>
+    <section class="investigation" aria-labelledby="examples-title">
+      <header class="section-heading"><h2 id="examples-title" data-copy="examplesTitle">Three questions to investigate</h2><p data-copy="examplesBody">Read-only examples from the desktop collection. Select a record, then choose two states to compare.</p></header>
+      <div class="case-tabs" id="case-tabs" role="tablist" aria-label="Historical cases"></div>
+      <div id="case-panel" role="tabpanel">
+        <header class="case-heading"><div><p id="case-years"></p><h3 id="case-question"></h3></div><p id="case-insight"></p></header>
+        <p id="example-error" role="alert" hidden></p>
+        <div class="case-workspace">
+          <figure class="history-example">
+            <div class="example-viewport" id="example-graph" tabindex="0" role="region"></div>
+            <figcaption>
+              <p class="graph-scroll-hint" id="graph-scroll-hint" data-copy="graphScrollHint" hidden>Scroll sideways for the full path.</p>
+              <div class="example-legend"><span><i class="lineage-key" aria-hidden="true"></i><span data-copy="lineage">State continuity</span></span><span data-example-influence hidden><i class="influence-key" aria-hidden="true"></i><span data-copy="planningInfluence">Planning influence</span></span><span data-example-condensed hidden><i class="condensed-key" aria-hidden="true"></i><span data-copy="condensed">Intermediate records omitted</span></span></div>
+              <p class="diagram-note" id="diagram-note"></p>
+              <a class="example-evidence" data-copy="caseEvidence">Case sources and model notes ↗</a>
+            </figcaption>
+          </figure>
+          <aside class="record-inspector" aria-labelledby="record-title">
+            <p class="panel-label" data-copy="selectedRecord">Selected record</p>
+            <p id="record-date"></p><h3 id="record-title"></h3><code id="record-branch"></code>
+            <p id="record-summary"></p><dl id="record-fields"></dl>
+            <details id="record-evidence"><summary data-copy="recordSources">Evidence for these fields</summary><ul id="record-sources"></ul></details>
+          </aside>
+        </div>
+        <section class="comparison" aria-labelledby="comparison-title">
+          <header><h3 id="comparison-title" data-copy="compareRecords">Compare records</h3><p id="common-base"></p></header>
+          <div class="comparison-controls">
+            <div><label for="comparison-a" data-copy="comparisonA">State A</label><select id="comparison-a"></select></div>
+            <div><label for="comparison-b" data-copy="comparisonB">State B</label><select id="comparison-b"></select></div>
+          </div>
+          <table><thead><tr><th scope="col" data-copy="field">Field</th><th scope="col" data-copy="comparisonA">State A</th><th scope="col" data-copy="comparisonB">State B</th></tr></thead><tbody id="comparison-body"></tbody></table>
+        </section>
+      </div>
+    </section>
+    <h2 class="desktop-title" data-copy="desktopTitle">Continue in the desktop workbench</h2>
     <section class="operations">
-      <article><span class="number">01</span><h2 data-copy="follow">Follow a branch</h2><p data-copy="followBody">Start with a place and period. Follow the shared Carolingian past into the three outcomes of Verdun, then continue along a successor's path.</p><code data-example-command="follow"></code></article>
-      <article><span class="number">02</span><h2 data-copy="checkout">Check out a state</h2><p data-copy="checkoutBody">Inspect a version's ruler, court residence and recorded territory. See which values were inherited and where each claim was recorded.</p><code data-example-command="checkout"></code></article>
-      <article><span class="number">03</span><h2 data-copy="compare">Compare two versions</h2><p data-copy="compareBody">Compare successive states, sibling branches or independent paths. Equal values, differences and missing evidence remain distinct.</p><code data-example-command="compare"></code></article>
+      <article><span class="number">01</span><h3></h3><p></p><code data-example-command="follow"></code></article>
+      <article><span class="number">02</span><h3></h3><p></p><code data-example-command="checkout"></code></article>
+      <article><span class="number">03</span><h3></h3><p></p><code data-example-command="compare"></code></article>
     </section>
-    <p class="command-note" data-copy="commandNote">Replace &lt;commit-oid&gt; with a data revision from git log in the desktop terminal.</p>
+    <p class="command-note" data-copy="commandNote">Commands follow the selected record and A/B pair. Replace &lt;commit-oid&gt; with a data revision from git log in the desktop terminal.</p>
     <section class="boundaries">
-      <div><h2 data-copy="localTitle">A local workbench</h2><p data-copy="localBody">Build a local collection from public sources or your own structured files. Review the mapping, adopt records, then stage and commit your changes for the next investigation.</p><a href="https://github.com/samar1tan/GitWorld/blob/main/docs/learning-workflow.md" data-copy="learning">The learning workflow ↗</a></div>
+      <div><h2 data-copy="localTitle">Build your collection</h2><p data-copy="localBody">Acquire public data or import structured files. Review the mapping, adopt records, then stage and commit your changes for the next investigation.</p><a href="https://github.com/samar1tan/GitWorld/blob/main/docs/learning-workflow.md" data-copy="learning">The learning workflow ↗</a></div>
       <div><h2 data-copy="evidenceTitle">Read the evidence</h2><p data-copy="evidenceBody">Inspect the source and date behind a claim. A missing field is not evidence that something did not exist; an influence link is different from political descent.</p><a href="https://github.com/samar1tan/GitWorld/blob/main/data/README.md#evidence-and-editorial-review" data-copy="evidence">Historical sources and modeling notes ↗</a></div>
     </section>
     <section id="installation" hidden></section>
