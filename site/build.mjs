@@ -1,11 +1,14 @@
-import {cp, mkdir, readFile, writeFile} from 'node:fs/promises';
+import {build} from 'esbuild';
+import {cp, mkdir, readFile, writeFile, rm} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {validateRelease} from './release-validation.mjs';
 const directory=path.dirname(fileURLToPath(import.meta.url)), root=path.resolve(directory,'..'), output=path.join(directory,'dist');
 const release=validateRelease(JSON.parse(await readFile(path.join(directory,'release.json'),'utf8')));
+await rm(output,{recursive:true,force:true});
 await mkdir(path.join(output,'assets'),{recursive:true});
-for(const file of ['index.html','style.css','main.js','locales.mjs','examples.mjs','release-validation.mjs']) await cp(path.join(directory,file),path.join(output,file));
+for(const file of ['index.html','style.css']) await cp(path.join(directory,file),path.join(output,file));
+await build({entryPoints:[path.join(directory,'main.js')],outfile:path.join(output,'main.js'),bundle:true,format:'esm',platform:'browser',target:'es2022',minify:true});
 await writeFile(path.join(output,'release.json'),JSON.stringify(release,null,2));
 for(const weight of [400,600]) await cp(path.join(root,`node_modules/@fontsource/inter/files/inter-latin-${weight}-normal.woff2`),path.join(output,`assets/inter-latin-${weight}-normal.woff2`));
 await cp(path.join(root,'data/licenses/Inter-OFL-1.1.txt'),path.join(output,'assets/Inter-OFL-1.1.txt'));

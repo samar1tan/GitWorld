@@ -1,11 +1,18 @@
 # Project website
 
 This is a small static project site, separate from the installed desktop application.
-English is the initial language. `?lang=zh-CN` opens the Chinese entry; language
-switching translates the presentation while preserving the same case, dates,
-commands and evidence. Both locales illustrate Chang’an planning alongside the
-Japanese court’s six capital observations from 710 to 794. Influence is distinct from lineage. See the
-[website requirements](../docs/project-website-prd.md) for the current design and maintenance contract.
+English is the initial language. Both locales offer Frankish partition, China/Japan
+planning influence and Abbasid court moves. China/Japan is the initial case in both
+languages. `?lang=zh-CN&case=abbasid-court` opens that Chinese case directly.
+Language switching preserves the active case, selected record and comparison pair.
+
+The graph's record buttons update a source-backed inspector; A/B controls compare
+actual modeled fields. The build bundles the reviewed seed and the same snapshot/
+comparison engine used by the desktop app through the existing esbuild dependency.
+These are bounded read-only examples, not a writable collection or a simulated Git
+repository. Desktop commands follow the selected record and pair. No new records,
+LLM call or application server is needed. See the
+[website requirements](../docs/project-website-prd.md).
 
 The header and footer reuse the desktop icon sources in `apps/desktop/resources`;
 the build copies their master and optical small variants to local website assets.
